@@ -1,0 +1,14 @@
+Q1 : .ads correspond à la spécification des fonctions du modules et .adb à leur implémentations
+
+Q2 : Parce que leur fonction est évidente
+
+Q3 : Parce que c'est là qu'est l'implémentation, la sémantique aide à comprendre cette dernière
+
+Q4 : T_Mois, Initialiser, Afficher_Deux_Positions, Afficher, Le_Mois, Le_Jour, L_Annee
+
+Q5 : l19 : Afficher_Deux_Positions n'est pas spécifiée dans Dates.ads
+     l30 & l31 : Accès à des var privées
+
+Q6 : Parce que pour initialiser l'utilisateur doit pouvoir rentrer un mois
+
+Q7 : On ne peut plus faire d'affectations et d'égalités sur T_Dates
