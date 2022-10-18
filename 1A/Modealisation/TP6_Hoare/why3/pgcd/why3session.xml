@@ -19,7 +19,7 @@
   <proof prover="1" obsolete="true"><result status="valid" time="0.00" steps="9"/></proof>
   </goal>
   <goal name="VC pgcd_euclide.2" expl="loop invariant preservation">
-  <proof prover="0" obsolete="true" edited="pgcd_PGCDEuclide_VC_pgcd_euclide_2.v"><undone/></proof>
+  <proof prover="0" obsolete="true" edited="pgcd_PGCDEuclide_VC_pgcd_euclide_2.v"><result status="failure" time="0.00"/></proof>
   <proof prover="1" obsolete="true"><result status="valid" time="0.00" steps="17"/></proof>
   </goal>
   <goal name="VC pgcd_euclide.3" expl="loop variant decrease">
