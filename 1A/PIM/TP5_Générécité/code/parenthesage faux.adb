@@ -51,18 +51,15 @@ procedure Parenthesage is
         Fermants : Constant String := ")]}";
         Pile_Ouvrants: Piles_Char.T_Pile;
         Pile_Index: Piles_Int.T_Pile;
-        Idx: Integer := Chaine'First;
     begin
         Initialiser(Pile_Ouvrants);
         Initialiser(Pile_Index);
-        Correct := True;
-
-        while Correct and Idx <= Chaine'Last loop
+        for idx_char in Chaine'First..Chaine'Last loop                 -- Ne pas utiliser de boucle for parce qu'on doit quitter au premier caractère faux
             for idx_par in 1..3 loop
-                if Chaine(Idx) = Ouvrants(idx_par) then
-                    Empiler(Pile_Ouvrants, Chaine(Idx));
-                    Empiler(Pile_Index, Idx);
-                elsif Chaine(Idx) = Fermants(idx_par) then
+                if Chaine(idx_char) = Ouvrants(idx_par) then
+                    Empiler(Pile_Ouvrants, Chaine(idx_char));
+                    Empiler(Pile_Index, idx_char);
+                elsif Chaine(idx_char) = Fermants(idx_par) then
                     if not Est_Vide(Pile_Ouvrants) and then Sommet(Pile_Ouvrants) = Ouvrants(idx_par) then
                         Depiler(Pile_Ouvrants);
                         Depiler(Pile_Index);
@@ -71,26 +68,20 @@ procedure Parenthesage is
                         if not Est_Vide(Pile_Index) then
                             Indice_Erreur := Sommet(Pile_Index);
                         else
-                            Indice_Erreur := Idx;
+                            Indice_Erreur := idx_par;
                         end if;
                     end if;
                 else
                     Null;
                 end if;
             end loop;
-            Idx := Idx + 1;
         end loop;
-
-        if Correct then
-            if Est_Vide(Pile_Ouvrants) then
-                null;
-            else
-                Indice_Erreur := Sommet(Pile_Index);
-            end if;
+        if Correct and not Est_Vide(Pile_Ouvrants) then
+            Correct := False;
+            Indice_Erreur := Sommet(Pile_Index);
         else
-            null;
+            Null;
         end if;
-        
     end Verifier_Parenthesage;
 
 
