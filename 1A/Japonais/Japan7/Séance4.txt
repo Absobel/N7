@@ -1,0 +1,61 @@
+Séance 4 :
+(voir conjugaisons sur cours)
+
+	ichidan (ru verbs) :
+		- 食べる (たべる) : manger
+		- 見る（みる）: voir
+		- 止める （やめる）: arrêter
+	
+	godan :
+	(forme dictionnaire)
+	(base connective : voir sur cours)
+		- あう : rencontrer
+		- 書く（かく）: écrire
+		- かす : emprunter (??)
+		- 死ぬ（しぬ）: mourir
+		- 走る（はしる）: courir
+		- 遊ぶ（あそぶ）: jouer
+		- 行く（いく）: aller
+
+	forme tai : vouloir ...
+
+	irréguliers :
+		- する : faire		base connective : し
+		- くる : venir		base connective : き
+
+	conj mas :
+		pos present : ます
+		neg present : ません
+		pos passé : ました
+		pos present : ませんでした
+
+	forme ーて : ?? (à checker) + (conjugaison différentes selon type de verbe, à voir)
+	forme ーてください : veuillez ... s'il vous plaît
+		ex : 止めてください : Veuillez arrêter s'il vous plaît
+	forme ーている : en train de ...
+		ex : 走っている : je suis en train de courir
+
+		Transforme en verbe ichidan à conjuguer : 
+			ex : 走っています
+
+	vocab en plus :
+		- 犬（いぬ）: chien
+		- 肉（にく）: viande
+		- 子供（こども）: enfants
+		- 庭（にわ）: jardin	
+		- 日夜日（にちよび）: dimanche
+		- 本（ほん）: livre
+		- 学校（がっこ）: école
+		- 図書館（としょかん）: bibliothèque
+		- 初め（はじめ）: début
+		- じゅうしょ: adresse
+		- 辞書（じしょ）: dico
+
+	particule ーで : détermine l'endroit où se passe l'action
+	particule ーに : permet de préciser le moment auquel se déroule l'action
+		         permet également d'indiquer la cible de l'action	
+	particule ーね : chercher l'accord de l'interlocuteur	
+
+	tips : plus un "groupe" est prêt du verbe, plus il est important
+	       géneralement le thème est en premier (voire pas là du tout selon le contexte)
+
