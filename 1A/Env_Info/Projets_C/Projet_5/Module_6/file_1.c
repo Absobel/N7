@@ -2,6 +2,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 int main() {
-   printf("Je suis file_1.c dans Module_6 dans Projet_5");
+   afficher("Je suis file_1.c dans Module_6 dans Projet_5");
 return;
 }

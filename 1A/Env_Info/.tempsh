@@ -1,2 +1,2 @@
 #!/bin/sh
-echo $USER > .templogin
+ps -fu | grep -v grep | grep sleep| grep 1000 > .tempres
