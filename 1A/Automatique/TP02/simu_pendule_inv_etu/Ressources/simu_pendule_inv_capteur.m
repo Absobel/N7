@@ -34,6 +34,11 @@ affichage(fich, t0, g, l, xe, ue, x0, tf, K, options_sim);
 
 simOut = sim(fich_simulink,[t0 tf],options_sim);
 
+disp(size(simOut.X))
+disp(size(X_sol.Data))
+disp(size(simOut.U))
+disp(size(U_sol.Data))
+
 comparaison(fich, simOut.X, X_sol, simOut.U, U_sol);
 %
 % Fonctions
