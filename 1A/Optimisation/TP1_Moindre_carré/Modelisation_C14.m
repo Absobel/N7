@@ -299,9 +299,10 @@ function [H_f, res, J_res] = Hess_f_C14(beta, donnees, residu, J_residu)
 %            real(n,p)
 %
     % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    res = 0;
-    J_res = 0;
-    H_f = 0;
+    res = residu(beta);
+    J_res = J_residu(beta);
+    H_res = ;
+    H_f = (J_res')*J_res + sum(res*H_res);
 
 end
 
