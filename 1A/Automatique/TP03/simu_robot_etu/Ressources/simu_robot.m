@@ -26,24 +26,31 @@ else
     options_sim = simset();
 end;
 
-
-
 affichage(fich, t0, xe, ue, x0, tf, K, options_sim);
 
 simOut = sim(fich_simulink_etu,[t0 tf],options_sim);
 
+%
+eps0 = 1e-11; % pour la comparaison
+
+% comparaison format long
 % fich_mat = ['TP2_Etudiants/Resultats/' fich '.mat'];
 fich_mat = ['Ressources/' fich '.mat'];      
 load(fich_mat, 'X_sol', 'U_sol');
-comparaison(fich, simOut.X, X_sol, simOut.U, U_sol);
+result = comparaison(fich, simOut.X, X_sol, simOut.U, U_sol, eps0);
 
-if fich == 'cas1_2',
+% comparaison format short
+if fich=='cas1_2' & result==0,
     % fich_mat = ['TP2_Etudiants/Resultats/' fich '.mat'];
     fich_mat = ['Ressources/' fich '_short.mat'];
     disp('K format short')
     load(fich_mat, 'X_sol', 'U_sol');
-    comparaison(fich, simOut.X, X_sol, simOut.U, U_sol);
+    result = comparaison(fich, simOut.X, X_sol, simOut.U, U_sol, eps0);
+    print(fich, simOut.X, X_sol, simOut.U, U_sol, eps0);
+else
+    print(fich, simOut.X, X_sol, simOut.U, U_sol, eps0);
 end;
+
 %
 % Fonctions
 function affichage(fich, t0, xe, ue, x0, tf, K, options_sim);
@@ -59,50 +66,59 @@ function affichage(fich, t0, xe, ue, x0, tf, K, options_sim);
     disp(['pas = ' num2str(options_sim.FixedStep)]);
 end
 
-function comparaison(fich, X, X_sol, U, U_sol)
-
-eps0 = 1e-13;
-if size(X.Data) == size(X_sol.Data) & size(U.Data) == size(U_sol.Data),
-    disp('dimension ok')
-    X_erreur = max(max(abs(X.Data-X_sol.Data)));
-    U_erreur = max(max(abs(U.Data-U_sol.Data)));
-    disp(['||X.Data-X_sol.Data||_inf = ' num2str(X_erreur)])
-    disp(['||U.Data-U_sol.Data||_inf = ' num2str(U_erreur)])  
-    if (X_erreur < eps0) & (U_erreur < eps0),
-        disp('Résultats ok')
-    else
-        disp('Résultats faux');
-    end    
-else 
-    disp('erreur dimensions')
+function result = comparaison(fich, X, X_sol, U, U_sol, eps0)
+    result=0;
+    if size(X.Data) == size(X_sol.Data) & size(U.Data) == size(U_sol.Data),
+        X_erreur = max(max(abs(X.Data-X_sol.Data)));
+        U_erreur = max(max(abs(U.Data-U_sol.Data)));
+        if (X_erreur < eps0) & (U_erreur < eps0),
+            result = 1;
+        end    
+    end
 end
 
+function print(fich, X, X_sol, U, U_sol, eps0)
 
-figure;
-graphiques(X,U)
-figure('Name',[fich ' Sol'])
-graphiques(X_sol,U_sol)
+    if size(X.Data) == size(X_sol.Data) & size(U.Data) == size(U_sol.Data),
+        disp('dimension ok')
+        X_erreur = max(max(abs(X.Data-X_sol.Data)));
+        U_erreur = max(max(abs(U.Data-U_sol.Data)));
+        disp(['||X.Data-X_sol.Data||_inf = ' num2str(X_erreur)])
+        disp(['||U.Data-U_sol.Data||_inf = ' num2str(U_erreur)])  
+        if (X_erreur < eps0) & (U_erreur < eps0),
+            disp('Résultats ok')
+        else
+            disp('Résultats faux');
+        end    
+    else 
+        disp('erreur dimensions')
+    end
 
-function graphiques(x,u)
-% Réalise les graphiques des simulations issues de simulink
-%
-% parametres en entrée
-% --------------------
-% t : temps
-%     real (N,1)
-% x : état
-%     real (N,n)
-% u : contrôle
-%     real (N,m)
+    figure;
+    graphiques(X,U)
+    figure('Name',[fich ' Sol'])
+    graphiques(X_sol,U_sol)
 
-subplot(2,1,1)
-plot(x.Time,x.Data)
-xlabel('t')
-ylabel('états');
-subplot(2,1,2)
-plot(u.Time,u.Data)
-xlabel('t')
-ylabel('contrôle')
+    function graphiques(x,u)
+    % Réalise les graphiques des simulations issues de simulink
+    %
+    % parametres en entrée
+    % --------------------
+    % t : temps
+    %     real (N,1)
+    % x : état
+    %     real (N,n)
+    % u : contrôle
+    %     real (N,m)
 
-end
+    subplot(2,1,1)
+    plot(x.Time,x.Data)
+    xlabel('t')
+    ylabel('états');
+    subplot(2,1,2)
+    plot(u.Time,u.Data)
+    xlabel('t')
+    ylabel('contrôle')
+
+    end
 end
