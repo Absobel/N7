@@ -58,7 +58,7 @@ function [beta, norm_grad_f_beta, f_beta, norm_delta, nb_it, exitflag] ...
     res_beta = residu(beta);
     f_beta = 0.5*(res_beta.')*res_beta;
     J_res_beta = J_residu(beta);
-    grad_f_beta = (J_res_beta')*res_beta;
+    grad_f_beta = (J_res_beta.')*res_beta;
     norm_grad_f_beta0 = norm(grad_f_beta);
     seuil_1 = max(Tol_rel*norm_grad_f_beta0, Tol_abs);
     exitflag = 0;
@@ -71,7 +71,7 @@ function [beta, norm_grad_f_beta, f_beta, norm_delta, nb_it, exitflag] ...
 
         % Calcul du pas de descente delta et mise à jour de beta
         
-        delta = (J_res_beta')*J_res_beta\grad_f_beta;
+        delta = grad_f_beta/((J_res_beta')*J_res_beta);
         norm_delta = norm(delta);
         beta = beta - delta;
 
@@ -80,36 +80,36 @@ function [beta, norm_grad_f_beta, f_beta, norm_delta, nb_it, exitflag] ...
 
         res_beta = residu(beta);
         J_res_beta = J_residu(beta);
-        grad_f_beta = (J_res_beta')*res_beta;
+        grad_f_beta = (J_res_beta.')*res_beta;
         norm_grad_f_beta = norm(grad_f_beta);
 
         condition1 = norm_grad_f_beta <= seuil_1;
 
         % Calcul pour condition 2
         % (+ maj de f_beta)
-        delta_f = abs(f_beta-0.5*(res_beta')*res_beta);
-        f_beta = 0.5*(res_beta')*res_beta;
+        delta_f = abs(f_beta-0.5*(res_beta.')*res_beta);
+        f_beta = 0.5*(res_beta.')*res_beta;
 
-        condition2 = delta_f <= seuil_2;
+        condition2 = delta_f < seuil_2;
 
         % Calcul pour condition 3
 
-        condition3 = norm_delta <= seuil_3;
+        condition3 = norm_delta < seuil_3;
 
         % Calcul pour condition 4
         
         nb_it=nb_it+1;
         
-        condition4 = nb_it ~= n_itmax;
+        condition4 = nb_it == n_itmax;
 
         % Tests d'arrêts
-        if condition1
+        if ~condition1
             exitflag = 1;
         end
-        if condition2
+        if ~condition2
             exitflag = 2;
         end
-        if condition3
+        if ~condition3
             exitflag = 3;
         end
         if ~condition4
