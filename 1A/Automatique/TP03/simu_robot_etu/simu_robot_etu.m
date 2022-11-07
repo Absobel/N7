@@ -43,7 +43,7 @@ fich_simulink_etu = './robot_etu'
 % Cas 1.1
 
 fich = 'cas1_1';
-x0 = [pi pi 0.014 0]';
+x0 = [0 0 0 0]';
 tf = 2;             % temps final
 K = [0 0 0 0];
 algorithme = 'ode45';
@@ -53,15 +53,16 @@ simu_robot
 
 
 % Cas 1.2
+matrices
 
 fich = 'cas1_2';
 
 tf = 2;             % temps final
 
 % A compléter
-% x0 = [0 pi/10 0 0]; % initial point
-% K = 
-% delta_t =           % si nécessaire 
+x0 = [0 pi/10 0 0]'; % initial point
+%K = [0.6700 19.9053 1.0747 1.9614];
+% delta_t = ;          % si nécessaire 
 algorithme = 'ode45';
 RelTol = '1e-3';
 
