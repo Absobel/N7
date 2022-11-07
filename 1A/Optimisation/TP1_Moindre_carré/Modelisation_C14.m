@@ -301,7 +301,11 @@ function [H_f, res, J_res] = Hess_f_C14(beta, donnees, residu, J_residu)
     % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     res = residu(beta);
     J_res = J_residu(beta);
-    H_res = ;
+
+    %J_res(:,1) = -exp(-beta(2)*donnees(:,1));
+    %J_res(:,2) = beta(1)*donnees(:,1).*exp(-beta(2)*donnees(:,1));
+
+    H_res = [0 donnees(:,1)*exp(-beta(2)*donnees(:,1)); donnees(:,1).*exp(-beta(2)*donnees(:,1)) -beta(1)*donnees(:,1).^2.*exp(-beta(2)*donnees(:,1))];
     H_f = (J_res')*J_res + sum(res*H_res);
 
 end

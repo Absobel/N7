@@ -42,28 +42,15 @@ J_residu_C14(beta0, Donnees)
 --------------------------------------------------------------------------------------------
 Algorithme de Newton
 --------------------
-Hessienne f(beta^{(0)})
-     0
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mtimes')" style="font-weight:bold"> * </a>
+Incorrect dimensions for matrix multiplication. Check that the number of columns in the first matrix matches the number of rows in the second matrix. To operate on each
+element of the matrix individually, use TIMES (.*) for elementwise multiplication.
 
---------------------------------------------------------------------------------------------
-     nb_iter         A0        lambda    ||f'(beta)||     f(beta)    ||delta||     exitflag 
---------------------------------------------------------------------------------------------
-            0           10       0.0001   4.6322e+05        48.07
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Modelisation_C14>Hess_f_C14', '/home/absobel/Bureau/N7/1A/Optimisation/TP1_Moindre_carré/Modelisation_C14.m', 308)" style="font-weight:bold">Modelisation_C14>Hess_f_C14</a> (<a href="matlab: opentoline('/home/absobel/Bureau/N7/1A/Optimisation/TP1_Moindre_carré/Modelisation_C14.m',308,0)">line 308</a>)
+    H_res = [0 donnees(:,1)*exp(-beta(2)*donnees(:,1)); donnees(:,1).*exp(-beta(2)*donnees(:,1)) -beta(1)*donnees(:,1).^2.*exp(-beta(2)*donnees(:,1))];
 
-     0     0     0     0     0     0     0
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Modelisation_C14', '/home/absobel/Bureau/N7/1A/Optimisation/TP1_Moindre_carré/Modelisation_C14.m', 176)" style="font-weight:bold">Modelisation_C14</a> (<a href="matlab: opentoline('/home/absobel/Bureau/N7/1A/Optimisation/TP1_Moindre_carré/Modelisation_C14.m',176,0)">line 176</a>)
+[H, ~, ~] = Hess_f_C14(beta0, Donnees, ...
 
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
-     0     0     0     0     0     0     0
-
---------------------------------------------------------------------------------------------
+<a href="matlab:helpview('matlab','error_innerdim')" style="font-weight:bold">Related documentation</a>
+} 
