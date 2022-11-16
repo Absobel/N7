@@ -86,6 +86,7 @@ package body LCA is
 		else
 			Vider(Sda.All.Suivant);
 		end if;
+		Free(Sda);
 	end Vider;
 
 
