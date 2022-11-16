@@ -22,5 +22,6 @@ begin
     Enregistrer(Sda, To_Unbounded_String("un"), 1);
     Enregistrer(Sda, To_Unbounded_String("deux"), 2);
     Afficher_SDA(Sda);
+    Vider(Sda);
 
 end Lca_Sujet;
