@@ -30,14 +30,21 @@ package body LCA is
 
 
 	procedure Enregistrer (Sda : in out T_LCA ; Cle : in T_Cle ; Donnee : in T_Donnee) is
+		Aux: T_LCA := Sda;
+		Bool: Boolean := False;
 	begin
-		if Est_Vide(Sda) then
-			Sda := new T_Cellule'(Cle, Donnee, null);
-		elsif Sda.All.Cle = Cle then
-			Sda.All.Donnee := Donnee;
-		else
-			Enregistrer(Sda.All.Suivant, Cle, Donnee);
-		end if;
+		loop
+			if Est_Vide(Aux) then
+				Sda := new T_Cellule'(Cle, Donnee, Sda);
+				Bool := True;
+			elsif Aux.All.Cle = Cle then
+				Aux.All.Donnee := Donnee;
+				Bool := True;
+			else
+				Aux := Aux.All.Suivant;
+			end if;
+		exit when Bool;
+		end loop;
 	end Enregistrer;
 
 
@@ -91,17 +98,16 @@ package body LCA is
 
 
 	procedure Pour_Chaque (Sda : in T_LCA) is
+		Aux: T_LCA := Sda;
 	begin
-		if Est_Vide(Sda) then
-			Null;
-		else
+		while not Est_Vide(Aux) loop
 			begin
-				Traiter(Sda.All.Cle, Sda.All.Donnee);
+				Traiter(Aux.All.Cle, Aux.All.Donnee);
 			exception
 				when others => Put_Line("Erreur de traitement d'une clé et de la donnée associée.");
 			end;
-			Pour_Chaque(Sda.All.Suivant);
-		end if;
+			Aux := Aux.All.Suivant;
+		end loop;
 	end Pour_Chaque;
 
 
