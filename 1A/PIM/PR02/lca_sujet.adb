@@ -21,7 +21,10 @@ begin
     Initialiser(Sda);
     Enregistrer(Sda, To_Unbounded_String("un"), 1);
     Enregistrer(Sda, To_Unbounded_String("deux"), 2);
+    Put_Line("Avant supression :");Put_Line("Taille : " & Integer'Image(Taille(Sda)));
     Afficher_SDA(Sda);
+    Supprimer(Sda, To_Unbounded_String("un"));
+    Put_Line("Après supression :"); Afficher_SDA(Sda);
     Vider(Sda);
 
 end Lca_Sujet;
