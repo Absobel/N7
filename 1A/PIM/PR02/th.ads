@@ -4,8 +4,11 @@ generic
     CAPACITE: Integer;
     type T_Cle is private;
 	type T_Donnee is private;
-    with procedure Hashage (Cle: T_Cle) return Integer;
+    with function Hashage (Cle: T_Cle) return Integer;
 package TH is
+
+	package Lca_Str_Int is new LCA (T_Cle => T_Cle, T_Donnee => T_Donnee);
+	use Lca_Str_Int;
 
     type T_TH is limited private;
 
@@ -59,6 +62,6 @@ package TH is
 
 private
 
-    type TH is array(1..CAPACITE) of LCA.T_LCA;
+    type T_TH is array(1..CAPACITE) of T_LCA;
 
 end TH;

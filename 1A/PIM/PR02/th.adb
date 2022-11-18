@@ -1,13 +1,11 @@
 with Ada.Text_IO;            use Ada.Text_IO;
-with LCA;
 
 package body TH is
-    package LCA is new LCA(T_Cle => T_Cle, T_Donnee => T_Donnee);
 
     procedure Initialiser(Th: out T_TH) is
     begin
         for i in Th'Range loop
-            LCA.Initialiser(Th(i));
+            Lca_Str_Int.Initialiser(Th(i));
         end loop;
     end;
 
@@ -15,7 +13,7 @@ package body TH is
         res: Boolean := True;
     begin
         for i in Th'Range loop
-            res := res and LCA.Est_Vide(Th(i));
+            res := res and Lca_Str_Int.Est_Vide(Th(i));
         end loop;
         return res;
     end;
@@ -24,39 +22,46 @@ package body TH is
         res: Integer := 0;
     begin
         for i in Th'Range loop
-            res := res + LCA.Taille(Th(i));
+            res := res + Lca_Str_Int.Taille(Th(i));
         end loop;
         return res;
     end;
 
     procedure Enregistrer (Th : in out T_TH ; Cle : in T_Cle ; Donnee : in T_Donnee) is
     begin
-        LCA.Enregistrer(Th(Hashage(Cle)), Cle, Donnee);
+        Lca_Str_Int.Enregistrer(Th(Hashage(Cle)), Cle, Donnee);
     end;
 
     procedure Supprimer (Th : in out T_TH ; Cle : in T_Cle) is
     begin
-        LCA.Supprimer(Th(Hashage(Cle)), Cle);
+        Lca_Str_Int.Supprimer(Th(Hashage(Cle)), Cle);
+    end;
+
+    function Cle_Presente (Th : in T_TH ; Cle : in T_Cle) return Boolean is
+    begin
+        return Lca_Str_Int.Cle_Presente(Th(Hashage(Cle)), Cle);
     end;
 
     function La_Donnee (Th : in T_TH ; Cle : in T_Cle) return T_Donnee is
     begin
-        return LCA.La_Donnee(Th(Hashage(Cle)), Cle);
+        return Lca_Str_Int.La_Donnee(Th(Hashage(Cle)), Cle);
     end;
 
     procedure Vider (Th : in out T_TH) is
     begin
         for i in Th'Range loop
-            LCA.Vider(Th(i));
+            Lca_Str_Int.Vider(Th(i));
         end loop;
     end;
 
     procedure Pour_Chaque (Th : in T_TH) is
-        procedure LCA_Pour_Chaque is new LCA.Pour_Chaque(Traiter => Traiter);
+        procedure Lca_Str_Int_Pour_Chaque is new Lca_Str_Int.Pour_Chaque(Traiter => Traiter);
     begin
         for i in Th'Range loop
-            Put_Line("Hash : " & Integer'Image(i));
-            LCA_Pour_Chaque(Th(i));
+            if not Est_Vide(Th(i)) then
+                Put_Line("-- Hash : " & Integer'Image(i));
+            end if;
+            Lca_Str_Int_Pour_Chaque(Th(i));
         end loop;
     end;
 end TH;
