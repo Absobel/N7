@@ -4,7 +4,12 @@
 #include <stdbool.h>
 
 // Definition du type monnaie
-// TODO 
+struct monnaie {
+    int valeur;
+    char devise;
+};
+
+typedef struct monnaie monnaie;
 
 /**
  * \brief Initialiser une monnaie 
@@ -12,8 +17,9 @@
  * \pre 
  * // TODO
  */ 
-void initialiser(){
-    // TODO
+void initialiser(monnaie* m, int valeur, char devise) {
+    m->valeur = 0;
+    m->devise = '€';
 }
 
 
@@ -22,8 +28,13 @@ void initialiser(){
  * \param[]
  * // TODO
  */ 
-bool ajouter(){
-    // TODO
+bool ajouter(monnaie* m1, monnaie* m2) {
+    if (m1->devise == m2->devise) {
+        m1->valeur += m2->valeur;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
@@ -33,7 +44,10 @@ bool ajouter(){
  * // TODO
  */ 
 void tester_initialiser(){
-    // TODO
+    monnaie m;
+    initialiser(&m, 0, '€');
+    assert(m.valeur == 0);
+    assert(m.devise == '€');
 }
 
 /**
@@ -42,20 +56,37 @@ void tester_initialiser(){
  * // TODO
  */ 
 void tester_ajouter(){
-    // TODO
+    monnaie m1;
+    monnaie m2;
+    initialiser(&m1, 2, '€');
+    initialiser(&m2, 5, '€');
+    ajouter(&m1, &m2);
+    assert(m1.valeur == 7);
+    assert(m1.devise == '€');
 }
 
 
 
 int main(void){
     // Un tableau de 5 monnaies
-    // TODO
+    monnaie* tab_monnaie[5];
 
     //Initialiser les monnaies
-    // TODO
+    for (int i = 0; i < 5; i++) {
+        initialiser(tab_monnaie[i], 0, '€');
+    }
  
     // Afficher la somme des toutes les monnaies qui sont dans une devise entrée par l'utilisateur.
-    // TODO
+    char devise;
+    printf("Entrer une devise: ");
+    scanf("%c", &devise);
+    int somme = 0;
+    for (int i = 0; i < 5; i++) {
+        if (tab_monnaie[i]->devise == devise) {
+            somme += tab_monnaie[i]->valeur;
+        }
+    }
+    printf("La somme des monnaies dans la devise %c est %d", devise, somme);
 
     return EXIT_SUCCESS;
 }
