@@ -64,4 +64,24 @@ package body TH is
             Lca_Str_Int_Pour_Chaque(Th(i));
         end loop;
     end;
+
+    function Extremum(Th: T_TH) return T_Donnee is
+        function Lca_Extremum is new Lca_Str_Int.Extremum(Relation_Ordre => Relation_Ordre);
+        Extrem: T_Donnee;
+        bool : Boolean := False;   -- Est à 0 tant que Extrem 
+    begin
+        for i in 2..CAPACITE loop
+            if not Est_Vide(Th(i)) then 
+                if bool and then Relation_Ordre(Extrem, Lca_Extremum(Th(i))) then
+                    Extrem := Lca_Extremum(Th(i));
+                elsif not bool then
+                    Extrem := Lca_Extremum(Th(i));
+                    bool := True;
+                else
+                    null;
+                end if;
+            end if;
+        end loop;
+        return Extrem;
+    end;
 end TH;
