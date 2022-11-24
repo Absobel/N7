@@ -60,7 +60,7 @@ package body LCA is
 	end;
 
 
-	function La_Donnee (Sda : in T_LCA ; Cle : in T_Cle) return T_Donnee is              -- programmation défensive ???
+	function La_Donnee (Sda : in T_LCA ; Cle : in T_Cle) return T_Donnee is
 	begin
 		if Est_Vide(Sda) then
 			raise Cle_Absente_Exception;
@@ -110,5 +110,25 @@ package body LCA is
 		end loop;
 	end Pour_Chaque;
 
+	-- Function retournant la donnée la plus petite ou la plus grande suivant une relation d'ordre fournie par l'utilisateur
+	function Extremum(Sda: T_LCA) return T_Donnee is
+		Aux: T_LCA := Sda;
+		Extremum: T_Donnee;
+	begin
+		if Est_Vide(Aux) then
+			raise Cle_Absente_Exception;
+		else
+			Extremum := Aux.All.Donnee;
+			while not Est_Vide(Aux) loop
+				if Relation_Ordre(Extremum, Aux.all.Donnee) then
+					Extremum := Aux.All.Donnee;
+				else
+					null;
+				end if;
+				Aux := Aux.All.Suivant;
+			end loop;
+		end if;
+		return Extremum;
+	end;
 
 end LCA;
