@@ -60,6 +60,10 @@ package TH is
 		with procedure Traiter (Cle : in T_Cle; Donnee: in T_Donnee);
 	procedure Pour_Chaque (Th : in T_TH);
 
+	generic
+		with function Relation_Ordre(Donnee1: in T_Donnee; Donnee2: in T_Donnee) return Boolean;
+	function Extremum(Th: in T_TH) return T_Donnee;
+
 private
 
     type T_TH is array(1..CAPACITE) of T_LCA;

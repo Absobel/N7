@@ -25,7 +25,7 @@ Avantages :
 * Permet facilement de modifier la SDA grâce à l'utilisation des pointeurs.
 
 Inconvénients :
-* Programme plus lent.
+* Programme plus lent car on ne peut pas accéder directement aux données sans itéterer sur la liste jusqu'à trouver ce que la bonne clef.
 
 # �valuation exp�rimentale.
 
