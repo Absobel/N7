@@ -3,9 +3,24 @@ with Ada.Integer_Text_IO;  use Ada.Integer_Text_IO;
 with Ada.Command_Line;     use Ada.Command_Line;
 with SDA_Exceptions;       use SDA_Exceptions;
 with Alea;
+with TH;
 
--- Évaluer la qualité du générateur aléatoire et les TH.
+-- ï¿½valuer la qualitï¿½ du gï¿½nï¿½rateur alï¿½atoire et les TH.
 procedure Evaluer_Alea_TH is
+
+	CAPACITE : constant Integer := 100;
+
+    function Hashage(Cle: Integer) return Integer is
+    begin
+        return Cle mod CAPACITE+1;
+    end;
+
+    package TH_Str_Int is 
+        new TH (CAPACITE => CAPACITE, 
+                T_Cle => Integer, 
+                T_Donnee => Integer, 
+                Hashage => Hashage);
+    use TH_Str_Int;
 
 
 	-- Afficher l'usage.
@@ -14,14 +29,14 @@ procedure Evaluer_Alea_TH is
 		New_Line;
 		Put_Line ("Usage : " & Command_Name & " Borne Taille");
 		New_Line;
-		Put_Line ("   Borne  : les nombres sont tirés dans l'intervalle 1..Borne");
-		Put_Line ("   Taille : la taille de l'échantillon");
+		Put_Line ("   Borne  : les nombres sont tirï¿½s dans l'intervalle 1..Borne");
+		Put_Line ("   Taille : la taille de l'ï¿½chantillon");
 		New_Line;
 	end Afficher_Usage;
 
 
 	-- Afficher le Nom et la Valeur d'une variable.
-	-- La Valeur est affichée sur la Largeur_Valeur précisée.
+	-- La Valeur est affichï¿½e sur la Largeur_Valeur prï¿½cisï¿½e.
 	procedure Afficher_Variable (Nom: String; Valeur: in Integer; Largeur_Valeur: in Integer := 1) is
 	begin
 		Put (Nom);
@@ -30,37 +45,37 @@ procedure Evaluer_Alea_TH is
 		New_Line;
 	end Afficher_Variable;
 
-	-- Évaluer la qualité du générateur de nombre aléatoire Alea sur un
-	-- intervalle donné en calculant les fréquences absolues minimales et
-	-- maximales des entiers obtenus lors de plusieurs tirages aléatoires.
+	-- ï¿½valuer la qualitï¿½ du gï¿½nï¿½rateur de nombre alï¿½atoire Alea sur un
+	-- intervalle donnï¿½ en calculant les frï¿½quences absolues minimales et
+	-- maximales des entiers obtenus lors de plusieurs tirages alï¿½atoires.
 	--
-	-- Paramètres :
-	-- 	  Borne: in Entier	-- le nombre aléatoire est dans 1..Borne
-	-- 	  Taille: in Entier -- nombre de tirages (taille de l'échantillon)
-	-- 	  Min, Max: out Entier -- fréquence minimale et maximale
+	-- Paramï¿½tres :
+	-- 	  Borne: in Entier	-- le nombre alï¿½atoire est dans 1..Borne
+	-- 	  Taille: in Entier -- nombre de tirages (taille de l'ï¿½chantillon)
+	-- 	  Min, Max: out Entier -- frï¿½quence minimale et maximale
 	--
-	-- Nécessite :
+	-- Nï¿½cessite :
 	--    Borne > 1
 	--    Taille > 1
 	--
-	-- Assure : -- poscondition peu intéressante !
+	-- Assure : -- poscondition peu intï¿½ressante !
 	--    0 <= Min Et Min <= Taille
 	--    0 <= Max Et Max <= Taille
 	--    Min /= Max ==> Min + Max <= Taille
 	--
 	-- Remarque : On ne peut ni formaliser les 'vraies' postconditions,
-	-- ni écrire de programme de test car on ne maîtrise par le générateur
-	-- aléatoire.  Pour écrire un programme de test, on pourrait remplacer
-	-- le générateur par un générateur qui fournit une séquence connue
-	-- d'entiers et pour laquelle on pourrait déterminer les données
-	-- statistiques demandées.
-	-- Ici, pour tester on peut afficher les nombres aléatoires et refaire
-	-- les calculs par ailleurs pour vérifier que le résultat produit est
+	-- ni ï¿½crire de programme de test car on ne maï¿½trise par le gï¿½nï¿½rateur
+	-- alï¿½atoire.  Pour ï¿½crire un programme de test, on pourrait remplacer
+	-- le gï¿½nï¿½rateur par un gï¿½nï¿½rateur qui fournit une sï¿½quence connue
+	-- d'entiers et pour laquelle on pourrait dï¿½terminer les donnï¿½es
+	-- statistiques demandï¿½es.
+	-- Ici, pour tester on peut afficher les nombres alï¿½atoires et refaire
+	-- les calculs par ailleurs pour vï¿½rifier que le rï¿½sultat produit est
 	-- le bon.
 	procedure Calculer_Statistiques (
-		Borne    : in Integer;  -- Borne supérieur de l'intervalle de recherche
-		Taille   : in Integer;  -- Taille de l'échantillon
-		Min, Max : out Integer  -- min et max des fréquences de l'échantillon
+		Borne    : in Integer;  -- Borne supï¿½rieur de l'intervalle de recherche
+		Taille   : in Integer;  -- Taille de l'ï¿½chantillon
+		Min, Max : out Integer  -- min et max des frï¿½quences de l'ï¿½chantillon
 	) with
 		Pre => Borne > 1 and Taille > 1,
 		Post => 0 <= Min and Min <= Taille
@@ -71,20 +86,44 @@ procedure Evaluer_Alea_TH is
 			new Alea (1, Borne);
 		use Mon_Alea;
 
+		function Inferieur (A, B: Integer) return Boolean is 
+		begin
+			return (A < B);
+		end;
+		function Th_Min is new Extremum(Relation_Ordre => Inferieur);
+
+		function Superieur (A, B: Integer) return Boolean is
+		begin
+			return (A > B);
+		end;
+		function Th_Max is new Extremum(Relation_Ordre => Superieur);
+
+		Th: T_TH;               -- Table de hachage des frequences
+		Nombre_alea: Integer;     -- nombre alÃ©atoire
+		Donnee: Integer;          -- Variable qui retient la donnee du nombre alÃ©atoire pour l'incrÃ©menter
 	begin
-		null;	-- TODO à remplacer !
+		Initialiser(Th);
+		for i in 1 .. Borne loop             -- Initialiser la table avec des frÃ©quences nulles
+			Enregistrer(Th, i, 0);
+		end loop;
+		for i in 1 .. Taille loop                         -- Tirer les nombres alÃ©atoires
+			Get_Random_Number(Nombre_alea);
+			Donnee := La_Donnee(Th, Nombre_alea);
+			Enregistrer(Th, Nombre_alea, Donnee + 1);
+		end loop;
+		Min := Th_Min(Th);
+		Max := Th_Max(Th);
+		Vider(Th);
 	end Calculer_Statistiques;
 
-
-
-	Min, Max: Integer; -- fréquence minimale et maximale d'un échantillon
-	Borne: Integer;    -- les nombres aléatoire sont tirés dans 1..Borne
-	Taille: integer;   -- nombre de tirages aléatoires
+	Min, Max: Integer; -- frï¿½quence minimale et maximale d'un ï¿½chantillon
+	Borne: Integer;    -- les nombres alï¿½atoire sont tirï¿½s dans 1..Borne
+	Taille: integer;   -- nombre de tirages alï¿½atoires
 begin
 	if Argument_Count /= 2 then
 		Afficher_Usage;
 	else
-		-- Récupérer les arguments de la ligne de commande
+		-- Rï¿½cupï¿½rer les arguments de la ligne de commande
 		Borne := Integer'Value (Argument (1));
 		Taille := Integer'Value (Argument (2));
 
@@ -94,8 +133,11 @@ begin
 
 		Calculer_Statistiques (Borne, Taille, Min, Max);
 
-		-- Afficher les fréquence Min et Max
+		-- Afficher les frï¿½quence Min et Max
 		Afficher_Variable ("Min", Min);
 		Afficher_Variable ("Max", Max);
 	end if;
+exception
+	--when Constraint_Error => Afficher_Usage;
+	when Cle_Absente_Exception => Put_Line ("Erreur : Cle Absente. Nombre aleatoire hors borne.");
 end Evaluer_Alea_TH;

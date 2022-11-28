@@ -58,6 +58,9 @@ package LCA is
 		with procedure Traiter (Cle : in T_Cle; Donnee: in T_Donnee);
 	procedure Pour_Chaque (Sda : in T_LCA);
 
+	generic
+		with function Relation_Ordre(Donnee1: T_Donnee; Donnee2: T_Donnee) return Boolean;
+	function Extremum (Sda : in T_LCA) return T_Donnee;
 
 private
 
