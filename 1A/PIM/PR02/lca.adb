@@ -21,7 +21,7 @@ package body LCA is
 
 	function Taille (Sda : in T_LCA) return Integer is
 	begin
-		if Est_Vide(Sda) then
+		if Sda = null then
 			return 0;
 		else
 			return 1+Taille(Sda.All.Suivant);
@@ -31,10 +31,10 @@ package body LCA is
 
 	procedure Enregistrer (Sda : in out T_LCA ; Cle : in T_Cle ; Donnee : in T_Donnee) is
 		Aux: T_LCA := Sda;
-		Bool: Boolean := False;
+		Bool: Boolean := False; -- Permet de garder en mémoire si la donnée a été enregistrée pour pouvoir sortir de la boucle
 	begin
 		loop
-			if Est_Vide(Aux) then
+			if Aux = null then
 				Sda := new T_Cellule'(Cle, Donnee, Sda);
 				Bool := True;
 			elsif Aux.All.Cle = Cle then
@@ -50,7 +50,7 @@ package body LCA is
 
 	function Cle_Presente (Sda : in T_LCA ; Cle : in T_Cle) return Boolean is
 	begin
-		if Est_Vide(Sda) then
+		if Sda = null then
 			return False;
 		elsif Sda.All.Cle = Cle then
 			return True;
@@ -62,7 +62,7 @@ package body LCA is
 
 	function La_Donnee (Sda : in T_LCA ; Cle : in T_Cle) return T_Donnee is
 	begin
-		if Est_Vide(Sda) then
+		if Sda = null then
 			raise Cle_Absente_Exception;
 		elsif Sda.All.Cle = Cle then
 			return Sda.All.Donnee;
@@ -75,7 +75,7 @@ package body LCA is
 	procedure Supprimer (Sda : in out T_LCA ; Cle : in T_Cle) is
 		Aux: T_LCA := Sda;
 	begin
-		if Est_Vide(Sda) then
+		if Sda = null then
 			raise Cle_Absente_Exception;
 		elsif Sda.All.Cle = Cle then
 			Sda := Sda.All.Suivant;
@@ -88,7 +88,7 @@ package body LCA is
 
 	procedure Vider (Sda : in out T_LCA) is
 	begin
-		if Est_Vide(Sda) then
+		if Sda = null then
 			Free(Sda);
 		else
 			Vider(Sda.All.Suivant);
@@ -100,7 +100,7 @@ package body LCA is
 	procedure Pour_Chaque (Sda : in T_LCA) is
 		Aux: T_LCA := Sda;
 	begin
-		while not Est_Vide(Aux) loop
+		while not (Aux = null) loop
 			begin
 				Traiter(Aux.All.Cle, Aux.All.Donnee);
 			exception
@@ -115,11 +115,11 @@ package body LCA is
 		Aux: T_LCA := Sda;
 		Extremum: T_Donnee;
 	begin
-		if Est_Vide(Aux) then
+		if Aux = null then
 			raise Cle_Absente_Exception;
 		else
 			Extremum := Aux.All.Donnee;
-			while not Est_Vide(Aux) loop
+			while not (Aux = null) loop
 				if Relation_Ordre(Extremum, Aux.all.Donnee) then
 					Extremum := Aux.All.Donnee;
 				else
