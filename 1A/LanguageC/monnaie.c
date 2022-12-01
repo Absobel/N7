@@ -18,7 +18,7 @@ typedef struct monnaie monnaie;
  * \param[in out] m la monnaie a initialiser
  * \param[in] valeur la valeur de la monnaie
  * \param[in] devise la devise de la monnaie
- * \pre
+ * \pre valeur > 0
  * \post m.valeur = valeur et m.devise = devise
  */ 
 void initialiser(monnaie* m, int valeur, char devise) {
@@ -29,14 +29,15 @@ void initialiser(monnaie* m, int valeur, char devise) {
 
 /**
  * \brief Ajouter une monnaie m2 à une monnaie m1 
- * \param[in out] m1 la monnaie a laquelle on ajoute m2
- * \param[in] m2 la monnaie a ajouter
+ * \param[in out] m2 la monnaie a laquelle on ajoute m1
+ * \param[in] m1 la monnaie a ajouter
+ * \param[out] booleen indiquant si l'opération a réussie
  * \pre
- * \post m1.valeur = m1.valeur + m2.valeur
+ * \post non booleen ou m1.valeur = m1.valeur + m2.valeur
  */ 
 bool ajouter(monnaie* m1, monnaie* m2) {
-    if (m1->devise == m2->devise) {
-        m1->valeur += m2->valeur;
+    if (m2->devise == m1->devise) {
+        m2->valeur += m1->valeur;
         return true;
     } else {
         return false;
@@ -45,7 +46,7 @@ bool ajouter(monnaie* m1, monnaie* m2) {
 
 
 /**
- * \brief Tester Initialiser 
+ * \brief Programme de test pour l'initialisation 
  */ 
 void tester_initialiser() {
     monnaie m;
@@ -55,32 +56,21 @@ void tester_initialiser() {
 }
 
 /**
- * \brief Tester Ajouter 
+ * \brief Programme de test pour l'ajout  
  */ 
 void tester_ajouter() {
     monnaie m1, m2;
     initialiser(&m1, 10, 'E');
     initialiser(&m2, 5, 'E');
-    ajouter(&m1, &m2);
-    assert(m1.valeur == 15);
-    assert(m1.devise == 'E');
+    assert(ajouter(&m1, &m2));
+    assert(m2.valeur == 15);
     initialiser(&m2, 5, 'D');
     assert(!ajouter(&m1, &m2));
 }
 
 
 
-int main(void){
-    printf("Tester Initialiser\n");
-    tester_initialiser();
-    printf("Tester Ajouter\n");
-    tester_ajouter();
-
-    printf("\nTest tableau de monnaie : \n\n");
-    // Un tableau de TAILLE monnaies
-    monnaie porte_monnaie[TAILLE];
-
-    printf("Initialiser le tableau de monnaie : \n");
+void initialiser_tableau_monnaie(monnaie* tableau) {
     //Initialiser les monnaies
     for (int i = 0; i < 5; i++) {
         int valeur;
@@ -89,29 +79,35 @@ int main(void){
         scanf("%d", &valeur);
         printf("Devise de m%d : ", i);
         scanf(" %c", &devise);
-        initialiser(&porte_monnaie[i], valeur, devise);
+        initialiser(&tableau[i], valeur, devise);
     }
-    //Tester les initialisations
-    for (int i = 0; i < 5; i++) {
-        tester_initialiser(porte_monnaie[i], 0, 'e');
+}
+
+int somme_device_tableau(monnaie* tableau, char devise) {
+    int somme = 0;
+    for (int i = 0; i < TAILLE; i++) {
+        if (tableau[i].devise == devise) {
+            somme += tableau[i].valeur;
+        }
     }
+    return somme;
+}
+
+
+int main(void){
+    tester_initialiser();
+    tester_ajouter();
+
+    monnaie porte_monnaie[TAILLE];
+    printf("Initialisation du tableau de monnaie : \n\n");
+    initialiser_tableau_monnaie(porte_monnaie);
  
     // Afficher la somme des toutes les monnaies qui sont dans une devise entrée par l'utilisateur.
     char devise;
     printf("\nEntrer une devise: ");
-    scanf("%c", &devise);
-    int somme = 0;
-    for (int i = 1; i < 5; i++) {
-        ajouter(&porte_monnaie[0], &porte_monnaie[i]);
-    }
-    printf("\nLa somme des monnaies dans la devise %c est %d%c", devise, somme, devise);
-
-    // Tester ajouter
-    printf("Tester ajouter: ");
-    monnaie m1 = {0, 'y'};
-    monnaie m2 = {10, 'y'};
-    tester_ajouter(&m1, &m2);
-    printf("La somme des monnaies dans la devise %c est %d%c", devise, somme, devise);
+    scanf(" %c", &devise);
+    int somme = somme_device_tableau(porte_monnaie, devise);
+    printf("\nLa somme des monnaies dans la devise %c est %d%c\n", devise, somme, devise);
 
     return EXIT_SUCCESS;
 }
