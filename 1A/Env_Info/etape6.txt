@@ -1,7 +1,0 @@
-find Projets_C/ -name '*.c' | wc -l
-120
-find Projets_C/ -type d | wc -l
-37
-find Projets_C/ -name '*.c' -print | xargs grep printf | wc -l
-90
-find Projets_C/ -name '*.c' -print | xargs grep -l printf | xargs sed -e 's/printf/afficher/g' -i
