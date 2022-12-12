@@ -1,4 +1,0 @@
-Groupe mnop : faux
-Groupe ijkl : faux
-Grupe ABCD : correct
-Groupe efgh : faux
