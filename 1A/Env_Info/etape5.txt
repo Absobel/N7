@@ -1,8 +1,0 @@
-ls Projets_C | wc -w
-6
-ls Projets_C/* | wc -w
-66
-ls Projets_C/*/* | wc -w
-150
-ls Projets_C/*/*/*.c | xargs wc -w
-630

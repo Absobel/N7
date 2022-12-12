@@ -18,7 +18,7 @@ tiledlayout('flow');
 ax1 = nexttile;
 plot(t1,x1); hold on;
 % On peut retrouver la fréquence du cosinus car le critère de Shannon est respecté, il suffit de compter le nombre de périodes sur l'intervalle de temps considéré et diviser par le temps.
-
+    
 % 3 :
 Fe2 = 1000;
 Te2 = 1/Fe2;
@@ -55,7 +55,7 @@ ax3 = nexttile;
 cell_legend = cell(1,length(nN));
 for i = 1:nb_courbes
     nN = 2^nextpow2(nN+1);
-    nf = 0:Fe1/nN:(Fe1-Fe1/nN);
+    nf = linspace(0,Fe1,nN);
     semilogy(nf,abs(fft(x1,nN))); hold on;
     cell_legend{i} = sprintf("N' = %d",nN);
 end
