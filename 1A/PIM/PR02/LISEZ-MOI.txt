@@ -33,23 +33,80 @@ Inconvénients :
 
 Indiquer ici les r�sultats obtenus.
 
-...
+    > ./evaluer_alea_lca 1000 10000
+    Borne  : 1000
+    Taille : 10000
+    Min : 22
+    Max : 2
 
+    real	0m0,049s
+    user	0m0,049s
+    sys	0m0,000s
+
+    > ./evaluer_alea_th 1000 10000
+    Borne  : 1000
+    Taille : 10000
+    Min : 20
+    Max : 1
+
+    real	0m0,002s
+    user	0m0,002s
+    sys	0m0,000s
+
+
+    > ./evaluer_alea_lca 1000 100000
+    Borne  : 1000
+    Taille : 100000
+    Min : 134
+    Max : 68
+
+    real	0m0,428s
+    user	0m0,428s
+    sys	0m0,000s
+
+    > ./evaluer_alea_th 1000 100000
+    Borne  : 1000
+    Taille : 100000
+    Min : 132
+    Max : 69
+
+    real	0m0,013s
+    user	0m0,010s
+    sys	0m0,003s
+
+
+    > ./evaluer_alea_lca 1000 10000000
+    Borne  : 1000
+    Taille : 10000000
+    Min : 10349
+    Max : 9616
+
+    real	0m43,155s
+    user	0m43,130s
+    sys	0m0,004s
+
+    > ./evaluer_alea_th 1000 10000000
+    Borne  : 1000
+    Taille : 10000000
+    Min : 10393
+    Max : 9674
+
+    real	0m1,017s
+    user	0m1,016s
+    sys	0m0,000s
 
 ## Qualit� du g�n�rateur al�atoire
 
 Indiquer les conclusions quant � la qualit� du g�n�rateur al�atoire.
 
-...
-
-
+En terme de génération al�atoire, les deux implémentations sont équivalentes. En terme de performance, la table de hachage est beaucoup plus rapide que la liste chaînée.
 
 # Principales difficult�s rencontr�es
 
 Indiquer ici les principales difficult�s rencontr�es lors de la r�alisation de
 ce projet et comment elles ont �t� surmont�es ou contourn�eS.
 
-...
+La partie la plus compliquée a été de savoir où initiliser le package LCA dans le module TH. Mais après quelques essais j'ai trouvé qu'il fallait l'initialiser au début de th.ads
 
 
 
@@ -68,5 +125,5 @@ Cette partie peut �tre vide.
 
 Quel bilan personnel tirez vous de ce mini-projet ?
 
-...
+Ce mini-projet m'a principalement aidé a améliorer mon aisance à écrire du code en Ada.
 
