@@ -137,3 +137,8 @@ R4 : Comment déterminer si la ieme destination a un nombre d'appels plus petit 
     Fin Si
 ________________________________
 
+R0 : Vider le Cache
+
+R1 : Comment vider le cache
+    Vider(Cache.Liste)
+________________________________
