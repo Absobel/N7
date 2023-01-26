@@ -66,7 +66,7 @@ x_int11_3 = x_int11_2.^2;
 new_energie = (x_int11_1 + x_int11_3) - (x_int00_1 + x_int00_3);
 bits_1_detectes = new_energie > 0;
 difference = bits_1_detectes - bits;
-taux_erreur = length(find(difference ~= 0))/Nbits;
+taux_erreur = length(find(difference ~= 0))/Nbits
 
 
 
