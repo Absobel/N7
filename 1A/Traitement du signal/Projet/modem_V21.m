@@ -55,4 +55,4 @@ x_int11 = trapz(x_int1);
 new_energie = x_int11 - x_int00;
 bits_1_detectes = new_energie > 0;
 difference = bits_1_detectes - bits;
-taux_erreur = length(find(difference ~= 0))/Nbits;
+taux_erreur = length(find(difference ~= 0))/Nbits
