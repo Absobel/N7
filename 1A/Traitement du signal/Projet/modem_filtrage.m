@@ -2,7 +2,7 @@ clear all; close all; clc;
 
 
 % PARAMETRES
-Afficher = true;
+Afficher = false;
 
 Fe = 48000;             % Fréquence d'échantillonnage
 Rb = 300;               % Débit binaire
