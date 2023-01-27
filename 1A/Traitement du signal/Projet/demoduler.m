@@ -1,4 +1,10 @@
-function sortie = demoduler(signal)
+function sortie = demoduler(signal,Fe,Rb,F0,F1,theta0,theta1)
+    Te = 1/Fe;
+    Ts = 1/Rb;
+    Ns = floor(Ts/Te);
+
+    t = 0:Te:(length(signal)-1)*Te;
+    Nbits = floor(length(signal)/Ns);
 
     x_int0_0 = reshape(signal.*cos(2*pi*F0*t+theta0),Ns,Nbits);
     x_int00_0 = trapz(x_int0_0);

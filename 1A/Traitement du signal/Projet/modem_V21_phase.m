@@ -1,12 +1,17 @@
 clear all; close all; clc;
 
-% 3.1
-Fe = 48000;
+% PARAMÈTRES
+Fe = 48000;          % Fréquence d'échantillonage
+Rb = 300;            % Débit binaire
+Nbits = 1000;        % Nombre de bits à transmettre
+F0 = 1180;           % Fréquence des bits à 0 
+F1 = 980;            % Fréquence des bits à 0 
+SNR = 100;           % Rapport signal sur bruit en dB
+
+
 Te = 1/Fe;
-Rb = 300;
 Ts = 1/Rb;
 Ns = floor(Ts/Te);
-Nbits = 1000;
 
 bits = randi([0 1],1,Nbits);
 
@@ -17,22 +22,21 @@ t = 0:Te:(long-1)*Te;
 
 phi0 = rand*2*pi; phi1 = rand*2*pi;
 
-F0 = 1180; F1 = 980;
+
 x = (1-NRZ).*cos(2*pi*F0*t+phi0) + NRZ.*cos(2*pi*F1*t+phi1);
 
 N = length(x);
-%SNR = 5;
-SNR = 100; %5.6.2
 Px = mean(abs(x).^2);
 sigma = sqrt(Px/(10^(SNR/10)));
 bruit = sigma*randn(1,N);
 x_bruite = x + bruit;
 
-% 6.2
 
-% 6.2.1
 
 theta0 = rand*2*pi; theta1 = rand*2*pi;
+
+
+% TEST MODEM V21 AVEC CHANGEMENT DE PHASE
 
 x_int0 = reshape(x_bruite.*cos(2*pi*F0*t+theta0),Ns,Nbits);
 x_int00 = trapz(x_int0);
@@ -45,7 +49,7 @@ bits_1_detectes = new_energie > 0;
 difference = bits_1_detectes - bits;
 taux_erreur = length(find(difference ~= 0))/Nbits;
 
-% Erreur enorme en changeant de phase
+% MODEM V21 PHASE
 
 x_int0_0 = reshape(x_bruite.*cos(2*pi*F0*t+theta0),Ns,Nbits);
 x_int00_0 = trapz(x_int0_0);
