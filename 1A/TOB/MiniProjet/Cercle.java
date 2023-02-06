@@ -8,6 +8,9 @@ import java.awt.Color;
  */
 public class Cercle implements Mesurable2D {
     public static final double PI = Math.PI;
+    private Point centre;
+    private double rayon;
+    private Color couleur;
 
     /** Méthode de classe permettant de créer un cercle à partir du centre et d'un point sur le cercle. Sa couleur est bleue par défaut.
      * @param centre	Le centre du cercle.
@@ -15,22 +18,18 @@ public class Cercle implements Mesurable2D {
      * @return	Le cercle créé.
      */
     public static Cercle creerCercle(Point centre, Point p) {
+        assert centre != null : "Erreur : le centre est null";
+        assert p != null : "Erreur : le point est null";
         return new Cercle(centre, centre.distance(p));
     }
-
-
-
-
-
-    private Point centre;
-    private double rayon;
-    private Color couleur;
 
     /** Constructeur de la classe Cercle à partir de son centre et de son rayon. Sa couleur est bleue par défaut.
      * @param centre	Le centre du cercle.
      * @param rayon		Le rayon du cercle.
      */
     public Cercle(Point centre, double rayon) {
+        assert centre != null : "Erreur : le centre est null";
+        assert rayon > 0 : "Erreur : le rayon est négatif ou nul";
         this.centre = new Point(centre.getX(), centre.getY());
         this.rayon = rayon;
         this.couleur = Color.BLUE;
@@ -41,6 +40,9 @@ public class Cercle implements Mesurable2D {
      * @param p2	L'autre point du cercle.
      */
     public Cercle(Point p1, Point p2) {
+        assert p1 != null : "Erreur : le premier point est null";
+        assert p2 != null : "Erreur : le deuxième point est null";
+        assert !(p1.getX() == p2.getX() && p1.getY() == p2.getY()) : "Erreur : les deux points sont identiques";
         this.centre = new Point((p1.getX() + p2.getX()) / 2, (p1.getY() + p2.getY()) / 2);
         this.rayon = p1.distance(p2) / 2;
         this.couleur = Color.BLUE;
@@ -52,6 +54,10 @@ public class Cercle implements Mesurable2D {
      * @param couleur	La couleur du cercle.
      */
     public Cercle(Point p1, Point p2, Color couleur) {
+        assert p1 != null : "Erreur : le premier point est null";
+        assert p2 != null : "Erreur : le deuxième point est null";
+        assert !(p1.getX() == p2.getX() && p1.getY() == p2.getY()) : "Erreur : les deux points sont identiques";
+        assert couleur != null : "Erreur : la couleur est null";
         this.centre = new Point((p1.getX() + p2.getX()) / 2, (p1.getY() + p2.getY()) / 2);
         this.rayon = p1.distance(p2) / 2;
         this.couleur = couleur;
@@ -89,6 +95,7 @@ public class Cercle implements Mesurable2D {
      * @param rayon	Le nouveau rayon du cercle.
      */
     public void setRayon(double rayon) {
+        assert rayon > 0 : "Erreur : le rayon est négatif ou nul";
         this.rayon = rayon;
     }
 
@@ -96,6 +103,7 @@ public class Cercle implements Mesurable2D {
      * @param diametre	Le nouveau diamètre du cercle.
      */
     public void setDiametre(double diametre) {
+        assert diametre > 0 : "Erreur : le diamètre est négatif ou nul";
         this.rayon = diametre / 2;
     }
 
@@ -103,6 +111,7 @@ public class Cercle implements Mesurable2D {
      * @param couleur	La nouvelle couleur du cercle.
      */
     public void setCouleur(Color couleur) {
+        assert couleur != null : "Erreur : la couleur est null";
         this.couleur = couleur;
     }
 
@@ -118,6 +127,7 @@ public class Cercle implements Mesurable2D {
      * @return true si le point est à l'intérieur du cercle, false sinon.
      */
     public boolean contient(Point p) {
+        assert p != null : "Erreur : le point est null";
         return centre.distance(p) <= rayon;
     }
 
