@@ -1,6 +1,6 @@
-Nom       : 
-Prénom    : 
-Groupe TP : 
+Author : Absobel
+
+Groupe TP : H
 
 
 Consigne :  Ci-dessous, répondre à la place des « ... ».
@@ -8,7 +8,7 @@ Consigne :  Ci-dessous, répondre à la place des « ... ».
 
 =====[ Temps ]==================================================================
 
-Temps passé sur la V1 : 2 heures 35 minutes
+Temps passé sur la V1 : 4 heures 35 minutes
 Temps passé sur la V2 : ... heures ... minutes
 Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
 Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
@@ -25,7 +25,7 @@ Indiquer la relation UML entre Cercle et le Point centre du cercle.
 Comment est réalisée l'exigence E18 ?
 -------------------------------------
 
-...
+Elle est réalisée en mettant toutes les variables en private, ce qui empêche leur accès depuis l'extérieur de la classe sans utiliser les méthodes de la classe.
 
 
 
