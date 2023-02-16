@@ -1,9 +1,0 @@
-Q1 : Pour ne pas que ce soit redondant
-Q2 : piles.ads
-Q3 : - mot clef generic
-     - Capacite/T_Element
-     - package ... is new Piles(...); use ...;
-Q4 : definition dans piles.ads, spécification dans piles.ads, implémentation dans piles.adb
-Q5 : Donner le même nom a deux fonctions qui prennent des paramètres différents (comme Put)
-Q6 : Parce qu'on pourrait vouloir utiliser une pile sans avoir besoin de l'afficher
-Q7 : module.element
