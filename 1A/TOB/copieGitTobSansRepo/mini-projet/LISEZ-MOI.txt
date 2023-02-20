@@ -19,7 +19,7 @@ Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation
 Indiquer la relation UML entre Cercle et le Point centre du cercle.
 -------------------------------------------------------------------
 
-...
+La relation est la composition : la classe Cercle a un attribut de classe Point.
 
 
 Comment est réalisée l'exigence E18 ?
