@@ -11,6 +11,13 @@ public class EnsembleChaine implements Ensemble {
         cellule_initiale = null;
     }
 
+    /**
+     * Obtenir la cellule initiale.
+     */
+    public Cellule getCelluleInitiale() {
+        return cellule_initiale;
+    }
+
     // Les méthodes suivantes sont documentées dans Ensemble.java
 
     public int cardinal() {
