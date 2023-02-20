@@ -5,12 +5,12 @@ import static org.junit.Assert.*;
 import java.util.*;
 
 /**
-  * L'objectif de cette classe est de vérifier que la classe Cercle a été
-  * correctement programmée.
-  *
-  * @author	Xavier Crégut
-  * @version	$Revision$
-  */
+ * L'objectif de cette classe est de vérifier que la classe Cercle a été
+ * correctement programmée.
+ *
+ * @author Xavier Crégut
+ * @version $Revision$
+ */
 
 public class FormeCercleTest {
 
@@ -20,15 +20,13 @@ public class FormeCercleTest {
 	final static private Class<Cercle> cercle = Cercle.class;
 
 	private static Method getMethode(Class<?> c, String name, Class<?>... types)
-		throws NoSuchMethodException
-	{
+			throws NoSuchMethodException {
 		Method resultat = c.getMethod(name, types);
 		assertNotNull("méthode " + name + "(" + types + ") non déclarée !", resultat);
 		return resultat;
 	}
 
-	private void verifierTypeRetour(Method m, Class<?> expected)
-	{
+	private void verifierTypeRetour(Method m, Class<?> expected) {
 		// TODO : définir une méthode signatureToString() pour construire la
 		// signature de la méthode plutôt que d'utiliser getName
 		assertEquals("Erreur sur le type de retour de " + m.getName() + ".",
@@ -36,20 +34,19 @@ public class FormeCercleTest {
 	}
 
 	private static Field getAttribut(Class c, String name)
-		throws NoSuchFieldException
-	{
+			throws NoSuchFieldException {
 		try {
 			return c.getDeclaredField(name);
 		} catch (NoSuchFieldException e) {
 			fail("attribut non déclaré : " + name);
-			return null;	// jamais atteint
+			return null; // jamais atteint
 		}
 	}
 
 	private static List<Field> getAttributsInstance(Class c) {
 		ArrayList<Field> result = new ArrayList<Field>(5);
 		for (Field f : c.getDeclaredFields()) {
-			if (! Modifier.isStatic(f.getModifiers())) {
+			if (!Modifier.isStatic(f.getModifiers())) {
 				result.add(f);
 			}
 		}
@@ -57,8 +54,7 @@ public class FormeCercleTest {
 	}
 
 	private static void verifierConstanteClasse(Class c, String name)
-		throws NoSuchFieldException
-	{
+			throws NoSuchFieldException {
 		Field attr = getAttribut(c, name);
 		assertTrue(name + " : devrait être une constante !",
 				Modifier.isFinal(attr.getModifiers()));
@@ -68,18 +64,21 @@ public class FormeCercleTest {
 				Modifier.isPublic(attr.getModifiers()));
 	}
 
-	@Test public void testerE5() throws NoSuchMethodException {
-			// TODO : Il faudrait que getMethode signale le problème !
-			// On peut en effet construire le message à partir des paramètres reçus
+	@Test
+	public void testerE5() throws NoSuchMethodException {
+		// TODO : Il faudrait que getMethode signale le problème !
+		// On peut en effet construire le message à partir des paramètres reçus
 		Method contient = getMethode(cercle, "contient", Point.class);
 		verifierTypeRetour(contient, boolean.class);
 	}
 
-	@Test public void testerC12() throws Exception {
+	@Test
+	public void testerC12() throws Exception {
 		verifierConstanteClasse(cercle, "PI");
 	}
 
-	@Test public void testerC12ValeurPI() throws Exception {
+	@Test
+	public void testerC12ValeurPI() throws Exception {
 		Field pi = getAttribut(cercle, "PI");
 		pi.setAccessible(true);
 		assertTrue("Le type de PI doit être double",
@@ -95,8 +94,9 @@ public class FormeCercleTest {
 		}
 	}
 
-	@Test public void testerNombreAttributs() throws Exception {
-		int attendu = 3;	// nombre d'attributs d'instance attendus
+	@Test
+	public void testerNombreAttributs() throws Exception {
+		int attendu = 3; // nombre d'attributs d'instance attendus
 		int nbReel = getAttributsInstance(cercle).size();
 		assertFalse("Trop d'attributs d'instance : " + nbReel
 				+ " au lieu de " + attendu + " !", nbReel > attendu);
@@ -104,10 +104,11 @@ public class FormeCercleTest {
 				+ " au lieu de " + attendu + " !", nbReel < attendu);
 	}
 
-	@Test public void testAttributsPrives() throws Exception {
+	@Test
+	public void testAttributsPrives() throws Exception {
 		for (Field f : cercle.getDeclaredFields()) {
-			if (! Modifier.isFinal(f.getModifiers())) {
-				if (! Modifier.isFinal(f.getModifiers())) {
+			if (!Modifier.isFinal(f.getModifiers())) {
+				if (!Modifier.isFinal(f.getModifiers())) {
 					assertFalse("L'attribut " + f.getName() + " ne devrait pas être public !",
 							Modifier.isPublic(f.getModifiers()));
 					assertFalse("Attribut " + f + " : Pourquoi protected ?",
@@ -119,7 +120,8 @@ public class FormeCercleTest {
 		}
 	}
 
-	@Test public void testAttributsNomsAssezLongs() throws Exception {
+	@Test
+	public void testAttributsNomsAssezLongs() throws Exception {
 		for (Field f : cercle.getDeclaredFields()) {
 			String nom = f.getName();
 			assertTrue("C3: Nom trop court pour l'attribut " + nom, nom.length() > 1);
@@ -133,7 +135,8 @@ public class FormeCercleTest {
 				"point1", "point2", "c", "r", "c_aux");
 	}
 
-	@Test public void testAttributsNomsPeuSignificatifs() throws Exception {
+	@Test
+	public void testAttributsNomsPeuSignificatifs() throws Exception {
 		for (Field f : cercle.getDeclaredFields()) {
 			String nom = f.getName();
 			assertFalse("C3: Nom pas assez significatif pour l'attribut " + nom,
@@ -141,13 +144,14 @@ public class FormeCercleTest {
 		}
 	}
 
-
-	@Test public void testerE6() {
+	@Test
+	public void testerE6() {
 		assertTrue("Cercle devrait être un Mesurable2D !",
 				Mesurable2D.class.isAssignableFrom(cercle));
 	}
 
-	@Test public void testerE6bis() {
+	@Test
+	public void testerE6bis() {
 		boolean trouve = false;
 		for (Class<?> i : cercle.getInterfaces()) {
 			trouve = trouve || i == Mesurable2D.class;
@@ -155,7 +159,8 @@ public class FormeCercleTest {
 		assertTrue("Cercle doit directement réaliser Mesurable2D !", trouve);
 	}
 
-	@Test public void testerNbConstructeurs() {
+	@Test
+	public void testerNbConstructeurs() {
 		int nbAttendu = 3;
 		int nbConstructeurs = cercle.getConstructors().length;
 		assertFalse("Trop de constructeurs : " + nbConstructeurs,
@@ -164,7 +169,8 @@ public class FormeCercleTest {
 				nbConstructeurs < nbAttendu);
 	}
 
-	@Test public void testerE14() throws Exception {
+	@Test
+	public void testerE14() throws Exception {
 		Method creerCercle = null;
 		try {
 			creerCercle = getMethode(cercle, "creerCercle", Point.class,
@@ -179,7 +185,8 @@ public class FormeCercleTest {
 				Modifier.isStatic(modifieurs));
 	}
 
-	@Test public void testerContructeurDefaut() {
+	@Test
+	public void testerContructeurDefaut() {
 		try {
 			Constructor<Cercle> defaut = cercle.getConstructor();
 			fail("Pourquoi définir un constructeur par défaut sur Cercle ?");
