@@ -1,0 +1,139 @@
+\documentclass[frenchb]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+%Pour utilisation sous unix
+%\usepackage[utf8]{inputenc}
+%\usepackage[utf8x]{inputenc}
+\usepackage{a4wide}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{babel}
+
+\begin{document}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=5cm]{inp_n7.png}
+\end{figure}
+
+\title{\vspace{4cm} \textbf{Titre du rapport}}
+\author{Nom des auteurs\\ }
+\date{\vspace{7cm} Département Sciences du Numérique - Première année \\
+2022-2023 }
+
+\maketitle
+
+\newpage
+\tableofcontents
+\listoffigures
+
+\newpage
+\section{Introduction}
+L'objectif de ce projet était de ...
+
+\section{Modem de fréquence}
+    \subsection{Construction du signal modulé en fréquence} \label{sec:signal}
+    La première étape du projet consiste à réaliser la modulation de fréquence, i.e. transformer l'information binaire à transmettre en un signal modulé en fréquence (exemple sur la figure \ref{fig : signalFSK}).\\
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=8cm]{SignalFSK.png}
+            \caption{Signal modulé en fréquence \label{fig : signalFSK}}
+        \end{figure}
+    
+    Le signal modulé en fréquence $x(t)$ est généré de la manière suivante :
+            \begin{equation} \label{signal_mod_freq}
+            x(t)=(1-NRZ(t)) \times \cos(2 \pi F_0 t+\phi_0) + NRZ(t) \times \cos(2 \pi F_1 t+\phi_1)
+            \end{equation}
+    où $NRZ(t)$ est un signal de type NRZ polaire formé à partir de la suite de bits à transmettre en codant les $0$ et les $1$ par des niveaux $0$ et $1$ de durée $T_s$ secondes. $\phi_0$ et $\phi_1$ sont des variables aléatoires indépendantes uniformément réparties sur $\left[0, 2 \pi\right]$ qui peuvent être obtenues sous matlab en utilisant \emph{rand*2*pi}.
+
+        \subsubsection{Génération du signal NRZ}
+            \begin{enumerate}
+                \item
+                \item
+                \item
+            \end{enumerate}
+
+        \subsubsection{Génération du signal modulé en fréquence}
+            \begin{itemize}
+                \item
+                \item
+                \item
+            \end{itemize}
+%\newpage
+\section{Canal de transmission à bruit additif, blanc et Gaussien} \label{sec:canal}
+    Nous allons considérer que le canal de propagation ajoute au signal émis un bruit que l'on suppose blanc et Gaussien et qui modélise les perturbations introduites. \\
+    La puissance du bruit Gaussien à ajouter devra être déduite du rapport signal sur bruit (SNR : Signal to Noise Ratio) souhaité pour la transmission donné en dB :
+    $$
+    SNR_{dB}=10 \log_{10} \frac{P_x}{P_b}
+    $$
+    où $P_x$ représente la puissance du signal modulé en fréquence et $P_b$ la puissance du bruit ajouté.
+
+\section{Démodulation par filtrage}
+    La figure \ref{fig : demod_filtrage} présente le récepteur implanté pour retrouver, à partir du signal modulé en fréquence bruité, le message binaire envoyé.
+
+    \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=14cm]{demod_filtrage.png}
+        \caption{Démodulation par filtrage. \label{fig : demod_filtrage}}
+     \end{figure}
+
+    Un filtre passe-bas permet de filtrer les morceaux de cosinus à la fréquence $F_0=6000$Hz, tandis qu'un filtre passe-haut permet de filtrer les morceaux de cosinus à la fréquence $F_1=2000$Hz. Une détection d'énergie réalisée tous les $T_s$ secondes permet de récupérer, à partir des signaux filtrés, les bits $0$ et $1$ transmis.\\
+
+        \subsection{Synthèse du filtre passe-bas}
+        A COMPLETER
+
+        \subsection{Synthèse du filtre passe-haut}
+        A COMPLETER
+
+        \subsection{Résultats obtenus avec un ordre des filtres de $61$}
+        A COMPLETER
+
+        \subsection{Modification de l'ordre des filtres}
+        A COMPLETER
+        
+        \subsection{Utilisation des fréquences de la recommandation V21}
+        A COMPLETER
+        
+\section{Démodulateur de fréquence adapté à la norme V21}
+    \subsection{Contexte de synchronisation idéale}
+    La figure \ref{fig : demod_FSK} présente le récepteur implanté afin de retrouver, dans un contexte de synchronisation idéale, le message binaire envoyé à partir du signal modulé en fréquence suivant la recommandation V$21$.   
+    \begin{figure}[ht!]
+        \centering
+        \includegraphics[width=12cm]{demod_FSK1.png}
+        \caption{Démodulation FSK. Synchronisation supposée idéale. \label{fig : demod_FSK}}
+     \end{figure}
+
+    \subsubsection{Principe de fonctionnement de ce récepteur}
+    A COMPLETER
+    
+    \subsubsection{Résultats obtenus}
+    A COMPLETER
+
+
+    \subsection{Gestion d'une erreur de synchronisation de phase porteuse}
+    Le problème de la synchronisation entre l'émetteur et le récepteur est un problème important lorsque l'on réalise une transmission. Les deux doivent être parfaitement synchronisés en temps et en fréquence pour que le démodulateur implanté précédemment fonctionne, ce qui en pratique n'est bien entendu pas possible.
+    Afin que le modem puisse continuer à fonctionner en présence d'une erreur de phase porteuse, celui-ci doit être modifié. La figure \ref{fig : demod_FSK2} présente un démodulateur permettant de s'affranchir de problèmes de synchronisation de phase entre les oscillateurs d'émission et de réception.
+        \begin{figure}[ht!]
+    		\centering
+    		\includegraphics[width=14cm]{demod_FSK2.png}
+    		\caption{Démodulation FSK - Gestion d'une erreur de phase porteuse. 
+    		\label{fig : demod_FSK2}}
+ 		\end{figure}
+
+    \subsubsection{Impact d'une erreur de phase porteuse sur le modem implanté précédemment}
+    A COMPLETER
+    
+    \subsubsection{Principe de fonctionnement de cette nouvelle version du modem de fréquence}
+    A COMPLETER (comment ce nouveau démodulateur permet il de gérer une erreur de phase porteuse)
+    
+    \subsubsection{Résultats obtenus}
+    A COMPLETER
+
+\section{Conclusion}
+A COMPLETER
+
+\section{Références}
+A COMPLETER
+
+\end{document} 
