@@ -1,0 +1,276 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.7.11)  28 SEP 2022 12:24
+entering extended mode
+**exemple_trame_rapport.tex
+
+("C:\Users\thomas\Documents\2-ENSEIGNEMENT\SIGNAL\1- FRANCAIS\4-PROJETS\MODEM\E
+XEMPLE RAPPORT TEX\exemple_trame_rapport.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+(C:\irit-programmes\miktexp\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(C:\irit-programmes\miktexp\tex\latex\base\size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\irit-programmes\miktexp\tex\latex\base\fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(C:\irit-programmes\miktexp\tex\latex\base\t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(C:\irit-programmes\miktexp\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(C:\irit-programmes\miktexp\tex\latex\base\latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(C:\irit-programmes\miktexp\tex\latex\a4wide\a4wide.sty
+Package: a4wide 1994/08/30
+
+("C:\Users\thomas\Documents\2-ENSEIGNEMENT\SIGNAL\1- FRANCAIS\4-PROJETS\MODEM\E
+XEMPLE RAPPORT TEX\a4.sty"
+Package: a4 1999/03/03 v1.2f A4 based page layout
+))
+(C:\irit-programmes\miktexp\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\irit-programmes\miktexp\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(C:\irit-programmes\miktexp\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\irit-programmes\miktexp\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\irit-programmes\miktexp\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(C:\irit-programmes\miktexp\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(C:\irit-programmes\miktexp\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(C:\irit-programmes\miktexp\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(C:\irit-programmes\miktexp\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(C:\irit-programmes\miktexp\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(C:\irit-programmes\miktexp\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(C:\irit-programmes\miktexp\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(C:\irit-programmes\miktexp\tex\generic\babel\babel.sty
+Package: babel 2008/07/08 v3.8m The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\irit-programmes\miktexp\tex\latex\00miktex\bblopts.cfg
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(C:\irit-programmes\miktexp\tex\generic\babel\frenchb.ldf
+Language: frenchb 2009/03/16 v2.3d French support from the babel system
+
+(C:\irit-programmes\miktexp\tex\generic\babel\babel.def
+File: babel.def 2008/07/08 v3.8m Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen105
+)
+Package babel Info: Making : an active character on input line 120.
+Package babel Info: Making ; an active character on input line 121.
+Package babel Info: Making ! an active character on input line 122.
+Package babel Info: Making ? an active character on input line 123.
+\FB@Mht=\dimen106
+\std@mcc=\count89
+\dec@mcc=\count90
+\parindentFFN=\dimen107
+
+*************************************
+* Local config file frenchb.cfg used
+*
+(C:\irit-programmes\miktexp\tex\generic\babel\frenchb.cfg)))
+(C:\irit-programmes\miktexp\tex\latex\carlisle\scalefnt.sty)
+No file exemple_trame_rapport.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+(C:\irit-programmes\miktexp\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen108
+\scratchbox=\box26
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen109
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Info: Redefining \degres on input line 13.
+LaTeX Info: Redefining \dots on input line 13.
+LaTeX Info: Redefining \up on input line 13.
+ <inp_n7.png, id=1, 428.35031pt x 69.25874pt>
+File: inp_n7.png Graphic file (type png)
+ <use inp_n7.png>
+Package pdftex.def Info: inp_n7.png used on input line 17.
+(pdftex.def)             Requested size: 142.26378pt x 23.00233pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 25.
+
+(C:\irit-programmes\miktexp\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 25.
+
+(C:\irit-programmes\miktexp\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [1
+
+{C:/irit-programmes/miktexp/pdftex/config/pdftex.map} <C:/Users/thomas/Document
+s/2-ENSEIGNEMENT/SIGNAL/1- FRANCAIS/4-PROJETS/MODEM/EXEMPLE RAPPORT TEX/inp_n7.
+png>]
+No file exemple_trame_rapport.toc.
+\tf@toc=\write3
+No file exemple_trame_rapport.lof.
+\tf@lof=\write4
+[2]
+
+LaTeX Warning: Reference `fig : signalFSK' on page 3 undefined on input line 37
+.
+
+<SignalFSK.png, id=14, 467.346pt x 274.1442pt>
+File: SignalFSK.png Graphic file (type png)
+ <use SignalFSK.png>
+Package pdftex.def Info: SignalFSK.png used on input line 40.
+(pdftex.def)             Requested size: 227.62204pt x 133.5203pt.
+ [3 <C:/Users/thomas/Documents/2-ENSEIGNEMENT/SIGNAL/1- FRANCAIS/4-PROJETS/MODE
+M/EXEMPLE RAPPORT TEX/SignalFSK.png>]
+
+LaTeX Warning: Reference `fig : demod_filtrage' on page 4 undefined on input li
+ne 73.
+
+<demod_filtrage.png, id=29, 620.5584pt x 158.994pt>
+File: demod_filtrage.png Graphic file (type png)
+ <use demod_filtrage.png>
+Package pdftex.def Info: demod_filtrage.png used on input line 77.
+(pdftex.def)             Requested size: 398.33858pt x 102.0615pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--82
+
+ []
+
+
+LaTeX Warning: Reference `fig : demod_FSK' on page 4 undefined on input line 10
+0.
+
+<demod_FSK1.png, id=30, 468.3096pt x 267.8808pt>
+File: demod_FSK1.png Graphic file (type png)
+ <use demod_FSK1.png>
+Package pdftex.def Info: demod_FSK1.png used on input line 103.
+(pdftex.def)             Requested size: 341.43306pt x 195.31427pt.
+ [4 <C:/Users/thomas/Documents/2-ENSEIGNEMENT/SIGNAL/1- FRANCAIS/4-PROJETS/MODE
+M/EXEMPLE RAPPORT TEX/demod_filtrage.png>]
+
+LaTeX Warning: Reference `fig : demod_FSK2' on page 5 undefined on input line 1
+16.
+
+<demod_FSK2.png, id=36, 608.9952pt x 358.941pt>
+File: demod_FSK2.png Graphic file (type png)
+ <use demod_FSK2.png>
+Package pdftex.def Info: demod_FSK2.png used on input line 119.
+(pdftex.def)             Requested size: 398.33858pt x 234.78766pt.
+ [5 <C:/Users/thomas/Documents/2-ENSEIGNEMENT/SIGNAL/1- FRANCAIS/4-PROJETS/MODE
+M/EXEMPLE RAPPORT TEX/demod_FSK1.png>] [6 <C:/Users/thomas/Documents/2-ENSEIGNE
+MENT/SIGNAL/1- FRANCAIS/4-PROJETS/MODEM/EXEMPLE RAPPORT TEX/demod_FSK2.png>]
+("C:\Users\thomas\Documents\2-ENSEIGNEMENT\SIGNAL\1- FRANCAIS\4-PROJETS\MODEM\E
+XEMPLE RAPPORT TEX\exemple_trame_rapport.aux")
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2458 strings out of 494045
+ 31744 string characters out of 3150865
+ 85658 words of memory out of 3000000
+ 5715 multiletter control sequences out of 15000+200000
+ 17510 words of font info for 50 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 27i,7n,24p,407b,233s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\irit-programmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> 
+<C:\irit-programmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1000.pk> <C:
+\irit-programmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\ir
+it-programmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\irit-
+programmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\irit-pro
+grammes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\irit-progra
+mmes\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\irit-programme
+s\miktexp\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1728.pk><C:/irit-programmes/mi
+ktexp/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/irit-programmes/miktexp/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb><C:/irit-programmes/miktexp/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/irit-programmes/miktexp/fonts/type1/public/amsf
+onts/cm/cmr12.pfb><C:/irit-programmes/miktexp/fonts/type1/public/amsfonts/cm/cm
+r7.pfb><C:/irit-programmes/miktexp/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on exemple_trame_rapport.pdf (6 pages, 276017 bytes).
+PDF statistics:
+ 313 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+
