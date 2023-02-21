@@ -1,0 +1,23 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Modem de fr\'equence}{3}
+\contentsline {subsection}{\numberline {2.1}Construction du signal modul\'e en fr\'equence}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}G\'en\'eration du signal NRZ}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}G\'en\'eration du signal modul\'e en fr\'equence}{3}
+\contentsline {section}{\numberline {3}Canal de transmission \`a bruit additif, blanc et Gaussien}{3}
+\contentsline {section}{\numberline {4}D\'emodulation par filtrage}{4}
+\contentsline {subsection}{\numberline {4.1}Synth\`ese du filtre passe-bas}{4}
+\contentsline {subsection}{\numberline {4.2}Synth\`ese du filtre passe-haut}{4}
+\contentsline {subsection}{\numberline {4.3}R\'esultats obtenus avec un ordre des filtres de $61$}{4}
+\contentsline {subsection}{\numberline {4.4}Modification de l'ordre des filtres}{4}
+\contentsline {subsection}{\numberline {4.5}Utilisation des fr\'equences de la recommandation V21}{4}
+\contentsline {section}{\numberline {5}D\'emodulateur de fr\'equence adapt\'e \`a la norme V21}{5}
+\contentsline {subsection}{\numberline {5.1}Contexte de synchronisation id\'eale}{5}
+\contentsline {subsubsection}{\numberline {5.1.1}Principe de fonctionnement de ce r\'ecepteur}{5}
+\contentsline {subsubsection}{\numberline {5.1.2}R\'esultats obtenus}{5}
+\contentsline {subsection}{\numberline {5.2}Gestion d'une erreur de synchronisation de phase porteuse}{5}
+\contentsline {subsubsection}{\numberline {5.2.1}Impact d'une erreur de phase porteuse sur le modem implant\'e pr\'ec\'edemment}{5}
+\contentsline {subsubsection}{\numberline {5.2.2}Principe de fonctionnement de cette nouvelle version du modem de fr\'equence}{5}
+\contentsline {subsubsection}{\numberline {5.2.3}R\'esultats obtenus}{6}
+\contentsline {section}{\numberline {6}Conclusion}{6}
+\contentsline {section}{\numberline {7}R\'ef\'erences}{6}
