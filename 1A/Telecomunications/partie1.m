@@ -9,6 +9,8 @@ Tb = 1/Rb;
 nbits = 1000;
 bits = randi([0 1],1,nbits);
 
+%%%%%%%% 2 %%%%%%%%
+
 % Modulateur 1
 % -------------
 
@@ -28,6 +30,7 @@ t_correct1 = (0:Te:(length(signal_genere1)-1)*Te)/n;
 dsp_signal1 = pwelch(signal_genere1,[],[],[],Fe,'centered');
 f1 = linspace(-Fe/2,Fe/2,length(dsp_signal1));
 
+% dssignal1_th = ...
 
 % Modulateur 2
 % -------------
@@ -63,6 +66,7 @@ t_correct2 = (0:Te:(length(signal_genere2)-1)*Te)/n;
 dsp_signal2 = pwelch(signal_genere2,[],[],[],Fe,'centered');
 f2 = linspace(-Fe/2,Fe/2,length(dsp_signal2));
 
+% dssignal2_th = ...
 
 % Modulateur 3
 % -------------
@@ -86,44 +90,130 @@ t_correct3 = (0:Te:(length(signal_genere3)-1)*Te)/n;
 dsp_signal3 = pwelch(signal_genere3,[],[],[],Fe,'centered');
 f3 = linspace(-Fe/2,Fe/2,length(dsp_signal3));
 
+sigma = 1;
+dsp_signal3_th = sigma^2/Ts*ones(1,length(f3));
+for i = 1:length(f3)
+    if abs(f3(i)) <= (1-alpha)/(2*Ts)
+        dsp_signal3_th(i) = dsp_signal3_th(i)*Ts;
+    elseif abs(f3(i)) <= (1+alpha)/(2*Ts)
+        dsp_signal3_th(i) = dsp_signal3_th(i)*Ts*(1+cos(pi*Ts/alpha*(abs(f3(i))-(1-alpha)/(2*Ts))))/2;
+    else
+        dsp_signal3_th(i) = 0;
+    end
+end
+
+
+
+
+
+
+
+
+%%%%%%%% 3 %%%%%%%%
+
+Fe = 24000;
+Te = 1/Fe;
+Rb = 3000;
+Tb = 1/Rb;
+Ts = Tb;
+Ns = floor(Tb/Te); % car mapping binaire avec filtre rectangulaire de durée égale à la durée symbole
+nbits = 1000;
+
+bits = randi([0 1],1,nbits);
+h = ones(1,Ns);
+g = conv(h,h);
+
+ak = 2*bits-1;
+x = kron(ak,[1 zeros(1,Ns-1)]);
+z = filter(g,1,x);
+
+z_echant = zeros(1,length(z));
+for i = Ns:Ns:length(z)
+    z_echant(i:(i+Ns-1)) = z(i);
+end
+
+decisions = z(Ns:Ns:end)>0;
+erreur_n0_Ns = sum(decisions~=bits)/length(bits);
+
+decisions = z(3:Ns:end)>0;
+erreur_n0_3 = sum(decisions~=bits)/length(bits);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 % plot 
 
-% Modulateur 1
+% %%%%%%%% 2 %%%%%%%%
 
-figure(1)
-tiledlayout("flow")
+% % Modulateur 1
 
-ax1 = nexttile;
-plot(t_correct1,signal_genere1)
-title('Signal généré par le modulateur 1')
+% figure(1)
+% tiledlayout("flow")
 
-ax2 = nexttile;
-semilogy(f1, dsp_signal1);
-title('DSP du signal généré par le modulateur 1');
+% ax1 = nexttile;
+% plot(t_correct1,signal_genere1)
+% title('Signal généré par le modulateur 1')
 
-% Modulateur 2
+% ax2 = nexttile;
+% semilogy(f1, dsp_signal1);
+% title('DSP du signal généré par le modulateur 1');
 
-figure(2)
-tiledlayout("flow")
+% % Modulateur 2
 
-ax1 = nexttile;
-plot(t_correct2,signal_genere2)
-title('Signal généré par le modulateur 2')
+% figure(2)
+% tiledlayout("flow")
 
-ax2 = nexttile;
-semilogy(f2, dsp_signal2);
-title('DSP du signal généré par le modulateur 2');
+% ax1 = nexttile;
+% plot(t_correct2,signal_genere2)
+% title('Signal généré par le modulateur 2')
 
-% Modulateur 3
+% ax2 = nexttile;
+% semilogy(f2, dsp_signal2);
+% title('DSP du signal généré par le modulateur 2');
 
-figure(3)
-tiledlayout("flow")
+% % Modulateur 3
 
-ax1 = nexttile;
-plot(t_correct3,signal_genere3)
-title('Signal généré par le modulateur 3')
+% figure(3)
+% tiledlayout("flow")
 
-ax2 = nexttile;
-semilogy(f3, dsp_signal3);
-title('DSP du signal généré par le modulateur 3');
+% ax1 = nexttile;
+% plot(t_correct3,signal_genere3)
+% title('Signal généré par le modulateur 3')
+
+% ax2 = nexttile;
+% semilogy(f3, dsp_signal3); hold on;
+% semilogy(f3, dsp_signal3_th); hold off;
+% title('DSP du signal généré par le modulateur 3');
+% legend('DSP','DSP théorique')
+
+% %%%%%%%% 3 %%%%%%%%
+
+% figure(1)
+% tiledlayout("flow")
+
+% ax1 = nexttile;
+% plot(z_echant);
+% title('Signal généré par filtre h et hr échantilloné tous les Ns');
+
+% %figure(2)
+% %ax1 = nexttile;
+% %plot(reshape(z(Ns+1:end),Ns,(length(z)-Ns)/Ns));
+% eyediagram(z(Ns+1:end),2*Ns,2*Ns,Ns-1)
+
+% %eyediagram(z,Ns);
+
+% figure(3)
+% ax1 = nexttile;
+% plot(z);
+% title('Signal généré par filtre h et hr);
