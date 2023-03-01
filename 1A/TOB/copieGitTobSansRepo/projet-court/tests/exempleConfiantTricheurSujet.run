@@ -1,4 +1,0 @@
-java allumettes.Jouer -confiant Ordinateur@rapide Tricheur@tricheur << EOF
-EOF
-
-
