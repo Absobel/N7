@@ -3,7 +3,7 @@ package allumettes;
 public interface Jeu {
 
 	/** Nombre maximal d'allumettes pouvant être prises. */
-	int PRISE_MAX = 3;
+	static int PRISE_MAX = 3;
 
 	/** Obtenir le nombre d'allumettes encore en jeu.
 	 * @return nombre d'allumettes encore en jeu
