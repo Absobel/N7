@@ -1,6 +1,6 @@
-Nom       : 
-Prénom    : 
-Groupe TP : 
+Author : Absobel
+
+Groupe TP : H
 
 Les « ... » indiquent les endroits à compléter.
 
