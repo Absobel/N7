@@ -22,11 +22,13 @@ for i = Ns:Ns:length(z)
     z_echant(i:(i+Ns-1)) = z(i);
 end
 
-decisions = z(Ns:Ns:end)>0;
-erreur_n0_Ns = sum(decisions~=bits)/length(bits);
+decisions = z_echant(Ns:Ns:end)>0;
+erreur_n0_Ns = sum(decisions~=bits)/length(bits)
 
-decisions = z(3:Ns:end)>0;
-erreur_n0_3 = sum(decisions~=bits)/length(bits);
+decisions = z_echant(3:Ns:end)>0;
+size(bits)
+size(decisions)
+erreur_n0_3 = sum(decisions~=bits)/length(bits)
 
 
 
