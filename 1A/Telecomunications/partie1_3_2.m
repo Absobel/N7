@@ -32,7 +32,7 @@ function [] = tout(BW)
         z_echant(i:(i+Ns-1)) = z(i);
     end
 
-    decisions = z(Ns:Ns:end)>0;
+    decisions = z_echant(Ns:Ns:end)>0;
     erreur_n0_Ns = sum(decisions~=bits)/length(bits)
 
     % plot
