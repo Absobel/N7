@@ -17,4 +17,12 @@ function Q = mgs(A)
     % Algorithme de Gram-Schmidt modifie
     %------------------------------------------------
 
+    for j = 1:m
+        Q(:,j) = Q(:,j)/norm(Q(:,j));
+        for i = j+1:m
+            Q(:,i) = Q(:,i) - dot(Q(:,j),Q(:,i))*Q(:,j);  % dot()
+            %Q(:,i) = Q(:,i) - (Q(:,j)'*Q(:,i))*Q(:,j);  % produit scalaire
+        end
+    end
+
 end
