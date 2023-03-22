@@ -117,7 +117,6 @@ function [taux_erreur] = demapping(nb_chaine,signal_echantillion, bits, Ns)
     if nb_chaine == 1 || nb_chaine == 2
         decisions = signal_echantillion(Ns:Ns:end)>0;
     elseif nb_chaine == 3
-        signal_echantillion
         decisions = signal_echantillion(Ns:Ns/2:end)>0;
     end
     taux_erreur = sum(decisions~=bits)/length(bits);
