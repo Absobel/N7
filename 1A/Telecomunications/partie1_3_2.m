@@ -2,7 +2,7 @@ clear all; close all; clc;
 
 
 tout(1000)
-tout(100000)
+tout(8000)
 
 
 function [] = tout(BW)
