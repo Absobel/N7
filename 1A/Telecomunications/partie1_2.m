@@ -40,22 +40,10 @@ Ns = floor(Ts/Te);
 t2 = 0:Te:(Ns-1)*Te;
 
 h2 = t2>=0;
-ak2 = zeros(1,length(bits)/2);
-for i = 1:2:length(bits)
-    if bits(i) == 0 && bits(i+1) == 0
-        ak2(i) = -2;
-        %ak2(i+1) = -2;
-    elseif bits(i) == 0 && bits(i+1) == 1
-        ak2(i) = -1;
-        %ak2(i+1) = -1;
-    elseif bits(i) == 1 && bits(i+1) == 0
-        ak2(i) = 2;
-        %ak2(i+1) = 2;
-    else
-        ak2(i) = 1;
-        %ak2(i+1) = 1;
-    end
-end
+mapping = [-3, -1, 3, 1];
+ak2 = reshape(bits, 2, []);
+ak2 = mapping(bi2de(ak2', 'left-msb')+1);
+
 x2 = kron(ak2,[1 zeros(1,Ns-1)]);
 signal_genere2 = filter(h2,1,x2);
 t_correct2 = (0:Te:(length(signal_genere2)-1)*Te)/n;
@@ -90,15 +78,14 @@ f3 = linspace(-Fe/2,Fe/2,length(dsp_signal3));
 
 sigma = 1;
 dsp_signal3_th = sigma^2/Ts*ones(1,length(f3));
-for i = 1:length(f3)
-    if abs(f3(i)) <= (1-alpha)/(2*Ts)
-        dsp_signal3_th(i) = dsp_signal3_th(i)*Ts;
-    elseif abs(f3(i)) <= (1+alpha)/(2*Ts)
-        dsp_signal3_th(i) = dsp_signal3_th(i)*Ts*(1+cos(pi*Ts/alpha*(abs(f3(i))-(1-alpha)/(2*Ts))))/2;
-    else
-        dsp_signal3_th(i) = 0;
-    end
-end
+
+condition1 = abs(f3) <= (1-alpha)/(2*Ts);
+condition2 = (abs(f3) > (1-alpha)/(2*Ts)) & (abs(f3) <= (1+alpha)/(2*Ts));
+condition3 = abs(f3) > (1+alpha)/(2*Ts);
+
+dsp_signal3_th(condition1) = dsp_signal3_th(condition1) * Ts;
+dsp_signal3_th(condition2) = dsp_signal3_th(condition2) .* Ts .* (1 + cos(pi * Ts/alpha * (abs(f3(condition2)) - (1-alpha)/(2*Ts)))) / 2;
+dsp_signal3_th(condition3) = 0;
 
 
 

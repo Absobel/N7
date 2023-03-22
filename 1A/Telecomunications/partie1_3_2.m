@@ -2,7 +2,7 @@ clear all; close all; clc;
 
 
 tout(1000)
-tout(8000)
+tout(100000)
 
 
 function [] = tout(BW)
@@ -20,7 +20,7 @@ function [] = tout(BW)
     x = kron(ak,[1 zeros(1,Ns-1)]);
     
     h = ones(1,Ns);
-    t = -5:Te:5; %?????????
+    t = -5 * Tb : Te : 5 * Tb;
     hc = BW*sinc(pi*BW*t);
     
     g = conv(conv(h,h),hc);
@@ -46,7 +46,11 @@ function [] = tout(BW)
     eyediagram(z(Ns+1:end),2*Ns,2*Ns,Ns-1)
 
     figure("Name","Tracé de filtres");
-    plot(abs(fft(h).*fft(h))); hold on;   % Ajouter échelle de fréquence
+    plot(abs(fft(h).*fft(h))); hold on;        % Manque l'échelle de fréquence
     plot(abs(fft(hc))); hold off;
+    xlabel('Fréquence (Hz)');
+    ylabel('Magnitude');
+    legend('Filtre de mise en forme et réception', 'Filtre canal');
+    title('Tracé de filtres');
 
 end
