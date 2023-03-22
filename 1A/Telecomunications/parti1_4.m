@@ -5,7 +5,31 @@ Rb = 3000; Tb = 1/Rb;
 nbits = 1000;
 
 Ns = nb_symbole(3,Tb,Te)
-taux_erreur = BdB(3,nbits,Ns,12)
+taux_erreur = BdB(3,nbits,Ns,100000000)
+
+tableaux_TEB1_pra = zeros(9,1);
+tableaux_TEB1_the = zeros(9,1) ;
+for i = 0 : 1 : 8
+      [tableaux_TEB1_pra(i+1),gt01,sigman1] = BdB(1,nbits,Ns,10.^i);
+      tableaux_TEB1_the(i+1) = qfunc(gt01/sigman1);
+end
+
+tableaux_TEB2_pra = zeros(9,1);
+tableaux_TEB2_the = zeros(9,1) ;
+for i = 0 : 1 : 8
+      [tableaux_TEB2_pra(i+1),gt02,sigman2] = BdB(2,nbits,Ns,10.^i);
+      tableaux_TEB2_the(i+1) = qfunc(gt02/sigman2);
+
+end 
+
+tableaux_TEB3_pra = zeros(9,1);
+tableaux_TEB3_the = zeros(9,1) ;
+for i = 0 : 1 : 8
+      [tableaux_TEB3_pra(i+1),gt03,sigman3] = BdB(3,nbits,Ns,10.^i);
+      tableaux_TEB3_the(i+1) = (3/2)*qfunc(gt03/sigman3);
+end 
+
+
 
 function [Ns] = nb_symbole(nb_chaine,Tb,Te)
     if nb_chaine == 1 || nb_chaine == 2
@@ -51,7 +75,7 @@ function [signa_mis_en_forme,h] = mise_en_forme(signal_mappe,Ns)
     size(signa_mis_en_forme)
 end
 
-function [signal_propage] = propagation(nb_chaine,signa_mis_en_forme,Ns,Eb_N0)
+function [signal_propage,sigman] = propagation(nb_chaine,signa_mis_en_forme,Ns,Eb_N0)
     if nb_chaine == 1 || nb_chaine == 2
         M = 2;
     else
@@ -98,13 +122,17 @@ function [g] = filtre_total(h,hr)
     g = conv(h,hr);
 end
 
-function [taux_erreur] = BdB(nb_chaine,nbits,Ns,Eb_N0)
+function [taux_erreur,gt0,sigman ] = BdB(nb_chaine,nbits,Ns,Eb_N0)
     bits = bits_aleatoire(nbits);
     signal_mappe = mapping(nb_chaine,bits,Ns);
     [signal_mis_en_forme,h] = mise_en_forme(signal_mappe,Ns);
-    signal_propage = propagation(nb_chaine,signal_mis_en_forme,Ns,Eb_N0);
+    [signal_propage,sigman] = propagation(nb_chaine,signal_mis_en_forme,Ns,Eb_N0);
     [signal_recu,hr] = reception(nb_chaine,signal_propage,Ns);
+    g = filtre_total(h,hr);
     signal_echantillion = echantillonage(signal_recu,Ns);
-    len_g = length(filtre_total(h,hr));
+    len_g = length(g);
+    gt0 = g(Ns);
     taux_erreur = demapping(nb_chaine,signal_echantillion, bits, Ns);
 end
+
+
