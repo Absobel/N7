@@ -3,19 +3,24 @@ Dans ce fichier `reponses1.txt`,
 
 [Question 1.1] Indiquer 
 - comment obtenir le ou les exécutables par compilation séparée.
-
+    Il faut compliler les fichiers .c en .o avec la commande `c99 -c -Wextra -pendantic -o fichier.o fichier.c` puis les lier avec la commande `c99 -o fichier fichier.o`
 
 - les dépendances entre les fichiers qui constituent l’application.
+    Les fichiers file.c, exemple_file.c et test_file.c dépendent de file.h
 
 
 - le rôle de la règle `.PHONY` dans Makefile.
+    La règle `.PHONY` permet de dire à make que la cible n'est pas un fichier.
 
 
 [Question 1.5] Indiquer
 - Quel est le sous-programme non-visible des autres modules et défini dans le module File.
+    Le sous-programme non-visible des autres modules est la fonction static Cellule * cellule(char valeur, Cellule *suivante). Le mot-clé static rend cette fonction accessible uniquement à l'intérieur du fichier file.c.
 
 
 - Que se passe-t-il si on enlève le mot-clé static à la compilation ?  
+    Si on enlève le mot-clé static, la fonction cellule devient accessible depuis d'autres modules. Cela signifie que d'autres modules peuvent l'appeler et utiliser cette fonction directement.
  
 
 - Quel est le risque de ne pas le mettre ?
+    Le risque est que d'autres modules puissent utiliser cette fonction et modifier la structure de la file. Cela peut causer des erreurs dans le fonctionnement de la file.

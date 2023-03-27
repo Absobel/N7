@@ -48,7 +48,7 @@ int main ()
     assert('?' == val);
     assert(0 == longueur(f));
 
-    // Tester l'ajout dans une file vidée
+    // Tester l'ajout dans une file vidï¿½e
     inserer (&f, 'Y');
     assert(1 == longueur(f));
     assert('Y' == tete(f));

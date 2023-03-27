@@ -1,9 +1,9 @@
 /**
- *  \author Xavier CrŽgut <nom@n7.fr>
+ *  \author Xavier Crï¿½gut <nom@n7.fr>
  *  \file file.c
  *
  *  Objectif :
- *	Implantation des opŽrations de la file
+ *	Implantation des opï¿½rations de la file
 */
 
 #include <malloc.h>
@@ -14,49 +14,65 @@
 
 void initialiser(File *f)
 {
-    // TODO
+    f->tete = NULL;
+    f->queue = NULL;
 
     assert(est_vide(*f));
 }
 
 
+
 void detruire(File *f)
 {
-    // TODO
+    Cellule *current = f->tete;
+    Cellule *next;
+    while (current != NULL) {
+        next = current->suivante;
+        free(current);
+        current = next;
+    }
+    f->tete = NULL;
+    f->queue = NULL;
 }
+
 
 
 char tete(File f)
 {
     assert(! est_vide(f));
 
-    // TODO
-    return 0;
+    return f.tete->valeur;
 }
 
 
 bool est_vide(File f)
 {
-    // TODO
-    return false;
+    return f.tete == NULL && f.queue == NULL;
 }
 
 /**
- * Obtenir une nouvelle cellule allouŽe dynamiquement
- * initialisŽe avec la valeur et la cellule suivante prŽcisŽ en paramtre.
+ * Obtenir une nouvelle cellule allouï¿½e dynamiquement
+ * initialisï¿½e avec la valeur et la cellule suivante prï¿½cisï¿½ en paramï¿½tre.
  */
 static Cellule * cellule(char valeur, Cellule *suivante)
 {
-    // TODO
-    return NULL;
+    Cellule *c = malloc(sizeof(Cellule));
+    c->valeur = valeur;
+    c->suivante = suivante;
+    return c;
 }
 
 
 void inserer(File *f, char v)
 {
     assert(f != NULL);
-
-    // TODO
+    if (est_vide(*f)) {
+        f->tete = cellule(v, NULL);
+        f->queue = f->tete;
+    } else {
+        f->queue->suivante = cellule(v, NULL);
+        f->queue = f->queue->suivante;
+    }
 }
 
 void extraire(File *f, char *v)
@@ -64,12 +80,21 @@ void extraire(File *f, char *v)
     assert(f != NULL);
     assert(! est_vide(*f));
 
-    // TODO
+    Cellule *c = f->tete;
+    *v = c->valeur;
+    f->tete = c->suivante;
+    if (f->tete == NULL) {
+        f->queue = NULL;
+    }
+    free(c);
 }
 
 
 int longueur(File f)
 {
-    // TODO
-    return 0;
+    int i = 0;
+    for (Cellule *c = f.tete; c != NULL; c = c->suivante) {
+        i++;
+    }
+    return i;
 }
