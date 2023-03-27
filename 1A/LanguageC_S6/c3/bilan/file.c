@@ -31,8 +31,7 @@ void detruire(File *f)
         free(current);
         current = next;
     }
-    f->tete = NULL;
-    f->queue = NULL;
+    f = NULL;
 }
 
 
