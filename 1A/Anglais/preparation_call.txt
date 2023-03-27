@@ -1,0 +1,41 @@
+# Tell me about yourself
+
+I'm Absobel, a first-year engineering student at ENSEEIHT. I've spent two years in preparatory classes focusing on physics and mathematics, which led me to my current interest in computer science. I enjoy the challenge of solving programming problems, and it's always satisfying to see a project come together. My goal is to find a job where I can work on programming projects that I truly enjoy.
+
+In my free time, I like to explore various forms of fiction, such as books, movies, and video games. These creative outlets offer immersive experiences that capture my imagination. I also enjoy programming as a hobby, with one of my accomplishments being the creation of a Chip-8 emulator.
+
+My background in mathematics and physics has been helpful in my pursuit of computer science. Algebra, for example, plays an essential role in programming and has given me the confidence to tackle complex problems. With this strong foundation, I am well-prepared for my academic and professional journey in computer science.
+
+#### NOTE AMELIORER ÇA A LOT
+
+
+# Strenght and weaknesses
+
+Strengths:
+
+1. Independant
+2. Resilient (work under pressure)
+3. Quick learner
+
+Weaknesses:
+
+1. Struggle with teamwork
+2. Procrastinater
+3. Too defensive sometimes
+
+
+Streghts :
+
+# AMELIORER LES EXEMPLES
+
+1. Ability to work independently: You can complete tasks easily when assigned a specific role or responsibility, such as being a Discord moderator for a 500-member server.
+2. Effective under pressure: You can successfully present ideas and findings when you have prepared in advance, even if it might be stressful.
+3. Quick learner for interesting subjects: You can rapidly learn new concepts, tools, or technologies when they capture your interest, like programming.
+
+Weaknesses:
+
+## AMELIORER 1
+
+1. Struggle with teamwork: You find it challenging to agree with others on tasks and responsibilities in group settings. To improve, consider practicing active listening and compromise, or take on small leadership roles to become more comfortable with delegating tasks.
+2. Procrastination: You tend to complete tasks at the last moment, although you have bursts of productivity. To overcome this, try implementing time management strategies like the Pomodoro Technique or breaking tasks into smaller, manageable chunks with deadlines.
+3. Sensitivity to criticism: You don't particularly enjoy receiving feedback on your work but will accept it if it's constructive. To cope better with criticism, remind yourself that feedback is essential for growth, and focus on the areas where you can improve rather than on the negative emotions.
