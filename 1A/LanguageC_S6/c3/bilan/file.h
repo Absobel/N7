@@ -1,10 +1,10 @@
 /**
- *  \author Xavier Crgut <nom@n7.fr>
+ *  \author Xavier Crï¿½gut <nom@n7.fr>
  *  \file file.h
  * 
  *  Objectifs :
- *	.  Dfinition et utilisation des modules
- *	.  Allocation dynamique de mmoire
+ *	.  Dï¿½finition et utilisation des modules
+ *	.  Allocation dynamique de mï¿½moire
  */
 
 #include <stdbool.h>
@@ -35,29 +35,29 @@ typedef struct File File;
 void initialiser(File *f);
 
 /**
- * Dtruire la file \a f.
- * Elle ne pourra plus tre utilise (sauf ˆ tre de nouveau initialise)
+ * Dï¿½truire la file \a f.
+ * Elle ne pourra plus ï¿½tre utilisï¿½e (sauf ï¿½ ï¿½tre de nouveau initialisï¿½e)
  */
 void detruire(File *f);
 
 /**
- * L'lment en tte de la file.
- * Ncessite :
+ * L'ï¿½lï¿½ment en tï¿½te de la file.
+ * Nï¿½cessite :
  *	! est_vide(f);
  */
 char tete(File f);
 
 /**
- * Ajouter dans la file \a f l'lment \a v.
+ * Ajouter dans la file \a f l'ï¿½lï¿½ment \a v.
  *
- * Ncessite :
+ * Nï¿½cessite :
  *	f != NULL;
  */
 void inserer(File *f, char v);
 
 /**
- * Extraire l'lment \a v en tte de la file \a f.
- * Ncessite
+ * Extraire l'ï¿½lï¿½ment \a v en tï¿½te de la file \a f.
+ * Nï¿½cessite
  *	f != NULL;
  *	! est_vide(*f);
  */
