@@ -7,8 +7,8 @@ int main(int argc, char *argv[]) {
     int v=5; /* utile pour la section 2.3 */
     pid_t pidFils;
 
-    tempsPere=120;
-    tempsFils=60;
+    tempsPere=4;
+    tempsFils=2;
     pidFils=fork();
     /* bonne pratique : tester systématiquement le retour des appels système */
     if (pidFils == -1) {
@@ -19,16 +19,20 @@ int main(int argc, char *argv[]) {
          */
     }
     if (pidFils == 0) {		/* fils */
-        printf("processus %d (fils), de père %d\n", getpid(), getppid());
+        printf("processus %d (fils), de père %d\nv = %d\n", getpid(), getppid(), v);
         sleep(tempsFils);
-        printf("fin du fils\n");
+        v = 100;
+        printf("fils : v = %d\n", v);
+        sleep(tempsPere);
+        printf("fils : v = %d\n", v);
         exit(EXIT_SUCCESS); /* 	bonne pratique : 
         						terminer les processus par un exit explicite */
     }
     else {		/* père */
-        printf("processus %d (père), de père %d\n", getpid(), getppid());
+        printf("processus %d (père), de père %d\nv = %d\n", getpid(), getppid(), v);
         sleep(tempsPere);
-        printf("fin du père\n");        
+        v = 10;
+        printf("père : v = %d\n", v);        
     }
     return EXIT_SUCCESS; /* -> exit(EXIT_SUCCESS); pour le père */
 }
