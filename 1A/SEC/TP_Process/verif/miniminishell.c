@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
         empty_stdin(); // Permet d'éviter que le prochain scanf reprenne la saisie de l'input précédent
 
         if (ret == EOF) {    // Ctrl+D pour quitter
+            printf("\n");
             break;
         } else if (ret == 0) {    // Si l'utilisateur n'a rien saisi
             continue;
@@ -59,7 +60,7 @@ int main(int argc, char *argv[]) {
         if (pidFils == 0) { // Fils
             parse_command(buf, &mots);
 
-            if (strcmp(mots[0], "exit") == 0) {
+            if (strcmp(mots[0], "exit") == 0 && mots[1] == NULL) {
                 exit(10);
             }
 
@@ -79,6 +80,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    printf("\nSalut.\n");
+    printf("Salut.\n");
     return EXIT_SUCCESS;
 }
