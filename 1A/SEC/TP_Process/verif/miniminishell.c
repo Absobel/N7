@@ -31,7 +31,6 @@ int main(int argc, char *argv[]) {
         int ret; // La valeur de retour de scanf
         printf(">>>");
         ret=scanf("%29[^\n]", buf); // Lit et range dans buf la chaine entrée au clavier
-/*         printf("### input : %s\n", buf);  */
         empty_stdin(); // Permet d'éviter que le prochain scanf reprenne la saisie de l'input précédent
 
         if (ret == EOF) {    // Ctrl+D pour quitter
@@ -59,15 +58,6 @@ int main(int argc, char *argv[]) {
         }
         if (pidFils == 0) { // Fils
             parse_command(buf, &mots);
-
-/*             printf("### command: %s\n", mots[0]);
-            printf("### arguments: ");
-            for (int i = 1; i < SIZE_COMMAND; i++) {
-                if (mots[i] != NULL) {
-                    printf("%s ", mots[i]);
-                }
-            }
-            printf("\n"); */
 
             if (strcmp(mots[0], "exit") == 0) {
                 exit(10);
