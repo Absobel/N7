@@ -89,6 +89,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    printf("Salut.\n");
+    printf("\nSalut.\n");
     return EXIT_SUCCESS;
 }
