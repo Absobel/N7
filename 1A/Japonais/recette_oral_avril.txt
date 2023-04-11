@@ -26,3 +26,120 @@ Servir chaud.
 Description :
 
 - rice, jaune, épicé
+
+
+GPT TENTATIVES
+
+Kono ryōri wa kare-raisu to iimasu. Kare-raisu wa Nihon no ninki-na gohan no hitotsu de, kareraisu wa sukoshi supaisu ga arimasu ga, oishii desu.
+
+    Raisu o passhia ni iretekudasai.
+    (ライス を パッシア に 入れてください)
+    Please put the rice in a strainer.
+
+    Raisu o nagashitekudasai.
+    (ライス を 流してください)
+    Please rinse the rice.
+
+    Mizu ga sukitara, omoidekudasai.
+    (みず が すきたら、 思い出してください)
+    When the water is clear, please remember.
+
+    O-nion o muite, komakaku kittekudasai.
+    (オニオン を むいて、 こまかく きってください)
+    Please peel and finely chop the onion.
+
+    Sarute o o-hi ni atatamekudasai.
+    (さるて を お火 に あたためてください)
+    Please heat the saute pan on medium heat.
+
+    O-nion o kuwaetekudasai.
+    (オニオン を くわえてください)
+    Please add the onion.
+
+    O-nion ga iro o kaetara, raisu o iretekudasai.
+    (オニオン が いろ を かえたら、 ライス を 入れてください)
+    When the onion changes color, please add the rice.
+
+    San-pun tatte, buiyon o iretekudasai.
+    (さんぷん たって、 ぶいよん を 入れてください)
+    After three minutes, please pour in a ladle of broth.
+
+    Raisu ga buiyon o suikonda toki, kare o iretekudasai.
+    (ライス が ぶいよん を すいこんだ とき、 カレー を 入れてください)
+    When the rice absorbs the broth, please add the curry.
+
+    Aji o naoshitekudasai.
+    (あじ を なおしてください)
+    Please adjust the taste.
+
+    Ofun o junbi shite, kare-raisu o iretekudasai.
+    (おふん を じゅんび して、 カレーライス を 入れてください)
+    Prepare the oven and put in the curry rice.
+
+    Yaku roku-hachi pun kan kare-raisu o yudanete, atatakai mama tabetemo ii desu.
+    (やく ろくはち ぷん かん カレーライス を ゆだねて、 あたた
+
+
+Kyou wa, rizukare no reshipi o shoukai shimasu. (今日は、リズカレーのレシピを紹介します。) Today, I will introduce a recipe for rice curry. Kore wa, nihon no kareraisu no yasashii bājon desu. (これは、日本のカレーライスのやさしいバージョンです。) This is a simple version of Japanese curry rice.
+
+    Rizuo pasu ni irete, mizu o kaketekudasai. (リズをパスに入れて、水をかけてください。) (りずを ぱす に いれて、 みず を かけてください。) Put the rice in a strainer and rinse it with water.
+    Mizu ga sukitara, oishii gohan ni narimasu. (水が透き通ると、美味しいご飯になります。) (みず が すきたら、 おいしい ごはん に なります。) When the water runs clear, the rice will become delicious.
+    O-nion wo muite, kizandekudasai. (オニオンをむいて、きざんでください。) (おにおん を むいて、 きざんでください。) Peel the onion and chop it finely.
+    Abura o netsu shite, o-nion o iretemoiidesu. (油を熱して、オニオンを入れてもいいです。) (あぶら を ねつ して、 おにおん を いれてもいいです。) You can heat the oil and add the onion.
+    O-nion ga iro o kaeru made, mazetewaikemasen. (オニオンが色を変えるまで、混ぜてはいけません。) (おにおん が いろ を かえる まで、 まぜて は いけません。) Do not mix until the onion changes color.
+    Rizu to kare no ko o kuwaetekudasai. (リズとカレーの粉を加えてください。) (りず と かれ の こ を くわえてください。) Add the rice and curry powder.
+    Tori nikutodake o irete, mazetekudasai. (鳥肉だけを入れて、混ぜてください。) (とり にく だけ を いれて、 まぜてください。) Add only the chicken and mix.
+    Bouillon o irete, mijikai aida mazetemoiides. (ブイヨンを入れて、短い間混ぜてもいいです。)
+
+
+Kyou wa, kareraisu no reshipi wo shoukai shimasu. Kare wa, Nihon de totemo ninki no aru Indo toiu ryouri desu.
+
+    Raisu wo koshi ni irete, mizu wo nagashite, sukoshi matsu tekudasai.
+    (Put rice in a strainer, wash it under running water, and wait a little.)
+    らいす を こし に いれて、 みず を ながして、 すこし まつ てください。
+
+    Tamanegi wo muku to, komakaku kizande kudasai.
+    (Peel the onion, and chop it finely.)
+    たまねぎ を むく と、 こまかく きざんで ください。
+
+    Sauteusu ni, abura wo ireru to, chuuhi ni shite kudasai.
+    (Put oil in a sauté pan, and set the heat to medium.)
+    さうてうす に、 あぶら を いれる と、 ちゅうひ に して ください。
+
+    Tamanegi wo sauteusu ni ireru to, iro ga kawaru made mazeru temoiides.
+    (Add the onion to the sauté pan, and mix until the color changes, it's fine.)
+    たまねぎ を さうてうす に いれる と、 いろ が かわる まで まぜる てもいいです。
+
+    Raisu wo kuwaete, zenbu nozoku tekudasai.
+    (Add the rice and make sure to mix everything.)
+    らいす を くわえて、 ぜんぶ のぞく てください。
+
+    Bouiyon wo hito rakusu irete, raisu ga zenbu suu made matsu temoiides.
+    (Add a ladle of broth, and wait until the rice absorbs everything, it's fine.)
+    ぼういよん を ひと らくす いれて、 らいす が ぜんぶ すう まで まつ てもいいです。
+
+    Kare no kona to, nokori no bouiyon wo ireru tekudasai.
+    (Add the curry powder and the remaining broth.)
+    かれ の こな と、 のこり の ぼういよん を いれる てください。
+
+    Aji wo totonoete, yaku juugo fun, teihi de niru tewaikemasen.
+    (
+
+
+Kono ryouri wa oishii karee raisu desu. (この りょうり は おいしい かれえ らいす です。) - This dish is delicious curry rice.
+
+    Karee no aji to yasashii gohan ga totemo yoku awan desu. (かれえ の あじ と やさしい ごはん が とても よく あわん です。) - The flavor of curry and the gentle rice go very well together.
+
+    Riz wo aratte kudasai. (りず を あらって ください。) - Please wash the rice.
+
+    Aburawo atatamete, tamanegi wo ireru made matte kudasai. (あぶらを あたためて、 たまねぎ を いれる まで まって ください。) - Please heat the oil and wait until you put in the onion.
+
+    Karee to bouillon wo kuwaete mo ii desu. (かれえ と ぼういろん を くわえて も いい です。) - You may also add curry and bouillon.
+
+    Karee raisu wo sara ni irete, gouhan wo hirogete kudasai. (かれえ らいす を さら に いれて、 ごはん を ひろげて ください。) - Please put the curry rice on a plate and spread out the rice.
+
+    Oobun de kansou sasete wa ikemasen. (おおぶん で かんそう させて は いけません。) - You must not let it dry out in the oven.
+
+    Karee raisu wo atatakaku tabete kudasai. (かれえ らいす を あたたかく たべて ください。) - Please eat the curry rice warm.
+
+	Remember to speak slowly and clearly, and good luck with your presentation!
