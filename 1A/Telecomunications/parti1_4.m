@@ -16,7 +16,7 @@ for i = 1:length(range)
 end
 
 figure;
-semilogy(range,tableaux_TEB1_pra,'b', 'LineWidth', 2); hold on;
+semilogy(range,tableaux_TEB1_pra,'b-o', 'LineWidth', 2); hold on;
 semilogy(range,tableaux_TEB1_the, 'r', 'LineWidth', 2); hold off;
 title("Comparaison TEB pratique/théorique pour différentes bandes passantes (chaine 1)")
 xlabel("log10(BandePassante)")
@@ -107,37 +107,33 @@ function [signal_recu,hr] = reception(nb_chaine,signal_propage,Ns)
 end
 
 function [signal_echantillion] = echantillonage(signal_recu,Ns)
-    signal_echantillion = zeros(1,length(signal_recu));
+    signal_echantillion = zeros(1, length(signal_recu)/Ns);
     for i = Ns:Ns:length(signal_recu)
         signal_echantillion(i:(i+Ns-1)) = signal_recu(i);
     end
 end
 
-function [taux_erreur] = demapping(nb_chaine,signal_echantillion, bits, Ns)
+function [taux_erreur] = demapping(nb_chaine,signal_echantillion, bits, Ns, signal_mappe)
     if nb_chaine == 1 || nb_chaine == 2
         decisions = signal_echantillion(Ns:Ns:end)>0;
     elseif nb_chaine == 3
         pre_decisions = signal_echantillion(Ns:Ns:end);
-        decisions = zeros(1,length(bits));
-        for i = 1:length(pre_decisions)
-            nb = pre_decisions(i);
-            if nb <= -256
-                decisions(2*i) = 0;
-                decisions(2*i+1) = 0;
-            elseif nb <= 0
-                decisions (2*i) = 0;
-                decisions(2*i+1) = 1;
-            elseif nb >= 256
-                decisions(2*i) = 1;
-                decisions(2*i+1) = 0;
-            else
-                decisions(2*i) = 1;
-                decisions(2*i+1) = 1;
-            end
-        end
-        decisions = decisions(2:end);
+        
+        signal_power = sqrt(mean(abs(signal_mappe).^2));
+        threshold1 = -2 * signal_power;
+        threshold2 = 0;
+        threshold3 = 2 * signal_power;
+        
+        decision1 = pre_decisions <= threshold1;
+        decision2 = (pre_decisions > threshold1) & (pre_decisions <= threshold2);
+        decision3 = (pre_decisions > threshold2) & (pre_decisions <= threshold3);
+        decision4 = pre_decisions > threshold3;
+        
+        decisions = zeros(1, length(bits));
+        decisions(1:2:end) = decision1 + decision3;
+        decisions(2:2:end) = decision2 + decision4;
     end
-    taux_erreur = sum(decisions~=bits)/length(bits);
+    taux_erreur = sum(decisions ~= bits) / length(bits);
 end
 
 function [g] = filtre_total(h,hr)
@@ -153,7 +149,5 @@ function [taux_erreur,gt0,sigman ] = BdB(nb_chaine,nbits,Ns,Eb_N0)
     g = filtre_total(h,hr);
     signal_echantillion = echantillonage(signal_recu,Ns);
     gt0 = g(Ns);
-    taux_erreur = demapping(nb_chaine,signal_echantillion, bits, Ns);
+    taux_erreur = demapping(nb_chaine,signal_echantillion, bits, Ns, signal_mappe);
 end
-
-
