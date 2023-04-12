@@ -44,10 +44,11 @@ function [] = tout(BW)
     ylabel("g[n]")
 
     eyediagram(z(Ns+1:end),2*Ns,2*Ns,Ns-1)
+    f = linspace(0, Fe, length(h)); % Ajout de l'échelle de fréquence
 
     figure("Name","Tracé de filtres");
-    plot(abs(fft(h).*fft(h))); hold on;        % Manque l'échelle de fréquence
-    plot(abs(fft(hc))); hold off;
+    plot(f, abs(fft(h).*fft(h))); hold on;
+    plot(f, abs(fft(hc))); hold off;
     xlabel('Fréquence (Hz)');
     ylabel('Magnitude');
     legend('Filtre de mise en forme et réception', 'Filtre canal');
