@@ -87,8 +87,8 @@ function [signal_propage] = propagation(signa_mis_en_forme,Ns,SNR)
     Px = mean(abs(signa_mis_en_forme).^2);
     sigman = sqrt(Px*Ns/(2*SNR));
     bruit = sigman*randn(1,length(signa_mis_en_forme));
-    %signal_propage = signa_mis_en_forme' + bruit;
-    signal_propage = signa_mis_en_forme';
+    signal_propage = signa_mis_en_forme' + bruit;
+    %signal_propage = signa_mis_en_forme';
 end
 
 function [signal_recu] = reception(nb_chaine,signal_propage,Ns)
