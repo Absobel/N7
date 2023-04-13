@@ -2,38 +2,39 @@ clear all; close all; clc;
 
 Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
-nbits = 1000;
+nbits = 100000;
 
-Ns = nb_symbole(3,Tb,Te);
-log10bwmax = 8;
-range = linspace(0,log10bwmax);
+SNR_dB = 0:8;
+SNR = 10.^(SNR_dB/10);
 
 tableaux_TEB1_pra = zeros(9,1);
 tableaux_TEB1_the = zeros(9,1) ;
-for i = 1:length(range)
-      [tableaux_TEB1_pra(i),gt01,sigman1] = BdB(1,nbits,Ns,10.^range(i));
-      tableaux_TEB1_the(i) = qfunc(gt01/sigman1);
+for i = 1:length(SNR)
+    Ns = nb_symbole(1, Tb, Te);
+    [tableaux_TEB1_pra(i)] = BdB(1,nbits,Ns,SNR(i));
+    tableaux_TEB1_the(i) = qfunc(sqrt(2*SNR(i)));
 end
 
 figure;
-semilogy(range,tableaux_TEB1_pra,'b-o', 'LineWidth', 2); hold on;
-semilogy(range,tableaux_TEB1_the, 'r', 'LineWidth', 2); hold off;
+semilogy(SNR_dB,tableaux_TEB1_pra,'b', 'LineWidth', 2); hold on;
+semilogy(SNR_dB,tableaux_TEB1_the, 'r', 'LineWidth', 2); hold off;
 title("Comparaison TEB pratique/théorique pour différentes bandes passantes (chaine 1)")
 xlabel("log10(BandePassante)")
 ylabel("TEB")
 legend("pratique", "theorique")
 
 tableaux_TEB2_pra = zeros(9,1);
-tableaux_TEB2_the = zeros(9,1) ;
-for i = 1:length(range)
-      [tableaux_TEB2_pra(i),gt02,sigman2] = BdB(2,nbits,Ns,10.^range(i));
-      tableaux_TEB2_the(i) = qfunc(gt02/sigman2);
+tableaux_TEB2_the = zeros(9,1);
+for i = 1:length(SNR)
+    Ns = nb_symbole(2, Tb, Te);
+    [tableaux_TEB2_pra(i)] = BdB(2,nbits,Ns,SNR(i));
+    tableaux_TEB2_the(i) = qfunc(sqrt(SNR(i)));
 
 end 
 
 figure;
-semilogy(range,tableaux_TEB2_pra,'b', 'LineWidth', 2); hold on;
-semilogy(range,tableaux_TEB2_the, 'r', 'LineWidth', 2); hold off;
+semilogy(SNR_dB,tableaux_TEB2_pra,'b', 'LineWidth', 2); hold on;
+semilogy(SNR_dB,tableaux_TEB2_the, 'r', 'LineWidth', 2); hold off;
 title("Comparaison TEB pratique/théorique pour différentes bandes passantes (chaine 2)")
 xlabel("log10(BandePassante)")
 ylabel("TEB")
@@ -41,14 +42,15 @@ legend("pratique", "theorique")
 
 tableaux_TEB3_pra = zeros(9,1);
 tableaux_TEB3_the = zeros(9,1) ;
-for i = 1:length(range)
-      [tableaux_TEB3_pra(i),gt03,sigman3] = BdB(3,nbits,Ns,10.^range(i));
-      tableaux_TEB3_the(i) = (3/2)*qfunc(gt03/sigman3);
+for i = 1:length(SNR)
+    Ns = nb_symbole(3, Tb, Te);
+    [tableaux_TEB3_pra(i)] = BdB(3,nbits,Ns,SNR(i));
+    tableaux_TEB3_the(i) = (3/4)*qfunc(sqrt(0.8*SNR(i)));
 end 
 
 figure;
-semilogy(range,tableaux_TEB3_pra,'b', 'LineWidth', 2); hold on;
-semilogy(range,tableaux_TEB3_the, 'r', 'LineWidth', 2); hold off;
+semilogy(SNR_dB,tableaux_TEB3_pra,'b', 'LineWidth', 2); hold on;
+semilogy(SNR_dB,tableaux_TEB3_the, 'r', 'LineWidth', 2); hold off;
 title("Comparaison TEB pratique/théorique pour différentes bandes passantes (chaine 3)")
 xlabel("log10(BandePassante)")
 ylabel("TEB")
@@ -65,89 +67,80 @@ function [Ns] = nb_symbole(nb_chaine,Tb,Te)
 end
 
 function [bits] = bits_aleatoire(nbits)
-    bits = randi([0 1],1,nbits);
+    bits = randi([0 1],nbits, 1);
 end
 
-function [signal_mappe] = mapping(nb_chaine,bits,Ns)
+function [signa_mis_en_forme,h] = mise_en_forme(nb_chaine, bits, Ns)
+    mappage = zeros(Ns, 1);  % Permet de créer des impulsions de durée Ns
+    mappage(1) = 1;
     if nb_chaine == 1 || nb_chaine == 2
-        a_kron = 2*bits-1;
-        signal_mappe = kron(a_kron,ones(1,Ns));
+        signal_mappe = kron(2*bits-1, mappage);
+        h = ones(1,Ns);
     elseif nb_chaine == 3
-        mapping = [-3, -1, 3, 1];
-        a_kron = reshape(bits, 2, []);
-        a_kron = mapping(bi2de(a_kron', 'left-msb')+1);
-        signal_mappe = kron(a_kron,ones(1,Ns));
+        signal_mappe = kron(([1 -2]*reshape((2*bits-1),2,length(bits)/2))',mappage);
+        h = ones(1,Ns/2);
     end
+    signa_mis_en_forme = filter(h,1,signal_mappe);
 end
 
-function [signa_mis_en_forme,h] = mise_en_forme(signal_mappe,Ns)
-    h = ones(1,Ns);
-    signa_mis_en_forme = filter(h, 1, signal_mappe);
-end
-
-function [signal_propage,sigman] = propagation(nb_chaine,signa_mis_en_forme,Ns,Eb_N0)
-    if nb_chaine == 1 || nb_chaine == 2
-        M = 2;
-    else
-        M = 4;
-    end
+function [signal_propage] = propagation(signa_mis_en_forme,Ns,SNR)
     Px = mean(abs(signa_mis_en_forme).^2);
-    sigman = sqrt(Px*Ns/(2*log2(M)*Eb_N0));
+    sigman = sqrt(Px*Ns/(2*SNR));
     bruit = sigman*randn(1,length(signa_mis_en_forme));
-    signal_propage = signa_mis_en_forme + bruit;
+    %signal_propage = signa_mis_en_forme' + bruit;
+    signal_propage = signa_mis_en_forme';
 end
 
-function [signal_recu,hr] = reception(nb_chaine,signal_propage,Ns)
+function [signal_recu] = reception(nb_chaine,signal_propage,Ns)
     if nb_chaine == 1 || nb_chaine == 3
         hr = ones(1,Ns);
     elseif nb_chaine == 2
-        hr = ones(1,Ns/2);
+        hr = [ones(1, (floor(Ns/2))),zeros(1, (floor(Ns/2)))];
     end
     signal_recu = filter(hr,1,signal_propage);
 end
 
-function [signal_echantillion] = echantillonage(signal_recu,Ns)
-    signal_echantillion = zeros(1, length(signal_recu)/Ns);
-    for i = Ns:Ns:length(signal_recu)
-        signal_echantillion(i:(i+Ns-1)) = signal_recu(i);
-    end
-end
-
-function [taux_erreur] = demapping(nb_chaine,signal_echantillion, bits, Ns, signal_mappe)
-    if nb_chaine == 1 || nb_chaine == 2
-        decisions = signal_echantillion(Ns:Ns:end)>0;
+function [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits,Ns,h)
+    if nb_chaine == 1
+        resultat = reshape(signal_recu, [], nbits)';
+        resultat = (resultat(:,end)/Ns+1)/2>0.5;
+        taux_erreur = sum(abs(resultat-bits))/nbits;
+    elseif nb_chaine == 2
+        resultat = reshape(signal_recu, [], nbits)';
+        resultat = (resultat(:,floor(Ns/2)+1)/Ns+1)/2>0.5;
+        taux_erreur = sum(abs(resultat-bits))/nbits;
     elseif nb_chaine == 3
-        pre_decisions = signal_echantillion(Ns:Ns:end);
+        resultat = zeros(1,nbits);
+        for i = 1:(nbits/2)
+            resultat(i) = signal_recu(i * Ns);
+        end
+        resultat = resultat';
+
+        gt0 = sum(abs(h).^2);
+        symboles = [-1 3 -3 1];
+
+        distances = zeros(length(resultat), length(symboles));
+        for i = 1:length(symboles)
+            distances(:, i) = abs(resultat - symboles(i) * gt0);
+        end
         
-        signal_power = sqrt(mean(abs(signal_mappe).^2));
-        threshold1 = -2 * signal_power;
-        threshold2 = 0;
-        threshold3 = 2 * signal_power;
+        [~, min_indices] = min(distances, [], 2);
         
-        decision1 = pre_decisions <= threshold1;
-        decision2 = (pre_decisions > threshold1) & (pre_decisions <= threshold2);
-        decision3 = (pre_decisions > threshold2) & (pre_decisions <= threshold3);
-        decision4 = pre_decisions > threshold3;
-        
-        decisions = zeros(1, length(bits));
-        decisions(1:2:end) = decision1 + decision3;
-        decisions(2:2:end) = decision2 + decision4;
+        decoded_bits = dec2bin(min_indices-1, 2) - '0';
+        decoded_bits = decoded_bits(:)';
+
+        taux_erreur = length(find(bits~=resultat))/nbits;
     end
-    taux_erreur = sum(decisions ~= bits) / length(bits);
 end
 
-function [g] = filtre_total(h,hr)
-    g = conv(h,hr);
-end
-
-function [taux_erreur,gt0,sigman ] = BdB(nb_chaine,nbits,Ns,Eb_N0)
+function [taux_erreur] = BdB(nb_chaine,nbits,Ns,SNR)
     bits = bits_aleatoire(nbits);
-    signal_mappe = mapping(nb_chaine,bits,Ns);
-    [signal_mis_en_forme,h] = mise_en_forme(signal_mappe,Ns);
-    [signal_propage,sigman] = propagation(nb_chaine,signal_mis_en_forme,Ns,Eb_N0);
-    [signal_recu,hr] = reception(nb_chaine,signal_propage,Ns);
-    g = filtre_total(h,hr);
-    signal_echantillion = echantillonage(signal_recu,Ns);
-    gt0 = g(Ns);
-    taux_erreur = demapping(nb_chaine,signal_echantillion, bits, Ns, signal_mappe);
+    [signal_mis_en_forme,h] = mise_en_forme(nb_chaine,bits,Ns);
+    
+        % figure;
+        % plot(reshape(signal_mis_en_forme,Ns,length(signal_mis_en_forme)/Ns));
+    
+    [signal_propage] = propagation(signal_mis_en_forme,Ns,SNR);
+    [signal_recu] = reception(nb_chaine,signal_propage,Ns);
+    [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits, Ns,h);
 end
