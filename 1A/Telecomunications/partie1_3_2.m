@@ -33,7 +33,7 @@ function [] = tout(BW)
     end
 
     decisions = z_echant(Ns:Ns:end)>0;
-    erreur_n0_Ns = sum(decisions~=bits)/length(bits)
+    erreur_n0_Ns = sum(decisions~=bits)/length(bits);
 
     % plot
 
@@ -44,11 +44,12 @@ function [] = tout(BW)
     ylabel("g[n]")
 
     eyediagram(z(Ns+1:end),2*Ns,2*Ns,Ns-1)
-    f = linspace(0, Fe, length(h)); % Ajout de l'échelle de fréquence
+    f1 = linspace(0, Fe, length(h)); % Ajout de l'échelle de fréquence
+    f2 = linspace(0, Fe, length(hc)); % Ajout de l'échelle de fréquence
 
     figure("Name","Tracé de filtres");
-    plot(f, abs(fft(h).*fft(h))); hold on;
-    plot(f, abs(fft(hc))); hold off;
+    plot(f1, abs(fft(h).*fft(h))); hold on;
+    plot(f2, abs(fft(hc))); hold off;
     xlabel('Fréquence (Hz)');
     ylabel('Magnitude');
     legend('Filtre de mise en forme et réception', 'Filtre canal');
