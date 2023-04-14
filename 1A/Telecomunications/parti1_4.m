@@ -4,7 +4,7 @@ Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
 nbits = 100000;
 
-SNR_dB = 0:8;
+SNR_dB = 0:0;
 SNR = 10.^(SNR_dB/10);
 
 tableaux_TEB1_pra = zeros(9,1);
@@ -16,7 +16,13 @@ tableaux_TEB3_the = zeros(9,1);
 
 for i = 1:length(SNR)
     Ns = nb_symbole(1, Tb, Te);
-    [tableaux_TEB1_pra(i)] = BdB(1,nbits,Ns,SNR(i));
+    [tableaux_TEB1_pra(i), signal_recu] = BdB(1,nbits,Ns,SNR(i));
+
+        %figure;
+        %title("Diagramme d'oeil pour SNR = " + SNR + " dB de la chaine 1");
+        %plot(reshape(signal_recu,Ns,length(signal_recu)/Ns))
+        eyediagram(signal_recu(Ns:end), 2*Ns, 2*Ns, Ns-1);
+
     tableaux_TEB1_the(i) = qfunc(sqrt(2*SNR(i)));
 
     Ns = nb_symbole(2, Tb, Te);
@@ -100,22 +106,13 @@ function [signal_propage] = propagation(nb_chaine,signa_mis_en_forme,Ns,SNR)
     signal_propage = signa_mis_en_forme;
 end
 
-function [signal_recu] = reception(nb_chaine,signal_propage,Ns, SNR)
+function [signal_recu] = reception(nb_chaine,signal_propage,Ns)
     if nb_chaine == 1 || nb_chaine == 3
         hr = ones(1,Ns);
     elseif nb_chaine == 2
         hr = [ones(1, (floor(Ns/2))),zeros(1, (floor(Ns/2)))];
     end
     signal_recu = filter(hr,1,signal_propage);
-    SNR_dB = floor(10*log10(SNR));
-    if SNR_dB == 0 || ...
-        SNR_dB == 2 || ...
-        SNR_dB == 4 || ...
-        SNR_dB == 6
-        figure;
-        title("Diagramme d'oeil pour SNR = " + SNR + " dB de la chaine " + nb_chaine);
-        plot(reshape(signal_recu,Ns,length(signal_recu)/Ns))
-    end
 end
 
 function [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits,Ns)
@@ -149,14 +146,14 @@ function [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits,Ns)
     end
 end
 
-function [taux_erreur] = BdB(nb_chaine,nbits,Ns,SNR)
+function [taux_erreur, signal_recu] = BdB(nb_chaine,nbits,Ns,SNR)
     bits = bits_aleatoire(nbits);
     [signal_mis_en_forme] = mise_en_forme(nb_chaine,bits,Ns);
     
         % figure;
         % plot(reshape(signal_mis_en_forme,Ns,length(signal_mis_en_forme)/Ns));
     
-    [signal_propage] = propagation(nb_chaine,signal_mis_en_forme,Ns,SNR);
-    [signal_recu] = reception(nb_chaine,signal_propage,Ns, SNR);
+    [signal_propage] = propagation(nb_chaine,signal_mis_en_forme,Ns, SNR);
+    [signal_recu] = reception(nb_chaine,signal_propage,Ns);
     [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits, Ns);
 end
