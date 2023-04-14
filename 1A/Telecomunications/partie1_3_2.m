@@ -20,10 +20,11 @@ function [] = tout(BW)
     x = kron(ak,[1 zeros(1,Ns-1)]);
     
     h = ones(1,Ns);
-    t = -5 * Tb : Te : 5 * Tb;
-    hc = BW*sinc(pi*BW*t);
+    h_r =fliplr(h);
+    t = linspace(-50,50);
+    hc = 2*BW*sinc(2*(BW/Fe)*t)/Fe;
     
-    g = conv(conv(h,h),hc);
+    g = conv(conv(h,h_r),hc);
 
     z = filter(g,1,x);
 
@@ -43,13 +44,17 @@ function [] = tout(BW)
     xlabel("n")
     ylabel("g[n]")
 
-    eyediagram(z(Ns+1:end),2*Ns,2*Ns,Ns-1)
-    f1 = linspace(0, Fe, length(h)); % Ajout de l'échelle de fréquence
-    f2 = linspace(0, Fe, length(hc)); % Ajout de l'échelle de fréquence
-
+    eyediagram(z(Ns:end),2*Ns,2*Ns,Ns-1)
+    
+    
     figure("Name","Tracé de filtres");
-    plot(f1, abs(fft(h).*fft(h))); hold on;
-    plot(f2, abs(fft(hc))); hold off;
+    H =fft(h,1024);
+    H_r =fft(h,1024);
+    H_c = fft(hc,1024);
+    G = abs(H.*H_r);
+    f = linspace(-Fe/2, Fe/2, 1024); % Ajout de l'échelle de fréquence
+    semilogy(f, fftshift(G) ); hold on;
+    semilogy(f, fftshift(abs(H_c))); hold off;
     xlabel('Fréquence (Hz)');
     ylabel('Magnitude');
     legend('Filtre de mise en forme et réception', 'Filtre canal');
