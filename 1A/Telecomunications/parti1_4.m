@@ -112,9 +112,9 @@ function [signal_recu] = reception(nb_chaine,signal_propage,Ns, SNR)
         SNR_dB == 2 || ...
         SNR_dB == 4 || ...
         SNR_dB == 6
-        %h = figure;
-        %title("Diagramme d'oeil pour SNR = " + SNR + " dB de la chaine " + nb_chaine);
-        eyediagram(signal_recu(Ns:end), 2*Ns, 2*Ns, Ns-1, [], h)
+        figure;
+        title("Diagramme d'oeil pour SNR = " + SNR + " dB de la chaine " + nb_chaine);
+        plot(reshape(signal_recu,Ns,length(signal_recu)/Ns))
     end
 end
 
