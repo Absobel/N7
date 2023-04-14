@@ -1,10 +1,17 @@
 clear all; close all; clc;
 
+affichage_eyediagram = false;
+affichage_comparaison_chaine = true;
+
+
 Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
-nbits = 1000;
-
-affichage_eyediagram = false;
+% Pour eviter que le code prenne trop de temps a s'executer
+if affichage_eyediagram
+    nbits = 1000;
+else
+    nbits = 100000;
+end
 
 if affichage_eyediagram
     SNR_dB = 0:5:20;
@@ -51,7 +58,6 @@ for i = 1:length(SNR)
     end
 end
 
-figure;
 semilogy(SNR_dB,tableaux_TEB1_pra,'b', 'LineWidth', 2); hold on;
 semilogy(SNR_dB,tableaux_TEB1_the, 'r', 'LineWidth', 2); hold off;
 title("Comparaison TEB pratique/théorique pour différentes bandes passantes (chaine 1)")
@@ -74,6 +80,25 @@ title("Comparaison TEB pratique/théorique pour différentes bandes passantes (c
 xlabel("log10(BandePassante)")
 ylabel("TEB")
 legend("pratique", "theorique")
+
+% Comparaison 1/2 et 1/3
+if affichage_comparaison_chaine
+    figure;
+    semilogy(SNR_dB,tableaux_TEB1_pra,'b', 'LineWidth', 2); hold on;
+    semilogy(SNR_dB,tableaux_TEB2_pra,'r', 'LineWidth', 2); hold on;
+    title("Comparaison TEB pratique entre chaine 1 et chaine 2")
+    xlabel("log10(BandePassante)")
+    ylabel("TEB")
+    legend("chaine 1", "chaine 2")
+
+    figure;
+    semilogy(SNR_dB,tableaux_TEB1_pra,'b', 'LineWidth', 2); hold on;
+    semilogy(SNR_dB,tableaux_TEB3_pra,'r', 'LineWidth', 2); hold on;
+    title("Comparaison TEB pratique entre chaine 1 et chaine 3")
+    xlabel("log10(BandePassante)")
+    ylabel("TEB")
+    legend("chaine 1", "chaine 3")
+end
 
 function [Ns] = nb_symbole(nb_chaine,Tb,Te)
     if nb_chaine == 1 || nb_chaine == 2
