@@ -4,7 +4,13 @@ Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
 nbits = 1000;
 
-SNR_dB = 0:5:20;
+affichage_eyediagram = false;
+
+if affichage_eyediagram
+    SNR_dB = 0:5:20;
+else
+    SNR_dB = 0:8;
+end
 len_SNR = length(SNR_dB);
 SNR = 10.^(SNR_dB/10);
 
@@ -19,8 +25,10 @@ for i = 1:length(SNR)
     Ns = nb_symbole(1, Tb, Te);
     [tableaux_TEB1_pra(i), signal_recu] = BdB(1,nbits,Ns,SNR(i));
 
+    if affichage_eyediagram
         eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
         title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 1");
+    end
 
     tableaux_TEB1_the(i) = qfunc(sqrt(2*SNR(i)));
 
@@ -28,15 +36,19 @@ for i = 1:length(SNR)
     [tableaux_TEB2_pra(i), signal_recu] = BdB(2,nbits,Ns,SNR(i));
     tableaux_TEB2_the(i) = qfunc(sqrt(SNR(i)));
 
-    eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
-    title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 2");
+    if affichage_eyediagram
+        eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
+        title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 2");
+    end
 
     Ns = nb_symbole(3, Tb, Te);
     [tableaux_TEB3_pra(i),signal_recu] = BdB(3,nbits,Ns,SNR(i));
     tableaux_TEB3_the(i) = 3/4*qfunc(sqrt(4/5*SNR(i)));
 
-    eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
-    title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 3");
+    if affichage_eyediagram
+        eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
+        title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 3");
+    end
 end
 
 figure;
