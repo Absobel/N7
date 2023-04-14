@@ -29,7 +29,7 @@ t_correct1 = (0:Te:(length(signal_genere1)-1)*Te)/n;
 % DSP
 dsp_signal1 = pwelch(signal_genere1,[],[],[],1,'centered');
 f1 = linspace(-Fe/2,Fe/2,length(dsp_signal1));
-dsp_signal1_th = Ts*(sin(pi*f1*Ts/2).^4).*((pi*f1*Ts/2).^2);
+dsp_signal1_th = Ts*sinc(pi*f1*Ts)/4;
 
 % Modulateur 2
 % -------------
@@ -52,7 +52,7 @@ t_correct2 = (0:Te:(length(signal_genere2)-1)*Te)/n;
 
 dsp_signal2 = pwelch(signal_genere2,[],[],[],1,'centered');
 f2 = linspace(-Fe/2,Fe/2,length(dsp_signal2));
-dsp_signal2_th = Ts*(sin(pi*f2*Ts/2).^4).*((pi*f2*Ts/2).^2);
+dsp_signal2_th = Ts*sinc(pi*f2*Ts)/4;
 
 % Modulateur 3
 % -------------
