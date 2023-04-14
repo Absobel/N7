@@ -2,36 +2,41 @@ clear all; close all; clc;
 
 Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
-nbits = 100000;
+nbits = 1000;
 
-SNR_dB = 0:0;
+SNR_dB = 0:5:20;
+len_SNR = length(SNR_dB);
 SNR = 10.^(SNR_dB/10);
 
-tableaux_TEB1_pra = zeros(9,1);
-tableaux_TEB1_the = zeros(9,1);
-tableaux_TEB2_pra = zeros(9,1);
-tableaux_TEB2_the = zeros(9,1);
-tableaux_TEB3_pra = zeros(9,1);
-tableaux_TEB3_the = zeros(9,1);
+tableaux_TEB1_pra = zeros(len_SNR,1);
+tableaux_TEB1_the = zeros(len_SNR,1);
+tableaux_TEB2_pra = zeros(len_SNR,1);
+tableaux_TEB2_the = zeros(len_SNR,1);
+tableaux_TEB3_pra = zeros(len_SNR,1);
+tableaux_TEB3_the = zeros(len_SNR,1);
 
 for i = 1:length(SNR)
     Ns = nb_symbole(1, Tb, Te);
     [tableaux_TEB1_pra(i), signal_recu] = BdB(1,nbits,Ns,SNR(i));
 
-        %figure;
-        %title("Diagramme d'oeil pour SNR = " + SNR + " dB de la chaine 1");
-        %plot(reshape(signal_recu,Ns,length(signal_recu)/Ns))
-        eyediagram(signal_recu(Ns:end), 2*Ns, 2*Ns, Ns-1);
+        eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
+        title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 1");
 
     tableaux_TEB1_the(i) = qfunc(sqrt(2*SNR(i)));
 
     Ns = nb_symbole(2, Tb, Te);
-    [tableaux_TEB2_pra(i)] = BdB(2,nbits,Ns,SNR(i));
+    [tableaux_TEB2_pra(i), signal_recu] = BdB(2,nbits,Ns,SNR(i));
     tableaux_TEB2_the(i) = qfunc(sqrt(SNR(i)));
 
+    eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
+    title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 2");
+
     Ns = nb_symbole(3, Tb, Te);
-    [tableaux_TEB3_pra(i)] = BdB(3,nbits,Ns,SNR(i));
+    [tableaux_TEB3_pra(i),signal_recu] = BdB(3,nbits,Ns,SNR(i));
     tableaux_TEB3_the(i) = 3/4*qfunc(sqrt(4/5*SNR(i)));
+
+    eyediagram(signal_recu(Ns+1:end), 2*Ns, 2*Ns, Ns-1);
+    title("Diagramme d'oeil pour SNR = " + SNR_dB(i) + " dB de la chaine 3");
 end
 
 figure;
@@ -102,8 +107,8 @@ function [signal_propage] = propagation(nb_chaine,signa_mis_en_forme,Ns,SNR)
         sigman = sqrt(Px*Ns/(4*SNR));
     end
     bruit = sigman*randn(1,length(signa_mis_en_forme))';
-    %signal_propage = signa_mis_en_forme + bruit;
-    signal_propage = signa_mis_en_forme;
+    signal_propage = signa_mis_en_forme + bruit;
+    %signal_propage = signa_mis_en_forme;
 end
 
 function [signal_recu] = reception(nb_chaine,signal_propage,Ns)
