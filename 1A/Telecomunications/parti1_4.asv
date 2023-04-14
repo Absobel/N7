@@ -2,7 +2,7 @@ clear all; close all; clc;
 
 Fe = 24000; Te = 1/Fe;
 Rb = 3000; Tb = 1/Rb;
-nbits = 100000;
+nbits = 1000;
 
 SNR_dB = 0:8;
 SNR = 10.^(SNR_dB/10);
@@ -76,8 +76,8 @@ function [signa_mis_en_forme] = mise_en_forme(nb_chaine, bits, Ns)
     if nb_chaine == 1 || nb_chaine == 2
         signal_mappe = kron(2*bits-1, mappage);
     elseif nb_chaine == 3
-        signal = reshape(bits', [2 length(bits)/2]);
-        signal = sum(signal.*[2; 1]);
+        signal = reshape(bits', [2 length(bits)/2])';
+        signal = sum(signal.*[2 1]);
 
         % code de grey
         signal(signal == 0) = -3;
@@ -91,16 +91,12 @@ function [signa_mis_en_forme] = mise_en_forme(nb_chaine, bits, Ns)
     signa_mis_en_forme = filter(h,1,signal_mappe);
 end
 
-function [signal_propage] = propagation(nb_chaine,signa_mis_en_forme,Ns,SNR)
+function [signal_propage] = propagation(signa_mis_en_forme,Ns,SNR)
     Px = mean(abs(signa_mis_en_forme).^2);
-    if nb_chaine == 1 || nb_chaine == 2
-        sigman = sqrt(Px*Ns/(2*SNR));
-    elseif nb_chaine == 3
-        sigman = sqrt(Px*Ns/(4*SNR));
-    end
-    bruit = sigman*randn(1,length(signa_mis_en_forme))';
-    signal_propage = signa_mis_en_forme + bruit;
-    %signal_propage = signa_mis_en_forme;
+    sigman = sqrt(Px*Ns/(2*SNR));
+    bruit = sigman*randn(1,length(signa_mis_en_forme));
+    signal_propage = signa_mis_en_forme' + bruit;
+    %signal_propage = signa_mis_en_forme';
 end
 
 function [signal_recu] = reception(nb_chaine,signal_propage,Ns)
@@ -150,7 +146,7 @@ function [taux_erreur] = BdB(nb_chaine,nbits,Ns,SNR)
         % figure;
         % plot(reshape(signal_mis_en_forme,Ns,length(signal_mis_en_forme)/Ns));
     
-    [signal_propage] = propagation(nb_chaine,signal_mis_en_forme,Ns,SNR);
+    [signal_propage] = propagation(signal_mis_en_forme,Ns,SNR);
     [signal_recu] = reception(nb_chaine,signal_propage,Ns);
     [taux_erreur] = demapping(nb_chaine, signal_recu, nbits, bits, Ns);
 end
