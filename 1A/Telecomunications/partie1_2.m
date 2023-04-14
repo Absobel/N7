@@ -27,9 +27,9 @@ signal_genere1 = filter(h1,1,x1);
 t_correct1 = (0:Te:(length(signal_genere1)-1)*Te)/n;
 
 % DSP
-dsp_signal1 = pwelch(signal_genere1,[],[],[],1,'centered');
+dsp_signal1 = pwelch(signal_genere1,[],[],[],Fe,'twosided');
 f1 = linspace(-Fe/2,Fe/2,length(dsp_signal1));
-dsp_signal1_th = Ts*sinc(pi*f1*Ts)/4;
+dsp_signal1_th = Ts*(sinc(f1*Ts)).^2/4;
 
 % Modulateur 2
 % -------------
@@ -50,9 +50,9 @@ t_correct2 = (0:Te:(length(signal_genere2)-1)*Te)/n;
 
 % DSP
 
-dsp_signal2 = pwelch(signal_genere2,[],[],[],1,'centered');
+dsp_signal2 = pwelch(signal_genere2,[],[],[],Fe,'twosided');
 f2 = linspace(-Fe/2,Fe/2,length(dsp_signal2));
-dsp_signal2_th = Ts*sinc(pi*f2*Ts)/4;
+dsp_signal2_th = 5*Ts*sinc(f2*Ts).^2/4;
 
 % Modulateur 3
 % -------------
@@ -73,7 +73,7 @@ t_correct3 = (0:Te:(length(signal_genere3)-1)*Te)/n;
 
 % DSP
 
-dsp_signal3 = pwelch(signal_genere3,[],[],[],1,'centered'); % mettre 1 parce que sinon pwelch divise par Fe
+dsp_signal3 = pwelch(signal_genere3,[],[],[],1,'twosided'); % mettre 1 parce que sinon pwelch divise par Fe
 f3 = linspace(-Fe/2,Fe/2,length(dsp_signal3));
 
 sigma = 1;
@@ -103,11 +103,14 @@ title('Signal généré par le modulateur 1');
 
 
 ax2 = nexttile;
-semilogy(f1, dsp_signal1); hold on;
-semilogy(f1, dsp_signal1_th); hold off;
+semilogy(f1, fftshift(abs(dsp_signal1))); hold on;
+semilogy(f1, abs(dsp_signal1_th)); hold off;
 title('DSP du signal généré par le modulateur 1');
 legend('DSP','DSP théorique') ;
 
+ax3 = nexttile;
+semilogy(f1, fftshift(abs(dsp_signal1)));
+title('DSP du signal généré par le modulateur 1');
 
 % Modulateur 2
 
@@ -119,10 +122,14 @@ plot(t_correct2,signal_genere2);
 title('Signal généré par le modulateur 2');
 
 ax2 = nexttile;
-semilogy(f2, dsp_signal2); hold on;
-semilogy(f2, dsp_signal2_th); hold off;
+semilogy(f2, fftshift(abs(dsp_signal2))); hold on;
+semilogy(f2, abs(dsp_signal2_th)); hold off;
 title('DSP du signal généré par le modulateur 2');
 legend('DSP','DSP théorique');
+
+ax3 = nexttile;
+semilogy(f2, fftshift(abs(dsp_signal2)));
+title('DSP du signal généré par le modulateur 2');
 
 % Modulateur 3
 
@@ -134,10 +141,14 @@ plot(t_correct3,signal_genere3);
 title('Signal généré par le modulateur 3');
 
 ax2 = nexttile;
-semilogy(f3, dsp_signal3); hold on;
-semilogy(f3, dsp_signal3_th); hold off;
+semilogy(f3, fftshift(abs(dsp_signal3))  ); hold on;
+semilogy(f3, abs(dsp_signal3_th)); hold off;
 title('DSP du signal généré par le modulateur 3');
 legend('DSP','DSP théorique');
+
+ax3 = nexttile;
+semilogy(f3, fftshift(abs(dsp_signal3)));
+title('DSP du signal généré par le modulateur 3');
 
 % Superposition des DSP
 
@@ -151,8 +162,8 @@ legend('Modulateur 1','Modulateur 2','Modulateur 3');
 % Superposition des DSP théoriques
 
 figure("Name","Superposition des DSP théoriques");
-semilogy(f1, dsp_signal1_th); hold on;
-semilogy(f2, dsp_signal2_th); hold on;
-semilogy(f3, dsp_signal3_th); hold off;
+semilogy(f1, abs(dsp_signal1_th)); hold on;
+semilogy(f2, abs(dsp_signal2_th)); hold on;
+semilogy(f3, abs(dsp_signal3_th)); hold off;
 title('DSP théoriques des signaux générés par les modulateurs 1, 2 et 3');
 legend('Modulateur 1','Modulateur 2','Modulateur 3');
