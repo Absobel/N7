@@ -15,16 +15,16 @@ void traitement_erreurs(int code_erreur) {
     switch (code_erreur) {
         case ERR_OPEN_SOURCE:
             perror("Erreur lors de l'ouverture du fichier source");
-            exit(1);
+            exit(ERR_OPEN_SOURCE);
         case ERR_OPEN_DESTINATION:
             perror("Erreur lors de l'ouverture du fichier destination");
-            exit(1);
+            exit(ERR_OPEN_DESTINATION);
         case ERR_LECTURE:
             perror("Erreur lors de la lecture du fichier source");
-            exit(1);
+            exit(ERR_LECTURE);
         case ERR_ECRITURE:
             perror("Erreur lors de l'écriture du fichier destination");
-            exit(1);
+            exit(ERR_ECRITURE);
     }
 }
 
