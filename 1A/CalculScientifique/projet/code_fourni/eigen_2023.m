@@ -284,6 +284,7 @@ switch v
         
       case 2
         fprintf('\n******* calcul avec subspace iteration v2 ******\n');
+        fprintf('p = %d\n', p);
         % appel à la version 2 de la subspace iteration method
         
         t_v2 =  cputime;
@@ -295,8 +296,6 @@ switch v
         W2 = diag(D2);
         
         if(flag2 == 0)
-            
-            
             fprintf('\nTemps subspace iteration v2 = %0.3e\n',t_v2);
             fprintf('Nombre d''itérations : %d\n', it2);
             fprintf('Nombre de valeurs propres pour attendre le pourcentage = %d\n', n_ev2);
