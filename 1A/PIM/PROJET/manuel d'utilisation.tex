@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+
+\title{%
+  Manuel Utilisateur \\
+  \large Stockage et exploitation de tables de routage}
+\author{Paul Somson, Chourouk El Hassani, Absobel \\
+    Départment Science du Numérique, INP-ENSEEIHT}
+\date{January 14, 2023}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+Ce manuel a pour objectif de guider l'utilisateur dans l'utilisation de ce produit. Il présentera les fonctionnalités et les étapes d'utilisation. Il est important de lire attentivement ce manuel avant d'utiliser le produit pour garantir une utilisation efficace.
+
+\section{Installation}
+\begin{enumerate}
+    \item Téléchargement de l'executable
+    \item Lancer l'executable depuis un terminal de la manière suivante
+    \begin{enumerate}
+        \item Linux
+        \begin{verbatim}
+            ./routeur_ll [OPTIONS]  |  ./routeur_la [OPTIONS]
+        \end{verbatim}
+        \item Windows
+        \begin{verbatim}
+            routeur_ll.exe [OPTIONS]  |  routeur_la.exe [OPTIONS]
+        \end{verbatim}
+    \end{enumerate}
+\end{enumerate}
+
+\section{Fonctionnement}
+Le produit est conçu pour stocker et exploiter des tables de routage pour acheminer des paquets de données. Il utilise un cache pour stocker les routes les plus utilisées afin d'optimiser les performances. Il utilise également une politique de remplacement, First In First Out (FIFO), Last Recently Used (LRU) ou Last Frequently Used (LRU) pour gérer les routes dans le cache. L'utilisateur peut également personnaliser la taille du cache et les fichiers utilisés pour les paquets, les routes et les résultats. Les statistiques de performance peuvent également être affichées pour surveiller l'utilisation du produit.
+
+\section{Usage}
+\subsection{Usage Classique}
+Pour utiliser le routeur dans sa version le plus simple, il suffit de l'executer sans options. Dans ce cas, il utilisera "paquets.txt" contenant les paquets et "table.txt" pour la table de routage. Il créera le fichier "resultats.txt" contenant les résultats. Durant l'execution le programme affichera les statistiques. Il utilisera un cache pouvant contenir jusqu'à 10 routes et utilisera la politique FIFO (First in First Out). 
+\begin{verbatim}
+    Usage: ./routeur_ll  |  ./routeur_la
+\end{verbatim}
+
+\subsection{Usage Avancé}
+Permet de customiser l'execution du programme.
+\begin{verbatim}
+    Usage: ./routeur_ll <options> | ./routeur_la <options>
+    Options :
+      -c <taille> : Définir la taille du cache. La valeur 0 indique qu'il n y a 
+                    Pas de cache. La valeur par défaut est 10.
+      -p FIFO|LRU|LFU : Définir la politique utilisée par le cache. La valeur par 
+                        défaut est FIFO.
+         <fichier> : Définir le nom du fichier contenant les paquets à router. 
+                     Par défaut, on utilise le fichier paquets.txt.
+      -s : Afficher les statistiques (nombre de défauts de cache, nombre de 
+           demandes de route, taux de défaut de cache). C'est l'option activée par 
+           défaut.
+      -S : Ne pas afficher les statistiques.
+      -t <fichier> : Définir le nom du fichier contenant les routes de la table de 
+                     routage. Par défaut, on utilise le fichier table.txt.
+      -r <fichier> : Définir le nom du fichier contenant les résultats (adresse IP 
+                     destination du paquet et inter-face utilisée). Par défaut, on 
+                     utilise le fichier resultats.txt.
+\end{verbatim}
+
+\section{Appendix}
+Le code est open source est disponible sur \href{http://www.github.com/Absobel/PIM_Project}{Github}.
+
+\end{document}

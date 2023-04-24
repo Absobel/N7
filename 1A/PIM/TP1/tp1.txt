@@ -1,0 +1,11 @@
+Ex1 : passé
+
+Ex2 : done
+
+Ex3 : 
+1. Manque d'un ":"
+2. Manque de  "then", typo "Enlier"
+Python a detecté la mauvaise syntaxe mais pas la faute de frappe. On peut le mettre en évidence avec une IDE qui indiquerait que "enlier" n'existe pas, ou faire plus de tests.
+3. L'interêt du typage statique est de faire en sorte de ne pas manquer ce genre d'erreurs car on doit créer les variables avant de pouvoir les utiliser.
+
+Ex4 : done

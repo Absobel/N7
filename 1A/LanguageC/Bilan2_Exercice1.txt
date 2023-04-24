@@ -1,0 +1,30 @@
+Indiquer vos réponses aux questions de l'exercice 1 du Bilan 2 ci-après : 
+
+[B1.1] Quelle est la portée de chaque variable déclarée ? Pour chaque variable, on donnera le numéro de ligne où commence et se termine sa portée.
+
+n : 8 - 37
+p : 9 - 37
+a : 13 - 18
+n : 22 - 24
+r : 30 - 32
+
+[B1.2] Y a-t-il un exemple de masquage de variable dans ce programme ?
+
+n est masqué à la ligne 22
+
+[B1.3] Peut-on savoir ce que devrait afficher l’exécution de ce programme ?
+
+Non on ne peut pas savoir ce que devrait afficher le programme car on ne connait pas les adresses des variables qui devraient être affichées.
+
+[B1.4] Même s’il compile sans erreur, ce programme est faux. Pourquoi ?
+
+Le programme est faux car en ligne 19,20,26,27,34 on tente d'acceder à un pointeur pointant vers une variable (a) qui a été libérée en ligne 18.
+
+[B1.5] La valeur de `p` change-t-elle après l’initialisation de la ligne 14 ?
+
+Le programme ne change pas la valeur de p, cependant, comme le pointeur pointe vers une case mémoire libre, il est possible qu'un autre programme modifie la valeur de cette case.
+
+
+[B1.6] Que se passerait-il si on modifiait `*p` après la ligne 19 ?
+
+Il y aurait une erreur "Segmentation fault"
