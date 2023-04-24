@@ -1,6 +1,0 @@
-Require Import naturelle.
-
-Section LogiqueProposition.
-
-Variable A B C E Y R : Prop.
-
