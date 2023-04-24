@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="Alt-Ergo" version="2.4.2" timelimit="5" steplimit="0" memlimit="1000"/>
+<prover id="1" name="Coq" version="8.16.0" timelimit="0" steplimit="0" memlimit="0"/>
+<file format="whyml" proved="true">
+<path name=".."/><path name="proposition.mlw"/>
+<theory name="Proposition" proved="true">
+ <goal name="Thm00" proved="true">
+ <proof prover="1"><path name="proposition_Proposition_Thm00_1.v"/><result status="valid" time="0.33"/></proof>
+ </goal>
+ <goal name="Thm01" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="4"/></proof>
+ </goal>
+ <goal name="Thm02" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="0"/></proof>
+ </goal>
+ <goal name="Thm03" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="4"/></proof>
+ <proof prover="1" obsolete="true"><path name="proposition_Proposition_Thm03_1.v"/><result status="unknown" time="0.00" steps="0"/></proof>
+ </goal>
+ <goal name="Thm04" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="0"/></proof>
+ </goal>
+ <goal name="Thm05" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="4"/></proof>
+ </goal>
+ <goal name="Thm06" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="6"/></proof>
+ </goal>
+</theory>
+</file>
+</why3session>

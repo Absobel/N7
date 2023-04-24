@@ -1,0 +1,17 @@
+1 : Compilation des fichiers routeur_ll.adb, routeur_la.adb, test_cache_ll.adb, test_cache_la.adb, test_liste_chainee.adb et test_adresse_ip.adb
+2 : Lancement des fichiers test_cache_ll.adb, test_cache_la.adb, test_liste_chainee.adb et test_adresse_ip.adb
+3 : Lancement des deux routeurs avec les exemples suivants (remplacer ./routeur_ll par ./routeur_la pour le routeur avec arbre) :
+    - ./routeur_ll -r exemples/resultats.txt -p exemples/paquets.txt -t exemples/table.txt
+        (fichiers : paquets.txt, table.txt)
+    - ./routeur_ll -c 0 -r exemples/resultats.txt -p exemples/paquets.txt -t exemples/table.txt
+        (cache vide)
+    - ./routeur_ll -S -r exemples/resultats.txt -p exemples/paquets.txt -t exemples/table.txt
+        (ne pas afficher de statistiques)
+    - ./routeur_ll -c 3 -p FIFO -p exemples/paquets_FIFO.txt -t exemples/table.txt -r exemples/resultats.txt
+        (cache petite taille pour démo, politique : FIFO)
+    - ./routeur_ll -c 3 -p LRU -p exemples/paquets_LRU.txt -t exemples/table.txt -r exemples/resultats.txt
+        (cache petite taille pour démo, politique : LRU)
+    - ./routeur_ll -c 3 -p LFU -p exemples/paquets_LFU.txt -t exemples/table.txt -r exemples/resultats.txt
+        (cache petite taille pour démo, politique : LFU)
+    - ./routeur_ll -p exemples/paquets_erreurs.txt -t exemples/table_erreurs.txt -r exemples/resultats.txt
+        (fichiers : paquets_erreurs.txt, table_erreurs.txt)

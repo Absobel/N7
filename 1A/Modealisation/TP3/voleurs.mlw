@@ -1,0 +1,45 @@
+theory Voleurs
+
+  predicate a
+  predicate b
+  predicate c
+
+  predicate da = b /\ not c
+  predicate db = a -> c
+  predicate dc = not c /\ (a \/ b)
+  
+  goal Compatibilite1 : (a /\ b /\ c) -> (da /\ db /\ dc)
+  goal Compatibilite2 : (a /\ b /\ not(c)) -> (da /\ db /\ dc)
+  goal Compatibilite3 : (a /\ not(b) /\ c) -> (da /\ db /\ dc)
+  goal Compatibilite4 : (a /\ not(b) /\ not(c)) -> (da /\ db /\ dc)
+  goal Compatibilite5 : (not(a) /\ b /\ c) -> (da /\ db /\ dc)
+  goal Compatibilite6 : (not(a) /\ b /\ not(c)) -> (da /\ db /\ dc)
+  goal Compatibilite7 : (not(a) /\ not(b) /\ c) -> (da /\ db /\ dc)
+  goal Compatibilite8 : (not(a) /\ not(b) /\ not(c)) -> (da /\ db /\ dc)
+  
+  (*Compatibilite6 est vraie, les trois déclarations sont donc compatibles*)
+  
+  goal Deduction1 : (da /\ db) -> dc
+  goal Deduction2 : (da /\ dc) -> db
+  goal Deduction3 : (dc /\ db) -> da
+  
+  (*dc peut se déduire de da et db et da peut se déduire de dc et db*)
+  
+  goal Innocent_Menteur1 : (not a /\ not b /\ not c) -> da
+  goal Innocent_Menteur2 : (not a /\ not b /\ not c) -> db
+  goal Innocent_Menteur3 : (not a /\ not b /\ not c) -> dc
+  
+  (*A et C auraient mentis s'ils étaient tous innocents*)
+  
+  goal Verite_Coupable1 : (da /\ db /\ dc) -> a
+  goal Verite_Coupable2 : (da /\ db /\ dc) -> b
+  goal Verite_Coupable3 : (da /\ db /\ dc) -> c
+  
+  (*B est coupable s'ils disent tous la véirté*)
+  
+  goal Innocent_Verite1 : ((da -> not a) /\ (db -> not b) /\ (dc -> not c)) -> not a
+  goal Innocent_Verite2 : ((da -> not a) /\ (db -> not b) /\ (dc -> not c)) -> not b
+  goal Innocent_Verite3 : ((da -> not a) /\ (db -> not b) /\ (dc -> not c)) -> not c
+  
+  (*Si seuls les innocents disent la vérité, B est innocent*)
+end
