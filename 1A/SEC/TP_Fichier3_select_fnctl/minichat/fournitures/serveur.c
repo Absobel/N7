@@ -22,6 +22,7 @@
 
 #include <stdbool.h>
 #include <sys/stat.h>
+#include <sys/select.h>
 
 #define MAXPARTICIPANTS 5		/* seuil au delà duquel la prise en compte de nouvelles
 								 						 	   connexions sera différée */
@@ -51,11 +52,13 @@ void effacer(int i) { /* efface le descripteur pour le participant i */
 }
 
 
-void ajouter(char *dep) { // traite la demande de connexion du pseudo référencé par dep
-/*  (**** à faire ****) 
-	Si le participant est "fin", termine le serveur (et gère la terminaison proprement)
-	Sinon, ajoute un participant actif, de pseudo référencé par dep
-*/
+void ajouter(char *dep) { // traite la demande de connexion du pseudo référencé par dep et termine le serveur si dep="fin"
+	if (strcmp(dep,"fin")==0) {
+		/* (**** à faire ****) terminaison propre du serveur */
+	}
+	else {
+		/* (**** à faire ****) ajouter un participant actif de pseudo dep */
+	}
 }
 
 void desactiver (int p) {

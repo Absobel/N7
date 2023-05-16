@@ -20,6 +20,7 @@ Notes :
 #include <string.h>
 #include <fcntl.h>
 #include <sys/stat.h>
+#include <sys/select.h>
 
 #define TAILLE_MSG 128			/* nb caractères message complet ([nom]+texte) */
 #define TAILLE_NOM 25			/* nombre de caractères d'un pseudo */
