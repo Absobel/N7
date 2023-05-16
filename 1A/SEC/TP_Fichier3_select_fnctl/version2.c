@@ -98,7 +98,8 @@ int main (int argc, char *argv[]) {
             }
 
             bzero(buf, BUFSIZE); // nettoyage
-            if ((nlus = read(p[LECTURE],buf,BUFSIZE))>0) {
+            
+            if (FD_ISSET(p[LECTURE], &readfds) && (nlus = read(p[LECTURE],buf,BUFSIZE))>0) {
                 traiter(buf,commande,nlus);
                 if (commande != 'X') {
                     write(1,buf,nlus);
