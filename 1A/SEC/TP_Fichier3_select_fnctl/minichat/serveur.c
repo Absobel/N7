@@ -33,7 +33,7 @@
 
 typedef struct ptp { 			/* descripteur de participant */
     bool actif; /* indique si le descripteur correspond à un client effectivement connecté */
-    char nom [TAILLE_NOM];
+    char nom [TAILLE_NOM];    /* nom du participant */
     int in;		/* tube d'entrée (C2S) */
     int out;	/* tube de sortie (S2C) */
 } participant;
@@ -76,7 +76,7 @@ void ajouter(char *dep) {
 		unlink("./ecoute");		/* suppression du tube d'écoute */
 		exit(0);
 	} else {
-		for (int i = 0; i < MAXPARTICIPANTS; i++) {
+		for (int i = 0; i < MAXPARTICIPANTS; i++) {         // on cherche un descripteur de participant libre
 			if (!participants[i].actif) {
 				sprintf(c2s, "./%s_c2s", dep);
 				sprintf(s2c, "./%s_s2c", dep);
@@ -173,6 +173,7 @@ int main (int argc, char *argv[]) {
 					continue;
 				}
 
+				// Traiter chacun des messages individuellement
 				int j = 0;
 				while (j*TAILLE_MSG*sizeof(char) < nlus) {
 					prochainMessage = buf + j*TAILLE_MSG*sizeof(char);

@@ -1,0 +1,6 @@
+Commentaires :
+
+Partie console :
+Une fois que j'ai correctement lu et compris le sujet j'ai plus eu de problèmes. Un seul détail est que je dois enlever un charactère \n à chaque messages pour éviter d'avoir un saut de ligne entre chaque message et j'ai aucune idée d'où il vient.
+
+Partie chatmap :
