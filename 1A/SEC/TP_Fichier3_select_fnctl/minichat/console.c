@@ -45,7 +45,13 @@ void afficher(int depart) {
 }
 
 int main (int argc, char *argv[]) {
-    int i,nlus,necrits;
+    if (!((argc == 2) && (strlen(argv[1]) < TAILLE_NOM*sizeof(char)))) {
+        printf("utilisation : %s <pseudo>\n", argv[0]);
+        printf("Le pseudo ne doit pas dépasser 25 caractères\n");
+        exit(1);
+    }
+
+    int nlus,necrits;
     char * prochainMessage;		 /* pour parcourir le contenu reçu d'un tube */
 
     int ecoute, S2C, C2S;		 /* descripteurs tubes de service*/
@@ -53,41 +59,54 @@ int main (int argc, char *argv[]) {
 
     fd_set readfds;				 /* ensemble de descripteurs écoutés par le select */
 
+    char pseudo [TAILLE_NOM]; strcpy(pseudo, argv[1]); /* pseudo du client */
     char tubeC2S [TAILLE_NOM+5]; /* chemin tube de service client -> serveur = pseudo_c2s */
     char tubeS2C [TAILLE_NOM+5]; /* chemin tube de service serveur -> client = pseudo_s2c */
-    char pseudo [TAILLE_NOM];
-    char message [TAILLE_MSG];
+    //char message [TAILLE_MSG];
     char saisie [TAILLE_SAISIE]; /* tampon recevant la ligne saisie au clavier */
     char buf [TAILLE_RECEPTION]; /* tampon recevant les messages du tube s2c */
 
-    if (!((argc == 2) && (strlen(argv[1]) < TAILLE_NOM*sizeof(char)))) {
-        printf("utilisation : %s <pseudo>\n", argv[0]);
-        printf("Le pseudo ne doit pas dépasser 25 caractères\n");
-        exit(1);
-    }
 
     /* ouverture du tube d'écoute */
     ecoute = open("./ecoute",O_WRONLY);
     if (ecoute==-1) {
-        printf("Le serveur doit être lance, et depuis le meme repertoire que le client\n");
+        perror("Le serveur doit être lance, et depuis le meme repertoire que le client\n");
         exit(2);
     }
-    /* (**** à faire ****)  création des tubes de service */
+    /* création des tubes de service */
+    sprintf(tubeC2S, "./%s_c2s", argv[1]);
+    sprintf(tubeS2C, "./%s_s2c", argv[1]);
+    mkfifo(tubeC2S, S_IRUSR|S_IWUSR);
+    mkfifo(tubeS2C, S_IRUSR|S_IWUSR);
 
-    /* (**** à faire ****) demande de connexion au serveur*/
-
+    /* demande de connexion au serveur*/
+    necrits = write(ecoute, pseudo, strlen(pseudo));
+    if (necrits==-1) {
+        perror("Erreur ecriture tube ecoute");
+        exit(3);
+    }
 
     if (strcmp(pseudo,"fin")!=0) { /* "console fin" provoque la terminaison du serveur */
         /* client "normal" */
 
-    /* (**** à faire ****) initialisations */
+    /* initialisations */
         /* ouverture des tubes de service seulement ici (après la demande de connexion) au serveur)
           car il faut que la connexion au serveur ait eu lieu auparavant, pour que le 
           serveur puisse effectuer l'ouverture des tubes de service de son côté, et ainsi
           permettre au client d'ouvrir les tubes sans être bloqué  (voir sujet, §3.2 )*/
+        S2C = open(tubeS2C, O_RDONLY);
+        if (S2C == -1) {
+            perror("error tube serveur opening");
+            exit(2);
+        }
+        C2S = open(tubeC2S, O_WRONLY);
+        if (C2S == -1) {
+            perror("error tube client opening");
+            exit(2);
+        }
 
         while (strcmp(saisie,"au revoir")!=0) {
-     /* (**** à faire ****) boucle principale  :
+     /* boucle principale  :
             * récupérer les messages reçus éventuels, puis les afficher.
               	- tous les messages comportent TAILLE_MSG caractères, et les constantes
 				  sont fixées pour qu'il n'y ait pas de message tronqué, ce qui serait
@@ -99,9 +118,40 @@ int main (int argc, char *argv[]) {
             	  plus longue que la nouvelle.
             * récupérer la ligne saisie éventuelle, puis l'envoyer
             */
+
+            FD_ZERO(&readfds);
+            FD_SET(S2C, &readfds);
+            FD_SET(0, &readfds);
+
+            // récupérer les messages reçus éventuels, puis les afficher.
+            for (int j = 0; j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char); j++) {
+                prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
+                if (FD_ISSET(S2C, &readfds) && (nlus = read(S2C, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
+                    discussion[curseur % NB_LIGNES][0] = '\0';
+                    strcpy(discussion[curseur % NB_LIGNES], prochainMessage);
+                    curseur++;
+                }
+            }
+            afficher(curseur);
+
+            // récupérer la ligne saisie éventuelle, puis l'envoyer
+            fgets(saisie, TAILLE_SAISIE, stdin);
+            if (strcmp(saisie,"au revoir")!=0) {
+                necrits = write(C2S, saisie, strlen(saisie));
+                if (necrits==-1) {
+                    perror("Erreur ecriture tube ecoute");
+                    exit(3);
+                }
+            }
+
         }
     }
-    /* (**** à faire ****) nettoyage des tubes de service */
+    /*nettoyage des tubes de service */
+    close(S2C);
+    close(C2S);
+    close(ecoute);
+    unlink(tubeS2C);
+    unlink(tubeC2S);
     printf("fin client\n");
     exit (0);
 }

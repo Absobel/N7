@@ -51,26 +51,62 @@ void effacer(int i) { /* efface le descripteur pour le participant i */
     participants[i].out = -1;
 }
 
+/* ajouter : ajoute un nouveau participant, part du principe que c'est possible
+	- dep : nom du participant à ajouter
+	- si dep == "fin", le serveur se termine
+*/
+void ajouter(char *dep) { 
+	char c2s[TAILLE_NOM+5];
+	char s2c[TAILLE_NOM+5];
 
-void ajouter(char *dep) { // traite la demande de connexion du pseudo référencé par dep et termine le serveur si dep="fin"
 	if (strcmp(dep,"fin")==0) {
-		/* (**** à faire ****) terminaison propre du serveur */
-	}
-	else {
-		/* (**** à faire ****) ajouter un participant actif de pseudo dep */
+		unlink("./ecoute");		/* suppression du tube d'écoute */
+		exit(0);
+	} else {
+		for (int i = 0; i < MAXPARTICIPANTS; i++) {
+			if (!participants[i].actif) {
+				sprintf(c2s, "./%s_c2s", dep);
+				sprintf(s2c, "./%s_s2c", dep);
+
+				participants[i].actif = true;
+				strcpy(participants[i].nom, dep);
+				participants[i].out = open(s2c, O_WRONLY);
+				participants[i].in = open(c2s, O_RDONLY);
+			
+				nbactifs++;
+				printf("connexion de %s\n", dep);
+
+				break;
+			}
+		}
 	}
 }
 
-void desactiver (int p) {
-/*  (**** à faire ****) traitement d'un participant déconnecté */
-}
-
+/* diffuser : diffuse le message référencé par dep à tous les actifs
+	- dep : message à diffuser
+*/
 void diffuser(char *dep) { 
-/* (**** à faire ****) envoi du message référencé par dep à tous les actifs */
+	/* (**** à faire ****) envoi du message référencé par dep à tous les actifs */
+	for (int i = 0; i < MAXPARTICIPANTS; i++) {
+		if (participants[i].actif) {
+			write(participants[i].out, dep, strlen(dep));
+		}
+	}
+}
+
+/* desactiver : désactive le participant p
+	- p : indice du participant à désactiver
+*/
+void desactiver (int p) {
+	nbactifs--;
+	strncpy(buf, participants[p].nom, sizeof(buf) - 1);
+	strncat(buf, " s'est deconnecté.", sizeof(buf) - strlen(buf) - 1);
+	effacer(p);  // effacer le descripteur du participant p avant que le message soit diffusé
+	diffuser(buf);
 }
 
 int main (int argc, char *argv[]) {
-    int i,nlus,necrits,res;
+    int i,nlus;
     int ecoute;				/* descripteur d'écoute */
     fd_set readfds; 		/* ensemble de descripteurs écoutés par le select */
     char * prochainMessage; /* pour parcourir le contenu du tampon de réception */
@@ -81,6 +117,7 @@ int main (int argc, char *argv[]) {
     mkfifo("./ecoute",S_IRUSR|S_IWUSR); // mmnémoniques sys/stat.h: S_IRUSR|S_IWUSR = 0600
     ecoute=open("./ecoute",O_RDONLY);
 
+	/* initialisation des descripteurs de participants */
     for (i=0; i< MAXPARTICIPANTS; i++) {
         effacer(i);
     }
@@ -88,7 +125,7 @@ int main (int argc, char *argv[]) {
 	/* (**** à faire [éventuellement] ****) : autres initialisations */
     while (true) {
         printf("participants actifs : %d\n",nbactifs);
-	/* (**** à faire ****) : boucle du serveur : traiter les requêtes en attente 
+	/* boucle du serveur : traiter les requêtes en attente 
 				 * 	sur le tube d'écoute : ajouter de nouveaux participants 
 				 	(tant qu'il y a moins de MAXPARTICIPANTS actifs)
 				 * 	sur les tubes d'entrée : lire les messages, et les diffuser.
@@ -103,5 +140,27 @@ int main (int argc, char *argv[]) {
     				- Attention : le serveur doit fonctionner même lorsqu'aucun client n'est
     				 connecté (de nouveaux clients peuvent se connecter à tout moment)
 	*/
+		FD_ZERO(&readfds);
+		FD_SET(ecoute, &readfds);
+		if (nbactifs < MAXPARTICIPANTS && FD_ISSET(ecoute, &readfds) && read(ecoute, bufDemandes, sizeof(bufDemandes)) > 0) {
+			ajouter(bufDemandes);
+		}
+
+		for (int i = 0; i < MAXPARTICIPANTS; i++) {
+			if (participants[i].actif) {
+				FD_SET(participants[i].in, &readfds);
+				for (int j = 0; j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char); j++) {
+					prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
+					if (FD_ISSET(participants[i].in, &readfds) && (nlus = read(participants[i].in, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
+						char message_a_diffuser[TAILLE_MSG+TAILLE_NOM+3];
+						sprintf(message_a_diffuser, "[%s] %s", participants[i].nom, prochainMessage);
+						diffuser(message_a_diffuser);
+					} else if (nlus == 0) {  // EOF venant de la part du client
+						desactiver(i);
+						continue;
+					}
+				}
+			}
+		}
     }
 }
