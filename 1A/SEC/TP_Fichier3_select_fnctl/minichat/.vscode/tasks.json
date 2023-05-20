@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "Build my project",
-            "command": "make",
+            "command": "make debug",
             "options": {
                 "cwd": "${workspaceFolder}"
             },
