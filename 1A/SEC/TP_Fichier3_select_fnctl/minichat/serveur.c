@@ -51,6 +51,18 @@ void effacer(int i) { /* efface le descripteur pour le participant i */
     participants[i].out = -1;
 }
 
+/* diffuser : diffuse le message référencé par dep à tous les actifs
+	- dep : message à diffuser
+*/
+void diffuser(char *dep) { 
+	/* (**** à faire ****) envoi du message référencé par dep à tous les actifs */
+	for (int i = 0; i < MAXPARTICIPANTS; i++) {
+		if (participants[i].actif) {
+			write(participants[i].out, dep, strlen(dep));
+		}
+	}
+}
+
 /* ajouter : ajoute un nouveau participant, part du principe que c'est possible
 	- dep : nom du participant à ajouter
 	- si dep == "fin", le serveur se termine
@@ -74,22 +86,12 @@ void ajouter(char *dep) {
 				participants[i].in = open(c2s, O_RDONLY);
 			
 				nbactifs++;
-				printf("connexion de %s\n", dep);
+				memset(buf, 0, sizeof(buf));
+				sprintf(buf, "[service] %s rejoint la discussion.", dep);
+				diffuser(buf);
 
 				break;
 			}
-		}
-	}
-}
-
-/* diffuser : diffuse le message référencé par dep à tous les actifs
-	- dep : message à diffuser
-*/
-void diffuser(char *dep) { 
-	/* (**** à faire ****) envoi du message référencé par dep à tous les actifs */
-	for (int i = 0; i < MAXPARTICIPANTS; i++) {
-		if (participants[i].actif) {
-			write(participants[i].out, dep, strlen(dep));
 		}
 	}
 }
@@ -99,8 +101,8 @@ void diffuser(char *dep) {
 */
 void desactiver (int p) {
 	nbactifs--;
-	strncpy(buf, participants[p].nom, sizeof(buf) - 1);
-	strncat(buf, " s'est deconnecté.", sizeof(buf) - strlen(buf) - 1);
+	memset(buf, 0, sizeof(buf));
+	sprintf(buf, "[service] %s quitte la discussion.", participants[p].nom);
 	effacer(p);  // effacer le descripteur du participant p avant que le message soit diffusé
 	diffuser(buf);
 }
@@ -142,22 +144,46 @@ int main (int argc, char *argv[]) {
 	*/
 		FD_ZERO(&readfds);
 		FD_SET(ecoute, &readfds);
+		int ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
+		if (ret_select == -1) {
+			perror("select_ecoute");
+			exit(1);
+		}
 		if (nbactifs < MAXPARTICIPANTS && FD_ISSET(ecoute, &readfds) && read(ecoute, bufDemandes, sizeof(bufDemandes)) > 0) {
 			ajouter(bufDemandes);
+			memset(bufDemandes, 0, sizeof(bufDemandes));       // Vider le buffer pour enlever le texte résiduel
 		}
 
 		for (int i = 0; i < MAXPARTICIPANTS; i++) {
 			if (participants[i].actif) {
+				FD_ZERO(&readfds);
 				FD_SET(participants[i].in, &readfds);
-				for (int j = 0; j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char); j++) {
+				ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
+				if (ret_select == -1) {
+					perror("select_participant");
+					exit(1);
+				}
+
+				int j = 0;
+				while (ret_select > 0 && j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char)) {
 					prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
 					if (FD_ISSET(participants[i].in, &readfds) && (nlus = read(participants[i].in, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
 						char message_a_diffuser[TAILLE_MSG+TAILLE_NOM+3];
+						memset(message_a_diffuser, 0, sizeof(message_a_diffuser));
 						sprintf(message_a_diffuser, "[%s] %s", participants[i].nom, prochainMessage);
 						diffuser(message_a_diffuser);
 					} else if (nlus == 0) {  // EOF venant de la part du client
 						desactiver(i);
 						continue;
+					}
+					j++;
+
+					FD_ZERO(&readfds);
+					FD_SET(participants[i].in, &readfds);
+					ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
+					if (ret_select == -1) {
+						perror("select_participant_inloop");
+						exit(1);
 					}
 				}
 			}

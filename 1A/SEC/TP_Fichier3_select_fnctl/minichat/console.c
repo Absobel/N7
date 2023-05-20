@@ -58,6 +58,7 @@ int main (int argc, char *argv[]) {
     int curseur = 0;			 /* position (affichage) dernière ligne reçue et affichée */
 
     fd_set readfds;				 /* ensemble de descripteurs écoutés par le select */
+    struct timeval timeout;		 /* paramètre timeout du select */
 
     char pseudo [TAILLE_NOM]; strcpy(pseudo, argv[1]); /* pseudo du client */
     char tubeC2S [TAILLE_NOM+5]; /* chemin tube de service client -> serveur = pseudo_c2s */
@@ -121,26 +122,58 @@ int main (int argc, char *argv[]) {
 
             FD_ZERO(&readfds);
             FD_SET(S2C, &readfds);
-            FD_SET(0, &readfds);
+            timeout.tv_sec = 0;  // timeout de 0 secondes
+            timeout.tv_usec = 0;
+
+            int ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
+            if (ret_select == -1) {
+                perror("select_S2C");
+                exit(1);
+            }
 
             // récupérer les messages reçus éventuels, puis les afficher.
-            for (int j = 0; j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char); j++) {
+            int j = 0;
+            while (ret_select > 0 && j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char)) {
                 prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
-                if (FD_ISSET(S2C, &readfds) && (nlus = read(S2C, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
+                if ((nlus = read(S2C, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
                     discussion[curseur % NB_LIGNES][0] = '\0';
                     strcpy(discussion[curseur % NB_LIGNES], prochainMessage);
                     curseur++;
+                    j++;
+                }
+
+                FD_ZERO(&readfds);
+                FD_SET(S2C, &readfds);
+                timeout.tv_sec = 0;  // timeout de 0 secondes
+                timeout.tv_usec = 0;
+                ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
+                if (ret_select == -1) {
+                    perror("select_S2C_inloop");
+                    exit(1);
                 }
             }
             afficher(curseur);
 
+            FD_ZERO(&readfds);
+            FD_SET(0, &readfds);
+            timeout.tv_sec = 1;  // timeout de 5 secondes
+            timeout.tv_usec = 0;
+
+            ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
+            if (ret_select == -1) {
+                perror("select_stdin");
+                exit(1);
+            }
+
             // récupérer la ligne saisie éventuelle, puis l'envoyer
-            fgets(saisie, TAILLE_SAISIE, stdin);
-            if (strcmp(saisie,"au revoir")!=0) {
-                necrits = write(C2S, saisie, strlen(saisie));
-                if (necrits==-1) {
-                    perror("Erreur ecriture tube ecoute");
-                    exit(3);
+            if (FD_ISSET(0, &readfds)) {
+                fgets(saisie, TAILLE_SAISIE, stdin);
+                if (strcmp(saisie,"au revoir")!=0) {
+                    necrits = write(C2S, saisie, strlen(saisie));
+                    if (necrits==-1) {
+                        perror("Erreur ecriture tube ecoute");
+                        exit(3);
+                    }
                 }
             }
 
