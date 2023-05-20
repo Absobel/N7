@@ -58,7 +58,6 @@ int main (int argc, char *argv[]) {
     int curseur = 0;			 /* position (affichage) dernière ligne reçue et affichée */
 
     fd_set readfds;				 /* ensemble de descripteurs écoutés par le select */
-    struct timeval timeout;		 /* paramètre timeout du select */
 
     char pseudo [TAILLE_NOM]; strcpy(pseudo, argv[1]); /* pseudo du client */
     char tubeC2S [TAILLE_NOM+5]; /* chemin tube de service client -> serveur = pseudo_c2s */
@@ -71,9 +70,10 @@ int main (int argc, char *argv[]) {
     /* ouverture du tube d'écoute */
     ecoute = open("./ecoute",O_WRONLY);
     if (ecoute==-1) {
-        perror("Le serveur doit être lance, et depuis le meme repertoire que le client\n");
+        fprintf(stderr, "Le serveur doit être lancé, et depuis le même répertoire que le client\n");
         exit(2);
     }
+
     /* création des tubes de service */
     sprintf(tubeC2S, "./%s_c2s", argv[1]);
     sprintf(tubeS2C, "./%s_s2c", argv[1]);
@@ -122,51 +122,40 @@ int main (int argc, char *argv[]) {
 
             FD_ZERO(&readfds);
             FD_SET(S2C, &readfds);
-            timeout.tv_sec = 0;  // timeout de 0 secondes
-            timeout.tv_usec = 0;
+            FD_SET(0, &readfds);
 
-            int ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
+            int ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
             if (ret_select == -1) {
                 perror("select_S2C");
                 exit(1);
             }
 
             // récupérer les messages reçus éventuels, puis les afficher.
-            int j = 0;
-            while (ret_select > 0 && j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char)) {
-                prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
-                if ((nlus = read(S2C, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
+            if (FD_ISSET(S2C, &readfds)) {
+                // Lire tout dans buf
+                memset(buf, 0, TAILLE_RECEPTION);
+                if ((nlus = read(S2C, buf, TAILLE_RECEPTION)) == -1) {
+                    perror("read");
+                    exit(1);
+                }
+
+                int j = 0;
+                while (j*TAILLE_MSG*sizeof(char) < nlus) {
+                    prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
                     discussion[curseur % NB_LIGNES][0] = '\0';
-                    strcpy(discussion[curseur % NB_LIGNES], prochainMessage);
+                    strncpy(discussion[curseur % NB_LIGNES], prochainMessage, TAILLE_MSG*sizeof(char));
+
                     curseur++;
                     j++;
                 }
 
-                FD_ZERO(&readfds);
-                FD_SET(S2C, &readfds);
-                timeout.tv_sec = 0;  // timeout de 0 secondes
-                timeout.tv_usec = 0;
-                ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
-                if (ret_select == -1) {
-                    perror("select_S2C_inloop");
-                    exit(1);
-                }
+                afficher(curseur);
             }
-            afficher(curseur);
 
-            FD_ZERO(&readfds);
-            FD_SET(0, &readfds);
-            timeout.tv_sec = 1;  // timeout de 5 secondes
-            timeout.tv_usec = 0;
-
-            ret_select = select(NBDESC, &readfds, NULL, NULL, &timeout);
-            if (ret_select == -1) {
-                perror("select_stdin");
-                exit(1);
-            }
 
             // récupérer la ligne saisie éventuelle, puis l'envoyer
             if (FD_ISSET(0, &readfds)) {
+                memset(saisie, 0, TAILLE_SAISIE);
                 fgets(saisie, TAILLE_SAISIE, stdin);
                 if (strcmp(saisie,"au revoir")!=0) {
                     necrits = write(C2S, saisie, strlen(saisie));
@@ -186,7 +175,7 @@ int main (int argc, char *argv[]) {
     unlink(tubeS2C);
     unlink(tubeC2S);
     printf("fin client\n");
-    exit (0);
+    exit(0);
 }
 
 /* Note : Pour éviter un appel de system() à chaque affichage, une solution serait,

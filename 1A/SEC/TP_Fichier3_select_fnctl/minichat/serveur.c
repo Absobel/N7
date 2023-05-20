@@ -86,7 +86,7 @@ void ajouter(char *dep) {
 				participants[i].in = open(c2s, O_RDONLY);
 			
 				nbactifs++;
-				memset(buf, 0, sizeof(buf));
+				memset(buf, 0, TAILLE_RECEPTION);
 				sprintf(buf, "[service] %s rejoint la discussion.", dep);
 				diffuser(buf);
 
@@ -101,7 +101,7 @@ void ajouter(char *dep) {
 */
 void desactiver (int p) {
 	nbactifs--;
-	memset(buf, 0, sizeof(buf));
+	memset(buf, 0, TAILLE_RECEPTION);
 	sprintf(buf, "[service] %s quitte la discussion.", participants[p].nom);
 	effacer(p);  // effacer le descripteur du participant p avant que le message soit diffusé
 	diffuser(buf);
@@ -144,47 +144,43 @@ int main (int argc, char *argv[]) {
 	*/
 		FD_ZERO(&readfds);
 		FD_SET(ecoute, &readfds);
+		for (int i = 0; i < MAXPARTICIPANTS; i++) {
+			if (participants[i].actif) {
+				FD_SET(participants[i].in, &readfds);
+			}
+		}
+
 		int ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
 		if (ret_select == -1) {
 			perror("select_ecoute");
 			exit(1);
 		}
+		memset(bufDemandes, 0, sizeof(bufDemandes));   // Vider le buffer pour enlever le texte résiduel
 		if (nbactifs < MAXPARTICIPANTS && FD_ISSET(ecoute, &readfds) && read(ecoute, bufDemandes, sizeof(bufDemandes)) > 0) {
-			ajouter(bufDemandes);
-			memset(bufDemandes, 0, sizeof(bufDemandes));       // Vider le buffer pour enlever le texte résiduel
+			ajouter(bufDemandes); 
 		}
 
 		for (int i = 0; i < MAXPARTICIPANTS; i++) {
-			if (participants[i].actif) {
-				FD_ZERO(&readfds);
-				FD_SET(participants[i].in, &readfds);
-				ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
-				if (ret_select == -1) {
-					perror("select_participant");
+			if (participants[i].actif && FD_ISSET(participants[i].in, &readfds)) {
+				memset(buf, 0, TAILLE_RECEPTION);
+				// Tout lire dans buf
+				if ((nlus = read(participants[i].in, buf, TAILLE_RECEPTION)) == -1) {
+					perror("read");
 					exit(1);
+				} else if (nlus == 0) {  // EOF du client
+					desactiver(i);
+					continue;
 				}
 
 				int j = 0;
-				while (ret_select > 0 && j < TAILLE_RECEPTION/TAILLE_MSG*sizeof(char)) {
+				while (j*TAILLE_MSG*sizeof(char) < nlus) {
 					prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
-					if (FD_ISSET(participants[i].in, &readfds) && (nlus = read(participants[i].in, prochainMessage, TAILLE_MSG*sizeof(char))) > 0) {
-						char message_a_diffuser[TAILLE_MSG+TAILLE_NOM+3];
-						memset(message_a_diffuser, 0, sizeof(message_a_diffuser));
-						sprintf(message_a_diffuser, "[%s] %s", participants[i].nom, prochainMessage);
-						diffuser(message_a_diffuser);
-					} else if (nlus == 0) {  // EOF venant de la part du client
-						desactiver(i);
-						continue;
-					}
-					j++;
+					char message_a_diffuser[TAILLE_MSG+TAILLE_NOM+3];
+					memset(message_a_diffuser, 0, sizeof(message_a_diffuser));
+					sprintf(message_a_diffuser, "[%s] %s", participants[i].nom, prochainMessage);
+					diffuser(message_a_diffuser);
 
-					FD_ZERO(&readfds);
-					FD_SET(participants[i].in, &readfds);
-					ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
-					if (ret_select == -1) {
-						perror("select_participant_inloop");
-						exit(1);
-					}
+					j++;
 				}
 			}
 		}
