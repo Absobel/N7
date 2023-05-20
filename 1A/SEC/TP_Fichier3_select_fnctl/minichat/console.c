@@ -106,7 +106,7 @@ int main (int argc, char *argv[]) {
             exit(2);
         }
 
-        while (strcmp(saisie,"au revoir")!=0) {
+        while (strcmp(saisie,"au revoir\n")!=0) {
      /* boucle principale  :
             * récupérer les messages reçus éventuels, puis les afficher.
               	- tous les messages comportent TAILLE_MSG caractères, et les constantes
@@ -124,7 +124,7 @@ int main (int argc, char *argv[]) {
             FD_SET(S2C, &readfds);
             FD_SET(0, &readfds);
 
-            int ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);
+            int ret_select = select(NBDESC, &readfds, NULL, NULL, NULL);  // on attend que le serveur nous envoie un message ou que l'utilisateur tape une commande
             if (ret_select == -1) {
                 perror("select_S2C");
                 exit(1);
@@ -139,6 +139,7 @@ int main (int argc, char *argv[]) {
                     exit(1);
                 }
 
+                // Continuer à lire tant qu'il y a des messages et les ajouter dans l'array de messages
                 int j = 0;
                 while (j*TAILLE_MSG*sizeof(char) < nlus) {
                     prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
@@ -162,14 +163,10 @@ int main (int argc, char *argv[]) {
                     perror("Erreur ecriture tube ecoute");
                     exit(3);
                 }
-                if (strcmp(saisie,"au revoir\n")==0) {
-                    sleep(1); /* pour laisser le temps au serveur de prend./core en compte la fermeture */
-                    break;
-                }
             }
-
         }
     }
+    sleep(1); // Laisser le temps au serveur de traiter la déconnexion
     /*nettoyage des tubes de service */
     close(S2C);
     close(C2S);
