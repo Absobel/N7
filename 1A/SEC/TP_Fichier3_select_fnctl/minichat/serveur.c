@@ -55,7 +55,8 @@ void effacer(int i) { /* efface le descripteur pour le participant i */
 	- dep : message à diffuser
 */
 void diffuser(char *dep) { 
-	/* (**** à faire ****) envoi du message référencé par dep à tous les actifs */
+	/* envoi du message référencé par dep à tous les actifs */
+	dep[strcspn(dep, "\n")] = 0; // enlève le \n a la fin du message
 	for (int i = 0; i < MAXPARTICIPANTS; i++) {
 		if (participants[i].actif) {
 			write(participants[i].out, dep, strlen(dep));

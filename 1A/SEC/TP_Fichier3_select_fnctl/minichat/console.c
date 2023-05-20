@@ -157,12 +157,14 @@ int main (int argc, char *argv[]) {
             if (FD_ISSET(0, &readfds)) {
                 memset(saisie, 0, TAILLE_SAISIE);
                 fgets(saisie, TAILLE_SAISIE, stdin);
-                if (strcmp(saisie,"au revoir")!=0) {
-                    necrits = write(C2S, saisie, strlen(saisie));
-                    if (necrits==-1) {
-                        perror("Erreur ecriture tube ecoute");
-                        exit(3);
-                    }
+                necrits = write(C2S, saisie, strlen(saisie));
+                if (necrits==-1) {
+                    perror("Erreur ecriture tube ecoute");
+                    exit(3);
+                }
+                if (strcmp(saisie,"au revoir\n")==0) {
+                    sleep(1); /* pour laisser le temps au serveur de prend./core en compte la fermeture */
+                    break;
                 }
             }
 
