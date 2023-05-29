@@ -1,0 +1,327 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{subcaption}
+
+
+\usepackage{amsfonts}
+
+\usepackage{multirow}
+
+\title{ENSEEIHT — 1ère Sciences du Numérique \
+Calcul Scientifique \
+2022–2023 \
+Projet \
+Subspace Iteration Methods}
+\author{}
+\date{}
+
+\lstset{
+  language=Matlab,                % Define the language as MATLAB
+  basicstyle=\ttfamily\small,     % Set the basic style for the code
+  numbers=left,                   % Display line numbers on the left
+}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+In this report, we will study the limitations of the power method and propose a more efficient method, called subspace iteration method, to compute the leading eigenpairs of a matrix. We will also analyze and implement four variants of these methods.
+
+\section{Limitations of the Power Method}
+
+\subsection{Comparison of Running Time}
+
+\begin{figure}[H]
+\begin{table}[H]
+\centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Matrix size & function used & type 1 & type 2 & type 3 & type 4\\
+        \midrule
+        \midrule
+        \multirow{2}{*}{$100 \times 100$} & $eig$ & $20ms$ & $10ms$ & $0ms$ & $10ms$\\
+        & $power\_v11$ & $380ms$ & $10ms$ & $10ms$ & $650ms$\\
+        \midrule
+        \multirow{2}{*}{$200 \times 200$} & $eig$ & $10ms$ & $20ms$ & $20 ms$ & $10ms$ \\
+        & $power\_v11$ & $2840ms$ & $20ms$ & $100ms$ & $1630ms$ \\
+        \midrule
+        \multirow{2}{*}{$300 \times 300$} & $eig$ & $30ms$ & $30ms$ & $30ms$ & $20ms$ \\
+        & $power\_v11$ & $N/A$ & $100ms$ & $200ms$ & $N/A$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\caption{Comparison of running time between $eig$ and $power\_v11$}
+\end{figure}
+
+    Here, we can see that the power\_v11 is not efficient enough to compute the leading eigenvector of a $300\times300$ matrix of type 1 and 4.
+    the first one is a matrix with eigenvalues $D(i) = i$, and the second one has random values of low conditionning. This is expected, because the lower the conditionning, the slower the algorithm converges.
+    Besides, the $power\_v11$ function operates $3$ matrix$\times$vector multiplications per loop, which, along with a tendancy towards slower convercy, results in a relatively inefficient algorithm (although with a low space complexity).
+
+\subsection{Proposed Algorithm with One Matrix-Vector Product}
+
+\begin{figure}[H]
+\begin{table}[H]
+\centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Matrix size & function used & type 1 & type 2 & type 3 & type 4\\
+        \midrule
+        \midrule
+        \multirow{2}{*}{$100 \times 100$} & $power\_v11$ & $420ms$ & $10ms$ & $0ms$ & $540ms$\\
+        & $power\_v12$ & $310ms$ & $10ms$ & $0ms$ & $420ms$\\
+        \midrule
+        \multirow{2}{*}{$200 \times 200$} & $power\_v11$ & $26700ms$ & $20ms$ & $40 ms$ & $2090ms$ \\
+        & $power\_v12$ & $980ms$ & $10ms$ & $30ms$ & $1170ms$ \\
+        \midrule
+        \multirow{2}{*}{$300 \times 300$} & $power\_v11$ & $N/A$ & $110ms$ & $230ms$ & $N/A$ \\
+        & $power\_v12$ & $N/A$ & $60ms$ & $120ms$ & $N/A$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+    \caption{Comparison of running time between $power\_v11$ and $power\_v12$}
+\end{figure}
+
+    We can see that the proposed improvement to the Vector Power Method is, on higher orders, twice as fast. Below is the modified algorithm.
+
+\begin{algorithm}[H]
+\caption{Power Method with One Matrix-Vector Product}
+\begin{algorithmic}[1]
+    \State Matrix $A \in \mathbb{R}^{n \times n}$
+    \State$(\lambda_1, v_1)$ eigenpair associated to the largest (in module) eigenvalue.
+    \State$v \in \mathbb{R}^n$ given.
+    \State$\beta = v^T\cdot A \cdot v$
+    \Repeat
+    \State$y = A \cdot  v$
+    \State$\beta_{old} = \beta$
+    \State$\beta = v^T \cdot y$
+    \State$y = y/||y||$
+    \Until{$|\beta - \beta_{old}|/|\beta_{old}| < \epsilon$}
+    \State$\lambda_1 = \beta, v_1 = v$
+\end{algorithmic}
+\end{algorithm}
+
+    This improvement saves $n^2$ multiplications that happened when computing $\beta$ in the original algorithm, each loop. Thus, it is more efficient.
+
+\subsection{Main Drawback of the Deflated Power Method}
+
+    The deflated power method can be very slow to converge. Not only is it very sensible to the initial value of the starting verctor $v$, but if the eigenvalue are similar in magnitude, the convergence can be even slower. Moreover, this method is computationally intense and may require powerful ressources, otherwise may be slowed.
+
+\section{Extending the Power Method to Compute Dominant Eigenspace Vectors}
+
+\subsection{subspace iter v0: A Basic Method to Compute a Dominant Eigenspace}
+
+    Without normalisation, the leading eigenvector would overpower the other ones, and the matrix $V$ would converge towards a matrix in which all m columns are all the leading eigenvector, multiplied by other constants. If the leading eigenvector is much greater than others, this result will made worse.
+
+\subsection{Orthonormalisation}
+
+    The matrix $H$ is defined as followed :
+
+
+    \begin{equation}
+        H = V^T \cdot A \cdot V,\ V \in \mathbb{R}^{n \times m},\ A \in \mathbb{R}^{n \times n}
+    \end{equation}
+
+
+    Thus, H is a $m \times m$ matrix, and computing all the eigenvalues of H only results in $m$ eigenvectors. This is far better than computing all $n$ eigenvectors of $A$.
+
+\subsection{Rayleigh Quotient}
+
+
+
+\section{subspace iter v1: Improved Version Making Use of Rayleigh-Ritz Projection}
+
+\begin{algorithm}[H]
+\caption{Subspace iteration method v1 with Raleigh-Ritz projection}
+\begin{algorithmic}[1]
+    \State Input: Symmetric matrix $A \in \mathbb{R}^{n \times n}$, tolerance $\epsilon$, $MaxIter$ (max nb of iterations) and $PercentTrace$ the
+target percentage of the trace of $A$
+    \State Output: $n_{ev}$ dominant eigenvectors $V_{out}$ and the corresponding eigenvalues $\Lambda_{out}$ out.
+    \State Generate an initial set of $m$ orthonormal vectors $V \in \mathbb{R}^{n \times n}$; $k = 0$; $PercentReached = 0$
+    \Repeat
+    \State$k = k+1$
+    \State Compute$Y$ such that $Y = A \cdot V$
+    \State$V \leftarrow$ orthonormalisation of the columns of $Y$
+    \State$Rayleigh-Ritz\ projection$ applied on matrix $A$ and orthonormal vectors $V$
+    \State$Convergence\ analysis\ step$ : save eigenpairs that have converged and update $PercentReached$
+    \Until{$PercentReached > PercentTrace$ or $n_{ev} = m$ or $k > MaxIter$}
+\end{algorithmic}
+\end{algorithm}
+
+Here is the snippet that corresponds to step $3$, where we initialize the Vector $V$. $(l.48-49)$
+
+\begin{lstlisting}
+    Vr = randn(n, m);
+    Vr = mgs(Vr);
+\end{lstlisting}
+
+Step 5 : $(l.54)$
+
+\begin{lstlisting}
+    k = k + 1;
+\end{lstlisting}
+
+Step 6, where we compute $Y$ : $(l.56)$
+
+\begin{lstlisting}
+    Y = A * Vr;
+\end{lstlisting}
+
+Step 7, where we orthonormalise the columns of $Y$ : $(l.57-58)$
+
+\begin{lstlisting}
+    %% orthogonalisation
+    Vr = mgs(Y);
+\end{lstlisting}
+
+Step 8, where we apply the Rayleigh-Ritz projection : $(l.60-61)$
+
+\begin{lstlisting}
+        %% Projection de Rayleigh-Ritz
+        [Wr, Vr] = rayleigh_ritz_projection(A, Vr);
+\end{lstlisting}
+
+Step 9, where we analyse the convergence : $(l.63-115)$
+
+$(See\ the\ source\ file)$
+
+\subsection{First Improvements}
+
+The multiplication of two $n \times n$ matrices yields $n^3$ multiplications and $n^2(n-1)$ additions. Since this operation is repeated p times, we can conclude that there are in total $(p-1)(n^3 + n^2(n-1)) = (p-1)(2n^3 - n^2)$ operations when computing $A^p$.
+
+Finally, since multiplicating a $n\times n$ matrix with a $n \times m$ matrix results in $mn^2$ multiplications and $mn(n-1)$ additions, it all adds to $(p-1)(2n^3 - n^2) + 2mn^2 - mn$ operations when computing $A^P\times V$.
+
+\section{subspace iter v2 and subspace iter v3: Toward an Efficient Solver}
+
+\subsection{Block Approach (subspace iter v2)}
+
+The computing time is reduced as $p$ is greater, as the algorithm converges faster (the number of iterations falls). This is because the eigenvalues of $A^P$ are raised to to the power of $p$ as well, heightening the differences in magnitude of the eigenvalues. This in turn makes the convergence much faster than before, as the conditionment of the matrix is much greater. There is little to no loss on precision, unless $p$ is unreasonably high.
+
+\subsection{Deflation Method (subspace iter v3)}
+
+Since the algorithm tries to make the lower eigenvalues converge, it will keep on perfecting the higher eigenvalues, which will unnecessarily improve their accuracy. Thus, the leading eigenvalue will be mucxh more precise than the other ones, with descending order.
+
+\subsection{Anticipation of the results}
+
+In term of accuracy, we can estimate that all eigenvalues will have approximately the same accuracy. it will be somewhere below $\epsilon$, and more likely to be lower on higer orders of $p$ (greater steps in convergency).
+
+\section*{Numerical experiments}
+
+\subsection{Generation of four different types of matrices}
+
+Below are the characteristics of the four types of matrices :
+
+- Type 1 : these matrices have specific eigenvalues:
+\begin{equation}
+    \lambda_i = i
+\end{equation}
+
+- Type 2 : these matrices have random eigenvalues of high conditionning. Their logarithmic value is uniformly spred (uniform distrubution on their power of ten):
+\begin{equation}
+    \lambda_i = random(\frac{1}{cond}, 1) ,\ cond = 1e^{10}
+\end{equation}
+
+
+
+- Type 3 : these matrices have random eigenvalues of intermediate conditionning. Their logarithmic values are evenly spread:
+\begin{equation}
+    \lambda_i = cond^{(\frac{i-1}{n-1})},\ cond = 1e^{5}
+\end{equation}
+Their logarithmic spacing is :
+\begin{equation}
+    \delta_i = \log(\lambda_{i+1})-\log(\lambda_i) = \frac{-1}{n-1} \cdot \log(cond)
+\end{equation}
+
+
+
+- Type 4 : these matrices have random eigenvalues of low conditionning. Their relative difference is constant:
+\begin{equation}
+    \lambda_i = 1- (\frac{i-1}{n-1}) \cdot (1-\frac{1}{cond}) ,\ cond = 1e^{2}
+\end{equation}
+Their spacing is
+\begin{equation}
+    \delta_i = \lambda_{i+1}-\lambda_i = \frac{1}{n-1} \cdot (1-\frac{1}{cond}).
+\end{equation}
+
+Below is a representation of the eigenvalues, sorted, of the four types of matrices, with a linear scale and a logarithmic scale (to better appreciate the differences).
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\linewidth}
+        \includegraphics[width=\linewidth]{./res_test/eigen300.png}
+            \caption{Linear scale.}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\linewidth}
+        \includegraphics[width=\linewidth]{./res_test/semilogy_eigen300.png}
+            \caption{Logarithmic scale.}
+    \end{subfigure}
+    \caption{Eigenvalues of the four types of matrices.}
+    \label{fig:eigenvalues}
+\end{figure}
+
+
+\subsection{Results}
+
+    Finally, here is a final comparison of the of the computing time of all functions, with $p=4$.
+
+\begin{figure}[H]
+\begin{table}[H]
+\centering
+    \begin{tabular}{cccccc}
+        \toprule
+        Matrix size & function used & type 1 & type 2 & type 3 & type 4\\
+        \midrule
+        \midrule
+        \multirow{6}{*}{$100 \times 100$} & $eig$ & $20ms$ & $10ms$ & $0ms$ & $10ms$\\
+        & $power\_v11$ & $380ms$ & $10ms$ & $10ms$ & $650ms$\\
+        & $subspace\_iter\_v0$ & $2230ms$ & $40ms$ & $200ms$ & $1670ms$\\
+        & $subspace\_iter\_v1$ & $330ms$ & $20ms$ & $20ms$ & $160ms$\\
+        & $subspace\_iter\_v2$ & $90ms$ & $0ms$ & $10ms$ & $50ms$\\
+        & $subspace\_iter\_v3$ & $N/A$ & $90$ & $80ms$ & $N/A$\\
+        \midrule
+        \multirow{6}{*}{$200 \times 200$} & $eig$ & $10ms$ & $20ms$ & $20 ms$ & $10ms$ \\
+        & $power\_v11$ & $2840ms$ & $20ms$ & $100ms$ & $1630ms$ \\
+        & $subspace\_iter\_v0$ & $3970ms$ & $150ms$ & $60ms$ & $3740ms$ \\
+        & $subspace\_iter\_v1$ & $830ms$ & $30ms$ & $30ms$ & $590ms$ \\
+        & $subspace\_iter\_v2$ & $45ms$ & $20ms$ & $30ms$ & $320ms$ \\
+        & $subspace\_iter\_v3$ & $N/A$ & $70$ & $130ms$ & $N/A$ \\
+        \midrule
+        \multirow{6}{*}{$300 \times 300$} & $eig$ & $30ms$ & $30ms$ & $30ms$ & $20ms$ \\
+        & $power\_v11$ & $N/A$ & $100ms$ & $200ms$ & $N/A$ \\
+        & $subspace\_iter\_v0$ & $5030ms$ & $1210ms$ & $730ms$ & $5440ms$ \\
+        & $subspace\_iter\_v1$ & $2200ms$ & $30ms$ & $70ms$ & $1840ms$ \\
+        & $subspace\_iter\_v2$ & $1660ms$ & $40ms$ & $10ms$ & $2080ms$ \\
+        & $subspace\_iter\_v3$ & $N/A$ & $100ms$ & $370$ & $N/A$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\caption{Computing time of the six functions, with $p=4$.}
+\label{tab:time}
+\end{figure}
+
+As expected, $subspace\_iter\_v2$ is the fastest, with slight spikes in computing time (actually lower with lower orders of p).
+However, $subspace\_iter\_v3$ fails several times, and remains slow otherwise. This may stem from a programmation error, though the results are promising for a faulty algorithm.
+
+\section*{Conclusion}
+
+In this report, we have explored the limitations of the power method and proposed more efficient subspace iteration methods for computing dominant eigenpairs. We have analyzed and implemented four variants of these methods, each offering improvements in terms of performance and accuracy. These methods provide a more efficient approach to computing eigenpairs, especially in the context of Principal Component Analysis, where only the leading eigenpairs are required.
+
+\end{document}:
