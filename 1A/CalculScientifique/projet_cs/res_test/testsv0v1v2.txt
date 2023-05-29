@@ -1,0 +1,756 @@
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 2.230e+00
+Nombre d'itérations : 1252
+Qualité des couples propres (par rapport au critère d'arrêt) = [6.402e+00 , 7.122e+17]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [9.900e-01 , 1.012e+00] 
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 3.300e-01
+Nombre d'itérations : 87
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.645e-15 , 2.502e-14] 
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 4.000e-01
+Nombre d'itérations : 87
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.645e-15 , 2.502e-14] 
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 2.300e-01
+Nombre d'itérations : 44
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.428e-09 , 5.089e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.047e-15 , 1.992e-14] 
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 1.400e-01
+Nombre d'itérations : 29
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.992e-15 , 2.354e-14] 
+
+Matrice 100 x 100 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 9.000e-02
+Nombre d'itérations : 22
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.428e-09 , 5.089e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.945e-15 , 1.682e-14] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 4.000e-02
+Nombre d'itérations : 24
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.069e-02 , 4.224e+11]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.200e-01 , 9.346e+01] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 2.000e-02
+Nombre d'itérations : 4
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.286e-09 , 5.286e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.921e-16 , 2.921e-16] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 2.000e-02
+Nombre d'itérations : 4
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.286e-09 , 5.286e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.921e-16 , 2.921e-16] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 1.000e-02
+Nombre d'itérations : 2
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.286e-09 , 5.286e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [4.381e-16 , 4.381e-16] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 0.000e+00
+Nombre d'itérations : 2
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.136e-13 , 3.136e-13]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [4.381e-16 , 4.381e-16] 
+
+Matrice 100 x 100 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 0.000e+00
+Nombre d'itérations : 1
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.124e-09 , 7.124e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.336e-15 , 2.336e-15] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 2.000e-01
+Nombre d'itérations : 145
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.402e-02 , 8.018e+16]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.661e-16 , 1.011e+01] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 2.000e-02
+Nombre d'itérations : 9
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.199e-09 , 4.199e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.220e-16 , 2.220e-16] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 2.000e-02
+Nombre d'itérations : 9
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.199e-09 , 4.199e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.220e-16 , 2.220e-16] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 1.000e-02
+Nombre d'itérations : 5
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.684e-10 , 4.684e-10]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.110e-16 , 1.110e-16] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 2.000e-02
+Nombre d'itérations : 3
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.199e-09 , 4.199e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [3.331e-16 , 3.331e-16] 
+
+Matrice 100 x 100 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 1.000e-02
+Nombre d'itérations : 3
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.774e-12 , 5.774e-12]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [0.000e+00 , 0.000e+00] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 1.670e+00
+Nombre d'itérations : 1252
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.317e-01 , 3.047e+15]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.000e+00 , 2.235e+00] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 1.600e-01
+Nombre d'itérations : 87
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [3.155e-15 , 2.405e-14] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 1.500e-01
+Nombre d'itérations : 87
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [3.155e-15 , 2.405e-14] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 1.000e-01
+Nombre d'itérations : 44
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.428e-09 , 5.089e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.571e-15 , 1.911e-14] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 7.000e-02
+Nombre d'itérations : 29
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.224e-09 , 6.019e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.870e-15 , 2.336e-14] 
+
+Matrice 100 x 100 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 5.000e-02
+Nombre d'itérations : 22
+Nombre de valeurs propres pour attendre le pourcentage = 6
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.428e-09 , 5.089e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.636e-15 , 1.767e-14] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 3.970e+00
+Nombre d'itérations : 2058
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.165e+01 , 1.033e+17]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [9.950e-01 , 1.006e+00] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 8.300e-01
+Nombre d'itérations : 263
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.419e-14 , 8.534e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.612e-14 , 1.403e-13] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 9.300e-01
+Nombre d'itérations : 263
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.419e-14 , 8.534e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.612e-14 , 1.403e-13] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 5.900e-01
+Nombre d'itérations : 132
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.242e-14 , 8.090e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.436e-14 , 1.266e-13] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 6.300e-01
+Nombre d'itérations : 88
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.685e-14 , 8.090e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.275e-14 , 1.263e-13] 
+
+Matrice 200 x 200 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 4.500e-01
+Nombre d'itérations : 66
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.582e-14 , 8.090e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.216e-14 , 1.261e-13] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 1.500e-01
+Nombre d'itérations : 73
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.158e-02 , 5.262e+14]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.126e-01 , 1.045e+01] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 3.000e-02
+Nombre d'itérations : 8
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.383e-08 , 1.383e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.470e-16 , 2.470e-16] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 4.000e-02
+Nombre d'itérations : 8
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.383e-08 , 1.383e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [2.470e-16 , 2.470e-16] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 3.000e-02
+Nombre d'itérations : 4
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.383e-08 , 1.383e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [4.941e-16 , 4.941e-16] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 3.000e-02
+Nombre d'itérations : 3
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.392e-09 , 1.392e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.235e-16 , 1.235e-16] 
+
+Matrice 200 x 200 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 2.000e-02
+Nombre d'itérations : 2
+Nombre de valeurs propres pour attendre le pourcentage = 1
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.383e-08 , 1.383e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.235e-16 , 1.235e-16] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 6.000e-01
+Nombre d'itérations : 239
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.707e-02 , 1.635e+16]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.609e-12 , 4.002e+00] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 5.000e-02
+Nombre d'itérations : 15
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.804e-09 , 2.105e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.661e-16 , 1.765e-15] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 3.000e-02
+Nombre d'itérations : 15
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.804e-09 , 2.105e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.661e-16 , 1.765e-15] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 3.000e-02
+Nombre d'itérations : 8
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.712e-09 , 6.593e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [0.000e+00 , 9.411e-16] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 5.000e-02
+Nombre d'itérations : 5
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.804e-09 , 2.105e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.176e-16 , 6.661e-16] 
+
+Matrice 200 x 200 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 3.000e-02
+Nombre d'itérations : 4
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.712e-09 , 6.593e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.110e-16 , 1.765e-15] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 3.740e+00
+Nombre d'itérations : 2068
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.417e-02 , 3.134e+15]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.469e-09 , 2.104e+00] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 5.900e-01
+Nombre d'itérations : 265
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.332e-14 , 8.239e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.545e-14 , 1.309e-13] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 9.300e-01
+Nombre d'itérations : 265
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.332e-14 , 8.239e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.545e-14 , 1.309e-13] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 6.900e-01
+Nombre d'itérations : 133
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [3.973e-14 , 7.813e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.236e-14 , 1.281e-13] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 6.800e-01
+Nombre d'itérations : 89
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.027e-14 , 7.408e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.488e-14 , 1.288e-13] 
+
+Matrice 200 x 200 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 3.200e-01
+Nombre d'itérations : 67
+Nombre de valeurs propres pour attendre le pourcentage = 11
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.428e-14 , 7.025e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.327e-14 , 1.011e-13] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 5.030e+00
+Nombre d'itérations : 2872
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.041e+00 , 1.566e+17]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [9.967e-01 , 1.004e+00] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 2.200e+00
+Nombre d'itérations : 678
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.930e-14 , 1.040e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.927e-14 , 6.163e-13] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 1.620e+00
+Nombre d'itérations : 678
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.930e-14 , 1.040e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.927e-14 , 6.163e-13] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 2.120e+00
+Nombre d'itérations : 339
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [6.998e-14 , 1.040e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.018e-14 , 6.149e-13] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 2.250e+00
+Nombre d'itérations : 226
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [6.334e-14 , 1.040e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.361e-14 , 6.149e-13] 
+
+Matrice 300 x 300 - type 1
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 1.660e+00
+Nombre d'itérations : 170
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.092e-14 , 1.004e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.115e-14 , 5.734e-13] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 1.210e+00
+Nombre d'itérations : 673
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.460e-03 , 9.052e+15]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.126e-01 , 7.890e+00] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 3.000e-02
+Nombre d'itérations : 11
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.478e-09 , 4.912e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.235e-16 , 1.606e-15] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 5.000e-02
+Nombre d'itérations : 11
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.478e-09 , 4.912e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.235e-16 , 1.606e-15] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 4.000e-02
+Nombre d'itérations : 6
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.647e-10 , 8.382e-10]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.235e-16 , 4.381e-15] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 6.000e-02
+Nombre d'itérations : 4
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.647e-10 , 8.382e-10]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [0.000e+00 , 4.941e-16] 
+
+Matrice 300 x 300 - type 2
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 4.000e-02
+Nombre d'itérations : 3
+Nombre de valeurs propres pour attendre le pourcentage = 2
+Qualité des couples propres (par rapport au critère d'arrêt) = [4.647e-10 , 8.382e-10]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [8.647e-16 , 8.762e-16] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 7.300e-01
+Nombre d'itérations : 337
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.094e-02 , 1.936e+15]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.468e-11 , 3.078e+00] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 7.000e-02
+Nombre d'itérations : 22
+Nombre de valeurs propres pour attendre le pourcentage = 3
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.161e-08 , 3.723e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [4.441e-16 , 3.238e-15] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 6.000e-02
+Nombre d'itérations : 22
+Nombre de valeurs propres pour attendre le pourcentage = 3
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.161e-08 , 3.723e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [4.441e-16 , 3.238e-15] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 8.000e-02
+Nombre d'itérations : 11
+Nombre de valeurs propres pour attendre le pourcentage = 3
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.161e-08 , 3.723e-08]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [9.230e-16 , 1.559e-15] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 1.200e-01
+Nombre d'itérations : 8
+Nombre de valeurs propres pour attendre le pourcentage = 3
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.287e-09 , 9.368e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [1.110e-15 , 2.654e-15] 
+
+Matrice 300 x 300 - type 3
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 1.000e-01
+Nombre d'itérations : 6
+Nombre de valeurs propres pour attendre le pourcentage = 3
+Qualité des couples propres (par rapport au critère d'arrêt) = [2.287e-09 , 9.368e-09]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.195e-16 , 1.332e-15] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v0 ******
+
+Temps subspace iteration v0 = 5.440e+00
+Nombre d'itérations : 2890
+Qualité des couples propres (par rapport au critère d'arrêt) = [1.858e-03 , 1.630e+14]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.214e-10 , 2.067e+00] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v1 ******
+
+Temps subspace iteration v1 = 1.840e+00
+Nombre d'itérations : 682
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.657e-14 , 1.048e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.646e-14 , 6.289e-13] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 1
+
+Temps subspace iteration v2 = 1.990e+00
+Nombre d'itérations : 682
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.657e-14 , 1.048e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.646e-14 , 6.289e-13] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 2
+
+Temps subspace iteration v2 = 2.350e+00
+Nombre d'itérations : 341
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [6.780e-14 , 1.048e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [6.774e-14 , 6.293e-13] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 3
+
+Temps subspace iteration v2 = 2.720e+00
+Nombre d'itérations : 228
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [7.572e-14 , 1.012e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [7.567e-14 , 5.855e-13] 
+
+Matrice 300 x 300 - type 4
+
+******* calcul avec subspace iteration v2 ******
+p = 4
+
+Temps subspace iteration v2 = 2.080e+00
+Nombre d'itérations : 171
+Nombre de valeurs propres pour attendre le pourcentage = 16
+Qualité des couples propres (par rapport au critère d'arrêt) = [5.453e-14 , 1.012e-07]
+Qualité des valeurs propres (par rapport au spectre de la matrice) = [5.448e-14 , 5.851e-13] 
