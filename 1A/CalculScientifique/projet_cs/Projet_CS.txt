@@ -1,0 +1,316 @@
+ENSEEIHT — 1ère Sciences du Numérique
+Calcul Scientifique
+
+2022–2023
+Projet
+
+Subspace Iteration Methods
+Reminders and introduction
+In the Analyse de Données course, we have seen that for reducing the dimension by the mean of Principal
+Component Analysis (PCA) we do not need the whole spectral decomposition of the symmetric variance/covariance matrix. Indeed we only need the leading eigenpairs which provide enough information about the
+data.
+In the first Calcul Scientifique CTD session, we have introduce the power method to compute the leading
+eigenpair of a matrix. Coupled with a deflation process, the following eigenpairs can be computed.
+In this project, we will see that this specific algorithm is not efficient in terms of performance. Then we will
+present a more efficient method called subspace iteration method, based on an object called Rayleigh
+quotient.
+We will study four variants of this method.
+
+1
+
+Limitations of the power method
+
+The basic power method, which was introduced in the Calcul Scientifique lectures, is recalled in Algorithm 1;
+it can be used to determine the eigenvector associated to the largest (in module) eigenvalue.
+Algorithm 1 Vector power method
+Input: Matrix A ∈ Rn×n
+Output: (λ1 , v1 ) eigenpair associated to the largest (in module) eigenvalue.
+v ∈ Rn given
+β = vT · A · v
+repeat
+y =A·v
+v = y/ kyk
+βold = β
+β = vT · A · v
+until |β − βold | / |βold | < ε
+λ1 = β and v1 = v
+
+By adding the deflation process, we are able to compute all the eigenpairs we need to reach a certain percentage
+of the trace of A.
+A Matlab version of the basic power method with deflation is provided in the file power_v11.m with a
+different computation of the stopping criteria (see 2.1.2).
+
+1
+
+Calcul Scientifique
+
+TODO :
+Question 1: Using the file test_v11.m, compare the running time of the function power_v11 to compute
+a few eigenpairs with the running time of the function eig of Matlab that compute all the eigenpairs for
+different sizes and types of matrices.
+You will present these results in a table to answer this question in your report. Comment.
+Question 2: Looking closely at the proposed algorithm, two matrix×vector products, A.v, are identified
+inside the loop.
+By rearranging the operations, propose an algorithm that will have only one matrix×vector product in the
+loopa .
+Implement this algorithm in Matlab (power_v12.m) and check that it is twice as fast as the proposed
+algorithm.
+You can present the results in the same table or in a second table.
+You will write this new algorithm in your report.
+Question 3: What do you think to be the main drawback of the deflated power method in terms of computing
+time?
+New Matlab files for this first work:
+1. power_v12.m, that implements the new algorithm
+2. test_v11v12.m, a copy of test_v11.m with the call to the new algorithm
+a You can draw inspiration from the version v0 of the subspace iteration algorithm of section 2.1
+
+Our objective is to extend the power method to compute a block
+of dominant eigenpairs.
+
+2
+
+Calcul Scientifique
+
+2
+
+Extending the power method to compute dominant eigenspace
+vectors
+
+2.1
+
+subspace iter v0: a basic method to compute a dominant eigenspace
+
+The basic version of the method to compute an invariant subspace associated to the largest eigenvalues of a
+symmetric matrix A is described in Algorithm 2. This subspace is also called dominant eigenspace.
+Given a set of m orthonormal vectors V , the Algorithm 2 computes the eigenvectors associated with the m
+largest (in module) eigenvalues.
+Algorithm 2 Subspace iteration method v0 : the basic version
+Input: Symmetric matrix A ∈ Rn×n , number of required eigenpairs m, tolerance ε and M axtIter (max nb
+of iterations)
+Output: m dominant eigenvectors Vout and the corresponding eigenvalues Λout .
+Generate a set of m orthonormal vectors V ∈ Rn×m ; k = 0
+repeat
+k =k+1
+Y =A·V
+H = V T · A · V {ou H = V T · Y }
+Compute acc = kA · V − V · Hk/kAk
+V ←− orthonormalisation of the columns of Y
+until ( k > M axIter or acc ≤ ε)
+Compute the spectral decomposition X · Λout · X T = H, where the eigenvalues of H (diag(Λout )) are
+arranged in descending order of magnitude.
+Compute the corresponding eigenspace Vout = V · X
+This algorithm is very close to Algorithm 1:
+ The process is mainly based on iterative products between the matrix A and the columns of V ,
+ Inside the loop, the matrix H plays the same role than the scalar β in Algorithm 1.
+
+There are however some differences:
+ An orthonormalisation of the columns of Y is realised at each iteration,
+ The relationship between both stopping criteria is not trivial,
+ At the end of the loop, the columns of V are not the eigenvectors of A. Additionnal operations have to
+be done after convergence to obtain the actual dominant eigenspace of A.
+
+2.1.1
+
+Orthonormalisation
+
+The first question you may ask is: ”why do not simply apply Algorithm 1 on m initial vectors (matrix V ),
+instead of just one (vector v)?”
+Actually, if one extends Algorithm 1 to iterate on such a matrix, then it will not tend to the expect result,
+i.e. V does not converge towards a matrix whose columns contain m different eigenvectors of A.
+To avoid this phenomenon, an orthonormalisation of the columns of Y is realised at the end of each iteration
+in the Algorithm 2. The new set V is the result of this orthonormalisation.
+
+3
+
+Calcul Scientifique
+
+TODO :
+Question 4: Towards which matrix does V converge the power method algorithm if we apply it to a set of
+m vectors?
+
+2.1.2
+
+Stopping criterion
+
+Another difficulty to adapt Algorithm 1 in order to compute blocks of eigenpairs at once is the stopping
+criterion, because a set of eigenpairs must be tested for convergence and not only one vector.
+The current stopping criterion in Algorithm 1 relies on the stagnation of the computed eigenvalue (it tests
+the fact that the computed eigenvalue no longer changes “much”). This choice has been done because it
+is computationally cheap. But this does not take into account the invariance of the eigenvector which is
+numerically more meaningful (see Optimisation Lectures).
+One should notice that, in Algorithm 1, we have reached the convergence once v = x1 and β = λ1 , and
+therefore A · v = β · v. Then, a more meaningful stopping criterion for Algorithm 1 is to compute the
+relative invariance of the eigenvector that can be estimated as kA · v − β · vk/|β|kvk which is equivalent to
+kA · v − β · vk/|β| as the norm of v is one1 .
+In Algorithm 2, we assume we have converged so that AV = V H. Thus, in our context, a possible measure
+of the convergence could be: kAV − V Hk/kAk. The Frobenius norm can be used to compute the norm of
+both numerator and denominator.
+2.1.3
+
+Rayleigh quotient
+
+Once the convergence is reached in Algorithm 2, V does not contain eigenvectors of A. But some
+spectral information about A can be extracted from H. Indeed, the loop in Algorithm 2 has converged once
+A · V = V · H. Then some eigenpairs of A can easily be obtained from eigenpairs of H: if (λ, x) is an eigenpair
+for H, then (λ, y = V · x) is an eigenpair for A2 . For a symmetric matrix A and a matrix V whose columns
+are orthonormal, such a matrix H = V T · A · V is called a Rayleigh quotient. It will play a crucial role in
+the last algorithms. For complements, see [1].
+TODO :
+Question 5: We are looking at variants of the power method in order to avoid computing the whole spectral
+decomposition of the matrix A. But in Algorithm 2, a computation of the whole spectral decomposition of
+the matrix H is performed. Explain why it is not a problem to compute the whole spectral decomposition of
+H by investigating its dimensions.
+
+TODO :
+Question 6: In the file subspace_iter_v0.m, fill in the function to obtain Algorithm 2.
+Matlab files for this step:
+1. subspace_iter_v0.m
+2. test_v0v1.m, that tests this version and the next one (v1)
+1 it is this criteria that is implemented in the provided file, power v11.m
+2 A · y = A · V · x = V · H · x = V · λx = λV · x = λy.
+
+4
+
+Calcul Scientifique
+
+2.2
+
+subspace iter v1: improved version making use of Raleigh-Ritz projection
+
+Several modifications are needed to make the basic subspace iteration an efficient code.
+2.2.1
+
+First improvements
+
+In our Principal Component Analysis application, it is more likely that the user asks to compute the smallest
+eigenspace such that the sum of the associated dominant eigenvalues is larger than a given percentage of
+the trace of the matrix A, than a given number of eigenpairs. Let’s call nev the number of the dominant
+eigenvalues needed.
+Because this number nev is not known in advance, we chose to operate on a subspace whose dimension m is
+larger than nev . Note that if we reach the given size m of the subspace V without obtaining the percentage
+of the trace we have to stop: the method should be called again with a higher m. Moreover to be able to
+stop the algorithm when the expected percentage is reached, an adaptation of the spectral decomposition
+of the Rayleigh quotient is used inside the subspace iteration. This adaptation is called the Rayleigh-Ritz
+projection procedure; an algorithmic description is given in Algorithm 3, for a symmetric positive definite
+matrix A, as the variance/covariance matrix.
+Algorithm 3 Raleigh-Ritz projection
+Input: Matrix A ∈ Rn×n and an orthonormal set of vectors V .
+Output: The approximate eigenvectors Vout and the corresponding eigenvalues Λout .
+Compute the Rayleigh quotient H = V T · A · V .
+Compute the spectral decomposition X · Λout · X T = H, where the eigenvalues of H (diag(Λout )) are
+arranged in descending order of magnitude.
+Compute Vout = V · X.
+
+The algorithm of the subspace iter v1 is then:
+Algorithm 4 Subspace iteration method v1 with Raleigh-Ritz projection
+Input: Symmetric matrix A ∈ Rn×n , tolerance ε, M axIter (max nb of iterations) and P ercentT race the
+target percentage of the trace of A
+Output: nev dominant eigenvectors Vout and the corresponding eigenvalues Λout .
+Generate an initial set of m orthonormal vectors V ∈ Rn×m ; k = 0; P ercentReached = 0
+repeat
+k =k+1
+Compute Y such that Y = A · V
+V ←− orthonormalisation of the columns of Y
+Rayleigh-Ritz projection applied on matrix A and orthonormal vectors V
+Convergence analysis step: save eigenpairs that have converged and update P ercentReached
+until ( P ercentReached > P ercentT race or nev = m or k > M axIter )
+
+5
+
+Calcul Scientifique
+
+2.2.2
+
+Convergence analysis step
+
+A convergence analysis step is performed immediately after the Rayleigh-Ritz Projection step; its goal is to
+determine which eigenvectors have converged at the current iteration k.
+We consider that the eigenvector j, stored in the jth column of V has converged when
+krj k = kA · Vj − Λj · Vj k/kAk ≤ ε.
+Convergence theory says the eigenvectors corresponding to the largest eigenvalues will converge more swiftly
+than those corresponding to smaller eigenvalues. For this reason, we should test convergence of the eigenvectors in the order j = 1, 2, . . .:
+ we consider that we do not converge at this iteration with the first one to fail the test,
+ it is also not useful to test again the vectors that converged at the previous iteration.
+
+TODO :
+Question 7: In the file subspace_iter_v1.m, identify all the steps of Algorithm 4
+for the report, copy the algorithm and indicate the line of the code corresponding to each step
+
+3
+
+subspace iter v2 and subspace iter v3: toward an efficient solver
+
+Two ways of improving the efficiency of the solver are proposed. Our aim is to build an algorithm that
+combines both the block approach and the deflation method in order to speed-up the convergence of the
+solver.
+
+3.1
+
+Block approach (subspace iter v2)
+
+Orthonormalisation is performed at each iteration and is quite costly. One simple way to accelerate the
+approach is to perform p products at each iteration (replace V = A · V (first step of the iteration) by
+V = Ap · V ). Note that this very simple acceleration method is applicable to all versions of the algorithm.
+TODO :
+Question 8: what is the cost in term of flops of the computation of Ap , then Ap ·V ? How organize differently
+this computation to reduce this cost?
+Question 9: Modify the file subspace_iter_v2.m to implement this acceleration (note that the initial code
+of this subprogram is the v1 version of the method, the only difference is the input p).
+Question 10: Observe the behaviour of this approach when increasing p. Explain your results in your
+report.
+Matlab files for this step:
+1. subspace_iter_v2.m
+2. test_v0v1v2.m, that tests the 3 versions, and for v2, different p
+
+6
+
+Calcul Scientifique
+
+3.2
+
+Deflation method (subspace iter v3)
+
+Because the columns of V converge in order, we can freeze the converged columns of V . This freezing results
+in significant savings in the matrix-vector (V = A · V ), the orthonormalisation and Rayleigh-Ritz Projection
+steps.
+Specifically, suppose the first nbc3 columns of V have converged, and partition V = [Vc , Vnc ] where Vc has
+nbc columns and Vnc has m − nbc columns4 . Then, we can form the matrix [Vc , A · Vnc ], which is the same
+as if we multiply V by A. However, we still need to orthogonalise Vnc with respect to the frozen vectors Vc
+by first orthogonalising Vnc against Vc and then against itself.
+Finally, the Rayleigh-Ritz Projection step can also be limited to the columns Vnc of V .
+TODO :
+Question 11:
+One result of the functions that compute the eigenpairs is the quality of each eigenpairs (qv) that is used as
+a convergence criteria, kA · v − β · vk/|β|
+Explain why, with subspace iter v1 method, this accuracy differs for some of the vectors.
+Question 12: Try to anticipate what will occur, in term of accuracy of the eigenpairs, with the subspace iter v3 method
+Question 13: Copy the file subspace_iter_v2.m into a file subspace_iter_v3.m to implement this deflation.
+Matlab files for this step:
+1. subspace_iter_v3.m
+2. test_v0v1v2v3.m, that tests the 4 versions
+
+4
+
+TO DO: Numerical experiments
+
+TODO : Question 14: What are the differences between the 4 types of matrices ? Create some figures
+that show the eigenvalue distribution of these different types (the matrix and its spectrum are store in a file
+when you create the matrix).
+
+TODO : Question 15: Compare the performances of the algorithms you have implemented and those
+provided (including eig) for different types and sizes of matrices.
+
+5
+
+Bibliography
+
+[1] G. W. Stewart. Matrix Algorithms: Volume 2, Eigensystems. Society for Industrial and Applied Mathematics (SIAM), 2001.
+
+3 number of vectors that have converged
+4 V , Vectors that have converged, V
+c
+nc Vectors that have not converged
+
+7
+
+

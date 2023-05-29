@@ -1,0 +1,180 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{subcaption}
+
+
+\usepackage{amsfonts}
+
+\usepackage{multirow}
+
+\title{ENSEEIHT — 1ère Sciences du Numérique\
+Calcul Scientifique\
+2022-2023 Projet\
+Subspace Iteration Methods\
+Application to Image Compression}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{introduction}
+
+After pondering the efficacy of the deflated power method to compute leading eigenspaces, we came to implement an other algorithm, the subspace iteration method.
+We improved that algorithm thrice, and saw that each iteration was better than the previous one (excepted the third and last version). Thus, we will apply these methods to compress images and judge the fidelity of the compression, using each previous algorithm.
+
+\section{Examples of Comics Images to Compress in Grayscale}
+
+As a reference, here are the original images, in grayscale, that we will compress.
+
+\begin{figure}[H]
+\centering
+    \centering
+    \includegraphics[width=120mm, scale=0.5]{bd/BD_Asterix_0.png}
+    \caption{Original Image (greyscale)}
+    \label{fig:original}
+\end{figure}
+
+\section{Image Compression and reconstruction}
+
+\subsection{Reconstruction of the original image}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik0v3.png}
+        \caption{$k=0$}
+        \label{fig:reconstruction0}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik40v3.png}
+        \caption{$k=40$}
+        \label{fig:reconstruction40}
+    \end{subfigure}\hspace*{\fill}
+
+    \medskip
+
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik80v3.png}
+        \caption{$k=80$}
+        \label{fig:reconstruction80}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik120v3.png}
+        \caption{$k=120$}
+        \label{fig:reconstruction120}
+    \end{subfigure}\hspace*{\fill}
+
+    \medskip
+
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik160v3.png}
+        \caption{$k=160$}
+        \label{fig:reconstruction160}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=70mm, scale=0.3]{res_part2/Ik200v3.png}
+        \caption{$k=200$}
+        \label{fig:reconstruction200}
+    \end{subfigure}\hspace*{\fill}
+
+    \caption{Reconstruction of the original image with varying k}
+    \label{fig:reconstruction}
+\end{figure}
+
+
+    Above are the reconstructed images, with a varying order k. Unexpectedly, the image is unreadable at $k=0$. However, at $k=40$, we can already make out forms.
+    At $k=80$, the text is almost readable, and forms are clear. At $k=120$, the some letters can be guessed, but it is still unreadable. details are still fuzzy.
+    At $k=160$, the image is still not readable, but details are more obvious.
+
+    Finally, at $k=200$, the image is nigh readable, words can be guessed, and details are more prominent. This is far from perfect though, and the original image is still much more defined. This is, however, a very significant success : the original image is very easily recognizable, and with only $k = 200$, the result is astonishing.
+This compressed image would only be $1/9th$ of the original image, which is rather impressive for an image so well reconstructed.
+
+There is no doubt that at $k=240$, the image is readable and near perfect.
+
+\subsection{Fidelity of the reconstruction}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_eig.png}
+        \caption{fidelity for the $eig$ function}
+        \label{fig:eig}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_v12.png}
+        \caption{fidelity for the $power\_v12$ function}
+        \label{fig:power_v12}
+    \end{subfigure}\hspace*{\fill}
+
+    \medskip
+
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_v0.png}
+        \caption{fidelity for the $subspace\_iter\_v0$ function}
+        \label{fig:subspace_iter_v0}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_v1.png}
+        \caption{fidelity for the $subspace\_iter\_v1$ function}
+        \label{fig:subspace_iter_v1}
+    \end{subfigure}\hspace*{\fill}
+
+    \medskip
+
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_v2.png}
+        \caption{fidelity for the $subspace\_iter\_v2$ function}
+        \label{fig:subspace_iter_v2}
+    \end{subfigure}\hspace*{\fill}
+    \begin{subfigure}[b]{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{res_part2/diff_Ik_I_v3.png}
+        \caption{fidelity for the $subspace\_iter\_v3$ function}
+        \label{fig:subspace_iter_v3}
+    \end{subfigure}\hspace*{\fill}
+    \caption{Graph of the $RMSE$ for each algorithm according to the rank $k$ of the partial matrix}
+    \label{fig:fidelity}
+\end{figure}
+
+
+Because of some technical issues, thes graphs could not be overlapped. We see here that no matter the function, the $RSME$ is strictly the same. Computation time, however, is clearly not the same (see part 1 for the comparison).
+As $k$ increases, the reconstructed image is more and more similar to the original one. Indeed, with more informations, it is normal to better reconstruct the image.
+We can see however that up to a certain point, the variation in $RSME$ is negligeable, so much so that taking $k=280$ over $k=240$ doesn't matter much for the reconstruction, but may result in a much larger compressed image and greater computation time.
+
+As such, it is important to ponder the trade-off between the size of the compressed image and the fidelity of the reconstruction. In reality, $k=240$ would suffice greatly, and any more could take much longer to compute. This looks like a good compromise for this image.
+
+It is possible that this ratio ($1/9th$ to $1/8th$) of compression is enough for similar images, as the $RSME$ would be pretty similar.
+
+\section*{Conclusion}
+
+    In this report, we have seen that the $RSME$ is a good metric to measure the fidelity of the reconstruction of an image. All algorithms may output the same result, the computation time is not the same, and the $RSME$ is not the only metric to consider when choosing an algorithm. The trade-off between the size of the compressed image and the fidelity of the reconstruction is important, as well as the time spent reconstructing.
+
+    in the end, we saw in this exemple that $k=240$ is a very good order to compress, and that possibly this ratio ($1/9th$ to $1/8th$) may be a good indicator to chose $k$. This is of course related to the $RSME$, as this order minimises the $RSME$ without taking too much time to reconstruct or space to store.
+
+\end{document}
