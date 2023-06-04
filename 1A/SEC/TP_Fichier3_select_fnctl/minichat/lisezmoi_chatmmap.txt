@@ -1,4 +1,8 @@
 Commentaires :
-    J'ai choisi d'utiliser "alarm" qui permet d'envoyer SIGALARM au bout d'un temps choisi en paramètre pour vérifier toutes les secondes si un nouveau message a été envoyé ou pas et actualiser l'affichage le cas échéant.
+    J'ai choisi d'utiliser "alarm" qui permet d'envoyer SIGALARM au bout d'un temps choisi en paramètre pour vérifier toutes les secondes si un nouveau message a été envoyé ou pas et actualiser l'affichage le cas échéant. Je détermine si un nouveau message a été envoyé en comparant le numéro du message le plus récent dans la mémoire partagée avec le numéro de message enregistré par le processus au dernier affichage. Si le numéro de message le plus récent est plus grand, alors un nouveau message a été envoyé, l'affichage est actualisé et le numéro de message enregistré par le processus est mis à jour.
 
     Lorsqu'un nouvel utilisateur se connecte, à cause du fait que mon programme initialise la mémoire partagée à des messages vides, tous les précédents messages envoyés sont effacés. Je n'ai pas trouvé de moyen de faire en sorte que la mémoire ne soit initialisée qu'une fois.
+
+    Comme dans tous mes exercices de SEC j'ai du ajouter "#define _XOPEN_SOURCE 700" pour que la plupart des commandes fonctionnent. Je n'ai aucune idée d'où ça vient mais la solution fonctionne. Sans ça, je n'ai pas accès à des objets basiques comme "struct sigaction" alors même que j'ai bien inclus "signal.h".
+
+    J'ai ajouté deux procédures : decalage(struct message * discussion) et trim_newline(char* str). La première me permet de décaler chaque messages d'un cran vers le haut pour permettre d'ajouter le nouveau message en bas. La seconde me permet de supprimer le caractère '\n' à la fin de chaque message pour éviter d'avoir des lignes vides dans l'affichage.
