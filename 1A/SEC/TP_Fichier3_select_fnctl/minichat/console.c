@@ -141,7 +141,7 @@ int main (int argc, char *argv[]) {
 
                 // Continuer à lire tant qu'il y a des messages et les ajouter dans l'array de messages
                 int j = 0;
-                while (j*TAILLE_MSG*sizeof(char) < nlus) {
+                while (j*TAILLE_MSG*sizeof(char) < (long unsigned int) nlus) {
                     prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
                     discussion[curseur % NB_LIGNES][0] = '\0';
                     strncpy(discussion[curseur % NB_LIGNES], prochainMessage, TAILLE_MSG*sizeof(char));
