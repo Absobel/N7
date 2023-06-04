@@ -108,7 +108,7 @@ void desactiver (int p) {
 	diffuser(buf);
 }
 
-int main (int argc, char *argv[]) {
+int main () {
     int i,nlus;
     int ecoute;				/* descripteur d'écoute */
     fd_set readfds; 		/* ensemble de descripteurs écoutés par le select */
@@ -175,7 +175,7 @@ int main (int argc, char *argv[]) {
 
 				// Traiter chacun des messages individuellement
 				int j = 0;
-				while (j*TAILLE_MSG*sizeof(char) < nlus) {
+				while (j*TAILLE_MSG*sizeof(char) < (long unsigned int) nlus) {
 					prochainMessage = buf + j*TAILLE_MSG*sizeof(char);
 					char message_a_diffuser[TAILLE_MSG+TAILLE_NOM+3];
 					memset(message_a_diffuser, 0, sizeof(message_a_diffuser));
