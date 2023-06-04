@@ -1,3 +1,4 @@
+#define _XOPEN_SOURCE 700
 /* version 0.2.1f (PM, 18/5/21) :
 	La discussion est un tableau de messages, couplé en mémoire partagée.
 	Un message comporte un auteur, un texte et un numéro d'ordre (croissant).
@@ -42,8 +43,31 @@ void afficher() {
     printf("------------------------------------------------------------------------\n");
 }
 
+void decalage(struct message * discussion) {
+    int i;
+    for (i=0; i<NB_LIGNES-1; i++) {
+        discussion[i] = discussion[i+1];
+    }
+}
+
+void trim_newline(char *str) {
+    int len = strlen(str);
+    if (len > 0 && str[len-1] == '\n') {
+        str[len-1] = '\0'; 
+    }
+}
+
+
 void traitant (int sig) {
-	/*  (**** à faire ****) traitant : rafraîchir la discussion, s'il y a lieu, toutes les secondes */
+    switch (sig) {
+        case SIGALRM:
+            if (discussion[NB_LIGNES - 1].numero != dernier0) {
+                afficher();
+                dernier0 = discussion[NB_LIGNES - 1].numero;
+            }
+            break;
+    }
+    alarm(1);
 }
 
 int main (int argc, char *argv[]) {
@@ -85,6 +109,56 @@ int main (int argc, char *argv[]) {
       	  doit permettre de sortir de la boucle, et du programme
      */
 
+    // Couplage
+    discussion = mmap(NULL, taille, PROT_READ | PROT_WRITE, MAP_SHARED, fdisc, 0);
+    if (discussion == MAP_FAILED) {
+        fprintf(stderr, "erreur couplage discussion\n");
+        exit(3);
+    }
+
+    // Init pseudo
+    char pseudo[TAILLE_AUTEUR];
+    strcpy(pseudo, argv[2]);
+
+    // Init discussion
+    for (i = 0; i < NB_LIGNES; i++) {
+        discussion[i].numero = 0;
+        strcpy(discussion[i].auteur, "");
+        strcpy(discussion[i].texte, "");
+    }
+
+    // Init signaux
+    struct sigaction sa;
+    sa.sa_handler = traitant;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = SA_RESTART;
+    sigaction(SIGALRM, &sa, NULL);
+
+    // Init clavier
+    clavier = fopen("/dev/tty", "r");
+    if (clavier == NULL) {
+        fprintf(stderr, "erreur ouverture clavier\n");
+        exit(4);
+    }
+
+    afficher();
+    alarm(1); // Envoyer SIGALRM dans 1 seconde
+
+    do {
+        char texte[TAILLE_TEXTE];
+        fgets(texte, TAILLE_TEXTE, clavier);
+        trim_newline(texte);
+
+        decalage(discussion);
+
+        // Ajout du message
+        m.numero = discussion[NB_LIGNES - 1].numero + 1;
+        strcpy(m.auteur, pseudo);
+        strcpy(m.texte, texte);
+        discussion[NB_LIGNES - 1] = m;
+    } while (strcmp(m.texte, "au revoir") != 0);
+
+    munmap(discussion, taille);
     close(fdisc);
     exit(0);
 }

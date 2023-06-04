@@ -1,0 +1,4 @@
+Commentaires :
+    J'ai choisi d'utiliser "alarm" qui permet d'envoyer SIGALARM au bout d'un temps choisi en paramètre pour vérifier toutes les secondes si un nouveau message a été envoyé ou pas et actualiser l'affichage le cas échéant.
+
+    Lorsqu'un nouvel utilisateur se connecte, à cause du fait que mon programme initialise la mémoire partagée à des messages vides, tous les précédents messages envoyés sont effacés. Je n'ai pas trouvé de moyen de faire en sorte que la mémoire ne soit initialisée qu'une fois.
