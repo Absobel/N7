@@ -6,3 +6,10 @@
 *.mat
 
 1A/SEC/TP_Fichier/verif_fichiers
+
+# coq
+*.glob
+*.aux
+*.vo
+*.vos
+*.vok
