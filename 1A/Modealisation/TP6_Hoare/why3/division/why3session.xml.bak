@@ -7,22 +7,22 @@
 <file proved="true">
 <path name=".."/>
 <path name="division.mlw"/>
-<theory name="Division">
- <goal name="VC division" expl="VC for division">
- <proof prover="1"><result status="unknown" time="0.01"/></proof>
+<theory name="Division" proved="true">
+ <goal name="VC division" expl="VC for division" proved="true">
+ <proof prover="1"><result status="valid" time="0.00" steps="12"/></proof>
  <transf name="split_vc" >
   <goal name="VC division.0" expl="loop invariant init">
-  <proof prover="1"><result status="valid" time="0.00" steps="3"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.00" steps="3"/></proof>
   </goal>
   <goal name="VC division.1" expl="loop variant decrease">
-  <proof prover="1"><result status="valid" time="0.00" steps="8"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.00" steps="8"/></proof>
   </goal>
   <goal name="VC division.2" expl="loop invariant preservation">
-  <proof prover="1"><result status="valid" time="0.00" steps="8"/></proof>
+  <proof prover="1" obsolete="true"><result status="valid" time="0.00" steps="8"/></proof>
   </goal>
   <goal name="VC division.3" expl="postcondition">
   <proof prover="0" obsolete="true" edited="division_Division_VC_division_1.v"><result status="unknown" time="0.00" steps="0"/></proof>
-  <proof prover="1"><result status="unknown" time="0.01"/></proof>
+  <proof prover="1" obsolete="true"><result status="unknown" time="0.01"/></proof>
   </goal>
  </transf>
  </goal>

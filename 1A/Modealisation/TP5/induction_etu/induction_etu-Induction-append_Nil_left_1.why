@@ -1,0 +1,56 @@
+(* this is the prelude for Alt-Ergo, version >= 0.95.2 *)
+logic match_bool : bool, 'a, 'a -> 'a
+
+axiom match_bool_True :
+  (forall z:'a. forall z1:'a. (match_bool(true, z, z1) = z))
+
+axiom match_bool_False :
+  (forall z:'a. forall z1:'a. (match_bool(false, z, z1) = z1))
+
+type 'a liste
+
+logic Nil : 'a liste
+
+logic Cons : 'a, 'a liste -> 'a liste
+
+logic match_liste : 'a liste, 'a1, 'a1 -> 'a1
+
+axiom match_liste_Nil :
+  (forall z:'a. forall z1:'a. (match_liste((Nil : 'a1 liste), z, z1) = z))
+
+axiom match_liste_Cons :
+  (forall z:'a. forall z1:'a. forall u:'a1. forall u1:'a1 liste.
+  (match_liste(Cons(u, u1), z, z1) = z1))
+
+logic index_liste : 'a liste -> int
+
+axiom index_liste_Nil : (index_liste((Nil : 'a liste)) = 0)
+
+axiom index_liste_Cons :
+  (forall u:'a. forall u1:'a liste [Cons(u, u1)]. (index_liste(Cons(u,
+  u1)) = 1))
+
+logic Cons_proj_1 : 'a liste -> 'a
+
+axiom Cons_proj_1_def :
+  (forall u:'a. forall u1:'a liste. (Cons_proj_1(Cons(u, u1)) = u))
+
+logic Cons_proj_2 : 'a liste -> 'a liste
+
+axiom Cons_proj_2_def :
+  (forall u:'a. forall u1:'a liste. (Cons_proj_2(Cons(u, u1)) = u1))
+
+axiom liste_inversion :
+  (forall u:'a liste. ((u = (Nil : 'a liste)) or (u = Cons(Cons_proj_1(u),
+  Cons_proj_2(u)))))
+
+logic append : 'a liste, 'a liste -> 'a liste
+
+axiom append_def : (forall l2:'a liste. (append((Nil : 'a liste), l2) = l2))
+
+axiom append_def1 :
+  (forall l2:'a liste.
+  (forall t:'a. forall q:'a liste. (append(Cons(t, q), l2) = Cons(t,
+  append(q, l2)))))
+
+goal append_Nil_left : (forall l:'a liste. (append((Nil : 'a liste), l) = l))
