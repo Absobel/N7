@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Move &apos;process1-ko2.xmi&apos; to &apos;simplePDL&apos;" description="Move &apos;process1-ko2.xmi&apos; to &apos;simplePDL&apos;" destination="/simplePDL" element1="/TP03/process1-ko2.xmi" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1695220894853" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;simplePDL/process1-ko2.xmi&apos; to &apos;process1-ko.xmi&apos;" description="Rename resource &apos;process1-ko2.xmi&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="process1-ko2.xmi" name="process1-ko.xmi" stamp="1695220900615" updateReferences="true"/>
+</session>
