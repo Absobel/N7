@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="generator" content="hevea 2.35">
+<link rel="stylesheet" type="text/css" href="gls-2sn-2023-deroulement-corrige.css">
+<title>Principe de la transformation d&#X2019;un modèle de processus en réseau
+de Petri</title>
+</head>
+<body >
+<a href="gls-2sn-2023-deroulement-corrige007.html"><img src="previous_motif.svg" alt="Previous"></a>
+<a href="gls-2sn-2023-deroulement-corrige-index.html"><img src="contents_motif.svg" alt="Up"></a>
+<a href="gls-2sn-2023-deroulement-corrige009.html"><img src="next_motif.svg" alt="Next"></a>
+<hr>
+<h3 id="sec18" class="subsection">3.1&#X2003;Principe de la transformation d&#X2019;un modèle de processus en réseau
+de Petri</h3>
+<p>Le principe de la transformation d&#X2019;un modèle SimplePDL en Réseau de
+Pétri est le suivant (voir correction du TD 1) :
+</p><ul class="itemize"><li class="li-itemize">
+Un élément Process devient un élément PetriNet.</li><li class="li-itemize">Une WorkDefinition devient 4 places ready, started, running et
+finished et deux transitions start et finish. Il faut bien sûr
+avoir des noms différents pour les places et les transitions, on
+peut donc les préfixer par le nom de la WorkDefinition.<p>Voici dans la syntaxe de Tina, le bout de réseau de Pétri
+correspondant à une WorkDefinition.</p><pre class="verbatim">pl XXX_ready (1)
+tr XXX_start XXX_ready -&gt; XXX_running XXX_started
+tr XXX_finish XXX_running -&gt; XXX_finished
+</pre></li><li class="li-itemize">Une WorkSequence devient un <em>read arc</em> entre une place de
+l&#X2019;activité précédente (started ou finished) et une transition de
+l&#X2019;activité cible (start ou finish).</li></ul><p>Un processus se termine si toutes ses activités se terminent.
+La propriété correspondante peut s&#X2019;écrire ainsi pour l&#X2019;exemple du sujet :
+</p><pre class="verbatim">op finished = Conception_finished /\ RedactionTests_finished /\ RedactionDoc_finished /\ Developpement_finished;
+
+[] (finished =&gt; dead);
+[] &lt;&gt; dead ;
+[] (dead =&gt; finished);
+- &lt;&gt; finished;
+</pre><p>Il faut noter que la première ligne dépend du processus !
+Cette ligne référence la place finished de toutes les activités du processus.</p><p><br>
+</p><p>Concernant les invariants qui permettent de valider la transformation, il
+s&#X2019;agit de propriété vraies sur les processus qui devront donc aussi être
+vraies sur le réseau de Petri correspondant. Par exemple, les états
+<em>ready</em>, <em>running</em> et <em>finished</em> d&#X2019;une
+activité sont exclusif.
+</p><pre class="verbatim">[] wd_ready + wd_running + wd_finished = 1;
+</pre><p>
+Ceci doit bien sûr est déclinée pour chaque activité du processus en
+remplaçant <code class="verb">wd</code> par le nom de l&#X2019;activité considérée.</p>
+Merci de signaler toute erreur ou problème concernant ce document à Xavier Crégut &lt;Prenom.Nom@enseeiht.fr&gt;.<hr>
+<a href="gls-2sn-2023-deroulement-corrige007.html"><img src="previous_motif.svg" alt="Previous"></a>
+<a href="gls-2sn-2023-deroulement-corrige-index.html"><img src="contents_motif.svg" alt="Up"></a>
+<a href="gls-2sn-2023-deroulement-corrige009.html"><img src="next_motif.svg" alt="Next"></a>
+</body>
+</html>
