@@ -4,39 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="generator" content="hevea 2.35">
 <link rel="stylesheet" type="text/css" href="gls-2sn-2023-deroulement-corrige.css">
-<title>Acceleo ne fonctionne plus depuis que j&#X2019;ai utilisé les genmodel et
-engrendré les éditeurs.</title>
+<title>Vérifier la version de Java : Au plus JDK 11</title>
 </head>
 <body >
 <a href="gls-2sn-2023-deroulement-corrige017.html"><img src="previous_motif.svg" alt="Previous"></a>
 <a href="gls-2sn-2023-deroulement-corrige-index.html"><img src="contents_motif.svg" alt="Up"></a>
 <a href="gls-2sn-2023-deroulement-corrige019.html"><img src="next_motif.svg" alt="Next"></a>
 <hr>
-<h3 id="sec31" class="subsection">6.5&#X2003;Acceleo ne fonctionne plus depuis que j&#X2019;ai utilisé les genmodel et
-engrendré les éditeurs.</h3>
+<h3 id="sec34" class="subsection">6.2&#X2003;Vérifier la version de Java : Au plus JDK 11</h3>
 <p>
-Il faut modifier le fichier .java qui correspond à la transformation Acceleo
-(par exemple ToPDL1.java pour toPDL1.mtl). Plus précisément, dans la méthode
-<code>&#X200B;</code><code>registerPackages</code><code>&#X200B;(&#X200B;</code><code>ResourceSet</code><code>&#X200B;)</code>, il faut :
-</p><ol class="enumerate" type=1><li class="li-enumerate">
-Ajouter <em>NOT</em> après @generated dans le commentaire de documentation
-(pour éviter que les modifications apportées ne soient écrasées par la
-prochaine génération: voir le premier commentaire de cette méthode).</li><li class="li-enumerate">Ajouter l&#X2019;instruction qui apparaît dans le deuxième
-commentaire. Il faut bien sûr l&#X2019;adapter en fonction du métamodèle
-considéré.</li><li class="li-enumerate">Si des erreurs apparaissent (ce sera certainement le cas car le
-	SimplePDLPackage ou équivalent ne sera pas connu du projet), il faudra
-	choisir parmi les corrections proposées par Eclipse : "Fix Project
-	Setup".</li></ol><p>Voici un exemple minimal du résultat attendu avec SimplePDL&#X2004;&#X200D;:</p><pre class="verbatim">/**
- * @generated NOT
- */
-public void registerPackages(ResourceSet resourceSet) {
-    super.registerPackages(resourceSet);
-
-    if (!isInWorkspace(SimplepdlPackage.class)) {
-        resourceSet.getPackageRegistry().put(SimplepdlPackage.eNS_URI, SimplepdlPackage.eINSTANCE);
-    }
-}
-</pre>
+Pour savoir quelle version du JDK est utilisée par Eclipse, on peut faire
+<em>Window &gt; Preferences</em> puis choisir <em>Java / Installed JREs</em>. Ce
+doit être une version 11 au plus. Attention, il ne faut que ce soit une
+version supérieure même si le mode compatibilité 11 est activé !</p>
 Merci de signaler toute erreur ou problème concernant ce document à Xavier Crégut &lt;Prenom.Nom@enseeiht.fr&gt;.<hr>
 <a href="gls-2sn-2023-deroulement-corrige017.html"><img src="previous_motif.svg" alt="Previous"></a>
 <a href="gls-2sn-2023-deroulement-corrige-index.html"><img src="contents_motif.svg" alt="Up"></a>
