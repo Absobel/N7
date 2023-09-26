@@ -5,7 +5,7 @@ package simplepdl
 context Process
 inv warningSeverity: false
 inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): false
-inv errorSeverity: null
+-- inv errorSeverity: null
 
 context Process
 inv validName('Invalid name: ' + self.name):
