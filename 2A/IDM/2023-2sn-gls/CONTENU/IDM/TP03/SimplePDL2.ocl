@@ -1,0 +1,14 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+context Process
+inv notSameName('Deux ProcessElements ont le même nom'):
+	self.processElements->isUnique(name)
+
+context WorkDefinition
+inv pasReflexive("Il n'est pas possible de dépendre de soi-même"):
+		self.linksToSuccessor.successor != self
+	and self.linksToPredecessor.predecessor != self
+
+endpackage
