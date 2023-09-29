@@ -9,7 +9,7 @@ inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): 
 
 context Process
 inv validName('Invalid name: ' + self.name):
-	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+	self.name.matches('')
 
 context ProcessElement
 def: process(): Process =
