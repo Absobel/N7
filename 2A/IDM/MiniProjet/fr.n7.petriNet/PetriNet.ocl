@@ -1,0 +1,23 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context Place
+inv positiveTokenNumber('The number of token in a place must be positive: ' + self.name):
+	self.jeton >= 0
+	
+context Arc
+inv positiveWeight('The weight must be positive: ' + self.name):
+	self.weight >= 0
+inv readArcValidType:
+	self.type <> ArcKind::READ or self.direction = ArcDirection::P2T
+
+context Transition
+inv validArcTypeT2P: 
+  self.arc->forAll(a | a.direction = ArcDirection::T2P)
+
+context Place
+inv validArcTypeP2T: 
+  self.arc->forAll(a | a.direction = ArcDirection::P2T)
+
+endpackage

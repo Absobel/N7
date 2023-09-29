@@ -1,0 +1,33 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+-- TP3
+
+context Process
+inv uniqueNames('Duplicate name found among ProcessElements: ' + self.name):
+	self.processElements->isUnique(name)
+
+context WorkSequence
+inv notSelfDependent(self.successor.name + ' cannot be dependent on itself'):
+	self.successor <> self.predecessor
+	
+context WorkDefinition
+inv sufficientNameLength('WorkDefinition name too short: ' + self.name):
+	self.name.size() >= 2
+
+context WorkDefinition
+inv nameIsValid('Invalid name format for WorkDefinition: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+
+-- Ressources
+
+context Ressource
+inv validQuantityRessource('There must be a positive number of Ressource' + self.type.toString()):
+	self.totalQuantity >= 0
+	
+context NeededRessource
+inv validQuandityNeededRessource('There must be a positive number of NeededRessource' + self.ressource.type.toString()):
+	self.quantity >= 0
+
+endpackage
