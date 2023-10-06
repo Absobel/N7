@@ -2,22 +2,36 @@ import 'PetriNet.ecore'
 
 package petrinet
 
+context PetriNetElement
+def: petrinet(): PetriNet =
+	PetriNet.allInstances()
+		->select(pn | pn.petriNetElements->includes(self))
+		->asSequence()->first()
+
 context Place
 inv positiveTokenNumber('The number of token in a place must be positive: ' + self.name):
 	self.jeton >= 0
-	
+inv nonEmptyName('Place name cannot be empty: ' + self.name):
+	self.name <> ''
+inv uniquePlaceName('Place names must be unique within a net'):
+	Place.allInstances()->forAll(p1, p2 | p1 <> p2 implies p1.name <> p2.name)
+
 context Arc
 inv positiveWeight('The weight must be positive: ' + self.name):
 	self.weight >= 0
 inv readArcValidType:
 	self.type <> ArcKind::READ or self.direction = ArcDirection::P2T
+inv nonEmptyName('Arc name cannot be empty: ' + self.name):
+	self.name <> ''
+inv sameNet('Arc, Place, and Transition must be in the same PetriNet'):
+	self.petrinet() = self.place.petrinet() and self.petrinet() = self.transition.petrinet()
+inv uniqueArcName('Arc names must be unique within a net'):
+	Arc.allInstances()->forAll(a1, a2 | a1 <> a2 implies a1.name <> a2.name)
 
 context Transition
-inv validArcTypeT2P: 
-  self.arc->forAll(a | a.direction = ArcDirection::T2P)
-
-context Place
-inv validArcTypeP2T: 
-  self.arc->forAll(a | a.direction = ArcDirection::P2T)
+inv nonEmptyName('Transition name cannot be empty: ' + self.name):
+	self.name <> ''
+inv uniqueTransitionName('Transition names must be unique within a net'):
+	Transition.allInstances()->forAll(t1, t2 | t1 <> t2 implies t1.name <> t2.name)
 
 endpackage

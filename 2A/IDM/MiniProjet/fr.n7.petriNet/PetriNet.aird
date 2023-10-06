@@ -4,7 +4,7 @@
     <semanticResources>PetriNet.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_BRFj0F6jEe6LkaEBY-NN-A">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_B97bsF6jEe6LkaEBY-NN-A" name=" class diagram" repPath="#_B918IF6jEe6LkaEBY-NN-A" changeId="1695979411458">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_B97bsF6jEe6LkaEBY-NN-A" name=" class diagram" repPath="#_B918IF6jEe6LkaEBY-NN-A" changeId="1695999614613">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="PetriNet.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -216,7 +216,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_xnOLoF6lEe6LkaEBY-NN-A" type="4001" element="_xnAJMF6lEe6LkaEBY-NN-A" source="_DkZDMF6jEe6LkaEBY-NN-A" target="_ja86MF6lEe6LkaEBY-NN-A">
           <children xmi:type="notation:Node" xmi:id="_xnOysF6lEe6LkaEBY-NN-A" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnOysV6lEe6LkaEBY-NN-A" x="-30" y="33"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnOysV6lEe6LkaEBY-NN-A" x="-30" y="19"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_xnOysl6lEe6LkaEBY-NN-A" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xnOys16lEe6LkaEBY-NN-A" y="10"/>
@@ -474,9 +474,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xnAJMF6lEe6LkaEBY-NN-A" name="[0..*] petrinetelement" sourceNode="_DkOrIF6jEe6LkaEBY-NN-A" targetNode="_jaoKEF6lEe6LkaEBY-NN-A">
-      <target xmi:type="ecore:EReference" href="PetriNet.ecore#//PetriNet/petrinetelement"/>
-      <semanticElements xmi:type="ecore:EReference" href="PetriNet.ecore#//PetriNet/petrinetelement"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xnAJMF6lEe6LkaEBY-NN-A" name="[0..*] petriNetElements" sourceNode="_DkOrIF6jEe6LkaEBY-NN-A" targetNode="_jaoKEF6lEe6LkaEBY-NN-A">
+      <target xmi:type="ecore:EReference" href="PetriNet.ecore#//PetriNet/petriNetElements"/>
+      <semanticElements xmi:type="ecore:EReference" href="PetriNet.ecore#//PetriNet/petriNetElements"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xnBXUF6lEe6LkaEBY-NN-A" description="_xnAwQF6lEe6LkaEBY-NN-A" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xnBXUl6lEe6LkaEBY-NN-A" showIcon="false">
           <customFeatures>labelSize</customFeatures>
