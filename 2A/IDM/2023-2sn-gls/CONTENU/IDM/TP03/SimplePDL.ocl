@@ -5,11 +5,11 @@ package simplepdl
 context Process
 inv warningSeverity: false
 inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): false
--- inv errorSeverity: null
+inv errorSeverity: null
 
 context Process
 inv validName('Invalid name: ' + self.name):
-	self.name.matches('')
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
 
 context ProcessElement
 def: process(): Process =
