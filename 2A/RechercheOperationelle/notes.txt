@@ -1,0 +1,17 @@
+Faire modèle (exemple sncf) :
+- Variable de décision 
+    - affectation des tâches aux engins
+    - dates de réalisation
+- Fonction Objectif : minimiser/maximiser (ici minimiser)
+    - la somme des durées des transferts
+- Contraintes : données par le cahier des charges
+
+exemple : ALPHA ciment
+- Variable de décision 
+    - pourcentage de ciment 1 vs ciment 2
+- Fonction Objectif :
+    - maximiser bénéfice
+- Contraintes :
+    - 6h à 8h par jour - atelier de broyage
+- Domaine
+    - 
