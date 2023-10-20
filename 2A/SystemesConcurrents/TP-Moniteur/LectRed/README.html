@@ -1,0 +1,22 @@
+<h1 id="problème-des-lecteursrédacteurs">Problème des
+lecteurs/rédacteurs</h1>
+<h2 id="objectif">Objectif</h2>
+<p>Écrire des implantations de LectRed.java.</p>
+<p>Stratégies à implanter :</p>
+<ul>
+<li>priorité aux rédacteurs ou aux lecteurs</li>
+<li>équitable (absence de famine que ce soient des lecteurs ou des
+rédacteurs)</li>
+</ul>
+<h2 id="compilation">Compilation</h2>
+<pre><code>javac *.java Synchro/*.java</code></pre>
+<h2 id="exécution">Exécution</h2>
+<pre><code>java Main</code></pre>
+<p>Le programme trouve automatiquement toutes les implantations
+disponibles dans le répertoire (par réflexivité), et en particulier les
+nouvelles implantations rajoutées.</p>
+<p>Il est par ailleurs également possible de lancer une implantation
+particulière par :</p>
+<pre><code>java Main &lt;l&#39;implantation écrite&gt; &lt;nb lecteurs&gt; &lt;nb rédacteurs&gt;</code></pre>
+<p>par exemple:</p>
+<pre><code>java Main MonImplantation 6 4</code></pre>
