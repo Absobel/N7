@@ -9,7 +9,7 @@ import java.util.concurrent.locks.Condition;
  *
  * Implantation: moniteur (java 5), une var condition par taille de demande.
  */
-public class Allocateur_Petits implements Allocateur {
+public class Allocateur_Grands implements Allocateur {
 
     // Nombre total de ressources.
     private final int nbRessources;
@@ -30,7 +30,7 @@ public class Allocateur_Petits implements Allocateur {
     private int[] tailleClasse;
 
     /** Initilialise un nouveau gestionnaire de ressources pour nbRessources. */
-    public Allocateur_Petits(int nbRessources) {
+    public Allocateur_Grands(int nbRessources) {
         this.nbRessources = nbRessources;
         this.nbLibres = nbRessources;
         this.classe = new Condition[nbRessources+1];
@@ -63,7 +63,7 @@ public class Allocateur_Petits implements Allocateur {
     }
 
     private void chained_signal() {
-        for (int i = 1; i <= nbRessources; i++) {
+        for (int i = nbRessources; i > 0; i--) {
             if (tailleClasse[i] > 0 && nbLibres >= i) {
                 classe[i].signal();
             }
