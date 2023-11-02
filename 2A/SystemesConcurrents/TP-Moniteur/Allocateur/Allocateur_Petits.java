@@ -19,7 +19,7 @@ public class Allocateur_Petits implements Allocateur {
     private int nbLibres;
 
     // Protection des variables partagées
-    private Lock moniteur;
+    private Lock moniteur = new ReentrantLock();
 
     // Une condition de blocage par taille de demande
     // tableau [nbRessources+1] dont on n'utilise pas la case 0
@@ -33,17 +33,41 @@ public class Allocateur_Petits implements Allocateur {
     public Allocateur_Petits(int nbRessources) {
         this.nbRessources = nbRessources;
         this.nbLibres = nbRessources;
-        /* A COMPLÉTER */
+        this.classe = new Condition[nbRessources+1];
+        this.tailleClasse = new int[nbRessources+1];
+        for (int i = 1; i <= nbRessources; i++) {
+            classe[i] = moniteur.newCondition();
+            tailleClasse[i] = 0;
+        }
     }
 
     /** Demande à obtenir `demande' ressources. */
     public void allouer(int demande) throws InterruptedException {
-        /* A COMPLÉTER */
+        moniteur.lock();
+        tailleClasse[demande]++;
+        while (demande > nbLibres) {
+            classe[demande].await();
+            chained_signal();
+        }
+        tailleClasse[demande]--;
+        nbLibres -= demande;
+        moniteur.unlock();
     }
 
     /** Libère `rendu' ressources. */
     public void liberer(int rendu) throws InterruptedException {
-        /* A COMPLÉTER */
+        moniteur.lock();
+        nbLibres += rendu;
+        chained_signal();
+        moniteur.unlock();
+    }
+
+    private void chained_signal() {
+        for (int i = 1; i <= nbRessources; i++) {
+            if (tailleClasse[i] > 0 && nbLibres >= i) {
+                classe[i].signal();
+            }
+        }
     }
 
     /** Chaîne décrivant la stratégie d'allocation. */

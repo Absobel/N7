@@ -110,7 +110,7 @@ parsFormels : /* Lambda, mot vide */ { (print_endline "parsFormels : /* Lambda, 
 suiteParsFormels : /* Lambda, mot vide */ { (print_endline "suiteParsFormels : /* Lambda, mot vide */") }
                  | VIRG typeStruct IDENT suiteParsFormels { (print_endline "suiteParsFormels : VIRG typeStruct IDENT suiteParsFormels") }
 
-principale : PUBLIC CLASS IDENT CROOUV principal CROFER { (print_endline "principale : PUBLIC CLASS IDENT CROOUV principal CROFER") }
+principale : PUBLIC CLASS IDENT ACCOUV principal ACCFER { (print_endline "principale : PUBLIC CLASS IDENT CROOUV principal CROFER") }
 
 principal : PUBLIC STATIC VOID MAIN PAROUV STRING CROOUV CROFER IDENT PARFER corps { (print_endline "principal : PUBLIC STATIC VOID MAIN PAROUV STRING CROOUV CROFER IDENT PARFER corps") }
 
@@ -139,7 +139,7 @@ other_idents : /* Lambda, mot vide */ { (print_endline "other_idents : /* Lambda
 			 | VIRG IDENT other_idents { (print_endline "other_idents : VIRG IDENT other_idents") }
 
 instructions : /* Lambda, mot vide */ { (print_endline "instructions : /* Lambda, mot vide */") }
-			 | instruction instructions { (print_endline "instructions : instruction instructions") }
+			 | instruction instructions { (print_endline "instructions :	 instruction instructions") }
 
 instruction : expression PTVIRG { (print_endline "instruction : expression PTVIRG") }
 			| SI PAROUV expression PARFER corps maybe_else { (print_endline "instruction : SI PAROUV expression PARFER corps maybe_else") }

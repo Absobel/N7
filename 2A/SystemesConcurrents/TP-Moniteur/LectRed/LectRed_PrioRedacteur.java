@@ -12,21 +12,27 @@ public class LectRed_PrioRedacteur implements LectRed
 {
     private Lock mon;
     /* Conditions */
-    private Condition estEnTrainDeLire;
-    private Condition estEnTrainDEcrire;
+    private Condition peutLire;
+    private Condition peutEcrire;
 
     private int nbLecteurs;
+    private int nbEcrivainsEnAttente;
+    private boolean isWriting;
 
     public LectRed_PrioRedacteur() {
         this.mon = new ReentrantLock();
-        this.estEnTrainDeLire = mon.newCondition();
-        this.estEnTrainDEcrire = mon.newCondition();
+        this.peutLire = mon.newCondition();
+        this.peutEcrire = mon.newCondition();
         this.nbLecteurs = 0;
+        this.nbEcrivainsEnAttente = 0;
+        this.isWriting = false;
     }
 
     public void demanderLecture() throws InterruptedException {
         mon.lock();
-        estEnTrainDEcrire.await();
+        while (nbEcrivainsEnAttente > 0 || isWriting) {
+            peutLire.await();
+        }
         nbLecteurs++;
         mon.unlock();
     }
@@ -35,20 +41,29 @@ public class LectRed_PrioRedacteur implements LectRed
         mon.lock();
         nbLecteurs--;
         if (nbLecteurs == 0) {
-            estEnTrainDEcrire.signal();
+            peutEcrire.signal();
         }
         mon.unlock();
     }
 
     public void demanderEcriture() throws InterruptedException {
         mon.lock();
-        estEnTrainDEcrire.await();
+        nbEcrivainsEnAttente++;
+        while (nbLecteurs > 0 || isWriting) {
+            peutEcrire.await();
+        }
+        nbEcrivainsEnAttente--;
+        isWriting = true;
         mon.unlock();
     }
 
     public void terminerEcriture() throws InterruptedException {
         mon.lock();
-        estEnTrainDEcrire.signal();
+        isWriting = false;
+        peutEcrire.signal();
+        if (nbEcrivainsEnAttente == 0) {
+            peutLire.signalAll();
+        }
         mon.unlock();
     }
 
