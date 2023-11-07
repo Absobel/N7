@@ -1,9 +1,0 @@
-(library
- (name td2)
- (inline_tests)
- (modules partie1 partie2 partie3)
- (preprocess
-  (pps ppx_inline_test)))
- (env
-  (dev
-    (flags (:standard -w -32))))

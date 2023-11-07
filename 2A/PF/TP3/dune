@@ -1,0 +1,8 @@
+(library
+ (name tp3)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
+(env
+ (dev
+  (flags (:standard -w -27-39))))
