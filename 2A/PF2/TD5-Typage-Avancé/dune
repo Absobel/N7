@@ -1,7 +1,7 @@
 (library
  (name td2)
  (inline_tests)
- (modules ex1)
+ (modules 1 2)
  (preprocess
   (pps ppx_inline_test)))
  (env

@@ -1,0 +1,6 @@
+package test {
+    interface A {
+        void foo(C, boolean);
+    }
+    interface Test extends A { }
+}
