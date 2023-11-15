@@ -47,6 +47,14 @@ public class CalculHauteurTest extends ExpressionTestSetup {
 		verifierHauteur(4, e6);
 	}
 
+	public void testerE7() {
+		verifierHauteur(4, e7);
+	}
+
+	public void testerE8() {
+		verifierHauteur(3, e8);
+	}
+
 	public void testerReutilisationVisiteur() {
 		CalculHauteur v = new CalculHauteur();
 		verifierHauteur(1, cte, v);
@@ -55,6 +63,8 @@ public class CalculHauteurTest extends ExpressionTestSetup {
 		verifierHauteur(3, e4, v);
 		verifierHauteur(3, e5, v);
 		verifierHauteur(4, e6, v);
+		verifierHauteur(4, e7, v);
+		verifierHauteur(3, e8, v);
 	}
 
 

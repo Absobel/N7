@@ -66,6 +66,14 @@ public class EvaluateurExpressionTest extends ExpressionTestSetup {
 		verifierValeur(7, e6);
 	}
 
+	public void testerE7() {
+		verifierValeur(17, e7);
+	}
+
+	public void testerE8() {
+		verifierValeur(20, e8);
+	}	
+
 	public static void main(String[] args) {
 		junit.textui.TestRunner.run(
 				new junit.framework.TestSuite(EvaluateurExpressionTest.class));
