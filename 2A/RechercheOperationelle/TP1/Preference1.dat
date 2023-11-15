@@ -1,0 +1,10 @@
+data;
+
+param N := 3;
+
+param SCORE : 1 2 3 :=
+            1 4 7 9
+            2 9 8 3
+            3 2 1 2;
+
+end;

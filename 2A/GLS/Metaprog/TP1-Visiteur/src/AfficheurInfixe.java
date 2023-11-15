@@ -4,7 +4,6 @@
   * @version	$Revision$
   */
 public class AfficheurInfixe implements VisiteurExpression<String> {
-
 	public String visiterAccesVariable(AccesVariable v) {
 		return "(" + v.getNom() + ")";
 	}
@@ -37,4 +36,11 @@ public class AfficheurInfixe implements VisiteurExpression<String> {
 		return "-";
 	}
 
+	public String visiterSoustraction(Soustraction s) {
+		return "-";
+	}
+
+	public String visiterLet(Let l) {
+		return "(let " + l.getNom() + " = " + l.getOperandeGauche().accepter(this) + " in " + l.getOperandeDroite().accepter(this) + ")";
+	}
 }

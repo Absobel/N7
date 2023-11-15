@@ -46,6 +46,14 @@ public class AfficheurInfixeTest extends ExpressionTestSetup {
 		verifier("(- (- ((2) + (x))))", e6);
 	}
 
+	public void testerE7() {
+		verifier("((10) - (- ((2) + (x))))", e7);
+	}
+
+	public void testerE8() {
+		verifier("(let x = (5) in ((x) * (4)))", e8);
+	}
+
 	public static void main(String[] args) {
 		junit.textui.TestRunner.run(
 				new junit.framework.TestSuite(AfficheurInfixeTest.class));

@@ -41,4 +41,13 @@ public interface VisiteurExpression<R> {
 	  */
 	R visiterNegation(Negation n);
 
+	/** Visiter un opérateur binaire soustraction.
+	  * @param s l'opérateur binaire à visiter
+	  */
+	R visiterSoustraction(Soustraction s);
+
+	/** Visiter un opérateur binaire let.
+	  * @param l l'opérateur binaire à visiter
+	  */
+	R visiterLet(Let l);
 }
