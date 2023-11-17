@@ -6,6 +6,9 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/home/absobel/Bureau/N7/2A/IDM/MiniProjet/simplePDL.edit"/>
+			<item value="/home/absobel/Bureau/N7/2A/IDM/MiniProjet/simplePDL.editor"/>
+			<item value="/home/absobel/Bureau/N7/2A/IDM/MiniProjet/simplePDL"/>
 			<item value="/home/absobel/Mir/GitRepos/N7/2A/IDM/MiniProjet/fr.n7.petriNet"/>
 			<item value="/home/absobel/Mir/GitRepos/N7/2A/IDM/MiniProjet"/>
 			<item value="/home/absobel/Mir/GitRepos/N7/2A/IDM/2023-2sn-gls/CONTENU/IDM/TP02"/>
