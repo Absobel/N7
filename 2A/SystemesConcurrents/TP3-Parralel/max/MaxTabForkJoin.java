@@ -21,7 +21,16 @@ public class MaxTabForkJoin {
            en deux sous-tâches. Sinon, on utilise directement LargeIntArray.max. */
         public Integer compute() {
             /* XXXX À COMPLÉTER XXXX */
-            return 0; // pour que ça compile
+            if (end - start > threshold) {
+                PartialMax left = new PartialMax(array, start, (start + end) / 2, threshold);
+                PartialMax right = new PartialMax(array, (start + end) / 2, end, threshold);
+                left.fork();
+                right.fork();
+                int result = Math.max(left.join(), right.join());
+                return result;
+            } else {
+                return LargeIntArray.max(array, start, end);
+            }
        }
     }
         
