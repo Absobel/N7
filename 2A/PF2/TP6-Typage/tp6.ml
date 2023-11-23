@@ -142,7 +142,7 @@ type ('stin, 'stout) code =
     | Seq : ('a, 'b) code * ('b, 'c) code -> ('a, 'c) code
 
 
-let rec compile : type t i o. t expr -> (i, t*i) code =
+let rec compile : type t i. t expr -> (i, t*i) code =
     function
     | Entier(x) -> PushI x
     | Booleen(b) -> PushB b
