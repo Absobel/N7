@@ -35,9 +35,19 @@ public class MaxTabThread {
         // et une activité est créée pour traiter chaque segment.
         // On fera attention que la taille du tableau n'est pas nécessairement un multiple de taskSize : le dernier segment peut être plus court (utiliser Math.min(..., array.length)).
         /* XXXX À COMPLÉTER XXXX */
+        for (int i = 0; i < array.length; i += taskSize) {
+            int start = i;
+            int end = Math.min(i + taskSize, array.length);
+            Thread t = new Thread(new PartialMax(array, start, end, results));
+            threads.add(t);
+            t.start();
+        }
 
         // Attendre la terminaison des activités
         /* XXXX À COMPLÉTER XXXX */
+        for (Thread t : threads) {
+            t.join();
+        }
 
         // Récupérer les résultats et les fusionner
         int max = 0;
