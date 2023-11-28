@@ -1,0 +1,288 @@
+\section{Assemblage}
+Dans cette section nous allons traiter le problème de l'assemblage.\\
+
+Tout d'abord nous avons choisi le format \texttt{.lp} car le cas ici est très spécialisé et ne comporte que peu de données.\\
+
+Le modèle est PLNE pour une semaine isolée avec des contraintes précises. En PL, on considère la semaine dans le contexte d'une succession, permettant des valeurs fractionnaires.
+
+\subsection{Variables}
+Les variables du problèmes sont les suivantes : \newline
+
+\begin{itemize}
+
+\item \makebox[2cm]{$p_{vc}$\hfill} : production de vélo cargo par semaine \newline
+\item \makebox[2cm]{$p_{vs}$\hfill} : production de vélo standard par semaine \newline
+
+\end{itemize}
+
+\subsection{Fonction Objectif}
+La fonction à maximiser dans le problème est la fonction :
+
+$$max\ f(p_{vc},p_{vs})\ =\ max(700p_{vc}\ +\ 300 p_{vs})$$
+
+\subsection{Contraintes}
+Les contraintes de ce problème sont les suivantes:
+
+\begin{itemize}
+
+\item $ 0\ \le\ p_{vc}\ \le\ 700 $
+\item $2,5 p_{vc}\ +\ p_{vs}\ \le\ 700 $
+\item $\cfrac{(p_{vc} + p_{vs})11}{3}\ \le\ 60 $
+\end{itemize}
+
+\subsection{Domaine}
+Les domaines des variables sont :
+
+Dans le cas du modèle PLNE :
+
+\begin{itemize}
+
+\item $p_{vc} \in \mathbb{N} $
+\item $p_{vs} \in \mathbb{N} $
+
+\end{itemize}
+
+Dans le cas du modèle PL :
+
+\begin{itemize}
+
+\item $p_{vc} \in \mathbb{R}_{+} $
+\item $p_{vs} \in \mathbb{R}_{+} $
+
+\end{itemize}
+
+
+\subsection{Résultats}
+Voici le résultat obtenu par GLPK pour ce problème
+
+Pour le modèle PLNE :
+
+\begin{lstlisting}
+Problem:
+Rows:       3
+Columns:    2 (2 integer, 0 binary)
+Non-zeros:  5
+Status:     INTEGER OPTIMAL
+Objective:  f = 438400 (MAXimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 HeureParSemaine
+                               59.92                          60
+     2 Parking                  1500                        1500
+     3 ProdMaxCargo              232                         700
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 vc           *            232             0
+     2 vs           *            920             0
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
+\end{lstlisting}
+
+Pour le modèle PL :
+
+\begin{lstlisting}
+    Problem:    
+    Rows:       3
+    Columns:    2
+    Non-zeros:  5
+    Status:     OPTIMAL
+    Objective:  f = 438461.5385 (MAXimum)
+    
+       No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+    ------ ------------ -- ------------- ------------- ------------- -------------
+         1 HeureParSemaine
+                        NU            60                          60       769.231 
+         2 Parking      NU          1500                        1500       261.538 
+         3 ProdMaxCargo B        230.769                         700 
+    
+       No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+    ------ ------------ -- ------------- ------------- ------------- -------------
+         1 vc           B        230.769             0               
+         2 vs           B        923.077             0               
+    
+    Karush-Kuhn-Tucker optimality conditions:
+    
+    KKT.PE: max.abs.err = 7.11e-15 on row 1
+            max.rel.err = 5.87e-17 on row 1
+            High quality
+    
+    KKT.PB: max.abs.err = 0.00e+00 on row 0
+            max.rel.err = 0.00e+00 on row 0
+            High quality
+    
+    KKT.DE: max.abs.err = 0.00e+00 on column 0
+            max.rel.err = 0.00e+00 on column 0
+            High quality
+    
+    KKT.DB: max.abs.err = 0.00e+00 on row 0
+            max.rel.err = 0.00e+00 on row 0
+            High quality
+    
+    End of output
+\end{lstlisting}  
+
+On voit que le maximum est atteint pour une valeur de $f=438400$ avec comme conditions :
+\begin{itemize}
+\item $\text{HeureParSemaine} = 59.92$
+\item $\text{Parking} = 1500$
+\item $\text{ProdMaxCargo} = 232$
+\item 232 vélos de type cargo vendus
+\item 920 vélos de type standard vendus
+\end{itemize}
+Respectivement, pour le modèle PL :
+\begin{itemize}
+\item $\text{HeureParSemaine} = 60$
+\item $\text{Parking} = 1500$
+\item $\text{ProdMaxCargo} = 230.769$
+\item 230.769 vélos de type cargo vendus
+\item 923.077 vélos de type standard vendus
+\end{itemize}
+
+On peut à présent se demander si ces solutions sont réalistes.
+\\ On remarque que les bornes sur les contraintes sont respectées.
+
+
+\section{Affectation avec prise en compte des préférences}
+Dans cette section nous allons traiter le problème de l'affectation avec prise en compte des préférences.\\
+Tout d'abord nous avons choisi le format \texttt{.mod} et \texttt{.dat} car on souhaite pouvoir généraliser ce cas à $N$ personnes.\\
+De plus ici les données sont importantes et variables (matrice de de taille $N^2$). \\
+Ainsi il est plus judicieux d'utiliser un format \texttt{dat} pour pouvoir facilement modifier/importer les données.
+
+\subsection{Variables}
+Les variables du problèmes sont les suivantes : \newline
+
+\begin{itemize}
+
+\item \makebox[2cm]{$A_{tp}$\hfill} : Matrice tâche-préférences \newline
+
+\end{itemize}
+
+\subsection{Fonction Objectif}
+La fonction à maximiser dans le problème est la fonction :
+
+$$max\ \sum_{i=1}^{n}\sum\limits_{j=1}^{n}A_{tp}(i,j)*c(i,j)$$
+
+\subsection{Contraintes}
+Les contraintes de ce problème sont les suivantes:
+
+\begin{itemize}
+
+\item $\forall j \in [1,..,n],\ \sum\limits_{i=0}^{n}A_{tp}(i,j) = 1$
+\item $\forall i \in [1,..,n],\ \sum\limits_{j=0}^{n}A_{tp}(i,j) = 1$
+
+\end{itemize}
+
+\subsection{Domaine}
+Les domaines des variables sont :
+\begin{itemize}
+
+\item $A_{tp} \in \mathcal{M}_n(\mathbb{B}) $
+
+\end{itemize}
+
+\subsection{Résultats}
+Voici les résultats obtenus par GLPK pour ce problème.
+
+
+\subsubsection{Exemple 1}
+Voici la matrice de contraintes de l'exemple 1:
+\[
+\begin{bmatrix}
+    4 & 7 & 9 \\
+    9 & 8 & 3 \\
+    2 & 1 & 2 \\
+\end{bmatrix}
+\]
+
+et la maximisation est atteinte pour la matrice binaire suivante
+\[
+\begin{bmatrix}
+    0 & 0 & 1 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+\end{bmatrix}
+\]
+On voit que la contrainte sur les lignes et la contrainte sur les colonnes est respectées.
+Cette solution est donc une solution cohérente
+
+\subsubsection{Exemple 2}
+Voici la matrice de contraintes de l'exemple 2:
+
+\[
+\begin{bmatrix}
+    4 & 7 & 8 & 2 & 10 \\
+    1 & 5 & 10 & 9 & 7 \\
+    10 & 7 & 7 & 5 & 8 \\
+    10 & 2 & 2 & 7 & 4 \\
+    2 & 9 & 6 & 4 & 9 \\
+\end{bmatrix}
+\]
+
+
+et la maximisation est atteinte pour la matrice binaire suivante
+\[
+\begin{bmatrix}
+    0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 1 & 0 & 0 \\
+    1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+On voit que la contrainte sur les lignes et la contrainte sur les colonnes est respectées.
+Cette solution est donc une solution cohérente.
+
+
+\subsubsection{Exemple 2}
+Voici la matrice de contraintes de l'exemple 2:
+
+\[
+\begin{bmatrix}
+    10 & 7 & 4 & 1 & 10 & 10 & 9 & 1 & 4 & 7 \\
+    8 & 9 & 1 & 6 & 2 & 4 & 2 & 4 & 1 & 8 \\
+    3 & 5 & 3 & 1 & 1 & 3 & 9 & 8 & 4 & 6 \\
+    4 & 3 & 8 & 7 & 2 & 3 & 4 & 7 & 10 & 9 \\
+    6 & 10 & 6 & 3 & 6 & 7 & 3 & 1 & 5 & 6 \\
+    7 & 10 & 2 & 10 & 8 & 10 & 4 & 6 & 10 & 6 \\
+    7 & 6 & 5 & 2 & 7 & 2 & 10 & 5 & 5 & 2 \\
+    9 & 10 & 4 & 6 & 4 & 4 & 2 & 9 & 9 & 8 \\
+    1 & 6 & 7 & 4 & 1 & 8 & 6 & 9 & 9 & 1 \\
+    1 & 10 & 10 & 4 & 2 & 1 & 8 & 3 & 6 & 10 \\
+\end{bmatrix}
+\]
+
+
+
+et la maximisation est atteinte pour la matrice binaire suivante
+\[
+\begin{bmatrix}
+    0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+    1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{bmatrix}
+\]
+
+On voit que la contrainte sur les lignes et la contrainte sur les colonnes est respectées.
+Cette solution est donc une solution cohérente.
+
+
