@@ -1,0 +1,82 @@
+
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{a4wide}
+\usepackage{amssymb}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{courier}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\setcounter{section}{0}
+\setcounter{secnumdepth}{0}
+
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+
+\lstset{style=mystyle}
+
+\begin{document}
+
+
+
+
+\title{\vspace{4cm} \textbf{Rapport recherche opérationnelle TP \\ Sujet 1}}
+\author{Absobel, CORBELLARI Nolan}
+\date{\vspace{7cm} Département Sciences du Numérique - Deuxième année \\
+2023-2024}
+
+\maketitle
+
+\newpage
+\pagebreak
+\vfill
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction et spécification des choix}
+Nous allons dans ce rapport traiter les différents problèmes vus en TD. GLPK nous fournis une solution à partir des contraintes que nous lui fournissons,
+cependant nous ne pouvons pas savoir à la main si la solution est optimale ou non.
+Nous avons donc fait le choix de nous appuyer sur le déroulement de la solution ou des propriétés tel que les bornes inférieures et supérieures afin de justifier qu'une solution est cohérente.
+
+\input{1} \newpage
+\input{2} \newpage
+\input{3} \newpage
+\input{4} \newpage
+
+\end{document}
