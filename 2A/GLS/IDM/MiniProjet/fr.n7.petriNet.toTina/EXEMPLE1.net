@@ -1,0 +1,4 @@
+net EXEMPLE1
+pl P1 (3)
+pl P2 (0)
+tr T1 P1*1 -> P2*2

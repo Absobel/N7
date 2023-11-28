@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<taskmaster:EventBundle
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:taskmaster="http://taskmaster"
+    xsi:schemaLocation="http://taskmaster TaskMaster.ecore"
+    name="ExempleSujet">
+  <supplies
+      consumable="true"
+      name="concepteur"
+      available="3"/>
+  <supplies
+      consumable="true"
+      name="développeur"
+      available="2"/>
+  <supplies
+      consumable="true"
+      name="machine"
+      available="4"/>
+  <supplies
+      consumable="true"
+      name="rédacteur"
+      available="1"/>
+  <supplies
+      consumable="true"
+      name="testeur"
+      available="2"/>
+  <events name="Conception_start">
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.6"/>
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.2"/>
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.4"/>
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="2"
+        target="//@supplies.0"/>
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="2"
+        target="//@supplies.2"/>
+  </events>
+  <events name="Conception_finish">
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.0"/>
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.5"/>
+  </events>
+  <events name="Programmation_start">
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="2"
+        target="//@supplies.1"/>
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="3"
+        target="//@supplies.2"/>
+  </events>
+  <events name="Programmation_finish">
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.2"/>
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.7"/>
+  </events>
+  <events name="RedactionDoc_start">
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="1"
+        target="//@supplies.2"/>
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="1"
+        target="//@supplies.3"/>
+  </events>
+  <events name="RedactionDoc_finish">
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.4"/>
+  </events>
+  <events name="RedactionTest_start">
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="2"
+        target="//@supplies.2"/>
+    <requirements
+        xsi:type="taskmaster:Physical"
+        requested="1"
+        target="//@supplies.4"/>
+  </events>
+  <events name="RedactionTest_finish">
+    <requirements
+        xsi:type="taskmaster:Causal"
+        target="//@events.6"/>
+  </events>
+</taskmaster:EventBundle>

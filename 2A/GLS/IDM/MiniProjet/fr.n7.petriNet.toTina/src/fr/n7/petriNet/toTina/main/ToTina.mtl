@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module ToTina('http://petrinet')]
+
+[template public petriNetToTina(pn : PetriNet)]
+[comment @main/]
+[file (pn.name.concat('.net'), false, 'UTF-8')]
+net [pn.name /]
+[for (p : Place | pn.petriNetElements->select(pne | pne.oclIsKindOf(Place))->collect(pne | pne.oclAsType(Place)))]
+pl [p.name/] ([p.nbJetons/])
+[/for]
+[for (t : Transition | pn.petriNetElements->select(pne | pne.oclIsKindOf(Transition))->collect(pne | pne.oclAsType(Transition)))]
+tr [t.name/] [for (arc : Arc | t.arcs->select(a | a.direction = ArcDirection::P2T)) separator(' ')]
+ [if (arc.type = ArcKind::NORMAL)][arc.place.name/]*[arc.weight /][elseif (arc.type = ArcKind::READ)][arc.place.name/]?[arc.weight /][/if][/for] -> [for (arc : Arc | t.arcs->select(a | a.direction = ArcDirection::T2P)) separator(' ')][arc.place.name/]*[arc.weight /][/for]
+[/for]
+[/file]
+[/template]

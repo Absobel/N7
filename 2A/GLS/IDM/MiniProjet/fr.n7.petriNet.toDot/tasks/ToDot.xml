@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="ToDot" name="fr.n7.petriNet.toDot">
+    <property name="ECLIPSE_HOME" value="../../../../../../../usr/lib/eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../runtime-EclipseXtext"/>
+
+    <!-- The classpath with only the dependencies used by the project -->
+    <path id="fr.n7.petriNet.toDot.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/fr.n7.petriNet.toDot/bin"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.runtime_3.29.0.v20230726-0617.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi_3.18.500.v20230801-1826.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.osgi.compatibility.state_1.2.800.v20221116-1440.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.common_3.18.100.v20230730-1117.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.jobs_3.15.0.v20230808-1403.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.registry_3.11.300.v20230801-1826.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.preferences_3.10.300.v20230630-1303.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.osgi.service.prefs_1.1.2.202109301733.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.core.contenttype_3.9.100.v20230630-1232.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.equinox.app_1.6.300.v20230630-1303.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore_2.35.0.v20230829-0934.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.common_2.29.0.v20230810-0713.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.ecore.xmi_2.35.0.v20230801-1141.jar"/>
+    </path>
+
+    <path id="fr.n7.petriNet.toDot.classpath">
+        <path refid="fr.n7.petriNet.toDot.libraryclasspath"/>
+    </path>
+
+    <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
+    <path id="fr.n7.petriNet.toDot.libraryclasspath.alljars">
+        <pathelement location="../fr.n7.petriNet.toDot/bin"/>
+        <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
+    </path>
+
+    <path id="fr.n7.petriNet.toDot.classpath.alljars">
+        <path refid="fr.n7.petriNet.toDot.libraryclasspath.alljars"/>
+    </path>
+
+    <!-- The default task with the jars used by this project -->
+    <target name="ToDot">
+        <java classname="fr.n7.petriNet.toDot.common.ToDot" classpathref="fr.n7.petriNet.toDot.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+
+    <!--
+        In case of problem you can also try with all the jar available in your Eclipse
+        Keep in mind that having two versions of the same jar can create problems
+    -->
+    <target name="ToDot.alljars">
+        <java classname="fr.n7.petriNet.toDot.common.ToDot" classpathref="fr.n7.petriNet.toDot.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+</project>

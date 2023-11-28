@@ -1,0 +1,30 @@
+net ExempleSujet
+pl Conception_start (1)
+pl Conception_active (0)
+pl Conception_finished (0)
+pl Conception_started (0)
+pl Programmation_start (1)
+pl Programmation_active (0)
+pl Programmation_finished (0)
+pl Programmation_started (0)
+pl RedactionDoc_start (1)
+pl RedactionDoc_active (0)
+pl RedactionDoc_finished (0)
+pl RedactionDoc_started (0)
+pl RedactionTest_start (1)
+pl RedactionTest_active (0)
+pl RedactionTest_finished (0)
+pl RedactionTest_started (0)
+pl concepteur (3)
+pl developpeur (2)
+pl machine (4)
+pl redacteur (1)
+pl testeur (2)
+tr Conception_starting Conception_start*1  concepteur*2  machine*2 -> Conception_active*1 Conception_started*1
+tr Conception_finishing Conception_active*1 -> Conception_finished*1 concepteur*2 machine*2
+tr Programmation_starting Programmation_start*1  Conception_started?1  developpeur*2  machine*3 -> Programmation_active*1 Programmation_started*1
+tr Programmation_finishing Programmation_active*1 -> Programmation_finished*1 developpeur*2 machine*3
+tr RedactionDoc_starting RedactionDoc_start*1  Conception_started?1  machine*1  redacteur*1 -> RedactionDoc_active*1 RedactionDoc_started*1
+tr RedactionDoc_finishing RedactionDoc_active*1  Conception_finished?1 -> RedactionDoc_finished*1 machine*1 redacteur*1
+tr RedactionTest_starting RedactionTest_start*1  Conception_started?1  machine*2  testeur*1 -> RedactionTest_active*1 RedactionTest_started*1
+tr RedactionTest_finishing RedactionTest_active*1  Programmation_finished?1 -> RedactionTest_finished*1 machine*2 testeur*1
