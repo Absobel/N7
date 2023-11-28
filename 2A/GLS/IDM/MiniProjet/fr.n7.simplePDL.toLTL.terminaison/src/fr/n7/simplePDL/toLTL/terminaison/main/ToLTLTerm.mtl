@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module ToLTLTerm('http://simplepdl')]
+
+
+[template public processToLTLTerm(aProcess : Process)]
+[comment @main/]
+[file (aProcess.name+'Term.ltl', false, 'UTF-8')]
+[for (workDef : WorkDefinition | aProcess.processElements->select(pe | pe.oclIsTypeOf(WorkDefinition))->collect(wd | wd.oclAsType(WorkDefinition)))]
+['['/]] <> [workDef.name+'_finished'/];
+[/for]
+[/file]
+[/template]

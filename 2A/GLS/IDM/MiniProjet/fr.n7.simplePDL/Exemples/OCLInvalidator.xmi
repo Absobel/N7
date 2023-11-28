@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simplepdl:Process
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:simplepdl="http://simplepdl"
+    xsi:schemaLocation="http://simplepdl ../SimplePDL.ecore"
+    name="Invalid Name %--è_&quot;&quot;&quot;&quot;&quot;éà&quot;&amp;&quot;">
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      name="Duplicate Name">
+    <neededRessource
+        ressource="//@processElements.7"
+        quantity="-2833"/>
+    <neededRessource
+        ressource="//@processElements.7"/>
+  </processElements>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      name="Duplicate Name"/>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      linksToPredecessors="//@processElements.3"
+      linksToSuccessors="//@processElements.3"
+      name="DependsOnItself"/>
+  <processElements
+      xsi:type="simplepdl:WorkSequence"
+      predecessor="//@processElements.2"
+      successor="//@processElements.2"/>
+  <processElements
+      xsi:type="simplepdl:Guidance"
+      text="Name too short"
+      elements="//@processElements.5"/>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      name="a"/>
+  <processElements
+      xsi:type="simplepdl:WorkDefinition"
+      name="InvalidName&quot;ç'_(__-'(ç&quot;àé)"/>
+  <processElements
+      xsi:type="simplepdl:Ressource"
+      name="InvalidNameAndNegativeQuantity&quot;r_'&quot;ç(è'(ç'('_&quot;("
+      totalQuantity="-238"/>
+  <processElements
+      xsi:type="simplepdl:Ressource"/>
+  <processElements
+      xsi:type="simplepdl:Ressource"
+      name="DuplicateName"/>
+  <processElements
+      xsi:type="simplepdl:Ressource"
+      name="DuplicateName"/>
+</simplepdl:Process>

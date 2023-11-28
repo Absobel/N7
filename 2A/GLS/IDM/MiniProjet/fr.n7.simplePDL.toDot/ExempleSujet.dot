@@ -1,0 +1,7 @@
+digraph ExempleSujet {	
+	Conception -> Programmation [arrowhead=vee label=f2s]
+	Conception -> RedactionDoc [arrowhead=vee label=s2s]
+	Conception -> RedactionDoc [arrowhead=vee label=f2f]
+	Conception -> RedactionTest [arrowhead=vee label=s2s]
+	Programmation -> RedactionTest [arrowhead=vee label=f2f]
+}

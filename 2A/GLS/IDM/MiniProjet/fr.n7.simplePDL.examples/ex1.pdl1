@@ -1,0 +1,29 @@
+process ExempleSujet {
+	r concepteur 3 
+	r developpeur 2
+	r machine 4
+	r redacteur 1
+	r testeur 2
+	
+	wd Conception
+	requires
+		needed 2 of concepteur
+		needed 2 of machine
+	wd Programmation
+	requires
+		needed 2 of developpeur
+		needed 2 of machine
+	wd RedactionTests
+	requires
+		needed 2 of machine
+		needed 1 of testeur
+	wd RedactionDoc
+	requires
+		needed 1 of machine
+		needed 1 of redacteur
+	ws f2s from Conception to Programmation
+	ws s2s from Conception to RedactionTests
+	ws f2f from Programmation to RedactionTests
+	ws s2s from Conception to RedactionDoc
+	ws f2f from Conception to RedactionDoc
+}
