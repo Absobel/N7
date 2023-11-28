@@ -1,0 +1,68 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+-- Contraintes données
+
+context Process
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+context ProcessElement
+def: process(): Process =
+	Process.allInstances()
+		->select(p | p.processElements->includes(self))
+		->asSequence()->first()
+
+context WorkSequence
+inv successorAndPredecessorInSameProcess('Activities not in the same process : '
+		+ self.predecessor.name + ' in ' + self.predecessor.process().name+ ' and '
+		+ self.successor.name + ' in ' + self.successor.process().name
+):
+	self.process() = self.successor.process()
+	and self.process() = self.predecessor.process()
+
+-- Contraintes TP
+
+context Process
+inv uniqueWorkDefinitionNames('Duplicate name found among WorkDefinitions.'):
+	self.processElements
+		->select(pe | pe.oclIsKindOf(WorkDefinition))
+		->forAll(wd1, wd2 | 
+			wd1 <> wd2 implies 
+			wd1.oclAsType(WorkDefinition).name <> wd2.oclAsType(WorkDefinition).name
+		)
+
+context WorkSequence
+inv notSelfDependent(self.successor.name + ' cannot be dependent on itself'):
+	self.successor <> self.predecessor
+
+context WorkDefinition
+inv sufficientNameLength('WorkDefinition name too short: ' + self.name):
+	self.name.size() >= 2
+inv nameIsValid('Invalid name format for WorkDefinition: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+
+-- Contraintes Ressources
+
+context Ressource
+inv validQuantityRessource('There must be a positive number of Ressource' + self.name):
+	self.totalQuantity >= 0
+inv noDuplicateRessource('There must be only one instance of each Ressource.'):
+	Ressource.allInstances()->isUnique(name)
+inv nonEmptyName('The name of the Ressource must be non empty.'):
+	self.name <> ''
+inv nameIsValid('Invalid name format for Ressource: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+	
+context NeededRessource
+inv validQuandityNeededRessource('There must be a positive number of NeededRessource' + self.ressource.name):
+	self.quantity >= 0
+	
+context WorkDefinition
+inv uniqueResourceType('A WorkDefinition can\'t demand the same resource twice : ' + self.name):
+	self.neededRessource->forAll(nr1, nr2 |
+		nr1 <> nr2 implies nr1.ressource.name <> nr2.ressource.name
+	)
+
+endpackage
