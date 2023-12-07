@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://pack" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://pack" xmlns:intf="http://pack" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://pack" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getMark">
+    <complexType>
+     <sequence>
+      <element name="firstname" type="xsd:string"/>
+      <element name="lastname" type="xsd:string"/>
+      <element name="lecture" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMarkResponse">
+    <complexType>
+     <sequence>
+      <element name="getMarkReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getMarkRequest">
+
+      <wsdl:part element="impl:getMark" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMarkResponse">
+
+      <wsdl:part element="impl:getMarkResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Mark">
+
+      <wsdl:operation name="getMark">
+
+         <wsdl:input message="impl:getMarkRequest" name="getMarkRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMarkResponse" name="getMarkResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MarkSoapBinding" type="impl:Mark">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getMark">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMarkRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMarkResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MarkService">
+
+      <wsdl:port binding="impl:MarkSoapBinding" name="Mark">
+
+         <wsdlsoap:address location="http://localhost:8080/students-soap/services/Mark"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

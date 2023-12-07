@@ -1,15 +1,78 @@
-Kyou wa 'Ninniku to Komugiko to Gyuunyuu no Shiifoodo Pasuta' o goshoukai shimasu
+Kyou wa 'Ninniku to Komugiko to Gyuunyuu no Shiifoodo Pasuta' no Reshipi o Goshoukai Shimasu
 
-1. Kono ryouri wa totemo oishii desu.
-2. Kono ryouri wa karai desu.
-3. Komugiko to ninniku o tsukatta ryouri wa amai desu.
-4. Gyokai ga takusan haitte ite, aji ga koi desu.
-5. Shiro wain o tsukatta ryouri wa sappari to shita aji ga shimasu.
-6. Kono ryouri wa aburakkokute, omoi desu.
-7. Bataa to gyuunyuu de tsukutta ryouri wa maroyaka na aji ga shimasu.
-8. Kono kiji no ryouri wa sukoshi shibui desu.
+// À FAIRE
+// - Faire des phrases présentant les ingrédients
+// - Juste mettre les étapes : 8 minimum
+// - Ajouter un ou deux compteurs de temps en temps (tsu compteur générique)
+// - Ajouter moiidesu de temps en temps
+// - Ajouter plein de trucs de la feuille
 
-Ima, watashi wa reshipi o shoukai shimasu
+// À RETENIR 
+// - oosaji nb : nb cuillères à soupe
+// - kosaji nb : nb petites cuillères
+// - nb ji kan : durée de nb heures
+
+Ingrédients :
+Shrimp - Ebi
+Garlic - Ninniku
+Butter - Bataa
+Milk - Gyuunyuu
+White wine - Shiro wain
+Salt - Shio
+Pepper - Koshou
+Pasta - Pasutacp
+
+1. Commencez par peler l'ail.
+Mazu, ninniku o muite kudasai.
+2. Ensuite, mélangez un peu de farine.
+Sorekara, komugiko o sukoshi mazete kudasai.
+3. Après cela, faites bouillir du lait.
+Tsugi ni, gyuunyuu o yudete kudasai.
+4. Ajoutez du beurre et chauffez.
+Bataa o irete, atatamete kudasai.
+5. Coupez les fruits de mer.
+Gyokai o kizande kudasai.
+6. Ensuite, faites cuire les fruits de mer.
+Sorekara, gyokai o itamete kudasai.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 1. Mazu, ninniku o muite kudasai.
 2. Sorekara, komugiko o sukoshi mazete kudasai.
@@ -32,3 +95,22 @@ Ima, watashi wa reshipi o shoukai shimasu
 19. Tsuginohi niwa, reizouko kara ryouri o toridashi, shikkari tokashite kudasai.
 20. Ryouri o saido atatamete, oishiku meshiagatte kudasai.
 21. Yoi shokuji o!
+
+
+
+
+
+// ARCHIVES
+
+1. Kono ryouri wa totemo oishii desu.
+2. Kono ryouri wa karai desu.
+3. Komugiko to ninniku o tsukatta ryouri wa amai desu.
+4. Gyokai ga takusan haitte ite, aji ga koi desu.
+5. Shiro wain o tsukatta ryouri wa sappari to shita aji ga shimasu.
+6. Kono ryouri wa aburakkokute, omoi desu.
+7. Bataa to gyuunyuu de tsukutta ryouri wa maroyaka na aji ga shimasu.
+8. Kono kiji no ryouri wa sukoshi shibui desu.
+
+Ima, watashi wa reshipi o shoukai shimasu
+
+
