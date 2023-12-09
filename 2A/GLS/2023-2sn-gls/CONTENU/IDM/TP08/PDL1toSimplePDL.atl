@@ -1,0 +1,34 @@
+-- ... l'en-tête est volontairement omis
+-- Note : XPDL = méta-modèle issu de Xtext
+--        SPDL = méta-modèle SimplePDL
+create OUT : SPDL from IN : XPDL;
+
+-- Ce helper n'a pas de contexte. Il est défini au niveau du module.
+helper def: convertLinkType(x : XPDL!WorkSequenceType) : SPDL!WorkSequenceType =
+    if x = #start2start then #s2s
+    else if x = #start2finish then #s2f
+    else if x = #finish2start then #f2s
+    else #f2f
+    endif endif endif; -- pas de SinonSi en ATL
+
+rule XProc2SProc {
+    from xp : XPDL!Process
+    to   sp : SPDL!Process(
+        name <- xp.name,
+	-- Ajouter les enfants, sinon les autres éléments créés seront orphelins !
+        processElements <- xp.processElements)
+}
+
+rule XWD2SWD {
+    from xwd : XPDL!WorkDefinition
+    to   swd : SPDL!WorkDefinition(name <- xwd.name)
+}
+
+rule XWS2SWS {
+    from xws : XPDL!WorkSequence
+    to   sws : SPDL!WorkSequence(
+            linkType <- thisModule.convertLinkType(xws.linkType), -- Appel à notre helper
+            predecessor <- xws.predecessor, -- Conversion/appel de règle implicite
+            successor <- xws.successor
+        )
+}

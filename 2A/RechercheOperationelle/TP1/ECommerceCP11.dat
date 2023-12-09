@@ -1,0 +1,22 @@
+data;
+
+param nbF := 2;
+param nbM := 3;
+param nbD := 2;
+
+param DEMANDES: 1 2 :=
+              1 2 0
+              2 1 3;
+
+param STOCK: 1 2 :=
+           1 2.5 1
+           2 1 2
+           3 2 1;
+
+param COUTS:
+  1 2 :=
+1 1 1
+2 2 3
+3 3 2;
+
+end;

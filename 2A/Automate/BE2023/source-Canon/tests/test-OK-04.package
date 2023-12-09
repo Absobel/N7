@@ -1,0 +1,13 @@
+package test {
+    interface A {
+        void foo(C, boolean);
+    }
+    package test {
+        package test {
+            interface D extends d.P {
+                e.F foo(G, void, b.a.f.e.u.C, boolean);
+                void bar();
+            }
+        }
+    }
+}

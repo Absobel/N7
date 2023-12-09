@@ -1,0 +1,54 @@
+-- Algorithmes d'optimisation sans contrainte
+
+I - Les methodes de type Newton
+
+On cherche min de f avec f: R -> Rn
+On suppose f 2x dérivable à dérivée 2nd bornée
+x solution de (P) <)> grad(f)(x) = 0
+On s'intéresse à des algo permettant de trouver x tq grad(f)(x) = 0
+
+Une méthode possible est lees méthodes de Newton.
+C'est une méthode itéeative
+- On part de x0
+- il existe une regle de xk -> x(k+1) (*)
+- On a besoin d'un critère d'arrêt
+
+La métgode de Newton, on est en xk et on écrit grad(f)(xk+s) ~ grad(f)(xk) + grad2(xk)s = 0          // grad2 = hessienne
+alors si grad2(f)(xk) est inversible 
+s = -[grad2(f)(xk)}^-1 * grad(f)(xk) et on a x(k+1) = xk - [grad2(f)(xk)}^-1 * grad(f)(xk) 
+
+Si x* vérifie grad(f)(x*) = 0 la méthode de N s'analyse comme suit
+
+ek+1 = xk+1 - x* = xk - x* - grad2f(xk)^-1 grad(f)(x2)
+De plus grad(f)(xk) - grad(f)(x*) = int0->1 grad2f(x*+theta(xk - x*))(xk - x*)dtheta,            // <- phi(1) = phi(0) + int0->1 phi'(s)ds avec phi = smth
+ek+1 = grad2(f)(xk)^-1 * grad2(f)(xk)ek - grad2(f)(x2)^-1 int grad2f(x*+theta ek=ek dtheta
+si x -> [grad2(f)(x)]-1 est continue en x*           
+donc localement en x* ||grad2f(x)^-1|| est borné
+
+/* Formule de Kramer importante ?? */
+
+si x -> grad2f(x) est lipzschitizienne
+pour tout x,y, ||grad2f(x) - grad2f(y)|| <= L||x-y|| et on a localement en x*
+|| ek+1|| <= cste int Ltheta||ek|| ||ek|| dtheta
+          <= cste*L*||ek||²
+
+-------->  si x* point critique -> ||erreur k+1|| <= cste*L*||erreur k||²       cvgce rapide au voisinage
+----> quadratiquement convergeante mais pas robuste au pt de départ
+----> but : méthode globalisée (convergeante always)
+
+II - Les méthodes du 1ere ordere globalisées par "Recherche linéaire"
+--> au lieu d'annuler la tangeante, trouver algo avec controle de pas
+
+Ces méthodes sont basées sur une itération du type xk+1 = xk + tk*dk        tk = longueur de pas / dk = direction de descente
+a. Choix des dk : f(xk+s) ~ f(xk) + gradf(xl)^T * s
+on veut minimiser gradf(x)^T * s
+-> ça veut rien dire vu que -inf. Hors on cherche une direction, donc la norme osef, donc on rajoute une contrainte de norme 1 par ex
+// cauchy : - ||aT||||s|| <= aTs <= ||a||||s|| avec cas d'égalité quand colin -> sopt = -a/||a||
+-> s = -gradf(xk)/||same||
+
+On obtient la méthode : xk+1 = xk - tk gradf(xk)
+
+b. tk
+
+f(xk+tdk) <= f(xk) + t *gradf(xk)^T dk + L/2 t²||dk||²     // Taylor Lagrande et matrice hessienne majorée par L, constante liptzschits du gradiant
+f(xk - tdk) <= f(xk) - t||gradf(x)||² + L/2 t² ||gradf(x2)||²   majorant de type taylor
