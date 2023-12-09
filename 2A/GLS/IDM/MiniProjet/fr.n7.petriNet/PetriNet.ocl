@@ -1,0 +1,43 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context PetriNetElement
+def: petrinet(): PetriNet =
+	PetriNet.allInstances()
+		->select(pn | pn.petriNetElements->includes(self))
+		->asSequence()->first()
+		
+context PetriNet
+inv nameIsValid('Invalid name format for PetriNet: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+
+context Place
+inv positiveTokenNumber('The number of token in a place must be positive: ' + self.name):
+	self.nbJetons >= 0
+inv nonEmptyName('Place name cannot be empty: ' + self.name):
+	self.name <> ''
+inv uniquePlaceName('Place names must be unique within a net'):
+	Place.allInstances()->forAll(p1, p2 | p1 <> p2 implies p1.name <> p2.name)
+inv nameIsValid('Invalid name format for Place: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+
+context Arc
+inv positiveWeight('The weight must be positive: ' + self.name):
+	self.weight >= 0
+inv readArcValidType:
+	self.type <> ArcKind::READ or self.direction = ArcDirection::P2T
+inv sameNet('Arc, Place, and Transition must be in the same PetriNet'):
+	self.petrinet() = self.place.petrinet() and self.petrinet() = self.transition.petrinet()
+inv nameIsValid('Invalid name format for Arc: ' + self.name):
+	self.name.matches('(^[a-zA-Z_][0-9a-zA-Z_]*)?$')
+
+context Transition
+inv nonEmptyName('Transition name cannot be empty: ' + self.name):
+	self.name <> ''
+inv uniqueTransitionName('Transition names must be unique within a net'):
+	Transition.allInstances()->forAll(t1, t2 | t1 <> t2 implies t1.name <> t2.name)
+inv nameIsValid('Invalid name format for Transition: ' + self.name):
+	self.name.matches('^[a-zA-Z_][0-9a-zA-Z_]*$')
+
+endpackage

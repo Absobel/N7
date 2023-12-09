@@ -122,6 +122,8 @@ let rec partition n =
     let rec partition_aux n t =
         if t = n then
             [[t]]
+        else if t > n then
+            []
         else
             (appbegl2 (partition_aux (n-t) t) t)@(partition_aux n (t+1))
     in partition_aux n 1
@@ -132,3 +134,4 @@ let%test _ = partition 1 = [[1]]
 let%test _ = partition 2 = [[1;1];[2]]
 let%test _ = partition 3 = [[1; 1; 1]; [1; 2]; [3]]
 let%test _ = partition 4 = [[1; 1; 1; 1]; [1; 1; 2]; [1; 3]; [2; 2]; [4]]
+let%test _ = partition 5 = [[1; 1; 1; 1; 1]; [1; 1; 1; 2]; [1; 1; 3]; [1; 2; 2]; [1; 4]; [2; 3]; [5]]

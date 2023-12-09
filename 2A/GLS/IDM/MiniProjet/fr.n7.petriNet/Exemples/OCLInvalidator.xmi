@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petrinet:PetriNet
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petrinet="http://petrinet"
+    xsi:schemaLocation="http://petrinet ../PetriNet.ecore"
+    name="Invalid name 'ç(_e(&quot;çé&quot;">
+  <petriNetElements
+      xsi:type="petrinet:Place"
+      arcs="//@petriNetElements.4"
+      nbJetons="-237"
+      name="InvalidNameAndNegativeToken&quot;ç'(&quot;(_"/>
+  <petriNetElements
+      xsi:type="petrinet:Place"
+      arcs="//@petriNetElements.7"/>
+  <petriNetElements
+      xsi:type="petrinet:Place"
+      arcs="//@petriNetElements.6"
+      name="DuplicateName"/>
+  <petriNetElements
+      xsi:type="petrinet:Place"
+      arcs="//@petriNetElements.5"
+      name="DuplicateName"/>
+  <petriNetElements
+      xsi:type="petrinet:Arc"
+      place="//@petriNetElements.0"
+      transition="//@petriNetElements.8"
+      weight="-273"
+      name="InvalidNameAndNegativeWeight"/>
+  <petriNetElements
+      xsi:type="petrinet:Arc"
+      place="//@petriNetElements.3"
+      transition="//@petriNetElements.9"
+      name="DuplicateName"/>
+  <petriNetElements
+      xsi:type="petrinet:Arc"
+      place="//@petriNetElements.2"
+      transition="//@petriNetElements.9"
+      direction="T2P"/>
+  <petriNetElements
+      xsi:type="petrinet:Arc"
+      place="//@petriNetElements.1"
+      transition="//@petriNetElements.10"
+      direction="T2P"
+      name="InvalidReadArc"/>
+  <petriNetElements
+      xsi:type="petrinet:Transition"
+      arcs="//@petriNetElements.4"/>
+  <petriNetElements
+      xsi:type="petrinet:Transition"
+      arcs="//@petriNetElements.6 //@petriNetElements.5"
+      name="InvalidName&quot;ç'_(&quot;'"/>
+  <petriNetElements
+      xsi:type="petrinet:Transition"
+      arcs="//@petriNetElements.7"
+      name="DuplicateName"/>
+  <petriNetElements
+      xsi:type="petrinet:Transition"
+      name="DuplicateName"/>
+</petrinet:PetriNet>

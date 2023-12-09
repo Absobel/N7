@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MarkService WSDL service -->
+
+  <service name="Mark" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://pack"/>
+      <parameter name="wsdlServiceElement" value="MarkService"/>
+      <parameter name="schemaQualified" value="http://pack"/>
+      <parameter name="wsdlServicePort" value="Mark"/>
+      <parameter name="className" value="pack.Mark"/>
+      <parameter name="wsdlPortType" value="Mark"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://pack" xmlns:retNS="http://pack" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMark" qname="operNS:getMark" returnQName="retNS:getMarkReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://pack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:firstname" type="tns:string"/>
+        <parameter xmlns:pns="http://pack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lastname" type="tns:string"/>
+        <parameter xmlns:pns="http://pack" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lecture" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getMark"/>
+
+  </service>
+</deployment>

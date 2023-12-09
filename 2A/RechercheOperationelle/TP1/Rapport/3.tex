@@ -1,0 +1,140 @@
+\section{Cas particulier 1.2}
+
+
+\subsection{Variables}
+
+Les variables du problème sont les suivantes:
+
+\begin{itemize}
+    \item $q_{mfd}$ : Quantité de fluide $f$ stockée dans le magasin $m$ pour la demande $d$.
+    \item $b_{md}$ : Variable binaire indiquant s'il y une commande au magasin $m$ pour la demande $d$.
+\end{itemize}
+
+\subsection{Fonction Objectif}
+
+Le problème vise à minimiser le coût total, défini par la fonction objectif suivante :
+
+\[
+min \sum_{m=1}^{nbM} \sum_{f=1}^{nbF} \sum_{d=1}^{nbD}\ q_{mfd} \cdot (COUTS_{mf}
++ COUTSFIXES_{dm})
++ \sum_{m=1}^{nbM} \sum_{d=1}^{nbD} b_{md} \cdot COUTSVAR_{dm}
+\]
+
+\subsection{Contraintes}
+
+Les contraintes du problème sont les suivantes :
+
+\begin{itemize}
+    \item Demande respectée : $\forall d \in [1, \ldots, nbD], \forall f \in [1, \ldots, nbF], \text{DEMANDES}_{df} \leq \sum\limits_{m=1}^{nbM} q_{mfd}$
+    \item Stock respecté : $\forall m \in [1, \ldots, nbM], \forall f \in [1, \ldots, nbF], \sum\limits_{d=1}^{nbD} q_{mfd} \leq \text{STOCK}_{mf}$
+    \item Contrainte de disponibilité : $\forall m \in [1, \ldots, nbM], \forall d \in [1, \ldots, nbD], \sum\limits_{f=1}^{nbF} q_{mfd} \leq M \cdot b_{md}$
+\end{itemize}
+
+\subsection{Domaine}
+
+Les domaines des variables sont les suivants :
+
+\begin{itemize}
+
+\item
+\[\forall m \in [1, \ldots, nbM], \forall f \in [1, \ldots, nbF], \forall d \in [1, \ldots, nbD] ,
+\begin{cases}
+q_{mfd} \geq 0 \\
+ b_{md} \in \{0, 1\}
+ \end{cases}
+\]
+
+\end{itemize}
+
+\subsection{Conclusion}
+
+Avec les données de l'énoncé nous obtenons le résultat suivant :
+\begin{lstlisting}
+Problem:    ECommerceCP12
+Rows:       17
+Columns:    18 (6 integer, 6 binary)
+Non-zeros:  60
+Status:     INTEGER OPTIMAL
+Objective:  coutTotal = 621 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 coutTotal                 621
+     2 demandeRespectee[1,1]
+                                  -2                          -2
+     3 demandeRespectee[1,2]
+                                   0                          -0
+     4 demandeRespectee[2,1]
+                                  -1                          -1
+     5 demandeRespectee[2,2]
+                                  -3                          -3
+     6 stockRespecte[1,1]
+                                   0                         2.5
+     7 stockRespecte[1,2]
+                                   0                           1
+     8 stockRespecte[2,1]
+                                   1                           1
+     9 stockRespecte[2,2]
+                                   2                           2
+    10 stockRespecte[3,1]
+                                   2                           2
+    11 stockRespecte[3,2]
+                                   1                           1
+    12 bDef[1,1]                   0                          -0
+    13 bDef[1,2]                   0                          -0
+    14 bDef[2,1]                   0                          -0
+    15 bDef[2,2]                -6.5                          -0
+    16 bDef[3,1]                -7.5                          -0
+    17 bDef[3,2]                -8.5                          -0
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 q[1,1,1]                    0             0
+     2 q[1,2,1]                    0             0
+     3 q[1,1,2]                    0             0
+     4 q[1,2,2]                    0             0
+     5 q[2,1,1]                    0             0
+     6 q[2,2,1]                    0             0
+     7 q[2,1,2]                    1             0
+     8 q[2,2,2]                    2             0
+     9 q[3,1,1]                    2             0
+    10 q[3,2,1]                    0             0
+    11 q[3,1,2]                    0             0
+    12 q[3,2,2]                    1             0
+    13 b[1,1]       *              0             0             1
+    14 b[1,2]       *              0             0             1
+    15 b[2,1]       *              0             0             1
+    16 b[2,2]       *              1             0             1
+    17 b[3,1]       *              1             0             1
+    18 b[3,2]       *              1             0             1
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
+\end{lstlisting}
+
+On pourrait refaire le même procédé itératif avec les tableaux pour montrer la faisabilité de la solution. \\
+Cependant l'affichage de 4 tableaux cote-à-cote pose des problèmes de lisibilité. \\
+Ici on remarque juste que pour les mêmes demandes que pour l'exercice précédent les réponses ne sont pas les mêmes. \\
+Ce qui prouve que les contraintes de coûts fixes et variables ont été prise en compte par GLPK.
+
+\[
+A = \begin{bmatrix}
+0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 & 1 & 0 \\
+\end{bmatrix}
+\]
+
+

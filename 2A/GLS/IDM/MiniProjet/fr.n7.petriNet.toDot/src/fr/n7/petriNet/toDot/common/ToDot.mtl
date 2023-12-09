@@ -1,0 +1,27 @@
+[comment encoding = UTF-8 /]
+[module ToDot('http://petrinet')]
+
+[template public petriNetToDot(aPetriNet : PetriNet)]
+[comment @main/]
+[file (aPetriNet.name.concat('.dot'), false, 'UTF-8')]
+digraph [aPetriNet.name/] {
+[for (p : Place | aPetriNet.petriNetElements->select(pne | pne.oclIsKindOf(Place))->collect(pne | pne.oclAsType(Place)))]
+"[p.name/]" ['['/]label="[p.name/]&#92;nTokens: [p.nbJetons/]", shape=circle];
+[/for]
+[for (t : Transition | aPetriNet.petriNetElements->select(pne | pne.oclIsKindOf(Transition))->collect(pne | pne.oclAsType(Transition)))]
+"[t.name/]" ['['/]label="[t.name/]", shape=box];
+[/for]
+[for (arc : Arc | aPetriNet.petriNetElements->select(pne | pne.oclIsKindOf(Arc))->collect(pne | pne.oclAsType(Arc)))]
+[if (arc.direction = ArcDirection::P2T)]
+    [if (arc.type = ArcKind::READ)]
+        "[arc.place.name/]" -> "[arc.transition.name/]" ['['/]label=" [arc.name/] ([arc.weight/])", arrowhead="odot"];
+    [else]
+        "[arc.place.name/]" -> "[arc.transition.name/]" ['['/]label=" [arc.name/] ([arc.weight/])", arrowhead="normal"];
+    [/if]
+[elseif (arc.direction = ArcDirection::T2P)]
+    "[arc.transition.name/]" -> "[arc.place.name/]" ['['/]label=" [arc.name/] ([arc.weight/])", arrowhead="normal"];
+[/if]
+[/for]
+}
+[/file]
+[/template]

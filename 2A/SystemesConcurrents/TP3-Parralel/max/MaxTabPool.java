@@ -35,11 +35,20 @@ public class MaxTabPool {
         // et une tâche est créée pour traiter chaque segment.
         // On fera attention que la taille du tableau n'est pas nécessairement un multiple de taskSize : le dernier segment peut être plus court (utiliser Math.min(..., array.length)).
         /* XXXX À COMPLÉTER XXXX */
+        for (int i = 0; i < array.length; i += taskSize) {
+            int start = i;
+            int end = Math.min(i + taskSize, array.length);
+            results.add(executor.submit(new PartialMax(array, start, end)));
+        }
 
         // Récupérer les résultats et les fusionner
         /* XXXX À COMPLÉTER XXXX */
+        int max = 0;
+        for (Future<Integer> f : results) {
+            max = Math.max(f.get(), max);
+        }
 
-        return 0; // pour que ça compile
+        return max;
     }
     
     public static void main(String[] args) throws Exception {

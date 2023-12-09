@@ -1,0 +1,171 @@
+23-Nov-2023 22:57:09.806 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom version serveur :              Apache Tomcat/9.0.60
+23-Nov-2023 22:57:09.807 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé :                  Mar 9 2022 14:52:25 UTC
+23-Nov-2023 22:57:09.807 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur :               9.0.60.0
+23-Nov-2023 22:57:09.807 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS :                      Linux
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version OS :                       6.2.0-36-generic
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture :                     amd64
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home :                        /home/hagimont/bigdata/jdk1.8.0_202/jre
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version JVM :                      1.8.0_202-b08
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM :            Oracle Corporation
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE :                    /home/hagimont/install/apache-tomcat-9.0.60
+23-Nov-2023 22:57:09.808 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME :                    /home/hagimont/install/apache-tomcat-9.0.60
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.config.file=/home/hagimont/install/apache-tomcat-9.0.60/conf/logging.properties
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djdk.tls.ephemeralDHKeySize=2048
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dignore.endorsed.dirs=
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.base=/home/hagimont/install/apache-tomcat-9.0.60
+23-Nov-2023 22:57:09.809 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Dcatalina.home=/home/hagimont/install/apache-tomcat-9.0.60
+23-Nov-2023 22:57:09.810 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande : -Djava.io.tmpdir=/home/hagimont/install/apache-tomcat-9.0.60/temp
+23-Nov-2023 22:57:09.811 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path : [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+23-Nov-2023 22:57:10.152 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+23-Nov-2023 22:57:10.184 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [526] millisecondes
+23-Nov-2023 22:57:10.220 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+23-Nov-2023 22:57:10.221 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets : [Apache Tomcat/9.0.60]
+23-Nov-2023 22:57:10.227 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/host-manager]
+23-Nov-2023 22:57:10.722 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:10.759 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/install/apache-tomcat-9.0.60/webapps/host-manager] de l'application web s'est terminé en [530] ms
+23-Nov-2023 22:57:10.759 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/ROOT]
+23-Nov-2023 22:57:10.963 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:10.965 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/install/apache-tomcat-9.0.60/webapps/ROOT] de l'application web s'est terminé en [206] ms
+23-Nov-2023 22:57:10.965 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/docs]
+23-Nov-2023 22:57:11.178 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:11.181 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/install/apache-tomcat-9.0.60/webapps/docs] de l'application web s'est terminé en [215] ms
+23-Nov-2023 22:57:11.181 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/examples]
+23-Nov-2023 22:57:11.522 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:11.540 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/install/apache-tomcat-9.0.60/webapps/examples] de l'application web s'est terminé en [359] ms
+23-Nov-2023 22:57:11.540 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/manager]
+23-Nov-2023 22:57:11.796 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:11.799 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/home/hagimont/install/apache-tomcat-9.0.60/webapps/manager] de l'application web s'est terminé en [259] ms
+23-Nov-2023 22:57:11.805 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+23-Nov-2023 22:57:11.824 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [1639] millisecondes
+23-Nov-2023 22:57:51.818 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 22:57:51.997 INFOS [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 22:57:52.000 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [182] ms
+23-Nov-2023 23:06:02.144 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:06:02.162 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 23:06:02.354 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:06:02.357 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [196] ms
+23-Nov-2023 23:06:11.946 GRAVE [http-nio-8080-exec-5] org.jboss.resteasy.core.ExceptionHandler. failed to execute
+	javax.ws.rs.NotFoundException: Could not find resource for full path: http://localhost:8080/Person/rest/test
+		at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:112)
+		at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+		at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+		at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:444)
+		at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:234)
+		at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:171)
+		at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+23-Nov-2023 23:07:19.718 GRAVE [http-nio-8080-exec-12] org.jboss.resteasy.core.ExceptionHandler. failed to execute
+	javax.ws.rs.NotFoundException: Could not find resource for full path: http://localhost:8080/Person/rest/test
+		at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:112)
+		at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+		at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+		at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:444)
+		at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:234)
+		at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:171)
+		at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+23-Nov-2023 23:07:21.208 GRAVE [http-nio-8080-exec-13] org.jboss.resteasy.core.ExceptionHandler. failed to execute
+	javax.ws.rs.NotFoundException: Could not find resource for full path: http://localhost:8080/Person/rest/test
+		at org.jboss.resteasy.core.registry.SegmentNode.match(SegmentNode.java:112)
+		at org.jboss.resteasy.core.registry.RootNode.match(RootNode.java:43)
+		at org.jboss.resteasy.core.registry.RootClassNode.match(RootClassNode.java:48)
+		at org.jboss.resteasy.core.ResourceMethodRegistry.getResourceInvoker(ResourceMethodRegistry.java:444)
+		at org.jboss.resteasy.core.SynchronousDispatcher.getInvoker(SynchronousDispatcher.java:234)
+		at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:171)
+		at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+		at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:360)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+23-Nov-2023 23:12:52.467 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:12:52.475 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 23:12:52.633 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:12:52.636 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [160] ms
+23-Nov-2023 23:13:32.643 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:13:32.651 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 23:13:32.779 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:13:32.780 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [130] ms
+23-Nov-2023 23:26:32.946 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:26:32.955 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 23:26:33.082 INFOS [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:26:33.083 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [128] ms
+23-Nov-2023 23:30:33.136 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:30:33.147 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] de l'application web
+23-Nov-2023 23:30:33.311 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:30:33.313 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/Person.war] s'est terminé en [165] ms
+23-Nov-2023 23:56:24.173 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Person]
+23-Nov-2023 23:57:04.196 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Déploiement de l'archive [/home/hagimont/install/apache-tomcat-9.0.60/webapps/students-server.war] de l'application web
+23-Nov-2023 23:57:04.369 INFOS [Catalina-utility-2] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès ; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+23-Nov-2023 23:57:04.374 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.deployWAR Le déploiement de l'archive de l'application web [/home/hagimont/install/apache-tomcat-9.0.60/webapps/students-server.war] s'est terminé en [179] ms

@@ -1,0 +1,337 @@
+
+
+\section{Cas particulier 1.1}
+
+\subsection{Variables}
+
+Les variables du problème sont les suivantes:
+
+\begin{itemize}
+    \item $q_{mfd}$ : Quantité de produit $f$ stockée dans le magasin $m$ pour la demande $d$.
+\end{itemize}
+
+\subsection{Fonction Objectif}
+
+Le problème vise à minimiser le coût total, défini par la fonction objectif suivante :
+
+\[
+min \sum_{m=1}^{nbM} \sum_{f=1}^{nbF} \sum_{d=1}^{nbD} q_{mfd} \cdot COUTS_{mf}
+\]
+
+\subsection{Contraintes}
+
+Les contraintes du problème sont les suivantes :
+
+\begin{itemize}
+    \item Demande Respectée : $\forall d \in [1, \ldots, nbD], \forall f \in [1, \ldots, nbF], \text{DEMANDES}_{df} \leq \sum\limits_{m=1}^{nbM} q_{mfd}$
+    \item Stock Respecté : $\forall m \in [1, \ldots, nbM], \forall f \in [1, \ldots, nbF], \sum\limits_{d=1}^{nbD} q_{mfd} \leq \text{STOCK}_{mf}$
+\end{itemize}
+
+\subsection{Domaine}
+
+Les domaines des variables sont les suivants :
+
+\begin{itemize}
+\item \[\forall m \in [1, \ldots, nbM], \forall f \in [1, \ldots, nbF], \forall d \in [1, \ldots, nbD] ,\ q_{mfd} \geq 0
+\]
+\end{itemize}
+
+\subsection{Conclusion}
+
+Voici les données du problème posé :
+
+\begin{itemize}
+\item le nombre de fluide est égal à 2
+\item le nombre de magasin est égal à 3
+\item le nombre de demandes est égal à 2
+\item Le tableau de stock de fluide \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{Fluide 1} & \textbf{Fluide 2} \\
+\hline
+\textbf{Magasin 1} & 2.5 & 1 \\
+\textbf{Magasin 2} & 1 & 2 \\
+\textbf{Magasin 3} & 2 & 1 \\
+\hline
+\end{tabular}
+
+\item le tableau des demandes de fluides \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{Fluide 1} & \textbf{Fluide 2} \\
+\hline
+\textbf{Demande 1} & 2 & 0 \\
+\textbf{Demande 2} & 1 & 3 \\
+\hline
+\end{tabular}
+
+
+\item le tableau des coûts unitaires par magasin \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{Fluide 1} & \textbf{Fluide 2} \\
+\hline
+\textbf{Magasin 1} & 1 & 1 \\
+\textbf{Magasin 2} & 2 & 3 \\
+\textbf{Magasin 3} & 3 & 2 \\
+\hline
+\end{tabular}
+
+
+\end{itemize}
+
+Avec ces données, nous obtenons le résutat suivant :
+
+
+\begin{lstlisting}
+Problem:    ECommerceCP11
+Rows:       11
+Columns:    12
+Non-zeros:  36
+Status:     OPTIMAL
+Objective:  coutTotal = 9.5 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 coutTotal    B            9.5
+     2 demandeRespectee[1,1]
+                    NU            -2                          -2            -2
+     3 demandeRespectee[1,2]
+                    B              0                          -0
+     4 demandeRespectee[2,1]
+                    NU            -1                          -1            -2
+     5 demandeRespectee[2,2]
+                    NU            -3                          -3            -3
+     6 stockRespecte[1,1]
+                    NU           2.5                         2.5            -1
+     7 stockRespecte[1,2]
+                    NU             1                           1            -2
+     8 stockRespecte[2,1]
+                    B            0.5                           1
+     9 stockRespecte[2,2]
+                    B              1                           2
+    10 stockRespecte[3,1]
+                    B              0                           2
+    11 stockRespecte[3,2]
+                    NU             1                           1            -1
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 q[1,1,1]     B              2             0
+     2 q[1,1,2]     B            0.5             0
+     3 q[1,2,1]     NL             0             0                           3
+     4 q[1,2,2]     B              1             0
+     5 q[2,1,1]     NL             0             0                       < eps
+     6 q[2,1,2]     B            0.5             0
+     7 q[2,2,1]     NL             0             0                           3
+     8 q[2,2,2]     B              1             0
+     9 q[3,1,1]     NL             0             0                           1
+    10 q[3,1,2]     NL             0             0                           1
+    11 q[3,2,1]     NL             0             0                           3
+    12 q[3,2,2]     B              1             0
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0.00e+00 on column 0
+        max.rel.err = 0.00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
+
+\end{lstlisting}
+
+Donc GPLK propose le scénario suivant :
+\begin{enumerate}
+
+\item Pour la demande 1, on va chercher dans le magasin 1 2 unités de $fluide_1$
+\item Pour la demande 2, on va chercher dans le magasin 1 0.5 unité de $fluide_1$
+\item Pour la demande 2, on va chercher dans le magasin 1 1 unité de $fluide_2$
+\item Pour la demande 2, on va chercher dans le magasin 2 0.5 unité de $fluide_1$
+\item Pour la demande 2, on va chercher dans le magasin 2 2 unités de $fluide_2$
+\item Pour la demande 2, on va chercher dans le magasin 3 1 unité de $fluide_2$
+\end{enumerate}
+
+Ce qui donne les tableaux itérés suivants:
+\begin{enumerate}
+\item
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0.5 & 1 \\
+\textbf{M2} & 1 & 2 \\
+\textbf{M3} & 2 & 1 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 1 & 3 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+
+\item
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0 & 1 \\
+\textbf{M2} & 1 & 2 \\
+\textbf{M3} & 2 & 1 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 0.5 & 3 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+
+\item
+\begin{table}[h]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0 & 0 \\
+\textbf{M2} & 1 & 2 \\
+\textbf{M3} & 2 & 1 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 0.5 & 3 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+
+\item
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0 & 0 \\
+\textbf{M2} & 0.5 & 2 \\
+\textbf{M3} & 2 & 1 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 0 & 3 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+
+\item
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0 & 0 \\
+\textbf{M2} & 0.5 & 0 \\
+\textbf{M3} & 2 & 1 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 0 & 1 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+
+\item
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{M1} & 0 & 0 \\
+\textbf{M2} & 0.5 & 0 \\
+\textbf{M3} & 2 & 0 \\
+\hline
+\end{tabular}
+&
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{F1} & \textbf{F2} \\
+\hline
+\textbf{D1} & 0 & 0 \\
+\textbf{D2} & 0 & 0 \\
+\hline
+\end{tabular}
+
+\end{tabular}
+\end{table}
+\end{enumerate}
+
+Cela montre que la solution est cohérente étant donné que chaque état de la solution respecte les contraintes données.
+
+
+

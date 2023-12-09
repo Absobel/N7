@@ -26,7 +26,15 @@ public class CountForkJoin {
            inutile de visiter le tronçon, il n'y a aucun élément dans [VMIN..VMAX] */
         public Integer compute() {
             /* XXXX À COMPLÉTER XXXX */
-            return 0; // pour que ça compile
+            if (end - start > threshold) {
+                PartialCount left = new PartialCount(array, start, (start + end) / 2, threshold);
+                PartialCount right = new PartialCount(array, (start + end) / 2, end, threshold);
+                left.fork();
+                right.fork();
+                return left.join() + right.join();
+            } else {
+                return LargeIntArray.count(array, start, end, VMIN, VMAX);
+            }
         }
     }
         
