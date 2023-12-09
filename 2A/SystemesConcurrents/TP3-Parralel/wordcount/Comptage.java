@@ -34,7 +34,26 @@ class CompterMots extends RecursiveTask<Long> {
     @Override
     protected Long compute() {
         /* XXXX À COMPLÉTER XXXX */
-        return 0; // pour que ça compile
+        long c = 0;
+        if (Files.isRegularFile(racine, LinkOption.NOFOLLOW_LINKS)) {
+            c = Comptage.nbOccurrences(racine, mot) ;
+        } else if (Files.isDirectory(racine, LinkOption.NOFOLLOW_LINKS)) {
+            List<CompterMots> tasks = new LinkedList<>();
+            try {
+                List<Path> ls = Files.list(racine).toList();
+                for (Path f : ls) {
+                    tasks.add(new CompterMots(f, mot));
+                }
+            } catch (IOException iox) {
+                System.err.println("(mono)"+iox);
+                System.exit(1);
+            }
+            tasks.forEach(CompterMots::fork);
+            for (CompterMots t : tasks) {
+                c += t.join();
+            }
+        }   
+        return c;
     }
 }
 

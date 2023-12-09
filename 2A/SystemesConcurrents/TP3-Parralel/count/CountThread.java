@@ -37,14 +37,27 @@ public class CountThread {
 
         // Démarrer les activités
         /* XXXX À COMPLÉTER XXXX */
+        for (int i = 0; i < array.length; i += taskSize) {
+            int start = i;
+            int end = Math.min(i + taskSize, array.length);
+            Thread t = new Thread(new PartialCount(array, start, end, results));
+            threads.add(t);
+            t.start();
+        }
 
         // Attendre la terminaison des activités
         /* XXXX À COMPLÉTER XXXX */
+        for (Thread t : threads) {
+            t.join();
+        }
 
         // Récupérer les résultats et les fusionner
         /* XXXX À COMPLÉTER XXXX */
-
-        return 0; // pour que ça compile
+        int c = 0;
+        for (int r : results) {
+            c += r;  
+        }
+        return c;
     }
     
     public static void main(String[] args) throws Exception {

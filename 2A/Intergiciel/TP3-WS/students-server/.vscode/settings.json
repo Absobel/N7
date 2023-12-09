@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": ["src"],
+    "java.project.outputPath": "../apache-tomcat-ws/webapps/students-server/WEB-INF/classes",
+    "java.project.referencedLibraries": [
+        "../apache-tomcat-ws/lib/**/*.jar"
+    ]
+}
