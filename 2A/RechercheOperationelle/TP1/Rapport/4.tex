@@ -1,0 +1,215 @@
+\section{Cas particulier 2}
+Ce problème correspond au problème théorique du voyageur car il s'agit de trouver le chemin le plus court pour livrer les colis au bon endroit.
+
+
+
+\subsection{Variables}
+Dans ce problème nous avons identifié 2 variables :
+\begin{itemize}
+\item $Y$ : Matrice des arcs entre les clients. Le coefficient $c(i,j)$ indique  dans le cas où il vaut 1 que le livreur part du client $i$ et se dirige vers le client $j$
+\item $T$ : Vecteur de l'ordre de livraison
+\end{itemize}
+
+\subsection{Fonction Objectif}
+
+La fonction à minimiser dans le problème est la fonction :
+
+$$ min \sum_{i=1}^{n}\sum_{j=1}^{n}  DISTANCE_{ij} * Y_{ij}$$
+
+\subsection{Contraintes}
+
+\text{Assure qu'il y ait un seul et unique 1 par ligne:\\}
+$$ \quad \sum\limits_{j=1}^{N} Y[i,j] = 1, \quad \forall i \in \{1,2,\ldots,N\}$$ \\
+
+\text{Assure qu'il y ait un seul et unique 1 par colonne:\\}
+$$ \quad \sum\limits_{i=1}^{N} Y[i,j] = 1, \quad \forall j \in \{1,2,\ldots,N\}$$ \\
+\text{Assure qu'un client ne peut pas se visiter après s'être visité :\\}
+$$\quad Y[i,i] = 0, \quad \forall i \in \{1,2,\ldots,N\}$$ \\
+\text{Assure qu'il n'y ait pas de sous-cycle au sein du graphe representant les clients et leur lirvraison:\\}
+$$ \quad T[j] + (1 - Y[i,j]) \cdot M \geq T[i] + 1, \quad \forall i \in \{1,2,\ldots,N\}, \forall j \in \{2,3,\ldots,N\}$$\\
+\text{Assure que l'ordre est positif:\\}
+$$ \quad T[i] \geq 0, \quad \forall i \in \{1,2,\ldots,N\}$$
+
+
+
+\subsection{Domaine}
+
+\begin{itemize}
+\item $Y \in \mathcal{M}_n(\mathbb{B}) $
+\item $T \in \mathbb{R}^{n}$
+\end{itemize}
+
+\subsection{Conclusion}
+Avec les paramètres précedent nous obtenons la solution suivante avec GLPK :
+\begin{lstlisting}
+Problem:    ECommerceCP2
+Rows:       55
+Columns:    42 (42 integer, 36 binary)
+Non-zeros:  200
+Status:     INTEGER OPTIMAL
+Objective:  Distance = 22 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Distance                   22
+     2 RegleUn[1]                  1             1             =
+     3 RegleUn[2]                  1             1             =
+     4 RegleUn[3]                  1             1             =
+     5 RegleUn[4]                  1             1             =
+     6 RegleUn[5]                  1             1             =
+     7 RegleUn[6]                  1             1             =
+     8 RegleDeux[1]                1             1             =
+     9 RegleDeux[2]                1             1             =
+    10 RegleDeux[3]                1             1             =
+    11 RegleDeux[4]                1             1             =
+    12 RegleDeux[5]                1             1             =
+    13 RegleDeux[6]                1             1             =
+    14 RegleTrois[1]
+                                   0            -0             =
+    15 RegleTrois[2]
+                                   0            -0             =
+    16 RegleTrois[3]
+                                   0            -0             =
+    17 RegleTrois[4]
+                                   0            -0             =
+    18 RegleTrois[5]
+                                   0            -0             =
+    19 RegleTrois[6]
+                                   0            -0             =
+    20 RegleQuatre[1,2]
+                                -999          -999
+    21 RegleQuatre[1,3]
+                                   5          -999
+    22 RegleQuatre[1,4]
+                                   2          -999
+    23 RegleQuatre[1,5]
+                                   3          -999
+    24 RegleQuatre[1,6]
+                                   4          -999
+    25 RegleQuatre[2,2]
+                                   0          -999
+    26 RegleQuatre[2,3]
+                                   4          -999
+    27 RegleQuatre[2,4]
+                                -999          -999
+    28 RegleQuatre[2,5]
+                                   2          -999
+    29 RegleQuatre[2,6]
+                                   3          -999
+    30 RegleQuatre[3,2]
+                                  -4          -999
+    31 RegleQuatre[3,3]
+                                   0          -999
+    32 RegleQuatre[3,4]
+                                  -3          -999
+    33 RegleQuatre[3,5]
+                                  -2          -999
+    34 RegleQuatre[3,6]
+                                  -1          -999
+    35 RegleQuatre[4,2]
+                                  -1          -999
+    36 RegleQuatre[4,3]
+                                   3          -999
+    37 RegleQuatre[4,4]
+                                   0          -999
+    38 RegleQuatre[4,5]
+                                -999          -999
+    39 RegleQuatre[4,6]
+                                   2          -999
+    40 RegleQuatre[5,2]
+                                  -2          -999
+    41 RegleQuatre[5,3]
+                                   2          -999
+    42 RegleQuatre[5,4]
+                                  -1          -999
+    43 RegleQuatre[5,5]
+                                   0          -999
+    44 RegleQuatre[5,6]
+                                -999          -999
+    45 RegleQuatre[6,2]
+                                  -3          -999
+    46 RegleQuatre[6,3]
+                                -999          -999
+    47 RegleQuatre[6,4]
+                                  -2          -999
+    48 RegleQuatre[6,5]
+                                  -1          -999
+    49 RegleQuatre[6,6]
+                                   0          -999
+    50 Reglex[1]                   0            -0
+    51 Reglex[2]                   1            -0
+    52 Reglex[3]                   5            -0
+    53 Reglex[4]                   2            -0
+    54 Reglex[5]                   3            -0
+    55 Reglex[6]                   4            -0
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 Y[1,1]       *              0             0             1
+     2 Y[1,2]       *              1             0             1
+     3 Y[1,3]       *              0             0             1
+     4 Y[1,4]       *              0             0             1
+     5 Y[1,5]       *              0             0             1
+     6 Y[1,6]       *              0             0             1
+     7 Y[2,1]       *              0             0             1
+     8 Y[2,2]       *              0             0             1
+     9 Y[2,3]       *              0             0             1
+    10 Y[2,4]       *              1             0             1
+    11 Y[2,5]       *              0             0             1
+    12 Y[2,6]       *              0             0             1
+    13 Y[3,1]       *              1             0             1
+    14 Y[3,2]       *              0             0             1
+    15 Y[3,3]       *              0             0             1
+    16 Y[3,4]       *              0             0             1
+    17 Y[3,5]       *              0             0             1
+    18 Y[3,6]       *              0             0             1
+    19 Y[4,1]       *              0             0             1
+    20 Y[4,2]       *              0             0             1
+    21 Y[4,3]       *              0             0             1
+    22 Y[4,4]       *              0             0             1
+    23 Y[4,5]       *              1             0             1
+    24 Y[4,6]       *              0             0             1
+    25 Y[5,1]       *              0             0             1
+    26 Y[5,2]       *              0             0             1
+    27 Y[5,3]       *              0             0             1
+    28 Y[5,4]       *              0             0             1
+    29 Y[5,5]       *              0             0             1
+    30 Y[5,6]       *              1             0             1
+    31 Y[6,1]       *              0             0             1
+    32 Y[6,2]       *              0             0             1
+    33 Y[6,3]       *              1             0             1
+    34 Y[6,4]       *              0             0             1
+    35 Y[6,5]       *              0             0             1
+    36 Y[6,6]       *              0             0             1
+    37 T[2]         *              1
+    38 T[1]         *              0
+    39 T[3]         *              5
+    40 T[4]         *              2
+    41 T[5]         *              3
+    42 T[6]         *              4
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
+
+\end{lstlisting}
+
+Vérifions que cette solution est cohérente.
+La matrice $Y$ nous indique que le livreur emprunte le chemin suivant : \\
+$$ALPHA \rightarrow client1 \rightarrow client3 \rightarrow client4 \rightarrow client5 \rightarrow ALPHA $$
+Cette solution est cohérente pour les raisons suivantes :
+\begin{itemize}
+\item En terme de graphe c'est un cycle hamiltonien. On passe une et une seule fois chez chaque client.
+\item Chaque ligne et colonne ne possède qu'un seul 1 et le reste de 0.
+\end{itemize}
+
+
+

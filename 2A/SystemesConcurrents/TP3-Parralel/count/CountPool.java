@@ -36,11 +36,20 @@ public class CountPool {
 
         // Créer et soumettre les tâches
         /* XXXX À COMPLÉTER XXXX */
+        for (int i = 0; i < array.length; i += taskSize) {
+          int start = i;
+          int end = Math.min(i + taskSize, array.length);
+          results.add(executor.submit(new PartialCount(array, start, end)));
+        }
 
         // Récupérer les résultats et les fusionner
         /* XXXX À COMPLÉTER XXXX */
+        int c = 0;
+        for (Future<Integer> f : results) {
+          c += f.get();
+        }
 
-        return 0; // pour que ça compile
+        return c;
     }
     
     public static void main(String[] args) throws Exception {

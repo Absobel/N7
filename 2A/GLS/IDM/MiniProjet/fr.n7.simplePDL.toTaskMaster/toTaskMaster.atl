@@ -1,0 +1,56 @@
+-- @path SimplePDL=/fr.n7.simplePDL/SimplePDL.ecore
+-- @path TM=/fr.n7.taskMaster/TaskMaster.ecore
+
+module toTaskMaster;
+create OUT : TM from IN : SimplePDL;
+
+rule Process2EventBundle {
+	from process : SimplePDL!Process
+	to bundle : TM!EventBundle(name <- process.name)
+}
+
+helper context SimplePDL!ProcessElement
+def: getProcess() : SimplePDL!Process =
+	SimplePDL!Process.allInstances()->select(e | e.processElements->includes(self));
+
+rule WD2Task {
+	from wd : SimplePDL!WorkDefinition
+	to event_start : TM!Event(bundle <- wd.getProcess(), name <- wd.name + '_start'),
+	   event_finish: TM!Event(bundle <- wd.getProcess(), name <- wd.name + '_finish'),
+	   finish_after_start: TM!Causal(event <- event_finish, target <- event_start)
+}
+
+helper context SimplePDL!WorkSequence
+def: eventType() : String =
+    if self.linkType = #startToStart or self.linkType = #finishToStart then
+        'start'
+    else
+        'finish'
+    endif;
+
+rule WS2Requirement {
+    from ws : SimplePDL!WorkSequence
+    to req : TM!Causal(
+        event <- thisModule.resolveTemp(ws.predecessor, 'event_' + ws.eventType()),
+        target <- thisModule.resolveTemp(ws.successor, 'event_' + ws.eventType())
+    )
+}
+
+rule Resource2Supply {
+    from res : SimplePDL!Ressource
+    to phy : TM!Supply(
+        consumable <- true,
+		name <- res.name,
+		available <- res.totalQuantity,
+		bundle <- res.getProcess()
+    )
+}
+
+rule NeededResource2Requirement {
+    from nr : SimplePDL!NeededRessource
+    to sup : TM!Physical(
+    	event <- thisModule.resolveTemp(nr.refImmediateComposite(), 'event_start'),
+    	requested <- nr.quantity,
+		target <- thisModule.resolveTemp(nr.ressource, 'phy')
+    )
+}

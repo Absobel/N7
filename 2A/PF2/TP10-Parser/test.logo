@@ -1,0 +1,8 @@
+begin
+    on
+    repeat 4 begin
+        move 100
+        turn 90
+    end
+    off
+end

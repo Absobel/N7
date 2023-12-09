@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<petrinet:PetriNet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:petrinet="http://petrinet" name="ExempleSujet">
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.1" nbJetons="1" name="Conception_start"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.0" transition="//@petriNetElements.2" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.1 //@petriNetElements.3 //@petriNetElements.9 //@petriNetElements.54 //@petriNetElements.56" name="Conception_starting"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.4" transition="//@petriNetElements.2" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.3 //@petriNetElements.5" name="Conception_active"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.4" transition="//@petriNetElements.6" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.5 //@petriNetElements.7 //@petriNetElements.55 //@petriNetElements.57" name="Conception_finishing"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.8" transition="//@petriNetElements.6" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.7 //@petriNetElements.47" name="Conception_finished"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.10" transition="//@petriNetElements.2" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.9 //@petriNetElements.44 //@petriNetElements.45 //@petriNetElements.46" name="Conception_started"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.12" nbJetons="1" name="Programmation_start"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.11" transition="//@petriNetElements.13" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.12 //@petriNetElements.14 //@petriNetElements.20 //@petriNetElements.45 //@petriNetElements.58 //@petriNetElements.60" name="Programmation_starting"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.15" transition="//@petriNetElements.13" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.14 //@petriNetElements.16" name="Programmation_active"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.15" transition="//@petriNetElements.17" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.16 //@petriNetElements.18 //@petriNetElements.59 //@petriNetElements.61" name="Programmation_finishing"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.19" transition="//@petriNetElements.17" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.18 //@petriNetElements.48" name="Programmation_finished"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.21" transition="//@petriNetElements.13" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.20" name="Programmation_started"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.23" nbJetons="1" name="RedactionDoc_start"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.22" transition="//@petriNetElements.24" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.23 //@petriNetElements.25 //@petriNetElements.31 //@petriNetElements.46 //@petriNetElements.62 //@petriNetElements.64" name="RedactionDoc_starting"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.26" transition="//@petriNetElements.24" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.25 //@petriNetElements.27" name="RedactionDoc_active"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.26" transition="//@petriNetElements.28" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.27 //@petriNetElements.29 //@petriNetElements.47 //@petriNetElements.63 //@petriNetElements.65" name="RedactionDoc_finishing"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.30" transition="//@petriNetElements.28" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.29" name="RedactionDoc_finished"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.32" transition="//@petriNetElements.24" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.31" name="RedactionDoc_started"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.34" nbJetons="1" name="RedactionTest_start"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.33" transition="//@petriNetElements.35" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.34 //@petriNetElements.36 //@petriNetElements.42 //@petriNetElements.44 //@petriNetElements.66 //@petriNetElements.68" name="RedactionTest_starting"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.37" transition="//@petriNetElements.35" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.36 //@petriNetElements.38" name="RedactionTest_active"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.37" transition="//@petriNetElements.39" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Transition" arcs="//@petriNetElements.38 //@petriNetElements.40 //@petriNetElements.48 //@petriNetElements.67 //@petriNetElements.69" name="RedactionTest_finishing"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.41" transition="//@petriNetElements.39" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.40" name="RedactionTest_finished"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.43" transition="//@petriNetElements.35" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.42" name="RedactionTest_started"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.10" transition="//@petriNetElements.35" weight="1" type="READ" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.10" transition="//@petriNetElements.13" weight="1" type="READ" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.10" transition="//@petriNetElements.24" weight="1" type="READ" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.8" transition="//@petriNetElements.28" weight="1" type="READ" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.19" transition="//@petriNetElements.39" weight="1" type="READ" name=""/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.54 //@petriNetElements.55" nbJetons="3" name="concepteur"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.58 //@petriNetElements.59" nbJetons="2" name="developpeur"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.56 //@petriNetElements.57 //@petriNetElements.60 //@petriNetElements.61 //@petriNetElements.62 //@petriNetElements.63 //@petriNetElements.66 //@petriNetElements.67" nbJetons="4" name="machine"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.64 //@petriNetElements.65" nbJetons="1" name="redacteur"/>
+  <petriNetElements xsi:type="petrinet:Place" arcs="//@petriNetElements.68 //@petriNetElements.69" nbJetons="2" name="testeur"/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.49" transition="//@petriNetElements.2" weight="2" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.49" transition="//@petriNetElements.6" weight="2" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.2" weight="2" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.6" weight="2" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.50" transition="//@petriNetElements.13" weight="2" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.50" transition="//@petriNetElements.17" weight="2" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.13" weight="3" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.17" weight="3" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.24" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.28" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.52" transition="//@petriNetElements.24" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.52" transition="//@petriNetElements.28" weight="1" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.35" weight="2" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.51" transition="//@petriNetElements.39" weight="2" direction="T2P" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.53" transition="//@petriNetElements.35" weight="1" name=""/>
+  <petriNetElements xsi:type="petrinet:Arc" place="//@petriNetElements.53" transition="//@petriNetElements.39" weight="1" direction="T2P" name=""/>
+</petrinet:PetriNet>
