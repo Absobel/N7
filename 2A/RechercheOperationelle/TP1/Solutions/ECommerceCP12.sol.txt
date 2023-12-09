@@ -1,0 +1,69 @@
+Problem:    ECommerceCP12
+Rows:       17
+Columns:    18 (6 integer, 6 binary)
+Non-zeros:  60
+Status:     INTEGER OPTIMAL
+Objective:  coutTotal = 621 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 coutTotal                 621                             
+     2 demandeRespectee[1,1]
+                                  -2                          -2 
+     3 demandeRespectee[1,2]
+                                   0                          -0 
+     4 demandeRespectee[2,1]
+                                  -1                          -1 
+     5 demandeRespectee[2,2]
+                                  -3                          -3 
+     6 stockRespecte[1,1]
+                                   0                         2.5 
+     7 stockRespecte[1,2]
+                                   0                           1 
+     8 stockRespecte[2,1]
+                                   1                           1 
+     9 stockRespecte[2,2]
+                                   2                           2 
+    10 stockRespecte[3,1]
+                                   2                           2 
+    11 stockRespecte[3,2]
+                                   1                           1 
+    12 bDef[1,1]                   0                          -0 
+    13 bDef[1,2]                   0                          -0 
+    14 bDef[2,1]                   0                          -0 
+    15 bDef[2,2]                -6.5                          -0 
+    16 bDef[3,1]                -7.5                          -0 
+    17 bDef[3,2]                -8.5                          -0 
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 q[1,1,1]                    0             0               
+     2 q[1,2,1]                    0             0               
+     3 q[1,1,2]                    0             0               
+     4 q[1,2,2]                    0             0               
+     5 q[2,1,1]                    0             0               
+     6 q[2,2,1]                    0             0               
+     7 q[2,1,2]                    1             0               
+     8 q[2,2,2]                    2             0               
+     9 q[3,1,1]                    2             0               
+    10 q[3,2,1]                    0             0               
+    11 q[3,1,2]                    0             0               
+    12 q[3,2,2]                    1             0               
+    13 b[1,1]       *              0             0             1 
+    14 b[1,2]       *              0             0             1 
+    15 b[2,1]       *              0             0             1 
+    16 b[2,2]       *              1             0             1 
+    17 b[3,1]       *              1             0             1 
+    18 b[3,2]       *              1             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

@@ -1,0 +1,8 @@
+Expressions régulières <-> automates finis deterministes <-> grammaires régulières <-(quand c'est possible)--grammaires non contextuelles <-?-> automates à pile
+                                    ^
+                                    |
+                            Indeterministes
+
+Ex 1:
+
+
