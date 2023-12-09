@@ -1,0 +1,65 @@
+Problem:    ECommerceCP11
+Rows:       11
+Columns:    12
+Non-zeros:  36
+Status:     OPTIMAL
+Objective:  coutTotal = 9.5 (MINimum)
+
+   No.   Row name   St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 coutTotal    B            9.5                             
+     2 demandeRespectee[1,1]
+                    NU            -2                          -2            -2 
+     3 demandeRespectee[1,2]
+                    B              0                          -0 
+     4 demandeRespectee[2,1]
+                    NU            -1                          -1            -2 
+     5 demandeRespectee[2,2]
+                    NU            -3                          -3            -3 
+     6 stockRespecte[1,1]
+                    NU           2.5                         2.5            -1 
+     7 stockRespecte[1,2]
+                    NU             1                           1            -2 
+     8 stockRespecte[2,1]
+                    B            0.5                           1 
+     9 stockRespecte[2,2]
+                    B              1                           2 
+    10 stockRespecte[3,1]
+                    B              0                           2 
+    11 stockRespecte[3,2]
+                    NU             1                           1            -1 
+
+   No. Column name  St   Activity     Lower bound   Upper bound    Marginal
+------ ------------ -- ------------- ------------- ------------- -------------
+     1 q[1,1,1]     B              2             0               
+     2 q[1,1,2]     B            0.5             0               
+     3 q[1,2,1]     NL             0             0                           3 
+     4 q[1,2,2]     B              1             0               
+     5 q[2,1,1]     NL             0             0                       < eps
+     6 q[2,1,2]     B            0.5             0               
+     7 q[2,2,1]     NL             0             0                           3 
+     8 q[2,2,2]     B              1             0               
+     9 q[3,1,1]     NL             0             0                           1 
+    10 q[3,1,2]     NL             0             0                           1 
+    11 q[3,2,1]     NL             0             0                           3 
+    12 q[3,2,2]     B              1             0               
+
+Karush-Kuhn-Tucker optimality conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.DE: max.abs.err = 0.00e+00 on column 0
+        max.rel.err = 0.00e+00 on column 0
+        High quality
+
+KKT.DB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output
