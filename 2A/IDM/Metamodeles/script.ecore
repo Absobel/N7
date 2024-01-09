@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://www.example.org/script" nsPrefix="script">
+  <eClassifiers xsi:type="ecore:EClass" name="script">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blocs" upperBound="-1"
+        eType="#//blocs" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialInput" lowerBound="1"
+        upperBound="-1" eType="#//Data" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalOutput" lowerBound="1"
+        upperBound="-1" eType="#//Data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="blocs">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
+        upperBound="-1" eType="#//Data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" lowerBound="1"
+        upperBound="-1" eType="#//Data" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="#//Operations" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operations Binaires">
+    <eLiterals name="ADD"/>
+    <eLiterals name="SUB" value="1"/>
+    <eLiterals name="TIM" value="2"/>
+    <eLiterals name="DIV" value="3"/>
+    <eLiterals name="MIN" value="4"/>
+    <eLiterals name="MAX" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Fonctions">
+    <eLiterals name="OPP"/>
+    <eLiterals name="INV" value="1"/>
+    <eLiterals name="COS" value="2"/>
+    <eLiterals name="SIN" value="3"/>
+    <eLiterals name="SQR" value="4"/>
+    <eLiterals name="EXP" value="5"/>
+    <eLiterals name="LOG" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operations"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Unaire" eSuperTypes="#//Operations">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Fonctions" lowerBound="1"
+        eType="#//Fonctions"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Binaire" eSuperTypes="#//Operations">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" lowerBound="1"
+        eType="#//Operations%20Binaires"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
