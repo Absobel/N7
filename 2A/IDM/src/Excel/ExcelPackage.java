@@ -2,6 +2,7 @@
  */
 package Excel;
 
+import Excel.impl.*;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -54,7 +55,7 @@ public interface ExcelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExcelPackage eINSTANCE = Excel.impl.ExcelPackageImpl.init();
+	ExcelPackage eINSTANCE = ExcelPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link Excel.impl.TableImpl <em>Table</em>}' class.

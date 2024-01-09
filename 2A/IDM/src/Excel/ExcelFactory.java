@@ -2,6 +2,7 @@
  */
 package Excel;
 
+import Excel.impl.*;
 import org.eclipse.emf.ecore.EFactory;
 
 /**
@@ -19,7 +20,7 @@ public interface ExcelFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExcelFactory eINSTANCE = Excel.impl.ExcelFactoryImpl.init();
+	ExcelFactory eINSTANCE = ExcelFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Table</em>'.
