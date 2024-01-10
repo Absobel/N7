@@ -1,4 +1,7 @@
-use plotters::{prelude::*, coord::Shift};
+use std::vec;
+
+use petgraph::Graph;
+use plotters::{coord::Shift, prelude::*};
 
 use crate::utils::{min_max_ranges_points, HEIGHT, WIDTH};
 
@@ -41,13 +44,20 @@ impl Satellites {
     }
 
     /// Plots the satellites in 3D space and returns the path to the image.
-    pub fn plot(&self, image_name: &str) -> Result<String, Box<dyn std::error::Error>> {
+    pub fn analyse(&self, image_name: &str) -> Result<SatAnalysis, Box<dyn std::error::Error>> {
+        let mut graph_20k = Graph::<(), ()>::new();
+        let mut graph_40k = Graph::<(), ()>::new();
+        let mut graph_60k = Graph::<(), ()>::new();
+        let node_indices = self.points.iter().map(|_| {
+            graph_20k.add_node(());
+            graph_40k.add_node(());
+            graph_60k.add_node(())
+        }).collect::<Vec<_>>();
         let ranges = min_max_ranges_points(&self.points);
 
-        let plot_points_iter = self
-            .points
-            .iter()
-            .map(|point| Cross::new((point.x, point.y, point.z), 5, plotters::style::BLACK));
+        let plot_points_iter = self.points.iter().map(|point| {
+            Cross::new((point.x, point.y, point.z), 5, plotters::style::BLACK)
+        });
 
         let mut plot_20k_iter = vec![];
         let mut plot_40k_iter = vec![];
@@ -70,10 +80,13 @@ impl Satellites {
 
                 if distance <= 20_000.0 {
                     plot_20k_iter.push(path_element);
+                    graph_20k.add_edge(node_indices[i], node_indices[j], ());
                 } else if distance <= 40_000.0 {
                     plot_40k_iter.push(path_element);
+                    graph_40k.add_edge(node_indices[i], node_indices[j], ());
                 } else if distance <= 60_000.0 {
                     plot_60k_iter.push(path_element);
+                    graph_60k.add_edge(node_indices[i], node_indices[j], ());
                 }
             }
         }
@@ -108,6 +121,18 @@ impl Satellites {
         draw(&areas.1, plot_40k_iter, "40k").unwrap();
         draw(&areas.2, plot_60k_iter, "60k").unwrap();
 
-        Ok(path.clone())
+        Ok(SatAnalysis {
+            image_path: path.clone(),
+            graph_20k,
+            graph_40k,
+            graph_60k,
+        })
     }
+}
+
+pub struct SatAnalysis {
+    pub image_path: String,
+    pub graph_20k: Graph<(), ()>,
+    pub graph_40k: Graph<(), ()>,
+    pub graph_60k: Graph<(), ()>,
 }
