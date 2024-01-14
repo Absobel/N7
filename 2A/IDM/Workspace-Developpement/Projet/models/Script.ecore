@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Script" nsURI="htpps://Script.ecore" nsPrefix="Script.ecore">
+  <eClassifiers xsi:type="ecore:EClass" href="#//Script"/>
+  <eClassifiers xsi:type="ecore:EClass" href="#//Blocs"/>
+  <eClassifiers xsi:type="ecore:EClass" href="#//Operations"/>
+  <eClassifiers xsi:type="ecore:EClass" href="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" href="#//Unaire"/>
+  <eClassifiers xsi:type="ecore:EClass" href="#//Binaire"/>
+  <eClassifiers xsi:type="ecore:EEnum" href="#//FonctionsType"/>
+  <eClassifiers xsi:type="ecore:EEnum" href="#//OperationsBinaireType"/>
+</ecore:EPackage>
