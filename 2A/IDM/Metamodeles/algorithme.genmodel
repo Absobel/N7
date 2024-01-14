@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/IDM-Projet/src" modelPluginID="IDM-Projet" modelName="Algorithme"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>algorithme.ecore</foreignModel>
+  <genPackages prefix="Algorithme" disposableProviderFactory="true" ecorePackage="algorithme.ecore#/">
+    <genClasses ecoreClass="algorithme.ecore#//Catalogue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Catalogue/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Catalogue/Algorithme"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//AlgorithmeElement"/>
+    <genClasses ecoreClass="algorithme.ecore#//Algorithme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Algorithme/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/ressource"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Data">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Data/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Data/value"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Ressource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Ressource/file"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Ressource/Stdin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Ressource/Stdout"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Stdin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Stdin/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Stdout"/>
+    <genClasses ecoreClass="algorithme.ecore#//Comment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Comment/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algorithme.ecore#//Comment/AlgorithmeElement"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
