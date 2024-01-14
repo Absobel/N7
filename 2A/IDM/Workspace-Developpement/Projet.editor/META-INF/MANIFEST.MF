@@ -5,13 +5,13 @@ Bundle-SymbolicName: Projet.editor;singleton:=true
 Automatic-Module-Name: Projet.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: Script.presentation.ScriptEditorPlugin$Implementation
+Bundle-Activator: Algorithme.presentation.AlgorithmeEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: Excel.presentation,
- Algorithme.presentation,
- Script.presentation
+ Script.presentation,
+ Algorithme.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  Projet.edit;visibility:=reexport,

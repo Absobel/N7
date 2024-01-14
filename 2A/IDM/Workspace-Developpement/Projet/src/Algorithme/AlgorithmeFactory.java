@@ -18,7 +18,6 @@ public interface AlgorithmeFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	AlgorithmeFactory eINSTANCE = AlgorithmeFactoryImpl.init();
 

@@ -9,8 +9,8 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: Excel.tests,
- Algorithme.tests,
- Script.tests
+ Script.tests,
+ Algorithme.tests
 Require-Bundle: org.eclipse.core.runtime,
  Projet;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

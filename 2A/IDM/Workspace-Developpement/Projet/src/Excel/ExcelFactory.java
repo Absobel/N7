@@ -19,7 +19,6 @@ public interface ExcelFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	ExcelFactory eINSTANCE = ExcelFactoryImpl.init();
 

@@ -35,33 +35,6 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated Algorithme -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="Algorithme.presentation.AlgorithmeModelWizardID"
-            name="%_UI_AlgorithmeModelWizard_label"
-            class="Algorithme.presentation.AlgorithmeModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif">
-         <description>%_UI_AlgorithmeModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated Algorithme -->
-      <editor
-            id="Algorithme.presentation.AlgorithmeEditorID"
-            name="%_UI_AlgorithmeEditor_label"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif"
-            extensions="algorithme"
-            class="Algorithme.presentation.AlgorithmeEditor"
-            contributorClass="Algorithme.presentation.AlgorithmeActionBarContributor">
-      </editor>
-   </extension>
-   <extension point="org.eclipse.ui.newWizards">
       <!-- @generated Script -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -86,6 +59,33 @@
             extensions="script"
             class="Script.presentation.ScriptEditor"
             contributorClass="Script.presentation.ScriptActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Algorithme -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="Algorithme.presentation.AlgorithmeModelWizardID"
+            name="%_UI_AlgorithmeModelWizard_label"
+            class="Algorithme.presentation.AlgorithmeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AlgorithmeModelFile.gif">
+         <description>%_UI_AlgorithmeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Algorithme -->
+      <editor
+            id="Algorithme.presentation.AlgorithmeEditorID"
+            name="%_UI_AlgorithmeEditor_label"
+            icon="icons/full/obj16/AlgorithmeModelFile.gif"
+            extensions="algorithme"
+            class="Algorithme.presentation.AlgorithmeEditor"
+            contributorClass="Algorithme.presentation.AlgorithmeActionBarContributor">
       </editor>
    </extension>
 </plugin>

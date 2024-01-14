@@ -52,7 +52,6 @@ public interface ExcelPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	ExcelPackage eINSTANCE = ExcelPackageImpl.init();
 

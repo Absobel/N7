@@ -53,7 +53,6 @@ public interface AlgorithmePackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	AlgorithmePackage eINSTANCE = AlgorithmePackageImpl.init();
 

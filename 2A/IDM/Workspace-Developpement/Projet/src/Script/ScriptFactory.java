@@ -18,7 +18,6 @@ public interface ScriptFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	ScriptFactory eINSTANCE = ScriptFactoryImpl.init();
 
