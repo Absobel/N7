@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Projet/src" modelPluginID="Projet" modelName="Excel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>excel.ecore</foreignModel>
+  <genPackages prefix="Excel" disposableProviderFactory="true" ecorePackage="excel.ecore#/">
+    <genClasses ecoreClass="excel.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Table/colonne"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//Excel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Excel/table"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ColonneInput"/>
+    <genClasses image="false" ecoreClass="excel.ecore#//Colonne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Colonne/Identifiant"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ColonneOutput">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ColonneOutput/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//Operations"/>
+    <genClasses ecoreClass="excel.ecore#//Data"/>
+    <genClasses ecoreClass="excel.ecore#//OperationsBinaires">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference excel.ecore#//OperationsBinaires/data"/>
+    </genClasses>
+    <genClasses ecoreClass="excel.ecore#//OperationsUnaires">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference excel.ecore#//OperationsUnaires/data"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
