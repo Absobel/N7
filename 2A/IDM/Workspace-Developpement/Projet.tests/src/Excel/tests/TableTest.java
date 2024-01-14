@@ -1,11 +1,9 @@
 /**
  */
-package excel.tests;
+package Excel.tests;
 
-import excel.ExcelFactory;
-import excel.Table;
-
-import junit.framework.TestCase;
+import Excel.ExcelFactory;
+import Excel.Table;
 
 import junit.textui.TestRunner;
 
@@ -15,15 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TableTest extends TestCase {
-
-	/**
-	 * The fixture for this Table test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Table fixture = null;
+public class TableTest extends DataTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class TableTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Table test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Table fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Table test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Table getFixture() {
-		return fixture;
+		return (Table)fixture;
 	}
 
 	/**

@@ -1,8 +1,8 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.*;
+import Excel.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -60,7 +60,6 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 			case ExcelPackage.TABLE: return createTable();
 			case ExcelPackage.COLONNE_INPUT: return createColonneInput();
 			case ExcelPackage.COLONNE_OUTPUT: return createColonneOutput();
-			case ExcelPackage.OPERATIONS: return createOperations();
 			case ExcelPackage.DATA: return createData();
 			case ExcelPackage.OPERATIONS_BINAIRES: return createOperationsBinaires();
 			case ExcelPackage.OPERATIONS_UNAIRES: return createOperationsUnaires();
@@ -111,17 +110,6 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 	public ColonneOutput createColonneOutput() {
 		ColonneOutputImpl colonneOutput = new ColonneOutputImpl();
 		return colonneOutput;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operations createOperations() {
-		OperationsImpl operations = new OperationsImpl();
-		return operations;
 	}
 
 	/**

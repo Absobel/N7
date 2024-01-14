@@ -1,6 +1,6 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
 
 import java.util.Collection;
@@ -8,16 +8,16 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link excel.Colonne} object.
+ * This is the item provider adapter for a {@link Excel.Colonne} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ColonneItemProvider 
-	extends DataItemProvider {
+public class ColonneItemProvider extends DataItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

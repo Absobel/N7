@@ -1,9 +1,9 @@
 /**
  */
-package excel.tests;
+package Excel.tests;
 
-import excel.Data;
-import excel.ExcelFactory;
+import Excel.Data;
+import Excel.ExcelFactory;
 
 import junit.framework.TestCase;
 

@@ -1,6 +1,7 @@
 /**
  */
-package excel;
+package Excel;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -8,7 +9,7 @@ package excel;
  * <!-- end-user-doc -->
  *
  *
- * @see excel.ExcelPackage#getColonne()
+ * @see Excel.ExcelPackage#getColonne()
  * @model abstract="true"
  * @generated
  */

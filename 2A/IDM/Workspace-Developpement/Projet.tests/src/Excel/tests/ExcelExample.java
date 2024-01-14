@@ -1,10 +1,10 @@
 /**
  */
-package excel.tests;
+package Excel.tests;
 
-import excel.Excel;
-import excel.ExcelFactory;
-import excel.ExcelPackage;
+import Excel.Excel;
+import Excel.ExcelFactory;
+import Excel.ExcelPackage;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>excel</b></em>' package.
+ * A sample utility for the '<em><b>Excel</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */

@@ -1,11 +1,10 @@
 /**
  */
-package excel.tests;
+package Excel.tests;
 
-import excel.ExcelFactory;
-import excel.Operations;
+import Excel.Operations;
 
-import junit.textui.TestRunner;
+import junit.framework.TestCase;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,16 +12,15 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OperationsTest extends DataTest {
+public abstract class OperationsTest extends TestCase {
 
 	/**
+	 * The fixture for this Operations test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static void main(String[] args) {
-		TestRunner.run(OperationsTest.class);
-	}
+	protected Operations fixture = null;
 
 	/**
 	 * Constructs a new Operations test case with the given name.
@@ -35,36 +33,23 @@ public class OperationsTest extends DataTest {
 	}
 
 	/**
+	 * Sets the fixture for this Operations test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Operations fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
 	 * Returns the fixture for this Operations test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	protected Operations getFixture() {
-		return (Operations)fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(ExcelFactory.eINSTANCE.createOperations());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
+		return fixture;
 	}
 
 } //OperationsTest

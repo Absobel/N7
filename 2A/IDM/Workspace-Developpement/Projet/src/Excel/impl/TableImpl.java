@@ -1,10 +1,10 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.Colonne;
-import excel.ExcelPackage;
-import excel.Table;
+import Excel.Colonne;
+import Excel.ExcelPackage;
+import Excel.Table;
 
 import java.util.Collection;
 
@@ -14,8 +14,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,12 +26,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link excel.impl.TableImpl#getColonne <em>Colonne</em>}</li>
+ *   <li>{@link Excel.impl.TableImpl#getColonne <em>Colonne</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TableImpl extends MinimalEObjectImpl.Container implements Table {
+public class TableImpl extends DataImpl implements Table {
 	/**
 	 * The cached value of the '{@link #getColonne() <em>Colonne</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

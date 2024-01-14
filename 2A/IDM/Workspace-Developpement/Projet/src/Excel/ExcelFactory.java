@@ -1,15 +1,17 @@
 /**
  */
-package excel;
+package Excel;
 
 import org.eclipse.emf.ecore.EFactory;
+import Excel.impl.*;
+
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see excel.ExcelPackage
+ * @see Excel.ExcelPackage
  * @generated
  */
 public interface ExcelFactory extends EFactory {
@@ -19,7 +21,7 @@ public interface ExcelFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExcelFactory eINSTANCE = excel.impl.ExcelFactoryImpl.init();
+	ExcelFactory eINSTANCE = ExcelFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Excel</em>'.
@@ -56,15 +58,6 @@ public interface ExcelFactory extends EFactory {
 	 * @generated
 	 */
 	ColonneOutput createColonneOutput();
-
-	/**
-	 * Returns a new object of class '<em>Operations</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operations</em>'.
-	 * @generated
-	 */
-	Operations createOperations();
 
 	/**
 	 * Returns a new object of class '<em>Data</em>'.

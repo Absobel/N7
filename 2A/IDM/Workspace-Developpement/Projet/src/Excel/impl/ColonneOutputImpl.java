@@ -1,15 +1,17 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.ColonneOutput;
-import excel.ExcelPackage;
+import Excel.ColonneOutput;
+import Excel.ExcelPackage;
+import Excel.Operations;
 
-import excel.Operations;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -20,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link excel.impl.ColonneOutputImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link Excel.impl.ColonneOutputImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  *
  * @generated

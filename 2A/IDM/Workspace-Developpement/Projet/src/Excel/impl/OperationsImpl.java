@@ -1,11 +1,13 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.ExcelPackage;
-import excel.Operations;
+import Excel.ExcelPackage;
+import Excel.Operations;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +16,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class OperationsImpl extends DataImpl implements Operations {
+public abstract class OperationsImpl extends MinimalEObjectImpl.Container implements Operations {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

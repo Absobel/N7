@@ -1,6 +1,6 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
 
 import java.util.Collection;
@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link excel.Data} object.
+ * This is the item provider adapter for a {@link Excel.Data} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

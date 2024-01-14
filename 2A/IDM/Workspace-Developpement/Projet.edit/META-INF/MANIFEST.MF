@@ -5,13 +5,11 @@ Bundle-SymbolicName: Projet.edit;singleton:=true
 Automatic-Module-Name: Projet.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: excel.provider.ExcelEditPlugin$Implementation
+Bundle-Activator: Excel.provider.ExcelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: excel.provider,
- catalogue.provider,
- script.provider
+Export-Package: Excel.provider
 Require-Bundle: org.eclipse.core.runtime,
  Projet;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

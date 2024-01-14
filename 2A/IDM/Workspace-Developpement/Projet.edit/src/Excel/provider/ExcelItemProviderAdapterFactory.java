@@ -1,8 +1,8 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
-import excel.util.ExcelAdapterFactory;
+import Excel.util.ExcelAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -72,7 +72,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.Excel} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.Excel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,7 +80,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected ExcelItemProvider excelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.Excel}.
+	 * This creates an adapter for a {@link Excel.Excel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -95,7 +95,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.Table} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.Table} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,7 +103,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected TableItemProvider tableItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.Table}.
+	 * This creates an adapter for a {@link Excel.Table}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,7 +118,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.ColonneInput} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.ColonneInput} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected ColonneInputItemProvider colonneInputItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.ColonneInput}.
+	 * This creates an adapter for a {@link Excel.ColonneInput}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,7 +141,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.ColonneOutput} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.ColonneOutput} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,7 +149,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected ColonneOutputItemProvider colonneOutputItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.ColonneOutput}.
+	 * This creates an adapter for a {@link Excel.ColonneOutput}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -164,30 +164,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.Operations} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected OperationsItemProvider operationsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link excel.Operations}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createOperationsAdapter() {
-		if (operationsItemProvider == null) {
-			operationsItemProvider = new OperationsItemProvider(this);
-		}
-
-		return operationsItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link excel.Data} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.Data} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +172,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected DataItemProvider dataItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.Data}.
+	 * This creates an adapter for a {@link Excel.Data}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +187,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.OperationsBinaires} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.OperationsBinaires} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +195,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected OperationsBinairesItemProvider operationsBinairesItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.OperationsBinaires}.
+	 * This creates an adapter for a {@link Excel.OperationsBinaires}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -233,7 +210,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link excel.OperationsUnaires} instances.
+	 * This keeps track of the one adapter used for all {@link Excel.OperationsUnaires} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -241,7 +218,7 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 	protected OperationsUnairesItemProvider operationsUnairesItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link excel.OperationsUnaires}.
+	 * This creates an adapter for a {@link Excel.OperationsUnaires}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -364,7 +341,6 @@ public class ExcelItemProviderAdapterFactory extends ExcelAdapterFactory impleme
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (colonneInputItemProvider != null) colonneInputItemProvider.dispose();
 		if (colonneOutputItemProvider != null) colonneOutputItemProvider.dispose();
-		if (operationsItemProvider != null) operationsItemProvider.dispose();
 		if (dataItemProvider != null) dataItemProvider.dispose();
 		if (operationsBinairesItemProvider != null) operationsBinairesItemProvider.dispose();
 		if (operationsUnairesItemProvider != null) operationsUnairesItemProvider.dispose();

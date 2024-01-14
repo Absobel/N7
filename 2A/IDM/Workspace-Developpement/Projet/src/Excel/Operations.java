@@ -1,7 +1,8 @@
 /**
  */
-package excel;
+package Excel;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -9,9 +10,9 @@ package excel;
  * <!-- end-user-doc -->
  *
  *
- * @see excel.ExcelPackage#getOperations()
- * @model
+ * @see Excel.ExcelPackage#getOperations()
+ * @model abstract="true"
  * @generated
  */
-public interface Operations extends Data {
+public interface Operations extends EObject {
 } // Operations

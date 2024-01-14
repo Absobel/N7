@@ -1,6 +1,6 @@
 /**
  */
-package excel;
+package Excel;
 
 
 /**
@@ -12,29 +12,28 @@ package excel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link excel.ColonneOutput#getOperation <em>Operation</em>}</li>
+ *   <li>{@link Excel.ColonneOutput#getOperation <em>Operation</em>}</li>
  * </ul>
  *
- * @see excel.ExcelPackage#getColonneOutput()
+ * @see Excel.ExcelPackage#getColonneOutput()
  * @model
  * @generated
  */
 public interface ColonneOutput extends Colonne {
-
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operation</em>' containment reference.
 	 * @see #setOperation(Operations)
-	 * @see excel.ExcelPackage#getColonneOutput_Operation()
+	 * @see Excel.ExcelPackage#getColonneOutput_Operation()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Operations getOperation();
 
 	/**
-	 * Sets the value of the '{@link excel.ColonneOutput#getOperation <em>Operation</em>}' containment reference.
+	 * Sets the value of the '{@link Excel.ColonneOutput#getOperation <em>Operation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operation</em>' containment reference.
@@ -42,4 +41,5 @@ public interface ColonneOutput extends Colonne {
 	 * @generated
 	 */
 	void setOperation(Operations value);
+
 } // ColonneOutput

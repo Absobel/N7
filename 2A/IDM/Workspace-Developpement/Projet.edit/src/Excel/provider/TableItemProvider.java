@@ -1,11 +1,11 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
 
-import excel.ExcelFactory;
-import excel.ExcelPackage;
-import excel.Table;
+import Excel.ExcelFactory;
+import Excel.ExcelPackage;
+import Excel.Table;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,33 +13,18 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link excel.Table} object.
+ * This is the item provider adapter for a {@link Excel.Table} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TableItemProvider 
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class TableItemProvider extends DataItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -157,17 +142,6 @@ public class TableItemProvider
 			(createChildParameter
 				(ExcelPackage.Literals.TABLE__COLONNE,
 				 ExcelFactory.eINSTANCE.createColonneOutput()));
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ExcelEditPlugin.INSTANCE;
 	}
 
 }

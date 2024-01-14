@@ -1,8 +1,8 @@
 /**
  */
-package excel.util;
+package Excel.util;
 
-import excel.*;
+import Excel.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see excel.ExcelPackage
+ * @see Excel.ExcelPackage
  * @generated
  */
 public class ExcelSwitch<T> extends Switch<T> {
@@ -72,16 +72,17 @@ public class ExcelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ExcelPackage.TABLE: {
+				Table table = (Table)theEObject;
+				T result = caseTable(table);
+				if (result == null) result = caseData(table);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ExcelPackage.COLONNE: {
 				Colonne colonne = (Colonne)theEObject;
 				T result = caseColonne(colonne);
 				if (result == null) result = caseData(colonne);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExcelPackage.TABLE: {
-				Table table = (Table)theEObject;
-				T result = caseTable(table);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -101,13 +102,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ExcelPackage.OPERATIONS: {
-				Operations operations = (Operations)theEObject;
-				T result = caseOperations(operations);
-				if (result == null) result = caseData(operations);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExcelPackage.DATA: {
 				Data data = (Data)theEObject;
 				T result = caseData(data);
@@ -118,7 +112,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 				OperationsBinaires operationsBinaires = (OperationsBinaires)theEObject;
 				T result = caseOperationsBinaires(operationsBinaires);
 				if (result == null) result = caseOperations(operationsBinaires);
-				if (result == null) result = caseData(operationsBinaires);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -126,7 +119,12 @@ public class ExcelSwitch<T> extends Switch<T> {
 				OperationsUnaires operationsUnaires = (OperationsUnaires)theEObject;
 				T result = caseOperationsUnaires(operationsUnaires);
 				if (result == null) result = caseOperations(operationsUnaires);
-				if (result == null) result = caseData(operationsUnaires);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExcelPackage.OPERATIONS: {
+				Operations operations = (Operations)theEObject;
+				T result = caseOperations(operations);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,21 +148,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Colonne</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Colonne</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseColonne(Colonne object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -176,6 +159,21 @@ public class ExcelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTable(Table object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Colonne</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Colonne</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseColonne(Colonne object) {
 		return null;
 	}
 
@@ -206,21 +204,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseColonneOutput(ColonneOutput object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operations</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operations</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperations(Operations object) {
 		return null;
 	}
 
@@ -266,6 +249,21 @@ public class ExcelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOperationsUnaires(OperationsUnaires object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operations</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operations</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperations(Operations object) {
 		return null;
 	}
 

@@ -1,18 +1,18 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.Colonne;
-import excel.ColonneInput;
-import excel.ColonneOutput;
-import excel.Data;
-import excel.Excel;
-import excel.ExcelFactory;
-import excel.ExcelPackage;
-import excel.Operations;
-import excel.OperationsBinaires;
-import excel.OperationsUnaires;
-import excel.Table;
+import Excel.Colonne;
+import Excel.ColonneInput;
+import Excel.ColonneOutput;
+import Excel.Data;
+import Excel.Excel;
+import Excel.ExcelFactory;
+import Excel.ExcelPackage;
+import Excel.Operations;
+import Excel.OperationsBinaires;
+import Excel.OperationsUnaires;
+import Excel.Table;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -39,14 +39,14 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass colonneEClass = null;
+	private EClass tableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tableEClass = null;
+	private EClass colonneEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,13 +61,6 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	private EClass colonneOutputEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,6 +84,13 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	private EClass operationsUnairesEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass operationsEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -101,7 +101,7 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see excel.ExcelPackage#eNS_URI
+	 * @see Excel.ExcelPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -176,16 +176,6 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getColonne() {
-		return colonneEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTable() {
 		return tableEClass;
 	}
@@ -198,6 +188,16 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	@Override
 	public EReference getTable_Colonne() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getColonne() {
+		return colonneEClass;
 	}
 
 	/**
@@ -228,16 +228,6 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	@Override
 	public EReference getColonneOutput_Operation() {
 		return (EReference)colonneOutputEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getOperations() {
-		return operationsEClass;
 	}
 
 	/**
@@ -296,6 +286,16 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getOperations() {
+		return operationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ExcelFactory getExcelFactory() {
 		return (ExcelFactory)getEFactoryInstance();
 	}
@@ -322,17 +322,15 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		excelEClass = createEClass(EXCEL);
 		createEReference(excelEClass, EXCEL__TABLE);
 
-		colonneEClass = createEClass(COLONNE);
-
 		tableEClass = createEClass(TABLE);
 		createEReference(tableEClass, TABLE__COLONNE);
+
+		colonneEClass = createEClass(COLONNE);
 
 		colonneInputEClass = createEClass(COLONNE_INPUT);
 
 		colonneOutputEClass = createEClass(COLONNE_OUTPUT);
 		createEReference(colonneOutputEClass, COLONNE_OUTPUT__OPERATION);
-
-		operationsEClass = createEClass(OPERATIONS);
 
 		dataEClass = createEClass(DATA);
 
@@ -341,6 +339,8 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 
 		operationsUnairesEClass = createEClass(OPERATIONS_UNAIRES);
 		createEReference(operationsUnairesEClass, OPERATIONS_UNAIRES__DATA);
+
+		operationsEClass = createEClass(OPERATIONS);
 	}
 
 	/**
@@ -371,10 +371,10 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		tableEClass.getESuperTypes().add(this.getData());
 		colonneEClass.getESuperTypes().add(this.getData());
 		colonneInputEClass.getESuperTypes().add(this.getColonne());
 		colonneOutputEClass.getESuperTypes().add(this.getColonne());
-		operationsEClass.getESuperTypes().add(this.getData());
 		operationsBinairesEClass.getESuperTypes().add(this.getOperations());
 		operationsUnairesEClass.getESuperTypes().add(this.getOperations());
 
@@ -382,17 +382,15 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 		initEClass(excelEClass, Excel.class, "Excel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getExcel_Table(), this.getTable(), null, "table", null, 1, -1, Excel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(colonneEClass, Colonne.class, "Colonne", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTable_Colonne(), this.getColonne(), null, "colonne", null, 1, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(colonneEClass, Colonne.class, "Colonne", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(colonneInputEClass, ColonneInput.class, "ColonneInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(colonneOutputEClass, ColonneOutput.class, "ColonneOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getColonneOutput_Operation(), this.getOperations(), null, "operation", null, 1, 1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationsEClass, Operations.class, "Operations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -401,6 +399,8 @@ public class ExcelPackageImpl extends EPackageImpl implements ExcelPackage {
 
 		initEClass(operationsUnairesEClass, OperationsUnaires.class, "OperationsUnaires", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOperationsUnaires_Data(), this.getData(), null, "data", null, 1, 1, OperationsUnaires.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(operationsEClass, Operations.class, "Operations", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

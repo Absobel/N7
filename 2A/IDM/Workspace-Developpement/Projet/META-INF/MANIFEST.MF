@@ -8,15 +8,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: excel,
- excel.impl,
- excel.util,
- catalogue,
- catalogue.impl,
- catalogue.util,
- script,
- script.impl,
- script.util
+Export-Package: Excel,
+ Excel.impl,
+ Excel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

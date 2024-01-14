@@ -7,14 +7,14 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated excel -->
+      <!-- @generated Excel -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="excel.presentation.ExcelModelWizardID"
+            id="Excel.presentation.ExcelModelWizardID"
             name="%_UI_ExcelModelWizard_label"
-            class="excel.presentation.ExcelModelWizard"
+            class="Excel.presentation.ExcelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ExcelModelFile.gif">
          <description>%_UI_ExcelModelWizard_description</description>
@@ -23,69 +23,15 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated excel -->
+      <!-- @generated Excel -->
       <editor
-            id="excel.presentation.ExcelEditorID"
+            id="Excel.presentation.ExcelEditorID"
             name="%_UI_ExcelEditor_label"
             icon="icons/full/obj16/ExcelModelFile.gif"
             extensions="excel"
-            class="excel.presentation.ExcelEditor"
-            contributorClass="excel.presentation.ExcelActionBarContributor">
+            class="Excel.presentation.ExcelEditor"
+            contributorClass="Excel.presentation.ExcelActionBarContributor">
       </editor>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated catalogue -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="catalogue.presentation.CatalogueModelWizardID"
-            name="%_UI_CatalogueModelWizard_label"
-            class="catalogue.presentation.CatalogueModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/CatalogueModelFile.gif">
-         <description>%_UI_CatalogueModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated catalogue -->
-      <editor
-            id="catalogue.presentation.CatalogueEditorID"
-            name="%_UI_CatalogueEditor_label"
-            icon="icons/full/obj16/CatalogueModelFile.gif"
-            extensions="catalogue"
-            class="catalogue.presentation.CatalogueEditor"
-            contributorClass="catalogue.presentation.CatalogueActionBarContributor">
-      </editor>
-   </extension>
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated script -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="script.presentation.ScriptModelWizardID"
-            name="%_UI_ScriptModelWizard_label"
-            class="script.presentation.ScriptModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ScriptModelFile.gif">
-         <description>%_UI_ScriptModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated script -->
-      <editor
-            id="script.presentation.ScriptEditorID"
-            name="%_UI_ScriptEditor_label"
-            icon="icons/full/obj16/ScriptModelFile.gif"
-            extensions="script"
-            class="script.presentation.ScriptEditor"
-            contributorClass="script.presentation.ScriptActionBarContributor">
-      </editor>
-   </extension>
 </plugin>

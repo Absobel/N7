@@ -7,27 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated excel -->
+      <!-- @generated Excel -->
       <package
-            uri="https://excel.ecore"
-            class="excel.ExcelPackage"
-            genModel="models/excel.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated catalogue -->
-      <package
-            uri="https://catalogue.ecore"
-            class="catalogue.CataloguePackage"
-            genModel="models/catalogue.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated script -->
-      <package
-            uri="https://script.ecore"
-            class="script.ScriptPackage"
-            genModel="models/script.genmodel"/>
+            uri="https://Excel.ecore"
+            class="Excel.ExcelPackage"
+            genModel="models/Excel.genmodel"/>
    </extension>
 
 </plugin>

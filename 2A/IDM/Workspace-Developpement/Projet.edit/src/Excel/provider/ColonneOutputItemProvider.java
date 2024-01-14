@@ -1,11 +1,12 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
 
-import excel.ColonneOutput;
-import excel.ExcelFactory;
-import excel.ExcelPackage;
+import Excel.ColonneOutput;
+import Excel.ExcelFactory;
+import Excel.ExcelPackage;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -13,11 +14,12 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link excel.ColonneOutput} object.
+ * This is the item provider adapter for a {@link Excel.ColonneOutput} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -130,11 +132,6 @@ public class ColonneOutputItemProvider extends ColonneItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATION,
-				 ExcelFactory.eINSTANCE.createOperations()));
 
 		newChildDescriptors.add
 			(createChildParameter

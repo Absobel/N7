@@ -1,10 +1,10 @@
 /**
  */
-package excel.impl;
+package Excel.impl;
 
-import excel.Data;
-import excel.ExcelPackage;
-import excel.OperationsBinaires;
+import Excel.Data;
+import Excel.ExcelPackage;
+import Excel.OperationsBinaires;
 
 import java.util.Collection;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link excel.impl.OperationsBinairesImpl#getData <em>Data</em>}</li>
+ *   <li>{@link Excel.impl.OperationsBinairesImpl#getData <em>Data</em>}</li>
  * </ul>
  *
  * @generated

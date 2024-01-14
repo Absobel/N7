@@ -1,9 +1,9 @@
 /**
  */
-package excel.provider;
+package Excel.provider;
 
 
-import excel.ExcelPackage;
+import Excel.ExcelPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -15,7 +15,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link excel.OperationsUnaires} object.
+ * This is the item provider adapter for a {@link Excel.OperationsUnaires} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
