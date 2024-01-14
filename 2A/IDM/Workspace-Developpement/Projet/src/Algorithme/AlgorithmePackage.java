@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import Algorithme.impl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +55,7 @@ public interface AlgorithmePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AlgorithmePackage eINSTANCE = Algorithme.impl.AlgorithmePackageImpl.init();
+	AlgorithmePackage eINSTANCE = AlgorithmePackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link Algorithme.impl.CatalogueImpl <em>Catalogue</em>}' class.

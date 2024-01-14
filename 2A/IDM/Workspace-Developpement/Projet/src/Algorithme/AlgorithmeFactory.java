@@ -3,6 +3,7 @@
 package Algorithme;
 
 import org.eclipse.emf.ecore.EFactory;
+import Algorithme.impl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,7 +20,7 @@ public interface AlgorithmeFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AlgorithmeFactory eINSTANCE = Algorithme.impl.AlgorithmeFactoryImpl.init();
+	AlgorithmeFactory eINSTANCE = AlgorithmeFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Catalogue</em>'.

@@ -13,7 +13,10 @@ Export-Package: Excel,
  Excel.util,
  Algorithme,
  Algorithme.impl,
- Algorithme.util
+ Algorithme.util,
+ Script,
+ Script.impl,
+ Script.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy
