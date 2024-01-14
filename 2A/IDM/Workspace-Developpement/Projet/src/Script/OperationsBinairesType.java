@@ -177,8 +177,7 @@ public enum OperationsBinairesType implements Enumerator {
 	 * @generated
 	 */
 	public static OperationsBinairesType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			OperationsBinairesType result = VALUES_ARRAY[i];
+		for (OperationsBinairesType result : VALUES_ARRAY) {
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -195,8 +194,7 @@ public enum OperationsBinairesType implements Enumerator {
 	 * @generated
 	 */
 	public static OperationsBinairesType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			OperationsBinairesType result = VALUES_ARRAY[i];
+		for (OperationsBinairesType result : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -297,5 +295,5 @@ public enum OperationsBinairesType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //OperationsBinairesType

@@ -1,0 +1,18 @@
+/**
+ */
+package Excelbis;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Data</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see Excelbis.ExcelbisPackage#getData()
+ * @model
+ * @generated
+ */
+public interface Data extends EObject {
+} // Data

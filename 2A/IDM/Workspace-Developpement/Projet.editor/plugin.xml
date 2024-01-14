@@ -35,57 +35,30 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated Script -->
+      <!-- @generated Excelbis -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="Script.presentation.ScriptModelWizardID"
-            name="%_UI_ScriptModelWizard_label"
-            class="Script.presentation.ScriptModelWizard"
+            id="Excelbis.presentation.ExcelbisModelWizardID"
+            name="%_UI_ExcelbisModelWizard_label"
+            class="Excelbis.presentation.ExcelbisModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ScriptModelFile.gif">
-         <description>%_UI_ScriptModelWizard_description</description>
+            icon="icons/full/obj16/ExcelbisModelFile.gif">
+         <description>%_UI_ExcelbisModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated Script -->
+      <!-- @generated Excelbis -->
       <editor
-            id="Script.presentation.ScriptEditorID"
-            name="%_UI_ScriptEditor_label"
-            icon="icons/full/obj16/ScriptModelFile.gif"
-            extensions="script"
-            class="Script.presentation.ScriptEditor"
-            contributorClass="Script.presentation.ScriptActionBarContributor">
-      </editor>
-   </extension>
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated Algorithme -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="Algorithme.presentation.AlgorithmeModelWizardID"
-            name="%_UI_AlgorithmeModelWizard_label"
-            class="Algorithme.presentation.AlgorithmeModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif">
-         <description>%_UI_AlgorithmeModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated Algorithme -->
-      <editor
-            id="Algorithme.presentation.AlgorithmeEditorID"
-            name="%_UI_AlgorithmeEditor_label"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif"
-            extensions="algorithme"
-            class="Algorithme.presentation.AlgorithmeEditor"
-            contributorClass="Algorithme.presentation.AlgorithmeActionBarContributor">
+            id="Excelbis.presentation.ExcelbisEditorID"
+            name="%_UI_ExcelbisEditor_label"
+            icon="icons/full/obj16/ExcelbisModelFile.gif"
+            extensions="excelbis"
+            class="Excelbis.presentation.ExcelbisEditor"
+            contributorClass="Excelbis.presentation.ExcelbisActionBarContributor">
       </editor>
    </extension>
 </plugin>

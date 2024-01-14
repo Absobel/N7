@@ -3,7 +3,8 @@
 package Excel;
 
 import org.eclipse.emf.ecore.EFactory;
-import Excel.impl.*;
+
+import Excel.impl.ExcelFactoryImpl;
 
 
 /**

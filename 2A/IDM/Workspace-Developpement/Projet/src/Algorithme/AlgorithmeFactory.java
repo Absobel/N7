@@ -3,7 +3,8 @@
 package Algorithme;
 
 import org.eclipse.emf.ecore.EFactory;
-import Algorithme.impl.*;
+
+import Algorithme.impl.AlgorithmeFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->

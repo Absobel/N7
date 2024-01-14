@@ -30,4 +30,20 @@
             genModel="models/Script.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated My -->
+      <package
+            uri="https://Bonjour.ecore"
+            class="Bonjour.BonjourPackage"
+            genModel="models/My.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Excelbis -->
+      <package
+            uri="https://Excelbis.ecore"
+            class="Excelbis.ExcelbisPackage"
+            genModel="models/Excelbis.genmodel"/>
+   </extension>
+
 </plugin>

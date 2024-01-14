@@ -2,15 +2,13 @@
  */
 package Script.impl;
 
-import Script.Data;
-import Script.ScriptPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import Script.Data;
+import Script.ScriptPackage;
 
 /**
  * <!-- begin-user-doc -->

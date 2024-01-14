@@ -2,17 +2,15 @@
  */
 package Excel.impl;
 
-import Excel.Data;
-import Excel.ExcelPackage;
-import Excel.OperationsBinaires;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import Excel.Data;
+import Excel.ExcelPackage;
+import Excel.OperationsBinaires;
 
 /**
  * <!-- begin-user-doc -->

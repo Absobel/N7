@@ -2,14 +2,20 @@
  */
 package Algorithme.util;
 
-import Algorithme.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Algorithme.Algorithme;
+import Algorithme.AlgorithmeElement;
+import Algorithme.AlgorithmePackage;
+import Algorithme.Catalogue;
+import Algorithme.Comment;
+import Algorithme.Data;
+import Algorithme.Ressource;
+import Algorithme.Stdin;
+import Algorithme.Stout;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +72,7 @@ public class AlgorithmeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected AlgorithmeSwitch<Adapter> modelSwitch =
-		new AlgorithmeSwitch<Adapter>() {
+		new AlgorithmeSwitch<>() {
 			@Override
 			public Adapter caseCatalogue(Catalogue object) {
 				return createCatalogueAdapter();

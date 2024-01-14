@@ -2,6 +2,12 @@
  */
 package Algorithme.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import Algorithme.Algorithme;
 import Algorithme.AlgorithmeElement;
 import Algorithme.AlgorithmeFactory;
@@ -12,13 +18,6 @@ import Algorithme.Data;
 import Algorithme.Ressource;
 import Algorithme.Stdin;
 import Algorithme.Stout;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

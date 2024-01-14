@@ -16,7 +16,13 @@ Export-Package: Excel,
  Algorithme.util,
  Script,
  Script.impl,
- Script.util
+ Script.util,
+ Bonjour,
+ Bonjour.impl,
+ Bonjour.util,
+ Excelbis,
+ Excelbis.impl,
+ Excelbis.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

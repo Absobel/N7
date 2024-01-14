@@ -2,16 +2,22 @@
  */
 package Script.impl;
 
-import Script.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import Script.Binaire;
+import Script.Blocs;
+import Script.Data;
+import Script.FonctionsType;
+import Script.OperationsBinairesType;
+import Script.Script;
+import Script.ScriptFactory;
+import Script.ScriptPackage;
+import Script.Unaire;
 
 /**
  * <!-- begin-user-doc -->

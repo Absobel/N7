@@ -2,6 +2,11 @@
  */
 package Excel.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import Excel.Colonne;
 import Excel.ColonneInput;
 import Excel.ColonneOutput;
@@ -13,12 +18,6 @@ import Excel.Operations;
 import Excel.OperationsBinaires;
 import Excel.OperationsUnaires;
 import Excel.Table;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

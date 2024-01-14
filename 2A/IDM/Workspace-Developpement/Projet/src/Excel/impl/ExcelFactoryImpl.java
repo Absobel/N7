@@ -2,15 +2,21 @@
  */
 package Excel.impl;
 
-import Excel.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import Excel.ColonneInput;
+import Excel.ColonneOutput;
+import Excel.Data;
+import Excel.Excel;
+import Excel.ExcelFactory;
+import Excel.ExcelPackage;
+import Excel.OperationsBinaires;
+import Excel.OperationsUnaires;
+import Excel.Table;
 
 /**
  * <!-- begin-user-doc -->

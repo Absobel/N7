@@ -2,12 +2,17 @@
  */
 package Script.util;
 
-import Script.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import Script.Binaire;
+import Script.Blocs;
+import Script.Data;
+import Script.Operations;
+import Script.Script;
+import Script.ScriptPackage;
+import Script.Unaire;
 
 /**
  * <!-- begin-user-doc -->

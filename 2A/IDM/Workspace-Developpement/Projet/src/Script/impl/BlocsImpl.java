@@ -2,27 +2,23 @@
  */
 package Script.impl;
 
-import Script.Blocs;
-import Script.Data;
-import Script.Operations;
-import Script.ScriptPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import Script.Blocs;
+import Script.Data;
+import Script.Operations;
+import Script.ScriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,7 +138,7 @@ public class BlocsImpl extends MinimalEObjectImpl.Container implements Blocs {
 	@Override
 	public EList<Data> getOutput() {
 		if (output == null) {
-			output = new EObjectContainmentEList<Data>(Data.class, this, ScriptPackage.BLOCS__OUTPUT);
+			output = new EObjectContainmentEList<>(Data.class, this, ScriptPackage.BLOCS__OUTPUT);
 		}
 		return output;
 	}
@@ -155,7 +151,7 @@ public class BlocsImpl extends MinimalEObjectImpl.Container implements Blocs {
 	@Override
 	public EList<Data> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectResolvingEList<Data>(Data.class, this, ScriptPackage.BLOCS__INPUTS);
+			inputs = new EObjectResolvingEList<>(Data.class, this, ScriptPackage.BLOCS__INPUTS);
 		}
 		return inputs;
 	}

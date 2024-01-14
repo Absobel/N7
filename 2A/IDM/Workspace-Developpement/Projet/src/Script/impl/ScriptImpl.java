@@ -2,27 +2,23 @@
  */
 package Script.impl;
 
-import Script.Blocs;
-import Script.Data;
-import Script.Script;
-import Script.ScriptPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import Script.Blocs;
+import Script.Data;
+import Script.Script;
+import Script.ScriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -141,7 +137,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public EList<Blocs> getBlocs() {
 		if (blocs == null) {
-			blocs = new EObjectContainmentEList<Blocs>(Blocs.class, this, ScriptPackage.SCRIPT__BLOCS);
+			blocs = new EObjectContainmentEList<>(Blocs.class, this, ScriptPackage.SCRIPT__BLOCS);
 		}
 		return blocs;
 	}
@@ -154,7 +150,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public EList<Data> getFinalOutput() {
 		if (finalOutput == null) {
-			finalOutput = new EObjectResolvingEList<Data>(Data.class, this, ScriptPackage.SCRIPT__FINAL_OUTPUT);
+			finalOutput = new EObjectResolvingEList<>(Data.class, this, ScriptPackage.SCRIPT__FINAL_OUTPUT);
 		}
 		return finalOutput;
 	}
@@ -167,7 +163,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public EList<Data> getInitialInput() {
 		if (initialInput == null) {
-			initialInput = new EObjectContainmentEList<Data>(Data.class, this, ScriptPackage.SCRIPT__INITIAL_INPUT);
+			initialInput = new EObjectContainmentEList<>(Data.class, this, ScriptPackage.SCRIPT__INITIAL_INPUT);
 		}
 		return initialInput;
 	}

@@ -3,11 +3,12 @@
 package Script;
 
 import org.eclipse.emf.ecore.EAttribute;
-import Script.impl.*;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import Script.impl.ScriptPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,7 +3,8 @@
 package Script;
 
 import org.eclipse.emf.ecore.EFactory;
-import Script.impl.*;
+
+import Script.impl.ScriptFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,9 +3,10 @@
 package Excel;
 
 import org.eclipse.emf.ecore.EClass;
-import Excel.impl.*;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import Excel.impl.ExcelPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

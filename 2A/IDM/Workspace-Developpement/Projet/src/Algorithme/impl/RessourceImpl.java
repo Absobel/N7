@@ -2,22 +2,18 @@
  */
 package Algorithme.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import Algorithme.AlgorithmePackage;
 import Algorithme.Ressource;
 import Algorithme.Stdin;
 import Algorithme.Stout;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,7 +98,7 @@ public class RessourceImpl extends AlgorithmeElementImpl implements Ressource {
 	@Override
 	public EList<Stout> getStout() {
 		if (stout == null) {
-			stout = new EObjectResolvingEList<Stout>(Stout.class, this, AlgorithmePackage.RESSOURCE__STOUT);
+			stout = new EObjectResolvingEList<>(Stout.class, this, AlgorithmePackage.RESSOURCE__STOUT);
 		}
 		return stout;
 	}
@@ -115,7 +111,7 @@ public class RessourceImpl extends AlgorithmeElementImpl implements Ressource {
 	@Override
 	public EList<Stdin> getStdin() {
 		if (stdin == null) {
-			stdin = new EObjectResolvingEList<Stdin>(Stdin.class, this, AlgorithmePackage.RESSOURCE__STDIN);
+			stdin = new EObjectResolvingEList<>(Stdin.class, this, AlgorithmePackage.RESSOURCE__STDIN);
 		}
 		return stdin;
 	}

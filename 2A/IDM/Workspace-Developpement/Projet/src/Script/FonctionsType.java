@@ -199,8 +199,7 @@ public enum FonctionsType implements Enumerator {
 	 * @generated
 	 */
 	public static FonctionsType get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			FonctionsType result = VALUES_ARRAY[i];
+		for (FonctionsType result : VALUES_ARRAY) {
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -217,8 +216,7 @@ public enum FonctionsType implements Enumerator {
 	 * @generated
 	 */
 	public static FonctionsType getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			FonctionsType result = VALUES_ARRAY[i];
+		for (FonctionsType result : VALUES_ARRAY) {
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -320,5 +318,5 @@ public enum FonctionsType implements Enumerator {
 	public String toString() {
 		return literal;
 	}
-	
+
 } //FonctionsType

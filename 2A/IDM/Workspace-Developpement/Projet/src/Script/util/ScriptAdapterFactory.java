@@ -2,14 +2,18 @@
  */
 package Script.util;
 
-import Script.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Script.Binaire;
+import Script.Blocs;
+import Script.Data;
+import Script.Operations;
+import Script.Script;
+import Script.ScriptPackage;
+import Script.Unaire;
 
 /**
  * <!-- begin-user-doc -->
@@ -66,7 +70,7 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	protected ScriptSwitch<Adapter> modelSwitch =
-		new ScriptSwitch<Adapter>() {
+		new ScriptSwitch<>() {
 			@Override
 			public Adapter caseData(Data object) {
 				return createDataAdapter();

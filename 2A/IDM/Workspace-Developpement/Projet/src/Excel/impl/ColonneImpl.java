@@ -2,10 +2,10 @@
  */
 package Excel.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import Excel.Colonne;
 import Excel.ExcelPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,12 +2,19 @@
  */
 package Algorithme.util;
 
-import Algorithme.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import Algorithme.Algorithme;
+import Algorithme.AlgorithmeElement;
+import Algorithme.AlgorithmePackage;
+import Algorithme.Catalogue;
+import Algorithme.Comment;
+import Algorithme.Data;
+import Algorithme.Ressource;
+import Algorithme.Stdin;
+import Algorithme.Stout;
 
 /**
  * <!-- begin-user-doc -->

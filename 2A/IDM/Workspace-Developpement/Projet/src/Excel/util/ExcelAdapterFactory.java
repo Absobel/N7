@@ -2,14 +2,21 @@
  */
 package Excel.util;
 
-import Excel.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import Excel.Colonne;
+import Excel.ColonneInput;
+import Excel.ColonneOutput;
+import Excel.Data;
+import Excel.Excel;
+import Excel.ExcelPackage;
+import Excel.Operations;
+import Excel.OperationsBinaires;
+import Excel.OperationsUnaires;
+import Excel.Table;
 
 /**
  * <!-- begin-user-doc -->

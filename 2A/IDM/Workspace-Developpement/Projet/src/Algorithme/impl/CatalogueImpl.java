@@ -2,22 +2,18 @@
  */
 package Algorithme.impl;
 
-import Algorithme.AlgorithmeElement;
-import Algorithme.AlgorithmePackage;
-import Algorithme.Catalogue;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import Algorithme.AlgorithmeElement;
+import Algorithme.AlgorithmePackage;
+import Algorithme.Catalogue;
 
 /**
  * <!-- begin-user-doc -->
@@ -91,7 +87,7 @@ public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catal
 	@Override
 	public EList<AlgorithmeElement> getAlgorithmes() {
 		if (algorithmes == null) {
-			algorithmes = new EObjectResolvingEList<AlgorithmeElement>(AlgorithmeElement.class, this, AlgorithmePackage.CATALOGUE__ALGORITHMES);
+			algorithmes = new EObjectResolvingEList<>(AlgorithmeElement.class, this, AlgorithmePackage.CATALOGUE__ALGORITHMES);
 		}
 		return algorithmes;
 	}

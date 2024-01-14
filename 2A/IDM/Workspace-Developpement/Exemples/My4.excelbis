@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Excelbis.ecore:Excel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Excelbis.ecore="https://Excelbis.ecore">
+  <table>
+    <colonne xsi:type="Excelbis.ecore:ColonneOutput">
+      <operations xsi:type="Excelbis.ecore:OperationsUnaires"/>
+    </colonne>
+  </table>
+  <table>
+    <colonne xsi:type="Excelbis.ecore:ColonneOutput">
+      <operations xsi:type="Excelbis.ecore:OperationsUnaires"/>
+    </colonne>
+    <colonne xsi:type="Excelbis.ecore:ColonneOutput"/>
+    <colonne xsi:type="Excelbis.ecore:ColonneInput"/>
+    <colonne xsi:type="Excelbis.ecore:ColonneOutput"/>
+    <colonne xsi:type="Excelbis.ecore:ColonneInput"/>
+  </table>
+  <table/>
+</Excelbis.ecore:Excel>
