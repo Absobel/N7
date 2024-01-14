@@ -5,7 +5,7 @@ Bundle-SymbolicName: Projet.edit;singleton:=true
 Automatic-Module-Name: Projet.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: script.provider.ScriptEditPlugin$Implementation
+Bundle-Activator: excel.provider.ExcelEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
