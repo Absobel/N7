@@ -19,28 +19,58 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import script.Blocs;
 import script.Data;
+import script.Script;
 import script.ScriptPackage;
-import script.blocs;
-import script.script;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>script</b></em>'.
+ * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.scriptImpl#getName <em>Name</em>}</li>
- *   <li>{@link script.impl.scriptImpl#getBlocs <em>Blocs</em>}</li>
- *   <li>{@link script.impl.scriptImpl#getInitialInput <em>Initial Input</em>}</li>
- *   <li>{@link script.impl.scriptImpl#getFinalOutput <em>Final Output</em>}</li>
+ *   <li>{@link script.impl.ScriptImpl#getBlocs <em>Blocs</em>}</li>
+ *   <li>{@link script.impl.ScriptImpl#getNitialInput <em>Nitial Input</em>}</li>
+ *   <li>{@link script.impl.ScriptImpl#getFinalOutput <em>Final Output</em>}</li>
+ *   <li>{@link script.impl.ScriptImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class scriptImpl extends MinimalEObjectImpl.Container implements script {
+public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
+	/**
+	 * The cached value of the '{@link #getBlocs() <em>Blocs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBlocs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Blocs> blocs;
+
+	/**
+	 * The cached value of the '{@link #getNitialInput() <em>Nitial Input</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNitialInput()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Data> nitialInput;
+
+	/**
+	 * The cached value of the '{@link #getFinalOutput() <em>Final Output</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFinalOutput()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Data> finalOutput;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -62,41 +92,11 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBlocs() <em>Blocs</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBlocs()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<blocs> blocs;
-
-	/**
-	 * The cached value of the '{@link #getInitialInput() <em>Initial Input</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInitialInput()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> initialInput;
-
-	/**
-	 * The cached value of the '{@link #getFinalOutput() <em>Final Output</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFinalOutput()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Data> finalOutput;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected scriptImpl() {
+	protected ScriptImpl() {
 		super();
 	}
 
@@ -108,6 +108,45 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	@Override
 	protected EClass eStaticClass() {
 		return ScriptPackage.Literals.SCRIPT;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Blocs> getBlocs() {
+		if (blocs == null) {
+			blocs = new EObjectContainmentEList<Blocs>(Blocs.class, this, ScriptPackage.SCRIPT__BLOCS);
+		}
+		return blocs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getNitialInput() {
+		if (nitialInput == null) {
+			nitialInput = new EObjectContainmentEList<Data>(Data.class, this, ScriptPackage.SCRIPT__NITIAL_INPUT);
+		}
+		return nitialInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Data> getFinalOutput() {
+		if (finalOutput == null) {
+			finalOutput = new EObjectResolvingEList<Data>(Data.class, this, ScriptPackage.SCRIPT__FINAL_OUTPUT);
+		}
+		return finalOutput;
 	}
 
 	/**
@@ -139,51 +178,12 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	 * @generated
 	 */
 	@Override
-	public EList<blocs> getBlocs() {
-		if (blocs == null) {
-			blocs = new EObjectContainmentEList<blocs>(blocs.class, this, ScriptPackage.SCRIPT__BLOCS);
-		}
-		return blocs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Data> getInitialInput() {
-		if (initialInput == null) {
-			initialInput = new EObjectContainmentEList<Data>(Data.class, this, ScriptPackage.SCRIPT__INITIAL_INPUT);
-		}
-		return initialInput;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Data> getFinalOutput() {
-		if (finalOutput == null) {
-			finalOutput = new EObjectResolvingEList<Data>(Data.class, this, ScriptPackage.SCRIPT__FINAL_OUTPUT);
-		}
-		return finalOutput;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ScriptPackage.SCRIPT__BLOCS:
 				return ((InternalEList<?>)getBlocs()).basicRemove(otherEnd, msgs);
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
-				return ((InternalEList<?>)getInitialInput()).basicRemove(otherEnd, msgs);
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
+				return ((InternalEList<?>)getNitialInput()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -196,14 +196,14 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__NAME:
-				return getName();
 			case ScriptPackage.SCRIPT__BLOCS:
 				return getBlocs();
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
-				return getInitialInput();
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
+				return getNitialInput();
 			case ScriptPackage.SCRIPT__FINAL_OUTPUT:
 				return getFinalOutput();
+			case ScriptPackage.SCRIPT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,20 +217,20 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__NAME:
-				setName((String)newValue);
-				return;
 			case ScriptPackage.SCRIPT__BLOCS:
 				getBlocs().clear();
-				getBlocs().addAll((Collection<? extends blocs>)newValue);
+				getBlocs().addAll((Collection<? extends Blocs>)newValue);
 				return;
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
-				getInitialInput().clear();
-				getInitialInput().addAll((Collection<? extends Data>)newValue);
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
+				getNitialInput().clear();
+				getNitialInput().addAll((Collection<? extends Data>)newValue);
 				return;
 			case ScriptPackage.SCRIPT__FINAL_OUTPUT:
 				getFinalOutput().clear();
 				getFinalOutput().addAll((Collection<? extends Data>)newValue);
+				return;
+			case ScriptPackage.SCRIPT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,17 +244,17 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case ScriptPackage.SCRIPT__BLOCS:
 				getBlocs().clear();
 				return;
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
-				getInitialInput().clear();
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
+				getNitialInput().clear();
 				return;
 			case ScriptPackage.SCRIPT__FINAL_OUTPUT:
 				getFinalOutput().clear();
+				return;
+			case ScriptPackage.SCRIPT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -268,14 +268,14 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ScriptPackage.SCRIPT__BLOCS:
 				return blocs != null && !blocs.isEmpty();
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
-				return initialInput != null && !initialInput.isEmpty();
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
+				return nitialInput != null && !nitialInput.isEmpty();
 			case ScriptPackage.SCRIPT__FINAL_OUTPUT:
 				return finalOutput != null && !finalOutput.isEmpty();
+			case ScriptPackage.SCRIPT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -290,10 +290,10 @@ public class scriptImpl extends MinimalEObjectImpl.Container implements script {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //scriptImpl
+} //ScriptImpl

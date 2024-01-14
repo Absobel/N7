@@ -5,44 +5,44 @@
     complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>script.ecore</foreignModel>
   <genPackages prefix="Script" disposableProviderFactory="true" ecorePackage="script.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="script.ecore#//OperationsBinaires">
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/ADD"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/SUB"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/TIM"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/DIV"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/MIN"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationsBinaires/MAX"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="script.ecore#//FonctionType">
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/OPP"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/INV"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/SQR"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//FonctionType/LOG"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="script.ecore#//Fonctions">
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/OPP"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/INV"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/COS"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/SIN"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/SQR"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/EXP"/>
-      <genEnumLiterals ecoreEnumLiteral="script.ecore#//Fonctions/LOG"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="script.ecore#//OperationBinaireType">
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/SUB"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/TIM"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="script.ecore#//OperationBinaireType/MAX"/>
     </genEnums>
-    <genClasses ecoreClass="script.ecore#//script">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//script/Name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//script/blocs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//script/initialInput"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//script/finalOutput"/>
-    </genClasses>
-    <genClasses ecoreClass="script.ecore#//blocs">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//blocs/inputs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//blocs/outputs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//blocs/operation"/>
-    </genClasses>
-    <genClasses ecoreClass="script.ecore#//Operations"/>
-    <genClasses ecoreClass="script.ecore#//Unaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Unaire/Fonctions"/>
-    </genClasses>
-    <genClasses ecoreClass="script.ecore#//Binaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Binaire/operateur"/>
+    <genClasses ecoreClass="script.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/blocs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/nitialInput"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Script/finalOutput"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Script/name"/>
     </genClasses>
     <genClasses ecoreClass="script.ecore#//Data">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Data/Name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Data/Type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Data/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Data/type"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Blocs">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Blocs/output"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Blocs/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Blocs/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Operations"/>
+    <genClasses ecoreClass="script.ecore#//OperationUnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationUnaire/fonction"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//OperationBinaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationBinaire/operateur"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

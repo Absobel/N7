@@ -1,6 +1,6 @@
 /**
  */
-package Excel.presentation;
+package excel.presentation;
 
 import org.eclipse.emf.common.EMFPlugin;
 

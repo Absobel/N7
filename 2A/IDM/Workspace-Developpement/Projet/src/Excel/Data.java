@@ -1,6 +1,6 @@
 /**
  */
-package Excel;
+package excel;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EObject;
  * <!-- end-user-doc -->
  *
  *
- * @see Excel.ExcelPackage#getData()
+ * @see excel.ExcelPackage#getData()
  * @model
  * @generated
  */

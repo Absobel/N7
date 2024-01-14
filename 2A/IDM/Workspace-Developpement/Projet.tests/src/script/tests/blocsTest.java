@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
+import script.Blocs;
 import script.ScriptFactory;
-import script.blocs;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>blocs</b></em>'.
+ * A test case for the model object '<em><b>Blocs</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class blocsTest extends TestCase {
+public class BlocsTest extends TestCase {
 
 	/**
-	 * The fixture for this blocs test case.
+	 * The fixture for this Blocs test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected blocs fixture = null;
+	protected Blocs fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class blocsTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(blocsTest.class);
+		TestRunner.run(BlocsTest.class);
 	}
 
 	/**
-	 * Constructs a new blocs test case with the given name.
+	 * Constructs a new Blocs test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public blocsTest(String name) {
+	public BlocsTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this blocs test case.
+	 * Sets the fixture for this Blocs test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(blocs fixture) {
+	protected void setFixture(Blocs fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this blocs test case.
+	 * Returns the fixture for this Blocs test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected blocs getFixture() {
+	protected Blocs getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class blocsTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ScriptFactory.eINSTANCE.createblocs());
+		setFixture(ScriptFactory.eINSTANCE.createBlocs());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class blocsTest extends TestCase {
 		setFixture(null);
 	}
 
-} //blocsTest
+} //BlocsTest

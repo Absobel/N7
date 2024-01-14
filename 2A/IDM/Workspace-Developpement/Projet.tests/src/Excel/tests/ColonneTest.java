@@ -1,8 +1,8 @@
 /**
  */
-package Excel.tests;
+package excel.tests;
 
-import Excel.Colonne;
+import excel.Colonne;
 
 /**
  * <!-- begin-user-doc -->

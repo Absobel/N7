@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel.ecore:Excel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:excel.ecore="https://excel.ecore">
+  <table>
+    <colonne xsi:type="excel.ecore:ColonneInput"/>
+    <colonne xsi:type="excel.ecore:ColonneOutput">
+      <operation xsi:type="excel.ecore:OperationsUnaires"/>
+    </colonne>
+    <colonne xsi:type="excel.ecore:ColonneOutput">
+      <operation xsi:type="excel.ecore:OperationsBinaires"/>
+    </colonne>
+  </table>
+</excel.ecore:Excel>

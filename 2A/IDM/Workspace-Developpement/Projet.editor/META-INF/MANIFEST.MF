@@ -9,8 +9,8 @@ Bundle-Activator: script.presentation.ScriptEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: Excel.presentation,
- algorithme.presentation,
+Export-Package: excel.presentation,
+ catalogue.presentation,
  script.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,

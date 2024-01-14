@@ -24,17 +24,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import script.Script;
 import script.ScriptFactory;
 import script.ScriptPackage;
-import script.script;
 
 /**
- * This is the item provider adapter for a {@link script.script} object.
+ * This is the item provider adapter for a {@link script.Script} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class scriptItemProvider 
+public class ScriptItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +48,7 @@ public class scriptItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public scriptItemProvider(AdapterFactory adapterFactory) {
+	public ScriptItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,32 +63,10 @@ public class scriptItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addFinalOutputPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_script_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_script_Name_feature", "_UI_script_type"),
-				 ScriptPackage.Literals.SCRIPT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -102,13 +80,35 @@ public class scriptItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_script_finalOutput_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_script_finalOutput_feature", "_UI_script_type"),
+				 getString("_UI_Script_finalOutput_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Script_finalOutput_feature", "_UI_Script_type"),
 				 ScriptPackage.Literals.SCRIPT__FINAL_OUTPUT,
 				 true,
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Script_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Script_name_feature", "_UI_Script_type"),
+				 ScriptPackage.Literals.SCRIPT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -126,7 +126,7 @@ public class scriptItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__BLOCS);
-			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__INITIAL_INPUT);
+			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__NITIAL_INPUT);
 		}
 		return childrenFeatures;
 	}
@@ -145,14 +145,14 @@ public class scriptItemProvider
 	}
 
 	/**
-	 * This returns script.gif.
+	 * This returns Script.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/script"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Script"));
 	}
 
 	/**
@@ -163,10 +163,10 @@ public class scriptItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((script)object).getName();
+		String label = ((Script)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_script_type") :
-			getString("_UI_script_type") + " " + label;
+			getString("_UI_Script_type") :
+			getString("_UI_Script_type") + " " + label;
 	}
 
 
@@ -181,12 +181,12 @@ public class scriptItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(script.class)) {
+		switch (notification.getFeatureID(Script.class)) {
 			case ScriptPackage.SCRIPT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case ScriptPackage.SCRIPT__BLOCS:
-			case ScriptPackage.SCRIPT__INITIAL_INPUT:
+			case ScriptPackage.SCRIPT__NITIAL_INPUT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -207,11 +207,11 @@ public class scriptItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ScriptPackage.Literals.SCRIPT__BLOCS,
-				 ScriptFactory.eINSTANCE.createblocs()));
+				 ScriptFactory.eINSTANCE.createBlocs()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ScriptPackage.Literals.SCRIPT__INITIAL_INPUT,
+				(ScriptPackage.Literals.SCRIPT__NITIAL_INPUT,
 				 ScriptFactory.eINSTANCE.createData()));
 	}
 

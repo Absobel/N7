@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import script.impl.*;
 /**
  * <!-- begin-user-doc -->
  * The <b>Package</b> for the model.
@@ -40,7 +39,7 @@ public interface ScriptPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/script";
+	String eNS_URI = "https://script.ecore";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +47,7 @@ public interface ScriptPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "script";
+	String eNS_PREFIX = "script.ecore";
 
 	/**
 	 * The singleton instance of the package.
@@ -56,26 +55,17 @@ public interface ScriptPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ScriptPackage eINSTANCE = ScriptPackageImpl.init();
+	ScriptPackage eINSTANCE = script.impl.ScriptPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link script.impl.scriptImpl <em>script</em>}' class.
+	 * The meta object id for the '{@link script.impl.ScriptImpl <em>Script</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see script.impl.scriptImpl
-	 * @see script.impl.ScriptPackageImpl#getscript()
+	 * @see script.impl.ScriptImpl
+	 * @see script.impl.ScriptPackageImpl#getScript()
 	 * @generated
 	 */
 	int SCRIPT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Blocs</b></em>' containment reference list.
@@ -84,16 +74,16 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__BLOCS = 1;
+	int SCRIPT__BLOCS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Initial Input</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Nitial Input</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__INITIAL_INPUT = 2;
+	int SCRIPT__NITIAL_INPUT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Final Output</b></em>' reference list.
@@ -102,10 +92,19 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__FINAL_OUTPUT = 3;
+	int SCRIPT__FINAL_OUTPUT = 2;
 
 	/**
-	 * The number of structural features of the '<em>script</em>' class.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__NAME = 3;
+
+	/**
+	 * The number of structural features of the '<em>Script</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,170 +113,13 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>script</em>' class.
+	 * The number of operations of the '<em>Script</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int SCRIPT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link script.impl.blocsImpl <em>blocs</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.blocsImpl
-	 * @see script.impl.ScriptPackageImpl#getblocs()
-	 * @generated
-	 */
-	int BLOCS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCS__INPUTS = 0;
-
-	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCS__OUTPUTS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Operation</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCS__OPERATION = 2;
-
-	/**
-	 * The number of structural features of the '<em>blocs</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCS_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>blocs</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCS_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link script.impl.OperationsImpl <em>Operations</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.OperationsImpl
-	 * @see script.impl.ScriptPackageImpl#getOperations()
-	 * @generated
-	 */
-	int OPERATIONS = 2;
-
-	/**
-	 * The number of structural features of the '<em>Operations</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATIONS_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Operations</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATIONS_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link script.impl.UnaireImpl <em>Unaire</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.UnaireImpl
-	 * @see script.impl.ScriptPackageImpl#getUnaire()
-	 * @generated
-	 */
-	int UNAIRE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Fonctions</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNAIRE__FONCTIONS = OPERATIONS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Unaire</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNAIRE_FEATURE_COUNT = OPERATIONS_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Unaire</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNAIRE_OPERATION_COUNT = OPERATIONS_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link script.impl.BinaireImpl <em>Binaire</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.BinaireImpl
-	 * @see script.impl.ScriptPackageImpl#getBinaire()
-	 * @generated
-	 */
-	int BINAIRE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Operateur</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINAIRE__OPERATEUR = OPERATIONS_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Binaire</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINAIRE_FEATURE_COUNT = OPERATIONS_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Binaire</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINAIRE_OPERATION_COUNT = OPERATIONS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.DataImpl <em>Data</em>}' class.
@@ -287,7 +129,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getData()
 	 * @generated
 	 */
-	int DATA = 5;
+	int DATA = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -326,174 +168,236 @@ public interface ScriptPackage extends EPackage {
 	int DATA_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link script.OperationsBinaires <em>Operations Binaires</em>}' enum.
+	 * The meta object id for the '{@link script.impl.BlocsImpl <em>Blocs</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see script.OperationsBinaires
-	 * @see script.impl.ScriptPackageImpl#getOperationsBinaires()
+	 * @see script.impl.BlocsImpl
+	 * @see script.impl.ScriptPackageImpl#getBlocs()
 	 * @generated
 	 */
-	int OPERATIONS_BINAIRES = 6;
+	int BLOCS = 2;
 
 	/**
-	 * The meta object id for the '{@link script.Fonctions <em>Fonctions</em>}' enum.
+	 * The feature id for the '<em><b>Output</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see script.Fonctions
-	 * @see script.impl.ScriptPackageImpl#getFonctions()
 	 * @generated
+	 * @ordered
 	 */
-	int FONCTIONS = 7;
-
+	int BLOCS__OUTPUT = 0;
 
 	/**
-	 * Returns the meta object for class '{@link script.script <em>script</em>}'.
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>script</em>'.
-	 * @see script.script
 	 * @generated
+	 * @ordered
 	 */
-	EClass getscript();
+	int BLOCS__INPUTS = 1;
 
 	/**
-	 * Returns the meta object for the attribute '{@link script.script#getName <em>Name</em>}'.
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see script.script#getName()
-	 * @see #getscript()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getscript_Name();
+	int BLOCS__OPERATION = 2;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link script.script#getBlocs <em>Blocs</em>}'.
+	 * The number of structural features of the '<em>Blocs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCS_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Blocs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.OperationsImpl <em>Operations</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.OperationsImpl
+	 * @see script.impl.ScriptPackageImpl#getOperations()
+	 * @generated
+	 */
+	int OPERATIONS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Operations</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Operations</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.OperationUnaireImpl
+	 * @see script.impl.ScriptPackageImpl#getOperationUnaire()
+	 * @generated
+	 */
+	int OPERATION_UNAIRE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Fonction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_UNAIRE__FONCTION = OPERATIONS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Operation Unaire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_UNAIRE_FEATURE_COUNT = OPERATIONS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Operation Unaire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_UNAIRE_OPERATION_COUNT = OPERATIONS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.OperationBinaireImpl
+	 * @see script.impl.ScriptPackageImpl#getOperationBinaire()
+	 * @generated
+	 */
+	int OPERATION_BINAIRE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Operateur</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BINAIRE__OPERATEUR = OPERATIONS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Operation Binaire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BINAIRE_FEATURE_COUNT = OPERATIONS_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Operation Binaire</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BINAIRE_OPERATION_COUNT = OPERATIONS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link script.FonctionType <em>Fonction Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.FonctionType
+	 * @see script.impl.ScriptPackageImpl#getFonctionType()
+	 * @generated
+	 */
+	int FONCTION_TYPE = 6;
+
+	/**
+	 * The meta object id for the '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.OperationBinaireType
+	 * @see script.impl.ScriptPackageImpl#getOperationBinaireType()
+	 * @generated
+	 */
+	int OPERATION_BINAIRE_TYPE = 7;
+
+
+	/**
+	 * Returns the meta object for class '{@link script.Script <em>Script</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Script</em>'.
+	 * @see script.Script
+	 * @generated
+	 */
+	EClass getScript();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link script.Script#getBlocs <em>Blocs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Blocs</em>'.
-	 * @see script.script#getBlocs()
-	 * @see #getscript()
+	 * @see script.Script#getBlocs()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getscript_Blocs();
+	EReference getScript_Blocs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link script.script#getInitialInput <em>Initial Input</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Script#getNitialInput <em>Nitial Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Initial Input</em>'.
-	 * @see script.script#getInitialInput()
-	 * @see #getscript()
+	 * @return the meta object for the containment reference list '<em>Nitial Input</em>'.
+	 * @see script.Script#getNitialInput()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getscript_InitialInput();
+	EReference getScript_NitialInput();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.script#getFinalOutput <em>Final Output</em>}'.
+	 * Returns the meta object for the reference list '{@link script.Script#getFinalOutput <em>Final Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Final Output</em>'.
-	 * @see script.script#getFinalOutput()
-	 * @see #getscript()
+	 * @see script.Script#getFinalOutput()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getscript_FinalOutput();
+	EReference getScript_FinalOutput();
 
 	/**
-	 * Returns the meta object for class '{@link script.blocs <em>blocs</em>}'.
+	 * Returns the meta object for the attribute '{@link script.Script#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>blocs</em>'.
-	 * @see script.blocs
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see script.Script#getName()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EClass getblocs();
-
-	/**
-	 * Returns the meta object for the reference list '{@link script.blocs#getInputs <em>Inputs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inputs</em>'.
-	 * @see script.blocs#getInputs()
-	 * @see #getblocs()
-	 * @generated
-	 */
-	EReference getblocs_Inputs();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link script.blocs#getOutputs <em>Outputs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Outputs</em>'.
-	 * @see script.blocs#getOutputs()
-	 * @see #getblocs()
-	 * @generated
-	 */
-	EReference getblocs_Outputs();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link script.blocs#getOperation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Operation</em>'.
-	 * @see script.blocs#getOperation()
-	 * @see #getblocs()
-	 * @generated
-	 */
-	EReference getblocs_Operation();
-
-	/**
-	 * Returns the meta object for class '{@link script.Operations <em>Operations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operations</em>'.
-	 * @see script.Operations
-	 * @generated
-	 */
-	EClass getOperations();
-
-	/**
-	 * Returns the meta object for class '{@link script.Unaire <em>Unaire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unaire</em>'.
-	 * @see script.Unaire
-	 * @generated
-	 */
-	EClass getUnaire();
-
-	/**
-	 * Returns the meta object for the attribute '{@link script.Unaire#getFonctions <em>Fonctions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fonctions</em>'.
-	 * @see script.Unaire#getFonctions()
-	 * @see #getUnaire()
-	 * @generated
-	 */
-	EAttribute getUnaire_Fonctions();
-
-	/**
-	 * Returns the meta object for class '{@link script.Binaire <em>Binaire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binaire</em>'.
-	 * @see script.Binaire
-	 * @generated
-	 */
-	EClass getBinaire();
-
-	/**
-	 * Returns the meta object for the attribute '{@link script.Binaire#getOperateur <em>Operateur</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operateur</em>'.
-	 * @see script.Binaire#getOperateur()
-	 * @see #getBinaire()
-	 * @generated
-	 */
-	EAttribute getBinaire_Operateur();
+	EAttribute getScript_Name();
 
 	/**
 	 * Returns the meta object for class '{@link script.Data <em>Data</em>}'.
@@ -528,24 +432,119 @@ public interface ScriptPackage extends EPackage {
 	EAttribute getData_Type();
 
 	/**
-	 * Returns the meta object for enum '{@link script.OperationsBinaires <em>Operations Binaires</em>}'.
+	 * Returns the meta object for class '{@link script.Blocs <em>Blocs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Operations Binaires</em>'.
-	 * @see script.OperationsBinaires
+	 * @return the meta object for class '<em>Blocs</em>'.
+	 * @see script.Blocs
 	 * @generated
 	 */
-	EEnum getOperationsBinaires();
+	EClass getBlocs();
 
 	/**
-	 * Returns the meta object for enum '{@link script.Fonctions <em>Fonctions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Blocs#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Fonctions</em>'.
-	 * @see script.Fonctions
+	 * @return the meta object for the containment reference list '<em>Output</em>'.
+	 * @see script.Blocs#getOutput()
+	 * @see #getBlocs()
 	 * @generated
 	 */
-	EEnum getFonctions();
+	EReference getBlocs_Output();
+
+	/**
+	 * Returns the meta object for the reference list '{@link script.Blocs#getInputs <em>Inputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Inputs</em>'.
+	 * @see script.Blocs#getInputs()
+	 * @see #getBlocs()
+	 * @generated
+	 */
+	EReference getBlocs_Inputs();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link script.Blocs#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Operation</em>'.
+	 * @see script.Blocs#getOperation()
+	 * @see #getBlocs()
+	 * @generated
+	 */
+	EReference getBlocs_Operation();
+
+	/**
+	 * Returns the meta object for class '{@link script.Operations <em>Operations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operations</em>'.
+	 * @see script.Operations
+	 * @generated
+	 */
+	EClass getOperations();
+
+	/**
+	 * Returns the meta object for class '{@link script.OperationUnaire <em>Operation Unaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation Unaire</em>'.
+	 * @see script.OperationUnaire
+	 * @generated
+	 */
+	EClass getOperationUnaire();
+
+	/**
+	 * Returns the meta object for the attribute '{@link script.OperationUnaire#getFonction <em>Fonction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fonction</em>'.
+	 * @see script.OperationUnaire#getFonction()
+	 * @see #getOperationUnaire()
+	 * @generated
+	 */
+	EAttribute getOperationUnaire_Fonction();
+
+	/**
+	 * Returns the meta object for class '{@link script.OperationBinaire <em>Operation Binaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation Binaire</em>'.
+	 * @see script.OperationBinaire
+	 * @generated
+	 */
+	EClass getOperationBinaire();
+
+	/**
+	 * Returns the meta object for the attribute '{@link script.OperationBinaire#getOperateur <em>Operateur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operateur</em>'.
+	 * @see script.OperationBinaire#getOperateur()
+	 * @see #getOperationBinaire()
+	 * @generated
+	 */
+	EAttribute getOperationBinaire_Operateur();
+
+	/**
+	 * Returns the meta object for enum '{@link script.FonctionType <em>Fonction Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Fonction Type</em>'.
+	 * @see script.FonctionType
+	 * @generated
+	 */
+	EEnum getFonctionType();
+
+	/**
+	 * Returns the meta object for enum '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Operation Binaire Type</em>'.
+	 * @see script.OperationBinaireType
+	 * @generated
+	 */
+	EEnum getOperationBinaireType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -571,22 +570,14 @@ public interface ScriptPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link script.impl.scriptImpl <em>script</em>}' class.
+		 * The meta object literal for the '{@link script.impl.ScriptImpl <em>Script</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see script.impl.scriptImpl
-		 * @see script.impl.ScriptPackageImpl#getscript()
+		 * @see script.impl.ScriptImpl
+		 * @see script.impl.ScriptPackageImpl#getScript()
 		 * @generated
 		 */
-		EClass SCRIPT = eINSTANCE.getscript();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCRIPT__NAME = eINSTANCE.getscript_Name();
+		EClass SCRIPT = eINSTANCE.getScript();
 
 		/**
 		 * The meta object literal for the '<em><b>Blocs</b></em>' containment reference list feature.
@@ -594,15 +585,15 @@ public interface ScriptPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__BLOCS = eINSTANCE.getscript_Blocs();
+		EReference SCRIPT__BLOCS = eINSTANCE.getScript_Blocs();
 
 		/**
-		 * The meta object literal for the '<em><b>Initial Input</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Nitial Input</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__INITIAL_INPUT = eINSTANCE.getscript_InitialInput();
+		EReference SCRIPT__NITIAL_INPUT = eINSTANCE.getScript_NitialInput();
 
 		/**
 		 * The meta object literal for the '<em><b>Final Output</b></em>' reference list feature.
@@ -610,87 +601,15 @@ public interface ScriptPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__FINAL_OUTPUT = eINSTANCE.getscript_FinalOutput();
+		EReference SCRIPT__FINAL_OUTPUT = eINSTANCE.getScript_FinalOutput();
 
 		/**
-		 * The meta object literal for the '{@link script.impl.blocsImpl <em>blocs</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.blocsImpl
-		 * @see script.impl.ScriptPackageImpl#getblocs()
-		 * @generated
-		 */
-		EClass BLOCS = eINSTANCE.getblocs();
-
-		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOCS__INPUTS = eINSTANCE.getblocs_Inputs();
-
-		/**
-		 * The meta object literal for the '<em><b>Outputs</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BLOCS__OUTPUTS = eINSTANCE.getblocs_Outputs();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BLOCS__OPERATION = eINSTANCE.getblocs_Operation();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.OperationsImpl <em>Operations</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.OperationsImpl
-		 * @see script.impl.ScriptPackageImpl#getOperations()
-		 * @generated
-		 */
-		EClass OPERATIONS = eINSTANCE.getOperations();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.UnaireImpl <em>Unaire</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.UnaireImpl
-		 * @see script.impl.ScriptPackageImpl#getUnaire()
-		 * @generated
-		 */
-		EClass UNAIRE = eINSTANCE.getUnaire();
-
-		/**
-		 * The meta object literal for the '<em><b>Fonctions</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute UNAIRE__FONCTIONS = eINSTANCE.getUnaire_Fonctions();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.BinaireImpl <em>Binaire</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.BinaireImpl
-		 * @see script.impl.ScriptPackageImpl#getBinaire()
-		 * @generated
-		 */
-		EClass BINAIRE = eINSTANCE.getBinaire();
-
-		/**
-		 * The meta object literal for the '<em><b>Operateur</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINAIRE__OPERATEUR = eINSTANCE.getBinaire_Operateur();
+		EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.DataImpl <em>Data</em>}' class.
@@ -719,24 +638,104 @@ public interface ScriptPackage extends EPackage {
 		EAttribute DATA__TYPE = eINSTANCE.getData_Type();
 
 		/**
-		 * The meta object literal for the '{@link script.OperationsBinaires <em>Operations Binaires</em>}' enum.
+		 * The meta object literal for the '{@link script.impl.BlocsImpl <em>Blocs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see script.OperationsBinaires
-		 * @see script.impl.ScriptPackageImpl#getOperationsBinaires()
+		 * @see script.impl.BlocsImpl
+		 * @see script.impl.ScriptPackageImpl#getBlocs()
 		 * @generated
 		 */
-		EEnum OPERATIONS_BINAIRES = eINSTANCE.getOperationsBinaires();
+		EClass BLOCS = eINSTANCE.getBlocs();
 
 		/**
-		 * The meta object literal for the '{@link script.Fonctions <em>Fonctions</em>}' enum.
+		 * The meta object literal for the '<em><b>Output</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see script.Fonctions
-		 * @see script.impl.ScriptPackageImpl#getFonctions()
 		 * @generated
 		 */
-		EEnum FONCTIONS = eINSTANCE.getFonctions();
+		EReference BLOCS__OUTPUT = eINSTANCE.getBlocs_Output();
+
+		/**
+		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOCS__INPUTS = eINSTANCE.getBlocs_Inputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BLOCS__OPERATION = eINSTANCE.getBlocs_Operation();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.OperationsImpl <em>Operations</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.OperationsImpl
+		 * @see script.impl.ScriptPackageImpl#getOperations()
+		 * @generated
+		 */
+		EClass OPERATIONS = eINSTANCE.getOperations();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.OperationUnaireImpl
+		 * @see script.impl.ScriptPackageImpl#getOperationUnaire()
+		 * @generated
+		 */
+		EClass OPERATION_UNAIRE = eINSTANCE.getOperationUnaire();
+
+		/**
+		 * The meta object literal for the '<em><b>Fonction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION_UNAIRE__FONCTION = eINSTANCE.getOperationUnaire_Fonction();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.OperationBinaireImpl
+		 * @see script.impl.ScriptPackageImpl#getOperationBinaire()
+		 * @generated
+		 */
+		EClass OPERATION_BINAIRE = eINSTANCE.getOperationBinaire();
+
+		/**
+		 * The meta object literal for the '<em><b>Operateur</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION_BINAIRE__OPERATEUR = eINSTANCE.getOperationBinaire_Operateur();
+
+		/**
+		 * The meta object literal for the '{@link script.FonctionType <em>Fonction Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.FonctionType
+		 * @see script.impl.ScriptPackageImpl#getFonctionType()
+		 * @generated
+		 */
+		EEnum FONCTION_TYPE = eINSTANCE.getFonctionType();
+
+		/**
+		 * The meta object literal for the '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.OperationBinaireType
+		 * @see script.impl.ScriptPackageImpl#getOperationBinaireType()
+		 * @generated
+		 */
+		EEnum OPERATION_BINAIRE_TYPE = eINSTANCE.getOperationBinaireType();
 
 	}
 

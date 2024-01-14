@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Excel" nsURI="http://www.example.org/Excel" nsPrefix="Excel">
-  <eClassifiers xsi:type="ecore:EClass" name="Table">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" lowerBound="1"
-        upperBound="-1" eType="#//Colonne" containment="true"/>
-  </eClassifiers>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="excel" nsURI="https://excel.ecore" nsPrefix="excel.ecore">
   <eClassifiers xsi:type="ecore:EClass" name="Excel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" upperBound="-1"
         eType="#//Table" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ColonneInput" eSuperTypes="#//Colonne"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Colonne" abstract="true" eSuperTypes="#//Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Identifiant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne" abstract="true" eSuperTypes="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" lowerBound="1"
+        upperBound="-1" eType="#//Colonne" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneInput" eSuperTypes="#//Colonne"/>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="#//Operations" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operations" eSuperTypes="#//Data"/>

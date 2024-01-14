@@ -8,12 +8,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: Excel,
- Excel.impl,
- Excel.util,
- algorithme,
- algorithme.impl,
- algorithme.util,
+Export-Package: excel,
+ excel.impl,
+ excel.util,
+ catalogue,
+ catalogue.impl,
+ catalogue.util,
  script,
  script.impl,
  script.util

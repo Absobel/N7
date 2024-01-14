@@ -1,9 +1,9 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.ExcelPackage;
-import Excel.Operations;
+import excel.ExcelPackage;
+import excel.Operations;
 
 import org.eclipse.emf.ecore.EClass;
 

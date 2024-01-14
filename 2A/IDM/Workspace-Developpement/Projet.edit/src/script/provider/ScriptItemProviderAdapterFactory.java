@@ -72,46 +72,69 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.script} instances.
+	 * This keeps track of the one adapter used for all {@link script.Script} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected scriptItemProvider scriptItemProvider;
+	protected ScriptItemProvider scriptItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link script.script}.
+	 * This creates an adapter for a {@link script.Script}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createscriptAdapter() {
+	public Adapter createScriptAdapter() {
 		if (scriptItemProvider == null) {
-			scriptItemProvider = new scriptItemProvider(this);
+			scriptItemProvider = new ScriptItemProvider(this);
 		}
 
 		return scriptItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.blocs} instances.
+	 * This keeps track of the one adapter used for all {@link script.Data} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected blocsItemProvider blocsItemProvider;
+	protected DataItemProvider dataItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link script.blocs}.
+	 * This creates an adapter for a {@link script.Data}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createblocsAdapter() {
+	public Adapter createDataAdapter() {
+		if (dataItemProvider == null) {
+			dataItemProvider = new DataItemProvider(this);
+		}
+
+		return dataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link script.Blocs} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BlocsItemProvider blocsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link script.Blocs}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBlocsAdapter() {
 		if (blocsItemProvider == null) {
-			blocsItemProvider = new blocsItemProvider(this);
+			blocsItemProvider = new BlocsItemProvider(this);
 		}
 
 		return blocsItemProvider;
@@ -141,72 +164,49 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.Unaire} instances.
+	 * This keeps track of the one adapter used for all {@link script.OperationUnaire} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UnaireItemProvider unaireItemProvider;
+	protected OperationUnaireItemProvider operationUnaireItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link script.Unaire}.
+	 * This creates an adapter for a {@link script.OperationUnaire}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createUnaireAdapter() {
-		if (unaireItemProvider == null) {
-			unaireItemProvider = new UnaireItemProvider(this);
+	public Adapter createOperationUnaireAdapter() {
+		if (operationUnaireItemProvider == null) {
+			operationUnaireItemProvider = new OperationUnaireItemProvider(this);
 		}
 
-		return unaireItemProvider;
+		return operationUnaireItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.Binaire} instances.
+	 * This keeps track of the one adapter used for all {@link script.OperationBinaire} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BinaireItemProvider binaireItemProvider;
+	protected OperationBinaireItemProvider operationBinaireItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link script.Binaire}.
+	 * This creates an adapter for a {@link script.OperationBinaire}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createBinaireAdapter() {
-		if (binaireItemProvider == null) {
-			binaireItemProvider = new BinaireItemProvider(this);
+	public Adapter createOperationBinaireAdapter() {
+		if (operationBinaireItemProvider == null) {
+			operationBinaireItemProvider = new OperationBinaireItemProvider(this);
 		}
 
-		return binaireItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link script.Data} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DataItemProvider dataItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Data}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDataAdapter() {
-		if (dataItemProvider == null) {
-			dataItemProvider = new DataItemProvider(this);
-		}
-
-		return dataItemProvider;
+		return operationBinaireItemProvider;
 	}
 
 	/**
@@ -315,11 +315,11 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory imple
 	@Override
 	public void dispose() {
 		if (scriptItemProvider != null) scriptItemProvider.dispose();
+		if (dataItemProvider != null) dataItemProvider.dispose();
 		if (blocsItemProvider != null) blocsItemProvider.dispose();
 		if (operationsItemProvider != null) operationsItemProvider.dispose();
-		if (unaireItemProvider != null) unaireItemProvider.dispose();
-		if (binaireItemProvider != null) binaireItemProvider.dispose();
-		if (dataItemProvider != null) dataItemProvider.dispose();
+		if (operationUnaireItemProvider != null) operationUnaireItemProvider.dispose();
+		if (operationBinaireItemProvider != null) operationBinaireItemProvider.dispose();
 	}
 
 }

@@ -4,8 +4,6 @@ package script;
 
 import org.eclipse.emf.ecore.EFactory;
 
-import script.impl.*;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -21,25 +19,34 @@ public interface ScriptFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ScriptFactory eINSTANCE = ScriptFactoryImpl.init();
+	ScriptFactory eINSTANCE = script.impl.ScriptFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>script</em>'.
+	 * Returns a new object of class '<em>Script</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>script</em>'.
+	 * @return a new object of class '<em>Script</em>'.
 	 * @generated
 	 */
-	script createscript();
+	Script createScript();
 
 	/**
-	 * Returns a new object of class '<em>blocs</em>'.
+	 * Returns a new object of class '<em>Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>blocs</em>'.
+	 * @return a new object of class '<em>Data</em>'.
 	 * @generated
 	 */
-	blocs createblocs();
+	Data createData();
+
+	/**
+	 * Returns a new object of class '<em>Blocs</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Blocs</em>'.
+	 * @generated
+	 */
+	Blocs createBlocs();
 
 	/**
 	 * Returns a new object of class '<em>Operations</em>'.
@@ -51,31 +58,22 @@ public interface ScriptFactory extends EFactory {
 	Operations createOperations();
 
 	/**
-	 * Returns a new object of class '<em>Unaire</em>'.
+	 * Returns a new object of class '<em>Operation Unaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unaire</em>'.
+	 * @return a new object of class '<em>Operation Unaire</em>'.
 	 * @generated
 	 */
-	Unaire createUnaire();
+	OperationUnaire createOperationUnaire();
 
 	/**
-	 * Returns a new object of class '<em>Binaire</em>'.
+	 * Returns a new object of class '<em>Operation Binaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binaire</em>'.
+	 * @return a new object of class '<em>Operation Binaire</em>'.
 	 * @generated
 	 */
-	Binaire createBinaire();
-
-	/**
-	 * Returns a new object of class '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data</em>'.
-	 * @generated
-	 */
-	Data createData();
+	OperationBinaire createOperationBinaire();
 
 	/**
 	 * Returns the package supported by this factory.

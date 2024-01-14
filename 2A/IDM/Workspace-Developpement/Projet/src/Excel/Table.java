@@ -1,6 +1,6 @@
 /**
  */
-package Excel;
+package excel;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,21 +15,21 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Excel.Table#getColonne <em>Colonne</em>}</li>
+ *   <li>{@link excel.Table#getColonne <em>Colonne</em>}</li>
  * </ul>
  *
- * @see Excel.ExcelPackage#getTable()
+ * @see excel.ExcelPackage#getTable()
  * @model
  * @generated
  */
 public interface Table extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Colonne</b></em>' containment reference list.
-	 * The list contents are of type {@link Excel.Colonne}.
+	 * The list contents are of type {@link excel.Colonne}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Colonne</em>' containment reference list.
-	 * @see Excel.ExcelPackage#getTable_Colonne()
+	 * @see excel.ExcelPackage#getTable_Colonne()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

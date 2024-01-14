@@ -1,6 +1,6 @@
 /**
  */
-package Excel.provider;
+package excel.provider;
 
 
 import java.util.Collection;
@@ -12,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link Excel.Operations} object.
+ * This is the item provider adapter for a {@link excel.Operations} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

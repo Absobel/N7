@@ -1,8 +1,8 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.*;
+import excel.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -56,8 +56,8 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ExcelPackage.TABLE: return createTable();
 			case ExcelPackage.EXCEL: return createExcel();
+			case ExcelPackage.TABLE: return createTable();
 			case ExcelPackage.COLONNE_INPUT: return createColonneInput();
 			case ExcelPackage.COLONNE_OUTPUT: return createColonneOutput();
 			case ExcelPackage.OPERATIONS: return createOperations();
@@ -75,9 +75,9 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 	 * @generated
 	 */
 	@Override
-	public Table createTable() {
-		TableImpl table = new TableImpl();
-		return table;
+	public Excel createExcel() {
+		ExcelImpl excel = new ExcelImpl();
+		return excel;
 	}
 
 	/**
@@ -86,9 +86,9 @@ public class ExcelFactoryImpl extends EFactoryImpl implements ExcelFactory {
 	 * @generated
 	 */
 	@Override
-	public Excel createExcel() {
-		ExcelImpl excel = new ExcelImpl();
-		return excel;
+	public Table createTable() {
+		TableImpl table = new TableImpl();
+		return table;
 	}
 
 	/**

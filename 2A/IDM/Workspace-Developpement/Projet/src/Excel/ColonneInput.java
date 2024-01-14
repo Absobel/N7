@@ -1,6 +1,6 @@
 /**
  */
-package Excel;
+package excel;
 
 
 /**
@@ -9,7 +9,7 @@ package Excel;
  * <!-- end-user-doc -->
  *
  *
- * @see Excel.ExcelPackage#getColonneInput()
+ * @see excel.ExcelPackage#getColonneInput()
  * @model
  * @generated
  */

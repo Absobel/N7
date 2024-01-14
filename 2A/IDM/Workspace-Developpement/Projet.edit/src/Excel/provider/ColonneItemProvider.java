@@ -1,29 +1,23 @@
 /**
  */
-package Excel.provider;
+package excel.provider;
 
-
-import Excel.Colonne;
-import Excel.ExcelPackage;
 
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link Excel.Colonne} object.
+ * This is the item provider adapter for a {@link excel.Colonne} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ColonneItemProvider extends DataItemProvider {
+public class ColonneItemProvider 
+	extends DataItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,31 +39,8 @@ public class ColonneItemProvider extends DataItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdentifiantPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Identifiant feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdentifiantPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Colonne_Identifiant_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Colonne_Identifiant_feature", "_UI_Colonne_type"),
-				 ExcelPackage.Literals.COLONNE__IDENTIFIANT,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -80,8 +51,7 @@ public class ColonneItemProvider extends DataItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Colonne colonne = (Colonne)object;
-		return getString("_UI_Colonne_type") + " " + colonne.getIdentifiant();
+		return getString("_UI_Colonne_type");
 	}
 
 
@@ -95,12 +65,6 @@ public class ColonneItemProvider extends DataItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Colonne.class)) {
-			case ExcelPackage.COLONNE__IDENTIFIANT:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

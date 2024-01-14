@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+import script.Script;
 import script.ScriptFactory;
 import script.ScriptPackage;
-import script.script;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,7 +60,7 @@ public class ScriptExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.script"));
-				script root = ScriptFactory.eINSTANCE.createscript();
+				Script root = ScriptFactory.eINSTANCE.createScript();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

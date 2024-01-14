@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated excel -->
       <factory
-            uri="http://www.example.org/Excel"
-            class="Excel.provider.ExcelItemProviderAdapterFactory"
+            uri="https://excel.ecore"
+            class="excel.provider.ExcelItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -20,10 +20,10 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated algorithme -->
+      <!-- @generated catalogue -->
       <factory
-            uri="http://www.example.org/algorithme"
-            class="algorithme.provider.AlgorithmeItemProviderAdapterFactory"
+            uri="https://catalogue.ecore"
+            class="catalogue.provider.CatalogueItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -35,7 +35,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated script -->
       <factory
-            uri="http://www.example.org/script"
+            uri="https://script.ecore"
             class="script.provider.ScriptItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

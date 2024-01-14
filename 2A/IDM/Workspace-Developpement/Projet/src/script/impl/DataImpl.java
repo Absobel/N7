@@ -210,9 +210,9 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Name: ");
+		result.append(" (name: ");
 		result.append(name);
-		result.append(", Type: ");
+		result.append(", type: ");
 		result.append(type);
 		result.append(')');
 		return result.toString();

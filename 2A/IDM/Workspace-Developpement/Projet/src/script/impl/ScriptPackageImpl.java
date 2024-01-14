@@ -10,16 +10,16 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import script.Binaire;
+import script.Blocs;
 import script.Data;
-import script.Fonctions;
+import script.FonctionType;
+import script.OperationBinaire;
+import script.OperationBinaireType;
+import script.OperationUnaire;
 import script.Operations;
-import script.OperationsBinaires;
+import script.Script;
 import script.ScriptFactory;
 import script.ScriptPackage;
-import script.Unaire;
-import script.blocs;
-import script.script;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,6 +40,13 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass dataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass blocsEClass = null;
 
 	/**
@@ -54,35 +61,28 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass unaireEClass = null;
+	private EClass operationUnaireEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass binaireEClass = null;
+	private EClass operationBinaireEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataEClass = null;
+	private EEnum fonctionTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum operationsBinairesEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum fonctionsEEnum = null;
+	private EEnum operationBinaireTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -150,7 +150,7 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getscript() {
+	public EClass getScript() {
 		return scriptEClass;
 	}
 
@@ -160,8 +160,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getscript_Name() {
-		return (EAttribute)scriptEClass.getEStructuralFeatures().get(0);
+	public EReference getScript_Blocs() {
+		return (EReference)scriptEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -170,7 +170,7 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getscript_Blocs() {
+	public EReference getScript_NitialInput() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -180,7 +180,7 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getscript_InitialInput() {
+	public EReference getScript_FinalOutput() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -190,98 +190,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getscript_FinalOutput() {
-		return (EReference)scriptEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getblocs() {
-		return blocsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getblocs_Inputs() {
-		return (EReference)blocsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getblocs_Outputs() {
-		return (EReference)blocsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getblocs_Operation() {
-		return (EReference)blocsEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getOperations() {
-		return operationsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getUnaire() {
-		return unaireEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getUnaire_Fonctions() {
-		return (EAttribute)unaireEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getBinaire() {
-		return binaireEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getBinaire_Operateur() {
-		return (EAttribute)binaireEClass.getEStructuralFeatures().get(0);
+	public EAttribute getScript_Name() {
+		return (EAttribute)scriptEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -320,8 +230,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getOperationsBinaires() {
-		return operationsBinairesEEnum;
+	public EClass getBlocs() {
+		return blocsEClass;
 	}
 
 	/**
@@ -330,8 +240,98 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getFonctions() {
-		return fonctionsEEnum;
+	public EReference getBlocs_Output() {
+		return (EReference)blocsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBlocs_Inputs() {
+		return (EReference)blocsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBlocs_Operation() {
+		return (EReference)blocsEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOperations() {
+		return operationsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOperationUnaire() {
+		return operationUnaireEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOperationUnaire_Fonction() {
+		return (EAttribute)operationUnaireEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getOperationBinaire() {
+		return operationBinaireEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOperationBinaire_Operateur() {
+		return (EAttribute)operationBinaireEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getFonctionType() {
+		return fonctionTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getOperationBinaireType() {
+		return operationBinaireTypeEEnum;
 	}
 
 	/**
@@ -364,31 +364,31 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
-		createEAttribute(scriptEClass, SCRIPT__NAME);
 		createEReference(scriptEClass, SCRIPT__BLOCS);
-		createEReference(scriptEClass, SCRIPT__INITIAL_INPUT);
+		createEReference(scriptEClass, SCRIPT__NITIAL_INPUT);
 		createEReference(scriptEClass, SCRIPT__FINAL_OUTPUT);
-
-		blocsEClass = createEClass(BLOCS);
-		createEReference(blocsEClass, BLOCS__INPUTS);
-		createEReference(blocsEClass, BLOCS__OUTPUTS);
-		createEReference(blocsEClass, BLOCS__OPERATION);
-
-		operationsEClass = createEClass(OPERATIONS);
-
-		unaireEClass = createEClass(UNAIRE);
-		createEAttribute(unaireEClass, UNAIRE__FONCTIONS);
-
-		binaireEClass = createEClass(BINAIRE);
-		createEAttribute(binaireEClass, BINAIRE__OPERATEUR);
+		createEAttribute(scriptEClass, SCRIPT__NAME);
 
 		dataEClass = createEClass(DATA);
 		createEAttribute(dataEClass, DATA__NAME);
 		createEAttribute(dataEClass, DATA__TYPE);
 
+		blocsEClass = createEClass(BLOCS);
+		createEReference(blocsEClass, BLOCS__OUTPUT);
+		createEReference(blocsEClass, BLOCS__INPUTS);
+		createEReference(blocsEClass, BLOCS__OPERATION);
+
+		operationsEClass = createEClass(OPERATIONS);
+
+		operationUnaireEClass = createEClass(OPERATION_UNAIRE);
+		createEAttribute(operationUnaireEClass, OPERATION_UNAIRE__FONCTION);
+
+		operationBinaireEClass = createEClass(OPERATION_BINAIRE);
+		createEAttribute(operationBinaireEClass, OPERATION_BINAIRE__OPERATEUR);
+
 		// Create enums
-		operationsBinairesEEnum = createEEnum(OPERATIONS_BINAIRES);
-		fonctionsEEnum = createEEnum(FONCTIONS);
+		fonctionTypeEEnum = createEEnum(FONCTION_TYPE);
+		operationBinaireTypeEEnum = createEEnum(OPERATION_BINAIRE_TYPE);
 	}
 
 	/**
@@ -419,50 +419,50 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		unaireEClass.getESuperTypes().add(this.getOperations());
-		binaireEClass.getESuperTypes().add(this.getOperations());
+		operationUnaireEClass.getESuperTypes().add(this.getOperations());
+		operationBinaireEClass.getESuperTypes().add(this.getOperations());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(scriptEClass, script.class, "script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getscript_Name(), ecorePackage.getEString(), "Name", null, 1, 1, script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getscript_Blocs(), this.getblocs(), null, "blocs", null, 0, -1, script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getscript_InitialInput(), this.getData(), null, "initialInput", null, 1, -1, script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getscript_FinalOutput(), this.getData(), null, "finalOutput", null, 1, -1, script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getScript_Blocs(), this.getBlocs(), null, "blocs", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_NitialInput(), this.getData(), null, "nitialInput", null, 1, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_FinalOutput(), this.getData(), null, "finalOutput", null, 1, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(blocsEClass, blocs.class, "blocs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getblocs_Inputs(), this.getData(), null, "inputs", null, 1, -1, blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getblocs_Outputs(), this.getData(), null, "outputs", null, 1, -1, blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getblocs_Operation(), this.getOperations(), null, "operation", null, 1, 1, blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getData_Name(), ecorePackage.getEString(), "name", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getData_Type(), ecorePackage.getEString(), "type", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(blocsEClass, Blocs.class, "Blocs", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBlocs_Output(), this.getData(), null, "output", null, 1, -1, Blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBlocs_Inputs(), this.getData(), null, "inputs", null, 1, -1, Blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBlocs_Operation(), this.getOperations(), null, "operation", null, 1, 1, Blocs.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationsEClass, Operations.class, "Operations", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(unaireEClass, Unaire.class, "Unaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUnaire_Fonctions(), this.getFonctions(), "Fonctions", null, 1, 1, Unaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operationUnaireEClass, OperationUnaire.class, "OperationUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationUnaire_Fonction(), this.getFonctionType(), "fonction", null, 1, 1, OperationUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(binaireEClass, Binaire.class, "Binaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBinaire_Operateur(), this.getOperationsBinaires(), "operateur", null, 1, 1, Binaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getData_Name(), ecorePackage.getEString(), "Name", null, 1, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getData_Type(), ecorePackage.getEString(), "Type", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operationBinaireEClass, OperationBinaire.class, "OperationBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationBinaire_Operateur(), this.getOperationBinaireType(), "operateur", null, 1, 1, OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(operationsBinairesEEnum, OperationsBinaires.class, "OperationsBinaires");
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.ADD);
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.SUB);
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.TIM);
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.DIV);
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.MIN);
-		addEEnumLiteral(operationsBinairesEEnum, OperationsBinaires.MAX);
+		initEEnum(fonctionTypeEEnum, FonctionType.class, "FonctionType");
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.OPP);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.INV);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.COS);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.SIN);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.SQR);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.EXP);
+		addEEnumLiteral(fonctionTypeEEnum, FonctionType.LOG);
 
-		initEEnum(fonctionsEEnum, Fonctions.class, "Fonctions");
-		addEEnumLiteral(fonctionsEEnum, Fonctions.OPP);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.INV);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.COS);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.SIN);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.SQR);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.EXP);
-		addEEnumLiteral(fonctionsEEnum, Fonctions.LOG);
+		initEEnum(operationBinaireTypeEEnum, OperationBinaireType.class, "OperationBinaireType");
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.ADD);
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.SUB);
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.TIM);
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.DIV);
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.MIN);
+		addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.MAX);
 
 		// Create resource
 		createResource(eNS_URI);

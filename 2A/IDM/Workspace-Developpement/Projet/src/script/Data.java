@@ -51,7 +51,7 @@ public interface Data extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see script.ScriptPackage#getData_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getType();

@@ -1,6 +1,6 @@
 /**
  */
-package Excel.tests;
+package excel.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -9,7 +9,7 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>Excel</b></em>' package.
+ * A test suite for the '<em><b>excel</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
@@ -30,7 +30,7 @@ public class ExcelTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new ExcelTests("Excel Tests");
+		TestSuite suite = new ExcelTests("excel Tests");
 		return suite;
 	}
 

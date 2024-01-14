@@ -1,10 +1,10 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.Colonne;
-import Excel.ExcelPackage;
-import Excel.Table;
+import excel.Colonne;
+import excel.ExcelPackage;
+import excel.Table;
 
 import java.util.Collection;
 
@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Excel.impl.TableImpl#getColonne <em>Colonne</em>}</li>
+ *   <li>{@link excel.impl.TableImpl#getColonne <em>Colonne</em>}</li>
  * </ul>
  *
  * @generated

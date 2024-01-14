@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
+import script.Script;
 import script.ScriptFactory;
-import script.script;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>script</b></em>'.
+ * A test case for the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class scriptTest extends TestCase {
+public class ScriptTest extends TestCase {
 
 	/**
-	 * The fixture for this script test case.
+	 * The fixture for this Script test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected script fixture = null;
+	protected Script fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class scriptTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(scriptTest.class);
+		TestRunner.run(ScriptTest.class);
 	}
 
 	/**
-	 * Constructs a new script test case with the given name.
+	 * Constructs a new Script test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public scriptTest(String name) {
+	public ScriptTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this script test case.
+	 * Sets the fixture for this Script test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(script fixture) {
+	protected void setFixture(Script fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this script test case.
+	 * Returns the fixture for this Script test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected script getFixture() {
+	protected Script getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class scriptTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(ScriptFactory.eINSTANCE.createscript());
+		setFixture(ScriptFactory.eINSTANCE.createScript());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class scriptTest extends TestCase {
 		setFixture(null);
 	}
 
-} //scriptTest
+} //ScriptTest

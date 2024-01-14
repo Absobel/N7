@@ -5,18 +5,16 @@
     complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>excel.ecore</foreignModel>
   <genPackages prefix="Excel" disposableProviderFactory="true" ecorePackage="excel.ecore#/">
-    <genClasses ecoreClass="excel.ecore#//Table">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Table/colonne"/>
-    </genClasses>
     <genClasses ecoreClass="excel.ecore#//Excel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Excel/table"/>
     </genClasses>
-    <genClasses ecoreClass="excel.ecore#//ColonneInput"/>
-    <genClasses image="false" ecoreClass="excel.ecore#//Colonne">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute excel.ecore#//Colonne/Identifiant"/>
+    <genClasses image="false" ecoreClass="excel.ecore#//Colonne"/>
+    <genClasses ecoreClass="excel.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//Table/colonne"/>
     </genClasses>
+    <genClasses ecoreClass="excel.ecore#//ColonneInput"/>
     <genClasses ecoreClass="excel.ecore#//ColonneOutput">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ColonneOutput/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference excel.ecore#//ColonneOutput/operation"/>
     </genClasses>
     <genClasses ecoreClass="excel.ecore#//Operations"/>
     <genClasses ecoreClass="excel.ecore#//Data"/>

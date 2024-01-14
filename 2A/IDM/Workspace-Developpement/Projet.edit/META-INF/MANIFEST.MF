@@ -9,8 +9,8 @@ Bundle-Activator: script.provider.ScriptEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: Excel.provider,
- algorithme.provider,
+Export-Package: excel.provider,
+ catalogue.provider,
  script.provider
 Require-Bundle: org.eclipse.core.runtime,
  Projet;visibility:=reexport,

@@ -1,9 +1,7 @@
 /**
  */
-package Excel.provider;
+package excel.provider;
 
-
-import Excel.ColonneInput;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,7 +12,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link Excel.ColonneInput} object.
+ * This is the item provider adapter for a {@link excel.ColonneInput} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -64,8 +62,7 @@ public class ColonneInputItemProvider extends ColonneItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		ColonneInput colonneInput = (ColonneInput)object;
-		return getString("_UI_ColonneInput_type") + " " + colonneInput.getIdentifiant();
+		return getString("_UI_ColonneInput_type");
 	}
 
 

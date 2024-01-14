@@ -1,12 +1,11 @@
 /**
  */
-package Excel.provider;
+package excel.provider;
 
 
-import Excel.ColonneOutput;
-import Excel.ExcelFactory;
-import Excel.ExcelPackage;
-
+import excel.ColonneOutput;
+import excel.ExcelFactory;
+import excel.ExcelPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,12 +13,11 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link Excel.ColonneOutput} object.
+ * This is the item provider adapter for a {@link excel.ColonneOutput} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -62,7 +60,7 @@ public class ColonneOutputItemProvider extends ColonneItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATIONS);
+			childrenFeatures.add(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATION);
 		}
 		return childrenFeatures;
 	}
@@ -99,8 +97,7 @@ public class ColonneOutputItemProvider extends ColonneItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		ColonneOutput colonneOutput = (ColonneOutput)object;
-		return getString("_UI_ColonneOutput_type") + " " + colonneOutput.getIdentifiant();
+		return getString("_UI_ColonneOutput_type");
 	}
 
 
@@ -116,7 +113,7 @@ public class ColonneOutputItemProvider extends ColonneItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ColonneOutput.class)) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -136,17 +133,17 @@ public class ColonneOutputItemProvider extends ColonneItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATIONS,
+				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATION,
 				 ExcelFactory.eINSTANCE.createOperations()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATIONS,
+				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATION,
 				 ExcelFactory.eINSTANCE.createOperationsBinaires()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATIONS,
+				(ExcelPackage.Literals.COLONNE_OUTPUT__OPERATION,
 				 ExcelFactory.eINSTANCE.createOperationsUnaires()));
 	}
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="catalogue" nsURI="https://catalogue.ecore" nsPrefix="catalogue.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithmeelement" upperBound="-1"
+        eType="#//AlgorithmeElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlgorithmeElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithmEelement" lowerBound="1"
+        eType="#//AlgorithmeElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//AlgorithmeElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stdout" eSuperTypes="#//Data"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressource" eSuperTypes="#//AlgorithmeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stdout" upperBound="-1"
+        eType="#//Stdout"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stdin" upperBound="-1"
+        eType="#//Stdin"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="file" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stdin" eSuperTypes="#//Data">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Algorithme" eSuperTypes="#//AlgorithmeElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" lowerBound="1"
+        eType="#//Ressource"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

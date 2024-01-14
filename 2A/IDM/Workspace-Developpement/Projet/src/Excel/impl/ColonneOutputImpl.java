@@ -1,17 +1,15 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.ColonneOutput;
-import Excel.ExcelPackage;
-import Excel.Operations;
+import excel.ColonneOutput;
+import excel.ExcelPackage;
 
+import excel.Operations;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,21 +20,21 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Excel.impl.ColonneOutputImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link excel.impl.ColonneOutputImpl#getOperation <em>Operation</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	/**
-	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference.
+	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOperations()
+	 * @see #getOperation()
 	 * @generated
 	 * @ordered
 	 */
-	protected Operations operations;
+	protected Operations operation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -63,8 +61,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	 * @generated
 	 */
 	@Override
-	public Operations getOperations() {
-		return operations;
+	public Operations getOperation() {
+		return operation;
 	}
 
 	/**
@@ -72,11 +70,11 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOperations(Operations newOperations, NotificationChain msgs) {
-		Operations oldOperations = operations;
-		operations = newOperations;
+	public NotificationChain basicSetOperation(Operations newOperation, NotificationChain msgs) {
+		Operations oldOperation = operation;
+		operation = newOperation;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExcelPackage.COLONNE_OUTPUT__OPERATIONS, oldOperations, newOperations);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ExcelPackage.COLONNE_OUTPUT__OPERATION, oldOperation, newOperation);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -88,18 +86,18 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	 * @generated
 	 */
 	@Override
-	public void setOperations(Operations newOperations) {
-		if (newOperations != operations) {
+	public void setOperation(Operations newOperation) {
+		if (newOperation != operation) {
 			NotificationChain msgs = null;
-			if (operations != null)
-				msgs = ((InternalEObject)operations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExcelPackage.COLONNE_OUTPUT__OPERATIONS, null, msgs);
-			if (newOperations != null)
-				msgs = ((InternalEObject)newOperations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExcelPackage.COLONNE_OUTPUT__OPERATIONS, null, msgs);
-			msgs = basicSetOperations(newOperations, msgs);
+			if (operation != null)
+				msgs = ((InternalEObject)operation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExcelPackage.COLONNE_OUTPUT__OPERATION, null, msgs);
+			if (newOperation != null)
+				msgs = ((InternalEObject)newOperation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ExcelPackage.COLONNE_OUTPUT__OPERATION, null, msgs);
+			msgs = basicSetOperation(newOperation, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExcelPackage.COLONNE_OUTPUT__OPERATIONS, newOperations, newOperations));
+			eNotify(new ENotificationImpl(this, Notification.SET, ExcelPackage.COLONNE_OUTPUT__OPERATION, newOperation, newOperation));
 	}
 
 	/**
@@ -110,8 +108,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
-				return basicSetOperations(null, msgs);
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
+				return basicSetOperation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -124,8 +122,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
-				return getOperations();
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
+				return getOperation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,8 +136,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
-				setOperations((Operations)newValue);
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
+				setOperation((Operations)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -153,8 +151,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
-				setOperations((Operations)null);
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
+				setOperation((Operations)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -168,8 +166,8 @@ public class ColonneOutputImpl extends ColonneImpl implements ColonneOutput {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExcelPackage.COLONNE_OUTPUT__OPERATIONS:
-				return operations != null;
+			case ExcelPackage.COLONNE_OUTPUT__OPERATION:
+				return operation != null;
 		}
 		return super.eIsSet(featureID);
 	}

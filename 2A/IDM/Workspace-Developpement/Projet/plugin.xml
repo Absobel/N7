@@ -9,23 +9,23 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated excel -->
       <package
-            uri="http://www.example.org/Excel"
-            class="Excel.ExcelPackage"
+            uri="https://excel.ecore"
+            class="excel.ExcelPackage"
             genModel="models/excel.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated algorithme -->
+      <!-- @generated catalogue -->
       <package
-            uri="http://www.example.org/algorithme"
-            class="algorithme.AlgorithmePackage"
-            genModel="models/algorithme.genmodel"/>
+            uri="https://catalogue.ecore"
+            class="catalogue.CataloguePackage"
+            genModel="models/catalogue.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated script -->
       <package
-            uri="http://www.example.org/script"
+            uri="https://script.ecore"
             class="script.ScriptPackage"
             genModel="models/script.genmodel"/>
    </extension>

@@ -1,10 +1,10 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.Data;
-import Excel.ExcelPackage;
-import Excel.OperationsUnaires;
+import excel.Data;
+import excel.ExcelPackage;
+import excel.OperationsUnaires;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link Excel.impl.OperationsUnairesImpl#getData <em>Data</em>}</li>
+ *   <li>{@link excel.impl.OperationsUnairesImpl#getData <em>Data</em>}</li>
  * </ul>
  *
  * @generated

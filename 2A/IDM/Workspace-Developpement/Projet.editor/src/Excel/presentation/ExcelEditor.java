@@ -1,6 +1,6 @@
 /**
  */
-package Excel.presentation;
+package excel.presentation;
 
 
 import java.io.IOException;
@@ -155,7 +155,7 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import Excel.provider.ExcelItemProviderAdapterFactory;
+import excel.provider.ExcelItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 

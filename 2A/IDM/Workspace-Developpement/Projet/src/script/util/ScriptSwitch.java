@@ -67,34 +67,8 @@ public class ScriptSwitch<T> extends Switch<T> {
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
 			case ScriptPackage.SCRIPT: {
-				script script = (script)theEObject;
-				T result = casescript(script);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.BLOCS: {
-				blocs blocs = (blocs)theEObject;
-				T result = caseblocs(blocs);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.OPERATIONS: {
-				Operations operations = (Operations)theEObject;
-				T result = caseOperations(operations);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.UNAIRE: {
-				Unaire unaire = (Unaire)theEObject;
-				T result = caseUnaire(unaire);
-				if (result == null) result = caseOperations(unaire);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ScriptPackage.BINAIRE: {
-				Binaire binaire = (Binaire)theEObject;
-				T result = caseBinaire(binaire);
-				if (result == null) result = caseOperations(binaire);
+				Script script = (Script)theEObject;
+				T result = caseScript(script);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -104,37 +78,78 @@ public class ScriptSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ScriptPackage.BLOCS: {
+				Blocs blocs = (Blocs)theEObject;
+				T result = caseBlocs(blocs);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.OPERATIONS: {
+				Operations operations = (Operations)theEObject;
+				T result = caseOperations(operations);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.OPERATION_UNAIRE: {
+				OperationUnaire operationUnaire = (OperationUnaire)theEObject;
+				T result = caseOperationUnaire(operationUnaire);
+				if (result == null) result = caseOperations(operationUnaire);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ScriptPackage.OPERATION_BINAIRE: {
+				OperationBinaire operationBinaire = (OperationBinaire)theEObject;
+				T result = caseOperationBinaire(operationBinaire);
+				if (result == null) result = caseOperations(operationBinaire);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>script</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Script</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>script</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Script</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casescript(script object) {
+	public T caseScript(Script object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>blocs</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>blocs</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseblocs(blocs object) {
+	public T caseData(Data object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Blocs</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Blocs</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBlocs(Blocs object) {
 		return null;
 	}
 
@@ -154,47 +169,32 @@ public class ScriptSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unaire</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unaire</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnaire(Unaire object) {
+	public T caseOperationUnaire(OperationUnaire object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binaire</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binaire</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBinaire(Binaire object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseData(Data object) {
+	public T caseOperationBinaire(OperationBinaire object) {
 		return null;
 	}
 

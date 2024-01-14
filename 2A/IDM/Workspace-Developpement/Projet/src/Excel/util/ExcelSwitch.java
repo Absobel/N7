@@ -1,8 +1,8 @@
 /**
  */
-package Excel.util;
+package excel.util;
 
-import Excel.*;
+import excel.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see Excel.ExcelPackage
+ * @see excel.ExcelPackage
  * @generated
  */
 public class ExcelSwitch<T> extends Switch<T> {
@@ -66,15 +66,22 @@ public class ExcelSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ExcelPackage.TABLE: {
-				Table table = (Table)theEObject;
-				T result = caseTable(table);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ExcelPackage.EXCEL: {
 				Excel excel = (Excel)theEObject;
 				T result = caseExcel(excel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExcelPackage.COLONNE: {
+				Colonne colonne = (Colonne)theEObject;
+				T result = caseColonne(colonne);
+				if (result == null) result = caseData(colonne);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ExcelPackage.TABLE: {
+				Table table = (Table)theEObject;
+				T result = caseTable(table);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -83,13 +90,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 				T result = caseColonneInput(colonneInput);
 				if (result == null) result = caseColonne(colonneInput);
 				if (result == null) result = caseData(colonneInput);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ExcelPackage.COLONNE: {
-				Colonne colonne = (Colonne)theEObject;
-				T result = caseColonne(colonne);
-				if (result == null) result = caseData(colonne);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,21 +135,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTable(Table object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Excel</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -165,21 +150,6 @@ public class ExcelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Colonne Input</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Colonne Input</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseColonneInput(ColonneInput object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Colonne</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -191,6 +161,36 @@ public class ExcelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseColonne(Colonne object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Table</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTable(Table object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Colonne Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Colonne Input</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseColonneInput(ColonneInput object) {
 		return null;
 	}
 

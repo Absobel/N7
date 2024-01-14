@@ -12,9 +12,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="Excel.presentation.ExcelModelWizardID"
+            id="excel.presentation.ExcelModelWizardID"
             name="%_UI_ExcelModelWizard_label"
-            class="Excel.presentation.ExcelModelWizard"
+            class="excel.presentation.ExcelModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/ExcelModelFile.gif">
          <description>%_UI_ExcelModelWizard_description</description>
@@ -25,40 +25,40 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated excel -->
       <editor
-            id="Excel.presentation.ExcelEditorID"
+            id="excel.presentation.ExcelEditorID"
             name="%_UI_ExcelEditor_label"
             icon="icons/full/obj16/ExcelModelFile.gif"
             extensions="excel"
-            class="Excel.presentation.ExcelEditor"
-            contributorClass="Excel.presentation.ExcelActionBarContributor">
+            class="excel.presentation.ExcelEditor"
+            contributorClass="excel.presentation.ExcelActionBarContributor">
       </editor>
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated algorithme -->
+      <!-- @generated catalogue -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="algorithme.presentation.AlgorithmeModelWizardID"
-            name="%_UI_AlgorithmeModelWizard_label"
-            class="algorithme.presentation.AlgorithmeModelWizard"
+            id="catalogue.presentation.CatalogueModelWizardID"
+            name="%_UI_CatalogueModelWizard_label"
+            class="catalogue.presentation.CatalogueModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif">
-         <description>%_UI_AlgorithmeModelWizard_description</description>
+            icon="icons/full/obj16/CatalogueModelFile.gif">
+         <description>%_UI_CatalogueModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
 
    <extension point="org.eclipse.ui.editors">
-      <!-- @generated algorithme -->
+      <!-- @generated catalogue -->
       <editor
-            id="algorithme.presentation.AlgorithmeEditorID"
-            name="%_UI_AlgorithmeEditor_label"
-            icon="icons/full/obj16/AlgorithmeModelFile.gif"
-            extensions="algorithme"
-            class="algorithme.presentation.AlgorithmeEditor"
-            contributorClass="algorithme.presentation.AlgorithmeActionBarContributor">
+            id="catalogue.presentation.CatalogueEditorID"
+            name="%_UI_CatalogueEditor_label"
+            icon="icons/full/obj16/CatalogueModelFile.gif"
+            extensions="catalogue"
+            class="catalogue.presentation.CatalogueEditor"
+            contributorClass="catalogue.presentation.CatalogueActionBarContributor">
       </editor>
    </extension>
    <extension point="org.eclipse.ui.newWizards">

@@ -1,10 +1,10 @@
 /**
  */
-package Excel.tests;
+package excel.tests;
 
-import Excel.ExcelFactory;
-import Excel.ExcelPackage;
-import Excel.Table;
+import excel.Excel;
+import excel.ExcelFactory;
+import excel.ExcelPackage;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>Excel</b></em>' package.
+ * A sample utility for the '<em><b>excel</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
@@ -60,7 +60,7 @@ public class ExcelExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.excel"));
-				Table root = ExcelFactory.eINSTANCE.createTable();
+				Excel root = ExcelFactory.eINSTANCE.createExcel();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

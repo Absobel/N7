@@ -1,9 +1,9 @@
 /**
  */
-package Excel.tests;
+package excel.tests;
 
-import Excel.ColonneInput;
-import Excel.ExcelFactory;
+import excel.ColonneInput;
+import excel.ExcelFactory;
 
 import junit.textui.TestRunner;
 

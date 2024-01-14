@@ -23,17 +23,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import script.Blocs;
 import script.ScriptFactory;
 import script.ScriptPackage;
-import script.blocs;
 
 /**
- * This is the item provider adapter for a {@link script.blocs} object.
+ * This is the item provider adapter for a {@link script.Blocs} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class blocsItemProvider 
+public class BlocsItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +47,7 @@ public class blocsItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public blocsItemProvider(AdapterFactory adapterFactory) {
+	public BlocsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,8 +78,8 @@ public class blocsItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_blocs_inputs_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_blocs_inputs_feature", "_UI_blocs_type"),
+				 getString("_UI_Blocs_inputs_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Blocs_inputs_feature", "_UI_Blocs_type"),
 				 ScriptPackage.Literals.BLOCS__INPUTS,
 				 true,
 				 false,
@@ -101,7 +101,7 @@ public class blocsItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScriptPackage.Literals.BLOCS__OUTPUTS);
+			childrenFeatures.add(ScriptPackage.Literals.BLOCS__OUTPUT);
 			childrenFeatures.add(ScriptPackage.Literals.BLOCS__OPERATION);
 		}
 		return childrenFeatures;
@@ -121,14 +121,14 @@ public class blocsItemProvider
 	}
 
 	/**
-	 * This returns blocs.gif.
+	 * This returns Blocs.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/blocs"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Blocs"));
 	}
 
 	/**
@@ -139,7 +139,7 @@ public class blocsItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_blocs_type");
+		return getString("_UI_Blocs_type");
 	}
 
 
@@ -154,8 +154,8 @@ public class blocsItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(blocs.class)) {
-			case ScriptPackage.BLOCS__OUTPUTS:
+		switch (notification.getFeatureID(Blocs.class)) {
+			case ScriptPackage.BLOCS__OUTPUT:
 			case ScriptPackage.BLOCS__OPERATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -176,7 +176,7 @@ public class blocsItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ScriptPackage.Literals.BLOCS__OUTPUTS,
+				(ScriptPackage.Literals.BLOCS__OUTPUT,
 				 ScriptFactory.eINSTANCE.createData()));
 
 		newChildDescriptors.add
@@ -187,12 +187,12 @@ public class blocsItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ScriptPackage.Literals.BLOCS__OPERATION,
-				 ScriptFactory.eINSTANCE.createUnaire()));
+				 ScriptFactory.eINSTANCE.createOperationUnaire()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ScriptPackage.Literals.BLOCS__OPERATION,
-				 ScriptFactory.eINSTANCE.createBinaire()));
+				 ScriptFactory.eINSTANCE.createOperationBinaire()));
 	}
 
 	/**

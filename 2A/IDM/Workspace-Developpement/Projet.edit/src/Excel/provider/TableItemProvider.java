@@ -1,11 +1,11 @@
 /**
  */
-package Excel.provider;
+package excel.provider;
 
 
-import Excel.ExcelFactory;
-import Excel.ExcelPackage;
-import Excel.Table;
+import excel.ExcelFactory;
+import excel.ExcelPackage;
+import excel.Table;
 
 import java.util.Collection;
 import java.util.List;
@@ -27,7 +27,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link Excel.Table} object.
+ * This is the item provider adapter for a {@link excel.Table} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

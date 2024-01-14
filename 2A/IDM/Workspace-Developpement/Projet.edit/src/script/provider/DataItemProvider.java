@@ -77,8 +77,8 @@ public class DataItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Data_Name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Data_Name_feature", "_UI_Data_type"),
+				 getString("_UI_Data_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Data_name_feature", "_UI_Data_type"),
 				 ScriptPackage.Literals.DATA__NAME,
 				 true,
 				 false,
@@ -99,8 +99,8 @@ public class DataItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Data_Type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Data_Type_feature", "_UI_Data_type"),
+				 getString("_UI_Data_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Data_type_feature", "_UI_Data_type"),
 				 ScriptPackage.Literals.DATA__TYPE,
 				 true,
 				 false,

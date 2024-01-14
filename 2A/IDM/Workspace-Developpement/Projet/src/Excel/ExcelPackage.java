@@ -1,12 +1,10 @@
 /**
  */
-package Excel;
+package excel;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-import Excel.impl.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +18,7 @@ import Excel.impl.*;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see Excel.ExcelFactory
+ * @see excel.ExcelFactory
  * @model kind="package"
  * @generated
  */
@@ -31,7 +29,7 @@ public interface ExcelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "Excel";
+	String eNAME = "excel";
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +37,7 @@ public interface ExcelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/Excel";
+	String eNS_URI = "https://excel.ecore";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +45,7 @@ public interface ExcelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "Excel";
+	String eNS_PREFIX = "excel.ecore";
 
 	/**
 	 * The singleton instance of the package.
@@ -55,54 +53,17 @@ public interface ExcelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ExcelPackage eINSTANCE = ExcelPackageImpl.init();
+	ExcelPackage eINSTANCE = excel.impl.ExcelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.TableImpl <em>Table</em>}' class.
+	 * The meta object id for the '{@link excel.impl.ExcelImpl <em>Excel</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.TableImpl
-	 * @see Excel.impl.ExcelPackageImpl#getTable()
+	 * @see excel.impl.ExcelImpl
+	 * @see excel.impl.ExcelPackageImpl#getExcel()
 	 * @generated
 	 */
-	int TABLE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Colonne</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE__COLONNE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Table</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Table</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link Excel.impl.ExcelImpl <em>Excel</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Excel.impl.ExcelImpl
-	 * @see Excel.impl.ExcelPackageImpl#getExcel()
-	 * @generated
-	 */
-	int EXCEL = 1;
+	int EXCEL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' containment reference list.
@@ -132,11 +93,11 @@ public interface ExcelPackage extends EPackage {
 	int EXCEL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.DataImpl <em>Data</em>}' class.
+	 * The meta object id for the '{@link excel.impl.DataImpl <em>Data</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.DataImpl
-	 * @see Excel.impl.ExcelPackageImpl#getData()
+	 * @see excel.impl.DataImpl
+	 * @see excel.impl.ExcelPackageImpl#getData()
 	 * @generated
 	 */
 	int DATA = 6;
@@ -160,23 +121,14 @@ public interface ExcelPackage extends EPackage {
 	int DATA_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.ColonneImpl <em>Colonne</em>}' class.
+	 * The meta object id for the '{@link excel.impl.ColonneImpl <em>Colonne</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.ColonneImpl
-	 * @see Excel.impl.ExcelPackageImpl#getColonne()
+	 * @see excel.impl.ColonneImpl
+	 * @see excel.impl.ExcelPackageImpl#getColonne()
 	 * @generated
 	 */
-	int COLONNE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Identifiant</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLONNE__IDENTIFIANT = DATA_FEATURE_COUNT + 0;
+	int COLONNE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Colonne</em>' class.
@@ -185,7 +137,7 @@ public interface ExcelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_FEATURE_COUNT = DATA_FEATURE_COUNT + 1;
+	int COLONNE_FEATURE_COUNT = DATA_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Colonne</em>' class.
@@ -197,23 +149,51 @@ public interface ExcelPackage extends EPackage {
 	int COLONNE_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.ColonneInputImpl <em>Colonne Input</em>}' class.
+	 * The meta object id for the '{@link excel.impl.TableImpl <em>Table</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.ColonneInputImpl
-	 * @see Excel.impl.ExcelPackageImpl#getColonneInput()
+	 * @see excel.impl.TableImpl
+	 * @see excel.impl.ExcelPackageImpl#getTable()
 	 * @generated
 	 */
-	int COLONNE_INPUT = 2;
+	int TABLE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Identifiant</b></em>' attribute.
+	 * The feature id for the '<em><b>Colonne</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_INPUT__IDENTIFIANT = COLONNE__IDENTIFIANT;
+	int TABLE__COLONNE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link excel.impl.ColonneInputImpl <em>Colonne Input</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see excel.impl.ColonneInputImpl
+	 * @see excel.impl.ExcelPackageImpl#getColonneInput()
+	 * @generated
+	 */
+	int COLONNE_INPUT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Colonne Input</em>' class.
@@ -234,32 +214,23 @@ public interface ExcelPackage extends EPackage {
 	int COLONNE_INPUT_OPERATION_COUNT = COLONNE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.ColonneOutputImpl <em>Colonne Output</em>}' class.
+	 * The meta object id for the '{@link excel.impl.ColonneOutputImpl <em>Colonne Output</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.ColonneOutputImpl
-	 * @see Excel.impl.ExcelPackageImpl#getColonneOutput()
+	 * @see excel.impl.ColonneOutputImpl
+	 * @see excel.impl.ExcelPackageImpl#getColonneOutput()
 	 * @generated
 	 */
 	int COLONNE_OUTPUT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Identifiant</b></em>' attribute.
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_OUTPUT__IDENTIFIANT = COLONNE__IDENTIFIANT;
-
-	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLONNE_OUTPUT__OPERATIONS = COLONNE_FEATURE_COUNT + 0;
+	int COLONNE_OUTPUT__OPERATION = COLONNE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Colonne Output</em>' class.
@@ -279,12 +250,13 @@ public interface ExcelPackage extends EPackage {
 	 */
 	int COLONNE_OUTPUT_OPERATION_COUNT = COLONNE_OPERATION_COUNT + 0;
 
+
 	/**
-	 * The meta object id for the '{@link Excel.impl.OperationsImpl <em>Operations</em>}' class.
+	 * The meta object id for the '{@link excel.impl.OperationsImpl <em>Operations</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.OperationsImpl
-	 * @see Excel.impl.ExcelPackageImpl#getOperations()
+	 * @see excel.impl.OperationsImpl
+	 * @see excel.impl.ExcelPackageImpl#getOperations()
 	 * @generated
 	 */
 	int OPERATIONS = 5;
@@ -308,11 +280,11 @@ public interface ExcelPackage extends EPackage {
 	int OPERATIONS_OPERATION_COUNT = DATA_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.OperationsBinairesImpl <em>Operations Binaires</em>}' class.
+	 * The meta object id for the '{@link excel.impl.OperationsBinairesImpl <em>Operations Binaires</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.OperationsBinairesImpl
-	 * @see Excel.impl.ExcelPackageImpl#getOperationsBinaires()
+	 * @see excel.impl.OperationsBinairesImpl
+	 * @see excel.impl.ExcelPackageImpl#getOperationsBinaires()
 	 * @generated
 	 */
 	int OPERATIONS_BINAIRES = 7;
@@ -345,11 +317,11 @@ public interface ExcelPackage extends EPackage {
 	int OPERATIONS_BINAIRES_OPERATION_COUNT = OPERATIONS_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Excel.impl.OperationsUnairesImpl <em>Operations Unaires</em>}' class.
+	 * The meta object id for the '{@link excel.impl.OperationsUnairesImpl <em>Operations Unaires</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Excel.impl.OperationsUnairesImpl
-	 * @see Excel.impl.ExcelPackageImpl#getOperationsUnaires()
+	 * @see excel.impl.OperationsUnairesImpl
+	 * @see excel.impl.ExcelPackageImpl#getOperationsUnaires()
 	 * @generated
 	 */
 	int OPERATIONS_UNAIRES = 8;
@@ -383,156 +355,145 @@ public interface ExcelPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link Excel.Table <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Table</em>'.
-	 * @see Excel.Table
-	 * @generated
-	 */
-	EClass getTable();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Excel.Table#getColonne <em>Colonne</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Colonne</em>'.
-	 * @see Excel.Table#getColonne()
-	 * @see #getTable()
-	 * @generated
-	 */
-	EReference getTable_Colonne();
-
-	/**
-	 * Returns the meta object for class '{@link Excel.Excel <em>Excel</em>}'.
+	 * Returns the meta object for class '{@link excel.Excel <em>Excel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Excel</em>'.
-	 * @see Excel.Excel
+	 * @see excel.Excel
 	 * @generated
 	 */
 	EClass getExcel();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link Excel.Excel#getTable <em>Table</em>}'.
+	 * Returns the meta object for the containment reference list '{@link excel.Excel#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Table</em>'.
-	 * @see Excel.Excel#getTable()
+	 * @see excel.Excel#getTable()
 	 * @see #getExcel()
 	 * @generated
 	 */
 	EReference getExcel_Table();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.ColonneInput <em>Colonne Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Colonne Input</em>'.
-	 * @see Excel.ColonneInput
-	 * @generated
-	 */
-	EClass getColonneInput();
-
-	/**
-	 * Returns the meta object for class '{@link Excel.Colonne <em>Colonne</em>}'.
+	 * Returns the meta object for class '{@link excel.Colonne <em>Colonne</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Colonne</em>'.
-	 * @see Excel.Colonne
+	 * @see excel.Colonne
 	 * @generated
 	 */
 	EClass getColonne();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Excel.Colonne#getIdentifiant <em>Identifiant</em>}'.
+	 * Returns the meta object for class '{@link excel.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Identifiant</em>'.
-	 * @see Excel.Colonne#getIdentifiant()
-	 * @see #getColonne()
+	 * @return the meta object for class '<em>Table</em>'.
+	 * @see excel.Table
 	 * @generated
 	 */
-	EAttribute getColonne_Identifiant();
+	EClass getTable();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.ColonneOutput <em>Colonne Output</em>}'.
+	 * Returns the meta object for the containment reference list '{@link excel.Table#getColonne <em>Colonne</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Colonne</em>'.
+	 * @see excel.Table#getColonne()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EReference getTable_Colonne();
+
+	/**
+	 * Returns the meta object for class '{@link excel.ColonneInput <em>Colonne Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Colonne Input</em>'.
+	 * @see excel.ColonneInput
+	 * @generated
+	 */
+	EClass getColonneInput();
+
+	/**
+	 * Returns the meta object for class '{@link excel.ColonneOutput <em>Colonne Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Colonne Output</em>'.
-	 * @see Excel.ColonneOutput
+	 * @see excel.ColonneOutput
 	 * @generated
 	 */
 	EClass getColonneOutput();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link Excel.ColonneOutput#getOperations <em>Operations</em>}'.
+	 * Returns the meta object for the containment reference '{@link excel.ColonneOutput#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Operations</em>'.
-	 * @see Excel.ColonneOutput#getOperations()
+	 * @return the meta object for the containment reference '<em>Operation</em>'.
+	 * @see excel.ColonneOutput#getOperation()
 	 * @see #getColonneOutput()
 	 * @generated
 	 */
-	EReference getColonneOutput_Operations();
+	EReference getColonneOutput_Operation();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.Operations <em>Operations</em>}'.
+	 * Returns the meta object for class '{@link excel.Operations <em>Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Operations</em>'.
-	 * @see Excel.Operations
+	 * @see excel.Operations
 	 * @generated
 	 */
 	EClass getOperations();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.Data <em>Data</em>}'.
+	 * Returns the meta object for class '{@link excel.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Data</em>'.
-	 * @see Excel.Data
+	 * @see excel.Data
 	 * @generated
 	 */
 	EClass getData();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.OperationsBinaires <em>Operations Binaires</em>}'.
+	 * Returns the meta object for class '{@link excel.OperationsBinaires <em>Operations Binaires</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Operations Binaires</em>'.
-	 * @see Excel.OperationsBinaires
+	 * @see excel.OperationsBinaires
 	 * @generated
 	 */
 	EClass getOperationsBinaires();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Excel.OperationsBinaires#getData <em>Data</em>}'.
+	 * Returns the meta object for the reference list '{@link excel.OperationsBinaires#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Data</em>'.
-	 * @see Excel.OperationsBinaires#getData()
+	 * @see excel.OperationsBinaires#getData()
 	 * @see #getOperationsBinaires()
 	 * @generated
 	 */
 	EReference getOperationsBinaires_Data();
 
 	/**
-	 * Returns the meta object for class '{@link Excel.OperationsUnaires <em>Operations Unaires</em>}'.
+	 * Returns the meta object for class '{@link excel.OperationsUnaires <em>Operations Unaires</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Operations Unaires</em>'.
-	 * @see Excel.OperationsUnaires
+	 * @see excel.OperationsUnaires
 	 * @generated
 	 */
 	EClass getOperationsUnaires();
 
 	/**
-	 * Returns the meta object for the reference '{@link Excel.OperationsUnaires#getData <em>Data</em>}'.
+	 * Returns the meta object for the reference '{@link excel.OperationsUnaires#getData <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Data</em>'.
-	 * @see Excel.OperationsUnaires#getData()
+	 * @see excel.OperationsUnaires#getData()
 	 * @see #getOperationsUnaires()
 	 * @generated
 	 */
@@ -562,29 +523,11 @@ public interface ExcelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link Excel.impl.TableImpl <em>Table</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.ExcelImpl <em>Excel</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.TableImpl
-		 * @see Excel.impl.ExcelPackageImpl#getTable()
-		 * @generated
-		 */
-		EClass TABLE = eINSTANCE.getTable();
-
-		/**
-		 * The meta object literal for the '<em><b>Colonne</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TABLE__COLONNE = eINSTANCE.getTable_Colonne();
-
-		/**
-		 * The meta object literal for the '{@link Excel.impl.ExcelImpl <em>Excel</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Excel.impl.ExcelImpl
-		 * @see Excel.impl.ExcelPackageImpl#getExcel()
+		 * @see excel.impl.ExcelImpl
+		 * @see excel.impl.ExcelPackageImpl#getExcel()
 		 * @generated
 		 */
 		EClass EXCEL = eINSTANCE.getExcel();
@@ -598,77 +541,87 @@ public interface ExcelPackage extends EPackage {
 		EReference EXCEL__TABLE = eINSTANCE.getExcel_Table();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.ColonneInputImpl <em>Colonne Input</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.ColonneImpl <em>Colonne</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.ColonneInputImpl
-		 * @see Excel.impl.ExcelPackageImpl#getColonneInput()
-		 * @generated
-		 */
-		EClass COLONNE_INPUT = eINSTANCE.getColonneInput();
-
-		/**
-		 * The meta object literal for the '{@link Excel.impl.ColonneImpl <em>Colonne</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Excel.impl.ColonneImpl
-		 * @see Excel.impl.ExcelPackageImpl#getColonne()
+		 * @see excel.impl.ColonneImpl
+		 * @see excel.impl.ExcelPackageImpl#getColonne()
 		 * @generated
 		 */
 		EClass COLONNE = eINSTANCE.getColonne();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifiant</b></em>' attribute feature.
+		 * The meta object literal for the '{@link excel.impl.TableImpl <em>Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see excel.impl.TableImpl
+		 * @see excel.impl.ExcelPackageImpl#getTable()
+		 * @generated
+		 */
+		EClass TABLE = eINSTANCE.getTable();
+
+		/**
+		 * The meta object literal for the '<em><b>Colonne</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COLONNE__IDENTIFIANT = eINSTANCE.getColonne_Identifiant();
+		EReference TABLE__COLONNE = eINSTANCE.getTable_Colonne();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.ColonneOutputImpl <em>Colonne Output</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.ColonneInputImpl <em>Colonne Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.ColonneOutputImpl
-		 * @see Excel.impl.ExcelPackageImpl#getColonneOutput()
+		 * @see excel.impl.ColonneInputImpl
+		 * @see excel.impl.ExcelPackageImpl#getColonneInput()
+		 * @generated
+		 */
+		EClass COLONNE_INPUT = eINSTANCE.getColonneInput();
+
+		/**
+		 * The meta object literal for the '{@link excel.impl.ColonneOutputImpl <em>Colonne Output</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see excel.impl.ColonneOutputImpl
+		 * @see excel.impl.ExcelPackageImpl#getColonneOutput()
 		 * @generated
 		 */
 		EClass COLONNE_OUTPUT = eINSTANCE.getColonneOutput();
 
 		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COLONNE_OUTPUT__OPERATIONS = eINSTANCE.getColonneOutput_Operations();
+		EReference COLONNE_OUTPUT__OPERATION = eINSTANCE.getColonneOutput_Operation();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.OperationsImpl <em>Operations</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.OperationsImpl <em>Operations</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.OperationsImpl
-		 * @see Excel.impl.ExcelPackageImpl#getOperations()
+		 * @see excel.impl.OperationsImpl
+		 * @see excel.impl.ExcelPackageImpl#getOperations()
 		 * @generated
 		 */
 		EClass OPERATIONS = eINSTANCE.getOperations();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.DataImpl <em>Data</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.DataImpl <em>Data</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.DataImpl
-		 * @see Excel.impl.ExcelPackageImpl#getData()
+		 * @see excel.impl.DataImpl
+		 * @see excel.impl.ExcelPackageImpl#getData()
 		 * @generated
 		 */
 		EClass DATA = eINSTANCE.getData();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.OperationsBinairesImpl <em>Operations Binaires</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.OperationsBinairesImpl <em>Operations Binaires</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.OperationsBinairesImpl
-		 * @see Excel.impl.ExcelPackageImpl#getOperationsBinaires()
+		 * @see excel.impl.OperationsBinairesImpl
+		 * @see excel.impl.ExcelPackageImpl#getOperationsBinaires()
 		 * @generated
 		 */
 		EClass OPERATIONS_BINAIRES = eINSTANCE.getOperationsBinaires();
@@ -682,11 +635,11 @@ public interface ExcelPackage extends EPackage {
 		EReference OPERATIONS_BINAIRES__DATA = eINSTANCE.getOperationsBinaires_Data();
 
 		/**
-		 * The meta object literal for the '{@link Excel.impl.OperationsUnairesImpl <em>Operations Unaires</em>}' class.
+		 * The meta object literal for the '{@link excel.impl.OperationsUnairesImpl <em>Operations Unaires</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Excel.impl.OperationsUnairesImpl
-		 * @see Excel.impl.ExcelPackageImpl#getOperationsUnaires()
+		 * @see excel.impl.OperationsUnairesImpl
+		 * @see excel.impl.ExcelPackageImpl#getOperationsUnaires()
 		 * @generated
 		 */
 		EClass OPERATIONS_UNAIRES = eINSTANCE.getOperationsUnaires();

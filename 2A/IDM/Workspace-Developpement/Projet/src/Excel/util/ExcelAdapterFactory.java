@@ -1,8 +1,8 @@
 /**
  */
-package Excel.util;
+package excel.util;
 
-import Excel.*;
+import excel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see Excel.ExcelPackage
+ * @see excel.ExcelPackage
  * @generated
  */
 public class ExcelAdapterFactory extends AdapterFactoryImpl {
@@ -68,20 +68,20 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	protected ExcelSwitch<Adapter> modelSwitch =
 		new ExcelSwitch<Adapter>() {
 			@Override
-			public Adapter caseTable(Table object) {
-				return createTableAdapter();
-			}
-			@Override
 			public Adapter caseExcel(Excel object) {
 				return createExcelAdapter();
 			}
 			@Override
-			public Adapter caseColonneInput(ColonneInput object) {
-				return createColonneInputAdapter();
-			}
-			@Override
 			public Adapter caseColonne(Colonne object) {
 				return createColonneAdapter();
+			}
+			@Override
+			public Adapter caseTable(Table object) {
+				return createTableAdapter();
+			}
+			@Override
+			public Adapter caseColonneInput(ColonneInput object) {
+				return createColonneInputAdapter();
 			}
 			@Override
 			public Adapter caseColonneOutput(ColonneOutput object) {
@@ -124,27 +124,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.Table <em>Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.Excel <em>Excel</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.Table
-	 * @generated
-	 */
-	public Adapter createTableAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Excel.Excel <em>Excel</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Excel.Excel
+	 * @see excel.Excel
 	 * @generated
 	 */
 	public Adapter createExcelAdapter() {
@@ -152,27 +138,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.ColonneInput <em>Colonne Input</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.Colonne <em>Colonne</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.ColonneInput
-	 * @generated
-	 */
-	public Adapter createColonneInputAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Excel.Colonne <em>Colonne</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Excel.Colonne
+	 * @see excel.Colonne
 	 * @generated
 	 */
 	public Adapter createColonneAdapter() {
@@ -180,13 +152,41 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.ColonneOutput <em>Colonne Output</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.ColonneOutput
+	 * @see excel.Table
+	 * @generated
+	 */
+	public Adapter createTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link excel.ColonneInput <em>Colonne Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see excel.ColonneInput
+	 * @generated
+	 */
+	public Adapter createColonneInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link excel.ColonneOutput <em>Colonne Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see excel.ColonneOutput
 	 * @generated
 	 */
 	public Adapter createColonneOutputAdapter() {
@@ -194,13 +194,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.Operations <em>Operations</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.Operations <em>Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.Operations
+	 * @see excel.Operations
 	 * @generated
 	 */
 	public Adapter createOperationsAdapter() {
@@ -208,13 +208,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.Data <em>Data</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.Data
+	 * @see excel.Data
 	 * @generated
 	 */
 	public Adapter createDataAdapter() {
@@ -222,13 +222,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.OperationsBinaires <em>Operations Binaires</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.OperationsBinaires <em>Operations Binaires</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.OperationsBinaires
+	 * @see excel.OperationsBinaires
 	 * @generated
 	 */
 	public Adapter createOperationsBinairesAdapter() {
@@ -236,13 +236,13 @@ public class ExcelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Excel.OperationsUnaires <em>Operations Unaires</em>}'.
+	 * Creates a new adapter for an object of class '{@link excel.OperationsUnaires <em>Operations Unaires</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see Excel.OperationsUnaires
+	 * @see excel.OperationsUnaires
 	 * @generated
 	 */
 	public Adapter createOperationsUnairesAdapter() {

@@ -1,6 +1,6 @@
 /**
  */
-package Excel.presentation;
+package excel.presentation;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -179,7 +179,7 @@ public class ExcelActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(ExcelEditorPlugin.INSTANCE.getString("_UI_ExcelEditor_menu"), "ExcelMenuID");
+		IMenuManager submenuManager = new MenuManager(ExcelEditorPlugin.INSTANCE.getString("_UI_ExcelEditor_menu"), "excelMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

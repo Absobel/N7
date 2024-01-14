@@ -8,8 +8,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: Excel.tests,
- algorithme.tests,
+Export-Package: excel.tests,
+ catalogue.tests,
  script.tests
 Require-Bundle: org.eclipse.core.runtime,
  Projet;visibility:=reexport,

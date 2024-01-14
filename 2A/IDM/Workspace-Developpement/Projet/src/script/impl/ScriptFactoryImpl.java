@@ -57,12 +57,12 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ScriptPackage.SCRIPT: return createscript();
-			case ScriptPackage.BLOCS: return createblocs();
-			case ScriptPackage.OPERATIONS: return createOperations();
-			case ScriptPackage.UNAIRE: return createUnaire();
-			case ScriptPackage.BINAIRE: return createBinaire();
+			case ScriptPackage.SCRIPT: return createScript();
 			case ScriptPackage.DATA: return createData();
+			case ScriptPackage.BLOCS: return createBlocs();
+			case ScriptPackage.OPERATIONS: return createOperations();
+			case ScriptPackage.OPERATION_UNAIRE: return createOperationUnaire();
+			case ScriptPackage.OPERATION_BINAIRE: return createOperationBinaire();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,10 +76,10 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case ScriptPackage.OPERATIONS_BINAIRES:
-				return createOperationsBinairesFromString(eDataType, initialValue);
-			case ScriptPackage.FONCTIONS:
-				return createFonctionsFromString(eDataType, initialValue);
+			case ScriptPackage.FONCTION_TYPE:
+				return createFonctionTypeFromString(eDataType, initialValue);
+			case ScriptPackage.OPERATION_BINAIRE_TYPE:
+				return createOperationBinaireTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -93,10 +93,10 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case ScriptPackage.OPERATIONS_BINAIRES:
-				return convertOperationsBinairesToString(eDataType, instanceValue);
-			case ScriptPackage.FONCTIONS:
-				return convertFonctionsToString(eDataType, instanceValue);
+			case ScriptPackage.FONCTION_TYPE:
+				return convertFonctionTypeToString(eDataType, instanceValue);
+			case ScriptPackage.OPERATION_BINAIRE_TYPE:
+				return convertOperationBinaireTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -108,8 +108,8 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public script createscript() {
-		scriptImpl script = new scriptImpl();
+	public Script createScript() {
+		ScriptImpl script = new ScriptImpl();
 		return script;
 	}
 
@@ -119,8 +119,19 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public blocs createblocs() {
-		blocsImpl blocs = new blocsImpl();
+	public Data createData() {
+		DataImpl data = new DataImpl();
+		return data;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Blocs createBlocs() {
+		BlocsImpl blocs = new BlocsImpl();
 		return blocs;
 	}
 
@@ -141,9 +152,9 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public Unaire createUnaire() {
-		UnaireImpl unaire = new UnaireImpl();
-		return unaire;
+	public OperationUnaire createOperationUnaire() {
+		OperationUnaireImpl operationUnaire = new OperationUnaireImpl();
+		return operationUnaire;
 	}
 
 	/**
@@ -152,9 +163,9 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public Binaire createBinaire() {
-		BinaireImpl binaire = new BinaireImpl();
-		return binaire;
+	public OperationBinaire createOperationBinaire() {
+		OperationBinaireImpl operationBinaire = new OperationBinaireImpl();
+		return operationBinaire;
 	}
 
 	/**
@@ -162,19 +173,8 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Data createData() {
-		DataImpl data = new DataImpl();
-		return data;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationsBinaires createOperationsBinairesFromString(EDataType eDataType, String initialValue) {
-		OperationsBinaires result = OperationsBinaires.get(initialValue);
+	public FonctionType createFonctionTypeFromString(EDataType eDataType, String initialValue) {
+		FonctionType result = FonctionType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -184,7 +184,7 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertOperationsBinairesToString(EDataType eDataType, Object instanceValue) {
+	public String convertFonctionTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -193,8 +193,8 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Fonctions createFonctionsFromString(EDataType eDataType, String initialValue) {
-		Fonctions result = Fonctions.get(initialValue);
+	public OperationBinaireType createOperationBinaireTypeFromString(EDataType eDataType, String initialValue) {
+		OperationBinaireType result = OperationBinaireType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -204,7 +204,7 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertFonctionsToString(EDataType eDataType, Object instanceValue) {
+	public String convertOperationBinaireTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

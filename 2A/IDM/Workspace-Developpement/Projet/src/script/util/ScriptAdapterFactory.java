@@ -68,28 +68,28 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	protected ScriptSwitch<Adapter> modelSwitch =
 		new ScriptSwitch<Adapter>() {
 			@Override
-			public Adapter casescript(script object) {
-				return createscriptAdapter();
+			public Adapter caseScript(Script object) {
+				return createScriptAdapter();
 			}
 			@Override
-			public Adapter caseblocs(blocs object) {
-				return createblocsAdapter();
+			public Adapter caseData(Data object) {
+				return createDataAdapter();
+			}
+			@Override
+			public Adapter caseBlocs(Blocs object) {
+				return createBlocsAdapter();
 			}
 			@Override
 			public Adapter caseOperations(Operations object) {
 				return createOperationsAdapter();
 			}
 			@Override
-			public Adapter caseUnaire(Unaire object) {
-				return createUnaireAdapter();
+			public Adapter caseOperationUnaire(OperationUnaire object) {
+				return createOperationUnaireAdapter();
 			}
 			@Override
-			public Adapter caseBinaire(Binaire object) {
-				return createBinaireAdapter();
-			}
-			@Override
-			public Adapter caseData(Data object) {
-				return createDataAdapter();
+			public Adapter caseOperationBinaire(OperationBinaire object) {
+				return createOperationBinaireAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -112,30 +112,44 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.script <em>script</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.Script <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.script
+	 * @see script.Script
 	 * @generated
 	 */
-	public Adapter createscriptAdapter() {
+	public Adapter createScriptAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.blocs <em>blocs</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.Data <em>Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.blocs
+	 * @see script.Data
 	 * @generated
 	 */
-	public Adapter createblocsAdapter() {
+	public Adapter createDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link script.Blocs <em>Blocs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see script.Blocs
+	 * @generated
+	 */
+	public Adapter createBlocsAdapter() {
 		return null;
 	}
 
@@ -154,44 +168,30 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Unaire <em>Unaire</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.OperationUnaire <em>Operation Unaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Unaire
+	 * @see script.OperationUnaire
 	 * @generated
 	 */
-	public Adapter createUnaireAdapter() {
+	public Adapter createOperationUnaireAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Binaire <em>Binaire</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.OperationBinaire <em>Operation Binaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Binaire
+	 * @see script.OperationBinaire
 	 * @generated
 	 */
-	public Adapter createBinaireAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.Data <em>Data</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.Data
-	 * @generated
-	 */
-	public Adapter createDataAdapter() {
+	public Adapter createOperationBinaireAdapter() {
 		return null;
 	}
 

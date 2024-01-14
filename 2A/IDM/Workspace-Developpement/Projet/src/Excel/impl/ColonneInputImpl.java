@@ -1,9 +1,9 @@
 /**
  */
-package Excel.impl;
+package excel.impl;
 
-import Excel.ColonneInput;
-import Excel.ExcelPackage;
+import excel.ColonneInput;
+import excel.ExcelPackage;
 
 import org.eclipse.emf.ecore.EClass;
 

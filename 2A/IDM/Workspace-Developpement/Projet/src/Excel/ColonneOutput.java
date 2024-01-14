@@ -1,6 +1,6 @@
 /**
  */
-package Excel;
+package excel;
 
 
 /**
@@ -12,34 +12,34 @@ package Excel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link Excel.ColonneOutput#getOperations <em>Operations</em>}</li>
+ *   <li>{@link excel.ColonneOutput#getOperation <em>Operation</em>}</li>
  * </ul>
  *
- * @see Excel.ExcelPackage#getColonneOutput()
+ * @see excel.ExcelPackage#getColonneOutput()
  * @model
  * @generated
  */
 public interface ColonneOutput extends Colonne {
+
 	/**
-	 * Returns the value of the '<em><b>Operations</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Operation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operations</em>' containment reference.
-	 * @see #setOperations(Operations)
-	 * @see Excel.ExcelPackage#getColonneOutput_Operations()
+	 * @return the value of the '<em>Operation</em>' containment reference.
+	 * @see #setOperation(Operations)
+	 * @see excel.ExcelPackage#getColonneOutput_Operation()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Operations getOperations();
+	Operations getOperation();
 
 	/**
-	 * Sets the value of the '{@link Excel.ColonneOutput#getOperations <em>Operations</em>}' containment reference.
+	 * Sets the value of the '{@link excel.ColonneOutput#getOperation <em>Operation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operations</em>' containment reference.
-	 * @see #getOperations()
+	 * @param value the new value of the '<em>Operation</em>' containment reference.
+	 * @see #getOperation()
 	 * @generated
 	 */
-	void setOperations(Operations value);
-
+	void setOperation(Operations value);
 } // ColonneOutput

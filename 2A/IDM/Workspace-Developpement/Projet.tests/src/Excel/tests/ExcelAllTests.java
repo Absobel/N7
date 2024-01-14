@@ -1,6 +1,6 @@
 /**
  */
-package Excel.tests;
+package excel.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;

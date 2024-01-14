@@ -1,6 +1,6 @@
 /**
  */
-package Excel.presentation;
+package excel.presentation;
 
 
 import java.util.ArrayList;
@@ -69,9 +69,9 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import Excel.ExcelFactory;
-import Excel.ExcelPackage;
-import Excel.provider.ExcelEditPlugin;
+import excel.ExcelFactory;
+import excel.ExcelPackage;
+import excel.provider.ExcelEditPlugin;
 
 
 import org.eclipse.core.runtime.Path;
@@ -398,8 +398,7 @@ public class ExcelModelWizard extends Wizard implements INewWizard {
 		 */
 		@Override
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE);
-			{
+			Composite composite = new Composite(parent, SWT.NONE); {
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
