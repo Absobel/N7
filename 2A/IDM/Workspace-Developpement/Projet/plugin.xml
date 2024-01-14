@@ -14,4 +14,12 @@
             genModel="models/Excel.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Algorithme -->
+      <package
+            uri="https://Algorithme.ecore"
+            class="Algorithme.AlgorithmePackage"
+            genModel="models/Algorithme.genmodel"/>
+   </extension>
+
 </plugin>
