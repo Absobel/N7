@@ -4,6 +4,7 @@
 package org.xtext.tAB.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -67,11 +68,63 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
     {
       case TABPackage.TABLEUR: return createTableur();
       case TABPackage.COLONNE: return createColonne();
+      case TABPackage.OPERATION: return createOperation();
+      case TABPackage.OPERATION_UNAIRE: return createOperationUnaire();
+      case TABPackage.OPERATION_BINAIRE: return createOperationBinaire();
       case TABPackage.TABLE: return createTable();
       case TABPackage.COLONNE_INPUT: return createColonneInput();
       case TABPackage.COLONNE_OUTPUT: return createColonneOutput();
+      case TABPackage.CATALOGUE: return createCatalogue();
+      case TABPackage.ALGORITHME: return createAlgorithme();
+      case TABPackage.ENTREE: return createEntree();
+      case TABPackage.SORTIE: return createSortie();
+      case TABPackage.PARAMETRE: return createParametre();
+      case TABPackage.DOCUMENTATION: return createDocumentation();
+      case TABPackage.RESSOURCE: return createRessource();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case TABPackage.OPERATION_UNAIRE_TYPE:
+        return createOperationUnaireTypeFromString(eDataType, initialValue);
+      case TABPackage.OPERATION_BINAIRE_TYPE:
+        return createOperationBinaireTypeFromString(eDataType, initialValue);
+      case TABPackage.TYPE_PRIMITIF_PYTHON:
+        return createTypePrimitifPythonFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case TABPackage.OPERATION_UNAIRE_TYPE:
+        return convertOperationUnaireTypeToString(eDataType, instanceValue);
+      case TABPackage.OPERATION_BINAIRE_TYPE:
+        return convertOperationBinaireTypeToString(eDataType, instanceValue);
+      case TABPackage.TYPE_PRIMITIF_PYTHON:
+        return convertTypePrimitifPythonToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -97,6 +150,42 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
   {
     ColonneImpl colonne = new ColonneImpl();
     return colonne;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operation createOperation()
+  {
+    OperationImpl operation = new OperationImpl();
+    return operation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperationUnaire createOperationUnaire()
+  {
+    OperationUnaireImpl operationUnaire = new OperationUnaireImpl();
+    return operationUnaire;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperationBinaire createOperationBinaire()
+  {
+    OperationBinaireImpl operationBinaire = new OperationBinaireImpl();
+    return operationBinaire;
   }
 
   /**
@@ -133,6 +222,156 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
   {
     ColonneOutputImpl colonneOutput = new ColonneOutputImpl();
     return colonneOutput;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Catalogue createCatalogue()
+  {
+    CatalogueImpl catalogue = new CatalogueImpl();
+    return catalogue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Algorithme createAlgorithme()
+  {
+    AlgorithmeImpl algorithme = new AlgorithmeImpl();
+    return algorithme;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Entree createEntree()
+  {
+    EntreeImpl entree = new EntreeImpl();
+    return entree;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Sortie createSortie()
+  {
+    SortieImpl sortie = new SortieImpl();
+    return sortie;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Parametre createParametre()
+  {
+    ParametreImpl parametre = new ParametreImpl();
+    return parametre;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Documentation createDocumentation()
+  {
+    DocumentationImpl documentation = new DocumentationImpl();
+    return documentation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Ressource createRessource()
+  {
+    RessourceImpl ressource = new RessourceImpl();
+    return ressource;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperationUnaireType createOperationUnaireTypeFromString(EDataType eDataType, String initialValue)
+  {
+    OperationUnaireType result = OperationUnaireType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOperationUnaireTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperationBinaireType createOperationBinaireTypeFromString(EDataType eDataType, String initialValue)
+  {
+    OperationBinaireType result = OperationBinaireType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOperationBinaireTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TypePrimitifPython createTypePrimitifPythonFromString(EDataType eDataType, String initialValue)
+  {
+    TypePrimitifPython result = TypePrimitifPython.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTypePrimitifPythonToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

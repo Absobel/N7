@@ -5,18 +5,32 @@ package org.xtext.tAB.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.tAB.Algorithme;
+import org.xtext.tAB.Catalogue;
 import org.xtext.tAB.Colonne;
 import org.xtext.tAB.ColonneInput;
 import org.xtext.tAB.ColonneOutput;
+import org.xtext.tAB.Documentation;
+import org.xtext.tAB.Entree;
+import org.xtext.tAB.Operation;
+import org.xtext.tAB.OperationBinaire;
+import org.xtext.tAB.OperationBinaireType;
+import org.xtext.tAB.OperationUnaire;
+import org.xtext.tAB.OperationUnaireType;
+import org.xtext.tAB.Parametre;
+import org.xtext.tAB.Ressource;
+import org.xtext.tAB.Sortie;
 import org.xtext.tAB.TABFactory;
 import org.xtext.tAB.TABPackage;
 import org.xtext.tAB.Table;
 import org.xtext.tAB.Tableur;
+import org.xtext.tAB.TypePrimitifPython;
 
 /**
  * <!-- begin-user-doc -->
@@ -45,6 +59,27 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass operationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationUnaireEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationBinaireEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass tableEClass = null;
 
   /**
@@ -60,6 +95,76 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   private EClass colonneOutputEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass catalogueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass algorithmeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entreeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sortieEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass parametreEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass documentationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ressourceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum operationUnaireTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum operationBinaireTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum typePrimitifPythonEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -162,6 +267,17 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
+  public EReference getTableur_Catalogue()
+  {
+    return (EReference)tableurEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getColonne()
   {
     return colonneEClass;
@@ -176,6 +292,61 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
   public EAttribute getColonne_Name()
   {
     return (EAttribute)colonneEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperation()
+  {
+    return operationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperationUnaire()
+  {
+    return operationUnaireEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperationUnaire_Kind()
+  {
+    return (EAttribute)operationUnaireEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperationBinaire()
+  {
+    return operationBinaireEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperationBinaire_Kind()
+  {
+    return (EAttribute)operationBinaireEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -239,6 +410,281 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
+  public EReference getColonneOutput_Operations()
+  {
+    return (EReference)colonneOutputEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getColonneOutput_Colonnes()
+  {
+    return (EReference)colonneOutputEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCatalogue()
+  {
+    return catalogueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCatalogue_Name()
+  {
+    return (EAttribute)catalogueEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCatalogue_Algorithmes()
+  {
+    return (EReference)catalogueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAlgorithme()
+  {
+    return algorithmeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAlgorithme_Name()
+  {
+    return (EAttribute)algorithmeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlgorithme_Entrees()
+  {
+    return (EReference)algorithmeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlgorithme_Sorties()
+  {
+    return (EReference)algorithmeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlgorithme_Documentation()
+  {
+    return (EReference)algorithmeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getAlgorithme_Ressource()
+  {
+    return (EReference)algorithmeEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEntree()
+  {
+    return entreeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntree_Parametres()
+  {
+    return (EReference)entreeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSortie()
+  {
+    return sortieEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSortie_Parametres()
+  {
+    return (EReference)sortieEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getParametre()
+  {
+    return parametreEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParametre_Name()
+  {
+    return (EAttribute)parametreEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getParametre_Type()
+  {
+    return (EAttribute)parametreEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDocumentation()
+  {
+    return documentationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDocumentation_Texte()
+  {
+    return (EAttribute)documentationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRessource()
+  {
+    return ressourceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRessource_Chemin()
+  {
+    return (EAttribute)ressourceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getOperationUnaireType()
+  {
+    return operationUnaireTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getOperationBinaireType()
+  {
+    return operationBinaireTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getTypePrimitifPython()
+  {
+    return typePrimitifPythonEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public TABFactory getTABFactory()
   {
     return (TABFactory)getEFactoryInstance();
@@ -267,9 +713,18 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     tableurEClass = createEClass(TABLEUR);
     createEAttribute(tableurEClass, TABLEUR__NAME);
     createEReference(tableurEClass, TABLEUR__TABLES);
+    createEReference(tableurEClass, TABLEUR__CATALOGUE);
 
     colonneEClass = createEClass(COLONNE);
     createEAttribute(colonneEClass, COLONNE__NAME);
+
+    operationEClass = createEClass(OPERATION);
+
+    operationUnaireEClass = createEClass(OPERATION_UNAIRE);
+    createEAttribute(operationUnaireEClass, OPERATION_UNAIRE__KIND);
+
+    operationBinaireEClass = createEClass(OPERATION_BINAIRE);
+    createEAttribute(operationBinaireEClass, OPERATION_BINAIRE__KIND);
 
     tableEClass = createEClass(TABLE);
     createEAttribute(tableEClass, TABLE__NAME);
@@ -278,6 +733,40 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     colonneInputEClass = createEClass(COLONNE_INPUT);
 
     colonneOutputEClass = createEClass(COLONNE_OUTPUT);
+    createEReference(colonneOutputEClass, COLONNE_OUTPUT__OPERATIONS);
+    createEReference(colonneOutputEClass, COLONNE_OUTPUT__COLONNES);
+
+    catalogueEClass = createEClass(CATALOGUE);
+    createEAttribute(catalogueEClass, CATALOGUE__NAME);
+    createEReference(catalogueEClass, CATALOGUE__ALGORITHMES);
+
+    algorithmeEClass = createEClass(ALGORITHME);
+    createEAttribute(algorithmeEClass, ALGORITHME__NAME);
+    createEReference(algorithmeEClass, ALGORITHME__ENTREES);
+    createEReference(algorithmeEClass, ALGORITHME__SORTIES);
+    createEReference(algorithmeEClass, ALGORITHME__DOCUMENTATION);
+    createEReference(algorithmeEClass, ALGORITHME__RESSOURCE);
+
+    entreeEClass = createEClass(ENTREE);
+    createEReference(entreeEClass, ENTREE__PARAMETRES);
+
+    sortieEClass = createEClass(SORTIE);
+    createEReference(sortieEClass, SORTIE__PARAMETRES);
+
+    parametreEClass = createEClass(PARAMETRE);
+    createEAttribute(parametreEClass, PARAMETRE__NAME);
+    createEAttribute(parametreEClass, PARAMETRE__TYPE);
+
+    documentationEClass = createEClass(DOCUMENTATION);
+    createEAttribute(documentationEClass, DOCUMENTATION__TEXTE);
+
+    ressourceEClass = createEClass(RESSOURCE);
+    createEAttribute(ressourceEClass, RESSOURCE__CHEMIN);
+
+    // Create enums
+    operationUnaireTypeEEnum = createEEnum(OPERATION_UNAIRE_TYPE);
+    operationBinaireTypeEEnum = createEEnum(OPERATION_BINAIRE_TYPE);
+    typePrimitifPythonEEnum = createEEnum(TYPE_PRIMITIF_PYTHON);
   }
 
   /**
@@ -309,6 +798,8 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    operationUnaireEClass.getESuperTypes().add(this.getOperation());
+    operationBinaireEClass.getESuperTypes().add(this.getOperation());
     colonneInputEClass.getESuperTypes().add(this.getColonne());
     colonneOutputEClass.getESuperTypes().add(this.getColonne());
 
@@ -316,9 +807,18 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     initEClass(tableurEClass, Tableur.class, "Tableur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTableur_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTableur_Tables(), this.getTable(), null, "tables", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableur_Catalogue(), this.getCatalogue(), null, "Catalogue", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colonneEClass, Colonne.class, "Colonne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColonne_Name(), ecorePackage.getEString(), "name", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(operationUnaireEClass, OperationUnaire.class, "OperationUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperationUnaire_Kind(), this.getOperationUnaireType(), "kind", null, 0, 1, OperationUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationBinaireEClass, OperationBinaire.class, "OperationBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperationBinaire_Kind(), this.getOperationBinaireType(), "kind", null, 0, 1, OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -327,6 +827,52 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     initEClass(colonneInputEClass, ColonneInput.class, "ColonneInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(colonneOutputEClass, ColonneOutput.class, "ColonneOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getColonneOutput_Operations(), this.getOperation(), null, "operations", null, 0, -1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getColonneOutput_Colonnes(), this.getColonne(), null, "colonnes", null, 0, -1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(catalogueEClass, Catalogue.class, "Catalogue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCatalogue_Name(), ecorePackage.getEString(), "name", null, 0, 1, Catalogue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCatalogue_Algorithmes(), this.getAlgorithme(), null, "algorithmes", null, 0, -1, Catalogue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(algorithmeEClass, Algorithme.class, "Algorithme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAlgorithme_Name(), ecorePackage.getEString(), "name", null, 0, 1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlgorithme_Entrees(), this.getEntree(), null, "entrees", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlgorithme_Sorties(), this.getSortie(), null, "sorties", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlgorithme_Documentation(), this.getDocumentation(), null, "documentation", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAlgorithme_Ressource(), this.getRessource(), null, "ressource", null, 0, -1, Algorithme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entreeEClass, Entree.class, "Entree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntree_Parametres(), this.getParametre(), null, "parametres", null, 0, -1, Entree.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sortieEClass, Sortie.class, "Sortie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSortie_Parametres(), this.getParametre(), null, "parametres", null, 0, -1, Sortie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(parametreEClass, Parametre.class, "Parametre", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParametre_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parametre.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParametre_Type(), this.getTypePrimitifPython(), "type", null, 0, 1, Parametre.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDocumentation_Texte(), ecorePackage.getEString(), "texte", null, 0, 1, Documentation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ressourceEClass, Ressource.class, "Ressource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRessource_Chemin(), ecorePackage.getEString(), "chemin", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(operationUnaireTypeEEnum, OperationUnaireType.class, "OperationUnaireType");
+    addEEnumLiteral(operationUnaireTypeEEnum, OperationUnaireType.OPPOSE);
+
+    initEEnum(operationBinaireTypeEEnum, OperationBinaireType.class, "OperationBinaireType");
+    addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.ADDITION);
+    addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.SOUSTRACTION);
+    addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.MULTIPLICATION);
+    addEEnumLiteral(operationBinaireTypeEEnum, OperationBinaireType.DIVISION);
+
+    initEEnum(typePrimitifPythonEEnum, TypePrimitifPython.class, "TypePrimitifPython");
+    addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.INT);
+    addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.FLOAT);
+    addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.STR);
+    addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.BOOL);
+    addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.LIST);
 
     // Create resource
     createResource(eNS_URI);

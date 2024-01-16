@@ -19,27 +19,25 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.xtext.tAB.Algorithme;
 import org.xtext.tAB.Catalogue;
 import org.xtext.tAB.TABPackage;
-import org.xtext.tAB.Table;
-import org.xtext.tAB.Tableur;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Tableur</b></em>'.
+ * An implementation of the model object '<em><b>Catalogue</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getTables <em>Tables</em>}</li>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getCatalogue <em>Catalogue</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.CatalogueImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.CatalogueImpl#getAlgorithmes <em>Algorithmes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
+public class CatalogueImpl extends MinimalEObjectImpl.Container implements Catalogue
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -62,31 +60,21 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTables() <em>Tables</em>}' containment reference list.
+   * The cached value of the '{@link #getAlgorithmes() <em>Algorithmes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTables()
+   * @see #getAlgorithmes()
    * @generated
    * @ordered
    */
-  protected EList<Table> tables;
-
-  /**
-   * The cached value of the '{@link #getCatalogue() <em>Catalogue</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCatalogue()
-   * @generated
-   * @ordered
-   */
-  protected EList<Catalogue> catalogue;
+  protected EList<Algorithme> algorithmes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TableurImpl()
+  protected CatalogueImpl()
   {
     super();
   }
@@ -99,7 +87,7 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   @Override
   protected EClass eStaticClass()
   {
-    return TABPackage.Literals.TABLEUR;
+    return TABPackage.Literals.CATALOGUE;
   }
 
   /**
@@ -124,7 +112,7 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.TABLEUR__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.CATALOGUE__NAME, oldName, name));
   }
 
   /**
@@ -133,28 +121,13 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
    * @generated
    */
   @Override
-  public EList<Table> getTables()
+  public EList<Algorithme> getAlgorithmes()
   {
-    if (tables == null)
+    if (algorithmes == null)
     {
-      tables = new EObjectContainmentEList<Table>(Table.class, this, TABPackage.TABLEUR__TABLES);
+      algorithmes = new EObjectContainmentEList<Algorithme>(Algorithme.class, this, TABPackage.CATALOGUE__ALGORITHMES);
     }
-    return tables;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Catalogue> getCatalogue()
-  {
-    if (catalogue == null)
-    {
-      catalogue = new EObjectContainmentEList<Catalogue>(Catalogue.class, this, TABPackage.TABLEUR__CATALOGUE);
-    }
-    return catalogue;
+    return algorithmes;
   }
 
   /**
@@ -167,10 +140,8 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__TABLES:
-        return ((InternalEList<?>)getTables()).basicRemove(otherEnd, msgs);
-      case TABPackage.TABLEUR__CATALOGUE:
-        return ((InternalEList<?>)getCatalogue()).basicRemove(otherEnd, msgs);
+      case TABPackage.CATALOGUE__ALGORITHMES:
+        return ((InternalEList<?>)getAlgorithmes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -185,12 +156,10 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.CATALOGUE__NAME:
         return getName();
-      case TABPackage.TABLEUR__TABLES:
-        return getTables();
-      case TABPackage.TABLEUR__CATALOGUE:
-        return getCatalogue();
+      case TABPackage.CATALOGUE__ALGORITHMES:
+        return getAlgorithmes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -206,16 +175,12 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.CATALOGUE__NAME:
         setName((String)newValue);
         return;
-      case TABPackage.TABLEUR__TABLES:
-        getTables().clear();
-        getTables().addAll((Collection<? extends Table>)newValue);
-        return;
-      case TABPackage.TABLEUR__CATALOGUE:
-        getCatalogue().clear();
-        getCatalogue().addAll((Collection<? extends Catalogue>)newValue);
+      case TABPackage.CATALOGUE__ALGORITHMES:
+        getAlgorithmes().clear();
+        getAlgorithmes().addAll((Collection<? extends Algorithme>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -231,14 +196,11 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.CATALOGUE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TABPackage.TABLEUR__TABLES:
-        getTables().clear();
-        return;
-      case TABPackage.TABLEUR__CATALOGUE:
-        getCatalogue().clear();
+      case TABPackage.CATALOGUE__ALGORITHMES:
+        getAlgorithmes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -254,12 +216,10 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.CATALOGUE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TABPackage.TABLEUR__TABLES:
-        return tables != null && !tables.isEmpty();
-      case TABPackage.TABLEUR__CATALOGUE:
-        return catalogue != null && !catalogue.isEmpty();
+      case TABPackage.CATALOGUE__ALGORITHMES:
+        return algorithmes != null && !algorithmes.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -281,4 +241,4 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
     return result.toString();
   }
 
-} //TableurImpl
+} //CatalogueImpl

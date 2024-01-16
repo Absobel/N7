@@ -5,9 +5,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Catalogue" upperBound="-1"
+        eType="#//Catalogue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Colonne">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//OperationUnaireType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationBinaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//OperationBinaireType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationUnaireType">
+    <eLiterals name="Oppose" literal="Oppose"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationBinaireType">
+    <eLiterals name="Addition" literal="Addition"/>
+    <eLiterals name="Soustraction" value="1" literal="Soustraction"/>
+    <eLiterals name="Multiplication" value="2" literal="Multiplication"/>
+    <eLiterals name="Division" value="3" literal="Division"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -15,5 +33,51 @@
         eType="#//Colonne" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneInput" eSuperTypes="#//Colonne"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//Operation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" unique="false"
+        upperBound="-1" eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithmes" upperBound="-1"
+        eType="#//Algorithme" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Algorithme">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" upperBound="-1"
+        eType="#//Entree" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sorties" upperBound="-1"
+        eType="#//Sortie" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentation" upperBound="-1"
+        eType="#//Documentation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ressource" upperBound="-1"
+        eType="#//Ressource" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametres" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortie">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametres" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parametre">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypePrimitifPython"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypePrimitifPython">
+    <eLiterals name="int" literal="int"/>
+    <eLiterals name="float" value="1" literal="float"/>
+    <eLiterals name="str" value="2" literal="str"/>
+    <eLiterals name="bool" value="3" literal="bool"/>
+    <eLiterals name="list" value="4" literal="list"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ressource">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chemin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

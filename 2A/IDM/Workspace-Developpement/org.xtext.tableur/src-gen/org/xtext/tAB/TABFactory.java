@@ -42,6 +42,33 @@ public interface TABFactory extends EFactory
   Colonne createColonne();
 
   /**
+   * Returns a new object of class '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation</em>'.
+   * @generated
+   */
+  Operation createOperation();
+
+  /**
+   * Returns a new object of class '<em>Operation Unaire</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Unaire</em>'.
+   * @generated
+   */
+  OperationUnaire createOperationUnaire();
+
+  /**
+   * Returns a new object of class '<em>Operation Binaire</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Binaire</em>'.
+   * @generated
+   */
+  OperationBinaire createOperationBinaire();
+
+  /**
    * Returns a new object of class '<em>Table</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,6 +94,69 @@ public interface TABFactory extends EFactory
    * @generated
    */
   ColonneOutput createColonneOutput();
+
+  /**
+   * Returns a new object of class '<em>Catalogue</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Catalogue</em>'.
+   * @generated
+   */
+  Catalogue createCatalogue();
+
+  /**
+   * Returns a new object of class '<em>Algorithme</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Algorithme</em>'.
+   * @generated
+   */
+  Algorithme createAlgorithme();
+
+  /**
+   * Returns a new object of class '<em>Entree</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entree</em>'.
+   * @generated
+   */
+  Entree createEntree();
+
+  /**
+   * Returns a new object of class '<em>Sortie</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sortie</em>'.
+   * @generated
+   */
+  Sortie createSortie();
+
+  /**
+   * Returns a new object of class '<em>Parametre</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parametre</em>'.
+   * @generated
+   */
+  Parametre createParametre();
+
+  /**
+   * Returns a new object of class '<em>Documentation</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Documentation</em>'.
+   * @generated
+   */
+  Documentation createDocumentation();
+
+  /**
+   * Returns a new object of class '<em>Ressource</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ressource</em>'.
+   * @generated
+   */
+  Ressource createRessource();
 
   /**
    * Returns the package supported by this factory.

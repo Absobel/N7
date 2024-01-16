@@ -15,8 +15,17 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.services.TABGrammarAccess;
+import org.xtext.tAB.Algorithme;
+import org.xtext.tAB.Catalogue;
 import org.xtext.tAB.ColonneInput;
 import org.xtext.tAB.ColonneOutput;
+import org.xtext.tAB.Documentation;
+import org.xtext.tAB.Entree;
+import org.xtext.tAB.OperationBinaire;
+import org.xtext.tAB.OperationUnaire;
+import org.xtext.tAB.Parametre;
+import org.xtext.tAB.Ressource;
+import org.xtext.tAB.Sortie;
 import org.xtext.tAB.TABPackage;
 import org.xtext.tAB.Table;
 import org.xtext.tAB.Tableur;
@@ -35,11 +44,38 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == TABPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case TABPackage.ALGORITHME:
+				sequence_Algorithme(context, (Algorithme) semanticObject); 
+				return; 
+			case TABPackage.CATALOGUE:
+				sequence_Catalogue(context, (Catalogue) semanticObject); 
+				return; 
 			case TABPackage.COLONNE_INPUT:
 				sequence_ColonneInput(context, (ColonneInput) semanticObject); 
 				return; 
 			case TABPackage.COLONNE_OUTPUT:
 				sequence_ColonneOutput(context, (ColonneOutput) semanticObject); 
+				return; 
+			case TABPackage.DOCUMENTATION:
+				sequence_Documentation(context, (Documentation) semanticObject); 
+				return; 
+			case TABPackage.ENTREE:
+				sequence_Entree(context, (Entree) semanticObject); 
+				return; 
+			case TABPackage.OPERATION_BINAIRE:
+				sequence_OperationBinaire(context, (OperationBinaire) semanticObject); 
+				return; 
+			case TABPackage.OPERATION_UNAIRE:
+				sequence_OperationUnaire(context, (OperationUnaire) semanticObject); 
+				return; 
+			case TABPackage.PARAMETRE:
+				sequence_Parametre(context, (Parametre) semanticObject); 
+				return; 
+			case TABPackage.RESSOURCE:
+				sequence_Ressource(context, (Ressource) semanticObject); 
+				return; 
+			case TABPackage.SORTIE:
+				sequence_Sortie(context, (Sortie) semanticObject); 
 				return; 
 			case TABPackage.TABLE:
 				sequence_Table(context, (Table) semanticObject); 
@@ -51,6 +87,34 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Algorithme returns Algorithme
+	 *
+	 * Constraint:
+	 *     (name=ID entrees+=Entree* sorties+=Sortie* documentation+=Documentation* ressource+=Ressource*)
+	 * </pre>
+	 */
+	protected void sequence_Algorithme(ISerializationContext context, Algorithme semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Catalogue returns Catalogue
+	 *
+	 * Constraint:
+	 *     (name=ID algorithmes+=Algorithme*)
+	 * </pre>
+	 */
+	protected void sequence_Catalogue(ISerializationContext context, Catalogue semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * <pre>
@@ -80,17 +144,147 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     ColonneOutput returns ColonneOutput
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (
+	 *         (name=ID operations+=OperationBinaire colonnes+=[Colonne|ID] colonnes+=[Colonne|ID]) | 
+	 *         (name=ID operations+=OperationUnaire colonnes+=[Colonne|ID])
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ColonneOutput(ISerializationContext context, ColonneOutput semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Documentation returns Documentation
+	 *
+	 * Constraint:
+	 *     texte=STRING
+	 * </pre>
+	 */
+	protected void sequence_Documentation(ISerializationContext context, Documentation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.COLONNE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.COLONNE__NAME));
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.DOCUMENTATION__TEXTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.DOCUMENTATION__TEXTE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getColonneOutputAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDocumentationAccess().getTexteSTRINGTerminalRuleCall_1_0(), semanticObject.getTexte());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Entree returns Entree
+	 *
+	 * Constraint:
+	 *     parametres+=Parametre+
+	 * </pre>
+	 */
+	protected void sequence_Entree(ISerializationContext context, Entree semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Operation returns OperationBinaire
+	 *     OperationBinaire returns OperationBinaire
+	 *
+	 * Constraint:
+	 *     kind=OperationBinaireType
+	 * </pre>
+	 */
+	protected void sequence_OperationBinaire(ISerializationContext context, OperationBinaire semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATION_BINAIRE__KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATION_BINAIRE__KIND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperationBinaireAccess().getKindOperationBinaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Operation returns OperationUnaire
+	 *     OperationUnaire returns OperationUnaire
+	 *
+	 * Constraint:
+	 *     kind=OperationUnaireType
+	 * </pre>
+	 */
+	protected void sequence_OperationUnaire(ISerializationContext context, OperationUnaire semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATION_UNAIRE__KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATION_UNAIRE__KIND));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperationUnaireAccess().getKindOperationUnaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Parametre returns Parametre
+	 *
+	 * Constraint:
+	 *     (name=ID type=TypePrimitifPython)
+	 * </pre>
+	 */
+	protected void sequence_Parametre(ISerializationContext context, Parametre semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.PARAMETRE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.PARAMETRE__NAME));
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.PARAMETRE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.PARAMETRE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParametreAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getParametreAccess().getTypeTypePrimitifPythonEnumRuleCall_2_0(), semanticObject.getType());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Ressource returns Ressource
+	 *
+	 * Constraint:
+	 *     chemin=STRING
+	 * </pre>
+	 */
+	protected void sequence_Ressource(ISerializationContext context, Ressource semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.RESSOURCE__CHEMIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.RESSOURCE__CHEMIN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRessourceAccess().getCheminSTRINGTerminalRuleCall_1_0(), semanticObject.getChemin());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Sortie returns Sortie
+	 *
+	 * Constraint:
+	 *     parametres+=Parametre+
+	 * </pre>
+	 */
+	protected void sequence_Sortie(ISerializationContext context, Sortie semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -114,7 +308,7 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Tableur returns Tableur
 	 *
 	 * Constraint:
-	 *     (name=ID tables+=Table*)
+	 *     (name=ID tables+=Table* Catalogue+=Catalogue)
 	 * </pre>
 	 */
 	protected void sequence_Tableur(ISerializationContext context, Tableur semanticObject) {

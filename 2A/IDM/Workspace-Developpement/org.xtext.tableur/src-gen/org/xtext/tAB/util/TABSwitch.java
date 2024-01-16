@@ -87,6 +87,29 @@ public class TABSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TABPackage.OPERATION:
+      {
+        Operation operation = (Operation)theEObject;
+        T result = caseOperation(operation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.OPERATION_UNAIRE:
+      {
+        OperationUnaire operationUnaire = (OperationUnaire)theEObject;
+        T result = caseOperationUnaire(operationUnaire);
+        if (result == null) result = caseOperation(operationUnaire);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.OPERATION_BINAIRE:
+      {
+        OperationBinaire operationBinaire = (OperationBinaire)theEObject;
+        T result = caseOperationBinaire(operationBinaire);
+        if (result == null) result = caseOperation(operationBinaire);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TABPackage.TABLE:
       {
         Table table = (Table)theEObject;
@@ -107,6 +130,55 @@ public class TABSwitch<T> extends Switch<T>
         ColonneOutput colonneOutput = (ColonneOutput)theEObject;
         T result = caseColonneOutput(colonneOutput);
         if (result == null) result = caseColonne(colonneOutput);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.CATALOGUE:
+      {
+        Catalogue catalogue = (Catalogue)theEObject;
+        T result = caseCatalogue(catalogue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.ALGORITHME:
+      {
+        Algorithme algorithme = (Algorithme)theEObject;
+        T result = caseAlgorithme(algorithme);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.ENTREE:
+      {
+        Entree entree = (Entree)theEObject;
+        T result = caseEntree(entree);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.SORTIE:
+      {
+        Sortie sortie = (Sortie)theEObject;
+        T result = caseSortie(sortie);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.PARAMETRE:
+      {
+        Parametre parametre = (Parametre)theEObject;
+        T result = caseParametre(parametre);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.DOCUMENTATION:
+      {
+        Documentation documentation = (Documentation)theEObject;
+        T result = caseDocumentation(documentation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TABPackage.RESSOURCE:
+      {
+        Ressource ressource = (Ressource)theEObject;
+        T result = caseRessource(ressource);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -142,6 +214,54 @@ public class TABSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseColonne(Colonne object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperation(Operation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationUnaire(OperationUnaire object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOperationBinaire(OperationBinaire object)
   {
     return null;
   }
@@ -190,6 +310,118 @@ public class TABSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseColonneOutput(ColonneOutput object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Catalogue</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Catalogue</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCatalogue(Catalogue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Algorithme</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Algorithme</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAlgorithme(Algorithme object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entree</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entree</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntree(Entree object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sortie</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sortie</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSortie(Sortie object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parametre</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parametre</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParametre(Parametre object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Documentation</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Documentation</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDocumentation(Documentation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Ressource</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Ressource</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRessource(Ressource object)
   {
     return null;
   }

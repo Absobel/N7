@@ -2,18 +2,88 @@ grammar org.xtext.TAB with org.eclipse.xtext.common.Terminals
 
 generate tAB "http://www.xtext.org/TAB"
 
-Tableur : 'tableur' name=ID '{'
+/////////////////////////// RACINE ///////////////////////////
+
+Tableur : 'Tableur' name=ID '{'
 	tables+=Table*
+	Catalogue+=Catalogue
 	'}'
 	;
 	
+/////////////////////////// TABLES ///////////////////////////
+	
 Colonne : ColonneInput | ColonneOutput;
 
-Table : 'table' name=ID '{'
-	colonnes+=Colonne*
+Operation : OperationUnaire | OperationBinaire;
+
+OperationUnaire : 'Operation' kind=OperationUnaireType;
+
+OperationBinaire : 'Operation' kind=OperationBinaireType;
+
+enum OperationUnaireType :
+	Oppose='Oppose'
+	;
+	
+enum OperationBinaireType :
+	Addition='Addition'
+	|Soustraction='Soustraction'
+	|Multiplication='Multiplication'
+	|Division='Division'
+;
+
+Table : 'Table' name=ID '{'
+	colonnes+=Colonne* 
 		'}'
 		;
 
-ColonneInput : 'colonneInput' name=ID;
+ColonneInput : 'ColonneInput' name=ID;
 
-ColonneOutput : 'colonneOutput' name=ID;
+ColonneOutput : 'ColonneOutput' name=ID '{'
+	operations+=OperationBinaire colonnes+=[Colonne] colonnes+=[Colonne]
+	'}'
+	| 'ColonneOutput' name=ID '{'
+	operations+=OperationUnaire colonnes+=[Colonne]
+	'}'
+	;
+
+/////////////////////////// CATALOGUE ///////////////////////////
+
+Catalogue : 'Catalogue' name=ID '{'
+	algorithmes+=Algorithme*
+	'}';
+
+Algorithme : 'Algorithme' name=ID '{'
+	entrees+=Entree*
+	sorties+=Sortie*
+	documentation+=Documentation*
+	ressource+=Ressource*
+	'}'
+;
+
+
+Entree : 'Entrees' '{' 
+	parametres+=Parametre*
+	'}';
+
+Sortie : 'Sorties' '{' 
+	parametres+=Parametre*
+	'}';
+
+Parametre : name=ID ':' type=TypePrimitifPython;
+
+
+
+// à remplir
+enum TypePrimitifPython :
+	 int
+	|float
+	|str
+	|bool
+	|list
+;
+
+
+Documentation : 'Documentation' texte=STRING;
+
+Ressource : 'Ressource' chemin=STRING;
+

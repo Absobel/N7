@@ -3,12 +3,20 @@
  */
 package org.xtext.tAB;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Colonne Output</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.tAB.ColonneOutput#getOperations <em>Operations</em>}</li>
+ *   <li>{@link org.xtext.tAB.ColonneOutput#getColonnes <em>Colonnes</em>}</li>
+ * </ul>
  *
  * @see org.xtext.tAB.TABPackage#getColonneOutput()
  * @model
@@ -16,4 +24,28 @@ package org.xtext.tAB;
  */
 public interface ColonneOutput extends Colonne
 {
+  /**
+   * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.tAB.Operation}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Operations</em>' containment reference list.
+   * @see org.xtext.tAB.TABPackage#getColonneOutput_Operations()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Operation> getOperations();
+
+  /**
+   * Returns the value of the '<em><b>Colonnes</b></em>' reference list.
+   * The list contents are of type {@link org.xtext.tAB.Colonne}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Colonnes</em>' reference list.
+   * @see org.xtext.tAB.TABPackage#getColonneOutput_Colonnes()
+   * @model
+   * @generated
+   */
+  EList<Colonne> getColonnes();
+
 } // ColonneOutput

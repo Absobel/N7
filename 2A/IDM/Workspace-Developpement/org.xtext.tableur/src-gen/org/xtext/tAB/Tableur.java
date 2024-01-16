@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.tAB.Tableur#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tAB.Tableur#getTables <em>Tables</em>}</li>
+ *   <li>{@link org.xtext.tAB.Tableur#getCatalogue <em>Catalogue</em>}</li>
  * </ul>
  *
  * @see org.xtext.tAB.TABPackage#getTableur()
@@ -59,5 +60,17 @@ public interface Tableur extends EObject
    * @generated
    */
   EList<Table> getTables();
+
+  /**
+   * Returns the value of the '<em><b>Catalogue</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.tAB.Catalogue}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Catalogue</em>' containment reference list.
+   * @see org.xtext.tAB.TABPackage#getTableur_Catalogue()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Catalogue> getCatalogue();
 
 } // Tableur

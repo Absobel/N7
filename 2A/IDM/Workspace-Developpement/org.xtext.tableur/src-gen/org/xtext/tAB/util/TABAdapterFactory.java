@@ -86,6 +86,21 @@ public class TABAdapterFactory extends AdapterFactoryImpl
         return createColonneAdapter();
       }
       @Override
+      public Adapter caseOperation(Operation object)
+      {
+        return createOperationAdapter();
+      }
+      @Override
+      public Adapter caseOperationUnaire(OperationUnaire object)
+      {
+        return createOperationUnaireAdapter();
+      }
+      @Override
+      public Adapter caseOperationBinaire(OperationBinaire object)
+      {
+        return createOperationBinaireAdapter();
+      }
+      @Override
       public Adapter caseTable(Table object)
       {
         return createTableAdapter();
@@ -99,6 +114,41 @@ public class TABAdapterFactory extends AdapterFactoryImpl
       public Adapter caseColonneOutput(ColonneOutput object)
       {
         return createColonneOutputAdapter();
+      }
+      @Override
+      public Adapter caseCatalogue(Catalogue object)
+      {
+        return createCatalogueAdapter();
+      }
+      @Override
+      public Adapter caseAlgorithme(Algorithme object)
+      {
+        return createAlgorithmeAdapter();
+      }
+      @Override
+      public Adapter caseEntree(Entree object)
+      {
+        return createEntreeAdapter();
+      }
+      @Override
+      public Adapter caseSortie(Sortie object)
+      {
+        return createSortieAdapter();
+      }
+      @Override
+      public Adapter caseParametre(Parametre object)
+      {
+        return createParametreAdapter();
+      }
+      @Override
+      public Adapter caseDocumentation(Documentation object)
+      {
+        return createDocumentationAdapter();
+      }
+      @Override
+      public Adapter caseRessource(Ressource object)
+      {
+        return createRessourceAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -153,6 +203,51 @@ public class TABAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Operation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Operation
+   * @generated
+   */
+  public Adapter createOperationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationUnaire <em>Operation Unaire</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.OperationUnaire
+   * @generated
+   */
+  public Adapter createOperationUnaireAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationBinaire <em>Operation Binaire</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.OperationBinaire
+   * @generated
+   */
+  public Adapter createOperationBinaireAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.tAB.Table <em>Table</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -193,6 +288,111 @@ public class TABAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createColonneOutputAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Catalogue <em>Catalogue</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Catalogue
+   * @generated
+   */
+  public Adapter createCatalogueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Algorithme <em>Algorithme</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Algorithme
+   * @generated
+   */
+  public Adapter createAlgorithmeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Entree <em>Entree</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Entree
+   * @generated
+   */
+  public Adapter createEntreeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Sortie <em>Sortie</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Sortie
+   * @generated
+   */
+  public Adapter createSortieAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Parametre <em>Parametre</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Parametre
+   * @generated
+   */
+  public Adapter createParametreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Documentation <em>Documentation</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Documentation
+   * @generated
+   */
+  public Adapter createDocumentationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Ressource <em>Ressource</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Ressource
+   * @generated
+   */
+  public Adapter createRessourceAdapter()
   {
     return null;
   }
