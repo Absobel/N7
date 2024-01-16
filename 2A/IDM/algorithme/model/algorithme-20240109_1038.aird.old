@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_aY-h0K7SEe6EWeXzJjxYZg" selectedViews="_a4OpoK7SEe6EWeXzJjxYZg" version="15.0.0.202209061200">
+    <semanticResources>algorithme.genmodel</semanticResources>
+    <semanticResources>algorithme.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_a4OpoK7SEe6EWeXzJjxYZg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_a78E8K7SEe6EWeXzJjxYZg" name="algorithme" repPath="#_a6esYK7SEe6EWeXzJjxYZg" changeId="523f3000-20df-4466-b0fa-00a9a9bb84de">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="algorithme.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_a6esYK7SEe6EWeXzJjxYZg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_a8e3gK7SEe6EWeXzJjxYZg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_a8e3ga7SEe6EWeXzJjxYZg" type="Sirius" element="_a6esYK7SEe6EWeXzJjxYZg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_hTakYK7SEe6EWeXzJjxYZg" type="2001" element="_hS9RYK7SEe6EWeXzJjxYZg">
+          <children xmi:type="notation:Node" xmi:id="_hTe10K7SEe6EWeXzJjxYZg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_hTe10a7SEe6EWeXzJjxYZg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_hltOQK7SEe6EWeXzJjxYZg" type="3005" element="_hTNJAK7SEe6EWeXzJjxYZg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_hltOQa7SEe6EWeXzJjxYZg" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hltOQq7SEe6EWeXzJjxYZg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_hTakYa7SEe6EWeXzJjxYZg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hTakYq7SEe6EWeXzJjxYZg" x="24" y="-3684" width="500" height="90"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_a8e3gq7SEe6EWeXzJjxYZg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_a-22EK7SEe6EWeXzJjxYZg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_a-4EMK7SEe6EWeXzJjxYZg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_hS9RYK7SEe6EWeXzJjxYZg" width="-1" height="-1">
+      <target xmi:type="ecore:EPackage" href="algorithme.ecore#/"/>
+      <semanticElements xmi:type="ecore:EPackage" href="algorithme.ecore#/"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:WorkspaceImage" uid="_hTNJAK7SEe6EWeXzJjxYZg" showIcon="false" labelPosition="node" workspacePath="/org.eclipse.emf.ecoretools.design/icons/full/back/empty.svg">
+        <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@nodeMappings[name='Empty%20Diagram']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_a7TLwK7SEe6EWeXzJjxYZg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="algorithme.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
