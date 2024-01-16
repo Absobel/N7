@@ -5,12 +5,36 @@
     complianceLevel="17.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>tableur.ecore</foreignModel>
   <genPackages prefix="Tableur" disposableProviderFactory="true" ecorePackage="tableur.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tableur.ecore#//operateurUnaire">
+      <genEnumLiterals ecoreEnumLiteral="tableur.ecore#//operateurUnaire/Oppose"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tableur.ecore#//operateurBinaire">
+      <genEnumLiterals ecoreEnumLiteral="tableur.ecore#//operateurBinaire/Addition"/>
+      <genEnumLiterals ecoreEnumLiteral="tableur.ecore#//operateurBinaire/Soustraction"/>
+      <genEnumLiterals ecoreEnumLiteral="tableur.ecore#//operateurBinaire/Multiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="tableur.ecore#//operateurBinaire/Division"/>
+    </genEnums>
     <genClasses ecoreClass="tableur.ecore#//Tableur">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tableur.ecore#//Tableur/table"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//Tableur/name"/>
     </genClasses>
     <genClasses ecoreClass="tableur.ecore#//Table">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//Table/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tableur.ecore#//Table/colonne"/>
+    </genClasses>
+    <genClasses ecoreClass="tableur.ecore#//Colonne"/>
+    <genClasses ecoreClass="tableur.ecore#//ColonneInput"/>
+    <genClasses ecoreClass="tableur.ecore#//ColonneOutput">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//ColonneOutput/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="tableur.ecore#//Operation"/>
+    <genClasses ecoreClass="tableur.ecore#//OperationUnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//OperationUnaire/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//OperationUnaire/colonne"/>
+    </genClasses>
+    <genClasses ecoreClass="tableur.ecore#//OperationBinaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//OperationBinaire/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//OperationBinaire/colonne"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

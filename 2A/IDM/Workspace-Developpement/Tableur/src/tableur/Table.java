@@ -2,6 +2,7 @@
  */
 package tableur;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link tableur.Table#getName <em>Name</em>}</li>
+ *   <li>{@link tableur.Table#getColonne <em>Colonne</em>}</li>
  * </ul>
  *
  * @see tableur.TableurPackage#getTable()
@@ -42,5 +44,17 @@ public interface Table extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Colonne</b></em>' containment reference list.
+	 * The list contents are of type {@link tableur.Colonne}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Colonne</em>' containment reference list.
+	 * @see tableur.TableurPackage#getTable_Colonne()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Colonne> getColonne();
 
 } // Table

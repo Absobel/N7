@@ -3,59 +3,59 @@
 package tableur.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import tableur.Colonne;
-import tableur.Table;
+import tableur.OperationBinaire;
 import tableur.TableurPackage;
+import tableur.operateurBinaire;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Table</b></em>'.
+ * An implementation of the model object '<em><b>Operation Binaire</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tableur.impl.TableImpl#getName <em>Name</em>}</li>
- *   <li>{@link tableur.impl.TableImpl#getColonne <em>Colonne</em>}</li>
+ *   <li>{@link tableur.impl.OperationBinaireImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link tableur.impl.OperationBinaireImpl#getColonne <em>Colonne</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TableImpl extends MinimalEObjectImpl.Container implements Table {
+public class OperationBinaireImpl extends OperationImpl implements OperationBinaire {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final operateurBinaire KIND_EDEFAULT = operateurBinaire.ADDITION;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getKind()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected operateurBinaire kind = KIND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getColonne() <em>Colonne</em>}' containment reference list.
+	 * The cached value of the '{@link #getColonne() <em>Colonne</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getColonne()
@@ -69,7 +69,7 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableImpl() {
+	protected OperationBinaireImpl() {
 		super();
 	}
 
@@ -80,7 +80,7 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TableurPackage.Literals.TABLE;
+		return TableurPackage.Literals.OPERATION_BINAIRE;
 	}
 
 	/**
@@ -89,8 +89,8 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public operateurBinaire getKind() {
+		return kind;
 	}
 
 	/**
@@ -99,11 +99,11 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setKind(operateurBinaire newKind) {
+		operateurBinaire oldKind = kind;
+		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TableurPackage.TABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TableurPackage.OPERATION_BINAIRE__KIND, oldKind, kind));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public EList<Colonne> getColonne() {
 		if (colonne == null) {
-			colonne = new EObjectContainmentEList<Colonne>(Colonne.class, this, TableurPackage.TABLE__COLONNE);
+			colonne = new EObjectResolvingEList<Colonne>(Colonne.class, this, TableurPackage.OPERATION_BINAIRE__COLONNE);
 		}
 		return colonne;
 	}
@@ -125,25 +125,11 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TableurPackage.TABLE__COLONNE:
-				return ((InternalEList<?>)getColonne()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TableurPackage.TABLE__NAME:
-				return getName();
-			case TableurPackage.TABLE__COLONNE:
+			case TableurPackage.OPERATION_BINAIRE__KIND:
+				return getKind();
+			case TableurPackage.OPERATION_BINAIRE__COLONNE:
 				return getColonne();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -158,10 +144,10 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TableurPackage.TABLE__NAME:
-				setName((String)newValue);
+			case TableurPackage.OPERATION_BINAIRE__KIND:
+				setKind((operateurBinaire)newValue);
 				return;
-			case TableurPackage.TABLE__COLONNE:
+			case TableurPackage.OPERATION_BINAIRE__COLONNE:
 				getColonne().clear();
 				getColonne().addAll((Collection<? extends Colonne>)newValue);
 				return;
@@ -177,10 +163,10 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TableurPackage.TABLE__NAME:
-				setName(NAME_EDEFAULT);
+			case TableurPackage.OPERATION_BINAIRE__KIND:
+				setKind(KIND_EDEFAULT);
 				return;
-			case TableurPackage.TABLE__COLONNE:
+			case TableurPackage.OPERATION_BINAIRE__COLONNE:
 				getColonne().clear();
 				return;
 		}
@@ -195,9 +181,9 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TableurPackage.TABLE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TableurPackage.TABLE__COLONNE:
+			case TableurPackage.OPERATION_BINAIRE__KIND:
+				return kind != KIND_EDEFAULT;
+			case TableurPackage.OPERATION_BINAIRE__COLONNE:
 				return colonne != null && !colonne.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -213,10 +199,10 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (kind: ");
+		result.append(kind);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TableImpl
+} //OperationBinaireImpl

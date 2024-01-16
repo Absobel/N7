@@ -8,5 +8,33 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" upperBound="-1"
+        eType="#//Colonne" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneInput" eSuperTypes="#//Colonne"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="#//Operation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//operateurUnaire"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" lowerBound="1"
+        eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationBinaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//operateurBinaire"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" lowerBound="2"
+        upperBound="2" eType="#//Colonne"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="operateurUnaire">
+    <eLiterals name="Oppose"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="operateurBinaire">
+    <eLiterals name="Addition"/>
+    <eLiterals name="Soustraction" value="1"/>
+    <eLiterals name="Multiplication" value="2"/>
+    <eLiterals name="Division" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

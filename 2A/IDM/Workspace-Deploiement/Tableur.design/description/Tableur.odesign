@@ -3,8 +3,8 @@
   <ownedViewpoints name="TableurViewpoint" modelFileExtension="*.tableur">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="TableurDiagram" domainClass="tableur::Tableur" enablePopupBars="true">
       <defaultLayer name="Default">
-        <nodeMappings name="TableurNode" domainClass="tableur::Tableur">
-          <style xsi:type="style:EllipseNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+        <nodeMappings name="TableNode" domainClass="tableur::Table">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>

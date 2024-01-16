@@ -40,6 +40,42 @@ public interface TableurFactory extends EFactory {
 	Table createTable();
 
 	/**
+	 * Returns a new object of class '<em>Colonne Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Colonne Input</em>'.
+	 * @generated
+	 */
+	ColonneInput createColonneInput();
+
+	/**
+	 * Returns a new object of class '<em>Colonne Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Colonne Output</em>'.
+	 * @generated
+	 */
+	ColonneOutput createColonneOutput();
+
+	/**
+	 * Returns a new object of class '<em>Operation Unaire</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation Unaire</em>'.
+	 * @generated
+	 */
+	OperationUnaire createOperationUnaire();
+
+	/**
+	 * Returns a new object of class '<em>Operation Binaire</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation Binaire</em>'.
+	 * @generated
+	 */
+	OperationBinaire createOperationBinaire();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

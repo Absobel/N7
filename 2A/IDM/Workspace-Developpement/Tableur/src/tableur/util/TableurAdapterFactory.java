@@ -76,6 +76,30 @@ public class TableurAdapterFactory extends AdapterFactoryImpl {
 				return createTableAdapter();
 			}
 			@Override
+			public Adapter caseColonne(Colonne object) {
+				return createColonneAdapter();
+			}
+			@Override
+			public Adapter caseColonneInput(ColonneInput object) {
+				return createColonneInputAdapter();
+			}
+			@Override
+			public Adapter caseColonneOutput(ColonneOutput object) {
+				return createColonneOutputAdapter();
+			}
+			@Override
+			public Adapter caseOperation(Operation object) {
+				return createOperationAdapter();
+			}
+			@Override
+			public Adapter caseOperationUnaire(OperationUnaire object) {
+				return createOperationUnaireAdapter();
+			}
+			@Override
+			public Adapter caseOperationBinaire(OperationBinaire object) {
+				return createOperationBinaireAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -120,6 +144,90 @@ public class TableurAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.Colonne <em>Colonne</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.Colonne
+	 * @generated
+	 */
+	public Adapter createColonneAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.ColonneInput <em>Colonne Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.ColonneInput
+	 * @generated
+	 */
+	public Adapter createColonneInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.ColonneOutput <em>Colonne Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.ColonneOutput
+	 * @generated
+	 */
+	public Adapter createColonneOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.Operation
+	 * @generated
+	 */
+	public Adapter createOperationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.OperationUnaire <em>Operation Unaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.OperationUnaire
+	 * @generated
+	 */
+	public Adapter createOperationUnaireAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link tableur.OperationBinaire <em>Operation Binaire</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see tableur.OperationBinaire
+	 * @generated
+	 */
+	public Adapter createOperationBinaireAdapter() {
 		return null;
 	}
 

@@ -118,6 +118,98 @@ public class TableurItemProviderAdapterFactory extends TableurAdapterFactory imp
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link tableur.ColonneInput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ColonneInputItemProvider colonneInputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tableur.ColonneInput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createColonneInputAdapter() {
+		if (colonneInputItemProvider == null) {
+			colonneInputItemProvider = new ColonneInputItemProvider(this);
+		}
+
+		return colonneInputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link tableur.ColonneOutput} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ColonneOutputItemProvider colonneOutputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tableur.ColonneOutput}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createColonneOutputAdapter() {
+		if (colonneOutputItemProvider == null) {
+			colonneOutputItemProvider = new ColonneOutputItemProvider(this);
+		}
+
+		return colonneOutputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link tableur.OperationUnaire} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationUnaireItemProvider operationUnaireItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tableur.OperationUnaire}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationUnaireAdapter() {
+		if (operationUnaireItemProvider == null) {
+			operationUnaireItemProvider = new OperationUnaireItemProvider(this);
+		}
+
+		return operationUnaireItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link tableur.OperationBinaire} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OperationBinaireItemProvider operationBinaireItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link tableur.OperationBinaire}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOperationBinaireAdapter() {
+		if (operationBinaireItemProvider == null) {
+			operationBinaireItemProvider = new OperationBinaireItemProvider(this);
+		}
+
+		return operationBinaireItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -224,6 +316,10 @@ public class TableurItemProviderAdapterFactory extends TableurAdapterFactory imp
 	public void dispose() {
 		if (tableurItemProvider != null) tableurItemProvider.dispose();
 		if (tableItemProvider != null) tableItemProvider.dispose();
+		if (colonneInputItemProvider != null) colonneInputItemProvider.dispose();
+		if (colonneOutputItemProvider != null) colonneOutputItemProvider.dispose();
+		if (operationUnaireItemProvider != null) operationUnaireItemProvider.dispose();
+		if (operationBinaireItemProvider != null) operationBinaireItemProvider.dispose();
 	}
 
 }
