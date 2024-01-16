@@ -1,0 +1,19 @@
+grammar org.xtext.TAB with org.eclipse.xtext.common.Terminals
+
+generate tAB "http://www.xtext.org/TAB"
+
+Tableur : 'tableur' name=ID '{'
+	tables+=Table*
+	'}'
+	;
+	
+Colonne : ColonneInput | ColonneOutput;
+
+Table : 'table' name=ID '{'
+	colonnes+=Colonne*
+		'}'
+		;
+
+ColonneInput : 'colonneInput' name=ID;
+
+ColonneOutput : 'colonneOutput' name=ID;
