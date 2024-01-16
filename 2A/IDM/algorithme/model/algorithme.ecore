@@ -4,7 +4,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Algorithme" upperBound="-1"
-        eType="#//AlgorithmeElement"/>
+        eType="#//AlgorithmeElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AlgorithmeElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Algorithme" eSuperTypes="#//AlgorithmeElement">

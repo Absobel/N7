@@ -5,4 +5,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:algorithme="http://www.example.org/algorithme"
     xsi:schemaLocation="http://www.example.org/algorithme algorithme.ecore"
-    Name="Test"/>
+    Name="Test">
+  <Algorithme
+      xsi:type="algorithme:Algorithme"
+      Name="Truc"/>
+  <Algorithme
+      xsi:type="algorithme:Ressource"/>
+</algorithme:Catalogue>
