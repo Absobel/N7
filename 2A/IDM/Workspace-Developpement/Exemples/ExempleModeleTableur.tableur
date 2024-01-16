@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:tableur.ecore="http://tableur.ecore" name="NomDuTableur">
+  <table name="Table1"/>
+</tableur.ecore:Tableur>

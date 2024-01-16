@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Excelbis.ecore:Excel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Excelbis.ecore="https://Excelbis.ecore">
-  <table>
-    <colonne xsi:type="Excelbis.ecore:ColonneInput"/>
-    <colonne xsi:type="Excelbis.ecore:ColonneOutput"/>
-  </table>
-</Excelbis.ecore:Excel>
