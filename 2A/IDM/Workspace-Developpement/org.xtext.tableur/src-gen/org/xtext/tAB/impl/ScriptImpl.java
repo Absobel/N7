@@ -19,29 +19,29 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.tAB.Catalogue;
+import org.xtext.tAB.Calcul;
+import org.xtext.tAB.EntreeScript;
 import org.xtext.tAB.Script;
+import org.xtext.tAB.SortieScript;
 import org.xtext.tAB.TABPackage;
-import org.xtext.tAB.Table;
-import org.xtext.tAB.Tableur;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Tableur</b></em>'.
+ * An implementation of the model object '<em><b>Script</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getTables <em>Tables</em>}</li>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getCatalogue <em>Catalogue</em>}</li>
- *   <li>{@link org.xtext.tAB.impl.TableurImpl#getScript <em>Script</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.ScriptImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.ScriptImpl#getEntrees <em>Entrees</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.ScriptImpl#getSorties <em>Sorties</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.ScriptImpl#getCalculs <em>Calculs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
+public class ScriptImpl extends MinimalEObjectImpl.Container implements Script
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -64,41 +64,41 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getTables() <em>Tables</em>}' containment reference list.
+   * The cached value of the '{@link #getEntrees() <em>Entrees</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTables()
+   * @see #getEntrees()
    * @generated
    * @ordered
    */
-  protected EList<Table> tables;
+  protected EList<EntreeScript> entrees;
 
   /**
-   * The cached value of the '{@link #getCatalogue() <em>Catalogue</em>}' containment reference list.
+   * The cached value of the '{@link #getSorties() <em>Sorties</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCatalogue()
+   * @see #getSorties()
    * @generated
    * @ordered
    */
-  protected EList<Catalogue> catalogue;
+  protected EList<SortieScript> sorties;
 
   /**
-   * The cached value of the '{@link #getScript() <em>Script</em>}' containment reference list.
+   * The cached value of the '{@link #getCalculs() <em>Calculs</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getScript()
+   * @see #getCalculs()
    * @generated
    * @ordered
    */
-  protected EList<Script> script;
+  protected EList<Calcul> calculs;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TableurImpl()
+  protected ScriptImpl()
   {
     super();
   }
@@ -111,7 +111,7 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   @Override
   protected EClass eStaticClass()
   {
-    return TABPackage.Literals.TABLEUR;
+    return TABPackage.Literals.SCRIPT;
   }
 
   /**
@@ -136,7 +136,7 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.TABLEUR__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.SCRIPT__NAME, oldName, name));
   }
 
   /**
@@ -145,13 +145,13 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
    * @generated
    */
   @Override
-  public EList<Table> getTables()
+  public EList<EntreeScript> getEntrees()
   {
-    if (tables == null)
+    if (entrees == null)
     {
-      tables = new EObjectContainmentEList<Table>(Table.class, this, TABPackage.TABLEUR__TABLES);
+      entrees = new EObjectContainmentEList<EntreeScript>(EntreeScript.class, this, TABPackage.SCRIPT__ENTREES);
     }
-    return tables;
+    return entrees;
   }
 
   /**
@@ -160,13 +160,13 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
    * @generated
    */
   @Override
-  public EList<Catalogue> getCatalogue()
+  public EList<SortieScript> getSorties()
   {
-    if (catalogue == null)
+    if (sorties == null)
     {
-      catalogue = new EObjectContainmentEList<Catalogue>(Catalogue.class, this, TABPackage.TABLEUR__CATALOGUE);
+      sorties = new EObjectContainmentEList<SortieScript>(SortieScript.class, this, TABPackage.SCRIPT__SORTIES);
     }
-    return catalogue;
+    return sorties;
   }
 
   /**
@@ -175,13 +175,13 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
    * @generated
    */
   @Override
-  public EList<Script> getScript()
+  public EList<Calcul> getCalculs()
   {
-    if (script == null)
+    if (calculs == null)
     {
-      script = new EObjectContainmentEList<Script>(Script.class, this, TABPackage.TABLEUR__SCRIPT);
+      calculs = new EObjectContainmentEList<Calcul>(Calcul.class, this, TABPackage.SCRIPT__CALCULS);
     }
-    return script;
+    return calculs;
   }
 
   /**
@@ -194,12 +194,12 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__TABLES:
-        return ((InternalEList<?>)getTables()).basicRemove(otherEnd, msgs);
-      case TABPackage.TABLEUR__CATALOGUE:
-        return ((InternalEList<?>)getCatalogue()).basicRemove(otherEnd, msgs);
-      case TABPackage.TABLEUR__SCRIPT:
-        return ((InternalEList<?>)getScript()).basicRemove(otherEnd, msgs);
+      case TABPackage.SCRIPT__ENTREES:
+        return ((InternalEList<?>)getEntrees()).basicRemove(otherEnd, msgs);
+      case TABPackage.SCRIPT__SORTIES:
+        return ((InternalEList<?>)getSorties()).basicRemove(otherEnd, msgs);
+      case TABPackage.SCRIPT__CALCULS:
+        return ((InternalEList<?>)getCalculs()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -214,14 +214,14 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.SCRIPT__NAME:
         return getName();
-      case TABPackage.TABLEUR__TABLES:
-        return getTables();
-      case TABPackage.TABLEUR__CATALOGUE:
-        return getCatalogue();
-      case TABPackage.TABLEUR__SCRIPT:
-        return getScript();
+      case TABPackage.SCRIPT__ENTREES:
+        return getEntrees();
+      case TABPackage.SCRIPT__SORTIES:
+        return getSorties();
+      case TABPackage.SCRIPT__CALCULS:
+        return getCalculs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -237,20 +237,20 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.SCRIPT__NAME:
         setName((String)newValue);
         return;
-      case TABPackage.TABLEUR__TABLES:
-        getTables().clear();
-        getTables().addAll((Collection<? extends Table>)newValue);
+      case TABPackage.SCRIPT__ENTREES:
+        getEntrees().clear();
+        getEntrees().addAll((Collection<? extends EntreeScript>)newValue);
         return;
-      case TABPackage.TABLEUR__CATALOGUE:
-        getCatalogue().clear();
-        getCatalogue().addAll((Collection<? extends Catalogue>)newValue);
+      case TABPackage.SCRIPT__SORTIES:
+        getSorties().clear();
+        getSorties().addAll((Collection<? extends SortieScript>)newValue);
         return;
-      case TABPackage.TABLEUR__SCRIPT:
-        getScript().clear();
-        getScript().addAll((Collection<? extends Script>)newValue);
+      case TABPackage.SCRIPT__CALCULS:
+        getCalculs().clear();
+        getCalculs().addAll((Collection<? extends Calcul>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -266,17 +266,17 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.SCRIPT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TABPackage.TABLEUR__TABLES:
-        getTables().clear();
+      case TABPackage.SCRIPT__ENTREES:
+        getEntrees().clear();
         return;
-      case TABPackage.TABLEUR__CATALOGUE:
-        getCatalogue().clear();
+      case TABPackage.SCRIPT__SORTIES:
+        getSorties().clear();
         return;
-      case TABPackage.TABLEUR__SCRIPT:
-        getScript().clear();
+      case TABPackage.SCRIPT__CALCULS:
+        getCalculs().clear();
         return;
     }
     super.eUnset(featureID);
@@ -292,14 +292,14 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
   {
     switch (featureID)
     {
-      case TABPackage.TABLEUR__NAME:
+      case TABPackage.SCRIPT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TABPackage.TABLEUR__TABLES:
-        return tables != null && !tables.isEmpty();
-      case TABPackage.TABLEUR__CATALOGUE:
-        return catalogue != null && !catalogue.isEmpty();
-      case TABPackage.TABLEUR__SCRIPT:
-        return script != null && !script.isEmpty();
+      case TABPackage.SCRIPT__ENTREES:
+        return entrees != null && !entrees.isEmpty();
+      case TABPackage.SCRIPT__SORTIES:
+        return sorties != null && !sorties.isEmpty();
+      case TABPackage.SCRIPT__CALCULS:
+        return calculs != null && !calculs.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -321,4 +321,4 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
     return result.toString();
   }
 
-} //TableurImpl
+} //ScriptImpl

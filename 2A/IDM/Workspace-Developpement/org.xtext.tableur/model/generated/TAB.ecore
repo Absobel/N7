@@ -5,17 +5,19 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Catalogue" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="catalogue" upperBound="-1"
         eType="#//Catalogue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" upperBound="-1"
+        eType="#//Script" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Colonne">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">
+  <eClassifiers xsi:type="ecore:EClass" name="OperateurUnaire" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//OperationUnaireType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationBinaire" eSuperTypes="#//Operation">
+  <eClassifiers xsi:type="ecore:EClass" name="OperateurBinaire" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//OperationBinaireType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OperationUnaireType">
@@ -79,5 +81,55 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ressource">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="chemin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Script">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entrees" upperBound="-1"
+        eType="#//EntreeScript" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sorties" upperBound="-1"
+        eType="#//SortieScript" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calculs" upperBound="-1"
+        eType="#//Calcul" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntreeScript">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametres" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SortieScript">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parametres" upperBound="-1"
+        eType="#//Parametre" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperateurBinaireType">
+    <eLiterals name="ADD" literal="Add"/>
+    <eLiterals name="SUB" value="1" literal="Sub"/>
+    <eLiterals name="TIM" value="2" literal="Tim"/>
+    <eLiterals name="DIV" value="3" literal="Div"/>
+    <eLiterals name="MIN" value="4" literal="Min"/>
+    <eLiterals name="MAX" value="5" literal="Max"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperateurUnaireType">
+    <eLiterals name="OPP" literal="Opp"/>
+    <eLiterals name="INV" value="1" literal="Inv"/>
+    <eLiterals name="COS" value="2" literal="Cos"/>
+    <eLiterals name="SIN" value="3" literal="Sin"/>
+    <eLiterals name="SQR" value="4" literal="Sqr"/>
+    <eLiterals name="EXP" value="5" literal="Exp"/>
+    <eLiterals name="LOG" value="6" literal="Log"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationScript" eSuperTypes="#//Operand"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationUnaireScript" eSuperTypes="#//OperationScript">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//OperateurUnaireType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"
+        eType="#//Operand" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationBinaireScript" eSuperTypes="#//OperationScript">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//OperateurBinaireType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" upperBound="-1"
+        eType="#//Operand" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operand"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Calcul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Operation" upperBound="-1"
+        eType="#//OperationScript" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.tAB.Tableur#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.tAB.Tableur#getTables <em>Tables</em>}</li>
  *   <li>{@link org.xtext.tAB.Tableur#getCatalogue <em>Catalogue</em>}</li>
+ *   <li>{@link org.xtext.tAB.Tableur#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @see org.xtext.tAB.TABPackage#getTableur()
@@ -72,5 +73,17 @@ public interface Tableur extends EObject
    * @generated
    */
   EList<Catalogue> getCatalogue();
+
+  /**
+   * Returns the value of the '<em><b>Script</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.tAB.Script}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Script</em>' containment reference list.
+   * @see org.xtext.tAB.TABPackage#getTableur_Script()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Script> getScript();
 
 } // Tableur

@@ -12,20 +12,30 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.tAB.Algorithme;
+import org.xtext.tAB.Calcul;
 import org.xtext.tAB.Catalogue;
 import org.xtext.tAB.Colonne;
 import org.xtext.tAB.ColonneInput;
 import org.xtext.tAB.ColonneOutput;
 import org.xtext.tAB.Documentation;
 import org.xtext.tAB.Entree;
+import org.xtext.tAB.EntreeScript;
+import org.xtext.tAB.Operand;
+import org.xtext.tAB.OperateurBinaire;
+import org.xtext.tAB.OperateurBinaireType;
+import org.xtext.tAB.OperateurUnaire;
+import org.xtext.tAB.OperateurUnaireType;
 import org.xtext.tAB.Operation;
-import org.xtext.tAB.OperationBinaire;
+import org.xtext.tAB.OperationBinaireScript;
 import org.xtext.tAB.OperationBinaireType;
-import org.xtext.tAB.OperationUnaire;
+import org.xtext.tAB.OperationScript;
+import org.xtext.tAB.OperationUnaireScript;
 import org.xtext.tAB.OperationUnaireType;
 import org.xtext.tAB.Parametre;
 import org.xtext.tAB.Ressource;
+import org.xtext.tAB.Script;
 import org.xtext.tAB.Sortie;
+import org.xtext.tAB.SortieScript;
 import org.xtext.tAB.TABFactory;
 import org.xtext.tAB.TABPackage;
 import org.xtext.tAB.Table;
@@ -66,14 +76,14 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operationUnaireEClass = null;
+  private EClass operateurUnaireEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass operationBinaireEClass = null;
+  private EClass operateurBinaireEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -150,6 +160,62 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass scriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entreeScriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sortieScriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationScriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationUnaireScriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operationBinaireScriptEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass operandEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass calculEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EEnum operationUnaireTypeEEnum = null;
 
   /**
@@ -165,6 +231,20 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   private EEnum typePrimitifPythonEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum operateurBinaireTypeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum operateurUnaireTypeEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -278,6 +358,17 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
+  public EReference getTableur_Script()
+  {
+    return (EReference)tableurEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getColonne()
   {
     return colonneEClass;
@@ -311,9 +402,9 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
-  public EClass getOperationUnaire()
+  public EClass getOperateurUnaire()
   {
-    return operationUnaireEClass;
+    return operateurUnaireEClass;
   }
 
   /**
@@ -322,9 +413,9 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
-  public EAttribute getOperationUnaire_Kind()
+  public EAttribute getOperateurUnaire_Kind()
   {
-    return (EAttribute)operationUnaireEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)operateurUnaireEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -333,9 +424,9 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
-  public EClass getOperationBinaire()
+  public EClass getOperateurBinaire()
   {
-    return operationBinaireEClass;
+    return operateurBinaireEClass;
   }
 
   /**
@@ -344,9 +435,9 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
-  public EAttribute getOperationBinaire_Kind()
+  public EAttribute getOperateurBinaire_Kind()
   {
-    return (EAttribute)operationBinaireEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)operateurBinaireEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -652,6 +743,215 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
    * @generated
    */
   @Override
+  public EClass getScript()
+  {
+    return scriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getScript_Name()
+  {
+    return (EAttribute)scriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScript_Entrees()
+  {
+    return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScript_Sorties()
+  {
+    return (EReference)scriptEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getScript_Calculs()
+  {
+    return (EReference)scriptEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEntreeScript()
+  {
+    return entreeScriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntreeScript_Parametres()
+  {
+    return (EReference)entreeScriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSortieScript()
+  {
+    return sortieScriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSortieScript_Parametres()
+  {
+    return (EReference)sortieScriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperationScript()
+  {
+    return operationScriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperationUnaireScript()
+  {
+    return operationUnaireScriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperationUnaireScript_Operation()
+  {
+    return (EAttribute)operationUnaireScriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOperationUnaireScript_Operands()
+  {
+    return (EReference)operationUnaireScriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperationBinaireScript()
+  {
+    return operationBinaireScriptEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getOperationBinaireScript_Operation()
+  {
+    return (EAttribute)operationBinaireScriptEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getOperationBinaireScript_Operand()
+  {
+    return (EReference)operationBinaireScriptEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getOperand()
+  {
+    return operandEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCalcul()
+  {
+    return calculEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getCalcul_Operation()
+  {
+    return (EReference)calculEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EEnum getOperationUnaireType()
   {
     return operationUnaireTypeEEnum;
@@ -677,6 +977,28 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
   public EEnum getTypePrimitifPython()
   {
     return typePrimitifPythonEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getOperateurBinaireType()
+  {
+    return operateurBinaireTypeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getOperateurUnaireType()
+  {
+    return operateurUnaireTypeEEnum;
   }
 
   /**
@@ -714,17 +1036,18 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     createEAttribute(tableurEClass, TABLEUR__NAME);
     createEReference(tableurEClass, TABLEUR__TABLES);
     createEReference(tableurEClass, TABLEUR__CATALOGUE);
+    createEReference(tableurEClass, TABLEUR__SCRIPT);
 
     colonneEClass = createEClass(COLONNE);
     createEAttribute(colonneEClass, COLONNE__NAME);
 
     operationEClass = createEClass(OPERATION);
 
-    operationUnaireEClass = createEClass(OPERATION_UNAIRE);
-    createEAttribute(operationUnaireEClass, OPERATION_UNAIRE__KIND);
+    operateurUnaireEClass = createEClass(OPERATEUR_UNAIRE);
+    createEAttribute(operateurUnaireEClass, OPERATEUR_UNAIRE__KIND);
 
-    operationBinaireEClass = createEClass(OPERATION_BINAIRE);
-    createEAttribute(operationBinaireEClass, OPERATION_BINAIRE__KIND);
+    operateurBinaireEClass = createEClass(OPERATEUR_BINAIRE);
+    createEAttribute(operateurBinaireEClass, OPERATEUR_BINAIRE__KIND);
 
     tableEClass = createEClass(TABLE);
     createEAttribute(tableEClass, TABLE__NAME);
@@ -763,10 +1086,39 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     ressourceEClass = createEClass(RESSOURCE);
     createEAttribute(ressourceEClass, RESSOURCE__CHEMIN);
 
+    scriptEClass = createEClass(SCRIPT);
+    createEAttribute(scriptEClass, SCRIPT__NAME);
+    createEReference(scriptEClass, SCRIPT__ENTREES);
+    createEReference(scriptEClass, SCRIPT__SORTIES);
+    createEReference(scriptEClass, SCRIPT__CALCULS);
+
+    entreeScriptEClass = createEClass(ENTREE_SCRIPT);
+    createEReference(entreeScriptEClass, ENTREE_SCRIPT__PARAMETRES);
+
+    sortieScriptEClass = createEClass(SORTIE_SCRIPT);
+    createEReference(sortieScriptEClass, SORTIE_SCRIPT__PARAMETRES);
+
+    operationScriptEClass = createEClass(OPERATION_SCRIPT);
+
+    operationUnaireScriptEClass = createEClass(OPERATION_UNAIRE_SCRIPT);
+    createEAttribute(operationUnaireScriptEClass, OPERATION_UNAIRE_SCRIPT__OPERATION);
+    createEReference(operationUnaireScriptEClass, OPERATION_UNAIRE_SCRIPT__OPERANDS);
+
+    operationBinaireScriptEClass = createEClass(OPERATION_BINAIRE_SCRIPT);
+    createEAttribute(operationBinaireScriptEClass, OPERATION_BINAIRE_SCRIPT__OPERATION);
+    createEReference(operationBinaireScriptEClass, OPERATION_BINAIRE_SCRIPT__OPERAND);
+
+    operandEClass = createEClass(OPERAND);
+
+    calculEClass = createEClass(CALCUL);
+    createEReference(calculEClass, CALCUL__OPERATION);
+
     // Create enums
     operationUnaireTypeEEnum = createEEnum(OPERATION_UNAIRE_TYPE);
     operationBinaireTypeEEnum = createEEnum(OPERATION_BINAIRE_TYPE);
     typePrimitifPythonEEnum = createEEnum(TYPE_PRIMITIF_PYTHON);
+    operateurBinaireTypeEEnum = createEEnum(OPERATEUR_BINAIRE_TYPE);
+    operateurUnaireTypeEEnum = createEEnum(OPERATEUR_UNAIRE_TYPE);
   }
 
   /**
@@ -798,27 +1150,31 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    operationUnaireEClass.getESuperTypes().add(this.getOperation());
-    operationBinaireEClass.getESuperTypes().add(this.getOperation());
+    operateurUnaireEClass.getESuperTypes().add(this.getOperation());
+    operateurBinaireEClass.getESuperTypes().add(this.getOperation());
     colonneInputEClass.getESuperTypes().add(this.getColonne());
     colonneOutputEClass.getESuperTypes().add(this.getColonne());
+    operationScriptEClass.getESuperTypes().add(this.getOperand());
+    operationUnaireScriptEClass.getESuperTypes().add(this.getOperationScript());
+    operationBinaireScriptEClass.getESuperTypes().add(this.getOperationScript());
 
     // Initialize classes and features; add operations and parameters
     initEClass(tableurEClass, Tableur.class, "Tableur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTableur_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTableur_Tables(), this.getTable(), null, "tables", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTableur_Catalogue(), this.getCatalogue(), null, "Catalogue", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableur_Catalogue(), this.getCatalogue(), null, "catalogue", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTableur_Script(), this.getScript(), null, "script", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(colonneEClass, Colonne.class, "Colonne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getColonne_Name(), ecorePackage.getEString(), "name", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(operationUnaireEClass, OperationUnaire.class, "OperationUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperationUnaire_Kind(), this.getOperationUnaireType(), "kind", null, 0, 1, OperationUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(operateurUnaireEClass, OperateurUnaire.class, "OperateurUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperateurUnaire_Kind(), this.getOperationUnaireType(), "kind", null, 0, 1, OperateurUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(operationBinaireEClass, OperationBinaire.class, "OperationBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOperationBinaire_Kind(), this.getOperationBinaireType(), "kind", null, 0, 1, OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(operateurBinaireEClass, OperateurBinaire.class, "OperateurBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperateurBinaire_Kind(), this.getOperationBinaireType(), "kind", null, 0, 1, OperateurBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -857,6 +1213,33 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     initEClass(ressourceEClass, Ressource.class, "Ressource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRessource_Chemin(), ecorePackage.getEString(), "chemin", null, 0, 1, Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Entrees(), this.getEntreeScript(), null, "entrees", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Sorties(), this.getSortieScript(), null, "sorties", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getScript_Calculs(), this.getCalcul(), null, "calculs", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entreeScriptEClass, EntreeScript.class, "EntreeScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntreeScript_Parametres(), this.getParametre(), null, "parametres", null, 0, -1, EntreeScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sortieScriptEClass, SortieScript.class, "SortieScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSortieScript_Parametres(), this.getParametre(), null, "parametres", null, 0, -1, SortieScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationScriptEClass, OperationScript.class, "OperationScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(operationUnaireScriptEClass, OperationUnaireScript.class, "OperationUnaireScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperationUnaireScript_Operation(), this.getOperateurUnaireType(), "operation", null, 0, 1, OperationUnaireScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationUnaireScript_Operands(), this.getOperand(), null, "operands", null, 0, -1, OperationUnaireScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operationBinaireScriptEClass, OperationBinaireScript.class, "OperationBinaireScript", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOperationBinaireScript_Operation(), this.getOperateurBinaireType(), "operation", null, 0, 1, OperationBinaireScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOperationBinaireScript_Operand(), this.getOperand(), null, "operand", null, 0, -1, OperationBinaireScript.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(operandEClass, Operand.class, "Operand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(calculEClass, Calcul.class, "Calcul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCalcul_Operation(), this.getOperationScript(), null, "Operation", null, 0, -1, Calcul.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     // Initialize enums and add enum literals
     initEEnum(operationUnaireTypeEEnum, OperationUnaireType.class, "OperationUnaireType");
     addEEnumLiteral(operationUnaireTypeEEnum, OperationUnaireType.OPPOSE);
@@ -873,6 +1256,23 @@ public class TABPackageImpl extends EPackageImpl implements TABPackage
     addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.STR);
     addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.BOOL);
     addEEnumLiteral(typePrimitifPythonEEnum, TypePrimitifPython.LIST);
+
+    initEEnum(operateurBinaireTypeEEnum, OperateurBinaireType.class, "OperateurBinaireType");
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.ADD);
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.SUB);
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.TIM);
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.DIV);
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.MIN);
+    addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.MAX);
+
+    initEEnum(operateurUnaireTypeEEnum, OperateurUnaireType.class, "OperateurUnaireType");
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.OPP);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.INV);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.COS);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.SIN);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.SQR);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.EXP);
+    addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.LOG);
 
     // Create resource
     createResource(eNS_URI);

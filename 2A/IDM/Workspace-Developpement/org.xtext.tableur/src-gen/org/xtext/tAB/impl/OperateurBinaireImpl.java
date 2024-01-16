@@ -9,24 +9,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.xtext.tAB.OperationBinaire;
+import org.xtext.tAB.OperateurBinaire;
 import org.xtext.tAB.OperationBinaireType;
 import org.xtext.tAB.TABPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Binaire</b></em>'.
+ * An implementation of the model object '<em><b>Operateur Binaire</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tAB.impl.OperationBinaireImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.OperateurBinaireImpl#getKind <em>Kind</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OperationBinaireImpl extends OperationImpl implements OperationBinaire
+public class OperateurBinaireImpl extends OperationImpl implements OperateurBinaire
 {
   /**
    * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -53,7 +53,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
    * <!-- end-user-doc -->
    * @generated
    */
-  protected OperationBinaireImpl()
+  protected OperateurBinaireImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
   @Override
   protected EClass eStaticClass()
   {
-    return TABPackage.Literals.OPERATION_BINAIRE;
+    return TABPackage.Literals.OPERATEUR_BINAIRE;
   }
 
   /**
@@ -91,7 +91,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
     OperationBinaireType oldKind = kind;
     kind = newKind == null ? KIND_EDEFAULT : newKind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.OPERATION_BINAIRE__KIND, oldKind, kind));
+      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.OPERATEUR_BINAIRE__KIND, oldKind, kind));
   }
 
   /**
@@ -104,7 +104,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_BINAIRE__KIND:
+      case TABPackage.OPERATEUR_BINAIRE__KIND:
         return getKind();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_BINAIRE__KIND:
+      case TABPackage.OPERATEUR_BINAIRE__KIND:
         setKind((OperationBinaireType)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_BINAIRE__KIND:
+      case TABPackage.OPERATEUR_BINAIRE__KIND:
         setKind(KIND_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_BINAIRE__KIND:
+      case TABPackage.OPERATEUR_BINAIRE__KIND:
         return kind != KIND_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
     return result.toString();
   }
 
-} //OperationBinaireImpl
+} //OperateurBinaireImpl

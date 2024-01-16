@@ -9,24 +9,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.xtext.tAB.OperationUnaire;
+import org.xtext.tAB.OperateurUnaire;
 import org.xtext.tAB.OperationUnaireType;
 import org.xtext.tAB.TABPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Unaire</b></em>'.
+ * An implementation of the model object '<em><b>Operateur Unaire</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tAB.impl.OperationUnaireImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.xtext.tAB.impl.OperateurUnaireImpl#getKind <em>Kind</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OperationUnaireImpl extends OperationImpl implements OperationUnaire
+public class OperateurUnaireImpl extends OperationImpl implements OperateurUnaire
 {
   /**
    * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
@@ -53,7 +53,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
    * <!-- end-user-doc -->
    * @generated
    */
-  protected OperationUnaireImpl()
+  protected OperateurUnaireImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
   @Override
   protected EClass eStaticClass()
   {
-    return TABPackage.Literals.OPERATION_UNAIRE;
+    return TABPackage.Literals.OPERATEUR_UNAIRE;
   }
 
   /**
@@ -91,7 +91,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
     OperationUnaireType oldKind = kind;
     kind = newKind == null ? KIND_EDEFAULT : newKind;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.OPERATION_UNAIRE__KIND, oldKind, kind));
+      eNotify(new ENotificationImpl(this, Notification.SET, TABPackage.OPERATEUR_UNAIRE__KIND, oldKind, kind));
   }
 
   /**
@@ -104,7 +104,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_UNAIRE__KIND:
+      case TABPackage.OPERATEUR_UNAIRE__KIND:
         return getKind();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -120,7 +120,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_UNAIRE__KIND:
+      case TABPackage.OPERATEUR_UNAIRE__KIND:
         setKind((OperationUnaireType)newValue);
         return;
     }
@@ -137,7 +137,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_UNAIRE__KIND:
+      case TABPackage.OPERATEUR_UNAIRE__KIND:
         setKind(KIND_EDEFAULT);
         return;
     }
@@ -154,7 +154,7 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
   {
     switch (featureID)
     {
-      case TABPackage.OPERATION_UNAIRE__KIND:
+      case TABPackage.OPERATEUR_UNAIRE__KIND:
         return kind != KIND_EDEFAULT;
     }
     return super.eIsSet(featureID);
@@ -177,4 +177,4 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
     return result.toString();
   }
 
-} //OperationUnaireImpl
+} //OperateurUnaireImpl

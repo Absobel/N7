@@ -6,7 +6,8 @@ generate tAB "http://www.xtext.org/TAB"
 
 Tableur : 'Tableur' name=ID '{'
 	tables+=Table*
-	Catalogue+=Catalogue
+	catalogue+=Catalogue*
+	script+=Script*
 	'}'
 	;
 	
@@ -14,11 +15,11 @@ Tableur : 'Tableur' name=ID '{'
 	
 Colonne : ColonneInput | ColonneOutput;
 
-Operation : OperationUnaire | OperationBinaire;
+Operation : OperateurUnaire | OperateurBinaire;
 
-OperationUnaire : 'Operation' kind=OperationUnaireType;
+OperateurUnaire : 'Operation' kind=OperationUnaireType;
 
-OperationBinaire : 'Operation' kind=OperationBinaireType;
+OperateurBinaire : 'Operation' kind=OperationBinaireType;
 
 enum OperationUnaireType :
 	Oppose='Oppose'
@@ -39,10 +40,10 @@ Table : 'Table' name=ID '{'
 ColonneInput : 'ColonneInput' name=ID;
 
 ColonneOutput : 'ColonneOutput' name=ID '{'
-	operations+=OperationBinaire colonnes+=[Colonne] colonnes+=[Colonne]
+	operations+=OperateurBinaire colonnes+=[Colonne] colonnes+=[Colonne]
 	'}'
 	| 'ColonneOutput' name=ID '{'
-	operations+=OperationUnaire colonnes+=[Colonne]
+	operations+=OperateurUnaire colonnes+=[Colonne]
 	'}'
 	;
 
@@ -71,9 +72,7 @@ Sortie : 'Sorties' '{'
 
 Parametre : name=ID ':' type=TypePrimitifPython;
 
-
-
-// à remplir
+// à remplir/modif
 enum TypePrimitifPython :
 	 int
 	|float
@@ -86,4 +85,56 @@ enum TypePrimitifPython :
 Documentation : 'Documentation' texte=STRING;
 
 Ressource : 'Ressource' chemin=STRING;
+
+
+/////////////////////////// SCRIPT  ///////////////////////////
+
+Script : 'Script' name=ID '{'
+	entrees+=EntreeScript
+	sorties+=SortieScript
+	calculs+=Calcul
+	'}'
+	;
+	
+EntreeScript : 'Entrees' '{'
+		parametres+=Parametre*
+	'}'
+	;
+	
+SortieScript : 'Sorties' '{'
+		parametres+=Parametre*
+	'}'
+	;
+	
+enum OperateurBinaireType :
+	 ADD = "Add"
+	|SUB = "Sub"
+	|TIM = "Tim"
+	|DIV = "Div"
+	|MIN = "Min"
+	|MAX = "Max"
+;
+enum OperateurUnaireType :
+	 OPP = "Opp"
+	|INV = "Inv"
+	|COS = "Cos"
+	|SIN = "Sin"
+	|SQR = "Sqr"
+	|EXP = "Exp"
+	|LOG = "Log"
+;
+
+OperationScript : OperationUnaireScript | OperationBinaireScript;
+
+OperationUnaireScript : operation=OperateurUnaireType '('operands+=Operand')';
+
+OperationBinaireScript : operation=OperateurBinaireType '('operand+=Operand','operand+=Operand')';
+
+Operand : {Operand} ID | {Operand} INT | OperationScript;
+
+Calcul : 'Calcul' '{'
+	Operation+=OperationScript
+	'}'
+;
+
 

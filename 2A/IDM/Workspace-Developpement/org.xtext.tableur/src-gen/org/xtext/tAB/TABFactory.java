@@ -51,22 +51,22 @@ public interface TABFactory extends EFactory
   Operation createOperation();
 
   /**
-   * Returns a new object of class '<em>Operation Unaire</em>'.
+   * Returns a new object of class '<em>Operateur Unaire</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Unaire</em>'.
+   * @return a new object of class '<em>Operateur Unaire</em>'.
    * @generated
    */
-  OperationUnaire createOperationUnaire();
+  OperateurUnaire createOperateurUnaire();
 
   /**
-   * Returns a new object of class '<em>Operation Binaire</em>'.
+   * Returns a new object of class '<em>Operateur Binaire</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Operation Binaire</em>'.
+   * @return a new object of class '<em>Operateur Binaire</em>'.
    * @generated
    */
-  OperationBinaire createOperationBinaire();
+  OperateurBinaire createOperateurBinaire();
 
   /**
    * Returns a new object of class '<em>Table</em>'.
@@ -157,6 +157,78 @@ public interface TABFactory extends EFactory
    * @generated
    */
   Ressource createRessource();
+
+  /**
+   * Returns a new object of class '<em>Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Script</em>'.
+   * @generated
+   */
+  Script createScript();
+
+  /**
+   * Returns a new object of class '<em>Entree Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entree Script</em>'.
+   * @generated
+   */
+  EntreeScript createEntreeScript();
+
+  /**
+   * Returns a new object of class '<em>Sortie Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sortie Script</em>'.
+   * @generated
+   */
+  SortieScript createSortieScript();
+
+  /**
+   * Returns a new object of class '<em>Operation Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Script</em>'.
+   * @generated
+   */
+  OperationScript createOperationScript();
+
+  /**
+   * Returns a new object of class '<em>Operation Unaire Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Unaire Script</em>'.
+   * @generated
+   */
+  OperationUnaireScript createOperationUnaireScript();
+
+  /**
+   * Returns a new object of class '<em>Operation Binaire Script</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operation Binaire Script</em>'.
+   * @generated
+   */
+  OperationBinaireScript createOperationBinaireScript();
+
+  /**
+   * Returns a new object of class '<em>Operand</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Operand</em>'.
+   * @generated
+   */
+  Operand createOperand();
+
+  /**
+   * Returns a new object of class '<em>Calcul</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Calcul</em>'.
+   * @generated
+   */
+  Calcul createCalcul();
 
   /**
    * Returns the package supported by this factory.

@@ -34,11 +34,15 @@ public class TABParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getColonneAccess().getAlternatives(), "rule__Colonne__Alternatives");
 			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
 			builder.put(grammarAccess.getColonneOutputAccess().getAlternatives(), "rule__ColonneOutput__Alternatives");
+			builder.put(grammarAccess.getOperationScriptAccess().getAlternatives(), "rule__OperationScript__Alternatives");
+			builder.put(grammarAccess.getOperandAccess().getAlternatives(), "rule__Operand__Alternatives");
 			builder.put(grammarAccess.getOperationBinaireTypeAccess().getAlternatives(), "rule__OperationBinaireType__Alternatives");
 			builder.put(grammarAccess.getTypePrimitifPythonAccess().getAlternatives(), "rule__TypePrimitifPython__Alternatives");
+			builder.put(grammarAccess.getOperateurBinaireTypeAccess().getAlternatives(), "rule__OperateurBinaireType__Alternatives");
+			builder.put(grammarAccess.getOperateurUnaireTypeAccess().getAlternatives(), "rule__OperateurUnaireType__Alternatives");
 			builder.put(grammarAccess.getTableurAccess().getGroup(), "rule__Tableur__Group__0");
-			builder.put(grammarAccess.getOperationUnaireAccess().getGroup(), "rule__OperationUnaire__Group__0");
-			builder.put(grammarAccess.getOperationBinaireAccess().getGroup(), "rule__OperationBinaire__Group__0");
+			builder.put(grammarAccess.getOperateurUnaireAccess().getGroup(), "rule__OperateurUnaire__Group__0");
+			builder.put(grammarAccess.getOperateurBinaireAccess().getGroup(), "rule__OperateurBinaire__Group__0");
 			builder.put(grammarAccess.getTableAccess().getGroup(), "rule__Table__Group__0");
 			builder.put(grammarAccess.getColonneInputAccess().getGroup(), "rule__ColonneInput__Group__0");
 			builder.put(grammarAccess.getColonneOutputAccess().getGroup_0(), "rule__ColonneOutput__Group_0__0");
@@ -50,11 +54,20 @@ public class TABParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParametreAccess().getGroup(), "rule__Parametre__Group__0");
 			builder.put(grammarAccess.getDocumentationAccess().getGroup(), "rule__Documentation__Group__0");
 			builder.put(grammarAccess.getRessourceAccess().getGroup(), "rule__Ressource__Group__0");
+			builder.put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
+			builder.put(grammarAccess.getEntreeScriptAccess().getGroup(), "rule__EntreeScript__Group__0");
+			builder.put(grammarAccess.getSortieScriptAccess().getGroup(), "rule__SortieScript__Group__0");
+			builder.put(grammarAccess.getOperationUnaireScriptAccess().getGroup(), "rule__OperationUnaireScript__Group__0");
+			builder.put(grammarAccess.getOperationBinaireScriptAccess().getGroup(), "rule__OperationBinaireScript__Group__0");
+			builder.put(grammarAccess.getOperandAccess().getGroup_0(), "rule__Operand__Group_0__0");
+			builder.put(grammarAccess.getOperandAccess().getGroup_1(), "rule__Operand__Group_1__0");
+			builder.put(grammarAccess.getCalculAccess().getGroup(), "rule__Calcul__Group__0");
 			builder.put(grammarAccess.getTableurAccess().getNameAssignment_1(), "rule__Tableur__NameAssignment_1");
 			builder.put(grammarAccess.getTableurAccess().getTablesAssignment_3(), "rule__Tableur__TablesAssignment_3");
 			builder.put(grammarAccess.getTableurAccess().getCatalogueAssignment_4(), "rule__Tableur__CatalogueAssignment_4");
-			builder.put(grammarAccess.getOperationUnaireAccess().getKindAssignment_1(), "rule__OperationUnaire__KindAssignment_1");
-			builder.put(grammarAccess.getOperationBinaireAccess().getKindAssignment_1(), "rule__OperationBinaire__KindAssignment_1");
+			builder.put(grammarAccess.getTableurAccess().getScriptAssignment_5(), "rule__Tableur__ScriptAssignment_5");
+			builder.put(grammarAccess.getOperateurUnaireAccess().getKindAssignment_1(), "rule__OperateurUnaire__KindAssignment_1");
+			builder.put(grammarAccess.getOperateurBinaireAccess().getKindAssignment_1(), "rule__OperateurBinaire__KindAssignment_1");
 			builder.put(grammarAccess.getTableAccess().getNameAssignment_1(), "rule__Table__NameAssignment_1");
 			builder.put(grammarAccess.getTableAccess().getColonnesAssignment_3(), "rule__Table__ColonnesAssignment_3");
 			builder.put(grammarAccess.getColonneInputAccess().getNameAssignment_1(), "rule__ColonneInput__NameAssignment_1");
@@ -78,6 +91,18 @@ public class TABParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getParametreAccess().getTypeAssignment_2(), "rule__Parametre__TypeAssignment_2");
 			builder.put(grammarAccess.getDocumentationAccess().getTexteAssignment_1(), "rule__Documentation__TexteAssignment_1");
 			builder.put(grammarAccess.getRessourceAccess().getCheminAssignment_1(), "rule__Ressource__CheminAssignment_1");
+			builder.put(grammarAccess.getScriptAccess().getNameAssignment_1(), "rule__Script__NameAssignment_1");
+			builder.put(grammarAccess.getScriptAccess().getEntreesAssignment_3(), "rule__Script__EntreesAssignment_3");
+			builder.put(grammarAccess.getScriptAccess().getSortiesAssignment_4(), "rule__Script__SortiesAssignment_4");
+			builder.put(grammarAccess.getScriptAccess().getCalculsAssignment_5(), "rule__Script__CalculsAssignment_5");
+			builder.put(grammarAccess.getEntreeScriptAccess().getParametresAssignment_2(), "rule__EntreeScript__ParametresAssignment_2");
+			builder.put(grammarAccess.getSortieScriptAccess().getParametresAssignment_2(), "rule__SortieScript__ParametresAssignment_2");
+			builder.put(grammarAccess.getOperationUnaireScriptAccess().getOperationAssignment_0(), "rule__OperationUnaireScript__OperationAssignment_0");
+			builder.put(grammarAccess.getOperationUnaireScriptAccess().getOperandsAssignment_2(), "rule__OperationUnaireScript__OperandsAssignment_2");
+			builder.put(grammarAccess.getOperationBinaireScriptAccess().getOperationAssignment_0(), "rule__OperationBinaireScript__OperationAssignment_0");
+			builder.put(grammarAccess.getOperationBinaireScriptAccess().getOperandAssignment_2(), "rule__OperationBinaireScript__OperandAssignment_2");
+			builder.put(grammarAccess.getOperationBinaireScriptAccess().getOperandAssignment_4(), "rule__OperationBinaireScript__OperandAssignment_4");
+			builder.put(grammarAccess.getCalculAccess().getOperationAssignment_2(), "rule__Calcul__OperationAssignment_2");
 		}
 	}
 	

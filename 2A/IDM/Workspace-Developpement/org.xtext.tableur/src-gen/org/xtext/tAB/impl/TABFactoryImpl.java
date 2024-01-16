@@ -69,8 +69,8 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
       case TABPackage.TABLEUR: return createTableur();
       case TABPackage.COLONNE: return createColonne();
       case TABPackage.OPERATION: return createOperation();
-      case TABPackage.OPERATION_UNAIRE: return createOperationUnaire();
-      case TABPackage.OPERATION_BINAIRE: return createOperationBinaire();
+      case TABPackage.OPERATEUR_UNAIRE: return createOperateurUnaire();
+      case TABPackage.OPERATEUR_BINAIRE: return createOperateurBinaire();
       case TABPackage.TABLE: return createTable();
       case TABPackage.COLONNE_INPUT: return createColonneInput();
       case TABPackage.COLONNE_OUTPUT: return createColonneOutput();
@@ -81,6 +81,14 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
       case TABPackage.PARAMETRE: return createParametre();
       case TABPackage.DOCUMENTATION: return createDocumentation();
       case TABPackage.RESSOURCE: return createRessource();
+      case TABPackage.SCRIPT: return createScript();
+      case TABPackage.ENTREE_SCRIPT: return createEntreeScript();
+      case TABPackage.SORTIE_SCRIPT: return createSortieScript();
+      case TABPackage.OPERATION_SCRIPT: return createOperationScript();
+      case TABPackage.OPERATION_UNAIRE_SCRIPT: return createOperationUnaireScript();
+      case TABPackage.OPERATION_BINAIRE_SCRIPT: return createOperationBinaireScript();
+      case TABPackage.OPERAND: return createOperand();
+      case TABPackage.CALCUL: return createCalcul();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -102,6 +110,10 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
         return createOperationBinaireTypeFromString(eDataType, initialValue);
       case TABPackage.TYPE_PRIMITIF_PYTHON:
         return createTypePrimitifPythonFromString(eDataType, initialValue);
+      case TABPackage.OPERATEUR_BINAIRE_TYPE:
+        return createOperateurBinaireTypeFromString(eDataType, initialValue);
+      case TABPackage.OPERATEUR_UNAIRE_TYPE:
+        return createOperateurUnaireTypeFromString(eDataType, initialValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -123,6 +135,10 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
         return convertOperationBinaireTypeToString(eDataType, instanceValue);
       case TABPackage.TYPE_PRIMITIF_PYTHON:
         return convertTypePrimitifPythonToString(eDataType, instanceValue);
+      case TABPackage.OPERATEUR_BINAIRE_TYPE:
+        return convertOperateurBinaireTypeToString(eDataType, instanceValue);
+      case TABPackage.OPERATEUR_UNAIRE_TYPE:
+        return convertOperateurUnaireTypeToString(eDataType, instanceValue);
       default:
         throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -170,10 +186,10 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
    * @generated
    */
   @Override
-  public OperationUnaire createOperationUnaire()
+  public OperateurUnaire createOperateurUnaire()
   {
-    OperationUnaireImpl operationUnaire = new OperationUnaireImpl();
-    return operationUnaire;
+    OperateurUnaireImpl operateurUnaire = new OperateurUnaireImpl();
+    return operateurUnaire;
   }
 
   /**
@@ -182,10 +198,10 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
    * @generated
    */
   @Override
-  public OperationBinaire createOperationBinaire()
+  public OperateurBinaire createOperateurBinaire()
   {
-    OperationBinaireImpl operationBinaire = new OperationBinaireImpl();
-    return operationBinaire;
+    OperateurBinaireImpl operateurBinaire = new OperateurBinaireImpl();
+    return operateurBinaire;
   }
 
   /**
@@ -313,6 +329,102 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public Script createScript()
+  {
+    ScriptImpl script = new ScriptImpl();
+    return script;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntreeScript createEntreeScript()
+  {
+    EntreeScriptImpl entreeScript = new EntreeScriptImpl();
+    return entreeScript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SortieScript createSortieScript()
+  {
+    SortieScriptImpl sortieScript = new SortieScriptImpl();
+    return sortieScript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperationScript createOperationScript()
+  {
+    OperationScriptImpl operationScript = new OperationScriptImpl();
+    return operationScript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperationUnaireScript createOperationUnaireScript()
+  {
+    OperationUnaireScriptImpl operationUnaireScript = new OperationUnaireScriptImpl();
+    return operationUnaireScript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public OperationBinaireScript createOperationBinaireScript()
+  {
+    OperationBinaireScriptImpl operationBinaireScript = new OperationBinaireScriptImpl();
+    return operationBinaireScript;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Operand createOperand()
+  {
+    OperandImpl operand = new OperandImpl();
+    return operand;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Calcul createCalcul()
+  {
+    CalculImpl calcul = new CalculImpl();
+    return calcul;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public OperationUnaireType createOperationUnaireTypeFromString(EDataType eDataType, String initialValue)
   {
     OperationUnaireType result = OperationUnaireType.get(initialValue);
@@ -370,6 +482,50 @@ public class TABFactoryImpl extends EFactoryImpl implements TABFactory
    * @generated
    */
   public String convertTypePrimitifPythonToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperateurBinaireType createOperateurBinaireTypeFromString(EDataType eDataType, String initialValue)
+  {
+    OperateurBinaireType result = OperateurBinaireType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOperateurBinaireTypeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OperateurUnaireType createOperateurUnaireTypeFromString(EDataType eDataType, String initialValue)
+  {
+    OperateurUnaireType result = OperateurUnaireType.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOperateurUnaireTypeToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

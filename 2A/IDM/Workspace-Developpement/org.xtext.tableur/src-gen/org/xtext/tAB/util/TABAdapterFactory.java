@@ -91,14 +91,14 @@ public class TABAdapterFactory extends AdapterFactoryImpl
         return createOperationAdapter();
       }
       @Override
-      public Adapter caseOperationUnaire(OperationUnaire object)
+      public Adapter caseOperateurUnaire(OperateurUnaire object)
       {
-        return createOperationUnaireAdapter();
+        return createOperateurUnaireAdapter();
       }
       @Override
-      public Adapter caseOperationBinaire(OperationBinaire object)
+      public Adapter caseOperateurBinaire(OperateurBinaire object)
       {
-        return createOperationBinaireAdapter();
+        return createOperateurBinaireAdapter();
       }
       @Override
       public Adapter caseTable(Table object)
@@ -149,6 +149,46 @@ public class TABAdapterFactory extends AdapterFactoryImpl
       public Adapter caseRessource(Ressource object)
       {
         return createRessourceAdapter();
+      }
+      @Override
+      public Adapter caseScript(Script object)
+      {
+        return createScriptAdapter();
+      }
+      @Override
+      public Adapter caseEntreeScript(EntreeScript object)
+      {
+        return createEntreeScriptAdapter();
+      }
+      @Override
+      public Adapter caseSortieScript(SortieScript object)
+      {
+        return createSortieScriptAdapter();
+      }
+      @Override
+      public Adapter caseOperationScript(OperationScript object)
+      {
+        return createOperationScriptAdapter();
+      }
+      @Override
+      public Adapter caseOperationUnaireScript(OperationUnaireScript object)
+      {
+        return createOperationUnaireScriptAdapter();
+      }
+      @Override
+      public Adapter caseOperationBinaireScript(OperationBinaireScript object)
+      {
+        return createOperationBinaireScriptAdapter();
+      }
+      @Override
+      public Adapter caseOperand(Operand object)
+      {
+        return createOperandAdapter();
+      }
+      @Override
+      public Adapter caseCalcul(Calcul object)
+      {
+        return createCalculAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -218,31 +258,31 @@ public class TABAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationUnaire <em>Operation Unaire</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperateurUnaire <em>Operateur Unaire</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tAB.OperationUnaire
+   * @see org.xtext.tAB.OperateurUnaire
    * @generated
    */
-  public Adapter createOperationUnaireAdapter()
+  public Adapter createOperateurUnaireAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationBinaire <em>Operation Binaire</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperateurBinaire <em>Operateur Binaire</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.tAB.OperationBinaire
+   * @see org.xtext.tAB.OperateurBinaire
    * @generated
    */
-  public Adapter createOperationBinaireAdapter()
+  public Adapter createOperateurBinaireAdapter()
   {
     return null;
   }
@@ -393,6 +433,126 @@ public class TABAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRessourceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Script <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Script
+   * @generated
+   */
+  public Adapter createScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.EntreeScript <em>Entree Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.EntreeScript
+   * @generated
+   */
+  public Adapter createEntreeScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.SortieScript <em>Sortie Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.SortieScript
+   * @generated
+   */
+  public Adapter createSortieScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationScript <em>Operation Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.OperationScript
+   * @generated
+   */
+  public Adapter createOperationScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationUnaireScript <em>Operation Unaire Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.OperationUnaireScript
+   * @generated
+   */
+  public Adapter createOperationUnaireScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.OperationBinaireScript <em>Operation Binaire Script</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.OperationBinaireScript
+   * @generated
+   */
+  public Adapter createOperationBinaireScriptAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Operand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Operand
+   * @generated
+   */
+  public Adapter createOperandAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.tAB.Calcul <em>Calcul</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.tAB.Calcul
+   * @generated
+   */
+  public Adapter createCalculAdapter()
   {
     return null;
   }

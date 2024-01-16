@@ -22,20 +22,38 @@
       <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//TypePrimitifPython/bool"/>
       <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//TypePrimitifPython/list"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TAB.ecore#//OperateurBinaireType">
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/SUB"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/TIM"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurBinaireType/MAX"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="TAB.ecore#//OperateurUnaireType">
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/OPP"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/INV"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/SQR"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="TAB.ecore#//OperateurUnaireType/LOG"/>
+    </genEnums>
     <genClasses ecoreClass="TAB.ecore#//Tableur">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//Tableur/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Tableur/tables"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Tableur/Catalogue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Tableur/catalogue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Tableur/script"/>
     </genClasses>
     <genClasses ecoreClass="TAB.ecore#//Colonne">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//Colonne/name"/>
     </genClasses>
     <genClasses ecoreClass="TAB.ecore#//Operation"/>
-    <genClasses ecoreClass="TAB.ecore#//OperationUnaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperationUnaire/kind"/>
+    <genClasses ecoreClass="TAB.ecore#//OperateurUnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperateurUnaire/kind"/>
     </genClasses>
-    <genClasses ecoreClass="TAB.ecore#//OperationBinaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperationBinaire/kind"/>
+    <genClasses ecoreClass="TAB.ecore#//OperateurBinaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperateurBinaire/kind"/>
     </genClasses>
     <genClasses ecoreClass="TAB.ecore#//Table">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//Table/name"/>
@@ -72,6 +90,31 @@
     </genClasses>
     <genClasses ecoreClass="TAB.ecore#//Ressource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//Ressource/chemin"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//Script/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Script/entrees"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Script/sorties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Script/calculs"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//EntreeScript">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//EntreeScript/parametres"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//SortieScript">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//SortieScript/parametres"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//OperationScript"/>
+    <genClasses ecoreClass="TAB.ecore#//OperationUnaireScript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperationUnaireScript/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//OperationUnaireScript/operands"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//OperationBinaireScript">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TAB.ecore#//OperationBinaireScript/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//OperationBinaireScript/operand"/>
+    </genClasses>
+    <genClasses ecoreClass="TAB.ecore#//Operand"/>
+    <genClasses ecoreClass="TAB.ecore#//Calcul">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TAB.ecore#//Calcul/Operation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

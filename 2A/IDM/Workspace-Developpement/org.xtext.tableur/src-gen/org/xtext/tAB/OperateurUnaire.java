@@ -6,21 +6,21 @@ package org.xtext.tAB;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Operation Unaire</b></em>'.
+ * A representation of the model object '<em><b>Operateur Unaire</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.tAB.OperationUnaire#getKind <em>Kind</em>}</li>
+ *   <li>{@link org.xtext.tAB.OperateurUnaire#getKind <em>Kind</em>}</li>
  * </ul>
  *
- * @see org.xtext.tAB.TABPackage#getOperationUnaire()
+ * @see org.xtext.tAB.TABPackage#getOperateurUnaire()
  * @model
  * @generated
  */
-public interface OperationUnaire extends Operation
+public interface OperateurUnaire extends Operation
 {
   /**
    * Returns the value of the '<em><b>Kind</b></em>' attribute.
@@ -30,14 +30,14 @@ public interface OperationUnaire extends Operation
    * @return the value of the '<em>Kind</em>' attribute.
    * @see org.xtext.tAB.OperationUnaireType
    * @see #setKind(OperationUnaireType)
-   * @see org.xtext.tAB.TABPackage#getOperationUnaire_Kind()
+   * @see org.xtext.tAB.TABPackage#getOperateurUnaire_Kind()
    * @model
    * @generated
    */
   OperationUnaireType getKind();
 
   /**
-   * Sets the value of the '{@link org.xtext.tAB.OperationUnaire#getKind <em>Kind</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.tAB.OperateurUnaire#getKind <em>Kind</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Kind</em>' attribute.
@@ -47,4 +47,4 @@ public interface OperationUnaire extends Operation
    */
   void setKind(OperationUnaireType value);
 
-} // OperationUnaire
+} // OperateurUnaire

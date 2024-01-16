@@ -96,13 +96,22 @@ public interface TABPackage extends EPackage
   int TABLEUR__CATALOGUE = 2;
 
   /**
+   * The feature id for the '<em><b>Script</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLEUR__SCRIPT = 3;
+
+  /**
    * The number of structural features of the '<em>Tableur</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TABLEUR_FEATURE_COUNT = 3;
+  int TABLEUR_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.tAB.impl.ColonneImpl <em>Colonne</em>}' class.
@@ -152,14 +161,14 @@ public interface TABPackage extends EPackage
   int OPERATION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.tAB.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperateurUnaireImpl <em>Operateur Unaire</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tAB.impl.OperationUnaireImpl
-   * @see org.xtext.tAB.impl.TABPackageImpl#getOperationUnaire()
+   * @see org.xtext.tAB.impl.OperateurUnaireImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurUnaire()
    * @generated
    */
-  int OPERATION_UNAIRE = 3;
+  int OPERATEUR_UNAIRE = 3;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -168,26 +177,26 @@ public interface TABPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION_UNAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
+  int OPERATEUR_UNAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Operation Unaire</em>' class.
+   * The number of structural features of the '<em>Operateur Unaire</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+  int OPERATEUR_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.tAB.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperateurBinaireImpl <em>Operateur Binaire</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.tAB.impl.OperationBinaireImpl
-   * @see org.xtext.tAB.impl.TABPackageImpl#getOperationBinaire()
+   * @see org.xtext.tAB.impl.OperateurBinaireImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurBinaire()
    * @generated
    */
-  int OPERATION_BINAIRE = 4;
+  int OPERATEUR_BINAIRE = 4;
 
   /**
    * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -196,16 +205,16 @@ public interface TABPackage extends EPackage
    * @generated
    * @ordered
    */
-  int OPERATION_BINAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
+  int OPERATEUR_BINAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Operation Binaire</em>' class.
+   * The number of structural features of the '<em>Operateur Binaire</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OPERATION_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
+  int OPERATEUR_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.tAB.impl.TableImpl <em>Table</em>}' class.
@@ -569,6 +578,257 @@ public interface TABPackage extends EPackage
   int RESSOURCE_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.ScriptImpl <em>Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.ScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getScript()
+   * @generated
+   */
+  int SCRIPT = 15;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Entrees</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__ENTREES = 1;
+
+  /**
+   * The feature id for the '<em><b>Sorties</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__SORTIES = 2;
+
+  /**
+   * The feature id for the '<em><b>Calculs</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT__CALCULS = 3;
+
+  /**
+   * The number of structural features of the '<em>Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCRIPT_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.EntreeScriptImpl <em>Entree Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.EntreeScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getEntreeScript()
+   * @generated
+   */
+  int ENTREE_SCRIPT = 16;
+
+  /**
+   * The feature id for the '<em><b>Parametres</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTREE_SCRIPT__PARAMETRES = 0;
+
+  /**
+   * The number of structural features of the '<em>Entree Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTREE_SCRIPT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.SortieScriptImpl <em>Sortie Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.SortieScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getSortieScript()
+   * @generated
+   */
+  int SORTIE_SCRIPT = 17;
+
+  /**
+   * The feature id for the '<em><b>Parametres</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SORTIE_SCRIPT__PARAMETRES = 0;
+
+  /**
+   * The number of structural features of the '<em>Sortie Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SORTIE_SCRIPT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperandImpl <em>Operand</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.OperandImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperand()
+   * @generated
+   */
+  int OPERAND = 21;
+
+  /**
+   * The number of structural features of the '<em>Operand</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERAND_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperationScriptImpl <em>Operation Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.OperationScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperationScript()
+   * @generated
+   */
+  int OPERATION_SCRIPT = 18;
+
+  /**
+   * The number of structural features of the '<em>Operation Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_SCRIPT_FEATURE_COUNT = OPERAND_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperationUnaireScriptImpl <em>Operation Unaire Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.OperationUnaireScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperationUnaireScript()
+   * @generated
+   */
+  int OPERATION_UNAIRE_SCRIPT = 19;
+
+  /**
+   * The feature id for the '<em><b>Operation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_UNAIRE_SCRIPT__OPERATION = OPERATION_SCRIPT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operands</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_UNAIRE_SCRIPT__OPERANDS = OPERATION_SCRIPT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Operation Unaire Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_UNAIRE_SCRIPT_FEATURE_COUNT = OPERATION_SCRIPT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.OperationBinaireScriptImpl <em>Operation Binaire Script</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.OperationBinaireScriptImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperationBinaireScript()
+   * @generated
+   */
+  int OPERATION_BINAIRE_SCRIPT = 20;
+
+  /**
+   * The feature id for the '<em><b>Operation</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BINAIRE_SCRIPT__OPERATION = OPERATION_SCRIPT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operand</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BINAIRE_SCRIPT__OPERAND = OPERATION_SCRIPT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Operation Binaire Script</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OPERATION_BINAIRE_SCRIPT_FEATURE_COUNT = OPERATION_SCRIPT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.impl.CalculImpl <em>Calcul</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.impl.CalculImpl
+   * @see org.xtext.tAB.impl.TABPackageImpl#getCalcul()
+   * @generated
+   */
+  int CALCUL = 22;
+
+  /**
+   * The feature id for the '<em><b>Operation</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCUL__OPERATION = 0;
+
+  /**
+   * The number of structural features of the '<em>Calcul</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CALCUL_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.tAB.OperationUnaireType <em>Operation Unaire Type</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -576,7 +836,7 @@ public interface TABPackage extends EPackage
    * @see org.xtext.tAB.impl.TABPackageImpl#getOperationUnaireType()
    * @generated
    */
-  int OPERATION_UNAIRE_TYPE = 15;
+  int OPERATION_UNAIRE_TYPE = 23;
 
   /**
    * The meta object id for the '{@link org.xtext.tAB.OperationBinaireType <em>Operation Binaire Type</em>}' enum.
@@ -586,7 +846,7 @@ public interface TABPackage extends EPackage
    * @see org.xtext.tAB.impl.TABPackageImpl#getOperationBinaireType()
    * @generated
    */
-  int OPERATION_BINAIRE_TYPE = 16;
+  int OPERATION_BINAIRE_TYPE = 24;
 
   /**
    * The meta object id for the '{@link org.xtext.tAB.TypePrimitifPython <em>Type Primitif Python</em>}' enum.
@@ -596,7 +856,27 @@ public interface TABPackage extends EPackage
    * @see org.xtext.tAB.impl.TABPackageImpl#getTypePrimitifPython()
    * @generated
    */
-  int TYPE_PRIMITIF_PYTHON = 17;
+  int TYPE_PRIMITIF_PYTHON = 25;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.OperateurBinaireType <em>Operateur Binaire Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.OperateurBinaireType
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurBinaireType()
+   * @generated
+   */
+  int OPERATEUR_BINAIRE_TYPE = 26;
+
+  /**
+   * The meta object id for the '{@link org.xtext.tAB.OperateurUnaireType <em>Operateur Unaire Type</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.tAB.OperateurUnaireType
+   * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurUnaireType()
+   * @generated
+   */
+  int OPERATEUR_UNAIRE_TYPE = 27;
 
 
   /**
@@ -643,6 +923,17 @@ public interface TABPackage extends EPackage
   EReference getTableur_Catalogue();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.Tableur#getScript <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Script</em>'.
+   * @see org.xtext.tAB.Tableur#getScript()
+   * @see #getTableur()
+   * @generated
+   */
+  EReference getTableur_Script();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.tAB.Colonne <em>Colonne</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -674,46 +965,46 @@ public interface TABPackage extends EPackage
   EClass getOperation();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tAB.OperationUnaire <em>Operation Unaire</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tAB.OperateurUnaire <em>Operateur Unaire</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Unaire</em>'.
-   * @see org.xtext.tAB.OperationUnaire
+   * @return the meta object for class '<em>Operateur Unaire</em>'.
+   * @see org.xtext.tAB.OperateurUnaire
    * @generated
    */
-  EClass getOperationUnaire();
+  EClass getOperateurUnaire();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperationUnaire#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperateurUnaire#getKind <em>Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see org.xtext.tAB.OperationUnaire#getKind()
-   * @see #getOperationUnaire()
+   * @see org.xtext.tAB.OperateurUnaire#getKind()
+   * @see #getOperateurUnaire()
    * @generated
    */
-  EAttribute getOperationUnaire_Kind();
+  EAttribute getOperateurUnaire_Kind();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.tAB.OperationBinaire <em>Operation Binaire</em>}'.
+   * Returns the meta object for class '{@link org.xtext.tAB.OperateurBinaire <em>Operateur Binaire</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Operation Binaire</em>'.
-   * @see org.xtext.tAB.OperationBinaire
+   * @return the meta object for class '<em>Operateur Binaire</em>'.
+   * @see org.xtext.tAB.OperateurBinaire
    * @generated
    */
-  EClass getOperationBinaire();
+  EClass getOperateurBinaire();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperationBinaire#getKind <em>Kind</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperateurBinaire#getKind <em>Kind</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Kind</em>'.
-   * @see org.xtext.tAB.OperationBinaire#getKind()
-   * @see #getOperationBinaire()
+   * @see org.xtext.tAB.OperateurBinaire#getKind()
+   * @see #getOperateurBinaire()
    * @generated
    */
-  EAttribute getOperationBinaire_Kind();
+  EAttribute getOperateurBinaire_Kind();
 
   /**
    * Returns the meta object for class '{@link org.xtext.tAB.Table <em>Table</em>}'.
@@ -1003,6 +1294,207 @@ public interface TABPackage extends EPackage
   EAttribute getRessource_Chemin();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.tAB.Script <em>Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Script</em>'.
+   * @see org.xtext.tAB.Script
+   * @generated
+   */
+  EClass getScript();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tAB.Script#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.tAB.Script#getName()
+   * @see #getScript()
+   * @generated
+   */
+  EAttribute getScript_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.Script#getEntrees <em>Entrees</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entrees</em>'.
+   * @see org.xtext.tAB.Script#getEntrees()
+   * @see #getScript()
+   * @generated
+   */
+  EReference getScript_Entrees();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.Script#getSorties <em>Sorties</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sorties</em>'.
+   * @see org.xtext.tAB.Script#getSorties()
+   * @see #getScript()
+   * @generated
+   */
+  EReference getScript_Sorties();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.Script#getCalculs <em>Calculs</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Calculs</em>'.
+   * @see org.xtext.tAB.Script#getCalculs()
+   * @see #getScript()
+   * @generated
+   */
+  EReference getScript_Calculs();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.EntreeScript <em>Entree Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entree Script</em>'.
+   * @see org.xtext.tAB.EntreeScript
+   * @generated
+   */
+  EClass getEntreeScript();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.EntreeScript#getParametres <em>Parametres</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parametres</em>'.
+   * @see org.xtext.tAB.EntreeScript#getParametres()
+   * @see #getEntreeScript()
+   * @generated
+   */
+  EReference getEntreeScript_Parametres();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.SortieScript <em>Sortie Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sortie Script</em>'.
+   * @see org.xtext.tAB.SortieScript
+   * @generated
+   */
+  EClass getSortieScript();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.SortieScript#getParametres <em>Parametres</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parametres</em>'.
+   * @see org.xtext.tAB.SortieScript#getParametres()
+   * @see #getSortieScript()
+   * @generated
+   */
+  EReference getSortieScript_Parametres();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.OperationScript <em>Operation Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation Script</em>'.
+   * @see org.xtext.tAB.OperationScript
+   * @generated
+   */
+  EClass getOperationScript();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.OperationUnaireScript <em>Operation Unaire Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation Unaire Script</em>'.
+   * @see org.xtext.tAB.OperationUnaireScript
+   * @generated
+   */
+  EClass getOperationUnaireScript();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperationUnaireScript#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operation</em>'.
+   * @see org.xtext.tAB.OperationUnaireScript#getOperation()
+   * @see #getOperationUnaireScript()
+   * @generated
+   */
+  EAttribute getOperationUnaireScript_Operation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.OperationUnaireScript#getOperands <em>Operands</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operands</em>'.
+   * @see org.xtext.tAB.OperationUnaireScript#getOperands()
+   * @see #getOperationUnaireScript()
+   * @generated
+   */
+  EReference getOperationUnaireScript_Operands();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.OperationBinaireScript <em>Operation Binaire Script</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operation Binaire Script</em>'.
+   * @see org.xtext.tAB.OperationBinaireScript
+   * @generated
+   */
+  EClass getOperationBinaireScript();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.tAB.OperationBinaireScript#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operation</em>'.
+   * @see org.xtext.tAB.OperationBinaireScript#getOperation()
+   * @see #getOperationBinaireScript()
+   * @generated
+   */
+  EAttribute getOperationBinaireScript_Operation();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.OperationBinaireScript#getOperand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operand</em>'.
+   * @see org.xtext.tAB.OperationBinaireScript#getOperand()
+   * @see #getOperationBinaireScript()
+   * @generated
+   */
+  EReference getOperationBinaireScript_Operand();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.Operand <em>Operand</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Operand</em>'.
+   * @see org.xtext.tAB.Operand
+   * @generated
+   */
+  EClass getOperand();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.tAB.Calcul <em>Calcul</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Calcul</em>'.
+   * @see org.xtext.tAB.Calcul
+   * @generated
+   */
+  EClass getCalcul();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.tAB.Calcul#getOperation <em>Operation</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Operation</em>'.
+   * @see org.xtext.tAB.Calcul#getOperation()
+   * @see #getCalcul()
+   * @generated
+   */
+  EReference getCalcul_Operation();
+
+  /**
    * Returns the meta object for enum '{@link org.xtext.tAB.OperationUnaireType <em>Operation Unaire Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1031,6 +1523,26 @@ public interface TABPackage extends EPackage
    * @generated
    */
   EEnum getTypePrimitifPython();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.tAB.OperateurBinaireType <em>Operateur Binaire Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Operateur Binaire Type</em>'.
+   * @see org.xtext.tAB.OperateurBinaireType
+   * @generated
+   */
+  EEnum getOperateurBinaireType();
+
+  /**
+   * Returns the meta object for enum '{@link org.xtext.tAB.OperateurUnaireType <em>Operateur Unaire Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Operateur Unaire Type</em>'.
+   * @see org.xtext.tAB.OperateurUnaireType
+   * @generated
+   */
+  EEnum getOperateurUnaireType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1090,6 +1602,14 @@ public interface TABPackage extends EPackage
     EReference TABLEUR__CATALOGUE = eINSTANCE.getTableur_Catalogue();
 
     /**
+     * The meta object literal for the '<em><b>Script</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TABLEUR__SCRIPT = eINSTANCE.getTableur_Script();
+
+    /**
      * The meta object literal for the '{@link org.xtext.tAB.impl.ColonneImpl <em>Colonne</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1118,14 +1638,14 @@ public interface TABPackage extends EPackage
     EClass OPERATION = eINSTANCE.getOperation();
 
     /**
-     * The meta object literal for the '{@link org.xtext.tAB.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperateurUnaireImpl <em>Operateur Unaire</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.tAB.impl.OperationUnaireImpl
-     * @see org.xtext.tAB.impl.TABPackageImpl#getOperationUnaire()
+     * @see org.xtext.tAB.impl.OperateurUnaireImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurUnaire()
      * @generated
      */
-    EClass OPERATION_UNAIRE = eINSTANCE.getOperationUnaire();
+    EClass OPERATEUR_UNAIRE = eINSTANCE.getOperateurUnaire();
 
     /**
      * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
@@ -1133,17 +1653,17 @@ public interface TABPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION_UNAIRE__KIND = eINSTANCE.getOperationUnaire_Kind();
+    EAttribute OPERATEUR_UNAIRE__KIND = eINSTANCE.getOperateurUnaire_Kind();
 
     /**
-     * The meta object literal for the '{@link org.xtext.tAB.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperateurBinaireImpl <em>Operateur Binaire</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.tAB.impl.OperationBinaireImpl
-     * @see org.xtext.tAB.impl.TABPackageImpl#getOperationBinaire()
+     * @see org.xtext.tAB.impl.OperateurBinaireImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurBinaire()
      * @generated
      */
-    EClass OPERATION_BINAIRE = eINSTANCE.getOperationBinaire();
+    EClass OPERATEUR_BINAIRE = eINSTANCE.getOperateurBinaire();
 
     /**
      * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
@@ -1151,7 +1671,7 @@ public interface TABPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute OPERATION_BINAIRE__KIND = eINSTANCE.getOperationBinaire_Kind();
+    EAttribute OPERATEUR_BINAIRE__KIND = eINSTANCE.getOperateurBinaire_Kind();
 
     /**
      * The meta object literal for the '{@link org.xtext.tAB.impl.TableImpl <em>Table</em>}' class.
@@ -1390,6 +1910,174 @@ public interface TABPackage extends EPackage
     EAttribute RESSOURCE__CHEMIN = eINSTANCE.getRessource_Chemin();
 
     /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.ScriptImpl <em>Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.ScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getScript()
+     * @generated
+     */
+    EClass SCRIPT = eINSTANCE.getScript();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Entrees</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCRIPT__ENTREES = eINSTANCE.getScript_Entrees();
+
+    /**
+     * The meta object literal for the '<em><b>Sorties</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCRIPT__SORTIES = eINSTANCE.getScript_Sorties();
+
+    /**
+     * The meta object literal for the '<em><b>Calculs</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCRIPT__CALCULS = eINSTANCE.getScript_Calculs();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.EntreeScriptImpl <em>Entree Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.EntreeScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getEntreeScript()
+     * @generated
+     */
+    EClass ENTREE_SCRIPT = eINSTANCE.getEntreeScript();
+
+    /**
+     * The meta object literal for the '<em><b>Parametres</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTREE_SCRIPT__PARAMETRES = eINSTANCE.getEntreeScript_Parametres();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.SortieScriptImpl <em>Sortie Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.SortieScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getSortieScript()
+     * @generated
+     */
+    EClass SORTIE_SCRIPT = eINSTANCE.getSortieScript();
+
+    /**
+     * The meta object literal for the '<em><b>Parametres</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SORTIE_SCRIPT__PARAMETRES = eINSTANCE.getSortieScript_Parametres();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperationScriptImpl <em>Operation Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.OperationScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperationScript()
+     * @generated
+     */
+    EClass OPERATION_SCRIPT = eINSTANCE.getOperationScript();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperationUnaireScriptImpl <em>Operation Unaire Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.OperationUnaireScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperationUnaireScript()
+     * @generated
+     */
+    EClass OPERATION_UNAIRE_SCRIPT = eINSTANCE.getOperationUnaireScript();
+
+    /**
+     * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION_UNAIRE_SCRIPT__OPERATION = eINSTANCE.getOperationUnaireScript_Operation();
+
+    /**
+     * The meta object literal for the '<em><b>Operands</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_UNAIRE_SCRIPT__OPERANDS = eINSTANCE.getOperationUnaireScript_Operands();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperationBinaireScriptImpl <em>Operation Binaire Script</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.OperationBinaireScriptImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperationBinaireScript()
+     * @generated
+     */
+    EClass OPERATION_BINAIRE_SCRIPT = eINSTANCE.getOperationBinaireScript();
+
+    /**
+     * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OPERATION_BINAIRE_SCRIPT__OPERATION = eINSTANCE.getOperationBinaireScript_Operation();
+
+    /**
+     * The meta object literal for the '<em><b>Operand</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OPERATION_BINAIRE_SCRIPT__OPERAND = eINSTANCE.getOperationBinaireScript_Operand();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.OperandImpl <em>Operand</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.OperandImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperand()
+     * @generated
+     */
+    EClass OPERAND = eINSTANCE.getOperand();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.impl.CalculImpl <em>Calcul</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.impl.CalculImpl
+     * @see org.xtext.tAB.impl.TABPackageImpl#getCalcul()
+     * @generated
+     */
+    EClass CALCUL = eINSTANCE.getCalcul();
+
+    /**
+     * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CALCUL__OPERATION = eINSTANCE.getCalcul_Operation();
+
+    /**
      * The meta object literal for the '{@link org.xtext.tAB.OperationUnaireType <em>Operation Unaire Type</em>}' enum.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1418,6 +2106,26 @@ public interface TABPackage extends EPackage
      * @generated
      */
     EEnum TYPE_PRIMITIF_PYTHON = eINSTANCE.getTypePrimitifPython();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.OperateurBinaireType <em>Operateur Binaire Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.OperateurBinaireType
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurBinaireType()
+     * @generated
+     */
+    EEnum OPERATEUR_BINAIRE_TYPE = eINSTANCE.getOperateurBinaireType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.tAB.OperateurUnaireType <em>Operateur Unaire Type</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.tAB.OperateurUnaireType
+     * @see org.xtext.tAB.impl.TABPackageImpl#getOperateurUnaireType()
+     * @generated
+     */
+    EEnum OPERATEUR_UNAIRE_TYPE = eINSTANCE.getOperateurUnaireType();
 
   }
 

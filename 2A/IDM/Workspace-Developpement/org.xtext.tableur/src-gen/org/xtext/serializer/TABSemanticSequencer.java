@@ -16,16 +16,23 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.services.TABGrammarAccess;
 import org.xtext.tAB.Algorithme;
+import org.xtext.tAB.Calcul;
 import org.xtext.tAB.Catalogue;
 import org.xtext.tAB.ColonneInput;
 import org.xtext.tAB.ColonneOutput;
 import org.xtext.tAB.Documentation;
 import org.xtext.tAB.Entree;
-import org.xtext.tAB.OperationBinaire;
-import org.xtext.tAB.OperationUnaire;
+import org.xtext.tAB.EntreeScript;
+import org.xtext.tAB.Operand;
+import org.xtext.tAB.OperateurBinaire;
+import org.xtext.tAB.OperateurUnaire;
+import org.xtext.tAB.OperationBinaireScript;
+import org.xtext.tAB.OperationUnaireScript;
 import org.xtext.tAB.Parametre;
 import org.xtext.tAB.Ressource;
+import org.xtext.tAB.Script;
 import org.xtext.tAB.Sortie;
+import org.xtext.tAB.SortieScript;
 import org.xtext.tAB.TABPackage;
 import org.xtext.tAB.Table;
 import org.xtext.tAB.Tableur;
@@ -47,6 +54,9 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case TABPackage.ALGORITHME:
 				sequence_Algorithme(context, (Algorithme) semanticObject); 
 				return; 
+			case TABPackage.CALCUL:
+				sequence_Calcul(context, (Calcul) semanticObject); 
+				return; 
 			case TABPackage.CATALOGUE:
 				sequence_Catalogue(context, (Catalogue) semanticObject); 
 				return; 
@@ -62,11 +72,23 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case TABPackage.ENTREE:
 				sequence_Entree(context, (Entree) semanticObject); 
 				return; 
-			case TABPackage.OPERATION_BINAIRE:
-				sequence_OperationBinaire(context, (OperationBinaire) semanticObject); 
+			case TABPackage.ENTREE_SCRIPT:
+				sequence_EntreeScript(context, (EntreeScript) semanticObject); 
 				return; 
-			case TABPackage.OPERATION_UNAIRE:
-				sequence_OperationUnaire(context, (OperationUnaire) semanticObject); 
+			case TABPackage.OPERAND:
+				sequence_Operand(context, (Operand) semanticObject); 
+				return; 
+			case TABPackage.OPERATEUR_BINAIRE:
+				sequence_OperateurBinaire(context, (OperateurBinaire) semanticObject); 
+				return; 
+			case TABPackage.OPERATEUR_UNAIRE:
+				sequence_OperateurUnaire(context, (OperateurUnaire) semanticObject); 
+				return; 
+			case TABPackage.OPERATION_BINAIRE_SCRIPT:
+				sequence_OperationBinaireScript(context, (OperationBinaireScript) semanticObject); 
+				return; 
+			case TABPackage.OPERATION_UNAIRE_SCRIPT:
+				sequence_OperationUnaireScript(context, (OperationUnaireScript) semanticObject); 
 				return; 
 			case TABPackage.PARAMETRE:
 				sequence_Parametre(context, (Parametre) semanticObject); 
@@ -74,8 +96,14 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case TABPackage.RESSOURCE:
 				sequence_Ressource(context, (Ressource) semanticObject); 
 				return; 
+			case TABPackage.SCRIPT:
+				sequence_Script(context, (Script) semanticObject); 
+				return; 
 			case TABPackage.SORTIE:
 				sequence_Sortie(context, (Sortie) semanticObject); 
+				return; 
+			case TABPackage.SORTIE_SCRIPT:
+				sequence_SortieScript(context, (SortieScript) semanticObject); 
 				return; 
 			case TABPackage.TABLE:
 				sequence_Table(context, (Table) semanticObject); 
@@ -98,6 +126,20 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 * </pre>
 	 */
 	protected void sequence_Algorithme(ISerializationContext context, Algorithme semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Calcul returns Calcul
+	 *
+	 * Constraint:
+	 *     Operation+=OperationScript
+	 * </pre>
+	 */
+	protected void sequence_Calcul(ISerializationContext context, Calcul semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -145,8 +187,8 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         (name=ID operations+=OperationBinaire colonnes+=[Colonne|ID] colonnes+=[Colonne|ID]) | 
-	 *         (name=ID operations+=OperationUnaire colonnes+=[Colonne|ID])
+	 *         (name=ID operations+=OperateurBinaire colonnes+=[Colonne|ID] colonnes+=[Colonne|ID]) | 
+	 *         (name=ID operations+=OperateurUnaire colonnes+=[Colonne|ID])
 	 *     )
 	 * </pre>
 	 */
@@ -178,6 +220,20 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     EntreeScript returns EntreeScript
+	 *
+	 * Constraint:
+	 *     parametres+=Parametre+
+	 * </pre>
+	 */
+	protected void sequence_EntreeScript(ISerializationContext context, EntreeScript semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Entree returns Entree
 	 *
 	 * Constraint:
@@ -192,20 +248,34 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Operation returns OperationBinaire
-	 *     OperationBinaire returns OperationBinaire
+	 *     Operand returns Operand
+	 *
+	 * Constraint:
+	 *     {Operand}
+	 * </pre>
+	 */
+	protected void sequence_Operand(ISerializationContext context, Operand semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Operation returns OperateurBinaire
+	 *     OperateurBinaire returns OperateurBinaire
 	 *
 	 * Constraint:
 	 *     kind=OperationBinaireType
 	 * </pre>
 	 */
-	protected void sequence_OperationBinaire(ISerializationContext context, OperationBinaire semanticObject) {
+	protected void sequence_OperateurBinaire(ISerializationContext context, OperateurBinaire semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATION_BINAIRE__KIND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATION_BINAIRE__KIND));
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATEUR_BINAIRE__KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATEUR_BINAIRE__KIND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationBinaireAccess().getKindOperationBinaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
+		feeder.accept(grammarAccess.getOperateurBinaireAccess().getKindOperationBinaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
 		feeder.finish();
 	}
 	
@@ -213,21 +283,53 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Operation returns OperationUnaire
-	 *     OperationUnaire returns OperationUnaire
+	 *     Operation returns OperateurUnaire
+	 *     OperateurUnaire returns OperateurUnaire
 	 *
 	 * Constraint:
 	 *     kind=OperationUnaireType
 	 * </pre>
 	 */
-	protected void sequence_OperationUnaire(ISerializationContext context, OperationUnaire semanticObject) {
+	protected void sequence_OperateurUnaire(ISerializationContext context, OperateurUnaire semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATION_UNAIRE__KIND) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATION_UNAIRE__KIND));
+			if (transientValues.isValueTransient(semanticObject, TABPackage.Literals.OPERATEUR_UNAIRE__KIND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TABPackage.Literals.OPERATEUR_UNAIRE__KIND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationUnaireAccess().getKindOperationUnaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
+		feeder.accept(grammarAccess.getOperateurUnaireAccess().getKindOperationUnaireTypeEnumRuleCall_1_0(), semanticObject.getKind());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperationScript returns OperationBinaireScript
+	 *     OperationBinaireScript returns OperationBinaireScript
+	 *     Operand returns OperationBinaireScript
+	 *
+	 * Constraint:
+	 *     (operation=OperateurBinaireType operand+=Operand operand+=Operand)
+	 * </pre>
+	 */
+	protected void sequence_OperationBinaireScript(ISerializationContext context, OperationBinaireScript semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     OperationScript returns OperationUnaireScript
+	 *     OperationUnaireScript returns OperationUnaireScript
+	 *     Operand returns OperationUnaireScript
+	 *
+	 * Constraint:
+	 *     (operation=OperateurUnaireType operands+=Operand)
+	 * </pre>
+	 */
+	protected void sequence_OperationUnaireScript(ISerializationContext context, OperationUnaireScript semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -277,6 +379,34 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Script returns Script
+	 *
+	 * Constraint:
+	 *     (name=ID entrees+=EntreeScript sorties+=SortieScript calculs+=Calcul)
+	 * </pre>
+	 */
+	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SortieScript returns SortieScript
+	 *
+	 * Constraint:
+	 *     parametres+=Parametre+
+	 * </pre>
+	 */
+	protected void sequence_SortieScript(ISerializationContext context, SortieScript semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Sortie returns Sortie
 	 *
 	 * Constraint:
@@ -308,7 +438,7 @@ public class TABSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Tableur returns Tableur
 	 *
 	 * Constraint:
-	 *     (name=ID tables+=Table* Catalogue+=Catalogue)
+	 *     (name=ID tables+=Table* catalogue+=Catalogue* script+=Script*)
 	 * </pre>
 	 */
 	protected void sequence_Tableur(ISerializationContext context, Tableur semanticObject) {
