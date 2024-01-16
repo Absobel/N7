@@ -5,7 +5,6 @@
     <semanticResources>algorithme.ecore</semanticResources>
     <semanticResources>file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore</semanticResources>
     <semanticResources>platform:/resource/Tableur/model/tableur.ecore</semanticResources>
-    <semanticResources>Algorithme.xmi</semanticResources>
     <semanticResources>Catalogue.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_a4OpoK7SEe6EWeXzJjxYZg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
