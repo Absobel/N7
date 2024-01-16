@@ -16,6 +16,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
         eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algo" eType="ecore:EClass ../../algorithme/model/algorithme.ecore#//Algorithme"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">

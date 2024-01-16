@@ -24,17 +24,6 @@
     </genClasses>
     <genClasses ecoreClass="tableur.ecore#//Colonne"/>
     <genClasses ecoreClass="tableur.ecore#//ColonneInput"/>
-    <genClasses ecoreClass="tableur.ecore#//ColonneOutput">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//ColonneOutput/operation"/>
-    </genClasses>
-    <genClasses ecoreClass="tableur.ecore#//Operation"/>
-    <genClasses ecoreClass="tableur.ecore#//OperationUnaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//OperationUnaire/kind"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//OperationUnaire/colonne"/>
-    </genClasses>
-    <genClasses ecoreClass="tableur.ecore#//OperationBinaire">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tableur.ecore#//OperationBinaire/kind"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tableur.ecore#//OperationBinaire/colonne"/>
-    </genClasses>
+    <genClasses ecoreClass="tableur.ecore#//ColonneOutput"/>
   </genPackages>
 </genmodel:GenModel>

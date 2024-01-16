@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_IpynYJ54Ee6pGocQB1Kvkw" selectedViews="_IrZw8J54Ee6pGocQB1Kvkw" version="15.0.0.202209061200">
+  <viewpoint:DAnalysis uid="_IpynYJ54Ee6pGocQB1Kvkw" selectedViews="_xp-iELSDEe67bu9b5_CbLg" version="15.2.0.202303281325">
     <semanticResources>script.ecore</semanticResources>
-    <semanticResources>script.genmodel</semanticResources>
+    <semanticResources>file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore</semanticResources>
+    <semanticResources>file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore</semanticResources>
+    <semanticResources>file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/algorithme/model/algorithme.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_IrZw8J54Ee6pGocQB1Kvkw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ir9KkJ54Ee6pGocQB1Kvkw" name="script" repPath="#_Ir1OwJ54Ee6pGocQB1Kvkw" changeId="d2073ec4-5776-4cac-8f32-8fc130c97538">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Ir9KkJ54Ee6pGocQB1Kvkw" name="script" repPath="#_Ir1OwJ54Ee6pGocQB1Kvkw" changeId="1705418664976">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_xp-iELSDEe67bu9b5_CbLg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_zZ95ALSDEe67bu9b5_CbLg" name="new Class Diagram" repPath="#_zZ9R8LSDEe67bu9b5_CbLg" changeId="1705418953737">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_WkVqILSGEe67bu9b5_CbLg" name="new Class Diagram" repPath="#_WkUcALSGEe67bu9b5_CbLg" changeId="1705419973317">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
+        <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_k5pi0LSGEe67bu9b5_CbLg" name="new Class Diagram" repPath="#_k5o7wLSGEe67bu9b5_CbLg" changeId="1705420063139">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
         <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
@@ -42,6 +59,1461 @@
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
     <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_zZ9R8LSDEe67bu9b5_CbLg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_zZ_HILSDEe67bu9b5_CbLg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_zZ_HIbSDEe67bu9b5_CbLg" type="Sirius" element="_zZ9R8LSDEe67bu9b5_CbLg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_zaQz8LSDEe67bu9b5_CbLg" type="2003" element="_zaAVQLSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaRbALSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaRbAbSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zaYIsLSDEe67bu9b5_CbLg" type="3010" element="_zaF00rSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaYIsbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaYIsrSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaYvwLSDEe67bu9b5_CbLg" type="3010" element="_zaGb4bSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaYvwbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaYvwrSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaRbArSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaRbA7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaQz8bSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaQz8rSDEe67bu9b5_CbLg" x="48" y="180"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaRbBLSDEe67bu9b5_CbLg" type="2003" element="_zaBjYLSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaSCELSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaSCEbSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zaYvw7SDEe67bu9b5_CbLg" type="3010" element="_zaHC8LSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaYvxLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaYvxbSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaYvxrSDEe67bu9b5_CbLg" type="3010" element="_zaHqALSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaYvx7SDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaYvyLSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaZW0LSDEe67bu9b5_CbLg" type="3010" element="_zaHqArSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaZW0bSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaZW0rSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaZW07SDEe67bu9b5_CbLg" type="3010" element="_zaIREbSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaZW1LSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaZW1bSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaSCErSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaSCE7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaRbBbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaRbBrSDEe67bu9b5_CbLg" x="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaSCFLSDEe67bu9b5_CbLg" type="2003" element="_zaCKcbSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaSpIbSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaSpIrSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zaZ94LSDEe67bu9b5_CbLg" type="3010" element="_zaI4ILSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaZ94bSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaZ94rSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaZ947SDEe67bu9b5_CbLg" type="3010" element="_zaI4IrSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaZ95LSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaZ95bSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaak8LSDEe67bu9b5_CbLg" type="3010" element="_zaJfMLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaak8bSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaak8rSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaSpI7SDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaSpJLSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaSCFbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaSpILSDEe67bu9b5_CbLg" x="276"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaTQMLSDEe67bu9b5_CbLg" type="2003" element="_zaCxgbSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaTQM7SDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaT3QLSDEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaT3QbSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaT3QrSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaTQMbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaTQMrSDEe67bu9b5_CbLg" x="432"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaT3Q7SDEe67bu9b5_CbLg" type="2003" element="_zaDYkbSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaUeULSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaUeUbSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zaak87SDEe67bu9b5_CbLg" type="3010" element="_zaKGQLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaak9LSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaak9bSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaUeUrSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaUeU7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaT3RLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaT3RbSDEe67bu9b5_CbLg" x="582"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaUeVLSDEe67bu9b5_CbLg" type="2003" element="_zaDYlLSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaVFYLSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaVFYbSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zabMALSDEe67bu9b5_CbLg" type="3010" element="_zaKtULSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zabMAbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zabMArSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaVFYrSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaVFY7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaUeVbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaUeVrSDEe67bu9b5_CbLg" x="726"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaVFZLSDEe67bu9b5_CbLg" type="2003" element="_zaD_orSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaVFZ7SDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaVscLSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zabMA7SDEe67bu9b5_CbLg" type="3010" element="_zaLUYLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zabMBLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zabMBbSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zabzELSDEe67bu9b5_CbLg" type="3010" element="_zaL7cLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zabzEbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zabzErSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaVscbSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaVscrSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaVFZbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaVFZrSDEe67bu9b5_CbLg" x="876"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaVsc7SDEe67bu9b5_CbLg" type="2003" element="_zaEmsLSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaVsdrSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaVsd7SDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zabzE7SDEe67bu9b5_CbLg" type="3010" element="_zaMigLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zabzFLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zabzFbSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zabzFrSDEe67bu9b5_CbLg" type="3010" element="_zaNJkLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zabzF7SDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zabzGLSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zacaILSDEe67bu9b5_CbLg" type="3010" element="_zaNJkrSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zacaIbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zacaIrSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zacaI7SDEe67bu9b5_CbLg" type="3010" element="_zaNwoLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zacaJLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zacaJbSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaVseLSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaVsebSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaVsdLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaVsdbSDEe67bu9b5_CbLg" x="996"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaVserSDEe67bu9b5_CbLg" type="2003" element="_zaEms7SDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaWTgLSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaWTgbSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zadBMLSDEe67bu9b5_CbLg" type="3010" element="_zaNworSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zadBMbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zadBMrSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zadoQLSDEe67bu9b5_CbLg" type="3010" element="_zaOXsLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zadoQbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zadoQrSDEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_zaePULSDEe67bu9b5_CbLg" type="3010" element="_zaOXsrSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaePUbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaePUrSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaWTgrSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaWTg7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaVse7SDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaVsfLSDEe67bu9b5_CbLg" x="1152"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaWThLSDEe67bu9b5_CbLg" type="2003" element="_zaEmtrSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaWTh7SDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaW6kLSDEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaW6kbSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaW6krSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaWThbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaWThrSDEe67bu9b5_CbLg" x="1308"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaW6k7SDEe67bu9b5_CbLg" type="2003" element="_zaFNwrSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaXhoLSDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaXhobSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zaePU7SDEe67bu9b5_CbLg" type="3010" element="_zaO-wLSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zaePVLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zaePVbSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaXhorSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaXho7SDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaW6lLSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaW6lbSDEe67bu9b5_CbLg" x="1452"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_zaXhpLSDEe67bu9b5_CbLg" type="2003" element="_zaFNxbSDEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_zaXhp7SDEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_zaXhqLSDEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_zae2YLSDEe67bu9b5_CbLg" type="3010" element="_zaO-wrSDEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_zae2YbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_zae2YrSDEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_zaXhqbSDEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_zaXhqrSDEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_zaXhpbSDEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaXhprSDEe67bu9b5_CbLg" x="1596"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_zZ_HIrSDEe67bu9b5_CbLg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_zaPl0LSDEe67bu9b5_CbLg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_zaPl0bSDEe67bu9b5_CbLg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaAVQLSDEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaA8ULSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaF00rSDEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaGb4LSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaGb4bSDEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaGb4rSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaBjYLSDEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaBjYbSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaHC8LSDEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaHC8bSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaHqALSDEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaHqAbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaHqArSDEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaIRELSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaIREbSDEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaIRErSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaCKcbSDEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaCKcrSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaI4ILSDEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaI4IbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaI4IrSDEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaI4I7SDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaJfMLSDEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaJfMbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaCxgbSDEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaCxgrSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaDYkbSDEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaDYkrSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaKGQLSDEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaKGQbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaDYlLSDEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaD_oLSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaKtULSDEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaKtUbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaD_orSDEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaD_o7SDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaLUYLSDEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaLUYbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaL7cLSDEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaL7cbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaEmsLSDEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaEmsbSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaMigLSDEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaMigbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaNJkLSDEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaNJkbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaNJkrSDEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaNJk7SDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaNwoLSDEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaNwobSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaEms7SDEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaEmtLSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaNworSDEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaNwo7SDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaOXsLSDEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaOXsbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaOXsrSDEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaOXs7SDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaEmtrSDEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaFNwLSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaFNwrSDEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaFNw7SDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaO-wLSDEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaO-wbSDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_zaFNxbSDEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_zaF00LSDEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_zaO-wrSDEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_zaO-w7SDEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_zZ9R8bSDEe67bu9b5_CbLg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_WkUcALSGEe67bu9b5_CbLg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_WkW4QLSGEe67bu9b5_CbLg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_WkXfULSGEe67bu9b5_CbLg" type="Sirius" element="_WkUcALSGEe67bu9b5_CbLg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_WknW8LSGEe67bu9b5_CbLg" type="2003" element="_WkYGYLSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_Wkn-ALSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkolELSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_Wkurs7SGEe67bu9b5_CbLg" type="3010" element="_WkcX07SGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkurtLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkurtbSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkurtrSGEe67bu9b5_CbLg" type="3010" element="_Wkc-4bSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkurt7SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkuruLSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkolEbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkolErSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WknW8bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WknW8rSGEe67bu9b5_CbLg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkolE7SGEe67bu9b5_CbLg" type="2003" element="_WkYtcbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkolFrSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkolF7SGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WkurubSGEe67bu9b5_CbLg" type="3010" element="_WkeNALSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkururSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkuru7SGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wkv50LSGEe67bu9b5_CbLg" type="3010" element="_Wke0ELSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkv50bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkv50rSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wkv507SGEe67bu9b5_CbLg" type="3010" element="_Wke0ErSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkv51LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkv51bSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wkv51rSGEe67bu9b5_CbLg" type="3010" element="_WkfbILSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkv517SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkv52LSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkolGLSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkolGbSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkolFLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkolFbSGEe67bu9b5_CbLg" x="120"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkpMILSGEe67bu9b5_CbLg" type="2003" element="_WkZUgbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkpMI7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkpMJLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_Wkv52bSGEe67bu9b5_CbLg" type="3010" element="_WkfbIrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkv52rSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkv527SGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wkv53LSGEe67bu9b5_CbLg" type="3010" element="_WkgCMbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkv53bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkv53rSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wkwg4LSGEe67bu9b5_CbLg" type="3010" element="_WkgpQbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkwg4bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkwg4rSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkpMJbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkpMJrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkpMIbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkpMIrSGEe67bu9b5_CbLg" x="276"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkpMJ7SGEe67bu9b5_CbLg" type="2003" element="_WkZUhLSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkpzMLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkpzMbSGEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkpzMrSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkpzM7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkpMKLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkpMKbSGEe67bu9b5_CbLg" x="432"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkpzNLSGEe67bu9b5_CbLg" type="2003" element="_WkZ7krSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkqaQLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkqaQbSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_Wkwg47SGEe67bu9b5_CbLg" type="3010" element="_Wkh3YLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wkwg5LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wkwg5bSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkqaQrSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkqaQ7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkpzNbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkpzNrSGEe67bu9b5_CbLg" x="582"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkqaRLSGEe67bu9b5_CbLg" type="2003" element="_WkZ7lbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkrBULSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkrBUbSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WkxH8LSGEe67bu9b5_CbLg" type="3010" element="_WkiecLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkxH8bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkxH8rSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkrBUrSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkrBU7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkqaRbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkqaRrSGEe67bu9b5_CbLg" x="726"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkrBVLSGEe67bu9b5_CbLg" type="2003" element="_WkaiorSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkroYLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkroYbSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WkxH87SGEe67bu9b5_CbLg" type="3010" element="_WkjFgLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkxH9LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkxH9bSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkxvALSGEe67bu9b5_CbLg" type="3010" element="_WkjFgrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkxvAbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkxvArSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkroYrSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkroY7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkrBVbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkrBVrSGEe67bu9b5_CbLg" x="876"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WksPcLSGEe67bu9b5_CbLg" type="2003" element="_WkaipbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WksPc7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WksPdLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WkxvA7SGEe67bu9b5_CbLg" type="3010" element="_WkjskLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkxvBLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkxvBbSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkxvBrSGEe67bu9b5_CbLg" type="3010" element="_WkjskrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkxvB7SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkxvCLSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkyWELSGEe67bu9b5_CbLg" type="3010" element="_WkkTobSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkyWEbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkyWErSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkyWE7SGEe67bu9b5_CbLg" type="3010" element="_WkkTo7SGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkyWFLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkyWFbSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WksPdbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WksPdrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WksPcbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WksPcrSGEe67bu9b5_CbLg" x="720" y="156"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Wks2gLSGEe67bu9b5_CbLg" type="2003" element="_WkbJsbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_Wks2g7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_Wks2hLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_Wky9ILSGEe67bu9b5_CbLg" type="3010" element="_Wkk6sLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wky9IbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wky9IrSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Wky9I7SGEe67bu9b5_CbLg" type="3010" element="_Wkk6srSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wky9JLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wky9JbSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_WkzkMLSGEe67bu9b5_CbLg" type="3010" element="_WklhwLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkzkMbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkzkMrSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_Wks2hbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_Wks2hrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Wks2gbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Wks2grSGEe67bu9b5_CbLg" x="1152"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WktdkLSGEe67bu9b5_CbLg" type="2003" element="_WkbJtLSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_Wktdk7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WktdlLSGEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WktdlbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WktdlrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WktdkbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WktdkrSGEe67bu9b5_CbLg" x="1308"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Wktdl7SGEe67bu9b5_CbLg" type="2003" element="_WkbwwrSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkuEoLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkuEobSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_WkzkM7SGEe67bu9b5_CbLg" type="3010" element="_WklhwrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_WkzkNLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_WkzkNbSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkuEorSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkuEo7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WktdmLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WktdmbSGEe67bu9b5_CbLg" x="1452"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_WkuEpLSGEe67bu9b5_CbLg" type="2003" element="_WkcX0LSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_WkuEp7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_WkursLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_Wk0LQLSGEe67bu9b5_CbLg" type="3010" element="_WkmI0LSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Wk0LQbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Wk0LQrSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_WkursbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_WkursrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_WkuEpbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkuEprSGEe67bu9b5_CbLg" x="1596"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_WkXfUbSGEe67bu9b5_CbLg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_WkmI0rSGEe67bu9b5_CbLg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_WkmI07SGEe67bu9b5_CbLg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkYGYLSGEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkYGYbSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkcX07SGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wkc-4LSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wkc-4bSGEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wkdl8LSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkYtcbSGEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkYtcrSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkeNALSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkeNAbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wke0ELSGEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wke0EbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wke0ErSGEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wke0E7SGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkfbILSGEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkfbIbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkZUgbSGEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkZUgrSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkfbIrSGEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkgCMLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkgCMbSGEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkgpQLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkgpQbSGEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkgpQrSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkZUhLSGEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkZ7kLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkZ7krSGEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkZ7k7SGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wkh3YLSGEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wkh3YbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkZ7lbSGEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkaioLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkiecLSGEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkiecbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkaiorSGEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Wkaio7SGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkjFgLSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkjFgbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkjFgrSGEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkjFg7SGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkaipbSGEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkaiprSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkjskLSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkjskbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkjskrSGEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkkToLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkkTobSGEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkkTorSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkkTo7SGEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkkTpLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkbJsbSGEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkbJsrSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wkk6sLSGEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wkk6sbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Wkk6srSGEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wkk6s7SGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WklhwLSGEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WklhwbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkbJtLSGEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkbwwLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkbwwrSGEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_Wkbww7SGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WklhwrSGEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_Wklhw7SGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_WkcX0LSGEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_WkcX0bSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_WkmI0LSGEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_WkmI0bSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_WkVDELSGEe67bu9b5_CbLg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_k5o7wLSGEe67bu9b5_CbLg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_k5qJ4LSGEe67bu9b5_CbLg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_k5qJ4bSGEe67bu9b5_CbLg" type="Sirius" element="_k5o7wLSGEe67bu9b5_CbLg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_k59E0LSGEe67bu9b5_CbLg" type="2003" element="_k5rYALSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k59E07SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k59r4LSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6FnsLSGEe67bu9b5_CbLg" type="3010" element="_k5yFsbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6FnsbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6FnsrSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6Fns7SGEe67bu9b5_CbLg" type="3010" element="_k5yswLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6FntLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6FntbSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k59r4bSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k59r4rSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k59E0bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k59E0rSGEe67bu9b5_CbLg"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k59r47SGEe67bu9b5_CbLg" type="2003" element="_k5r_EbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k59r5rSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k59r57SGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6FntrSGEe67bu9b5_CbLg" type="3010" element="_k5zT0LSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6Fnt7SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6FnuLSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6GOwLSGEe67bu9b5_CbLg" type="3010" element="_k5zT0rSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6GOwbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6GOwrSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6G10LSGEe67bu9b5_CbLg" type="3010" element="_k5z64bSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6G10bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6G10rSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6G107SGEe67bu9b5_CbLg" type="3010" element="_k5z647SGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6G11LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6G11bSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k59r6LSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k59r6bSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k59r5LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k59r5bSGEe67bu9b5_CbLg" x="138" y="48"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k59r6rSGEe67bu9b5_CbLg" type="2003" element="_k5smIbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k59r7bSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k59r7rSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6Hc4LSGEe67bu9b5_CbLg" type="3010" element="_k50h8LSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6Hc4bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6Hc4rSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6Hc47SGEe67bu9b5_CbLg" type="3010" element="_k50h8rSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6Hc5LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6Hc5bSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6Hc5rSGEe67bu9b5_CbLg" type="3010" element="_k51JAbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6Hc57SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6Hc6LSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k59r77SGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k59r8LSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k59r67SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k59r7LSGEe67bu9b5_CbLg" x="276"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k5-S8LSGEe67bu9b5_CbLg" type="2003" element="_k5tNMbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k5-S87SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k5-S9LSGEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k5-S9bSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k5-S9rSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k5-S8bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k5-S8rSGEe67bu9b5_CbLg" x="432"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k5-S97SGEe67bu9b5_CbLg" type="2003" element="_k5ubULSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k5-S-rSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k5-S-7SGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6ID8LSGEe67bu9b5_CbLg" type="3010" element="_k51wELSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6ID8bSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6ID8rSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k5-S_LSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k5-S_bSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k5-S-LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k5-S-bSGEe67bu9b5_CbLg" x="582"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k5-S_rSGEe67bu9b5_CbLg" type="2003" element="_k5ubU7SGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k5-TAbSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k5_hELSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6ID87SGEe67bu9b5_CbLg" type="3010" element="_k52XILSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6ID9LSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6ID9bSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k5_hEbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k5_hErSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k5-S_7SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k5-TALSGEe67bu9b5_CbLg" x="726"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k5_hE7SGEe67bu9b5_CbLg" type="2003" element="_k5vpcLSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k5_hFrSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6DLcLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6ID9rSGEe67bu9b5_CbLg" type="3010" element="_k52XIrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6ID97SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6ID-LSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6ID-bSGEe67bu9b5_CbLg" type="3010" element="_k52-MLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6ID-rSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6ID-7SGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6DLcbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6DLcrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k5_hFLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k5_hFbSGEe67bu9b5_CbLg" x="876"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k6DygLSGEe67bu9b5_CbLg" type="2003" element="_k5vpc7SGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k6Dyg7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6DyhLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6IrALSGEe67bu9b5_CbLg" type="3010" element="_k53lQLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6IrAbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6IrArSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6IrA7SGEe67bu9b5_CbLg" type="3010" element="_k54MULSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6IrBLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6IrBbSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6IrBrSGEe67bu9b5_CbLg" type="3010" element="_k54MUrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6IrB7SGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6IrCLSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6IrCbSGEe67bu9b5_CbLg" type="3010" element="_k54zYbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6IrCrSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6IrC7SGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6DyhbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6DyhrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k6DygbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6DygrSGEe67bu9b5_CbLg" x="996"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k6Dyh7SGEe67bu9b5_CbLg" type="2003" element="_k5wQgrSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k6EZkLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6EZkbSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6JSELSGEe67bu9b5_CbLg" type="3010" element="_k55acLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6JSEbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6JSErSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6JSE7SGEe67bu9b5_CbLg" type="3010" element="_k55acrSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6JSFLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6JSFbSGEe67bu9b5_CbLg"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_k6J5ILSGEe67bu9b5_CbLg" type="3010" element="_k56BgbSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6J5IbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6J5IrSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6EZkrSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6EZk7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k6DyiLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6DyibSGEe67bu9b5_CbLg" x="1152"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k6EZlLSGEe67bu9b5_CbLg" type="2003" element="_k5w3krSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k6EZl7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6EZmLSGEe67bu9b5_CbLg" type="7004">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6EZmbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6EZmrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k6EZlbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6EZlrSGEe67bu9b5_CbLg" x="1308"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k6EZm7SGEe67bu9b5_CbLg" type="2003" element="_k5w3lbSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k6FAoLSGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6FAobSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6KgMLSGEe67bu9b5_CbLg" type="3010" element="_k56okLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6KgMbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6KgMrSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6FAorSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6FAo7SGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k6EZnLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6EZnbSGEe67bu9b5_CbLg" x="1452"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k6FApLSGEe67bu9b5_CbLg" type="2003" element="_k5xeorSGEe67bu9b5_CbLg">
+          <children xmi:type="notation:Node" xmi:id="_k6FAp7SGEe67bu9b5_CbLg" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_k6FAqLSGEe67bu9b5_CbLg" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_k6KgM7SGEe67bu9b5_CbLg" type="3010" element="_k57PoLSGEe67bu9b5_CbLg">
+              <styles xmi:type="notation:FontStyle" xmi:id="_k6KgNLSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_k6KgNbSGEe67bu9b5_CbLg"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_k6FAqbSGEe67bu9b5_CbLg"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_k6FAqrSGEe67bu9b5_CbLg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k6FApbSGEe67bu9b5_CbLg" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k6FAprSGEe67bu9b5_CbLg" x="1596"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_k5qJ4rSGEe67bu9b5_CbLg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_k572sLSGEe67bu9b5_CbLg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_k572sbSGEe67bu9b5_CbLg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5rYALSGEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Data"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5rYAbSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5yFsbSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5yFsrSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5yswLSGEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5yswbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5r_EbSGEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Script"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5r_ErSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5zT0LSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5zT0bSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5zT0rSGEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5z64LSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5z64bSGEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5z64rSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k5z647SGEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k5z65LSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5smIbSGEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5smIrSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k50h8LSGEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k50h8bSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k50h8rSGEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k51JALSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k51JAbSGEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k51JArSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5tNMbSGEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5tNMrSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5ubULSGEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5ubUbSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k51wELSGEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k51wEbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5ubU7SGEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5vCYLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k52XILSGEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k52XIbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5vpcLSGEe67bu9b5_CbLg" name="Data">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5vpcbSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k52XIrSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k52XI7SGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k52-MLSGEe67bu9b5_CbLg" name="type">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Data/type"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k52-MbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5vpc7SGEe67bu9b5_CbLg" name="Script">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5wQgLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k53lQLSGEe67bu9b5_CbLg" name="name">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/name"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k53lQbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k54MULSGEe67bu9b5_CbLg" name="blocs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/blocs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k54MUbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k54MUrSGEe67bu9b5_CbLg" name="finalOutput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/finalOutput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k54zYLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k54zYbSGEe67bu9b5_CbLg" name="initialInput">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Script/initialInput"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k54zYrSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5wQgrSGEe67bu9b5_CbLg" name="Blocs">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5w3kLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k55acLSGEe67bu9b5_CbLg" name="operations">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/operations"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k55acbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k55acrSGEe67bu9b5_CbLg" name="output">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/output"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k56BgLSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k56BgbSGEe67bu9b5_CbLg" name="inputs">
+        <target xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <semanticElements xmi:type="ecore:EReference" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Blocs/inputs"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k56BgrSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Reference']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5w3krSGEe67bu9b5_CbLg" name="Operations">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Operations"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5w3k7SGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5w3lbSGEe67bu9b5_CbLg" name="Unaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5xeoLSGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k56okLSGEe67bu9b5_CbLg" name="fonctions">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Unaire/fonctions"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k56okbSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_k5xeorSGEe67bu9b5_CbLg" name="Binaire">
+      <target xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <semanticElements xmi:type="ecore:EClass" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_k5xeo7SGEe67bu9b5_CbLg" borderSize="1" borderSizeComputationExpression="1">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_k57PoLSGEe67bu9b5_CbLg" name="operateur">
+        <target xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/script/model/script.ecore#//Binaire/operateur"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_k57PobSGEe67bu9b5_CbLg" labelPosition="node">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer/@containerMappings[name='CD_Class']/@subNodeMappings[name='CD_Attribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_k5o7wbSGEe67bu9b5_CbLg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.sirius.sample.properties/description/project.odesign#//@ownedViewpoints[name='Sirius%20Properties%20View%20Example']/@ownedRepresentations[name='Class%20Diagram']/@defaultLayer"/>
     <target xmi:type="ecore:EPackage" href="script.ecore#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

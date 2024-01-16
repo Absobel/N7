@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Script" nsURI="https://Script.ecore" nsPrefix="Script.ecore">
-  <eClassifiers xsi:type="ecore:EClass" name="Data">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="blocs" upperBound="-1"
         eType="#//Blocs" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="finalOutput" lowerBound="1"
-        upperBound="-1" eType="#//Data"/>
+        eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneOutput"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialInput" lowerBound="1"
-        upperBound="-1" eType="#//Data" containment="true"/>
+        upperBound="-1" eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneInput"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Blocs">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
         eType="#//Operations" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
-        upperBound="-1" eType="#//Data" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
-        upperBound="-1" eType="#//Data"/>
+        upperBound="-1" eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneInput"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneOutput"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Operations" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Unaire" eSuperTypes="#//Operations">

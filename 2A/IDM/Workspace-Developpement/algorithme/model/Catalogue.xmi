@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithme:Catalogue
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:algorithme="http://algorithme.ecore"
+    xsi:schemaLocation="http://algorithme.ecore algorithme.ecore"
+    Name="c1">
+  <Algorithme
+      xsi:type="algorithme:Algorithme"
+      Name="Algo1">
+    <ressource
+        file="fichier1.txt"/>
+  </Algorithme>
+  <Algorithme
+      xsi:type="algorithme:Algorithme"
+      Name="Algo2">
+    <ressource
+        file="fichier2.txt"/>
+  </Algorithme>
+</algorithme:Catalogue>
