@@ -1,9 +1,10 @@
 use std::vec;
 
+use anyhow::Result;
 use petgraph::Graph;
 use plotters::{coord::Shift, prelude::*};
 
-use crate::utils::{min_max_ranges_points, HEIGHT, WIDTH};
+use crate::utils::*;
 
 #[derive(Clone, Copy, PartialEq)]
 pub struct Point {
@@ -28,7 +29,7 @@ pub struct Satellites {
 }
 
 impl Satellites {
-    pub fn from_csv(csv_path: &str) -> Result<Self, csv::Error> {
+    pub fn from_csv(csv_path: &str) -> Result<Self> {
         let mut points = Vec::new();
 
         let mut reader = csv::Reader::from_path(csv_path).unwrap();
@@ -44,20 +45,25 @@ impl Satellites {
     }
 
     /// Plots the satellites in 3D space and returns the path to the image.
-    pub fn analyse(&self, image_name: &str) -> Result<SatAnalysis, Box<dyn std::error::Error>> {
+    pub fn analyse(&self, image_name: &str) -> Result<SatAnalysis> {
         let mut graph_20k = Graph::<(), ()>::new();
         let mut graph_40k = Graph::<(), ()>::new();
         let mut graph_60k = Graph::<(), ()>::new();
-        let node_indices = self.points.iter().map(|_| {
-            graph_20k.add_node(());
-            graph_40k.add_node(());
-            graph_60k.add_node(())
-        }).collect::<Vec<_>>();
+        let node_indices = self
+            .points
+            .iter()
+            .map(|_| {
+                graph_20k.add_node(());
+                graph_40k.add_node(());
+                graph_60k.add_node(())
+            })
+            .collect::<Vec<_>>();
         let ranges = min_max_ranges_points(&self.points);
 
-        let plot_points_iter = self.points.iter().map(|point| {
-            Cross::new((point.x, point.y, point.z), 5, plotters::style::BLACK)
-        });
+        let plot_points_iter = self
+            .points
+            .iter()
+            .map(|point| Cross::new((point.x, point.y, point.z), 5, plotters::style::BLACK));
 
         let mut plot_20k_iter = vec![];
         let mut plot_40k_iter = vec![];
@@ -91,7 +97,7 @@ impl Satellites {
             }
         }
 
-        let path = format!("target/{image_name}.png");
+        let path = &image_name_to_path(image_name);
         let root_area = BitMapBackend::new(&path, (WIDTH, HEIGHT)).into_drawing_area();
         root_area.fill(&WHITE)?;
         let upper_area = root_area.clone().shrink((0, 0), (WIDTH, HEIGHT / 2));
