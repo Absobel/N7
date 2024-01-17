@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import script.Calcul;
 import script.Constante;
 import script.FonctionType;
 import script.Input;
@@ -20,6 +19,7 @@ import script.OperationBinaire;
 import script.OperationBinaireType;
 import script.OperationUnaire;
 import script.Output;
+import script.RealInputs;
 import script.Script;
 import script.ScriptFactory;
 import script.ScriptPackage;
@@ -37,13 +37,6 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	private EClass scriptEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass calculEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,13 +71,6 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass inputEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass outputEClass = null;
 
 	/**
@@ -93,6 +79,20 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	private EClass constanteEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inputEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass realInputsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,7 +198,7 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getScript_Calcul() {
+	public EReference getScript_InitialInputs() {
 		return (EReference) scriptEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -208,8 +208,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getCalcul() {
-		return calculEClass;
+	public EReference getScript_Operation() {
+		return (EReference) scriptEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -218,28 +218,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getCalcul_Operation() {
-		return (EReference) calculEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCalcul_Outputs() {
-		return (EReference) calculEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCalcul_Inputs() {
-		return (EReference) calculEClass.getEStructuralFeatures().get(2);
+	public EReference getScript_FinalOutputs() {
+		return (EReference) scriptEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -250,6 +230,16 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	@Override
 	public EClass getOperation() {
 		return operationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getOperation_Inputs() {
+		return (EReference) operationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -288,16 +278,6 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getOperationUnaire_Input() {
-		return (EReference) operationUnaireEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getOperationBinaire() {
 		return operationBinaireEClass;
 	}
@@ -328,48 +308,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getOperationBinaire_Input1() {
-		return (EReference) operationBinaireEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getOperationBinaire_Input2() {
-		return (EReference) operationBinaireEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getInputs() {
 		return inputsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getInput() {
-		return inputEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getInput_Name() {
-		return (EAttribute) inputEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -410,6 +350,36 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	@Override
 	public EAttribute getConstante_Valeur() {
 		return (EAttribute) constanteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getInput() {
+		return inputEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getInput_Name() {
+		return (EAttribute) inputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRealInputs() {
+		return realInputsEClass;
 	}
 
 	/**
@@ -464,25 +434,20 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
 		createEAttribute(scriptEClass, SCRIPT__NAME);
-		createEReference(scriptEClass, SCRIPT__CALCUL);
-
-		calculEClass = createEClass(CALCUL);
-		createEReference(calculEClass, CALCUL__OPERATION);
-		createEReference(calculEClass, CALCUL__OUTPUTS);
-		createEReference(calculEClass, CALCUL__INPUTS);
+		createEReference(scriptEClass, SCRIPT__INITIAL_INPUTS);
+		createEReference(scriptEClass, SCRIPT__OPERATION);
+		createEReference(scriptEClass, SCRIPT__FINAL_OUTPUTS);
 
 		operationEClass = createEClass(OPERATION);
+		createEReference(operationEClass, OPERATION__INPUTS);
 
 		operationUnaireEClass = createEClass(OPERATION_UNAIRE);
 		createEAttribute(operationUnaireEClass, OPERATION_UNAIRE__FONCTION);
 		createEReference(operationUnaireEClass, OPERATION_UNAIRE__OUTPUT);
-		createEReference(operationUnaireEClass, OPERATION_UNAIRE__INPUT);
 
 		operationBinaireEClass = createEClass(OPERATION_BINAIRE);
 		createEAttribute(operationBinaireEClass, OPERATION_BINAIRE__OPERATEUR);
 		createEReference(operationBinaireEClass, OPERATION_BINAIRE__OUTPUT);
-		createEReference(operationBinaireEClass, OPERATION_BINAIRE__INPUT1);
-		createEReference(operationBinaireEClass, OPERATION_BINAIRE__INPUT2);
 
 		inputsEClass = createEClass(INPUTS);
 
@@ -494,6 +459,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 
 		inputEClass = createEClass(INPUT);
 		createEAttribute(inputEClass, INPUT__NAME);
+
+		realInputsEClass = createEClass(REAL_INPUTS);
 
 		// Create enums
 		operationBinaireTypeEEnum = createEEnum(OPERATION_BINAIRE_TYPE);
@@ -531,30 +498,30 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		// Add supertypes to classes
 		operationUnaireEClass.getESuperTypes().add(this.getOperation());
 		operationBinaireEClass.getESuperTypes().add(this.getOperation());
-		constanteEClass.getESuperTypes().add(this.getInputs());
-		inputEClass.getESuperTypes().add(this.getInputs());
+		outputEClass.getESuperTypes().add(this.getInputs());
+		constanteEClass.getESuperTypes().add(this.getRealInputs());
+		inputEClass.getESuperTypes().add(this.getRealInputs());
+		realInputsEClass.getESuperTypes().add(this.getInputs());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 0, 1, Script.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScript_Calcul(), this.getCalcul(), null, "calcul", null, 1, 1, Script.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(calculEClass, Calcul.class, "Calcul", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCalcul_Operation(), this.getOperation(), null, "operation", null, 0, -1, Calcul.class,
+		initEReference(getScript_InitialInputs(), this.getRealInputs(), null, "initialInputs", null, 0, -1,
+				Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Operation(), this.getOperation(), null, "operation", null, 1, -1, Script.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCalcul_Outputs(), this.getOutput(), null, "outputs", null, 0, -1, Calcul.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getCalcul_Inputs(), this.getInputs(), null, "inputs", null, 0, -1, Calcul.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEReference(getScript_FinalOutputs(), this.getOutput(), null, "finalOutputs", null, 0, -1, Script.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOperation_Inputs(), this.getInputs(), null, "inputs", null, 1, 2, Operation.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationUnaireEClass, OperationUnaire.class, "OperationUnaire", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -564,9 +531,6 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		initEReference(getOperationUnaire_Output(), this.getOutput(), null, "output", null, 1, 1, OperationUnaire.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationUnaire_Input(), this.getInputs(), null, "input", null, 1, 1, OperationUnaire.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationBinaireEClass, OperationBinaire.class, "OperationBinaire", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -575,12 +539,6 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 				!IS_DERIVED, IS_ORDERED);
 		initEReference(getOperationBinaire_Output(), this.getOutput(), null, "output", null, 1, 1,
 				OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationBinaire_Input1(), this.getInputs(), null, "input1", null, 1, 1,
-				OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationBinaire_Input2(), this.getInputs(), null, "input2", null, 1, 1,
-				OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputsEClass, Inputs.class, "Inputs", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -597,6 +555,9 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInput_Name(), ecorePackage.getEString(), "name", null, 0, 1, Input.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(realInputsEClass, RealInputs.class, "RealInputs", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(operationBinaireTypeEEnum, OperationBinaireType.class, "OperationBinaireType");

@@ -8,28 +8,22 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import script.Constante;
-import script.ScriptPackage;
 
 /**
- * This is the item provider adapter for a {@link script.Constante} object.
+ * This is the item provider adapter for a {@link script.RealInputs} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConstanteItemProvider extends RealInputsItemProvider {
+public class RealInputsItemProvider extends InputsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ConstanteItemProvider(AdapterFactory adapterFactory) {
+	public RealInputsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,36 +38,19 @@ public class ConstanteItemProvider extends RealInputsItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValeurPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Valeur feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValeurPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Constante_valeur_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Constante_valeur_feature",
-								"_UI_Constante_type"),
-						ScriptPackage.Literals.CONSTANTE__VALEUR, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns Constante.gif.
+	 * This returns RealInputs.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Constante"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RealInputs"));
 	}
 
 	/**
@@ -94,8 +71,7 @@ public class ConstanteItemProvider extends RealInputsItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		Constante constante = (Constante) object;
-		return getString("_UI_Constante_type") + " " + constante.getValeur();
+		return getString("_UI_RealInputs_type");
 	}
 
 	/**
@@ -108,12 +84,6 @@ public class ConstanteItemProvider extends RealInputsItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(Constante.class)) {
-		case ScriptPackage.CONSTANTE__VALEUR:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

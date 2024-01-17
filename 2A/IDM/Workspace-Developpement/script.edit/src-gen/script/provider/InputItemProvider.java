@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
@@ -21,7 +22,7 @@ import script.ScriptPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class InputItemProvider extends InputsItemProvider {
+public class InputItemProvider extends RealInputsItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

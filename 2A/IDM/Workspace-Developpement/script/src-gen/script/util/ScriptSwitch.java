@@ -73,13 +73,6 @@ public class ScriptSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case ScriptPackage.CALCUL: {
-			Calcul calcul = (Calcul) theEObject;
-			T result = caseCalcul(calcul);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case ScriptPackage.OPERATION: {
 			Operation operation = (Operation) theEObject;
 			T result = caseOperation(operation);
@@ -116,12 +109,16 @@ public class ScriptSwitch<T> extends Switch<T> {
 			Output output = (Output) theEObject;
 			T result = caseOutput(output);
 			if (result == null)
+				result = caseInputs(output);
+			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
 		case ScriptPackage.CONSTANTE: {
 			Constante constante = (Constante) theEObject;
 			T result = caseConstante(constante);
+			if (result == null)
+				result = caseRealInputs(constante);
 			if (result == null)
 				result = caseInputs(constante);
 			if (result == null)
@@ -132,7 +129,18 @@ public class ScriptSwitch<T> extends Switch<T> {
 			Input input = (Input) theEObject;
 			T result = caseInput(input);
 			if (result == null)
+				result = caseRealInputs(input);
+			if (result == null)
 				result = caseInputs(input);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ScriptPackage.REAL_INPUTS: {
+			RealInputs realInputs = (RealInputs) theEObject;
+			T result = caseRealInputs(realInputs);
+			if (result == null)
+				result = caseInputs(realInputs);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -154,21 +162,6 @@ public class ScriptSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScript(Script object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Calcul</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Calcul</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCalcul(Calcul object) {
 		return null;
 	}
 
@@ -233,21 +226,6 @@ public class ScriptSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Input</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Input</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInput(Input object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Output</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -274,6 +252,36 @@ public class ScriptSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConstante(Constante object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Input</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInput(Input object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Real Inputs</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Real Inputs</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRealInputs(RealInputs object) {
 		return null;
 	}
 

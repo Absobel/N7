@@ -96,29 +96,6 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.Calcul} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CalculItemProvider calculItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Calcul}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCalculAdapter() {
-		if (calculItemProvider == null) {
-			calculItemProvider = new CalculItemProvider(this);
-		}
-
-		return calculItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link script.OperationUnaire} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,29 +142,6 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link script.Input} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected InputItemProvider inputItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link script.Input}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createInputAdapter() {
-		if (inputItemProvider == null) {
-			inputItemProvider = new InputItemProvider(this);
-		}
-
-		return inputItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link script.Output} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,6 +185,29 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory
 		}
 
 		return constanteItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link script.Input} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InputItemProvider inputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link script.Input}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInputAdapter() {
+		if (inputItemProvider == null) {
+			inputItemProvider = new InputItemProvider(this);
+		}
+
+		return inputItemProvider;
 	}
 
 	/**
@@ -340,8 +317,6 @@ public class ScriptItemProviderAdapterFactory extends ScriptAdapterFactory
 	public void dispose() {
 		if (scriptItemProvider != null)
 			scriptItemProvider.dispose();
-		if (calculItemProvider != null)
-			calculItemProvider.dispose();
 		if (operationUnaireItemProvider != null)
 			operationUnaireItemProvider.dispose();
 		if (operationBinaireItemProvider != null)

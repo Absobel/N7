@@ -28,24 +28,20 @@
     </genEnums>
     <genClasses ecoreClass="script.ecore#//Script">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Script/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/calcul"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/initialInputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/operation"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Script/finalOutputs"/>
     </genClasses>
-    <genClasses ecoreClass="script.ecore#//Calcul">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Calcul/operation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Calcul/outputs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Calcul/inputs"/>
+    <genClasses ecoreClass="script.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Operation/inputs"/>
     </genClasses>
-    <genClasses ecoreClass="script.ecore#//Operation"/>
     <genClasses ecoreClass="script.ecore#//OperationUnaire">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationUnaire/fonction"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//OperationUnaire/output"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference script.ecore#//OperationUnaire/input"/>
     </genClasses>
     <genClasses ecoreClass="script.ecore#//OperationBinaire">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationBinaire/operateur"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//OperationBinaire/output"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference script.ecore#//OperationBinaire/input1"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference script.ecore#//OperationBinaire/input2"/>
     </genClasses>
     <genClasses ecoreClass="script.ecore#//Inputs"/>
     <genClasses ecoreClass="script.ecore#//Output">
@@ -57,5 +53,6 @@
     <genClasses ecoreClass="script.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Input/name"/>
     </genClasses>
+    <genClasses ecoreClass="script.ecore#//RealInputs"/>
   </genPackages>
 </genmodel:GenModel>

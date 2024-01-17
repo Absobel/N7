@@ -59,8 +59,6 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 		switch (eClass.getClassifierID()) {
 		case ScriptPackage.SCRIPT:
 			return createScript();
-		case ScriptPackage.CALCUL:
-			return createCalcul();
 		case ScriptPackage.OPERATION_UNAIRE:
 			return createOperationUnaire();
 		case ScriptPackage.OPERATION_BINAIRE:
@@ -127,17 +125,6 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public Calcul createCalcul() {
-		CalculImpl calcul = new CalculImpl();
-		return calcul;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public OperationUnaire createOperationUnaire() {
 		OperationUnaireImpl operationUnaire = new OperationUnaireImpl();
 		return operationUnaire;
@@ -160,17 +147,6 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Override
-	public Input createInput() {
-		InputImpl input = new InputImpl();
-		return input;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Output createOutput() {
 		OutputImpl output = new OutputImpl();
 		return output;
@@ -185,6 +161,17 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	public Constante createConstante() {
 		ConstanteImpl constante = new ConstanteImpl();
 		return constante;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Input createInput() {
+		InputImpl input = new InputImpl();
+		return input;
 	}
 
 	/**

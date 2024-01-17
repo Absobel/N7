@@ -18,7 +18,7 @@ package script;
  * @model
  * @generated
  */
-public interface Constante extends Inputs {
+public interface Constante extends RealInputs {
 	/**
 	 * Returns the value of the '<em><b>Valeur</b></em>' attribute.
 	 * <!-- begin-user-doc -->

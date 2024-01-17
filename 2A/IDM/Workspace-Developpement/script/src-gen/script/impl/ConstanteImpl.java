@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import script.Constante;
 import script.ScriptPackage;
 
@@ -23,7 +24,7 @@ import script.ScriptPackage;
  *
  * @generated
  */
-public class ConstanteImpl extends InputsImpl implements Constante {
+public class ConstanteImpl extends RealInputsImpl implements Constante {
 	/**
 	 * The default value of the '{@link #getValeur() <em>Valeur</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -3,13 +3,13 @@
 package script.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import script.Inputs;
+
 import script.OperationBinaire;
 import script.OperationBinaireType;
 import script.Output;
@@ -25,8 +25,6 @@ import script.ScriptPackage;
  * <ul>
  *   <li>{@link script.impl.OperationBinaireImpl#getOperateur <em>Operateur</em>}</li>
  *   <li>{@link script.impl.OperationBinaireImpl#getOutput <em>Output</em>}</li>
- *   <li>{@link script.impl.OperationBinaireImpl#getInput1 <em>Input1</em>}</li>
- *   <li>{@link script.impl.OperationBinaireImpl#getInput2 <em>Input2</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,26 +59,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 	 * @ordered
 	 */
 	protected Output output;
-
-	/**
-	 * The cached value of the '{@link #getInput1() <em>Input1</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInput1()
-	 * @generated
-	 * @ordered
-	 */
-	protected Inputs input1;
-
-	/**
-	 * The cached value of the '{@link #getInput2() <em>Input2</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInput2()
-	 * @generated
-	 * @ordered
-	 */
-	protected Inputs input2;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -183,90 +161,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 	 * @generated
 	 */
 	@Override
-	public Inputs getInput1() {
-		if (input1 != null && input1.eIsProxy()) {
-			InternalEObject oldInput1 = (InternalEObject) input1;
-			input1 = (Inputs) eResolveProxy(oldInput1);
-			if (input1 != oldInput1) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.OPERATION_BINAIRE__INPUT1,
-							oldInput1, input1));
-			}
-		}
-		return input1;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Inputs basicGetInput1() {
-		return input1;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInput1(Inputs newInput1) {
-		Inputs oldInput1 = input1;
-		input1 = newInput1;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION_BINAIRE__INPUT1, oldInput1,
-					input1));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Inputs getInput2() {
-		if (input2 != null && input2.eIsProxy()) {
-			InternalEObject oldInput2 = (InternalEObject) input2;
-			input2 = (Inputs) eResolveProxy(oldInput2);
-			if (input2 != oldInput2) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.OPERATION_BINAIRE__INPUT2,
-							oldInput2, input2));
-			}
-		}
-		return input2;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Inputs basicGetInput2() {
-		return input2;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInput2(Inputs newInput2) {
-		Inputs oldInput2 = input2;
-		input2 = newInput2;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION_BINAIRE__INPUT2, oldInput2,
-					input2));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ScriptPackage.OPERATION_BINAIRE__OUTPUT:
@@ -287,14 +181,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 			return getOperateur();
 		case ScriptPackage.OPERATION_BINAIRE__OUTPUT:
 			return getOutput();
-		case ScriptPackage.OPERATION_BINAIRE__INPUT1:
-			if (resolve)
-				return getInput1();
-			return basicGetInput1();
-		case ScriptPackage.OPERATION_BINAIRE__INPUT2:
-			if (resolve)
-				return getInput2();
-			return basicGetInput2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -304,7 +190,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -313,12 +198,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 			return;
 		case ScriptPackage.OPERATION_BINAIRE__OUTPUT:
 			setOutput((Output) newValue);
-			return;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT1:
-			setInput1((Inputs) newValue);
-			return;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT2:
-			setInput2((Inputs) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,12 +217,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 		case ScriptPackage.OPERATION_BINAIRE__OUTPUT:
 			setOutput((Output) null);
 			return;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT1:
-			setInput1((Inputs) null);
-			return;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT2:
-			setInput2((Inputs) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -360,10 +233,6 @@ public class OperationBinaireImpl extends OperationImpl implements OperationBina
 			return operateur != OPERATEUR_EDEFAULT;
 		case ScriptPackage.OPERATION_BINAIRE__OUTPUT:
 			return output != null;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT1:
-			return input1 != null;
-		case ScriptPackage.OPERATION_BINAIRE__INPUT2:
-			return input2 != null;
 		}
 		return super.eIsSet(featureID);
 	}

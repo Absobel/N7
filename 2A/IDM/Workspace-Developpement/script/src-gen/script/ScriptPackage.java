@@ -39,7 +39,7 @@ public interface ScriptPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/script";
+	String eNS_URI = "http://script.ecore";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +47,7 @@ public interface ScriptPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "script";
+	String eNS_PREFIX = "script.ecore";
 
 	/**
 	 * The singleton instance of the package.
@@ -77,13 +77,31 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Calcul</b></em>' containment reference.
+	 * The feature id for the '<em><b>Initial Inputs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__CALCUL = 1;
+	int SCRIPT__INITIAL_INPUTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__OPERATION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Final Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__FINAL_OUTPUTS = 3;
 
 	/**
 	 * The number of structural features of the '<em>Script</em>' class.
@@ -92,7 +110,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_FEATURE_COUNT = 2;
+	int SCRIPT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Script</em>' class.
@@ -104,61 +122,6 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link script.impl.CalculImpl <em>Calcul</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.CalculImpl
-	 * @see script.impl.ScriptPackageImpl#getCalcul()
-	 * @generated
-	 */
-	int CALCUL = 1;
-
-	/**
-	 * The feature id for the '<em><b>Operation</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALCUL__OPERATION = 0;
-
-	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALCUL__OUTPUTS = 1;
-
-	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALCUL__INPUTS = 2;
-
-	/**
-	 * The number of structural features of the '<em>Calcul</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALCUL_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Calcul</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CALCUL_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link script.impl.OperationImpl <em>Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,7 +129,16 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 2;
+	int OPERATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__INPUTS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Operation</em>' class.
@@ -175,7 +147,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 0;
+	int OPERATION_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Operation</em>' class.
@@ -194,7 +166,16 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getOperationUnaire()
 	 * @generated
 	 */
-	int OPERATION_UNAIRE = 3;
+	int OPERATION_UNAIRE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_UNAIRE__INPUTS = OPERATION__INPUTS;
 
 	/**
 	 * The feature id for the '<em><b>Fonction</b></em>' attribute.
@@ -215,22 +196,13 @@ public interface ScriptPackage extends EPackage {
 	int OPERATION_UNAIRE__OUTPUT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Input</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_UNAIRE__INPUT = OPERATION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Operation Unaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 3;
+	int OPERATION_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Operation Unaire</em>' class.
@@ -249,7 +221,16 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getOperationBinaire()
 	 * @generated
 	 */
-	int OPERATION_BINAIRE = 4;
+	int OPERATION_BINAIRE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_BINAIRE__INPUTS = OPERATION__INPUTS;
 
 	/**
 	 * The feature id for the '<em><b>Operateur</b></em>' attribute.
@@ -270,31 +251,13 @@ public interface ScriptPackage extends EPackage {
 	int OPERATION_BINAIRE__OUTPUT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Input1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_BINAIRE__INPUT1 = OPERATION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Input2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_BINAIRE__INPUT2 = OPERATION_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Operation Binaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 4;
+	int OPERATION_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Operation Binaire</em>' class.
@@ -313,7 +276,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getInputs()
 	 * @generated
 	 */
-	int INPUTS = 5;
+	int INPUTS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Inputs</em>' class.
@@ -334,16 +297,6 @@ public interface ScriptPackage extends EPackage {
 	int INPUTS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link script.impl.InputImpl <em>Input</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see script.impl.InputImpl
-	 * @see script.impl.ScriptPackageImpl#getInput()
-	 * @generated
-	 */
-	int INPUT = 8;
-
-	/**
 	 * The meta object id for the '{@link script.impl.OutputImpl <em>Output</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,7 +304,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getOutput()
 	 * @generated
 	 */
-	int OUTPUT = 6;
+	int OUTPUT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -360,7 +313,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__NAME = 0;
+	int OUTPUT__NAME = INPUTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Output</em>' class.
@@ -369,7 +322,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_FEATURE_COUNT = 1;
+	int OUTPUT_FEATURE_COUNT = INPUTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Output</em>' class.
@@ -378,7 +331,35 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_OPERATION_COUNT = 0;
+	int OUTPUT_OPERATION_COUNT = INPUTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.RealInputsImpl <em>Real Inputs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.RealInputsImpl
+	 * @see script.impl.ScriptPackageImpl#getRealInputs()
+	 * @generated
+	 */
+	int REAL_INPUTS = 8;
+
+	/**
+	 * The number of structural features of the '<em>Real Inputs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_INPUTS_FEATURE_COUNT = INPUTS_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Real Inputs</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REAL_INPUTS_OPERATION_COUNT = INPUTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.impl.ConstanteImpl <em>Constante</em>}' class.
@@ -388,7 +369,7 @@ public interface ScriptPackage extends EPackage {
 	 * @see script.impl.ScriptPackageImpl#getConstante()
 	 * @generated
 	 */
-	int CONSTANTE = 7;
+	int CONSTANTE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
@@ -397,7 +378,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE__VALEUR = INPUTS_FEATURE_COUNT + 0;
+	int CONSTANTE__VALEUR = REAL_INPUTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Constante</em>' class.
@@ -406,7 +387,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE_FEATURE_COUNT = INPUTS_FEATURE_COUNT + 1;
+	int CONSTANTE_FEATURE_COUNT = REAL_INPUTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Constante</em>' class.
@@ -415,7 +396,17 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANTE_OPERATION_COUNT = INPUTS_OPERATION_COUNT + 0;
+	int CONSTANTE_OPERATION_COUNT = REAL_INPUTS_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link script.impl.InputImpl <em>Input</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.impl.InputImpl
+	 * @see script.impl.ScriptPackageImpl#getInput()
+	 * @generated
+	 */
+	int INPUT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -424,7 +415,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT__NAME = INPUTS_FEATURE_COUNT + 0;
+	int INPUT__NAME = REAL_INPUTS_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Input</em>' class.
@@ -433,7 +424,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_FEATURE_COUNT = INPUTS_FEATURE_COUNT + 1;
+	int INPUT_FEATURE_COUNT = REAL_INPUTS_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Input</em>' class.
@@ -442,7 +433,7 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_OPERATION_COUNT = INPUTS_OPERATION_COUNT + 0;
+	int INPUT_OPERATION_COUNT = REAL_INPUTS_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}' enum.
@@ -486,58 +477,37 @@ public interface ScriptPackage extends EPackage {
 	EAttribute getScript_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link script.Script#getCalcul <em>Calcul</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Script#getInitialInputs <em>Initial Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Calcul</em>'.
-	 * @see script.Script#getCalcul()
+	 * @return the meta object for the containment reference list '<em>Initial Inputs</em>'.
+	 * @see script.Script#getInitialInputs()
 	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getScript_Calcul();
+	EReference getScript_InitialInputs();
 
 	/**
-	 * Returns the meta object for class '{@link script.Calcul <em>Calcul</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Calcul</em>'.
-	 * @see script.Calcul
-	 * @generated
-	 */
-	EClass getCalcul();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link script.Calcul#getOperation <em>Operation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Script#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Operation</em>'.
-	 * @see script.Calcul#getOperation()
-	 * @see #getCalcul()
+	 * @see script.Script#getOperation()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getCalcul_Operation();
+	EReference getScript_Operation();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link script.Calcul#getOutputs <em>Outputs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Script#getFinalOutputs <em>Final Outputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Outputs</em>'.
-	 * @see script.Calcul#getOutputs()
-	 * @see #getCalcul()
+	 * @return the meta object for the containment reference list '<em>Final Outputs</em>'.
+	 * @see script.Script#getFinalOutputs()
+	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getCalcul_Outputs();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link script.Calcul#getInputs <em>Inputs</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Inputs</em>'.
-	 * @see script.Calcul#getInputs()
-	 * @see #getCalcul()
-	 * @generated
-	 */
-	EReference getCalcul_Inputs();
+	EReference getScript_FinalOutputs();
 
 	/**
 	 * Returns the meta object for class '{@link script.Operation <em>Operation</em>}'.
@@ -548,6 +518,17 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getOperation();
+
+	/**
+	 * Returns the meta object for the reference list '{@link script.Operation#getInputs <em>Inputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Inputs</em>'.
+	 * @see script.Operation#getInputs()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EReference getOperation_Inputs();
 
 	/**
 	 * Returns the meta object for class '{@link script.OperationUnaire <em>Operation Unaire</em>}'.
@@ -582,17 +563,6 @@ public interface ScriptPackage extends EPackage {
 	EReference getOperationUnaire_Output();
 
 	/**
-	 * Returns the meta object for the reference '{@link script.OperationUnaire#getInput <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Input</em>'.
-	 * @see script.OperationUnaire#getInput()
-	 * @see #getOperationUnaire()
-	 * @generated
-	 */
-	EReference getOperationUnaire_Input();
-
-	/**
 	 * Returns the meta object for class '{@link script.OperationBinaire <em>Operation Binaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -625,28 +595,6 @@ public interface ScriptPackage extends EPackage {
 	EReference getOperationBinaire_Output();
 
 	/**
-	 * Returns the meta object for the reference '{@link script.OperationBinaire#getInput1 <em>Input1</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Input1</em>'.
-	 * @see script.OperationBinaire#getInput1()
-	 * @see #getOperationBinaire()
-	 * @generated
-	 */
-	EReference getOperationBinaire_Input1();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.OperationBinaire#getInput2 <em>Input2</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Input2</em>'.
-	 * @see script.OperationBinaire#getInput2()
-	 * @see #getOperationBinaire()
-	 * @generated
-	 */
-	EReference getOperationBinaire_Input2();
-
-	/**
 	 * Returns the meta object for class '{@link script.Inputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -655,27 +603,6 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getInputs();
-
-	/**
-	 * Returns the meta object for class '{@link script.Input <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Input</em>'.
-	 * @see script.Input
-	 * @generated
-	 */
-	EClass getInput();
-
-	/**
-	 * Returns the meta object for the attribute '{@link script.Input#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see script.Input#getName()
-	 * @see #getInput()
-	 * @generated
-	 */
-	EAttribute getInput_Name();
 
 	/**
 	 * Returns the meta object for class '{@link script.Output <em>Output</em>}'.
@@ -718,6 +645,37 @@ public interface ScriptPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConstante_Valeur();
+
+	/**
+	 * Returns the meta object for class '{@link script.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input</em>'.
+	 * @see script.Input
+	 * @generated
+	 */
+	EClass getInput();
+
+	/**
+	 * Returns the meta object for the attribute '{@link script.Input#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see script.Input#getName()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EAttribute getInput_Name();
+
+	/**
+	 * Returns the meta object for class '{@link script.RealInputs <em>Real Inputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Real Inputs</em>'.
+	 * @see script.RealInputs
+	 * @generated
+	 */
+	EClass getRealInputs();
 
 	/**
 	 * Returns the meta object for enum '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}'.
@@ -781,22 +739,12 @@ public interface ScriptPackage extends EPackage {
 		EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Calcul</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Initial Inputs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__CALCUL = eINSTANCE.getScript_Calcul();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.CalculImpl <em>Calcul</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.CalculImpl
-		 * @see script.impl.ScriptPackageImpl#getCalcul()
-		 * @generated
-		 */
-		EClass CALCUL = eINSTANCE.getCalcul();
+		EReference SCRIPT__INITIAL_INPUTS = eINSTANCE.getScript_InitialInputs();
 
 		/**
 		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference list feature.
@@ -804,23 +752,15 @@ public interface ScriptPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALCUL__OPERATION = eINSTANCE.getCalcul_Operation();
+		EReference SCRIPT__OPERATION = eINSTANCE.getScript_Operation();
 
 		/**
-		 * The meta object literal for the '<em><b>Outputs</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Final Outputs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CALCUL__OUTPUTS = eINSTANCE.getCalcul_Outputs();
-
-		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CALCUL__INPUTS = eINSTANCE.getCalcul_Inputs();
+		EReference SCRIPT__FINAL_OUTPUTS = eINSTANCE.getScript_FinalOutputs();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.OperationImpl <em>Operation</em>}' class.
@@ -831,6 +771,14 @@ public interface ScriptPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OPERATION = eINSTANCE.getOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION__INPUTS = eINSTANCE.getOperation_Inputs();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
@@ -859,14 +807,6 @@ public interface ScriptPackage extends EPackage {
 		EReference OPERATION_UNAIRE__OUTPUT = eINSTANCE.getOperationUnaire_Output();
 
 		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_UNAIRE__INPUT = eINSTANCE.getOperationUnaire_Input();
-
-		/**
 		 * The meta object literal for the '{@link script.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -893,22 +833,6 @@ public interface ScriptPackage extends EPackage {
 		EReference OPERATION_BINAIRE__OUTPUT = eINSTANCE.getOperationBinaire_Output();
 
 		/**
-		 * The meta object literal for the '<em><b>Input1</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_BINAIRE__INPUT1 = eINSTANCE.getOperationBinaire_Input1();
-
-		/**
-		 * The meta object literal for the '<em><b>Input2</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION_BINAIRE__INPUT2 = eINSTANCE.getOperationBinaire_Input2();
-
-		/**
 		 * The meta object literal for the '{@link script.impl.InputsImpl <em>Inputs</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -917,24 +841,6 @@ public interface ScriptPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INPUTS = eINSTANCE.getInputs();
-
-		/**
-		 * The meta object literal for the '{@link script.impl.InputImpl <em>Input</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.impl.InputImpl
-		 * @see script.impl.ScriptPackageImpl#getInput()
-		 * @generated
-		 */
-		EClass INPUT = eINSTANCE.getInput();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INPUT__NAME = eINSTANCE.getInput_Name();
 
 		/**
 		 * The meta object literal for the '{@link script.impl.OutputImpl <em>Output</em>}' class.
@@ -971,6 +877,34 @@ public interface ScriptPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONSTANTE__VALEUR = eINSTANCE.getConstante_Valeur();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.InputImpl <em>Input</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.InputImpl
+		 * @see script.impl.ScriptPackageImpl#getInput()
+		 * @generated
+		 */
+		EClass INPUT = eINSTANCE.getInput();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INPUT__NAME = eINSTANCE.getInput_Name();
+
+		/**
+		 * The meta object literal for the '{@link script.impl.RealInputsImpl <em>Real Inputs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.impl.RealInputsImpl
+		 * @see script.impl.ScriptPackageImpl#getRealInputs()
+		 * @generated
+		 */
+		EClass REAL_INPUTS = eINSTANCE.getRealInputs();
 
 		/**
 		 * The meta object literal for the '{@link script.OperationBinaireType <em>Operation Binaire Type</em>}' enum.

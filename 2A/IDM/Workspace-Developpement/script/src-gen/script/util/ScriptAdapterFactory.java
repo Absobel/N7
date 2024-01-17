@@ -72,11 +72,6 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseCalcul(Calcul object) {
-			return createCalculAdapter();
-		}
-
-		@Override
 		public Adapter caseOperation(Operation object) {
 			return createOperationAdapter();
 		}
@@ -112,6 +107,11 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseRealInputs(RealInputs object) {
+			return createRealInputsAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -141,20 +141,6 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScriptAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.Calcul <em>Calcul</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.Calcul
-	 * @generated
-	 */
-	public Adapter createCalculAdapter() {
 		return null;
 	}
 
@@ -215,20 +201,6 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Input <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.Input
-	 * @generated
-	 */
-	public Adapter createInputAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link script.Output <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -253,6 +225,34 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConstanteAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link script.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see script.Input
+	 * @generated
+	 */
+	public Adapter createInputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link script.RealInputs <em>Real Inputs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see script.RealInputs
+	 * @generated
+	 */
+	public Adapter createRealInputsAdapter() {
 		return null;
 	}
 

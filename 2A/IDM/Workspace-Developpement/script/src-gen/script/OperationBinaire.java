@@ -13,8 +13,6 @@ package script;
  * <ul>
  *   <li>{@link script.OperationBinaire#getOperateur <em>Operateur</em>}</li>
  *   <li>{@link script.OperationBinaire#getOutput <em>Output</em>}</li>
- *   <li>{@link script.OperationBinaire#getInput1 <em>Input1</em>}</li>
- *   <li>{@link script.OperationBinaire#getInput2 <em>Input2</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getOperationBinaire()
@@ -68,49 +66,5 @@ public interface OperationBinaire extends Operation {
 	 * @generated
 	 */
 	void setOutput(Output value);
-
-	/**
-	 * Returns the value of the '<em><b>Input1</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input1</em>' reference.
-	 * @see #setInput1(Inputs)
-	 * @see script.ScriptPackage#getOperationBinaire_Input1()
-	 * @model required="true"
-	 * @generated
-	 */
-	Inputs getInput1();
-
-	/**
-	 * Sets the value of the '{@link script.OperationBinaire#getInput1 <em>Input1</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input1</em>' reference.
-	 * @see #getInput1()
-	 * @generated
-	 */
-	void setInput1(Inputs value);
-
-	/**
-	 * Returns the value of the '<em><b>Input2</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Input2</em>' reference.
-	 * @see #setInput2(Inputs)
-	 * @see script.ScriptPackage#getOperationBinaire_Input2()
-	 * @model required="true"
-	 * @generated
-	 */
-	Inputs getInput2();
-
-	/**
-	 * Sets the value of the '{@link script.OperationBinaire#getInput2 <em>Input2</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Input2</em>' reference.
-	 * @see #getInput2()
-	 * @generated
-	 */
-	void setInput2(Inputs value);
 
 } // OperationBinaire

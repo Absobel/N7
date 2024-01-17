@@ -18,7 +18,7 @@ package script;
  * @model
  * @generated
  */
-public interface Input extends Inputs {
+public interface Input extends RealInputs {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

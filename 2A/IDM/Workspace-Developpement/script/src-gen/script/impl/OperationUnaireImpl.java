@@ -3,15 +3,14 @@
 package script.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import script.FonctionType;
-import script.Inputs;
 import script.OperationUnaire;
 import script.Output;
 import script.ScriptPackage;
@@ -26,7 +25,6 @@ import script.ScriptPackage;
  * <ul>
  *   <li>{@link script.impl.OperationUnaireImpl#getFonction <em>Fonction</em>}</li>
  *   <li>{@link script.impl.OperationUnaireImpl#getOutput <em>Output</em>}</li>
- *   <li>{@link script.impl.OperationUnaireImpl#getInput <em>Input</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,16 +59,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 	 * @ordered
 	 */
 	protected Output output;
-
-	/**
-	 * The cached value of the '{@link #getInput() <em>Input</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInput()
-	 * @generated
-	 * @ordered
-	 */
-	protected Inputs input;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,48 +161,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 	 * @generated
 	 */
 	@Override
-	public Inputs getInput() {
-		if (input != null && input.eIsProxy()) {
-			InternalEObject oldInput = (InternalEObject) input;
-			input = (Inputs) eResolveProxy(oldInput);
-			if (input != oldInput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.OPERATION_UNAIRE__INPUT,
-							oldInput, input));
-			}
-		}
-		return input;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Inputs basicGetInput() {
-		return input;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInput(Inputs newInput) {
-		Inputs oldInput = input;
-		input = newInput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION_UNAIRE__INPUT, oldInput,
-					input));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case ScriptPackage.OPERATION_UNAIRE__OUTPUT:
@@ -235,10 +181,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 			return getFonction();
 		case ScriptPackage.OPERATION_UNAIRE__OUTPUT:
 			return getOutput();
-		case ScriptPackage.OPERATION_UNAIRE__INPUT:
-			if (resolve)
-				return getInput();
-			return basicGetInput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -256,9 +198,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 			return;
 		case ScriptPackage.OPERATION_UNAIRE__OUTPUT:
 			setOutput((Output) newValue);
-			return;
-		case ScriptPackage.OPERATION_UNAIRE__INPUT:
-			setInput((Inputs) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -278,9 +217,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 		case ScriptPackage.OPERATION_UNAIRE__OUTPUT:
 			setOutput((Output) null);
 			return;
-		case ScriptPackage.OPERATION_UNAIRE__INPUT:
-			setInput((Inputs) null);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -297,8 +233,6 @@ public class OperationUnaireImpl extends OperationImpl implements OperationUnair
 			return fonction != FONCTION_EDEFAULT;
 		case ScriptPackage.OPERATION_UNAIRE__OUTPUT:
 			return output != null;
-		case ScriptPackage.OPERATION_UNAIRE__INPUT:
-			return input != null;
 		}
 		return super.eIsSet(featureID);
 	}

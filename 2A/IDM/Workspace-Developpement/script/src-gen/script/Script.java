@@ -2,6 +2,8 @@
  */
 package script;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link script.Script#getName <em>Name</em>}</li>
- *   <li>{@link script.Script#getCalcul <em>Calcul</em>}</li>
+ *   <li>{@link script.Script#getInitialInputs <em>Initial Inputs</em>}</li>
+ *   <li>{@link script.Script#getOperation <em>Operation</em>}</li>
+ *   <li>{@link script.Script#getFinalOutputs <em>Final Outputs</em>}</li>
  * </ul>
  *
  * @see script.ScriptPackage#getScript()
@@ -45,25 +49,39 @@ public interface Script extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Calcul</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Initial Inputs</b></em>' containment reference list.
+	 * The list contents are of type {@link script.RealInputs}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Calcul</em>' containment reference.
-	 * @see #setCalcul(Calcul)
-	 * @see script.ScriptPackage#getScript_Calcul()
+	 * @return the value of the '<em>Initial Inputs</em>' containment reference list.
+	 * @see script.ScriptPackage#getScript_InitialInputs()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<RealInputs> getInitialInputs();
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' containment reference list.
+	 * The list contents are of type {@link script.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' containment reference list.
+	 * @see script.ScriptPackage#getScript_Operation()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Calcul getCalcul();
+	EList<Operation> getOperation();
 
 	/**
-	 * Sets the value of the '{@link script.Script#getCalcul <em>Calcul</em>}' containment reference.
+	 * Returns the value of the '<em><b>Final Outputs</b></em>' containment reference list.
+	 * The list contents are of type {@link script.Output}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Calcul</em>' containment reference.
-	 * @see #getCalcul()
+	 * @return the value of the '<em>Final Outputs</em>' containment reference list.
+	 * @see script.ScriptPackage#getScript_FinalOutputs()
+	 * @model containment="true"
 	 * @generated
 	 */
-	void setCalcul(Calcul value);
+	EList<Output> getFinalOutputs();
 
 } // Script

@@ -31,15 +31,6 @@ public interface ScriptFactory extends EFactory {
 	Script createScript();
 
 	/**
-	 * Returns a new object of class '<em>Calcul</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Calcul</em>'.
-	 * @generated
-	 */
-	Calcul createCalcul();
-
-	/**
 	 * Returns a new object of class '<em>Operation Unaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,15 +49,6 @@ public interface ScriptFactory extends EFactory {
 	OperationBinaire createOperationBinaire();
 
 	/**
-	 * Returns a new object of class '<em>Input</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Input</em>'.
-	 * @generated
-	 */
-	Input createInput();
-
-	/**
 	 * Returns a new object of class '<em>Output</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +65,15 @@ public interface ScriptFactory extends EFactory {
 	 * @generated
 	 */
 	Constante createConstante();
+
+	/**
+	 * Returns a new object of class '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Input</em>'.
+	 * @generated
+	 */
+	Input createInput();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -7,6 +7,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import script.Input;
 import script.ScriptPackage;
 
@@ -23,7 +24,7 @@ import script.ScriptPackage;
  *
  * @generated
  */
-public class InputImpl extends InputsImpl implements Input {
+public class InputImpl extends RealInputsImpl implements Input {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->

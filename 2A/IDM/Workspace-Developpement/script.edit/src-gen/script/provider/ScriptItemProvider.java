@@ -57,6 +57,7 @@ public class ScriptItemProvider extends ItemProviderAdapter implements IEditingD
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addFinalOutputsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -77,6 +78,21 @@ public class ScriptItemProvider extends ItemProviderAdapter implements IEditingD
 	}
 
 	/**
+	 * This adds a property descriptor for the Final Outputs feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFinalOutputsPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Script_finalOutputs_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Script_finalOutputs_feature",
+								"_UI_Script_type"),
+						ScriptPackage.Literals.SCRIPT__FINAL_OUTPUTS, true, false, true, null, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -88,7 +104,9 @@ public class ScriptItemProvider extends ItemProviderAdapter implements IEditingD
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__CALCUL);
+			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__INITIAL_INPUTS);
+			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__OPERATION);
+			childrenFeatures.add(ScriptPackage.Literals.SCRIPT__FINAL_OUTPUTS);
 		}
 		return childrenFeatures;
 	}
@@ -155,7 +173,9 @@ public class ScriptItemProvider extends ItemProviderAdapter implements IEditingD
 		case ScriptPackage.SCRIPT__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case ScriptPackage.SCRIPT__CALCUL:
+		case ScriptPackage.SCRIPT__INITIAL_INPUTS:
+		case ScriptPackage.SCRIPT__OPERATION:
+		case ScriptPackage.SCRIPT__FINAL_OUTPUTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -173,8 +193,20 @@ public class ScriptItemProvider extends ItemProviderAdapter implements IEditingD
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(
-				createChildParameter(ScriptPackage.Literals.SCRIPT__CALCUL, ScriptFactory.eINSTANCE.createCalcul()));
+		newChildDescriptors.add(createChildParameter(ScriptPackage.Literals.SCRIPT__INITIAL_INPUTS,
+				ScriptFactory.eINSTANCE.createConstante()));
+
+		newChildDescriptors.add(createChildParameter(ScriptPackage.Literals.SCRIPT__INITIAL_INPUTS,
+				ScriptFactory.eINSTANCE.createInput()));
+
+		newChildDescriptors.add(createChildParameter(ScriptPackage.Literals.SCRIPT__OPERATION,
+				ScriptFactory.eINSTANCE.createOperationUnaire()));
+
+		newChildDescriptors.add(createChildParameter(ScriptPackage.Literals.SCRIPT__OPERATION,
+				ScriptFactory.eINSTANCE.createOperationBinaire()));
+
+		newChildDescriptors.add(createChildParameter(ScriptPackage.Literals.SCRIPT__FINAL_OUTPUTS,
+				ScriptFactory.eINSTANCE.createOutput()));
 	}
 
 	/**

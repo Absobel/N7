@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://www.example.org/script" nsPrefix="script">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://script.ecore" nsPrefix="script.ecore">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="calcul" lowerBound="1"
-        eType="#//Calcul" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Calcul">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
-        eType="#//Operation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialInputs" upperBound="-1"
+        eType="#//RealInputs" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        upperBound="-1" eType="#//Operation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalOutputs" upperBound="-1"
         eType="#//Output" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
-        eType="#//Inputs" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" lowerBound="1"
+        upperBound="2" eType="#//Inputs"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="fonction" eType="#//FonctionType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
         eType="#//Output" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" eType="#//Inputs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationBinaire" eSuperTypes="#//Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" eType="#//OperationBinaireType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
         eType="#//Output" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input1" lowerBound="1"
-        eType="#//Inputs"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input2" lowerBound="1"
-        eType="#//Inputs"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="OperationBinaireType">
     <eLiterals name="ADD"/>
@@ -48,13 +42,14 @@
     <eLiterals name="LOG" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inputs" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Output">
+  <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//Inputs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//Inputs">
+  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//RealInputs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Inputs">
+  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//RealInputs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RealInputs" abstract="true" eSuperTypes="#//Inputs"/>
 </ecore:EPackage>
