@@ -12,5 +12,7 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: tableur.provider
 Require-Bundle: org.eclipse.core.runtime,
  Tableur;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ algorithme;visibility:=reexport,
+ algorithme.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy

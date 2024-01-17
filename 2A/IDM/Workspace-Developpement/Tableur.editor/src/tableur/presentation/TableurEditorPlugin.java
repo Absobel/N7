@@ -2,6 +2,8 @@
  */
 package tableur.presentation;
 
+import algorithme.provider.AlgorithmeEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.ui.EclipseUIPlugin;
@@ -40,6 +42,7 @@ public final class TableurEditorPlugin extends EMFPlugin {
 	public TableurEditorPlugin() {
 		super
 			(new ResourceLocator [] {
+				AlgorithmeEditPlugin.INSTANCE,
 			});
 	}
 

@@ -2,18 +2,42 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tableur" nsURI="http://tableur.ecore" nsPrefix="tableur.ecore">
   <eClassifiers xsi:type="ecore:EClass" name="Tableur">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" upperBound="-1"
         eType="#//Table" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="catalogues" upperBound="-1"
+        eType="ecore:EClass ../../algorithme/model/algorithme.ecore#//Catalogue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="colonne" upperBound="-1"
         eType="#//Colonne" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Colonne" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Colonne" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneInput" eSuperTypes="#//Colonne"/>
   <eClassifiers xsi:type="ecore:EClass" name="ColonneOutput" eSuperTypes="#//Colonne">
     <eStructuralFeatures xsi:type="ecore:EReference" name="algo" eType="ecore:EClass ../../algorithme/model/algorithme.ecore#//Algorithme"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="colonnes" lowerBound="1"
+        upperBound="2" eType="#//Colonne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+        eType="#//Operation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperateurBinaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//OperateurBinaireType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperateurUnaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" lowerBound="1" eType="#//OperateurUnaireType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperateurUnaireType">
+    <eLiterals name="Oppose"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OperateurBinaireType">
+    <eLiterals name="Addition"/>
+    <eLiterals name="Soustraction" value="1"/>
+    <eLiterals name="Multiplication" value="2"/>
+    <eLiterals name="Division" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

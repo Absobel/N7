@@ -3,6 +3,8 @@
 package tableur.provider;
 
 
+import algorithme.AlgorithmeFactory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -64,6 +66,7 @@ public class TableurItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addCataloguesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +94,28 @@ public class TableurItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Catalogues feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCataloguesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Tableur_catalogues_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tableur_catalogues_feature", "_UI_Tableur_type"),
+				 TableurPackage.Literals.TABLEUR__CATALOGUES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -103,6 +128,7 @@ public class TableurItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TableurPackage.Literals.TABLEUR__TABLE);
+			childrenFeatures.add(TableurPackage.Literals.TABLEUR__CATALOGUES);
 		}
 		return childrenFeatures;
 	}
@@ -162,6 +188,7 @@ public class TableurItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TableurPackage.TABLEUR__TABLE:
+			case TableurPackage.TABLEUR__CATALOGUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,6 +210,11 @@ public class TableurItemProvider
 			(createChildParameter
 				(TableurPackage.Literals.TABLEUR__TABLE,
 				 TableurFactory.eINSTANCE.createTable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TableurPackage.Literals.TABLEUR__CATALOGUES,
+				 AlgorithmeFactory.eINSTANCE.createCatalogue()));
 	}
 
 	/**

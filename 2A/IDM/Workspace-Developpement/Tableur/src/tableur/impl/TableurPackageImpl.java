@@ -2,6 +2,8 @@
  */
 package tableur.impl;
 
+import algorithme.AlgorithmePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -13,15 +15,15 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import tableur.Colonne;
 import tableur.ColonneInput;
 import tableur.ColonneOutput;
+import tableur.OperateurBinaire;
+import tableur.OperateurBinaireType;
+import tableur.OperateurUnaire;
+import tableur.OperateurUnaireType;
 import tableur.Operation;
-import tableur.OperationBinaire;
-import tableur.OperationUnaire;
 import tableur.Table;
 import tableur.Tableur;
 import tableur.TableurFactory;
 import tableur.TableurPackage;
-import tableur.operateurBinaire;
-import tableur.operateurUnaire;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,28 +79,28 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass operationUnaireEClass = null;
+	private EClass operateurBinaireEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass operationBinaireEClass = null;
+	private EClass operateurUnaireEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum operateurUnaireEEnum = null;
+	private EEnum operateurUnaireTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum operateurBinaireEEnum = null;
+	private EEnum operateurBinaireTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -146,6 +148,9 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		AlgorithmePackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theTableurPackage.createPackageContents();
 
@@ -176,8 +181,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTableur_Table() {
-		return (EReference)tableurEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTableur_Name() {
+		return (EAttribute)tableurEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -186,8 +191,18 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTableur_Name() {
-		return (EAttribute)tableurEClass.getEStructuralFeatures().get(1);
+	public EReference getTableur_Table() {
+		return (EReference)tableurEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTableur_Catalogues() {
+		return (EReference)tableurEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -236,6 +251,16 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getColonne_Name() {
+		return (EAttribute)colonneEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getColonneInput() {
 		return colonneInputEClass;
 	}
@@ -256,8 +281,28 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getColonneOutput_Operation() {
+	public EReference getColonneOutput_Algo() {
 		return (EReference)colonneOutputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getColonneOutput_Colonnes() {
+		return (EReference)colonneOutputEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getColonneOutput_Operation() {
+		return (EReference)colonneOutputEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -276,8 +321,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getOperationUnaire() {
-		return operationUnaireEClass;
+	public EClass getOperateurBinaire() {
+		return operateurBinaireEClass;
 	}
 
 	/**
@@ -286,8 +331,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getOperationUnaire_Kind() {
-		return (EAttribute)operationUnaireEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOperateurBinaire_Kind() {
+		return (EAttribute)operateurBinaireEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -296,8 +341,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getOperationUnaire_Colonne() {
-		return (EReference)operationUnaireEClass.getEStructuralFeatures().get(1);
+	public EClass getOperateurUnaire() {
+		return operateurUnaireEClass;
 	}
 
 	/**
@@ -306,8 +351,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getOperationBinaire() {
-		return operationBinaireEClass;
+	public EAttribute getOperateurUnaire_Kind() {
+		return (EAttribute)operateurUnaireEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -316,8 +361,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getOperationBinaire_Kind() {
-		return (EAttribute)operationBinaireEClass.getEStructuralFeatures().get(0);
+	public EEnum getOperateurUnaireType() {
+		return operateurUnaireTypeEEnum;
 	}
 
 	/**
@@ -326,28 +371,8 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getOperationBinaire_Colonne() {
-		return (EReference)operationBinaireEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getoperateurUnaire() {
-		return operateurUnaireEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getoperateurBinaire() {
-		return operateurBinaireEEnum;
+	public EEnum getOperateurBinaireType() {
+		return operateurBinaireTypeEEnum;
 	}
 
 	/**
@@ -380,33 +405,35 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 
 		// Create classes and their features
 		tableurEClass = createEClass(TABLEUR);
-		createEReference(tableurEClass, TABLEUR__TABLE);
 		createEAttribute(tableurEClass, TABLEUR__NAME);
+		createEReference(tableurEClass, TABLEUR__TABLE);
+		createEReference(tableurEClass, TABLEUR__CATALOGUES);
 
 		tableEClass = createEClass(TABLE);
 		createEAttribute(tableEClass, TABLE__NAME);
 		createEReference(tableEClass, TABLE__COLONNE);
 
 		colonneEClass = createEClass(COLONNE);
+		createEAttribute(colonneEClass, COLONNE__NAME);
 
 		colonneInputEClass = createEClass(COLONNE_INPUT);
 
 		colonneOutputEClass = createEClass(COLONNE_OUTPUT);
+		createEReference(colonneOutputEClass, COLONNE_OUTPUT__ALGO);
+		createEReference(colonneOutputEClass, COLONNE_OUTPUT__COLONNES);
 		createEReference(colonneOutputEClass, COLONNE_OUTPUT__OPERATION);
 
 		operationEClass = createEClass(OPERATION);
 
-		operationUnaireEClass = createEClass(OPERATION_UNAIRE);
-		createEAttribute(operationUnaireEClass, OPERATION_UNAIRE__KIND);
-		createEReference(operationUnaireEClass, OPERATION_UNAIRE__COLONNE);
+		operateurBinaireEClass = createEClass(OPERATEUR_BINAIRE);
+		createEAttribute(operateurBinaireEClass, OPERATEUR_BINAIRE__KIND);
 
-		operationBinaireEClass = createEClass(OPERATION_BINAIRE);
-		createEAttribute(operationBinaireEClass, OPERATION_BINAIRE__KIND);
-		createEReference(operationBinaireEClass, OPERATION_BINAIRE__COLONNE);
+		operateurUnaireEClass = createEClass(OPERATEUR_UNAIRE);
+		createEAttribute(operateurUnaireEClass, OPERATEUR_UNAIRE__KIND);
 
 		// Create enums
-		operateurUnaireEEnum = createEEnum(OPERATEUR_UNAIRE);
-		operateurBinaireEEnum = createEEnum(OPERATEUR_BINAIRE);
+		operateurUnaireTypeEEnum = createEEnum(OPERATEUR_UNAIRE_TYPE);
+		operateurBinaireTypeEEnum = createEEnum(OPERATEUR_BINAIRE_TYPE);
 	}
 
 	/**
@@ -432,6 +459,9 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		AlgorithmePackage theAlgorithmePackage = (AlgorithmePackage)EPackage.Registry.INSTANCE.getEPackage(AlgorithmePackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -439,44 +469,46 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		// Add supertypes to classes
 		colonneInputEClass.getESuperTypes().add(this.getColonne());
 		colonneOutputEClass.getESuperTypes().add(this.getColonne());
-		operationUnaireEClass.getESuperTypes().add(this.getOperation());
-		operationBinaireEClass.getESuperTypes().add(this.getOperation());
+		operateurBinaireEClass.getESuperTypes().add(this.getOperation());
+		operateurUnaireEClass.getESuperTypes().add(this.getOperation());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tableurEClass, Tableur.class, "Tableur", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTableur_Table(), this.getTable(), null, "table", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTableur_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableur_Table(), this.getTable(), null, "table", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableur_Catalogues(), theAlgorithmePackage.getCatalogue(), null, "catalogues", null, 0, -1, Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_Colonne(), this.getColonne(), null, "colonne", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneEClass, Colonne.class, "Colonne", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getColonne_Name(), ecorePackage.getEString(), "name", null, 0, 1, Colonne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(colonneInputEClass, ColonneInput.class, "ColonneInput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(colonneOutputEClass, ColonneOutput.class, "ColonneOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getColonneOutput_Operation(), this.getOperation(), null, "operation", null, 1, 1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonneOutput_Algo(), theAlgorithmePackage.getAlgorithme(), null, "algo", null, 0, 1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonneOutput_Colonnes(), this.getColonne(), null, "colonnes", null, 1, 2, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColonneOutput_Operation(), this.getOperation(), null, "operation", null, 1, 1, ColonneOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(operationUnaireEClass, OperationUnaire.class, "OperationUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationUnaire_Kind(), this.getoperateurUnaire(), "kind", null, 0, 1, OperationUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationUnaire_Colonne(), this.getColonne(), null, "colonne", null, 1, 1, OperationUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operateurBinaireEClass, OperateurBinaire.class, "OperateurBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperateurBinaire_Kind(), this.getOperateurBinaireType(), "kind", null, 1, 1, OperateurBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(operationBinaireEClass, OperationBinaire.class, "OperationBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationBinaire_Kind(), this.getoperateurBinaire(), "kind", null, 0, 1, OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperationBinaire_Colonne(), this.getColonne(), null, "colonne", null, 2, 2, OperationBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(operateurUnaireEClass, OperateurUnaire.class, "OperateurUnaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperateurUnaire_Kind(), this.getOperateurUnaireType(), "kind", null, 1, 1, OperateurUnaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(operateurUnaireEEnum, operateurUnaire.class, "operateurUnaire");
-		addEEnumLiteral(operateurUnaireEEnum, operateurUnaire.OPPOSE);
+		initEEnum(operateurUnaireTypeEEnum, OperateurUnaireType.class, "OperateurUnaireType");
+		addEEnumLiteral(operateurUnaireTypeEEnum, OperateurUnaireType.OPPOSE);
 
-		initEEnum(operateurBinaireEEnum, operateurBinaire.class, "operateurBinaire");
-		addEEnumLiteral(operateurBinaireEEnum, operateurBinaire.ADDITION);
-		addEEnumLiteral(operateurBinaireEEnum, operateurBinaire.SOUSTRACTION);
-		addEEnumLiteral(operateurBinaireEEnum, operateurBinaire.MULTIPLICATION);
-		addEEnumLiteral(operateurBinaireEEnum, operateurBinaire.DIVISION);
+		initEEnum(operateurBinaireTypeEEnum, OperateurBinaireType.class, "OperateurBinaireType");
+		addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.ADDITION);
+		addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.SOUSTRACTION);
+		addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.MULTIPLICATION);
+		addEEnumLiteral(operateurBinaireTypeEEnum, OperateurBinaireType.DIVISION);
 
 		// Create resource
 		createResource(eNS_URI);

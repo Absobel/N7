@@ -104,17 +104,17 @@ public class TableurSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TableurPackage.OPERATION_UNAIRE: {
-				OperationUnaire operationUnaire = (OperationUnaire)theEObject;
-				T result = caseOperationUnaire(operationUnaire);
-				if (result == null) result = caseOperation(operationUnaire);
+			case TableurPackage.OPERATEUR_BINAIRE: {
+				OperateurBinaire operateurBinaire = (OperateurBinaire)theEObject;
+				T result = caseOperateurBinaire(operateurBinaire);
+				if (result == null) result = caseOperation(operateurBinaire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TableurPackage.OPERATION_BINAIRE: {
-				OperationBinaire operationBinaire = (OperationBinaire)theEObject;
-				T result = caseOperationBinaire(operationBinaire);
-				if (result == null) result = caseOperation(operationBinaire);
+			case TableurPackage.OPERATEUR_UNAIRE: {
+				OperateurUnaire operateurUnaire = (OperateurUnaire)theEObject;
+				T result = caseOperateurUnaire(operateurUnaire);
+				if (result == null) result = caseOperation(operateurUnaire);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -213,32 +213,32 @@ public class TableurSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operateur Binaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Unaire</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operateur Binaire</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOperationUnaire(OperationUnaire object) {
+	public T caseOperateurBinaire(OperateurBinaire object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operateur Unaire</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Binaire</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operateur Unaire</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOperationBinaire(OperationBinaire object) {
+	public T caseOperateurUnaire(OperateurUnaire object) {
 		return null;
 	}
 

@@ -68,22 +68,31 @@ public interface TableurPackage extends EPackage {
 	int TABLEUR = 0;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLEUR__TABLE = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLEUR__NAME = 1;
+	int TABLEUR__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLEUR__TABLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Catalogues</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLEUR__CATALOGUES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Tableur</em>' class.
@@ -92,7 +101,7 @@ public interface TableurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLEUR_FEATURE_COUNT = 2;
+	int TABLEUR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Tableur</em>' class.
@@ -149,7 +158,6 @@ public interface TableurPackage extends EPackage {
 	 */
 	int TABLE_OPERATION_COUNT = 0;
 
-
 	/**
 	 * The meta object id for the '{@link tableur.impl.ColonneImpl <em>Colonne</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -161,13 +169,22 @@ public interface TableurPackage extends EPackage {
 	int COLONNE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE__NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>Colonne</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_FEATURE_COUNT = 0;
+	int COLONNE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Colonne</em>' class.
@@ -187,6 +204,15 @@ public interface TableurPackage extends EPackage {
 	 * @generated
 	 */
 	int COLONNE_INPUT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_INPUT__NAME = COLONNE__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Colonne Input</em>' class.
@@ -217,13 +243,40 @@ public interface TableurPackage extends EPackage {
 	int COLONNE_OUTPUT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Operation</b></em>' reference.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_OUTPUT__OPERATION = COLONNE_FEATURE_COUNT + 0;
+	int COLONNE_OUTPUT__NAME = COLONNE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Algo</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_OUTPUT__ALGO = COLONNE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Colonnes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_OUTPUT__COLONNES = COLONNE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLONNE_OUTPUT__OPERATION = COLONNE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Colonne Output</em>' class.
@@ -232,7 +285,7 @@ public interface TableurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLONNE_OUTPUT_FEATURE_COUNT = COLONNE_FEATURE_COUNT + 1;
+	int COLONNE_OUTPUT_FEATURE_COUNT = COLONNE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Colonne Output</em>' class.
@@ -242,7 +295,6 @@ public interface TableurPackage extends EPackage {
 	 * @ordered
 	 */
 	int COLONNE_OUTPUT_OPERATION_COUNT = COLONNE_OPERATION_COUNT + 0;
-
 
 	/**
 	 * The meta object id for the '{@link tableur.impl.OperationImpl <em>Operation</em>}' class.
@@ -273,14 +325,14 @@ public interface TableurPackage extends EPackage {
 	int OPERATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link tableur.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+	 * The meta object id for the '{@link tableur.impl.OperateurBinaireImpl <em>Operateur Binaire</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tableur.impl.OperationUnaireImpl
-	 * @see tableur.impl.TableurPackageImpl#getOperationUnaire()
+	 * @see tableur.impl.OperateurBinaireImpl
+	 * @see tableur.impl.TableurPackageImpl#getOperateurBinaire()
 	 * @generated
 	 */
-	int OPERATION_UNAIRE = 6;
+	int OPERATEUR_BINAIRE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -289,44 +341,35 @@ public interface TableurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_UNAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
+	int OPERATEUR_BINAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Colonne</b></em>' reference.
+	 * The number of structural features of the '<em>Operateur Binaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_UNAIRE__COLONNE = OPERATION_FEATURE_COUNT + 1;
+	int OPERATEUR_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Operation Unaire</em>' class.
+	 * The number of operations of the '<em>Operateur Binaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+	int OPERATEUR_BINAIRE_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Operation Unaire</em>' class.
+	 * The meta object id for the '{@link tableur.impl.OperateurUnaireImpl <em>Operateur Unaire</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_UNAIRE_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link tableur.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tableur.impl.OperationBinaireImpl
-	 * @see tableur.impl.TableurPackageImpl#getOperationBinaire()
+	 * @see tableur.impl.OperateurUnaireImpl
+	 * @see tableur.impl.TableurPackageImpl#getOperateurUnaire()
 	 * @generated
 	 */
-	int OPERATION_BINAIRE = 7;
+	int OPERATEUR_UNAIRE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -335,54 +378,45 @@ public interface TableurPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_BINAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
+	int OPERATEUR_UNAIRE__KIND = OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Colonne</b></em>' reference list.
+	 * The number of structural features of the '<em>Operateur Unaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_BINAIRE__COLONNE = OPERATION_FEATURE_COUNT + 1;
+	int OPERATEUR_UNAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Operation Binaire</em>' class.
+	 * The number of operations of the '<em>Operateur Unaire</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_BINAIRE_FEATURE_COUNT = OPERATION_FEATURE_COUNT + 2;
+	int OPERATEUR_UNAIRE_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Operation Binaire</em>' class.
+	 * The meta object id for the '{@link tableur.OperateurUnaireType <em>Operateur Unaire Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see tableur.OperateurUnaireType
+	 * @see tableur.impl.TableurPackageImpl#getOperateurUnaireType()
 	 * @generated
-	 * @ordered
 	 */
-	int OPERATION_BINAIRE_OPERATION_COUNT = OPERATION_OPERATION_COUNT + 0;
+	int OPERATEUR_UNAIRE_TYPE = 8;
 
 	/**
-	 * The meta object id for the '{@link tableur.operateurUnaire <em>operateur Unaire</em>}' enum.
+	 * The meta object id for the '{@link tableur.OperateurBinaireType <em>Operateur Binaire Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see tableur.operateurUnaire
-	 * @see tableur.impl.TableurPackageImpl#getoperateurUnaire()
+	 * @see tableur.OperateurBinaireType
+	 * @see tableur.impl.TableurPackageImpl#getOperateurBinaireType()
 	 * @generated
 	 */
-	int OPERATEUR_UNAIRE = 8;
-
-	/**
-	 * The meta object id for the '{@link tableur.operateurBinaire <em>operateur Binaire</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see tableur.operateurBinaire
-	 * @see tableur.impl.TableurPackageImpl#getoperateurBinaire()
-	 * @generated
-	 */
-	int OPERATEUR_BINAIRE = 9;
+	int OPERATEUR_BINAIRE_TYPE = 9;
 
 
 	/**
@@ -396,6 +430,17 @@ public interface TableurPackage extends EPackage {
 	EClass getTableur();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tableur.Tableur#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tableur.Tableur#getName()
+	 * @see #getTableur()
+	 * @generated
+	 */
+	EAttribute getTableur_Name();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link tableur.Tableur#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -407,15 +452,15 @@ public interface TableurPackage extends EPackage {
 	EReference getTableur_Table();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tableur.Tableur#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link tableur.Tableur#getCatalogues <em>Catalogues</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see tableur.Tableur#getName()
+	 * @return the meta object for the containment reference list '<em>Catalogues</em>'.
+	 * @see tableur.Tableur#getCatalogues()
 	 * @see #getTableur()
 	 * @generated
 	 */
-	EAttribute getTableur_Name();
+	EReference getTableur_Catalogues();
 
 	/**
 	 * Returns the meta object for class '{@link tableur.Table <em>Table</em>}'.
@@ -460,6 +505,17 @@ public interface TableurPackage extends EPackage {
 	EClass getColonne();
 
 	/**
+	 * Returns the meta object for the attribute '{@link tableur.Colonne#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see tableur.Colonne#getName()
+	 * @see #getColonne()
+	 * @generated
+	 */
+	EAttribute getColonne_Name();
+
+	/**
 	 * Returns the meta object for class '{@link tableur.ColonneInput <em>Colonne Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,10 +536,32 @@ public interface TableurPackage extends EPackage {
 	EClass getColonneOutput();
 
 	/**
-	 * Returns the meta object for the reference '{@link tableur.ColonneOutput#getOperation <em>Operation</em>}'.
+	 * Returns the meta object for the reference '{@link tableur.ColonneOutput#getAlgo <em>Algo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Operation</em>'.
+	 * @return the meta object for the reference '<em>Algo</em>'.
+	 * @see tableur.ColonneOutput#getAlgo()
+	 * @see #getColonneOutput()
+	 * @generated
+	 */
+	EReference getColonneOutput_Algo();
+
+	/**
+	 * Returns the meta object for the reference list '{@link tableur.ColonneOutput#getColonnes <em>Colonnes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Colonnes</em>'.
+	 * @see tableur.ColonneOutput#getColonnes()
+	 * @see #getColonneOutput()
+	 * @generated
+	 */
+	EReference getColonneOutput_Colonnes();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link tableur.ColonneOutput#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Operation</em>'.
 	 * @see tableur.ColonneOutput#getOperation()
 	 * @see #getColonneOutput()
 	 * @generated
@@ -501,88 +579,66 @@ public interface TableurPackage extends EPackage {
 	EClass getOperation();
 
 	/**
-	 * Returns the meta object for class '{@link tableur.OperationUnaire <em>Operation Unaire</em>}'.
+	 * Returns the meta object for class '{@link tableur.OperateurBinaire <em>Operateur Binaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation Unaire</em>'.
-	 * @see tableur.OperationUnaire
+	 * @return the meta object for class '<em>Operateur Binaire</em>'.
+	 * @see tableur.OperateurBinaire
 	 * @generated
 	 */
-	EClass getOperationUnaire();
+	EClass getOperateurBinaire();
 
 	/**
-	 * Returns the meta object for the attribute '{@link tableur.OperationUnaire#getKind <em>Kind</em>}'.
+	 * Returns the meta object for the attribute '{@link tableur.OperateurBinaire#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see tableur.OperationUnaire#getKind()
-	 * @see #getOperationUnaire()
+	 * @see tableur.OperateurBinaire#getKind()
+	 * @see #getOperateurBinaire()
 	 * @generated
 	 */
-	EAttribute getOperationUnaire_Kind();
+	EAttribute getOperateurBinaire_Kind();
 
 	/**
-	 * Returns the meta object for the reference '{@link tableur.OperationUnaire#getColonne <em>Colonne</em>}'.
+	 * Returns the meta object for class '{@link tableur.OperateurUnaire <em>Operateur Unaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Colonne</em>'.
-	 * @see tableur.OperationUnaire#getColonne()
-	 * @see #getOperationUnaire()
+	 * @return the meta object for class '<em>Operateur Unaire</em>'.
+	 * @see tableur.OperateurUnaire
 	 * @generated
 	 */
-	EReference getOperationUnaire_Colonne();
+	EClass getOperateurUnaire();
 
 	/**
-	 * Returns the meta object for class '{@link tableur.OperationBinaire <em>Operation Binaire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation Binaire</em>'.
-	 * @see tableur.OperationBinaire
-	 * @generated
-	 */
-	EClass getOperationBinaire();
-
-	/**
-	 * Returns the meta object for the attribute '{@link tableur.OperationBinaire#getKind <em>Kind</em>}'.
+	 * Returns the meta object for the attribute '{@link tableur.OperateurUnaire#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see tableur.OperationBinaire#getKind()
-	 * @see #getOperationBinaire()
+	 * @see tableur.OperateurUnaire#getKind()
+	 * @see #getOperateurUnaire()
 	 * @generated
 	 */
-	EAttribute getOperationBinaire_Kind();
+	EAttribute getOperateurUnaire_Kind();
 
 	/**
-	 * Returns the meta object for the reference list '{@link tableur.OperationBinaire#getColonne <em>Colonne</em>}'.
+	 * Returns the meta object for enum '{@link tableur.OperateurUnaireType <em>Operateur Unaire Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Colonne</em>'.
-	 * @see tableur.OperationBinaire#getColonne()
-	 * @see #getOperationBinaire()
+	 * @return the meta object for enum '<em>Operateur Unaire Type</em>'.
+	 * @see tableur.OperateurUnaireType
 	 * @generated
 	 */
-	EReference getOperationBinaire_Colonne();
+	EEnum getOperateurUnaireType();
 
 	/**
-	 * Returns the meta object for enum '{@link tableur.operateurUnaire <em>operateur Unaire</em>}'.
+	 * Returns the meta object for enum '{@link tableur.OperateurBinaireType <em>Operateur Binaire Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>operateur Unaire</em>'.
-	 * @see tableur.operateurUnaire
+	 * @return the meta object for enum '<em>Operateur Binaire Type</em>'.
+	 * @see tableur.OperateurBinaireType
 	 * @generated
 	 */
-	EEnum getoperateurUnaire();
-
-	/**
-	 * Returns the meta object for enum '{@link tableur.operateurBinaire <em>operateur Binaire</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>operateur Binaire</em>'.
-	 * @see tableur.operateurBinaire
-	 * @generated
-	 */
-	EEnum getoperateurBinaire();
+	EEnum getOperateurBinaireType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -618,6 +674,14 @@ public interface TableurPackage extends EPackage {
 		EClass TABLEUR = eINSTANCE.getTableur();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLEUR__NAME = eINSTANCE.getTableur_Name();
+
+		/**
 		 * The meta object literal for the '<em><b>Table</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -626,12 +690,12 @@ public interface TableurPackage extends EPackage {
 		EReference TABLEUR__TABLE = eINSTANCE.getTableur_Table();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Catalogues</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TABLEUR__NAME = eINSTANCE.getTableur_Name();
+		EReference TABLEUR__CATALOGUES = eINSTANCE.getTableur_Catalogues();
 
 		/**
 		 * The meta object literal for the '{@link tableur.impl.TableImpl <em>Table</em>}' class.
@@ -670,6 +734,14 @@ public interface TableurPackage extends EPackage {
 		EClass COLONNE = eINSTANCE.getColonne();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLONNE__NAME = eINSTANCE.getColonne_Name();
+
+		/**
 		 * The meta object literal for the '{@link tableur.impl.ColonneInputImpl <em>Colonne Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -690,7 +762,23 @@ public interface TableurPackage extends EPackage {
 		EClass COLONNE_OUTPUT = eINSTANCE.getColonneOutput();
 
 		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Algo</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLONNE_OUTPUT__ALGO = eINSTANCE.getColonneOutput_Algo();
+
+		/**
+		 * The meta object literal for the '<em><b>Colonnes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLONNE_OUTPUT__COLONNES = eINSTANCE.getColonneOutput_Colonnes();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -708,14 +796,14 @@ public interface TableurPackage extends EPackage {
 		EClass OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '{@link tableur.impl.OperationUnaireImpl <em>Operation Unaire</em>}' class.
+		 * The meta object literal for the '{@link tableur.impl.OperateurBinaireImpl <em>Operateur Binaire</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tableur.impl.OperationUnaireImpl
-		 * @see tableur.impl.TableurPackageImpl#getOperationUnaire()
+		 * @see tableur.impl.OperateurBinaireImpl
+		 * @see tableur.impl.TableurPackageImpl#getOperateurBinaire()
 		 * @generated
 		 */
-		EClass OPERATION_UNAIRE = eINSTANCE.getOperationUnaire();
+		EClass OPERATEUR_BINAIRE = eINSTANCE.getOperateurBinaire();
 
 		/**
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
@@ -723,25 +811,17 @@ public interface TableurPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPERATION_UNAIRE__KIND = eINSTANCE.getOperationUnaire_Kind();
+		EAttribute OPERATEUR_BINAIRE__KIND = eINSTANCE.getOperateurBinaire_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Colonne</b></em>' reference feature.
+		 * The meta object literal for the '{@link tableur.impl.OperateurUnaireImpl <em>Operateur Unaire</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see tableur.impl.OperateurUnaireImpl
+		 * @see tableur.impl.TableurPackageImpl#getOperateurUnaire()
 		 * @generated
 		 */
-		EReference OPERATION_UNAIRE__COLONNE = eINSTANCE.getOperationUnaire_Colonne();
-
-		/**
-		 * The meta object literal for the '{@link tableur.impl.OperationBinaireImpl <em>Operation Binaire</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tableur.impl.OperationBinaireImpl
-		 * @see tableur.impl.TableurPackageImpl#getOperationBinaire()
-		 * @generated
-		 */
-		EClass OPERATION_BINAIRE = eINSTANCE.getOperationBinaire();
+		EClass OPERATEUR_UNAIRE = eINSTANCE.getOperateurUnaire();
 
 		/**
 		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
@@ -749,35 +829,27 @@ public interface TableurPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPERATION_BINAIRE__KIND = eINSTANCE.getOperationBinaire_Kind();
+		EAttribute OPERATEUR_UNAIRE__KIND = eINSTANCE.getOperateurUnaire_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Colonne</b></em>' reference list feature.
+		 * The meta object literal for the '{@link tableur.OperateurUnaireType <em>Operateur Unaire Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see tableur.OperateurUnaireType
+		 * @see tableur.impl.TableurPackageImpl#getOperateurUnaireType()
 		 * @generated
 		 */
-		EReference OPERATION_BINAIRE__COLONNE = eINSTANCE.getOperationBinaire_Colonne();
+		EEnum OPERATEUR_UNAIRE_TYPE = eINSTANCE.getOperateurUnaireType();
 
 		/**
-		 * The meta object literal for the '{@link tableur.operateurUnaire <em>operateur Unaire</em>}' enum.
+		 * The meta object literal for the '{@link tableur.OperateurBinaireType <em>Operateur Binaire Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see tableur.operateurUnaire
-		 * @see tableur.impl.TableurPackageImpl#getoperateurUnaire()
+		 * @see tableur.OperateurBinaireType
+		 * @see tableur.impl.TableurPackageImpl#getOperateurBinaireType()
 		 * @generated
 		 */
-		EEnum OPERATEUR_UNAIRE = eINSTANCE.getoperateurUnaire();
-
-		/**
-		 * The meta object literal for the '{@link tableur.operateurBinaire <em>operateur Binaire</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see tableur.operateurBinaire
-		 * @see tableur.impl.TableurPackageImpl#getoperateurBinaire()
-		 * @generated
-		 */
-		EEnum OPERATEUR_BINAIRE = eINSTANCE.getoperateurBinaire();
+		EEnum OPERATEUR_BINAIRE_TYPE = eINSTANCE.getOperateurBinaireType();
 
 	}
 

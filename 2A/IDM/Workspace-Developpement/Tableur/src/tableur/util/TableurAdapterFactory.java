@@ -92,12 +92,12 @@ public class TableurAdapterFactory extends AdapterFactoryImpl {
 				return createOperationAdapter();
 			}
 			@Override
-			public Adapter caseOperationUnaire(OperationUnaire object) {
-				return createOperationUnaireAdapter();
+			public Adapter caseOperateurBinaire(OperateurBinaire object) {
+				return createOperateurBinaireAdapter();
 			}
 			@Override
-			public Adapter caseOperationBinaire(OperationBinaire object) {
-				return createOperationBinaireAdapter();
+			public Adapter caseOperateurUnaire(OperateurUnaire object) {
+				return createOperateurUnaireAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -204,30 +204,30 @@ public class TableurAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tableur.OperationUnaire <em>Operation Unaire</em>}'.
+	 * Creates a new adapter for an object of class '{@link tableur.OperateurBinaire <em>Operateur Binaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tableur.OperationUnaire
+	 * @see tableur.OperateurBinaire
 	 * @generated
 	 */
-	public Adapter createOperationUnaireAdapter() {
+	public Adapter createOperateurBinaireAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link tableur.OperationBinaire <em>Operation Binaire</em>}'.
+	 * Creates a new adapter for an object of class '{@link tableur.OperateurUnaire <em>Operateur Unaire</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see tableur.OperationBinaire
+	 * @see tableur.OperateurUnaire
 	 * @generated
 	 */
-	public Adapter createOperationBinaireAdapter() {
+	public Adapter createOperateurUnaireAdapter() {
 		return null;
 	}
 

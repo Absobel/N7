@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated algorithme -->
+      <package
+            uri="http://algorithme.ecore"
+            class="algorithme.AlgorithmePackage"
+            genModel="model/algorithme.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated algorithme -->
+      <package
+            uri="http://tableur.ecore"
+            class="tableur.TableurPackage"
+            genModel="model/algorithme.genmodel"/>
+   </extension>
+
+</plugin>

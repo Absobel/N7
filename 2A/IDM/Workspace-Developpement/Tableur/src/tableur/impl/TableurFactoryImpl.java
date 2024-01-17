@@ -61,8 +61,8 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 			case TableurPackage.TABLE: return createTable();
 			case TableurPackage.COLONNE_INPUT: return createColonneInput();
 			case TableurPackage.COLONNE_OUTPUT: return createColonneOutput();
-			case TableurPackage.OPERATION_UNAIRE: return createOperationUnaire();
-			case TableurPackage.OPERATION_BINAIRE: return createOperationBinaire();
+			case TableurPackage.OPERATEUR_BINAIRE: return createOperateurBinaire();
+			case TableurPackage.OPERATEUR_UNAIRE: return createOperateurUnaire();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,10 +76,10 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TableurPackage.OPERATEUR_UNAIRE:
-				return createoperateurUnaireFromString(eDataType, initialValue);
-			case TableurPackage.OPERATEUR_BINAIRE:
-				return createoperateurBinaireFromString(eDataType, initialValue);
+			case TableurPackage.OPERATEUR_UNAIRE_TYPE:
+				return createOperateurUnaireTypeFromString(eDataType, initialValue);
+			case TableurPackage.OPERATEUR_BINAIRE_TYPE:
+				return createOperateurBinaireTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -93,10 +93,10 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TableurPackage.OPERATEUR_UNAIRE:
-				return convertoperateurUnaireToString(eDataType, instanceValue);
-			case TableurPackage.OPERATEUR_BINAIRE:
-				return convertoperateurBinaireToString(eDataType, instanceValue);
+			case TableurPackage.OPERATEUR_UNAIRE_TYPE:
+				return convertOperateurUnaireTypeToString(eDataType, instanceValue);
+			case TableurPackage.OPERATEUR_BINAIRE_TYPE:
+				return convertOperateurBinaireTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -152,9 +152,9 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * @generated
 	 */
 	@Override
-	public OperationUnaire createOperationUnaire() {
-		OperationUnaireImpl operationUnaire = new OperationUnaireImpl();
-		return operationUnaire;
+	public OperateurBinaire createOperateurBinaire() {
+		OperateurBinaireImpl operateurBinaire = new OperateurBinaireImpl();
+		return operateurBinaire;
 	}
 
 	/**
@@ -163,9 +163,9 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * @generated
 	 */
 	@Override
-	public OperationBinaire createOperationBinaire() {
-		OperationBinaireImpl operationBinaire = new OperationBinaireImpl();
-		return operationBinaire;
+	public OperateurUnaire createOperateurUnaire() {
+		OperateurUnaireImpl operateurUnaire = new OperateurUnaireImpl();
+		return operateurUnaire;
 	}
 
 	/**
@@ -173,8 +173,8 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public operateurUnaire createoperateurUnaireFromString(EDataType eDataType, String initialValue) {
-		operateurUnaire result = operateurUnaire.get(initialValue);
+	public OperateurUnaireType createOperateurUnaireTypeFromString(EDataType eDataType, String initialValue) {
+		OperateurUnaireType result = OperateurUnaireType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -184,7 +184,7 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertoperateurUnaireToString(EDataType eDataType, Object instanceValue) {
+	public String convertOperateurUnaireTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -193,8 +193,8 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public operateurBinaire createoperateurBinaireFromString(EDataType eDataType, String initialValue) {
-		operateurBinaire result = operateurBinaire.get(initialValue);
+	public OperateurBinaireType createOperateurBinaireTypeFromString(EDataType eDataType, String initialValue) {
+		OperateurBinaireType result = OperateurBinaireType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -204,7 +204,7 @@ public class TableurFactoryImpl extends EFactoryImpl implements TableurFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertoperateurBinaireToString(EDataType eDataType, Object instanceValue) {
+	public String convertOperateurBinaireTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

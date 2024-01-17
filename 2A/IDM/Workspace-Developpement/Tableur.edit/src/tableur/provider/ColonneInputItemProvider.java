@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import tableur.ColonneInput;
+
 /**
  * This is the item provider adapter for a {@link tableur.ColonneInput} object.
  * <!-- begin-user-doc -->
@@ -62,7 +64,10 @@ public class ColonneInputItemProvider extends ColonneItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ColonneInput_type");
+		String label = ((ColonneInput)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ColonneInput_type") :
+			getString("_UI_ColonneInput_type") + " " + label;
 	}
 
 

@@ -2,6 +2,8 @@
  */
 package tableur.impl;
 
+import algorithme.Catalogue;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,23 +32,14 @@ import tableur.TableurPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link tableur.impl.TableurImpl#getTable <em>Table</em>}</li>
  *   <li>{@link tableur.impl.TableurImpl#getName <em>Name</em>}</li>
+ *   <li>{@link tableur.impl.TableurImpl#getTable <em>Table</em>}</li>
+ *   <li>{@link tableur.impl.TableurImpl#getCatalogues <em>Catalogues</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur {
-	/**
-	 * The cached value of the '{@link #getTable() <em>Table</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTable()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Table> table;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -68,6 +61,26 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getTable() <em>Table</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTable()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Table> table;
+
+	/**
+	 * The cached value of the '{@link #getCatalogues() <em>Catalogues</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCatalogues()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Catalogue> catalogues;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,19 +97,6 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	@Override
 	protected EClass eStaticClass() {
 		return TableurPackage.Literals.TABLEUR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Table> getTable() {
-		if (table == null) {
-			table = new EObjectContainmentEList<Table>(Table.class, this, TableurPackage.TABLEUR__TABLE);
-		}
-		return table;
 	}
 
 	/**
@@ -128,10 +128,38 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	 * @generated
 	 */
 	@Override
+	public EList<Table> getTable() {
+		if (table == null) {
+			table = new EObjectContainmentEList<Table>(Table.class, this, TableurPackage.TABLEUR__TABLE);
+		}
+		return table;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Catalogue> getCatalogues() {
+		if (catalogues == null) {
+			catalogues = new EObjectContainmentEList<Catalogue>(Catalogue.class, this, TableurPackage.TABLEUR__CATALOGUES);
+		}
+		return catalogues;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TableurPackage.TABLEUR__TABLE:
 				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
+			case TableurPackage.TABLEUR__CATALOGUES:
+				return ((InternalEList<?>)getCatalogues()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,10 +172,12 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TableurPackage.TABLEUR__TABLE:
-				return getTable();
 			case TableurPackage.TABLEUR__NAME:
 				return getName();
+			case TableurPackage.TABLEUR__TABLE:
+				return getTable();
+			case TableurPackage.TABLEUR__CATALOGUES:
+				return getCatalogues();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -161,12 +191,16 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TableurPackage.TABLEUR__NAME:
+				setName((String)newValue);
+				return;
 			case TableurPackage.TABLEUR__TABLE:
 				getTable().clear();
 				getTable().addAll((Collection<? extends Table>)newValue);
 				return;
-			case TableurPackage.TABLEUR__NAME:
-				setName((String)newValue);
+			case TableurPackage.TABLEUR__CATALOGUES:
+				getCatalogues().clear();
+				getCatalogues().addAll((Collection<? extends Catalogue>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +214,14 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TableurPackage.TABLEUR__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case TableurPackage.TABLEUR__TABLE:
 				getTable().clear();
 				return;
-			case TableurPackage.TABLEUR__NAME:
-				setName(NAME_EDEFAULT);
+			case TableurPackage.TABLEUR__CATALOGUES:
+				getCatalogues().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +235,12 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TableurPackage.TABLEUR__TABLE:
-				return table != null && !table.isEmpty();
 			case TableurPackage.TABLEUR__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case TableurPackage.TABLEUR__TABLE:
+				return table != null && !table.isEmpty();
+			case TableurPackage.TABLEUR__CATALOGUES:
+				return catalogues != null && !catalogues.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

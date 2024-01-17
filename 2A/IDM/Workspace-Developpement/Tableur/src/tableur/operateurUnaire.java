@@ -2,185 +2,47 @@
  */
 package tableur;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>operateur Unaire</b></em>',
- * and utility methods for working with them.
+ * A representation of the model object '<em><b>Operateur Unaire</b></em>'.
  * <!-- end-user-doc -->
- * @see tableur.TableurPackage#getoperateurUnaire()
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link tableur.OperateurUnaire#getKind <em>Kind</em>}</li>
+ * </ul>
+ *
+ * @see tableur.TableurPackage#getOperateurUnaire()
  * @model
  * @generated
  */
-public enum operateurUnaire implements Enumerator {
+public interface OperateurUnaire extends Operation {
 	/**
-	 * The '<em><b>Oppose</b></em>' literal object.
+	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
+	 * The literals are from the enumeration {@link tableur.OperateurUnaireType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #OPPOSE_VALUE
+	 * @return the value of the '<em>Kind</em>' attribute.
+	 * @see tableur.OperateurUnaireType
+	 * @see #setKind(OperateurUnaireType)
+	 * @see tableur.TableurPackage#getOperateurUnaire_Kind()
+	 * @model required="true"
 	 * @generated
-	 * @ordered
 	 */
-	OPPOSE(0, "Oppose", "Oppose");
+	OperateurUnaireType getKind();
 
 	/**
-	 * The '<em><b>Oppose</b></em>' literal value.
+	 * Sets the value of the '{@link tableur.OperateurUnaire#getKind <em>Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #OPPOSE
-	 * @model name="Oppose"
+	 * @param value the new value of the '<em>Kind</em>' attribute.
+	 * @see tableur.OperateurUnaireType
+	 * @see #getKind()
 	 * @generated
-	 * @ordered
 	 */
-	public static final int OPPOSE_VALUE = 0;
+	void setKind(OperateurUnaireType value);
 
-	/**
-	 * An array of all the '<em><b>operateur Unaire</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private static final operateurUnaire[] VALUES_ARRAY =
-		new operateurUnaire[] {
-			OPPOSE,
-		};
-
-	/**
-	 * A public read-only list of all the '<em><b>operateur Unaire</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final List<operateurUnaire> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
-
-	/**
-	 * Returns the '<em><b>operateur Unaire</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param literal the literal.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
-	public static operateurUnaire get(String literal) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			operateurUnaire result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
-				return result;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Returns the '<em><b>operateur Unaire</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param name the name.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
-	public static operateurUnaire getByName(String name) {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			operateurUnaire result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
-				return result;
-			}
-		}
-		return null;
-	}
-
-	/**
-	 * Returns the '<em><b>operateur Unaire</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the integer value.
-	 * @return the matching enumerator or <code>null</code>.
-	 * @generated
-	 */
-	public static operateurUnaire get(int value) {
-		switch (value) {
-			case OPPOSE_VALUE: return OPPOSE;
-		}
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private final int value;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private final String name;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private final String literal;
-
-	/**
-	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private operateurUnaire(int value, String name, String literal) {
-		this.value = value;
-		this.name = name;
-		this.literal = literal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int getValue() {
-	  return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getName() {
-	  return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getLiteral() {
-	  return literal;
-	}
-
-	/**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		return literal;
-	}
-	
-} //operateurUnaire
+} // OperateurUnaire

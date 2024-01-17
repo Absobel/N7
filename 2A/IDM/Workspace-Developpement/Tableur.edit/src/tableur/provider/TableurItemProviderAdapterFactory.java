@@ -164,49 +164,49 @@ public class TableurItemProviderAdapterFactory extends TableurAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tableur.OperationUnaire} instances.
+	 * This keeps track of the one adapter used for all {@link tableur.OperateurBinaire} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationUnaireItemProvider operationUnaireItemProvider;
+	protected OperateurBinaireItemProvider operateurBinaireItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tableur.OperationUnaire}.
+	 * This creates an adapter for a {@link tableur.OperateurBinaire}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOperationUnaireAdapter() {
-		if (operationUnaireItemProvider == null) {
-			operationUnaireItemProvider = new OperationUnaireItemProvider(this);
+	public Adapter createOperateurBinaireAdapter() {
+		if (operateurBinaireItemProvider == null) {
+			operateurBinaireItemProvider = new OperateurBinaireItemProvider(this);
 		}
 
-		return operationUnaireItemProvider;
+		return operateurBinaireItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link tableur.OperationBinaire} instances.
+	 * This keeps track of the one adapter used for all {@link tableur.OperateurUnaire} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationBinaireItemProvider operationBinaireItemProvider;
+	protected OperateurUnaireItemProvider operateurUnaireItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link tableur.OperationBinaire}.
+	 * This creates an adapter for a {@link tableur.OperateurUnaire}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOperationBinaireAdapter() {
-		if (operationBinaireItemProvider == null) {
-			operationBinaireItemProvider = new OperationBinaireItemProvider(this);
+	public Adapter createOperateurUnaireAdapter() {
+		if (operateurUnaireItemProvider == null) {
+			operateurUnaireItemProvider = new OperateurUnaireItemProvider(this);
 		}
 
-		return operationBinaireItemProvider;
+		return operateurUnaireItemProvider;
 	}
 
 	/**
@@ -318,8 +318,8 @@ public class TableurItemProviderAdapterFactory extends TableurAdapterFactory imp
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (colonneInputItemProvider != null) colonneInputItemProvider.dispose();
 		if (colonneOutputItemProvider != null) colonneOutputItemProvider.dispose();
-		if (operationUnaireItemProvider != null) operationUnaireItemProvider.dispose();
-		if (operationBinaireItemProvider != null) operationBinaireItemProvider.dispose();
+		if (operateurBinaireItemProvider != null) operateurBinaireItemProvider.dispose();
+		if (operateurUnaireItemProvider != null) operateurUnaireItemProvider.dispose();
 	}
 
 }
