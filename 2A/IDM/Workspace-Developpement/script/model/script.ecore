@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Script" nsURI="https://Script.ecore" nsPrefix="Script.ecore">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://www.example.org/script" nsPrefix="script">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="blocs" upperBound="-1"
-        eType="#//Blocs" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="finalOutput" lowerBound="1"
-        eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneOutput"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="initialInput" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneInput"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calcul" lowerBound="1"
+        eType="#//Calcul" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Blocs">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" lowerBound="1"
-        eType="#//Operations" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Calcul">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" upperBound="-1"
+        eType="#//Operation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
+        eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
+        eType="#//Inputs" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationUnaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fonction" eType="#//FonctionType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneInput"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" upperBound="-1"
-        eType="ecore:EClass file:/C:/Users/olivi/OneDrive/Desktop/ENSEEIHT/Deuxieme_Annee/IDM/Projetv2/IDM-Projet/Workspace-Developpement/Tableur/model/tableur.ecore#//ColonneOutput"/>
+        eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" eType="#//Inputs"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operations" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Unaire" eSuperTypes="#//Operations">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fonctions" lowerBound="1"
-        eType="#//FonctionsType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationBinaire" eSuperTypes="#//Operation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" eType="#//OperationBinaireType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+        eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input1" lowerBound="1"
+        eType="#//Inputs"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input2" lowerBound="1"
+        eType="#//Inputs"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Binaire" eSuperTypes="#//Operations">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operateur" lowerBound="1"
-        eType="#//OperationsBinairesType"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="OperationsBinairesType">
+  <eClassifiers xsi:type="ecore:EEnum" name="OperationBinaireType">
     <eLiterals name="ADD"/>
     <eLiterals name="SUB" value="1"/>
     <eLiterals name="TIM" value="2"/>
@@ -36,7 +38,7 @@
     <eLiterals name="MIN" value="4"/>
     <eLiterals name="MAX" value="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="FonctionsType">
+  <eClassifiers xsi:type="ecore:EEnum" name="FonctionType">
     <eLiterals name="OPP"/>
     <eLiterals name="INV" value="1"/>
     <eLiterals name="COS" value="2"/>
@@ -44,5 +46,15 @@
     <eLiterals name="SQR" value="4"/>
     <eLiterals name="EXP" value="5"/>
     <eLiterals name="LOG" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inputs" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Output">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//Inputs">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Inputs">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
