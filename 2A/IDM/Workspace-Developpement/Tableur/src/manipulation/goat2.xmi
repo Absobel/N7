@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:algorithme="http://algorithme.ecore"
+    xmlns:tableur.ecore="http://tableur.ecore"
+    name="Mutliple Calcul">
+  <table name="Addition">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="A"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="B"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="Résultat_addition"
+        colonnes="//@table.0/@colonne.0 //@table.0/@colonne.1">
+      <operation
+          xsi:type="tableur.ecore:OperateurBinaire"/>
+    </colonne>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="Résultat_soustraction"
+        colonnes="//@table.0/@colonne.0 //@table.0/@colonne.1">
+      <operation
+          xsi:type="tableur.ecore:OperateurBinaire"
+          kind="Soustraction"/>
+    </colonne>
+  </table>
+  <table name="IMC">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="Poids"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="Taille"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="IMC"
+        algo="//@catalogues.0/@algorithmes.0"
+        colonnes="//@table.1/@colonne.0 //@table.1/@colonne.1"/>
+  </table>
+  <table name="Moyenne">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="Trimestre1"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="Trimestre2"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="Trimestre3"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="RésultatMoyen"
+        algo="//@catalogues.0/@algorithmes.2"
+        colonnes="//@table.2/@colonne.0 //@table.2/@colonne.1 //@table.2/@colonne.2"/>
+  </table>
+  <table name="Max">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="J"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="K"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="Résultatmax"
+        algo="//@catalogues.0/@algorithmes.1"
+        colonnes="//@table.3/@colonne.0 //@table.3/@colonne.1"/>
+  </table>
+  <catalogues>
+    <algorithmes
+        xsi:type="algorithme:Algorithme"
+        name="IMC">
+      <ressource
+          file="calcul_imc.py"
+          stdin="//@table.1/@colonne.0 //@table.1/@colonne.1"
+          stdout="//@table.1/@colonne.2"/>
+    </algorithmes>
+    <algorithmes
+        xsi:type="algorithme:Algorithme"
+        name="Max">
+      <ressource
+          file="max.py"
+          stdin="//@table.3/@colonne.0 //@table.3/@colonne.1"
+          stdout="//@table.3/@colonne.2"/>
+    </algorithmes>
+    <algorithmes
+        xsi:type="algorithme:Algorithme"
+        name="Moyenne">
+      <ressource
+          file="mean.py"
+          stdin="//@table.2/@colonne.0 //@table.2/@colonne.1 //@table.2/@colonne.2"
+          stdout="//@table.2/@colonne.3"/>
+    </algorithmes>
+  </catalogues>
+</tableur.ecore:Tableur>

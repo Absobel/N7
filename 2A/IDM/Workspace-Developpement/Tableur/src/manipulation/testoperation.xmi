@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<excel.ecore:Tableur xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:excel.ecore="http://excel.ecore" name="Tableur">
+  <tables name="Tab1">
+    <colonnes xsi:type="excel.ecore:ColonneInput" name="A1"/>
+    <colonnes xsi:type="excel.ecore:ColonneInput" name="A2"/>
+    <colonnes xsi:type="excel.ecore:ColonneOutput" name="A3" colonnes="//@tables.0/@colonnes.0 //@tables.0/@colonnes.1">
+      <operations xsi:type="excel.ecore:OperationBnaire"/>
+    </colonnes>
+    <colonnes xsi:type="excel.ecore:ColonneInput" name="B1"/>
+    <colonnes xsi:type="excel.ecore:ColonneOutput" name="B2" colonnes="//@tables.0/@colonnes.3"/>
+  </tables>
+  <tables name="Tab2">
+    <colonnes xsi:type="excel.ecore:ColonneInput" name="C1"/>
+    <colonnes xsi:type="excel.ecore:ColonneInput" name="C2"/>
+    <colonnes xsi:type="excel.ecore:ColonneOutput" name="C3" colonnes="//@tables.1/@colonnes.0 //@tables.1/@colonnes.1">
+      <operations xsi:type="excel.ecore:OperationBnaire" kind="Multiplication"/>
+    </colonnes>
+  </tables>
+</excel.ecore:Tableur>

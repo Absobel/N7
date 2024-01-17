@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:algorithme="http://algorithme.ecore"
+    xmlns:tableur.ecore="http://tableur.ecore"
+    xsi:schemaLocation="http://algorithme.ecore ../../algorithme/model/algorithme.ecore"
+    name="Tableur1">
+  <table name="Table1">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="c1"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="c2"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="c3"
+        colonnes="//@table.0/@colonne.0 //@table.0/@colonne.1"/>
+  </table>
+  <table name="Table2"/>
+  <catalogues>
+    <algorithmes
+        xsi:type="algorithme:Algorithme"
+        name="Algo1">
+      <ressource
+          file="fonction.py"/>
+    </algorithmes>
+  </catalogues>
+</tableur.ecore:Tableur>
