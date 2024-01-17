@@ -159,7 +159,7 @@ public interface AlgorithmePackage extends EPackage {
 	int ALGORITHME__RESSOURCE = ALGORITHME_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Documentation</b></em>' reference.
+	 * The feature id for the '<em><b>Documentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -352,10 +352,10 @@ public interface AlgorithmePackage extends EPackage {
 	EReference getAlgorithme_Ressource();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithme.Algorithme#getDocumentation <em>Documentation</em>}'.
+	 * Returns the meta object for the containment reference '{@link algorithme.Algorithme#getDocumentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Documentation</em>'.
+	 * @return the meta object for the containment reference '<em>Documentation</em>'.
 	 * @see algorithme.Algorithme#getDocumentation()
 	 * @see #getAlgorithme()
 	 * @generated
@@ -512,7 +512,7 @@ public interface AlgorithmePackage extends EPackage {
 		EReference ALGORITHME__RESSOURCE = eINSTANCE.getAlgorithme_Ressource();
 
 		/**
-		 * The meta object literal for the '<em><b>Documentation</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Documentation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

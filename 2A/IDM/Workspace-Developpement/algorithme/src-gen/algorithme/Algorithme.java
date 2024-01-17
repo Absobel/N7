@@ -66,22 +66,22 @@ public interface Algorithme extends AlgorithmeElement {
 	void setRessource(Ressource value);
 
 	/**
-	 * Returns the value of the '<em><b>Documentation</b></em>' reference.
+	 * Returns the value of the '<em><b>Documentation</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Documentation</em>' reference.
+	 * @return the value of the '<em>Documentation</em>' containment reference.
 	 * @see #setDocumentation(Documentation)
 	 * @see algorithme.AlgorithmePackage#getAlgorithme_Documentation()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Documentation getDocumentation();
 
 	/**
-	 * Sets the value of the '{@link algorithme.Algorithme#getDocumentation <em>Documentation</em>}' reference.
+	 * Sets the value of the '{@link algorithme.Algorithme#getDocumentation <em>Documentation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Documentation</em>' reference.
+	 * @param value the new value of the '<em>Documentation</em>' containment reference.
 	 * @see #getDocumentation()
 	 * @generated
 	 */

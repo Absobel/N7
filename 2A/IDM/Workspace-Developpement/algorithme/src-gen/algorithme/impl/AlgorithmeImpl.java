@@ -62,7 +62,7 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 	protected Ressource ressource;
 
 	/**
-	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' reference.
+	 * The cached value of the '{@link #getDocumentation() <em>Documentation</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDocumentation()
@@ -172,15 +172,6 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 	 */
 	@Override
 	public Documentation getDocumentation() {
-		if (documentation != null && documentation.eIsProxy()) {
-			InternalEObject oldDocumentation = (InternalEObject) documentation;
-			documentation = (Documentation) eResolveProxy(oldDocumentation);
-			if (documentation != oldDocumentation) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
-							AlgorithmePackage.ALGORITHME__DOCUMENTATION, oldDocumentation, documentation));
-			}
-		}
 		return documentation;
 	}
 
@@ -189,8 +180,18 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Documentation basicGetDocumentation() {
-		return documentation;
+	public NotificationChain basicSetDocumentation(Documentation newDocumentation, NotificationChain msgs) {
+		Documentation oldDocumentation = documentation;
+		documentation = newDocumentation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
+					AlgorithmePackage.ALGORITHME__DOCUMENTATION, oldDocumentation, newDocumentation);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -200,11 +201,20 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 	 */
 	@Override
 	public void setDocumentation(Documentation newDocumentation) {
-		Documentation oldDocumentation = documentation;
-		documentation = newDocumentation;
-		if (eNotificationRequired())
+		if (newDocumentation != documentation) {
+			NotificationChain msgs = null;
+			if (documentation != null)
+				msgs = ((InternalEObject) documentation).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - AlgorithmePackage.ALGORITHME__DOCUMENTATION, null, msgs);
+			if (newDocumentation != null)
+				msgs = ((InternalEObject) newDocumentation).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - AlgorithmePackage.ALGORITHME__DOCUMENTATION, null, msgs);
+			msgs = basicSetDocumentation(newDocumentation, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.ALGORITHME__DOCUMENTATION,
-					oldDocumentation, documentation));
+					newDocumentation, newDocumentation));
 	}
 
 	/**
@@ -217,6 +227,8 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 		switch (featureID) {
 		case AlgorithmePackage.ALGORITHME__RESSOURCE:
 			return basicSetRessource(null, msgs);
+		case AlgorithmePackage.ALGORITHME__DOCUMENTATION:
+			return basicSetDocumentation(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -234,9 +246,7 @@ public class AlgorithmeImpl extends AlgorithmeElementImpl implements Algorithme 
 		case AlgorithmePackage.ALGORITHME__RESSOURCE:
 			return getRessource();
 		case AlgorithmePackage.ALGORITHME__DOCUMENTATION:
-			if (resolve)
-				return getDocumentation();
-			return basicGetDocumentation();
+			return getDocumentation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

@@ -17,7 +17,7 @@
     <genClasses ecoreClass="algorithme.ecore#//Algorithme">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Algorithme/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/ressource"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/documentation"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/documentation"/>
     </genClasses>
     <genClasses ecoreClass="algorithme.ecore#//Ressource">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Ressource/file"/>
