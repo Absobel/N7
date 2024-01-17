@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:script="http://www.example.org/script" name="NomDuScript">
+  <calcul>
+    <operation xsi:type="script:OperationBinaire">
+      <output name="ADDOutput"/>
+    </operation>
+    <operation xsi:type="script:OperationBinaire" operateur="DIV">
+      <output name="DIVOutput"/>
+    </operation>
+    <outputs name="resultat"/>
+    <inputs xsi:type="script:Input" name="minimum"/>
+    <inputs xsi:type="script:Input" name="maximum"/>
+  </calcul>
+</script:Script>
