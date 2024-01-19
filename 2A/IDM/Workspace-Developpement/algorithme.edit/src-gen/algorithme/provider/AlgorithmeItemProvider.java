@@ -97,7 +97,6 @@ public class AlgorithmeItemProvider extends AlgorithmeElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(AlgorithmePackage.Literals.ALGORITHME__RESSOURCE);
-			childrenFeatures.add(AlgorithmePackage.Literals.ALGORITHME__DOCUMENTATION);
 		}
 		return childrenFeatures;
 	}
@@ -165,7 +164,6 @@ public class AlgorithmeItemProvider extends AlgorithmeElementItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case AlgorithmePackage.ALGORITHME__RESSOURCE:
-		case AlgorithmePackage.ALGORITHME__DOCUMENTATION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -185,9 +183,6 @@ public class AlgorithmeItemProvider extends AlgorithmeElementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(AlgorithmePackage.Literals.ALGORITHME__RESSOURCE,
 				AlgorithmeFactory.eINSTANCE.createRessource()));
-
-		newChildDescriptors.add(createChildParameter(AlgorithmePackage.Literals.ALGORITHME__DOCUMENTATION,
-				AlgorithmeFactory.eINSTANCE.createDocumentation()));
 	}
 
 }
