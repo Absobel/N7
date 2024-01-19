@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="script" version="12.0.0.2017041100">
+  <ownedViewpoints name="scriptViewpoint" modelFileExtension="script">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ScriptDiagram" domainClass="script::Script" enablePopupBars="true">
+      <metamodel href="http://script.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="OperationBinaireNode" domainClass="script::OperationBinaire">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:operateur" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="OperationUnaireNode" domainClass="script::OperationUnaire">
+          <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="feature:fonction" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="InputNode" domainClass="script::Input">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ConstanteNode" domainClass="script::Constante">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelExpression="feature:valeur" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="OutputNode" domainClass="script::Output">
+          <style xsi:type="style:LozengeNodeDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="OperationBinaireToInputLink" sourceMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']" targetMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']" targetFinderExpression="feature:inputs">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OperationBinaireToOutputLink" sourceMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']" targetMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']" targetFinderExpression="feature:output">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OperationsUnaireToInputLink" sourceMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationUnaireNode']" targetMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']" targetFinderExpression="feature:inputs">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OperationUnaireToOutputLink" sourceMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationUnaireNode']" targetMapping="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode'] //@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']" targetFinderExpression="feature:output">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="NodeCreationSection">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="InputCreation" nodeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']">
+            <variable name="script::Script"/>
+            <viewVariable name="ScriptDiagram"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression=" [container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Input" referenceName="initialInputs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ConstanteCreation" nodeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode']">
+            <variable name="script::Script"/>
+            <viewVariable name="ScriptDiagram"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Constante" referenceName="initialInputs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OperationBinaireCreation" nodeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']">
+            <variable name="script::Script"/>
+            <viewVariable name="ScriptDiagram"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::OperationBinaire" referenceName="operation"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OperationUnaireCreation" nodeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationUnaireNode']">
+            <variable name="script::Script"/>
+            <viewVariable name="ScriptDiagram"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::OperationUnaire" referenceName="operation"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="FinalOutputCreation" nodeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']">
+            <variable name="script::Script"/>
+            <viewVariable name="ScriptDiagram"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Output" referenceName="finalOutputs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="LinkCreationSection">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OperationBinaireToInputLinkCreation" edgeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression=" [self/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::OperationBinaire" referenceName="inputs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="operation" valueExpression="[source/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="inputs" valueExpression="[target/]"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="operation" valueExpression="[source/]"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="inputs" valueExpression="[target/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OperationBinaireToOutputLinkCreation" edgeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToOutputLink']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[since/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OperationUnaireToInputLinkCreation" edgeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationsUnaireToInputLink']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[target/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[source/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OperationUnaireToOutputLinkCreation" edgeMappings="//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationUnaireToOutputLink']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance">
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[target/]"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" valueExpression="[target/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="script.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

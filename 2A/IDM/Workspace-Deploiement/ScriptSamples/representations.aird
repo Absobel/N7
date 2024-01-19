@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:script.ecore="http://script.ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_1JSvQLVMEe6A-ub_T0uMKQ" selectedViews="_-pU7ELVMEe6A-ub_T0uMKQ" version="15.2.0.202303281325">
+    <semanticResources>ExempleModeleScript.script</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_-pU7ELVMEe6A-ub_T0uMKQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="__b61oLVMEe6A-ub_T0uMKQ" name="new ScriptDiagram" repPath="#__bxEoLVMEe6A-ub_T0uMKQ" changeId="1705510144671">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']"/>
+        <target xmi:type="script.ecore:Script" href="ExempleModeleScript.script#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="__bxEoLVMEe6A-ub_T0uMKQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="__cKtQLVMEe6A-ub_T0uMKQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="__cKtQbVMEe6A-ub_T0uMKQ" type="Sirius" element="__bxEoLVMEe6A-ub_T0uMKQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_JIMttbVNEe6A-ub_T0uMKQ" type="2001" element="_JHzFEbVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_JINUwLVNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_JINUwbVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J4x2ELVNEe6A-ub_T0uMKQ" type="3017" element="_J4apsrVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J4x2EbVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J4x2ErVNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_JIMttrVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JIMtt7VNEe6A-ub_T0uMKQ" x="30" y="213" width="111" height="76"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_JINUwrVNEe6A-ub_T0uMKQ" type="2001" element="_JHzFErVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_JINUxbVNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_JINUxrVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_J4x2E7VNEe6A-ub_T0uMKQ" type="3017" element="_J4aptLVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_J4x2FLVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_J4x2FbVNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_JINUw7VNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JINUxLVNEe6A-ub_T0uMKQ" x="25" y="73" width="121" height="76"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_W1nf8LVNEe6A-ub_T0uMKQ" type="2001" element="_W1PFdrVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_W1nf87VNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_W1nf9LVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_W1oHALVNEe6A-ub_T0uMKQ" type="3017" element="_W1QTkLVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_W1oHAbVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W1oHArVNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_W1nf8bVNEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_W1nf8rVNEe6A-ub_T0uMKQ" x="430" y="350" width="126" height="56"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k7ToQLVNEe6A-ub_T0uMKQ" type="2001" element="_k64KcLVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_k7ToQ7VNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_k7ToRLVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_k7UPUrVNEe6A-ub_T0uMKQ" type="3003" element="_k64KcbVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_k7UPU7VNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k7UPVLVNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k7ToQbVNEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k7ToQrVNEe6A-ub_T0uMKQ" x="240" y="140" width="91" height="71"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_k7ToRbVNEe6A-ub_T0uMKQ" type="2001" element="_k64Kc7VNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_k7UPULVNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_k7UPUbVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_k7UPVbVNEe6A-ub_T0uMKQ" type="3003" element="_k64KdLVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_k7UPVrVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k7UPV7VNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_k7ToRrVNEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_k7ToR7VNEe6A-ub_T0uMKQ" x="620" y="138" width="81" height="76"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_5qP8gLVNEe6A-ub_T0uMKQ" type="2001" element="_5p1FyLVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_5qP8g7VNEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5qP8hLVNEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5qQjkLVNEe6A-ub_T0uMKQ" type="3017" element="_5p1FybVNEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5qQjkbVNEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5qQjkrVNEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5qP8gbVNEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5qP8grVNEe6A-ub_T0uMKQ" x="420" y="148" width="116" height="56"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Csy-QLVSEe6A-ub_T0uMKQ" type="2001" element="_CsyXNLVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_CszlULVSEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_CszlUbVSEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_CszlUrVSEe6A-ub_T0uMKQ" type="3017" element="_CsyXNbVSEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_CszlU7VSEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CszlVLVSEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Csy-QbVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Csy-QrVSEe6A-ub_T0uMKQ" x="805" y="151" width="111" height="63"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_khPJILVSEe6A-ub_T0uMKQ" type="2001" element="_khH0ZrVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_khPJI7VSEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_khPJJLVSEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khPwN7VSEe6A-ub_T0uMKQ" type="3017" element="_khH0Z7VSEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_khPwOLVSEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwObVSEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_khPJIbVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPJIrVSEe6A-ub_T0uMKQ" x="165" y="475" width="91" height="51"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_khPJJbVSEe6A-ub_T0uMKQ" type="2001" element="_khH0b7VSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_khPwMLVSEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_khPwMbVSEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khPwOrVSEe6A-ub_T0uMKQ" type="3017" element="_khH0cLVSEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_khPwO7VSEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwPLVSEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_khPJJrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPJJ7VSEe6A-ub_T0uMKQ" x="775" y="460" width="106" height="58"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_khPwMrVSEe6A-ub_T0uMKQ" type="2001" element="_khHNVLVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_khPwNbVSEe6A-ub_T0uMKQ" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_khPwNrVSEe6A-ub_T0uMKQ" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khPwPbVSEe6A-ub_T0uMKQ" type="3003" element="_khH0YLVSEe6A-ub_T0uMKQ">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_khPwPrVSEe6A-ub_T0uMKQ" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwP7VSEe6A-ub_T0uMKQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_khPwM7VSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwNLVSEe6A-ub_T0uMKQ" x="460" y="470" width="76" height="46"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="__cKtQrVMEe6A-ub_T0uMKQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="_uGS0ULVREe6A-ub_T0uMKQ" type="4001" element="_uF2vgLVREe6A-ub_T0uMKQ" source="_k7ToQLVNEe6A-ub_T0uMKQ" target="_5qP8gLVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_uGS0VLVREe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGS0VbVREe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_uGS0VrVREe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGS0V7VREe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_uGS0WLVREe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uGS0WbVREe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_uGS0UbVREe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_uGS0UrVREe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uGS0U7VREe6A-ub_T0uMKQ" points="[0, 0, -228, -36]$[170, 26, -58, -10]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uGS0WrVREe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uGS0W7VREe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_FwNE4LVSEe6A-ub_T0uMKQ" type="4001" element="_FvxnFLVSEe6A-ub_T0uMKQ" source="_k7ToRbVNEe6A-ub_T0uMKQ" target="_Csy-QLVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_FwNE5LVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FwNE5bVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FwNE5rVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FwNE57VSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FwNE6LVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FwNE6bVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_FwNE4bVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_FwNE4rVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FwNE47VSEe6A-ub_T0uMKQ" points="[0, 0, -209, 25]$[209, -25, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FwNE6rVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FwNE67VSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_P_yeULVSEe6A-ub_T0uMKQ" type="4001" element="_P_WZfrVSEe6A-ub_T0uMKQ" source="_k7ToQLVNEe6A-ub_T0uMKQ" target="_JINUwrVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_P_yeVLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_yeVbVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_yeVrVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_yeV7VSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_yeWLVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_yeWbVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_P_yeUbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_P_yeUrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P_yeU7VSEe6A-ub_T0uMKQ" points="[0, 0, 225, 29]$[-225, -29, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_yeWrVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_yeW7VSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_P_zFYLVSEe6A-ub_T0uMKQ" type="4001" element="_P_XAhLVSEe6A-ub_T0uMKQ" source="_k7ToQLVNEe6A-ub_T0uMKQ" target="_JIMttbVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_P_zFZLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zFZbVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_zFZrVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zFZ7VSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_zscLVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zscbVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_P_zFYbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_P_zFYrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P_zFY7VSEe6A-ub_T0uMKQ" points="[0, 0, 220, -111]$[-220, 111, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_zscrVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_zsc7VSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_P_zsdLVSEe6A-ub_T0uMKQ" type="4001" element="_P_XAibVSEe6A-ub_T0uMKQ" source="_k7ToRbVNEe6A-ub_T0uMKQ" target="_W1nf8LVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_P_zseLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zsebVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_zserVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zse7VSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_zsfLVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zsfbVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_P_zsdbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_P_zsdrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P_zsd7VSEe6A-ub_T0uMKQ" points="[0, 0, 127, -202]$[-110, 174, 17, -28]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_zsfrVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_zsf7VSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_P_zsgLVSEe6A-ub_T0uMKQ" type="4001" element="_P_XAjrVSEe6A-ub_T0uMKQ" source="_k7ToRbVNEe6A-ub_T0uMKQ" target="_5qP8gLVNEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_P_zshLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_zshbVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_zshrVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_0TgLVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_P_0TgbVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P_0TgrVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_P_zsgbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_P_zsgrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_P_zsg7VSEe6A-ub_T0uMKQ" points="[0, 0, 142, 0]$[-84, 0, 58, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_0Tg7VSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_P_0ThLVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_khPwQLVSEe6A-ub_T0uMKQ" type="4001" element="_khIbhrVSEe6A-ub_T0uMKQ" source="_khPwMrVSEe6A-ub_T0uMKQ" target="_khPJILVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_khPwRLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwRbVSEe6A-ub_T0uMKQ" x="1" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khPwRrVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwR7VSEe6A-ub_T0uMKQ" x="5" y="-3"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_khPwSLVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_khPwSbVSEe6A-ub_T0uMKQ" x="6" y="-2"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_khPwQbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_khPwQrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_khPwQ7VSEe6A-ub_T0uMKQ" points="[-15, 0, 280, -5]$[-219, 3, 76, -2]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_khQXQLVSEe6A-ub_T0uMKQ" id="(0.19736842105263158,0.32608695652173914)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_khQXQbVSEe6A-ub_T0uMKQ" id="(0.16483516483516483,0.29411764705882354)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_pxapULVSEe6A-ub_T0uMKQ" type="4001" element="_pw9WZLVSEe6A-ub_T0uMKQ" source="_khPwMrVSEe6A-ub_T0uMKQ" target="_khPJJbVSEe6A-ub_T0uMKQ">
+          <children xmi:type="notation:Node" xmi:id="_pxbQYLVSEe6A-ub_T0uMKQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pxbQYbVSEe6A-ub_T0uMKQ" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_pxbQYrVSEe6A-ub_T0uMKQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pxbQY7VSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_pxbQZLVSEe6A-ub_T0uMKQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pxbQZbVSEe6A-ub_T0uMKQ" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_pxapUbVSEe6A-ub_T0uMKQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_pxapUrVSEe6A-ub_T0uMKQ" fontName="Segoe UI" fontHeight="12"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pxapU7VSEe6A-ub_T0uMKQ" points="[38, -4, -259, 22]$[297, -26, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pxbQZrVSEe6A-ub_T0uMKQ" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pxbQZ7VSEe6A-ub_T0uMKQ" id="(0.42924528301886794,0.5603448275862069)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="__cO-sLVMEe6A-ub_T0uMKQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="__cPlwLVMEe6A-ub_T0uMKQ"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JHzFEbVNEe6A-ub_T0uMKQ" name="minimum" incomingEdges="_P_XAhLVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.1"/>
+      <semanticElements xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_J4apsrVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_JHzFErVNEe6A-ub_T0uMKQ" name="maximum" incomingEdges="_P_WZfrVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.2"/>
+      <semanticElements xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_J4aptLVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_khH0ZrVSEe6A-ub_T0uMKQ" name="positif" incomingEdges="_khIbhrVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.3"/>
+      <semanticElements xmi:type="script.ecore:Input" href="ExempleModeleScript.script#//@initialInputs.3"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_khH0Z7VSEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='InputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_W1PFdrVNEe6A-ub_T0uMKQ" name="2.0" incomingEdges="_P_XAibVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Constante" href="ExempleModeleScript.script#//@initialInputs.0"/>
+      <semanticElements xmi:type="script.ecore:Constante" href="ExempleModeleScript.script#//@initialInputs.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_W1QTkLVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="204,242,166">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='ConstanteNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_k64KcLVNEe6A-ub_T0uMKQ" name="ADD" outgoingEdges="_uF2vgLVREe6A-ub_T0uMKQ _P_WZfrVSEe6A-ub_T0uMKQ _P_XAhLVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.0"/>
+      <semanticElements xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_k64KcbVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="252,233,79">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_k64Kc7VNEe6A-ub_T0uMKQ" name="DIV" outgoingEdges="_FvxnFLVSEe6A-ub_T0uMKQ _P_XAibVSEe6A-ub_T0uMKQ _P_XAjrVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.1"/>
+      <semanticElements xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_k64KdLVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="252,233,79">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationBinaireNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_5p1FyLVNEe6A-ub_T0uMKQ" name="AddOutput" incomingEdges="_uF2vgLVREe6A-ub_T0uMKQ _P_XAjrVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.0/@output"/>
+      <semanticElements xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.0/@output"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_5p1FybVNEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_CsyXNLVSEe6A-ub_T0uMKQ" name="DivOutput" incomingEdges="_FvxnFLVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.1/@output"/>
+      <semanticElements xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.1/@output"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_CsyXNbVSEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_khH0b7VSEe6A-ub_T0uMKQ" name="negatif" incomingEdges="_pw9WZLVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.2/@output"/>
+      <semanticElements xmi:type="script.ecore:Output" href="ExempleModeleScript.script#//@operation.2/@output"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Lozenge" uid="_khH0cLVSEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="246,139,139">
+        <description xmi:type="style:LozengeNodeDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OutputNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_uF2vgLVREe6A-ub_T0uMKQ" sourceNode="_k64KcLVNEe6A-ub_T0uMKQ" targetNode="_5p1FyLVNEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_uF2vgbVREe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToOutputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_uF2vgrVREe6A-ub_T0uMKQ" labelSize="12" labelColor="246,139,139"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToOutputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_FvxnFLVSEe6A-ub_T0uMKQ" sourceNode="_k64Kc7VNEe6A-ub_T0uMKQ" targetNode="_CsyXNLVSEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_FvxnFbVSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToOutputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_FvxnFrVSEe6A-ub_T0uMKQ" labelSize="12" labelColor="246,139,139"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToOutputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_P_WZfrVSEe6A-ub_T0uMKQ" sourceNode="_k64KcLVNEe6A-ub_T0uMKQ" targetNode="_JHzFErVNEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_P_XAgLVSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_P_XAgbVSEe6A-ub_T0uMKQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_P_XAhLVSEe6A-ub_T0uMKQ" sourceNode="_k64KcLVNEe6A-ub_T0uMKQ" targetNode="_JHzFEbVNEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_P_XAhbVSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_P_XAhrVSEe6A-ub_T0uMKQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_P_XAibVSEe6A-ub_T0uMKQ" sourceNode="_k64Kc7VNEe6A-ub_T0uMKQ" targetNode="_W1PFdrVNEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_P_XAirVSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_P_XAi7VSEe6A-ub_T0uMKQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_P_XAjrVSEe6A-ub_T0uMKQ" sourceNode="_k64Kc7VNEe6A-ub_T0uMKQ" targetNode="_5p1FyLVNEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationBinaire" href="ExempleModeleScript.script#//@operation.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_P_XAj7VSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_P_XAkLVSEe6A-ub_T0uMKQ" labelSize="12"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationBinaireToInputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_khHNVLVSEe6A-ub_T0uMKQ" name="OPP" outgoingEdges="_khIbhrVSEe6A-ub_T0uMKQ _pw9WZLVSEe6A-ub_T0uMKQ" width="3" height="3" resizeKind="NSEW">
+      <target xmi:type="script.ecore:OperationUnaire" href="ExempleModeleScript.script#//@operation.2"/>
+      <semanticElements xmi:type="script.ecore:OperationUnaire" href="ExempleModeleScript.script#//@operation.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_khH0YLVSEe6A-ub_T0uMKQ" labelSize="12" labelPosition="node" color="252,175,62">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationUnaireNode']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='OperationUnaireNode']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_khIbhrVSEe6A-ub_T0uMKQ" sourceNode="_khHNVLVSEe6A-ub_T0uMKQ" targetNode="_khH0ZrVSEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationUnaire" href="ExempleModeleScript.script#//@operation.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_khIbh7VSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationsUnaireToInputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_khIbiLVSEe6A-ub_T0uMKQ" labelSize="12" labelColor="204,242,166"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationsUnaireToInputLink']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_pw9WZLVSEe6A-ub_T0uMKQ" sourceNode="_khHNVLVSEe6A-ub_T0uMKQ" targetNode="_khH0b7VSEe6A-ub_T0uMKQ">
+      <target xmi:type="script.ecore:OperationUnaire" href="ExempleModeleScript.script#//@operation.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_pw9WZbVSEe6A-ub_T0uMKQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationUnaireToOutputLink']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_pw9WZrVSEe6A-ub_T0uMKQ" labelSize="12" labelColor="246,139,139"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='OperationUnaireToOutputLink']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="__b19ILVMEe6A-ub_T0uMKQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/script.design/description/script.odesign#//@ownedViewpoints[name='scriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer"/>
+    <target xmi:type="script.ecore:Script" href="ExempleModeleScript.script#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
