@@ -3,9 +3,12 @@
   <initialInputs xsi:type="script.ecore:Constante" valeur="2.0"/>
   <initialInputs xsi:type="script.ecore:Input" name="minimum"/>
   <initialInputs xsi:type="script.ecore:Input" name="maximum"/>
+  <initialInputs xsi:type="script.ecore:Input" name="positf"/>
   <operation xsi:type="script.ecore:OperationBinaire" inputs="//@initialInputs.2 //@initialInputs.1">
     <output name="AddOutput"/>
   </operation>
   <operation xsi:type="script.ecore:OperationBinaire" inputs="//@initialInputs.0 //@operation.0/@output" operateur="DIV"/>
+  <operation xsi:type="script.ecore:OperationUnaire" inputs="//@initialInputs.3"/>
   <finalOutputs name="DivOutput"/>
+  <finalOutputs name="negatif"/>
 </script.ecore:Script>

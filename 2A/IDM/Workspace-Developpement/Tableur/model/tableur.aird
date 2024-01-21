@@ -6,6 +6,7 @@
     <semanticResources>tableur.genmodel</semanticResources>
     <semanticResources>platform:/resource/algorithme/model/algorithme.genmodel</semanticResources>
     <semanticResources>tableur.ocl</semanticResources>
+    <semanticResources>platform:/resource/script/model/script.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_B9DwALR5Ee6xUO3KlTyjlw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_B9NhAbR5Ee6xUO3KlTyjlw" name="tableur" repPath="#_B9MS4LR5Ee6xUO3KlTyjlw" changeId="1705480540260">

@@ -1,0 +1,40 @@
+Tableur NomDuTableur {
+	Table Table1 {
+		ColonneInput A1
+		ColonneInput A2
+		ColonneOutput A3 {
+			Operation Addition A1 A2
+		}
+		ColonneOutput A4 {
+			Operation Oppose A3 
+		}
+	}
+	Catalogue Catalogue1 {
+		Algorithme Algo1 {
+			Entrees {
+				x : int
+				y : int
+			}
+			Sorties {
+				resultat : int
+			}
+			Documentation "Documentation de cet algorithme"
+			Ressource "C:/Desktop/2A/IDM/script.py"
+		}
+	}
+	Script Script1 {
+		Entrees {
+			minimum : float
+			maximum : float
+		}
+		Sorties {
+			resultat : float
+		}
+		Calcul {
+			Div(Add(minimum,maximum), Const(2))
+		}
+	}
+}
+
+
+

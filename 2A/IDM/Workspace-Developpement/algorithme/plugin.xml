@@ -22,4 +22,12 @@
             genModel="model/algorithme.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated algorithme -->
+      <package
+            uri="http://script.ecore"
+            class="script.ScriptPackage"
+            genModel="model/algorithme.genmodel"/>
+   </extension>
+
 </plugin>

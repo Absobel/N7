@@ -19,6 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import script.Script;
+
 import tableur.ColonneInput;
 import tableur.ColonneOutput;
 
@@ -33,6 +35,7 @@ import tableur.ColonneOutput;
  *   <li>{@link algorithme.impl.RessourceImpl#getFile <em>File</em>}</li>
  *   <li>{@link algorithme.impl.RessourceImpl#getStdin <em>Stdin</em>}</li>
  *   <li>{@link algorithme.impl.RessourceImpl#getStdout <em>Stdout</em>}</li>
+ *   <li>{@link algorithme.impl.RessourceImpl#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,6 +80,16 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 	 * @ordered
 	 */
 	protected ColonneOutput stdout;
+
+	/**
+	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScript()
+	 * @generated
+	 * @ordered
+	 */
+	protected Script script;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,6 +195,48 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 	 * @generated
 	 */
 	@Override
+	public Script getScript() {
+		if (script != null && script.eIsProxy()) {
+			InternalEObject oldScript = (InternalEObject) script;
+			script = (Script) eResolveProxy(oldScript);
+			if (script != oldScript) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AlgorithmePackage.RESSOURCE__SCRIPT,
+							oldScript, script));
+			}
+		}
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Script basicGetScript() {
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setScript(Script newScript) {
+		Script oldScript = script;
+		script = newScript;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmePackage.RESSOURCE__SCRIPT, oldScript,
+					script));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case AlgorithmePackage.RESSOURCE__FILE:
@@ -192,6 +247,10 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 			if (resolve)
 				return getStdout();
 			return basicGetStdout();
+		case AlgorithmePackage.RESSOURCE__SCRIPT:
+			if (resolve)
+				return getScript();
+			return basicGetScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -215,6 +274,9 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 		case AlgorithmePackage.RESSOURCE__STDOUT:
 			setStdout((ColonneOutput) newValue);
 			return;
+		case AlgorithmePackage.RESSOURCE__SCRIPT:
+			setScript((Script) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -236,6 +298,9 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 		case AlgorithmePackage.RESSOURCE__STDOUT:
 			setStdout((ColonneOutput) null);
 			return;
+		case AlgorithmePackage.RESSOURCE__SCRIPT:
+			setScript((Script) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +319,8 @@ public class RessourceImpl extends MinimalEObjectImpl.Container implements Resso
 			return stdin != null && !stdin.isEmpty();
 		case AlgorithmePackage.RESSOURCE__STDOUT:
 			return stdout != null;
+		case AlgorithmePackage.RESSOURCE__SCRIPT:
+			return script != null;
 		}
 		return super.eIsSet(featureID);
 	}

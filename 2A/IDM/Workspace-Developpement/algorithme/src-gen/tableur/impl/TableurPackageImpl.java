@@ -14,6 +14,10 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import script.ScriptPackage;
+
+import script.impl.ScriptPackageImpl;
+
 import tableur.Colonne;
 import tableur.ColonneInput;
 import tableur.ColonneOutput;
@@ -159,14 +163,20 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		AlgorithmePackageImpl theAlgorithmePackage = (AlgorithmePackageImpl) (registeredPackage instanceof AlgorithmePackageImpl
 				? registeredPackage
 				: AlgorithmePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
+		ScriptPackageImpl theScriptPackage = (ScriptPackageImpl) (registeredPackage instanceof ScriptPackageImpl
+				? registeredPackage
+				: ScriptPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theTableurPackage.createPackageContents();
 		theAlgorithmePackage.createPackageContents();
+		theScriptPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTableurPackage.initializePackageContents();
 		theAlgorithmePackage.initializePackageContents();
+		theScriptPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTableurPackage.freeze();
@@ -214,6 +224,16 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 	@Override
 	public EReference getTableur_Catalogues() {
 		return (EReference) tableurEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTableur_Scripts() {
+		return (EReference) tableurEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -420,6 +440,7 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		createEAttribute(tableurEClass, TABLEUR__NAME);
 		createEReference(tableurEClass, TABLEUR__TABLE);
 		createEReference(tableurEClass, TABLEUR__CATALOGUES);
+		createEReference(tableurEClass, TABLEUR__SCRIPTS);
 
 		tableEClass = createEClass(TABLE);
 		createEAttribute(tableEClass, TABLE__NAME);
@@ -475,6 +496,7 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		// Obtain other dependent packages
 		AlgorithmePackage theAlgorithmePackage = (AlgorithmePackage) EPackage.Registry.INSTANCE
 				.getEPackage(AlgorithmePackage.eNS_URI);
+		ScriptPackage theScriptPackage = (ScriptPackage) EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -496,6 +518,9 @@ public class TableurPackageImpl extends EPackageImpl implements TableurPackage {
 		initEReference(getTableur_Catalogues(), theAlgorithmePackage.getCatalogue(), null, "catalogues", null, 0, -1,
 				Tableur.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTableur_Scripts(), theScriptPackage.getScript(), null, "scripts", null, 0, -1, Tableur.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT,

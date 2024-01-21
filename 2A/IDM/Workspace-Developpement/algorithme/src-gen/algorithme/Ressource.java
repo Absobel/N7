@@ -6,6 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import script.Script;
+
 import tableur.ColonneInput;
 import tableur.ColonneOutput;
 
@@ -21,6 +23,7 @@ import tableur.ColonneOutput;
  *   <li>{@link algorithme.Ressource#getFile <em>File</em>}</li>
  *   <li>{@link algorithme.Ressource#getStdin <em>Stdin</em>}</li>
  *   <li>{@link algorithme.Ressource#getStdout <em>Stdout</em>}</li>
+ *   <li>{@link algorithme.Ressource#getScript <em>Script</em>}</li>
  * </ul>
  *
  * @see algorithme.AlgorithmePackage#getRessource()
@@ -83,5 +86,27 @@ public interface Ressource extends EObject {
 	 * @generated
 	 */
 	void setStdout(ColonneOutput value);
+
+	/**
+	 * Returns the value of the '<em><b>Script</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Script</em>' reference.
+	 * @see #setScript(Script)
+	 * @see algorithme.AlgorithmePackage#getRessource_Script()
+	 * @model
+	 * @generated
+	 */
+	Script getScript();
+
+	/**
+	 * Sets the value of the '{@link algorithme.Ressource#getScript <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' reference.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(Script value);
 
 } // Ressource

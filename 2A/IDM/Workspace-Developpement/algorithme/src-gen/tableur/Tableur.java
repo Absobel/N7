@@ -8,6 +8,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import script.Script;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tableur</b></em>'.
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link tableur.Tableur#getName <em>Name</em>}</li>
  *   <li>{@link tableur.Tableur#getTable <em>Table</em>}</li>
  *   <li>{@link tableur.Tableur#getCatalogues <em>Catalogues</em>}</li>
+ *   <li>{@link tableur.Tableur#getScripts <em>Scripts</em>}</li>
  * </ul>
  *
  * @see tableur.TableurPackage#getTableur()
@@ -72,5 +75,17 @@ public interface Tableur extends EObject {
 	 * @generated
 	 */
 	EList<Catalogue> getCatalogues();
+
+	/**
+	 * Returns the value of the '<em><b>Scripts</b></em>' containment reference list.
+	 * The list contents are of type {@link script.Script}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scripts</em>' containment reference list.
+	 * @see tableur.TableurPackage#getTableur_Scripts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Script> getScripts();
 
 } // Tableur

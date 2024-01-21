@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import script.Script;
+
 import tableur.Table;
 import tableur.Tableur;
 import tableur.TableurPackage;
@@ -35,6 +37,7 @@ import tableur.TableurPackage;
  *   <li>{@link tableur.impl.TableurImpl#getName <em>Name</em>}</li>
  *   <li>{@link tableur.impl.TableurImpl#getTable <em>Table</em>}</li>
  *   <li>{@link tableur.impl.TableurImpl#getCatalogues <em>Catalogues</em>}</li>
+ *   <li>{@link tableur.impl.TableurImpl#getScripts <em>Scripts</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,6 +82,16 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	 * @ordered
 	 */
 	protected EList<Catalogue> catalogues;
+
+	/**
+	 * The cached value of the '{@link #getScripts() <em>Scripts</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScripts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Script> scripts;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,12 +168,27 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 	 * @generated
 	 */
 	@Override
+	public EList<Script> getScripts() {
+		if (scripts == null) {
+			scripts = new EObjectContainmentEList<Script>(Script.class, this, TableurPackage.TABLEUR__SCRIPTS);
+		}
+		return scripts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case TableurPackage.TABLEUR__TABLE:
 			return ((InternalEList<?>) getTable()).basicRemove(otherEnd, msgs);
 		case TableurPackage.TABLEUR__CATALOGUES:
 			return ((InternalEList<?>) getCatalogues()).basicRemove(otherEnd, msgs);
+		case TableurPackage.TABLEUR__SCRIPTS:
+			return ((InternalEList<?>) getScripts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,6 +207,8 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 			return getTable();
 		case TableurPackage.TABLEUR__CATALOGUES:
 			return getCatalogues();
+		case TableurPackage.TABLEUR__SCRIPTS:
+			return getScripts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,6 +233,10 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 			getCatalogues().clear();
 			getCatalogues().addAll((Collection<? extends Catalogue>) newValue);
 			return;
+		case TableurPackage.TABLEUR__SCRIPTS:
+			getScripts().clear();
+			getScripts().addAll((Collection<? extends Script>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -224,6 +258,9 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 		case TableurPackage.TABLEUR__CATALOGUES:
 			getCatalogues().clear();
 			return;
+		case TableurPackage.TABLEUR__SCRIPTS:
+			getScripts().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,6 +279,8 @@ public class TableurImpl extends MinimalEObjectImpl.Container implements Tableur
 			return table != null && !table.isEmpty();
 		case TableurPackage.TABLEUR__CATALOGUES:
 			return catalogues != null && !catalogues.isEmpty();
+		case TableurPackage.TABLEUR__SCRIPTS:
+			return scripts != null && !scripts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

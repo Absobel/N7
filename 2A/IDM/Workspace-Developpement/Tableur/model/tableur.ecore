@@ -7,6 +7,8 @@
         eType="#//Table" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="catalogues" upperBound="-1"
         eType="ecore:EClass ../../algorithme/model/algorithme.ecore#//Catalogue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scripts" upperBound="-1"
+        eType="ecore:EClass ../../script/model/script.ecore#//Script" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -10,6 +10,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: algorithme.provider,
+ script.provider,
  tableur.provider
 Require-Bundle: org.eclipse.core.runtime,
  algorithme;visibility:=reexport,

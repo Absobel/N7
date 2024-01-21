@@ -157,6 +157,8 @@ import algorithme.provider.AlgorithmeItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import script.provider.ScriptItemProviderAdapterFactory;
+
 import tableur.provider.TableurItemProviderAdapterFactory;
 
 /**
@@ -689,6 +691,7 @@ public class AlgorithmeEditor extends MultiPageEditorPart
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AlgorithmeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TableurItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ScriptItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

@@ -17,6 +17,10 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import script.ScriptPackage;
+
+import script.impl.ScriptPackageImpl;
+
 import tableur.TableurPackage;
 
 import tableur.impl.TableurPackageImpl;
@@ -118,14 +122,20 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		TableurPackageImpl theTableurPackage = (TableurPackageImpl) (registeredPackage instanceof TableurPackageImpl
 				? registeredPackage
 				: TableurPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
+		ScriptPackageImpl theScriptPackage = (ScriptPackageImpl) (registeredPackage instanceof ScriptPackageImpl
+				? registeredPackage
+				: ScriptPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAlgorithmePackage.createPackageContents();
 		theTableurPackage.createPackageContents();
+		theScriptPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAlgorithmePackage.initializePackageContents();
 		theTableurPackage.initializePackageContents();
+		theScriptPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAlgorithmePackage.freeze();
@@ -261,6 +271,16 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 	 * @generated
 	 */
 	@Override
+	public EReference getRessource_Script() {
+		return (EReference) ressourceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getDocumentation() {
 		return documentationEClass;
 	}
@@ -320,6 +340,7 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		createEAttribute(ressourceEClass, RESSOURCE__FILE);
 		createEReference(ressourceEClass, RESSOURCE__STDIN);
 		createEReference(ressourceEClass, RESSOURCE__STDOUT);
+		createEReference(ressourceEClass, RESSOURCE__SCRIPT);
 
 		documentationEClass = createEClass(DOCUMENTATION);
 		createEAttribute(documentationEClass, DOCUMENTATION__DESCRIPTION);
@@ -352,6 +373,7 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		// Obtain other dependent packages
 		TableurPackage theTableurPackage = (TableurPackage) EPackage.Registry.INSTANCE
 				.getEPackage(TableurPackage.eNS_URI);
+		ScriptPackage theScriptPackage = (ScriptPackage) EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -393,6 +415,9 @@ public class AlgorithmePackageImpl extends EPackageImpl implements AlgorithmePac
 		initEReference(getRessource_Stdout(), theTableurPackage.getColonneOutput(), null, "stdout", null, 1, 1,
 				Ressource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRessource_Script(), theScriptPackage.getScript(), null, "script", null, 0, 1, Ressource.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(documentationEClass, Documentation.class, "Documentation", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

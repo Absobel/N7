@@ -223,13 +223,22 @@ public interface AlgorithmePackage extends EPackage {
 	int RESSOURCE__STDOUT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Script</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESSOURCE__SCRIPT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Ressource</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESSOURCE_FEATURE_COUNT = 3;
+	int RESSOURCE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Ressource</em>' class.
@@ -406,6 +415,17 @@ public interface AlgorithmePackage extends EPackage {
 	EReference getRessource_Stdout();
 
 	/**
+	 * Returns the meta object for the reference '{@link algorithme.Ressource#getScript <em>Script</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Script</em>'.
+	 * @see algorithme.Ressource#getScript()
+	 * @see #getRessource()
+	 * @generated
+	 */
+	EReference getRessource_Script();
+
+	/**
 	 * Returns the meta object for class '{@link algorithme.Documentation <em>Documentation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -552,6 +572,14 @@ public interface AlgorithmePackage extends EPackage {
 		 * @generated
 		 */
 		EReference RESSOURCE__STDOUT = eINSTANCE.getRessource_Stdout();
+
+		/**
+		 * The meta object literal for the '<em><b>Script</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RESSOURCE__SCRIPT = eINSTANCE.getRessource_Script();
 
 		/**
 		 * The meta object literal for the '{@link algorithme.impl.DocumentationImpl <em>Documentation</em>}' class.

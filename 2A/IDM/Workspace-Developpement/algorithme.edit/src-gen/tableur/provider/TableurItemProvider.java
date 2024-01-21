@@ -27,6 +27,8 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import script.ScriptFactory;
+
 import tableur.Tableur;
 import tableur.TableurFactory;
 import tableur.TableurPackage;
@@ -110,6 +112,7 @@ public class TableurItemProvider extends ItemProviderAdapter implements IEditing
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TableurPackage.Literals.TABLEUR__TABLE);
 			childrenFeatures.add(TableurPackage.Literals.TABLEUR__CATALOGUES);
+			childrenFeatures.add(TableurPackage.Literals.TABLEUR__SCRIPTS);
 		}
 		return childrenFeatures;
 	}
@@ -178,6 +181,7 @@ public class TableurItemProvider extends ItemProviderAdapter implements IEditing
 			return;
 		case TableurPackage.TABLEUR__TABLE:
 		case TableurPackage.TABLEUR__CATALOGUES:
+		case TableurPackage.TABLEUR__SCRIPTS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -200,6 +204,9 @@ public class TableurItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(createChildParameter(TableurPackage.Literals.TABLEUR__CATALOGUES,
 				AlgorithmeFactory.eINSTANCE.createCatalogue()));
+
+		newChildDescriptors.add(
+				createChildParameter(TableurPackage.Literals.TABLEUR__SCRIPTS, ScriptFactory.eINSTANCE.createScript()));
 	}
 
 	/**

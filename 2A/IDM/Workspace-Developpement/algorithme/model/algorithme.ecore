@@ -19,6 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stdin" upperBound="2" eType="ecore:EClass ../../Tableur/model/tableur.ecore#//ColonneInput"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stdout" lowerBound="1"
         eType="ecore:EClass ../../Tableur/model/tableur.ecore#//ColonneOutput"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="script" eType="ecore:EClass ../../script/model/script.ecore#//Script"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Documentation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

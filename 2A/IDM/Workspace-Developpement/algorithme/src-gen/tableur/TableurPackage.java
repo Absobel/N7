@@ -95,13 +95,22 @@ public interface TableurPackage extends EPackage {
 	int TABLEUR__CATALOGUES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Scripts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLEUR__SCRIPTS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Tableur</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLEUR_FEATURE_COUNT = 3;
+	int TABLEUR_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Tableur</em>' class.
@@ -462,6 +471,17 @@ public interface TableurPackage extends EPackage {
 	EReference getTableur_Catalogues();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link tableur.Tableur#getScripts <em>Scripts</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Scripts</em>'.
+	 * @see tableur.Tableur#getScripts()
+	 * @see #getTableur()
+	 * @generated
+	 */
+	EReference getTableur_Scripts();
+
+	/**
 	 * Returns the meta object for class '{@link tableur.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -695,6 +715,14 @@ public interface TableurPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TABLEUR__CATALOGUES = eINSTANCE.getTableur_Catalogues();
+
+		/**
+		 * The meta object literal for the '<em><b>Scripts</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLEUR__SCRIPTS = eINSTANCE.getTableur_Scripts();
 
 		/**
 		 * The meta object literal for the '{@link tableur.impl.TableImpl <em>Table</em>}' class.

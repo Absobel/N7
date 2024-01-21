@@ -56,6 +56,7 @@ public class RessourceItemProvider extends ItemProviderAdapter implements IEditi
 			addFilePropertyDescriptor(object);
 			addStdinPropertyDescriptor(object);
 			addStdoutPropertyDescriptor(object);
+			addScriptPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -104,6 +105,21 @@ public class RessourceItemProvider extends ItemProviderAdapter implements IEditi
 						getString("_UI_PropertyDescriptor_description", "_UI_Ressource_stdout_feature",
 								"_UI_Ressource_type"),
 						AlgorithmePackage.Literals.RESSOURCE__STDOUT, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Script feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScriptPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Ressource_script_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Ressource_script_feature",
+								"_UI_Ressource_type"),
+						AlgorithmePackage.Literals.RESSOURCE__SCRIPT, true, false, true, null, null, null));
 	}
 
 	/**

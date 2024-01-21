@@ -11,6 +11,9 @@ Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: algorithme,
  algorithme.impl,
  algorithme.util,
+ script,
+ script.impl,
+ script.util,
  tableur,
  tableur.impl,
  tableur.util

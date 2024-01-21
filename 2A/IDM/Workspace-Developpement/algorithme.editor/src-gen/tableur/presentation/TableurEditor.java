@@ -161,6 +161,8 @@ import algorithme.provider.AlgorithmeItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
+import script.provider.ScriptItemProviderAdapterFactory;
+
 /**
  * This is an example of a Tableur model editor.
  * <!-- begin-user-doc -->
@@ -691,6 +693,7 @@ public class TableurEditor extends MultiPageEditorPart
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AlgorithmeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TableurItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ScriptItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.
