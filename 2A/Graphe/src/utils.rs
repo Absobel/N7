@@ -46,7 +46,9 @@ pub struct SatResult<T>(pub T, pub T, pub T);
 
 impl<T> SatResult<T> {
     pub fn apply_enum_range(&self, f: impl Fn(usize, &T)) {
-        f(20, &self.0); f(40, &self.1); f(60, &self.2);
+        f(20, &self.0);
+        f(40, &self.1);
+        f(60, &self.2);
     }
 }
 

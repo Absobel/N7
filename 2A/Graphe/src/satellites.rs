@@ -95,7 +95,6 @@ impl Satellites {
                     plot_60k_iter.push(path_element);
                     graph_60k.add_edge(node_indices[i], node_indices[j], ());
                     graph_60k.add_edge(node_indices[j], node_indices[i], ());
-
                 }
             }
         }

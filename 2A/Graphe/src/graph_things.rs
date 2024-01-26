@@ -41,8 +41,14 @@ fn clustering_coefficient_distrib(graph: &Graph<(), ()>) -> Vec<f64> {
 }
 
 fn connected_components(graph: &Graph<(), ()>) -> (usize, Vec<usize>) {
-    let components = tarjan_scc(graph).into_iter().filter(|v| v.len() > 1).collect::<Vec<Vec<NodeIndex>>>();
-    (components.len(), components.iter().map(|c| c.len()).collect())
+    let components = tarjan_scc(graph)
+        .into_iter()
+        .filter(|v| v.len() > 1)
+        .collect::<Vec<Vec<NodeIndex>>>();
+    (
+        components.len(),
+        components.iter().map(|c| c.len()).collect(),
+    )
 }
 
 impl SatAnalysis {
