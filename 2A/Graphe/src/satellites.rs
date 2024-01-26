@@ -1,8 +1,7 @@
-use std::vec;
-
 use anyhow::Result;
 use petgraph::Graph;
 use plotters::{coord::Shift, prelude::*};
+use std::{collections::HashMap, vec};
 
 use crate::utils::*;
 
@@ -87,12 +86,16 @@ impl Satellites {
                 if distance <= 20_000.0 {
                     plot_20k_iter.push(path_element);
                     graph_20k.add_edge(node_indices[i], node_indices[j], ());
+                    graph_20k.add_edge(node_indices[j], node_indices[i], ());
                 } else if distance <= 40_000.0 {
                     plot_40k_iter.push(path_element);
                     graph_40k.add_edge(node_indices[i], node_indices[j], ());
+                    graph_40k.add_edge(node_indices[j], node_indices[i], ());
                 } else if distance <= 60_000.0 {
                     plot_60k_iter.push(path_element);
                     graph_60k.add_edge(node_indices[i], node_indices[j], ());
+                    graph_60k.add_edge(node_indices[j], node_indices[i], ());
+
                 }
             }
         }
@@ -141,4 +144,173 @@ pub struct SatAnalysis {
     pub graph_20k: Graph<(), ()>,
     pub graph_40k: Graph<(), ()>,
     pub graph_60k: Graph<(), ()>,
+}
+
+impl SatAnalysis {
+    pub fn histogram_degree_distrib(
+        &self,
+        data: SatResult<Vec<usize>>,
+        image_name: &str,
+    ) -> Result<String> {
+        let path = &image_name_to_path(image_name);
+        let root_area = BitMapBackend::new(&path, (WIDTH, HEIGHT)).into_drawing_area();
+        root_area.fill(&WHITE)?;
+        let root_area = root_area.margin(MARGIN_TOP, MARGIN_BOTTOM, MARGIN_LEFT, MARGIN_RIGHT);
+        let upper_area = root_area.clone().shrink(
+            (WIDTH_DE_FACTO / 4, 0),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let lower_left_area = root_area.clone().shrink(
+            (0, HEIGHT_DE_FACTO / 2),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let lower_right_area = root_area.shrink(
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let areas = (upper_area, lower_left_area, lower_right_area);
+
+        let draw = |area: &DrawingArea<BitMapBackend<'_>, Shift>,
+                    data: Vec<usize>,
+                    caption|
+         -> Result<()> {
+            let x_spec = (0..data.iter().max().unwrap() + 1).into_segmented();
+            let percentage_max = (data
+                .iter()
+                .fold(HashMap::new(), |mut acc, &val| {
+                    *acc.entry(val).or_insert(0) += 1;
+                    acc
+                })
+                .values()
+                .max()
+                .unwrap_or(&0)
+                * 100
+                / data.len())
+                / 2
+                * 2
+                + 2;
+
+            let mut chart_builder = ChartBuilder::on(area);
+            chart_builder
+                .margin(5)
+                .caption(format!("{image_name} : {caption}"), ("Times New Roman", 30))
+                .set_left_and_bottom_label_area_size(20);
+            let mut chart_context =
+                chart_builder.build_cartesian_2d(x_spec, 0f64..percentage_max as f64 / 100.0)?;
+            chart_context
+                .configure_mesh()
+                .y_label_formatter(&|y| format!("{:.1}%", y * 100.0))
+                .draw()
+                .unwrap();
+            chart_context.draw_series(
+                Histogram::vertical(&chart_context)
+                    .margin(0)
+                    .data(data.iter().map(|&x| (x, 1.0 / data.len() as f64)))
+                    .style_func(|v, _| {
+                        if let SegmentValue::Exact(x) = v {
+                            if x % 2 == 0 {
+                                RED.filled()
+                            } else {
+                                RGBColor(200, 0, 0).filled()
+                            }
+                        } else {
+                            RED.filled()
+                        }
+                    }),
+            )?;
+            Ok(())
+        };
+
+        draw(&areas.0, data.0, "20k")?;
+        draw(&areas.1, data.1, "40k")?;
+        draw(&areas.2, data.2, "60k")?;
+
+        Ok(path.clone())
+    }
+
+    pub fn histogram_coeff_clustering(
+        &self,
+        data: SatResult<Vec<f64>>,
+        image_name: &str,
+    ) -> Result<String> {
+        let path = &image_name_to_path(image_name);
+        let root_area = BitMapBackend::new(&path, (WIDTH, HEIGHT)).into_drawing_area();
+        root_area.fill(&WHITE)?;
+        let root_area = root_area.margin(MARGIN_TOP, MARGIN_BOTTOM, MARGIN_LEFT, MARGIN_RIGHT);
+        let upper_area = root_area.clone().shrink(
+            (WIDTH_DE_FACTO / 4, 0),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let lower_left_area = root_area.clone().shrink(
+            (0, HEIGHT_DE_FACTO / 2),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let lower_right_area = root_area.shrink(
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+            (WIDTH_DE_FACTO / 2, HEIGHT_DE_FACTO / 2),
+        );
+        let areas = (upper_area, lower_left_area, lower_right_area);
+
+        let draw =
+            |area: &DrawingArea<BitMapBackend<'_>, Shift>, data: Vec<f64>, caption| -> Result<()> {
+                let data = data
+                    .iter()
+                    .map(|&x| (x * 100.0) as usize)
+                    .collect::<Vec<_>>();
+                let x_spec = (0..data.iter().max().unwrap() + 1).into_segmented();
+                let percentage_max = (data
+                    .iter()
+                    .fold(HashMap::new(), |mut acc, &val| {
+                        *acc.entry(val).or_insert(0) += 1;
+                        acc
+                    })
+                    .values()
+                    .max()
+                    .unwrap_or(&0)
+                    * 100
+                    / data.len())
+                    / 2
+                    * 2
+                    + 2;
+
+                let mut chart_builder = ChartBuilder::on(area);
+                chart_builder
+                    .margin(5)
+                    .caption(format!("{image_name} : {caption}"), ("Times New Roman", 30))
+                    .set_left_and_bottom_label_area_size(20);
+                let mut chart_context = chart_builder
+                    .build_cartesian_2d(x_spec, 0f64..percentage_max as f64 / 100.0)?;
+                chart_context
+                    .configure_mesh()
+                    .x_label_formatter(&|v| match v {
+                        SegmentValue::CenterOf(x) => format!("{:.1}", *x as f64 / 100.0),
+                        _ => format!("{:?}", v),
+                    })
+                    .y_label_formatter(&|y| format!("{:.1}%", y * 100.0))
+                    .draw()
+                    .unwrap();
+                chart_context.draw_series(
+                    Histogram::vertical(&chart_context)
+                        .margin(0)
+                        .data(data.iter().map(|&x| (x, 1.0 / data.len() as f64)))
+                        .style_func(|v, _| match v {
+                            SegmentValue::Exact(x) => {
+                                if x % 2 == 0 {
+                                    RED.filled()
+                                } else {
+                                    RGBColor(200, 0, 0).filled()
+                                }
+                            }
+                            _ => unreachable!(),
+                        }),
+                )?;
+                Ok(())
+            };
+
+        draw(&areas.0, data.0, "20k")?;
+        draw(&areas.1, data.1, "40k")?;
+        draw(&areas.2, data.2, "60k")?;
+
+        Ok(path.clone())
+    }
 }

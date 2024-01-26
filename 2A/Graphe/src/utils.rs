@@ -2,8 +2,14 @@ use std::{fmt::Debug, fs, process::Command};
 
 use crate::satellites::Point;
 
-pub const WIDTH: u32 = 1920;
-pub const HEIGHT: u32 = 1080;
+pub const WIDTH: u32 = 1600;
+pub const HEIGHT: u32 = 900;
+pub const MARGIN_TOP: u32 = 0;
+pub const MARGIN_BOTTOM: u32 = 0;
+pub const MARGIN_LEFT: u32 = 20;
+pub const MARGIN_RIGHT: u32 = 0;
+pub const HEIGHT_DE_FACTO: u32 = HEIGHT - MARGIN_TOP - MARGIN_BOTTOM;
+pub const WIDTH_DE_FACTO: u32 = WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 
 pub fn open_image(path: &str) {
     Command::new("feh")
@@ -36,16 +42,40 @@ pub fn min_max_ranges_points(
     (min_x..max_x, min_y..max_y, min_z..max_z)
 }
 
-pub fn print_all_range_res<T: Debug>(t: (T, T, T)) {
-    println!("20k : {:?}", t.0);
-    println!("40k : {:?}", t.1);
-    println!("60k : {:?}", t.2);
+pub struct SatResult<T>(pub T, pub T, pub T);
+
+impl<T> SatResult<T> {
+    pub fn apply_enum_range(&self, f: impl Fn(usize, &T)) {
+        f(20, &self.0); f(40, &self.1); f(60, &self.2);
+    }
 }
 
-pub fn apply_all_ranges_enum<T>(t: (T, T, T), f: impl Fn(usize, T)) {
-    f(0, t.0);
-    f(1, t.1);
-    f(2, t.2);
+impl<T: Debug> SatResult<T> {
+    pub fn print_all_range_res(&self) {
+        println!("20k : {:?}", self.0);
+        println!("40k : {:?}", self.1);
+        println!("60k : {:?}", self.2);
+    }
+}
+
+impl SatResult<Vec<usize>> {
+    pub fn avg(&self) -> SatResult<f64> {
+        SatResult(
+            self.0.iter().sum::<usize>() as f64 / self.0.len() as f64,
+            self.1.iter().sum::<usize>() as f64 / self.1.len() as f64,
+            self.2.iter().sum::<usize>() as f64 / self.2.len() as f64,
+        )
+    }
+}
+
+impl SatResult<Vec<f64>> {
+    pub fn avg(&self) -> SatResult<f64> {
+        SatResult(
+            self.0.iter().sum::<f64>() / self.0.len() as f64,
+            self.1.iter().sum::<f64>() / self.1.len() as f64,
+            self.2.iter().sum::<f64>() / self.2.len() as f64,
+        )
+    }
 }
 
 pub fn fname_from_path(path: &str) -> String {
