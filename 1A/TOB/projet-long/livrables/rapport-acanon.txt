@@ -1,0 +1,7 @@
+ Tout d'abord, nous avons utilisé l'outil Gradle pour gérer les dépendances de manière simple et efficace, permettant à chaque membre du groupe de lancer directement le jeu avec une seule commande.
+
+Ensuite, nous avons opté pour la librairie LibGDX en raison de sa prise en main rapide, de la facilité de développement multiplateforme et de ses bonnes performances, ce qui favorisera notre progression tout au long du projet.
+
+Conformément à ce qui avait été prévu, nous avons adopté une vue isométrique. J'ai mis en place la structure de base en écrivant le code permettant d'afficher cette vue à partir d'un array à deux dimensions représentant la ville (sol, bâtiments, décor, etc).
+
+Enfin, j'ai ajouté quelques commandes, telles que le déplacement de la caméra, le zoom, la pose et la suppression de blocs.
