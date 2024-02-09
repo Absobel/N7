@@ -1,0 +1,55 @@
+Author : Absobel
+
+Groupe TP : H
+
+Les « ... » indiquent les endroits à compléter.
+
+=====[ Temps passé ]============================================================
+
+Ces informations de temps sont demandées à titre indicatif et ne sont pas
+prises en compte dans la notation du projet.
+
+
+* Temps passé sur la V1 : ... heures ... minutes
+* Temps passé sur la V2 : ... heures ... minutes
+
+Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
+
+
+=====[ Questions ]==============================================================
+
+--------------------------------------------------------------------------------
+Pourquoi l'exception OperationInterditeException ne peut pas être définie
+comme vérifiée par le compilateur ?
+--------------------------------------------------------------------------------
+
+Elle ne peut pas être vérifiée par le compilateur car sinon il faudrait mettre des blocs try/catch autour de chaque fonction renvoyant cette erreur (ou la propager).
+
+--------------------------------------------------------------------------------
+Expliquer ce qu'il faut faire pour ajouter un nouveau niveau de jeu, par
+exemple la stratégie lente (C13).  Pour plus de précision, on numérotera
+les étapes à faire.
+--------------------------------------------------------------------------------
+
+1. Créez une nouvelle classe qui implémente l'interface Strategie, par exemple, StrategieLente.
+2. Dans cette nouvelle classe, implémentez la méthode jouer() en fonction des règles de la stratégie lente.
+3. Ajoutez cette nouvelle stratégie dans la liste des stratégies disponibles pour les joueurs. Par exemple, modifiez la méthode qui récupère les différentes stratégies pour y inclure StrategieLente.
+
+--------------------------------------------------------------------------------
+Expliquer ce qui permet, dans votre conception, de changer dynamiquement
+(en cours d'exécution du programme) la stratégie d'un joueur (C14).
+--------------------------------------------------------------------------------
+
+Dans notre conception, chaque joueur possède une référence à un objet de type Strategie qui définit la stratégie actuelle du joueur. Pour changer dynamiquement la stratégie d'un joueur, il suffit de remplacer cette référence par une nouvelle instance d'une autre classe qui implémente l'interface StrategieJeu. Par exemple, si un joueur utilise actuellement la stratégie rapide et souhaite passer à la stratégie lente, il suffit d'instancier la classe StrategieLente et de la définir comme la nouvelle stratégie du joueur.
+
+
+=====[ Explications ]===========================================================
+
+--------------------------------------------------------------------------------
+Donner ici les explications supplémentaires utiles à la compréhension du
+travail rendu.
+--------------------------------------------------------------------------------
+
+J'ai essayé de résoudre un maximum de problème levé par le retour de la V1 mais je n'ai pas réussi à faire une bonne implémentation du proxy donc j'ai laissé le code qui au moins fonctionne. 
+
+--------------------------------------------------------------------------------
