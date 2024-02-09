@@ -1,0 +1,5 @@
+Au cours de cette itération, j'ai concentré mes efforts sur l'implémentation de la fonctionnalité de sauvegarde du jeu en format JSON. Cependant, j'ai rencontré des difficultés majeures dues à la structuration initiale du code qui n'était pas optimale pour cette tâche.
+
+J'ai passé une grande partie de l'itération à essayer de résoudre ce problème, mais malheureusement, je n'ai pas encore réussi à le faire fonctionner comme prévu. La complexité de la tâche était plus grande que prévu, principalement en raison de la nécessité de restructurer une grande partie du code pour permettre la sauvegarde en JSON. Cela a nécessité une compréhension approfondie de la structure actuelle du code et de la manière dont elle pourrait être modifiée pour permettre cette fonctionnalité.
+
+En plus de cela, j'ai effectué quelques restructurations mineures du code dans d'autres parties du projet. Ces modifications étaient nécessaires pour améliorer la lisibilité et l'efficacité du code, et pour préparer le terrain pour les fonctionnalités à venir.

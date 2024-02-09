@@ -1,0 +1,44 @@
+Coût des bâtiments:
+
+Maison: -prix 300 
+        -Eau 5
+        -Electricité 5
+        -Loyer 60
+        -bonheur 5
+        -habitants 5
+        
+immeuble: -prix 1000 
+        -Eau 10
+        -Electricité 10
+        -Loyer 400
+        -bonheur -5
+        -habitants 25        
+        
+ecole:  -prix 300 
+        -Eau 5
+        -Electricité 5
+        -Loyer 60
+        -bonheur 5
+        -habitants 10
+        
+        
+centrale: -prix 200 
+        -Eau 0
+        -Electricité 50
+        -Loyer 0
+        -bonheur -5
+        -habitants -5
+        
+pompe à eau: -prix 200 
+             -Eau 50
+            -Electricité 0
+            -Loyer 0
+            -bonheur -5 
+            -habitants -5
+            
+décoration: -prix 20 
+             -Eau 0
+            -Electricité 0
+            -Loyer 10
+            -bonheur 5 
+        
