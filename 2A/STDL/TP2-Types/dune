@@ -4,8 +4,11 @@
  (modules parser))
 
 ; Pour générer l'exécutable dans _build/default
-; (executable
-;  (name Main))
+(executable
+ (name Main)
+ (modules Main)
+ (libraries tests))
+
 
 ; Pour exécuter automatiquement les tests
 (library
@@ -13,4 +16,5 @@
 (modules :standard \ Main)
 (inline_tests)
 (preprocess
- (pps ppx_inline_test))) 
+ (pps ppx_inline_test)))
+
