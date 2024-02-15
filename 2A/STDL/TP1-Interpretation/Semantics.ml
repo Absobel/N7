@@ -44,7 +44,7 @@ let rec string_of_env env =
 (* ======================================================== *)
 and string_of_value value =
   match value with
-  | (FrozenValue (expr,env)) -> ((string_of_ast expr) ^ (string_of_env env))
+  | (FrozenValue (expr,env)) -> ((string_of_ast expr) ^ "|" ^ (string_of_env env))
   | (IntegerValue value) -> (string_of_int value)
   | (BooleanValue value) -> (if (value) then "true" else "false")
   | (ErrorValue error) -> (string_of_error error)
@@ -97,7 +97,7 @@ let rec value_of_expr expr env =
   | (IfthenelseNode (cond,bthen,belse)) -> ruleIf env cond bthen belse
   | (FunctionNode (_,_)) -> ruleFunction env expr
   | (CallNode (fexpr,pexpr)) -> ruleCallByValue env fexpr pexpr
-  (*| (CallNode (fexpr,pexpr)) -> ruleCallByName env fexpr pexpr *)
+  (* | (CallNode (fexpr,pexpr)) -> ruleCallByName env fexpr pexpr *)
   | (LetrecNode (ident,bvalue,bin)) -> ruleLetrec env ident bvalue bin
   (* Partie Impérative : à compléter *)
   | _ -> ErrorValue UndefinedExpressionError (* les expressions avec effets de bord *)
@@ -233,7 +233,28 @@ let rec value_of_expr expr env =
     (* ruleCallByName : environment -> ast -> ast -> valueType *)
     (* Fonction d'évaluation d'un appel de fonction avec passage de paramètre par nom*)
     ruleCallByName _env _fexpr _pexpr =
-    (* A compléter *)
+    (* print_endline ("fexpr : " ^ string_of_ast fexpr);
+    print_endline ("pexpr : " ^ string_of_ast pexpr);
+    let pvalue = FrozenValue (pexpr,env) in
+    print_endline ("pvalue : " ^ string_of_value pvalue);
+    let fun_call param body env = 
+      let nenv = (param,pvalue)::env in
+      print_endline ("nenv : " ^ string_of_env nenv);
+      print_endline ("body : " ^ string_of_ast body);
+      (value_of_expr body nenv) in
+    match pvalue with
+    | (ErrorValue _) as result -> result (* Propagation de l'erreur *)
+    | _ ->
+      match fexpr with
+       | FunctionNode (param, body) ->
+          fun_call param body env
+       | AccessNode name ->
+          (match (lookfor name env) with
+           | Found (FrozenValue (FunctionNode (param, body), fenv)) ->
+              fun_call param body (fenv @ env)
+           | Found _ -> (ErrorValue TypeMismatchError)
+           | NotFound -> ErrorValue (UnknownIdentError name))
+       | _ -> ErrorValue TypeMismatchError *)
     (ErrorValue UndefinedExpressionError)
 
   (* ========================================================*)
@@ -249,7 +270,6 @@ let rec value_of_expr expr env =
     match pvalue with
     | (ErrorValue _) as result -> result (* Propagation de l'erreur *)
     | _ ->
-      print_endline (string_of_ast fexpr);
       match fexpr with
        | FunctionNode (param, body) ->
           fun_call param body env
@@ -259,17 +279,17 @@ let rec value_of_expr expr env =
               fun_call param body (fenv @ env)
            | Found _ -> (ErrorValue TypeMismatchError)
            | NotFound -> ErrorValue (UnknownIdentError name))
-       | _ -> print_endline "Error: not a function"; 
-        ErrorValue TypeMismatchError
+       | _ -> ErrorValue TypeMismatchError
 
   (* ========================================================*)
   and
     (* ruleLetrec : environment -> string -> ast- > ast -> valueType *)
     (* Fonction d'évaluation d'un let rec*)
     (* "letrec ident = bvalue in bin" *)
-    ruleLetrec _env _ident _bvalue _bin =
-    (* A compléter *)
-    (ErrorValue UndefinedExpressionError)
+    ruleLetrec env ident bvalue bin =
+    let v = FrozenValue(LetrecNode(ident, bvalue, bvalue), env) in
+    let nenv = (ident,v)::env in
+    value_of_expr bin nenv
 
 
 
