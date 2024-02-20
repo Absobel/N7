@@ -280,8 +280,6 @@ let rec type_of_expr expr env =
     (* ..................................................................*)
     ruleLet env ident bvalue bin =
     let typeident = (type_of_expr bvalue env) in
-    (*    (print_endline ((string_of_ast bvalue) ^ " -> " ^ (string_of_type typeident)));
-    (print_endline ((string_of_ast bin))); *)
     (type_of_expr bin ((ident,typeident)::env))
 
   and
@@ -296,16 +294,23 @@ let rec type_of_expr expr env =
 
   and
     ruleFunction env par body =
-    let tparam = lookforEnv par env in
-    match tparam with
-    | NotFound -> ErrorType
-    | Found t -> 
-      let tbody = (type_of_expr body ((par,t)::env)) in
-      FunctionType (t,tbody)
+    let typevar = newVariable () in
+    let typebody = (type_of_expr body ((par,typevar)::env)) in
+    (FunctionType (typevar,typebody))
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleCall _env _fct _par = ErrorType
+    ruleCall env fct par = 
+    let typefct = (type_of_expr fct env) in
+    let typepar = (type_of_expr par env) in
+    let typevarp = newVariable () in
+    let typevarr = newVariable () in
+    let _,urf = unify typefct (FunctionType (typevarp,typevarr)) in
+    if (urf) then 
+      let _,urp = unify typepar typevarp in
+      if (urp) then typevarr else ErrorType
+    else
+      ErrorType
+
 
   and
     (* ..................................................................*)
@@ -323,24 +328,39 @@ let rec type_of_expr expr env =
     ruleUnit = UnitType
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleRef _env _expr = ErrorType
+    ruleRef env expr =
+    let texpr = (type_of_expr expr env) in
+    ReferenceType texpr
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleRead _env _expr = ErrorType
+    ruleRead env expr =
+    let typevar = newVariable () in
+    let texpr = (type_of_expr expr env) in
+    let _,ur = unify texpr (ReferenceType typevar) in
+    (if (ur) then typevar else ErrorType)
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleWrite _env _left _right = ErrorType
+    ruleWrite env left right =
+    let tleft = (type_of_expr left env) in
+    let typevar = newVariable () in
+    let tright = (type_of_expr right env) in
+    let _,url = unify tleft (ReferenceType typevar) in
+    let _,urr = unify tright typevar in
+    (if (url && urr) then UnitType else ErrorType)
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleSequence _env _left _right = ErrorType
+    ruleSequence env left right =
+    let tleft = (type_of_expr left env) in
+    let tright = (type_of_expr right env) in
+    let _,ur = unify tleft UnitType in
+    (if (ur) then tright else ErrorType)
 
   and
-    (* ...............A COMPLETER .......................................*)
-    ruleWhile _env _cond _body = ErrorType
+    ruleWhile env cond body =
+    let tcond = (type_of_expr cond env) in
+    let tbody = (type_of_expr body env) in
+    let _,ur = unify tcond BooleanType in
+    (if (ur) then tbody else ErrorType)
 
 (* ...........fin des regles d'inference..........................................*)
 ;;
