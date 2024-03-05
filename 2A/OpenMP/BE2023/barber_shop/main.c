@@ -66,22 +66,36 @@ int main(int argc, char **argv){
 void barber_shop_seq(int nbarbs, int nchairs){
 
   int barber, client, chair;
-  
-  barber = 0;
 
-  for(;;){
+  omp_lock_t *locks;
+  locks = (omp_lock_t*) malloc(nchairs*sizeof(omp_lock_t));
 
-    client = receive_client();
-
-    /* No more clients to serve */
-    if(client<0) break;
-    
-    chair = barber%nchairs;
-
-    serve_client(barber, client, chair);
-
+  for(int i=0; i<nchairs; i++){
+    omp_init_lock(locks+i);
   }
 
+  #pragma omp parallel num_threads(nbarbs) private(barber, client, chair)
+  {
+    barber = omp_get_thread_num();
+
+    for(;;){
+
+      #pragma omp critical
+      client = receive_client();
+
+      /* No more clients to serve */
+      if(client<0) break;
+      
+      chair = barber%nchairs;
+      omp_set_lock(locks+chair);
+      serve_client(barber, client, chair);
+      omp_unset_lock(locks+chair);
+    }
+  }
+
+  for(int i=0; i<nchairs; i++){
+    omp_destroy_lock(locks+i);
+  }
 }
 
 
@@ -112,21 +126,37 @@ void barber_shop_par_fixed(int nbarbs, int nchairs){
 void barber_shop_par_any(int nbarbs, int nchairs){
 
   int barber, client, chair;
-  
-  barber = 0;
+  omp_lock_t *locks;
 
-  for(;;){
+  locks = (omp_lock_t*) malloc(nchairs*sizeof(omp_lock_t));
 
-    client = receive_client();
-
-    /* No more clients to serve */
-    if(client<0) break;
-    
-    chair = barber%nchairs;
-
-    serve_client(barber, client, chair);
-
+  for(int i=0; i<nchairs; i++){
+    omp_init_lock(locks+i);
   }
 
+  #pragma omp parallel num_threads(nbarbs) private(barber, client, chair)
+  {
+    barber = omp_get_thread_num();
+    for(;;){
+
+      #pragma omp critical
+      client = receive_client();
+
+      /* No more clients to serve */
+      if(client<0) break;
+      
+      chair = 0;
+      while(!omp_test_lock(locks+chair)){
+        chair = (chair+1)%nchairs;
+      }
+
+      serve_client(barber, client, chair);
+      omp_unset_lock(locks+chair);
+    }
+  }
+
+  for(int i=0; i<nchairs; i++){
+    omp_destroy_lock(locks+i);
+  }
 }
 

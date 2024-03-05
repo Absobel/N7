@@ -84,6 +84,7 @@ void in_place_cast(long n, float *xs){
   /* make xd point to the xs array */
   xd = (double*)xs;
   
+  #pragma omp parallel forœ
   for(i=n-1; i>=0; i--){
     xd[i] = (double) xs[i];
   }
