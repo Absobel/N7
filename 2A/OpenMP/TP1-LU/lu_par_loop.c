@@ -17,7 +17,7 @@ void lu_par_loop(Matrix A, info_type info){
   for(i=0; i<info.NB; i++){
     
     /* Do the Panel operation on column i */
-    #pragma omp single
+    #pragma omp singlec
     panel(A[i], i, info);
 
     /* Parallelize this loop     */

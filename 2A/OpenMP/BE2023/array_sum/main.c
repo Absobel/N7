@@ -3,7 +3,7 @@
 #include <sys/time.h>
 #include <string.h>
 #include <math.h>
-#include "omp.h"
+#include <omp.h>
 #include "aux.h"
 
 double superfast_sum_par(long n, double *x);
@@ -56,9 +56,16 @@ int main(int argc, char **argv){
 double superfast_sum_par(long n, double *x){
 
   double sum;
-  
-  sum = superfast_sum(n, x);
-  
+  int i, b, iam, nth;
+#pragma omp parallel reduction(+:sum) private(i, b, iam, nth)
+  {
+    iam = omp_get_thread_num();
+    nth = omp_get_num_threads();
+    b = n/nth;
+    i = iam*b;
+
+    sum = superfast_sum(n, x+i);
+  }
   return sum;
   
 }
