@@ -104,29 +104,42 @@ void work(data_t *data, unsigned int *typecounts, int ndata, int ntype){
 
 
 
-
-
-void work_par_critical(data_t *data, unsigned int *typecounts, int ndata, int ntype){
+void work(data_t *data, unsigned int *typecounts, int ndata, int ntype){
   int i;
   
+  #pragma omp parallel for
   for(i=0; i<ndata; i++){
     
+    #pragma omp critical
     typecounts[analyze(data[i])]++;
     
   }
   return;
 }
 
-
-
+/* PAS CORRIGÉ */
 
 void work_par_locks(data_t *data, unsigned int *typecounts, int ndata, int ntype){
   int i;
-  
+  omp_lock_t *locks;
+
+  locks = (omp_lock_t*)malloc(ntype*sizeof(omp_lock_t));
+  for (i=0; i<ntype; i++){
+    omp_init_lock(locks+i);
+  }
+
+  #pragma omp parallel for private(i)
   for(i=0; i<ndata; i++){
-    
-    typecounts[analyze(data[i])]++;
-    
+    #pragma omp critical
+    {
+      omp_set_lock(locks+analyze(data[i]));
+      typecounts[analyze(data[i])]++;
+      omp_unset_lock(locks+analyze(data[i]));
+    }    
+  }
+
+  for (i=0; i<ntype; i++){
+    omp_destroy_lock(locks+i);
   }
   return;
 }
@@ -136,8 +149,10 @@ void work_par_locks(data_t *data, unsigned int *typecounts, int ndata, int ntype
 void work_par_atomic(data_t *data, unsigned int *typecounts, int ndata, int ntype){
   int i;
   
+  #pragma omp parallel for
   for(i=0; i<ndata; i++){
     
+    #pragma omp atomic update
     typecounts[analyze(data[i])]++;
     
   }
