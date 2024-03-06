@@ -8,6 +8,7 @@ import java.util.List;
 import fr.n7.stl.block.ast.instruction.Instruction;
 import fr.n7.stl.block.ast.scope.Declaration;
 import fr.n7.stl.block.ast.scope.HierarchicalScope;
+import fr.n7.stl.block.ast.scope.SymbolTable;
 import fr.n7.stl.tam.ast.Fragment;
 import fr.n7.stl.tam.ast.Register;
 import fr.n7.stl.tam.ast.TAMFactory;
@@ -57,7 +58,12 @@ public class Block {
 	 * allowed.
 	 */
 	public boolean collect(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics collect is undefined in Block.");
+		HierarchicalScope<Declaration> local = new SymbolTable(_scope);
+		boolean result = true;
+		for (Instruction instruction : this.instructions) {
+			result = result && instruction.collectAndBackwardResolve(local);
+		}
+		return result;
 	}
 	
 	/**
@@ -68,7 +74,7 @@ public class Block {
 	 * block have been previously defined.
 	 */
 	public boolean resolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics resolve is undefined in Block.");
+		return true;
 	}
 
 	/**

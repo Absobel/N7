@@ -41,7 +41,7 @@ public class Repetition implements Instruction {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics collect is undefined in Repetition.");
+		return this.condition.collectAndBackwardResolve(_scope) && this.body.collect(_scope);
 	}
 	
 	/* (non-Javadoc)
@@ -49,7 +49,7 @@ public class Repetition implements Instruction {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics resolve is undefined in Repetition.");
+		return true;
 	}
 
 	/* (non-Javadoc)
