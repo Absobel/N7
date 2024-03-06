@@ -35,14 +35,6 @@ public class VariableAssignment extends AbstractIdentifier implements Assignable
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		return true;
-	}
-	
-	/* (non-Javadoc)
-	 * @see fr.n7.stl.block.ast.expression.AbstractIdentifier#resolve(fr.n7.stl.block.ast.scope.HierarchicalScope)
-	 */
-	@Override
-	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
 		if (((HierarchicalScope<Declaration>)_scope).knows(this.name)) {
 			Declaration _declaration = _scope.get(this.name);
 			if (_declaration instanceof VariableDeclaration) {
@@ -56,6 +48,14 @@ public class VariableAssignment extends AbstractIdentifier implements Assignable
 			Logger.error("The identifier " + this.name + " has not been found.");
 			return false;	
 		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see fr.n7.stl.block.ast.expression.AbstractIdentifier#resolve(fr.n7.stl.block.ast.scope.HierarchicalScope)
+	 */
+	@Override
+	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
+		return true;
 	}
 	
 	/* (non-Javadoc)

@@ -50,7 +50,7 @@ public class Second implements Expression {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics collect undefined in Second.");
+		return this.target.collectAndBackwardResolve(_scope);
 
 	}
 
@@ -59,7 +59,7 @@ public class Second implements Expression {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics resolve undefined in Second.");
+		return true;
 	}
 
 	/* (non-Javadoc)
