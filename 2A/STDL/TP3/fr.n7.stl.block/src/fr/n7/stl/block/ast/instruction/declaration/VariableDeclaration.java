@@ -12,6 +12,7 @@ import fr.n7.stl.block.ast.type.Type;
 import fr.n7.stl.tam.ast.Fragment;
 import fr.n7.stl.tam.ast.Register;
 import fr.n7.stl.tam.ast.TAMFactory;
+import fr.n7.stl.util.Logger;
 
 /**
  * Abstract Syntax Tree node for a variable declaration instruction.
@@ -103,7 +104,13 @@ public class VariableDeclaration implements Declaration, Instruction {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics collect is undefined in VariableDeclaration.");
+		if (_scope.accepts(this)) {
+			_scope.register(this);
+			return this.value.collectAndBackwardResolve(_scope);
+		} else {
+			Logger.error("The name " + this.name + " is already used in this scope.");
+			return false;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -111,7 +118,7 @@ public class VariableDeclaration implements Declaration, Instruction {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics resolve is undefined in VariableDeclaration.");
+		return true;
 	}
 
 	/* (non-Javadoc)

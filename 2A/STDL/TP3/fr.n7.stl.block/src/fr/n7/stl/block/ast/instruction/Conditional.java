@@ -50,7 +50,7 @@ public class Conditional implements Instruction {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics collect is undefined in Conditional.");
+		return this.condition.collectAndBackwardResolve(_scope) && this.thenBranch.collect(_scope) && ((this.elseBranch != null)?(this.elseBranch.collect(_scope)):true);
 	}
 	
 	/* (non-Javadoc)
@@ -58,7 +58,7 @@ public class Conditional implements Instruction {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics resolve is undefined in Conditional.");
+		return true;
 	}
 
 	/* (non-Javadoc)

@@ -42,7 +42,7 @@ public class First implements Expression {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics collect undefined in First.");
+		return this.target.collectAndBackwardResolve(_scope);
 	}
 
 	/* (non-Javadoc)
@@ -50,7 +50,7 @@ public class First implements Expression {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException("Semantics resolve undefined in First.");
+		return true;
 	}
 	
 	/* (non-Javadoc)

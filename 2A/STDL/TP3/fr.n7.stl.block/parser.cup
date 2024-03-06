@@ -227,7 +227,7 @@ Type ::= Atomique:atomique
 			{: 
 				RESULT = new NamedType( nom ); 
 			:}
-				| UL_Inferieur Type:gauche UL_Virgule Type:droit UL_Superieur
+		| UL_Inferieur Type:gauche UL_Virgule Type:droit UL_Superieur
 			{:
 				RESULT = new CoupleType( gauche, droit );
 			:}
@@ -366,9 +366,17 @@ Instruction ::= Declaration:declaration
 				{: 
 					RESULT = new Conditional( condition, alors, sinon); 
 				:}
+			| UL_Si UL_Parenthese_Ouvrante Expression:condition UL_Parenthese_Fermante Bloc:alors
+				{:
+					RESULT = new Conditional( condition, alors);
+				:}
 			| UL_Retour Expression:expression UL_Point_Virgule
 				{:
 					RESULT = new Return( expression);
+				:}
+			| UL_Tant_Que UL_Parenthese_Ouvrante Expression:condition UL_Parenthese_Fermante Bloc:corps
+				{:
+					RESULT = new Repetition( condition, corps);
 				:}
 			;
 			
@@ -493,7 +501,7 @@ Expression ::= /* Affectable:affectable UL_Egal Expression:expression
 				:} 	
 			| UL_Second Expression:expression                 
              	{: 
-					RESULT = new Second( expression ); 
+					RESULT = new Second( expression );
 				:} 	
 			| Expression:expression UL_Crochet_Ouvrant Expression:indice UL_Crochet_Fermant
 				{:
