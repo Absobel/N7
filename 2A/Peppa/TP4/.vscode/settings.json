@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/usr/share/java/junit.jar"
+    ],
+    "java.project.outputPath": "bin"
+    
+}

@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "WebContent/WEB-INF/lib/*.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ],
+    "java.project.outputPath": "WebContent/WEB-INF/classes"
+}
