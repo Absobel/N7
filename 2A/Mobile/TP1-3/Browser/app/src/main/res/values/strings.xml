@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="edit_text">URL</string>
+    <string name="button">GO !</string>
+</resources>
