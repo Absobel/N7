@@ -6,6 +6,7 @@ package fr.n7.stl.block.ast.expression;
 import fr.n7.stl.block.ast.SemanticsUndefinedException;
 import fr.n7.stl.block.ast.scope.Declaration;
 import fr.n7.stl.block.ast.scope.HierarchicalScope;
+import fr.n7.stl.block.ast.type.CoupleType;
 import fr.n7.stl.block.ast.type.Type;
 import fr.n7.stl.tam.ast.Fragment;
 import fr.n7.stl.tam.ast.TAMFactory;
@@ -58,7 +59,12 @@ public class First implements Expression {
 	 */
 	@Override
 	public Type getType() {
-		throw new SemanticsUndefinedException("Semantics getType undefined in First.");
+		Type type = this.target.getType();
+		if (type instanceof CoupleType) {
+			return ((CoupleType) type).getFirst();
+		} else {
+			throw new Error("Type error in First : the target expression is not a couple.");	
+		}
 	}
 
 	/* (non-Javadoc)
