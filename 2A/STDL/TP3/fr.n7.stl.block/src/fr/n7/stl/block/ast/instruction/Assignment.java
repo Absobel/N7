@@ -72,7 +72,7 @@ public class Assignment implements Instruction, Expression {
 	 */
 	@Override
 	public boolean checkType() {
-		throw new SemanticsUndefinedException( "Semantics checkType is undefined in Assignment.");
+		return this.assignable.getType().compatibleWith(this.value.getType());
 	}
 	
 	/* (non-Javadoc)
