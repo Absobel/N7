@@ -32,5 +32,5 @@ eval $CMD_DB &
 
 if [ -n "$FLAG" ]; then
     ant db1
-    ant db2
+    #ant db2
 fi

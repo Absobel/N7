@@ -11,6 +11,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class Serv extends HttpServlet {
+    public static Facade facade = new Facade();
+
+    public Serv() {
+        super();
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String op = req.getParameter("op");
@@ -20,15 +26,16 @@ public class Serv extends HttpServlet {
                 break;
             case "lister":
                 resp.setContentType("text/html;charset=UTF-8");
-                HashMap<Personne, Set<Adresse>> assoc = Facade.lister();
+                HashMap<Personne, Set<Adresse>> assoc = facade.lister();
                 try(PrintWriter out = resp.getWriter()) {
                     if (assoc.isEmpty()) {
                         out.println("Aucune association");
                     } else {
+                        System.out.println(assoc); // DEBUG
                         for (Personne personne : assoc.keySet()) {
-                            out.println(personne.getNom() + " " + personne.getPrenom());
+                            out.println(personne.getNom() + " " + personne.getPrenom() + "<br>");
                             for (Adresse adresse : assoc.get(personne)) {
-                                out.println("  " + adresse.getRue() + " " + adresse.getVille());
+                                out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + adresse.getRue() + " " + adresse.getVille() + "<br>");
                             }
                         }
                     }
@@ -55,7 +62,7 @@ public class Serv extends HttpServlet {
                 String nom = req.getParameter("nom");
                 String prenom = req.getParameter("prenom");
                 if (nom != null && prenom != null) {
-                    Facade.ajoutPersonne(nom, prenom);
+                    facade.ajoutPersonne(nom, prenom);
                     req.getRequestDispatcher(".").forward(req, resp);
                 } else {
                     try(PrintWriter out = resp.getWriter()) {
@@ -67,7 +74,7 @@ public class Serv extends HttpServlet {
                 String rue = req.getParameter("rue");
                 String ville = req.getParameter("ville");
                 if (rue != null && ville != null) {
-                    Facade.ajoutAdresse(rue, ville);
+                    facade.ajoutAdresse(rue, ville);
                     req.getRequestDispatcher(".").forward(req, resp);
                 } else {
                     try(PrintWriter out = resp.getWriter()) {
@@ -79,7 +86,7 @@ public class Serv extends HttpServlet {
                 // if it errors it's a bug
                 int personneId = Integer.parseInt(req.getParameter("personneId"));
                 int adresseId = Integer.parseInt(req.getParameter("adresseId"));
-                Facade.associer(personneId, adresseId);
+                facade.associer(personneId, adresseId);
                 req.getRequestDispatcher(".").forward(req, resp);
                 break;
             default:

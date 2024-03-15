@@ -18,7 +18,7 @@ public class Serv extends HttpServlet {
             case "associer":
                 req.getRequestDispatcher("associer.jsp").forward(req, resp);
                 break;
-            case "lister":
+                case "lister":
                 resp.setContentType("text/html;charset=UTF-8");
                 HashMap<Personne, Set<Adresse>> assoc = Facade.lister();
                 try(PrintWriter out = resp.getWriter()) {
@@ -26,9 +26,9 @@ public class Serv extends HttpServlet {
                         out.println("Aucune association");
                     } else {
                         for (Personne personne : assoc.keySet()) {
-                            out.println(personne.getNom() + " " + personne.getPrenom());
+                            out.println(personne.getNom() + " " + personne.getPrenom() + "<br>");
                             for (Adresse adresse : assoc.get(personne)) {
-                                out.println("  " + adresse.getRue() + " " + adresse.getVille());
+                                out.println("&nbsp;&nbsp;&nbsp;&nbsp;" + adresse.getRue() + " " + adresse.getVille() + "<br>");
                             }
                         }
                     }

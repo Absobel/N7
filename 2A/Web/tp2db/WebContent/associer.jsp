@@ -10,7 +10,7 @@
         <input type="hidden" name="op" value="associer">
         Choisir la personne :<br>
         <%
-            List<Personne> pers = new ArrayList<>(Facade.listePersonnes());
+            List<Personne> pers = new ArrayList<>(Serv.facade.listePersonnes());
             if (pers.isEmpty()) {
         %>
         <label>Aucune personne inscrite</label><br>
@@ -29,7 +29,7 @@
 
         Choisir l'adresse :<br>
         <%
-            List<Adresse> adrs = new ArrayList<>(Facade.listeAdresses());
+            List<Adresse> adrs = new ArrayList<>(Serv.facade.listeAdresses());
             if (adrs.isEmpty()) {
         %>
         <label>Aucune adresse renseignée</label><br>
