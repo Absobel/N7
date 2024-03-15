@@ -29,6 +29,7 @@ public class Block {
 	 * Sequence of instructions contained in a block.
 	 */
 	protected List<Instruction> instructions;
+	protected HierarchicalScope<Declaration> newscope;
 
 	/**
 	 * Constructor for a block.
@@ -58,10 +59,10 @@ public class Block {
 	 * allowed.
 	 */
 	public boolean collect(HierarchicalScope<Declaration> _scope) {
-		HierarchicalScope<Declaration> local = new SymbolTable(_scope);
+		this.newscope = new SymbolTable(_scope);
 		boolean result = true;
 		for (Instruction instruction : this.instructions) {
-			result = result && instruction.collectAndBackwardResolve(local);
+			result = result && instruction.collectAndBackwardResolve(this.newscope);
 		}
 		return result;
 	}
@@ -74,7 +75,11 @@ public class Block {
 	 * block have been previously defined.
 	 */
 	public boolean resolve(HierarchicalScope<Declaration> _scope) {
-		return true;
+		boolean result = true;
+		for (Instruction instruction : this.instructions) {
+			result = result && instruction.fullResolve(this.newscope);
+		}
+		return result;
 	}
 
 	/**

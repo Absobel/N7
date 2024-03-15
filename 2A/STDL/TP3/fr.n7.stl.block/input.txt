@@ -1,5 +1,6 @@
 test {
-	int i = 1;
+	const int N = 10;
+	int i = 1 + N;
 	int j = 1;
 	while (i < 5) {
 		j = j * i;
@@ -18,4 +19,7 @@ test {
 
 	<int, int> p = <1, 2>;
 	print i + fst p + snd p;
+
+	typedef int T;
+	T x = 1;
 }

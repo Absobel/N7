@@ -12,6 +12,7 @@ import fr.n7.stl.block.ast.type.Type;
 import fr.n7.stl.tam.ast.Fragment;
 import fr.n7.stl.tam.ast.Register;
 import fr.n7.stl.tam.ast.TAMFactory;
+import fr.n7.stl.util.Logger;
 
 /**
  * Implementation of the Abstract Syntax Tree node for a constant declaration instruction.
@@ -83,7 +84,13 @@ public class ConstantDeclaration implements Instruction, Declaration {
 	 */
 	@Override
 	public boolean collectAndBackwardResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics collect is undefined in ConstantDeclaration.");
+		if (_scope.accepts(this)) {
+			_scope.register(this);
+			return this.value.collectAndBackwardResolve(_scope);
+		} else {
+			Logger.error("The name " + this.name + " is already used in this scope.");
+			return false;
+		}
 	}
 	
 	/* (non-Javadoc)
@@ -91,7 +98,7 @@ public class ConstantDeclaration implements Instruction, Declaration {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		throw new SemanticsUndefinedException( "Semantics resolve is undefined in ConstantDeclaration.");
+		return this.value.fullResolve(_scope);
 	}
 
 	/* (non-Javadoc)
@@ -99,7 +106,7 @@ public class ConstantDeclaration implements Instruction, Declaration {
 	 */
 	@Override
 	public boolean checkType() {
-		throw new SemanticsUndefinedException( "Semantics checkType is undefined in ConstantDeclaration.");
+		return this.type.compatibleWith(this.value.getType());
 	}
 
 	/* (non-Javadoc)
