@@ -118,7 +118,7 @@ public class VariableDeclaration implements Declaration, Instruction {
 	 */
 	@Override
 	public boolean fullResolve(HierarchicalScope<Declaration> _scope) {
-		return true;
+		return this.value.fullResolve(_scope);
 	}
 
 	/* (non-Javadoc)
@@ -126,6 +126,8 @@ public class VariableDeclaration implements Declaration, Instruction {
 	 */
 	@Override
 	public boolean checkType() {
+		System.out.println(this.type.toString() + " : " + this.type.getClass());
+		System.out.println(this.value.getType().toString() + " : " + this.value.getType().getClass());
 		return this.type.compatibleWith(this.value.getType());
 	}
 
