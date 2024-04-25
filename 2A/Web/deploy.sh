@@ -11,6 +11,6 @@ PROJECT_NAME=$(basename $(pwd))
 
 mkdir -p "build"
 mkdir -p "WebContent/WEB-INF/classes"
-javac -classpath "WebContent/WEB-INF/lib/*" src/pack/*.java -d "WebContent/WEB-INF/classes"
+javac -cp "WebContent/WEB-INF/lib/*:src" "src/pack/Serv.java" -d "WebContent/WEB-INF/classes"
 jar -cvf "build/$PROJECT_NAME.war" -C "WebContent/" .
 cp "build/$PROJECT_NAME.war" "/opt/wildfly/standalone/deployments/"

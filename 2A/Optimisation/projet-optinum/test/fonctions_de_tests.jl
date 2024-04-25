@@ -48,7 +48,6 @@ La première fonction de test
     fct1(x) = 2*(x[1]+x[2]+x[3]-3)^2 + (x[1]-x[2])^2 + (x[2]-x[3])^2
 
 """
-fct1(x) =  2*(x[1]+x[2]+x[3]-3)^2 + (x[1]-x[2])^2 + (x[2]-x[3])^2
 # la gradient de la fonction fct1
 function grad_fct1(x)
     y1 = 4*(x[1]+x[2]+x[3]-3) + 2*(x[1]-x[2])
