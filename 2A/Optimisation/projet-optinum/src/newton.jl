@@ -51,7 +51,7 @@ function newton(f::Function, gradf::Function, hessf::Function, x0::Union{Real,Ve
    nb_iters = 0
    xs = [x0]
 
-   if norm(gradf(x_sol)) <= max(tol_rel*norm(x0), tol_abs)
+   if norm(gradf(x_sol)) <= max(tol_rel*norm(gradf(x0)), tol_abs)
       flag = 0
       return x_sol, f_sol, flag, nb_iters, xs
    end
@@ -68,7 +68,7 @@ function newton(f::Function, gradf::Function, hessf::Function, x0::Union{Real,Ve
 
       nb_iters = k
 
-      if norm(gradf(x_sol)) <= max(tol_rel*norm(x0), tol_abs)
+      if norm(gradf(x_sol)) <= max(tol_rel*norm(gradf(x0)), tol_abs)
          flag = 0
          break
       elseif norm(x_sol - x_prev) < epsilon*max(tol_rel*norm(x_prev), tol_abs)
