@@ -60,9 +60,56 @@ function regions_de_confiance(f::Function, gradf::Function, hessf::Function, x0:
     #
     x_sol = x0
     f_sol = f(x_sol)
-    flag  = -1
+    flag  = 3
     nb_iters = 0
     xs = [x0] # vous pouvez faire xs = vcat(xs, [xk]) pour concaténer les valeurs
+    Δk = Δ0
+
+    if norm(gradf(x_sol)) <= max(tol_rel*norm(gradf(x0)), tol_abs)
+        flag = 0
+        return x_sol, f_sol, flag, nb_iters, xs
+    end
+
+    for k in 1:max_iter
+        x_prev = x_sol
+        f_prev = f_sol
+        
+        if algo_pas == "cauchy"
+            sk = cauchy(gradf(x_sol), hessf(x_sol), Δk, tol_abs=tol_abs)
+        elseif algo_pas == "gct"
+            sk = gct(gradf(x_sol), hessf(x_sol), Δk, max_iter=max_iter_gct, tol_abs=tol_abs, tol_rel=tol_rel)
+        end
+
+        function m(s)
+            return f(x_sol) + transpose(gradf(x_sol)) * s + 0.5 * transpose(s) * hessf(x_sol) * s
+        end
+
+        pk = (f(x_sol) - f(x_sol + sk)) / (m(zeros(length(sk))) - m(sk))
+
+        if pk >= η1
+            x_sol = x_sol + sk
+        end
+        if pk >= η2
+            Δk = min(γ2 * Δk, Δmax)
+        elseif pk < η1
+            Δk = γ1 * Δk
+        end
+
+        f_sol = f(x_sol)
+        xs = vcat(xs, [x_sol])
+        nb_iters = k
+
+        if norm(gradf(x_sol)) <= max(tol_rel*norm(gradf(x0)), tol_abs)
+            flag = 0
+            break
+         elseif x_prev != x_sol && norm(x_sol - x_prev) < epsilon*max(tol_rel*norm(x_prev), tol_abs)
+            flag = 1
+            break
+         elseif x_prev != x_sol && abs(f_sol - f_prev) < epsilon*max(tol_rel*norm(f_prev), tol_abs) 
+            flag = 2
+            break
+        end
+    end
 
     return x_sol, f_sol, flag, nb_iters, xs
 end
