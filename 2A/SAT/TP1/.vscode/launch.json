@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SimpleBooleanProblem",
+            "request": "launch",
+            "mainClass": "fr.n7.sat.SimpleBooleanProblem",
+            // change the path to your Z3 install if necessary
+            "vmArgs": "-Djava.library.path=lib"
+        },
+        {
+            "type": "java",
+            "name": "Sudoku",
+            "request": "launch",
+            "mainClass": "fr.n7.sat.Sudoku",
+            // change the path to your Z3 install if necessary
+            "vmArgs": "-Djava.library.path=lib"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            // change the path to your Z3 install if necessary
+            "vmArgs": "-Djava.library.path=lib"
+        }
+    ]
+}

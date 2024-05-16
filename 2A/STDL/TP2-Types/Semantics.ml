@@ -393,7 +393,7 @@ match v with
 
 and
 (* .............................................................................*)
-(*   ruleWhile : Ast.ast -> Ast.ast -> memory -> environment                 *)
+(*   ruled< : Ast.ast -> Ast.ast -> memory -> environment                 *)
 (*      -> (ValueType * memory)                                                 *)
 (* .............................................................................*)
 
