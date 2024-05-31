@@ -1,14 +1,11 @@
-# Le chemin vers Z3 est positionné vers un répertoire partagé.
-# Vous pouvez modifier cette variable d'environnement si vous
-# avez installé Z3 sur votre compte ou sur votre machine
-# personnelle.
-PATH_TO_Z3 = lib
+# Ce makefile a été modifié pour que ça mache strictement sur ma machine
 
 JAVAC = javac
-JAVA = LD_LIBRARY_PATH=$(PATH_TO_Z3) java
-CP_OPTS = -cp $$CLASSPATH:$(PATH_TO_Z3)/com.microsoft.z3.jar
+JAVA = java
+CP_OPTS = -cp $$CLASSPATH:lib/com.microsoft.z3.jar
 JAVAC_OPTS = $(CP_OPTS) -d classes
-JAVA_OPTS = $(CP_OPTS):./classes -Djava.library.path=$(PATH_TO_Z3)
+JAVA_OPTS = $(CP_OPTS):./classes
+
 SRC_DIR = src/fr/n7/sat
 
 _SRC_FILES = SimpleBooleanProblem.java Sudoku.java
