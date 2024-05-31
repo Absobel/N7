@@ -23,12 +23,31 @@ class Sudoku {
     // boolean values
     private ArrayList<BoolExpr> initValues;
 
+    public void XorArray(BoolExpr[] values) {
+        solver.add(context.mkOr(values));
+        for (int k1 = 0; k1 < values.length; k1++) {
+            for (int k2 = k1 + 1; k2 < values.length; k2++) {
+                solver.add(context.mkNot(context.mkAnd(values[k1], values[k2])));
+            }
+        }
+    }
+
     /**
      * This method should add existence constraints: each cell has
      * at least one value.
      */
     private void addExistenceConstraints() {
-      // TODO : to be implemented!
+        for (int i = 0; i < this.grid.length; i++) {
+            for (int j = 0; j < this.grid.length; j++) {
+                BoolExpr[] values = new BoolExpr[this.grid.length];
+
+                for (int k = 0; k < this.grid.length; k++) {
+                    values[k] = this.grid[i][j][k];
+                }
+
+                XorArray(values);
+            }
+        }
     }
 
     /**
@@ -36,7 +55,18 @@ class Sudoku {
      * appears exactly one time in each column.
      */
     private void addColumnConstraints() {
-      // TODO : to be implemented!
+        
+        for (int j = 0; j < this.grid.length; j++) {
+            for (int k = 0; k < this.grid.length; k++) {
+                BoolExpr[] values = new BoolExpr[this.grid.length];
+                
+                for (int i = 0; i < this.grid.length; i++) {
+                    values[i] = this.grid[i][j][k];
+                }
+
+                XorArray(values);
+            }
+        }
     }
 
     /**
@@ -44,7 +74,18 @@ class Sudoku {
      * appears exactly one time in each row.
      */
     private void addRowConstraints() {
-      // TODO : to be implemented!
+        
+        for (int i = 0; i < this.grid.length; i++) {
+            for (int k = 0; k < this.grid.length; k++) {
+                BoolExpr[] values = new BoolExpr[this.grid.length];
+                
+                for (int j = 0; j < this.grid.length; j++) {
+                    values[j] = this.grid[i][j][k];
+                }
+    
+                XorArray(values);
+            }
+        }
     }
 
     /**
@@ -52,7 +93,12 @@ class Sudoku {
      * appears exactly one time in each subgrid.
      */
     private void addSubGridsConstraints() {
-      // TODO : to be implemented!
+        int nb_subgrids = this.grid.length / 3;
+        for (int i = 0; i < this.grid.length; i += this.nInit) {
+            BoolExpr[] values = new BoolExpr[this.grid.length];
+            int is = i / this.nInit;
+            int js = i % this.nInit;    
+        }
     }
 
     /**
@@ -217,10 +263,12 @@ class Sudoku {
      *
      * If you use the Makefile, use the following command:
      *
-     * make run-sudoku SUDOKU_FILE=file_to_use
+     * make run-sudoku SUDOKU_FILE=file_to_use 
      */
-    public static void main(String[] args) throws OutOfBoundsException, IOException {
-        Sudoku            sudoku = Sudoku.loadSudoku(args[0]);
+    public static void main(String[] args) throws OutOfBoundsException, IOException, InterruptedException {
+        String selectedFile = "files/le-monde.csv";
+
+        Sudoku            sudoku = Sudoku.loadSudoku(selectedFile);
         InputStreamReader aux    = new InputStreamReader(System.in);
         BufferedReader    in     = new BufferedReader(aux);
 
