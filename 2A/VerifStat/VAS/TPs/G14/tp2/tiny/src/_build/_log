@@ -1,0 +1,53 @@
+### Starting build.
+# Target: main.ml.depends, tags: { extension:ml, file:main.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules main.ml > main.ml.depends
+# Target: analyze.mli.depends, tags: { extension:mli, file:analyze.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules analyze.mli > analyze.mli.depends
+# Target: compile.mli.depends, tags: { extension:mli, file:compile.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules compile.mli > compile.mli.depends
+# Target: report.mli.depends, tags: { extension:mli, file:report.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules report.mli > report.mli.depends
+# Target: location.mli.depends, tags: { extension:mli, file:location.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules location.mli > location.mli.depends
+# Target: location.cmi, tags: { byte, compile, extension:mli, file:location.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o location.cmi location.mli
+# Target: analyze.cmi, tags: { byte, compile, extension:mli, file:analyze.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o analyze.cmi analyze.mli
+# Target: compile.cmi, tags: { byte, compile, extension:mli, file:compile.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o compile.cmi compile.mli
+# Target: report.cmi, tags: { byte, compile, extension:mli, file:report.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o report.cmi report.mli
+# Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o main.cmo main.ml
+# Target: analyze.ml.depends, tags: { extension:ml, file:analyze.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules analyze.ml > analyze.ml.depends
+# Target: ast.ml.depends, tags: { extension:ml, file:ast.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules ast.ml > ast.ml.depends
+# Target: ast.mli.depends, tags: { extension:mli, file:ast.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules ast.mli > ast.mli.depends
+# Target: name.mli.depends, tags: { extension:mli, file:name.mli, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules name.mli > name.mli.depends
+# Target: name.cmi, tags: { byte, compile, extension:mli, file:name.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o name.cmi name.mli
+# Target: ast.cmi, tags: { byte, compile, extension:mli, file:ast.mli, interf, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o ast.cmi ast.mli
+# Target: location.ml.depends, tags: { extension:ml, file:location.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules location.ml > location.ml.depends
+# Target: name.ml.depends, tags: { extension:ml, file:name.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules name.ml > name.ml.depends
+# Target: location.cmx, tags: { compile, extension:cmx, extension:ml, file:location.cmx, file:location.ml, implem, native, ocaml, quiet, traverse }
+ocamlopt.opt -c -I domains -o location.cmx location.ml
+# Target: name.cmx, tags: { compile, extension:cmx, extension:ml, file:name.cmx, file:name.ml, implem, native, ocaml, quiet, traverse }
+ocamlopt.opt -c -I domains -o name.cmx name.ml
+# Target: domains/intervals.ml.depends, tags: { extension:ml, file:domains/intervals.ml, ocaml, ocamldep, quiet, traverse }
+ocamldep.opt -modules domains/intervals.ml > domains/intervals.ml.depends
+# Target: domains/intervals.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:domains/intervals.cmo, file:domains/intervals.ml, implem, ocaml, quiet, traverse }
+ocamlc.opt -c -I domains -o domains/intervals.cmo domains/intervals.ml
++ ocamlc.opt -c -I domains -o domains/intervals.cmo domains/intervals.ml
+File "domains/intervals.ml", line 58, characters 15-21:
+58 |   | Itv (cptx, (a, b)), Itv (cpty, (c, d)) ->
+                    ^^^^^^
+Error: This pattern matches values of type 'a * 'b
+       but a pattern was expected which matches values of type int option
+Command exited with code 2.
+# Compilation unsuccessful.
