@@ -13,8 +13,7 @@ public class Main {
         list.remove(2);
         System.out.println(list);
         
-        List<String> forbiddenMethods = new ArrayList<String>();
-        forbiddenMethods.addAll(List.of("add", "addAll", "remove", "removeAll"));
+        List<String> forbiddenMethods = List.of("add", "addAll", "remove", "removeAll");
         Proxy proxy = (Proxy) Proxy.newProxyInstance(
                 List.class.getClassLoader(),
                 new Class<?>[]{List.class},
@@ -24,7 +23,7 @@ public class Main {
         try {
             protectedList.add(11);
         } catch (Throwable e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         System.out.println(protectedList);
 
@@ -45,7 +44,7 @@ public class Main {
         try {
             protectedMap.clear();
         } catch (Throwable e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         System.out.println(protectedMap);
     }

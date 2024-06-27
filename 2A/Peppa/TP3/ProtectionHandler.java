@@ -15,7 +15,7 @@ public class ProtectionHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws IllegalAccessException, InvocationTargetException {
         if (forbiddenMethods.contains(method.getName())) {
-            throw new IllegalAccessException("Access denied");
+            throw new RuntimeException();
         }
         return method.invoke(obj, args);
     }
