@@ -1,0 +1,35 @@
+\section {Questions préliminaires}
+\begin{enumerate}
+    \item
+          À chaque noeud, le solveur va résoudre un problème d'optimisation sous contraintes.
+          Chaque valeur de  $x(i)$ est à priori binaire et indique si oui ou non l'objet est inclus dans le sac.
+          Cependant le solveur peut trouver une solution comportant un ou plusieurs $x(i)$ dont la valeur n'est pas binaire mais flottante.
+          C'est sur ce critère que l'algorithme se base pour créer les branches à partir d'un noeud.
+          Lorsqu'un résultat obtenu par un solveur sur un noeud de profondeur $i$ comporte une ou plusieurs valeurs non booléenne (notons les $x_{\lambda1},x_{\lambda2},...,x_{\lambda m})$ dans l'ordre lexicographique),
+          l'algorithme selectionne $x_{\lambda_1}$ car c'est le premier dans l'ordre lexicographique et
+          il créée deux noeuds de profondeur $i+1$ et une arrête possède la condition  $x_{\lambda_1} = 1$ et l'autre possède la condition $x_{\lambda_1} = 0$
+
+    \item
+          L'algorithme calcule la borne supérieur et inférieure de la manière suivante :
+
+          \begin{itemize}
+              \item borne supérieur :
+                    $$ \forall i \in  [1..n], BorneSup(x[i]) = min(x[i],1)$$
+              \item borne inférieure :
+                    $$ \forall i \in  [1..n], BorneInf(x[i]) = max(x[i],0)$$
+          \end{itemize}
+
+    \item
+          L'algorithme calcule la TA, la TO et la TR de la manière suivante :
+
+          \begin{itemize}
+              \item TA : Le problème d'optimisation sous contraintes ne possède pas de solution.
+              \item TO : Le problème d'optimisation sous contraintes possède une solution moins intéressante que celle déjà enregistrée.
+              \item TR : Le problème d'optimisation sous contraintes possède une solution plus intéressante que celle déjà enregistrée.
+          \end{itemize}
+
+
+
+    \item La stratégie de parcours est un parcours en profondeur de l'arbre crée en prenant d'abord le fils gauche plutot que le fils droit.
+
+\end{enumerate}

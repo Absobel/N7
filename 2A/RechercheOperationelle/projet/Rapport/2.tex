@@ -1,0 +1,127 @@
+\section {Code et analyse}
+\subsection{Détail de l'implémentation}
+
+Pour l'implémentation de l'algorithme de Branch and Bounds, nous avons opté pour une fonction utilisant un principe récursif.
+
+\subsubsection{Borne supérieur}
+
+\begin{lstlisting}
+        function calculBorne(model::Model,mode::String="1")
+        if mode == "1"
+            % Creation des ratios
+            r = map((x,y) -> x./y,model.price,model.weight)
+    
+            #Obtention du max des ratios
+            max_ri,index = findmax(r)
+    
+            #Calcul borne sup
+            borneSup = (model.capacity)*max_ri
+    
+            #Renvoie fonction
+            return borneSup,index
+        else
+            # Trier les objets par ratio decroissant
+            r = map((x, y) -> x / y, model.price, model.weight)
+            sorted_indices = sortperm(r, rev=true)
+            
+            # Initialiser la capacite restante et la borne superieure
+            remaining_capacity = model.capacity
+            borneSup = 0.0
+    
+            # Parcourir les objets tries
+            for i in sorted_indices
+                if model.weight[i] <= remaining_capacity
+                    # Ajouter l'objet entier si possible
+                    borneSup += model.price[i]
+                    remaining_capacity -= model.weight[i]
+                else
+                    # Ajouter la fraction de l'objet
+                    fraction = remaining_capacity / model.weight[i]
+                    borneSup += fraction * model.price[i]
+                    break
+                end
+            end
+    
+            return borneSup, sorted_indices[1]
+        end
+    end
+\end{lstlisting}
+
+Pour le calcul de la borne 1, nous avons simplement calculé le ratio de chaque objet et nous avons pris le maximum de ces ratios pour le multiplier par la capacité du sac. Nous avons ensuite retourné la borne supérieure ainsi que l'indice de l'objet de ratio maximum.
+Pour la borne 2, nous avons trié les objets par ratio décroissant et nous avons ajouté les objets tant que la capacité du sac le permettait. Si la capacité du sac ne permettait pas d'ajouter un objet entier, nous avons ajouté une fraction de cet objet. Nous avons ensuite retourné la borne supérieure ainsi que l'indice de l'objet qui a été ajouté en dernier.
+
+\subsubsection{Règle de séparation}
+Dans notre implémentation, la règle de séparation est basée sur l'indice retourné par la fonction calculant la borne supérieure. Cet indice représente l'objet avec le meilleur ratio (ou le dernier ajouté pour la borne 2) et sert à déterminer le point de branchement. Deux branches sont générées : dans la première, l'objet est inclus dans le sac à dos (fils gauche), tandis que dans la seconde, l'objet n'est pas inclus (fils droit). Cette approche permet une exploration efficace de l'espace des solutions en se focalisant sur les objets les plus prometteurs.
+
+\subsubsection{Tests de sondabilité (TA, TO, TR)}
+
+\begin{lstlisting}
+    function testTA(model::Model)
+        return model.capacity < 0
+    end
+    
+    function testTO(upperbound::Float64,bestSol::Float64)
+        return upperbound < bestSol
+    end
+    
+    function testTR(xi::Float64)
+        return xi != 0 && xi != 1
+    end
+\end{lstlisting}
+
+\begin{itemize}
+        \item TA : Si le poids total des objets sélectionnés est supérieur à la capacité du sac, la branche est non sondable.
+        \item TO : Si la borne supérieure est inférieure à la meilleure solution trouvée, la branche est égallement non sondable.
+        \item TR : Si la décision de prendre ou non l'objet est déjà prise, la branche est redondante et donc non sondable.
+\end{itemize}
+
+\subsubsection{Stratégie d'exploration}
+Notre stratégie d'exploration utilise une approche gloutonne basée sur les bornes supérieures calculées. Après la génération des branches, nous sélectionnons d'abord la branche avec la borne supérieure la plus élevée pour l'exploration. Cette méthode permet de prioriser les chemins les plus prometteurs, augmentant ainsi les chances de trouver rapidement une solution optimale.
+
+\subsubsection{Structure de données}
+
+
+La structure de données clé de notre implémentation est la structure `Model`. Elle encapsule toutes les informations nécessaires pour représenter un nœud dans l'arbre de recherche du Branch-and-Bound :
+
+
+\begin{lstlisting}
+   mutable struct Model
+        price::Vector{Int64}
+        weight::Vector{Int64}
+        capacity::Int64
+        x::Vector{Float64}
+        value::Int64
+    end
+\end{lstlisting}
+
+
+\begin{itemize}
+        \item $price$ et $weight$ sont des vecteurs d'entiers représentant respectivement les valeurs et les poids des objets. Ces vecteurs sont essentiels pour le calcul des bornes et la détermination des objets à inclure ou à exclure lors de la création des branches. 
+        \item $capacity$ est un entier représentant la capacité restante du sac à dos à un nœud donné. Elle est cruciale pour les tests de sondabilité, en particulier le test TA.
+        \item $x$ est un vecteur de nombres flottants représentant la solution partielle à un nœud donné, où chaque élément indique si un objet spécifique est inclus (1.0) ou exclu (0.0) du sac.
+        \item $value$ est un entier indiquant la valeur totale des objets inclus dans le sac à un nœud donné. C'est un indicateur clé de la performance d'une solution partielle.
+\end{itemize}
+
+\subsubsection{Stockage des informations}
+
+Pour stocker les informations nécessaire à la résolution du problème, nous avons utilisé différents objets de stockage:
+\begin{itemize}
+\item Les variables
+\item La récursivité
+\item Une structure de données
+\end{itemize}
+
+En effet voici les variables qui nous permettent de stocker les données au cours du problème:
+\begin{itemize}
+\item $price::Vector{Int64}$ & $weight::Vector{Int64}$ : ces variables servent à stocker les prix et les poids du problème initial. En effet au cours du problème la structure de donnée $model$ varie et perd l'indexation initial des objets. Ces deux listes nous servent à les retrouver
+\item $sol::Model$: cette variable stocke le modèle qui a donné la meilleure solution.
+\item $BestProfit::Int64$: Cette varibale stocke le meilleur prix trouvé jusqu'ici pour que le test TR puisse avoir accès à la plus grande valeur du sac trouvée.
+\end{itemize}
+
+La récursivité permet de stocker le modèle au cours des différentes itérations.
+
+Enfin la structure de donnée $model$ encapsule toute les données propre à un modèle comme expliqué précedemment.
+
+
+
+

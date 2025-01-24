@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{a4wide}
+\usepackage{amssymb}
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{color}
+\usepackage{babel}
+\usepackage{listings} % Added package
+\usepackage{amsmath}
+\usepackage{courier}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{geometry}
+\setcounter{section}{0}
+\setcounter{secnumdepth}{0}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{ForestGreen}{rgb}{0.13, 0.55, 0.13}
+
+%%
+%% Julia definition (c) 2014 Jubobs
+%%
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstset{%
+    language         = Julia,
+    basicstyle=\fontsize{9pt}{10pt}\selectfont\ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+    frame            = single,    % adds a frame around the code
+    rulecolor        = \color{black}, % if you want a colored frame
+    backgroundcolor  = \color{backcolour}, % set background color
+    framexleftmargin = 5mm, % Adjust margins
+    framexrightmargin= 5mm,
+    framextopmargin  = 5mm,
+    framexbottommargin= 5mm,
+    xleftmargin      = 7mm, % Adjust non-frame margins
+    xrightmargin     = 7mm,
+}
+
+
+\begin{document}
+
+
+
+
+\title{\vspace{4cm} \textbf{Rapport recherche opérationnelle TP \\ Sujet 2}}
+\author{CORBELLARI Nolan, Absobel}
+\date{\vspace{7cm} Département Sciences du Numérique --- Deuxième année \\
+    2023--2024}
+
+\maketitle
+
+\newpage
+\pagebreak
+\vfill
+
+\newpage
+\tableofcontents
+\newpage
+
+\input{1} \newpage
+\input{2} \newpage
+\input{3} \newpage
+\input{4} \newpage
+
+\end{document}

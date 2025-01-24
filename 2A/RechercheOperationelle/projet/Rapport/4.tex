@@ -1,0 +1,9 @@
+\section{Améliorations possibles}
+Voici les amélioratons que nous pourrions implémenter:
+\begin{itemize}
+    \item La méthode de résolution de la relaxation pour la borne 2 est naïve en $O(n)$ avec $n$ la taille de la liste des objets.
+    On peut optimiser cela en
+    \item Notre règle d'exploration parcourt les noeuds par priorité de borne supérieure et parmis les noeuds à parcourir, on les parcours selon l'ordre décroissant de profondeur de l'arbre.
+     C'est une caractéristique propre au fait que notre programme résout récursivement le problème .Pour changer cela il faudrait mettre en place une file, ce qui est moins naturel dans notre cas.
+     \item Notre algorithme une structure de donnée ce qui est couteux en mémoire. On pourrait économiser du temps de calcul et de la mémoire en modifiant notre algorithme afin d'en retirer la structure de données.
+\end

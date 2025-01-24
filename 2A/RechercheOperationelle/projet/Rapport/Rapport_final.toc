@@ -1,0 +1,11 @@
+\babel@toc {nil}{}\relax 
+\contentsline {section}{Questions préliminaires}{3}{}%
+\contentsline {section}{Code et analyse}{4}{}%
+\contentsline {subsection}{Détail de l'implémentation}{4}{}%
+\contentsline {subsubsection}{Borne supérieur}{4}{}%
+\contentsline {subsubsection}{Règle de séparation}{5}{}%
+\contentsline {subsubsection}{Tests de sondabilité (TA, TO, TR)}{5}{}%
+\contentsline {subsubsection}{Stratégie d'exploration}{6}{}%
+\contentsline {subsubsection}{Choix de structure de données}{6}{}%
+\contentsline {section}{Comparaison des calculs de bornes}{7}{}%
+\contentsline {section}{Améliorations possibles}{8}{}%
