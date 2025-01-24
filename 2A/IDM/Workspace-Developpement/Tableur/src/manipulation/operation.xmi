@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tableur.ecore="http://tableur.ecore"
+    name="Projet">
+  <table name="Somme">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="A"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="B"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="Résultat"
+        colonne="//@table.0/@colonne.1 //@table.0/@colonne.0">
+      <operation
+          xsi:type="tableur.ecore:OperationBinaire"/>
+    </colonne>
+  </table>
+  <table name="Produit">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="E"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="F"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="Résultat2"
+        colonne="//@table.1/@colonne.0 //@table.1/@colonne.1">
+      <operation
+          xsi:type="tableur.ecore:OperationBinaire"
+          kind="Multiplication"/>
+    </colonne>
+  </table>
+</tableur.ecore:Tableur>

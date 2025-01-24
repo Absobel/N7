@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated tableur -->
+      <package
+            uri="http://tableur.ecore"
+            class="tableur.TableurPackage"
+            genModel="model/tableur.genmodel"/>
+   </extension>
+
+</plugin>

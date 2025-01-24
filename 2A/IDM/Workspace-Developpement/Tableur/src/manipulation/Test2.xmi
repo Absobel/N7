@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tableur.ecore="http://tableur.ecore"
+    name="TEST">
+  <table name="T1">
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="A"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="B"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="C"/>
+  </table>
+  <table name="T2">
+    <colonne
+        xsi:type="tableur.ecore:ColonneOutput"
+        name="A"/>
+    <colonne
+        xsi:type="tableur.ecore:ColonneInput"
+        name="B"/>
+  </table>
+</tableur.ecore:Tableur>

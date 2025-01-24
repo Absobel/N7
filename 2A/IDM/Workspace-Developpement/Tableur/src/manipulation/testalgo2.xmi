@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithme="http://algorithme.ecore" xmlns:tableur.ecore="http://tableur.ecore" name="CalculIMC">
+  <table name="Calcul">
+    <colonne xsi:type="tableur.ecore:ColonneInput" name="Poids"/>
+    <colonne xsi:type="tableur.ecore:ColonneInput" name="Taille"/>
+    <colonne xsi:type="tableur.ecore:ColonneOutput" name="IMC" algo="//@catalogues.0/@algorithmes.0" colonnes="//@table.0/@colonne.0 //@table.0/@colonne.1"/>
+  </table>
+  <table name="Test">
+    <colonne xsi:type="tableur.ecore:ColonneInput"/>
+    <colonne xsi:type="tableur.ecore:ColonneOutput"/>
+  </table>
+  <catalogues>
+    <algorithmes xsi:type="algorithme:Algorithme" name="truc">
+      <ressource file="calcul_imc.py"/>
+      <documentation description="Ceci est la doc"/>
+    </algorithmes>
+  </catalogues>
+</tableur.ecore:Tableur>

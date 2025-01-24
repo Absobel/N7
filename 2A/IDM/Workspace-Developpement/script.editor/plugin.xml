@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated script -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="script.presentation.ScriptModelWizardID"
+            name="%_UI_ScriptModelWizard_label"
+            class="script.presentation.ScriptModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ScriptModelFile.gif">
+         <description>%_UI_ScriptModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated script -->
+      <editor
+            id="script.presentation.ScriptEditorID"
+            name="%_UI_ScriptEditor_label"
+            icon="icons/full/obj16/ScriptModelFile.gif"
+            extensions="script"
+            class="script.presentation.ScriptEditor"
+            contributorClass="script.presentation.ScriptActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

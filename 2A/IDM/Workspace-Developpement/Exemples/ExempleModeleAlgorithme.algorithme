@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<algorithme:Catalogue xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithme="http://algorithme.ecore" name="NomDuCatalogue">
+  <algorithmes xsi:type="algorithme:Algorithme" name="Algo1">
+    <ressource/>
+  </algorithmes>
+  <algorithmes xsi:type="algorithme:Algorithme" name="Algo2">
+    <ressource/>
+  </algorithmes>
+</algorithme:Catalogue>

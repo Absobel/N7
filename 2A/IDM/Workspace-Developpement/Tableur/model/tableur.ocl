@@ -1,0 +1,36 @@
+import 'tableur.ecore'
+
+package tableur
+
+context Tableur
+
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+	
+
+context Colonne
+				
+inv validName:
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+inv differentNames:
+	Colonne.allInstances()
+		->forAll(c1 , c2 | c1 <> c2 implies c1.name <> c2.name )
+		
+context ColonneOutput
+
+inv UnaireMeansOneColonne:
+	self.operation.oclIsTypeOf(OperateurUnaire) implies 
+        self.colonnes->size() = 1
+        
+inv BinaireMeansTwoColonnes:
+	self.operation.oclIsTypeOf(OperateurBinaire) implies 
+        self.colonnes->size() = 2
+	
+context Table 
+
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')	
+
+	
+endpackage

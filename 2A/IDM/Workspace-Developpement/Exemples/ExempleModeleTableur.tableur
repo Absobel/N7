@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tableur.ecore:Tableur xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:algorithme="http://algorithme.ecore" xmlns:tableur.ecore="http://tableur.ecore" name="NomTableur1">
+  <table name="Tab1">
+    <colonne xsi:type="tableur.ecore:ColonneInput" name="A1"/>
+    <colonne xsi:type="tableur.ecore:ColonneInput" name="A2"/>
+    <colonne xsi:type="tableur.ecore:ColonneOutput" name="A3" algo="//@catalogues.0/@algorithmes.0" colonnes="//@table.0/@colonne.0 //@table.0/@colonne.1">
+      <operation xsi:type="tableur.ecore:OperateurBinaire"/>
+    </colonne>
+    <colonne xsi:type="tableur.ecore:ColonneOutput" name="A4" colonnes="//@table.0/@colonne.0 //@table.0/@colonne.2">
+      <operation xsi:type="tableur.ecore:OperateurBinaire" kind="Division"/>
+    </colonne>
+  </table>
+  <table name="Tab2">
+    <colonne xsi:type="tableur.ecore:ColonneInput" name="B1"/>
+    <colonne xsi:type="tableur.ecore:ColonneOutput" name="B2" colonnes="//@table.1/@colonne.0">
+      <operation xsi:type="tableur.ecore:OperateurUnaire"/>
+    </colonne>
+  </table>
+  <catalogues name="Catalogue1">
+    <algorithmes xsi:type="algorithme:Algorithme" name="Algo1">
+      <ressource file="&quot;ChemindAccesARenseigner&quot;" stdin="//@table.0/@colonne.0 //@table.0/@colonne.1" stdout="//@table.0/@colonne.2"/>
+      <documentation description="&quot;Description de l'algo&quot;"/>
+    </algorithmes>
+  </catalogues>
+</tableur.ecore:Tableur>

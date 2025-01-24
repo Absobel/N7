@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/algorithme/src-gen" creationIcons="false" editDirectory="/algorithme.edit/src-gen"
+    editorDirectory="/algorithme.editor/src-gen" modelPluginID="algorithme" modelName="Algorithme"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>algorithme.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Algorithme" disposableProviderFactory="true" ecorePackage="algorithme.ecore#/">
+    <genClasses ecoreClass="algorithme.ecore#//Catalogue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Catalogue/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algorithme.ecore#//Catalogue/algorithmes"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//AlgorithmeElement"/>
+    <genClasses ecoreClass="algorithme.ecore#//Algorithme">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Algorithme/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/ressource"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Algorithme/documentation"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Ressource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Ressource/file"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Ressource/stdin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Ressource/stdout"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference algorithme.ecore#//Ressource/script"/>
+    </genClasses>
+    <genClasses ecoreClass="algorithme.ecore#//Documentation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute algorithme.ecore#//Documentation/description"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Tableur" ecorePackage="../../Tableur/model/tableur.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../Tableur/model/tableur.ecore#//OperateurUnaireType">
+      <genEnumLiterals ecoreEnumLiteral="../../Tableur/model/tableur.ecore#//OperateurUnaireType/Oppose"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../Tableur/model/tableur.ecore#//OperateurBinaireType">
+      <genEnumLiterals ecoreEnumLiteral="../../Tableur/model/tableur.ecore#//OperateurBinaireType/Addition"/>
+      <genEnumLiterals ecoreEnumLiteral="../../Tableur/model/tableur.ecore#//OperateurBinaireType/Soustraction"/>
+      <genEnumLiterals ecoreEnumLiteral="../../Tableur/model/tableur.ecore#//OperateurBinaireType/Multiplication"/>
+      <genEnumLiterals ecoreEnumLiteral="../../Tableur/model/tableur.ecore#//OperateurBinaireType/Division"/>
+    </genEnums>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//Tableur">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../Tableur/model/tableur.ecore#//Tableur/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//Tableur/table"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//Tableur/catalogues"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//Tableur/scripts"/>
+    </genClasses>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../Tableur/model/tableur.ecore#//Table/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//Table/colonne"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../Tableur/model/tableur.ecore#//Colonne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../Tableur/model/tableur.ecore#//Colonne/name"/>
+    </genClasses>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//ColonneInput"/>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//ColonneOutput">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//ColonneOutput/algo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//ColonneOutput/colonnes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../Tableur/model/tableur.ecore#//ColonneOutput/operation"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../Tableur/model/tableur.ecore#//Operation"/>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//OperateurBinaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../Tableur/model/tableur.ecore#//OperateurBinaire/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="../../Tableur/model/tableur.ecore#//OperateurUnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../Tableur/model/tableur.ecore#//OperateurUnaire/kind"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Script" ecorePackage="../../script/model/script.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../script/model/script.ecore#//OperationBinaireType">
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/SUB"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/TIM"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/MIN"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//OperationBinaireType/MAX"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../script/model/script.ecore#//FonctionType">
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/OPP"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/INV"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/COS"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/SIN"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/SQR"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/EXP"/>
+      <genEnumLiterals ecoreEnumLiteral="../../script/model/script.ecore#//FonctionType/LOG"/>
+    </genEnums>
+    <genClasses ecoreClass="../../script/model/script.ecore#//Script">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//Script/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//Script/initialInputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//Script/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//Script/finalOutputs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../script/model/script.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//Operation/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="../../script/model/script.ecore#//OperationUnaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//OperationUnaire/fonction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//OperationUnaire/output"/>
+    </genClasses>
+    <genClasses ecoreClass="../../script/model/script.ecore#//OperationBinaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//OperationBinaire/operateur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../script/model/script.ecore#//OperationBinaire/output"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../script/model/script.ecore#//Inputs"/>
+    <genClasses ecoreClass="../../script/model/script.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//Output/name"/>
+    </genClasses>
+    <genClasses ecoreClass="../../script/model/script.ecore#//Constante">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//Constante/valeur"/>
+    </genClasses>
+    <genClasses ecoreClass="../../script/model/script.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../script/model/script.ecore#//Input/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../script/model/script.ecore#//RealInputs"/>
+  </genPackages>
+</genmodel:GenModel>

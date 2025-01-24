@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated algorithme -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="algorithme.presentation.AlgorithmeModelWizardID"
+            name="%_UI_AlgorithmeModelWizard_label"
+            class="algorithme.presentation.AlgorithmeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AlgorithmeModelFile.gif">
+         <description>%_UI_AlgorithmeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated algorithme -->
+      <editor
+            id="algorithme.presentation.AlgorithmeEditorID"
+            name="%_UI_AlgorithmeEditor_label"
+            icon="icons/full/obj16/AlgorithmeModelFile.gif"
+            extensions="algorithme"
+            class="algorithme.presentation.AlgorithmeEditor"
+            contributorClass="algorithme.presentation.AlgorithmeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated algorithme -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="tableur.presentation.TableurModelWizardID"
+            name="%_UI_TableurModelWizard_label"
+            class="tableur.presentation.TableurModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TableurModelFile.gif">
+         <description>%_UI_TableurModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated algorithme -->
+      <editor
+            id="tableur.presentation.TableurEditorID"
+            name="%_UI_TableurEditor_label"
+            icon="icons/full/obj16/TableurModelFile.gif"
+            extensions="tableur"
+            class="tableur.presentation.TableurEditor"
+            contributorClass="tableur.presentation.TableurActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated algorithme -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="script.presentation.ScriptModelWizardID"
+            name="%_UI_ScriptModelWizard_label"
+            class="script.presentation.ScriptModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ScriptModelFile.gif">
+         <description>%_UI_ScriptModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated algorithme -->
+      <editor
+            id="script.presentation.ScriptEditorID"
+            name="%_UI_ScriptEditor_label"
+            icon="icons/full/obj16/ScriptModelFile.gif"
+            extensions="script"
+            class="script.presentation.ScriptEditor"
+            contributorClass="script.presentation.ScriptActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
