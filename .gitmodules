@@ -1,3 +1,15 @@
 [submodule "1A/TOB/projet-long"]
 	path = 1A/TOB/projet-long
 	url = git@github.com:Absobel/N7-CityBuilder.git
+
+[submodule "1A/SEC/minishell"]
+	path = 1A/SEC/minishell
+	url = git@github.com:Absobel/N7-MiniShell.git
+
+[submodule "2A/Web/projet"]
+	path = 2A/Web/projet
+	url = git@github.com:Absobel/Volundr.git
+
+[submodule "2A/PF2/projet"]
+	path = 2A/PF2/projet
+	url = git@github.com:Absobel/Arkanoid.git
