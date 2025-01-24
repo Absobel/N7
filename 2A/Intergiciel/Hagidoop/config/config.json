@@ -1,0 +1,7 @@
+{
+    "nb_of_servers": 9,
+    "base_port": 5000,
+    "registry_base_port": 6000,
+    "hagidoop_base_port": 7000,
+    "server_dest_path": "target/"
+}
