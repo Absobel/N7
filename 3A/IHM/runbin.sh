@@ -21,5 +21,5 @@ if [ -z "$wifi_interface" ]; then
 fi
 
 # Run the test executable
-./compiled_bin/$agent "$name" "$wifi_interface" "$port"
+./compiled_bins/$agent "$name" "$wifi_interface" "$port"
 

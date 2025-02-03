@@ -1,0 +1,2 @@
+/home/absobel/Mir/GitRepos/N7/3A/IHM/world/build/_CPack_Packages/Linux/TGZ/world-0.1.1-Linux/bin/world
+/home/absobel/Mir/GitRepos/N7/3A/IHM/world/build/_CPack_Packages/Linux/TGZ/world-0.1.1-Linux/./install_script.sh
